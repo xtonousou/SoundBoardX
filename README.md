@@ -12,3 +12,7 @@ The Ultimate Android Soundboard.
 * floating stop button
 * search functionality
 * donate and subscribe options
+
+
+**TODO:**
+- [] Support different DPIs
