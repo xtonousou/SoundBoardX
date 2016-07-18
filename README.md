@@ -1,8 +1,7 @@
-# xSoundBoardHD
+#:sound: xSoundBoardHD :sound: --- ԅ(≖‿≖ԅ)
 The Ultimate Android Soundboard.
- 
-##** :sound: xSoundBoardHD :sound: ** --- ԅ(≖‿≖ԅ)
-A simple android soundboard using RecyclerView.
+
+![alt tag](https://github.com/xtonousou/xSoundBoardHD/blob/master/showoff.gif?raw=true)
 
 17 >= api <= 24
 
