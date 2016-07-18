@@ -15,4 +15,4 @@ The Ultimate Android Soundboard.
 
 
 **TODO:**
-- [ ] Support different DPIs
+- [ ] Particle support different DPIs
