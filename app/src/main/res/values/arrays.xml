@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="labels">
+        <item>Nigger\'s satisfaction</item>
+        <item>Hitmarker</item>
+        <item>It\' s 04:20 meng…</item>
+        <item>420 blaze it faggot</item>
+        <item>Blurp</item>
+        <item>Adam!?!</item>
+        <item>Allahu Akbar</item>
+        <item>Damn son!</item>
+        <item>Bane: Darude Sandstorm</item>
+        <item>Bearcum!!!</item>
+        <item>What is going on here?</item>
+        <item>Black kid on fire</item>
+        <item>Σα τον Κάτμαν μ\' έκανες!</item>
+        <item>Hmm, it\'s dick o\'clock</item>
+        <item>Russian father</item>
+        <item>Fichtl\'s Lied</item>
+        <item>Buffed Blowjob</item>
+        <item>Hey that\' s pretty good!</item>
+        <item>I\' m your father!</item>
+        <item>Give it to me!</item>
+        <item>Κοτσολάρη: Πίπα</item>>
+        <item>Fun</item>
+        <item>Kazoo</item>
+        <item>Immigrants cause cancer</item>
+        <item>Maybe we could invite some women?</item>
+        <item>Trap Theme</item>
+        <item>Γαμώ τα καντήλια μου όλα!</item>
+        <item>Weird laugh</item>
+        <item>Thank you…</item>
+        <item>Make your dreams come true!</item>
+        <item>LOTR MLG</item>
+        <item>Come here my pet Russian…</item>
+        <item>This is my masterpiece!</item>
+        <item>Do you want my milk?</item>
+        <item>My mooscles are getting bigger!</item>
+        <item>I\'m growing stronker!</item>
+        <item>Yiss</item>
+        <item>STFU</item>
+        <item>Nigga is cumming…</item>
+        <item>Sup nigga, wanna talk some shit?</item>
+        <item>Surprise motherfucker!</item>
+        <item>Shaved pussy…</item>
+        <item>Seven vaginias…</item>
+        <item>Oh my!</item>
+        <item>Oh Yeaaaah!</item>
+        <item>Penis, penis and penis</item>
+        <item>Our courage will pull us through</item>
+        <item>Excuse me, I have some pussyhair on me!</item>
+        <item>Retardation Theme</item>
+        <item>Cyka Blyat\'s Middlefinger</item>
+        <item>I\'m the scatman…</item>
+        <item>Why don\'t you show us that fine pussy?</item>
+        <item>Shutdown, glitched…</item>
+        <item>What manner of sissyness, is this?</item>
+        <item>You spin me round</item>
+        <item>Squeaker</item>
+        <item>That\'s a 10!</item>
+        <item>Illuminati</item>
+        <item>WOW</item>
+        <item>Richard Stallman</item>
+        <item>Cow</item>
+        <item>What else?</item>
+        <item>Zodiac</item>
+        <item>Shabadaa shabadabadabaa…</item>
+        <item>U WOT M8</item>
+        <item>Τσικλίδης: Λες και είναι τσόντα!</item>
+        <item>Πετρόπουλος: Action!</item>
+        <item>Πετράκης: Fuck her right in the pussy</item>>
+        <item>xT: Ρε καριόλη;</item>
+        <item>xT: Γαμώ τον Χριστό σου!</item>
+        <item>Κιάμος: Ε!</item>
+        <item>Κιάμος: Χατζάρα</item>
+        <item>Κιάμος: Τί κοιτάς ρε μαλάκα</item>
+    </string-array>
+
+    <integer-array name="ids">
+        <item>@raw/a</item>
+        <item>@raw/hitmarker</item>
+        <item>@raw/a420</item>
+        <item>@raw/a420blazeit</item>
+        <item>@raw/blurp</item>
+        <item>@raw/adam</item>
+        <item>@raw/allahuakbar</item>
+        <item>@raw/damnson</item>
+        <item>@raw/banesandstorm</item>
+        <item>@raw/bearcum</item>
+        <item>@raw/bekfast</item>
+        <item>@raw/blackkidonfire</item>
+        <item>@raw/catman</item>
+        <item>@raw/dickoclock</item>
+        <item>@raw/fathercatishungry</item>
+        <item>@raw/fichtlslied</item>
+        <item>@raw/fuckyeah</item>
+        <item>@raw/prettygood</item>
+        <item>@raw/imyourfather</item>
+        <item>@raw/giveittome</item>
+        <item>@raw/eleni</item>
+        <item>@raw/fun</item>
+        <item>@raw/kazoo</item>
+        <item>@raw/immigrants</item>
+        <item>@raw/invitewomen</item>
+        <item>@raw/itsatrap</item>
+        <item>@raw/kantilia</item>
+        <item>@raw/laugh</item>
+        <item>@raw/thankyou</item>
+        <item>@raw/lol</item>
+        <item>@raw/lotr</item>
+        <item>@raw/petrussian</item>
+        <item>@raw/masterpiece</item>
+        <item>@raw/milkinyourmot</item>
+        <item>@raw/mooscles</item>
+        <item>@raw/stronker</item>
+        <item>@raw/yiiisss</item>
+        <item>@raw/stfu</item>
+        <item>@raw/niggacum</item>
+        <item>@raw/niggers</item>
+        <item>@raw/surprise</item>
+        <item>@raw/shaved</item>
+        <item>@raw/sevenvaginas</item>
+        <item>@raw/ohmy</item>
+        <item>@raw/ohyeaah</item>
+        <item>@raw/penis</item>
+        <item>@raw/pokemonaggouri</item>
+        <item>@raw/pussyhair</item>
+        <item>@raw/retardation</item>
+        <item>@raw/russianmiddlefinger</item>
+        <item>@raw/scatman</item>
+        <item>@raw/showthepussy</item>
+        <item>@raw/shutdownglitched</item>
+        <item>@raw/sissiness</item>
+        <item>@raw/spinme</item>
+        <item>@raw/squeeek</item>
+        <item>@raw/thatsa10</item>
+        <item>@raw/illuminati</item>
+        <item>@raw/wow</item>
+        <item>@raw/windows</item>
+        <item>@raw/cow</item>
+        <item>@raw/whatelse</item>
+        <item>@raw/zodiac</item>
+        <item>@raw/sabada</item>
+        <item>@raw/uwotmate</item>
+        <item>@raw/tsonta</item>
+        <item>@raw/nikos</item>
+        <item>@raw/fuckherrightinthepussy</item>
+        <item>@raw/karioli</item>
+        <item>@raw/gamwtoxristosou</item>
+        <item>@raw/e</item>
+        <item>@raw/tigelasre</item>
+        <item>@raw/tikoitasremlk</item>
+    </integer-array>
+</resources>
