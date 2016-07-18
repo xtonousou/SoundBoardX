@@ -33,7 +33,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Calendar;
 import de.greenrobot.event.EventBus;
 import de.greenrobot.event.EventBusException;
 
