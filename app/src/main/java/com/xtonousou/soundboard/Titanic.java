@@ -84,7 +84,6 @@ public class Titanic {
                     }
                 });
 
-
                 if (animatorListener != null) {
                     animatorSet.addListener(animatorListener);
                 }

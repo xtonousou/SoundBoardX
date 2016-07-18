@@ -15,7 +15,6 @@ public class SoundPlayer extends Service{
 
     private MediaPlayer mPlayer;
     private Context mContext;
-
     private static final String TAG = "SoundPlayer";
 
     public SoundPlayer(Context context) {
