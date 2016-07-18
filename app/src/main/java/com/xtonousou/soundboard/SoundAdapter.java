@@ -22,8 +22,6 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.AnticipateOvershootInterpolator;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,8 +33,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import de.greenrobot.event.EventBus;
 import de.greenrobot.event.EventBusException;
-
-import com.plattysoft.leonids.ParticleSystem;
 
 public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> {
 	private static final String TAG = "SoundAdapter";
@@ -88,242 +84,242 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 
 	@Override
 	public void onBindViewHolder(final ViewHolder holder, final int position) {
+		final Particle particle = new Particle(holder.itemView);
 		holder.title.setText(sounds.get(position).getName());
 		holder.itemView.setOnClickListener(new View.OnClickListener() {
 
 			/**
-			 *  Animates each holder. Checks name and decides.
-			 *  @param holder The Viewholder.
+			 *  Animates each item onClick. Checks name and decides.
              */
-			public void animate(ViewHolder holder) {
+			public void animate() {
 				switch (holder.title.getText().toString()) {
 					default:
 						Log.e(TAG, "No animation is set for " + holder.title.getText().toString());
 						break;
 					case "Nigger's satisfaction":
-						holder.setAnimationNigga();
+						particle.setAnimationNigga();
 						break;
 					case "Hitmarker":
-						holder.setAnimationHitmarkers();
+						particle.setAnimationHitmarkers();
 						break;
 					case "It' s 04:20 meng…":
-						holder.setAnimationWeed();
+						particle.setAnimationWeed();
 						break;
 					case "420 blaze it faggot":
-						holder.setAnimationWeed();
+						particle.setAnimationWeed();
 						break;
 					case "Blurp":
-						holder.setAnimationWaterDrops();
+						particle.setAnimationWaterDrops();
 						break;
 					case "Adam!?!":
-						holder.setAnimationSmoke();
+						particle.setAnimationSmoke();
 						break;
 					case "Allahu Akbar":
-						holder.setAnimationISIS();
+						particle.setAnimationISIS();
 						break;
 					case "Damn son!":
-						holder.setAnimationMLG();
+						particle.setAnimationMLG();
 						break;
 					case "Bane: Darude Sandstorm":
-						holder.setAnimationBane();
+						particle.setAnimationBane();
 						break;
 					case "Bearcum!!!":
-						holder.setAnimationMLG();
+						particle.setAnimationMLG();
 						break;
 					case "What is going on here?":
-						holder.setAnimationRetard();
+						particle.setAnimationRetard();
 						break;
 					case "Πετράκης: Fuck her right in the pussy":
-						holder.setAnimationBalls();
+						particle.setAnimationBalls();
 						break;
 					case "Black kid on fire":
-						holder.setAnimationNigga();
+						particle.setAnimationNigga();
 						break;
 					case "Σα τον Κάτμαν μ' έκανες!":
-						holder.setAnimationBart();
+						particle.setAnimationBart();
 						break;
 					case "Hmm, it's dick o'clock":
-						holder.setAnimationDickClock();
+						particle.setAnimationDickClock();
 						break;
 					case "Russian father":
-						holder.setAnimationRussian();
+						particle.setAnimationRussian();
 						break;
 					case "Fichtl's Lied":
-						holder.setAnimationFluteWithMusicNote();
+						particle.setAnimationFluteWithMusicNote();
 						break;
 					case "Buffed Blowjob":
-						holder.setAnimationBananas();
+						particle.setAnimationBananas();
 						break;
 					case "Hey that' s pretty good!":
-						holder.setAnimationDubz();
+						particle.setAnimationDubz();
 						break;
 					case "xT: Γαμώ τον Χριστό σου!":
-						holder.setAnimationWeed();
+						particle.setAnimationWeed();
 						break;
 					case "I' m your father!":
-						holder.setAnimationVader();
+						particle.setAnimationVader();
 						break;
 					case "Give it to me!":
-						holder.setAnimationBananas();
+						particle.setAnimationBananas();
 						break;
 					case "Κοτσολάρη: Πίπα":
-						holder.setAnimationGollum();
+						particle.setAnimationGollum();
 						break;
 					case "Fun":
-						holder.setAnimationKazoo();
+						particle.setAnimationKazoo();
 						break;
 					case "Kazoo":
-						holder.setAnimationKazoo();
+						particle.setAnimationKazoo();
 						break;
 					case "Immigrants cause cancer":
-						holder.setAnimationTrump();
+						particle.setAnimationTrump();
 						break;
 					case "Maybe we could invite some women?":
-						holder.setAnimationSkyrimPoop();
+						particle.setAnimationSkyrimPoop();
 						break;
 					case "Trap Theme":
-						holder.setAnimationTrap();
+						particle.setAnimationTrap();
 						break;
 					case "Γαμώ τα καντήλια μου όλα!":
-						holder.setAnimationBart();
+						particle.setAnimationBart();
 						break;
 					case "Weird laugh":
-						holder.setAnimation4chan();
+						particle.setAnimation4chan();
 						break;
 					case "Thank you…":
-						holder.setAnimationTrap();
+						particle.setAnimationTrap();
 						break;
 					case "Make your dreams come true!":
-						holder.setAnimationMan();
+						particle.setAnimationMan();
 						break;
 					case "LOTR MLG":
-						holder.setAnimationMLG();
+						particle.setAnimationMLG();
 						break;
 					case "Come here my pet Russian…":
-						holder.setAnimationRussian();
+						particle.setAnimationRussian();
 						break;
 					case "This is my masterpiece!":
-						holder.setAnimationCaptcha();
+						particle.setAnimationCaptcha();
 						break;
 					case "Do you want my milk?":
-						holder.setAnimationMilk();
+						particle.setAnimationMilk();
 						break;
 					case "My mooscles are getting bigger!":
-						holder.setAnimationMan();
+						particle.setAnimationMan();
 						break;
 					case "I'm growing stronker!":
-						holder.setAnimationMan();
+						particle.setAnimationMan();
 						break;
 					case "Yiss":
-						holder.setAnimationMan();
+						particle.setAnimationMan();
 						break;
 					case "STFU":
-						holder.setAnimationSTFU();
+						particle.setAnimationSTFU();
 						break;
 					case "Nigga is cumming…":
-						holder.setAnimationNigga();
+						particle.setAnimationNigga();
 						break;
 					case "Sup nigga, wanna talk some shit?":
-						holder.setAnimationNigga();
+						particle.setAnimationNigga();
 						break;
 					case "Surprise motherfucker!":
-						holder.setAnimationNigga();
+						particle.setAnimationNigga();
 						break;
 					case "Πετρόπουλος: Action!":
-						holder.setAnimationGabe();
+						particle.setAnimationGabe();
 						break;
 					case "Shaved pussy…":
-						holder.setAnimationCats();
+						particle.setAnimationCats();
 						break;
 					case "Seven vaginias…":
-						holder.setAnimationCats();
+						particle.setAnimationCats();
 						break;
 					case "Oh my!":
-						holder.setAnimationTrap();
+						particle.setAnimationTrap();
 						break;
 					case "Oh Yeaaaah!":
-						holder.setAnimationParticles();
+						particle.setAnimationParticles();
 						break;
 					case "Penis, penis and penis":
-						holder.setAnimationTrap();
+						particle.setAnimationTrap();
 						break;
 					case "Αγγούρι στον κώλο σου…":
-						holder.setAnimationPokemon();
+						particle.setAnimationPokemon();
 						break;
 					case "Excuse me, I have some pussyhair on me!":
-						holder.setAnimationCats();
+						particle.setAnimationCats();
 						break;
 					case "Retardation Theme":
-						holder.setAnimationRetard();
+						particle.setAnimationRetard();
 						break;
 					case "Cyka Blyat's Middlefinger":
-						holder.setAnimationRussian();
+						particle.setAnimationRussian();
 						break;
 					case "I'm the scatman…":
-						holder.setAnimationScat();
+						particle.setAnimationScat();
 						break;
 					case "Why don't you show us that fine pussy?":
-						holder.setAnimationSkyrimPoop();
+						particle.setAnimationSkyrimPoop();
 						break;
 					case "Shutdown, glitched…":
-						holder.setAnimationRetard();
+						particle.setAnimationRetard();
 						break;
 					case "What manner of sissyness, is this?":
-						holder.setAnimationSkyrimPoop();
+						particle.setAnimationSkyrimPoop();
 						break;
 					case "You spin me round":
-						holder.setAnimationTrap();
+						particle.setAnimationTrap();
 						break;
 					case "Squeaker":
-						holder.setAnimationRetard();
+						particle.setAnimationRetard();
 						break;
 					case "Our courage will pull us through":
-						holder.setAnimationPokemon();
+						particle.setAnimationPokemon();
 						break;
 					case "That's a 10!":
-						holder.setAnimationSpoon();
+						particle.setAnimationSpoon();
 						break;
 					case "Illuminati":
-						holder.setAnimationIlluminati();
+						particle.setAnimationIlluminati();
 						break;
 					case "WOW":
-						holder.setAnimationMLG();
+						particle.setAnimationMLG();
 						break;
 					case "Richard Stallman":
-						holder.setAnimationGNU();
+						particle.setAnimationGNU();
 						break;
 					case "Τσικλίδης: Λες και είναι τσόντα!":
-						holder.setAnimationCows();
+						particle.setAnimationCows();
 						break;
 					case "What else?":
-						holder.setAnimationRetard();
+						particle.setAnimationRetard();
 						break;
 					case "Zodiac":
-						holder.setAnimation4chan();
+						particle.setAnimation4chan();
 						break;
 					case "Shabadaa shabadabadabaa…":
-						holder.setAnimationCats();
+						particle.setAnimationCats();
 						break;
 					case "xT: Ρε καριόλη;":
-						holder.setAnimationWeed();
+						particle.setAnimationWeed();
 						break;
 					case "Κιάμος: Ε!":
-						holder.setAnimationSeagulls();
+						particle.setAnimationSeagulls();
 						break;
 					case "Κιάμος: Χατζάρα":
-						holder.setAnimationSeagulls();
+						particle.setAnimationSeagulls();
 						break;
 					case "Κιάμος: Τί κοιτάς ρε μαλάκα":
-						holder.setAnimationSeagulls();
+						particle.setAnimationSeagulls();
 						break;
 					case "U WOT M8":
-						holder.setAnimationFluteWithMusicNote();
+						particle.setAnimationFluteWithMusicNote();
 						break;
 					case "Cow":
-						holder.setAnimationCows();
+						particle.setAnimationCows();
 						break;
 //                    case "":
-//                        holder.setAnimation();
+//                        particle.setAnimation();
 //                        break;
 				}
 			}
@@ -345,7 +341,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 					} else {
 						EventBus.getDefault().register(this);
 						if (showAnimations) {
-							animate(holder);
+							animate();
 						}
 						EventBus.getDefault().post(sounds.get(holder.getAdapterPosition()));
 						EventBus.getDefault().unregister(this);
@@ -1220,453 +1216,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
         public void alarmToast() {
             Toast.makeText(itemView.getContext(), "Alarm Saved", Toast.LENGTH_SHORT).show();
         }
-
-		/**
-		 *  All methods below use Leonids library and make particles with drawables (R.drawable.something)
-		 *  Methods used in animate() method located at SoundAdapter.java. See onClick.
-		 */
-		public void setAnimationHitmarkers() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 10, R.drawable.hitmarker, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 10);
-		}
-
-		public void setAnimationSTFU() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 10, R.drawable.stfu, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 10);
-		}
-
-		public void setAnimationDubz() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 10, R.drawable.dubz, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 10);
-		}
-
-		public void setAnimationSmoke() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 25, R.drawable.smokeone, 5000)
-					.setAcceleration(0.001f, 80)
-					.setScaleRange(0.5f, 1.3f)
-					.setSpeedRange(0.05f, 0.8f)
-					.setFadeOut(250, new AnticipateOvershootInterpolator())
-					.oneShot(itemView, 25);
-		}
-
-		public void setAnimationParticles() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 25, R.drawable.particle, 5000)
-					.setAcceleration(0.001f, 80)
-					.setScaleRange(-1,2)
-					.setSpeedRange(0.05f, 0.8f)
-					.setFadeOut(250, new AnticipateOvershootInterpolator())
-					.oneShot(itemView, 25);
-		}
-
-		public void setAnimationBananas() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 25, R.drawable.banana, 5000)
-					.setAcceleration(0.001f, 80)
-					.setScaleRange(-1,2)
-					.setSpeedRange(0.05f, 0.8f)
-					.setFadeOut(250, new AnticipateOvershootInterpolator())
-					.oneShot(itemView, 25);
-		}
-
-		public void setAnimationSeagulls() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 15, R.drawable.seagull, 5000)
-					.setSpeedRange(0.1f, 0.3f)
-					.setFadeOut(500)
-					.oneShot(itemView, 15);
-		}
-
-		public void setAnimationTrump() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 15, R.drawable.trump, 5000)
-					.setSpeedRange(0.1f, 0.3f)
-					.setFadeOut(500)
-					.oneShot(itemView, 15);
-		}
-
-		public void setAnimationMan() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 15, R.drawable.man, 5000)
-					.setSpeedRange(0.1f, 0.3f)
-					.setFadeOut(500)
-					.oneShot(itemView, 15);
-		}
-
-		public void setAnimationBalls() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 35, R.drawable.ball, 5000)
-					.setSpeedRange(0.2f, 0.4f)
-					.setFadeOut(500)
-					.oneShot(itemView, 35);
-		}
-
-		public void setAnimation4chan() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 35, R.drawable.fourchan, 5000)
-					.setSpeedRange(0.2f, 0.4f)
-					.setFadeOut(500)
-					.oneShot(itemView, 35);
-		}
-
-		public void setAnimationBane() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 35, R.drawable.bane, 5000)
-					.setSpeedRange(0.2f, 0.4f)
-					.setFadeOut(500)
-					.oneShot(itemView, 35);
-		}
-
-		public void setAnimationWeed() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 5, R.drawable.smokeone, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 5);
-			new ParticleSystem(act, 10, R.drawable.weed, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 10);
-		}
-
-		public void setAnimationTrap() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 5, R.drawable.girl, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 5);
-			new ParticleSystem(act, 10, R.drawable.banana, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 10);
-		}
-
-		public void setAnimationDickClock() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 5, R.drawable.banana, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 5);
-			new ParticleSystem(act, 10, R.drawable.clock, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 10);
-		}
-
-		public void setAnimationVader() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 35, R.drawable.vader, 5000)
-					.setSpeedRange(0.1f, 0.3f)
-					.setRotationSpeed(150)
-					.setFadeOut(500)
-					.oneShot(itemView, 35);
-		}
-
-		public void setAnimationKazoo() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 35, R.drawable.kazoo, 5000)
-					.setSpeedRange(0.1f, 0.3f)
-					.setRotationSpeed(150)
-					.setFadeOut(500)
-					.oneShot(itemView, 35);
-		}
-
-		public void setAnimationMilk() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 35, R.drawable.milk, 5000)
-					.setSpeedRange(0.1f, 0.3f)
-					.setRotationSpeed(125)
-					.setFadeOut(500)
-					.oneShot(itemView, 35);
-		}
-
-		public void setAnimationScat() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 35, R.drawable.poop, 5000)
-					.setSpeedRange(0.1f, 0.3f)
-					.setRotationSpeed(150)
-					.setFadeOut(500)
-					.oneShot(itemView, 35);
-		}
-
-		public void setAnimationCaptcha() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 35, R.drawable.captcha, 5000)
-					.setSpeedRange(0.1f, 0.3f)
-					.setRotationSpeed(150)
-					.setFadeOut(500)
-					.oneShot(itemView, 35);
-		}
-
-		public void setAnimationFluteWithMusicNote() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 5, R.drawable.musicnote, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 5);
-			new ParticleSystem(act, 10, R.drawable.flute, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 10);
-		}
-
-		public void setAnimationMLG() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 10, R.drawable.dwi, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 10);
-			new ParticleSystem(act, 35, R.drawable.illuminati, 5000)
-					.setSpeedRange(0.1f, 0.3f)
-					.setFadeOut(500)
-					.setRotationSpeed(300)
-					.oneShot(itemView, 10);
-			new ParticleSystem(act, 35, R.drawable.joint, 5000)
-					.setSpeedRange(0.1f, 0.3f)
-					.setFadeOut(500)
-					.setRotationSpeed(100)
-					.oneShot(itemView, 20);
-			new ParticleSystem(act, 35, R.drawable.mtdew, 5000)
-					.setSpeedRange(0.1f, 0.2f)
-					.setFadeOut(500)
-					.setRotationSpeed(50)
-					.oneShot(itemView, 5);
-		}
-
-		public void setAnimationPokemon() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 10, R.drawable.bulbasaur, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 10);
-			new ParticleSystem(act, 35, R.drawable.charmander, 5000)
-					.setSpeedRange(0.1f, 0.3f)
-					.setFadeOut(500)
-					.setRotationSpeed(300)
-					.oneShot(itemView, 10);
-			new ParticleSystem(act, 35, R.drawable.pikachu, 5000)
-					.setSpeedRange(0.1f, 0.3f)
-					.setFadeOut(500)
-					.setRotationSpeed(100)
-					.oneShot(itemView, 20);
-			new ParticleSystem(act, 35, R.drawable.squirtle, 5000)
-					.setSpeedRange(0.1f, 0.2f)
-					.setFadeOut(500)
-					.setRotationSpeed(50)
-					.oneShot(itemView, 5);
-		}
-
-		public void setAnimationNigga() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 10, R.drawable.watermelon, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setRotationSpeed(100)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 10);
-			new ParticleSystem(act, 30, R.drawable.kfc, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setRotationSpeed(100)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 30);
-			new ParticleSystem(act, 20, R.drawable.bike, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setRotationSpeed(100)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 20);
-		}
-
-		public void setAnimationISIS() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 10, R.drawable.isis, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setRotationSpeed(100)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 10);
-			new ParticleSystem(act, 10, R.drawable.knife, 5000)
-					.setAcceleration(0.001f, 45)
-					.setSpeedRange(0.1f, 2)
-					.setRotationSpeed(100)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 10);
-			new ParticleSystem(act, 30, R.drawable.bomb, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setRotationSpeed(100)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 30);
-			new ParticleSystem(act, 20, R.drawable.cfour, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setRotationSpeed(100)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 20);
-		}
-
-		public void setAnimationSkyrimPoop() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 30, R.drawable.skyrim, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setScaleRange(1, 2)
-					.setRotationSpeed(100)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 30);
-			new ParticleSystem(act, 10, R.drawable.poop, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setRotationSpeed(100)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 10);
-		}
-
-		public void setAnimationRussian() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 10, R.drawable.vodka, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setRotationSpeed(100)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 10);
-			new ParticleSystem(act, 30, R.drawable.csgo, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setRotationSpeed(100)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 30);
-			new ParticleSystem(act, 20, R.drawable.adidas, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setRotationSpeed(100)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 20);
-		}
-
-		public void setAnimationGNU() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 35, R.drawable.gnu, 7000)
-					.setSpeedRange(0.05f, 0.3f)
-					.setFadeOut(500)
-					.setRotationSpeed(150)
-					.oneShot(itemView, 35);
-		}
-
-		public void setAnimationGabe() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 35, R.drawable.gabe, 7000)
-					.setSpeedRange(0.05f, 0.3f)
-					.setFadeOut(500)
-					.setRotationSpeed(150)
-					.oneShot(itemView, 35);
-		}
-
-		public void setAnimationCats() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 20, R.drawable.cat, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setRotationSpeed(100)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 20);
-		}
-
-		public void setAnimationSpoon() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 20, R.drawable.spoon, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setRotationSpeed(100)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 20);
-		}
-
-		public void setAnimationGollum() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 35, R.drawable.gollum, 2500)
-					.setAcceleration(0.001f, 90)
-					.setSpeedRange(0.1f, 1)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 35);
-		}
-
-		public void setAnimationIlluminati() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 35, R.drawable.illuminati, 5000)
-					.setSpeedRange(0.2f, 0.4f)
-					.setFadeOut(500)
-					.setRotationSpeed(30)
-					.oneShot(itemView, 35);
-		}
-
-		public void setAnimationCows() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 35, R.drawable.cowsay, 5000)
-					.setSpeedRange(0.05f, 0.3f)
-					.setFadeOut(500)
-					.setRotationSpeed(150)
-					.oneShot(itemView, 35);
-		}
-
-		public void setAnimationWaterDrops() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 10, R.drawable.blurp, 5000)
-					.setAcceleration(0.001f, 90)
-					.setSpeedRange(0.1f, 1)
-					.setFadeOut(200, new AccelerateInterpolator())
-					.oneShot(itemView, 10);
-			new ParticleSystem(act, 15, R.drawable.blurptwo, 5000)
-					.setAcceleration(0.001f, 50)
-					.setSpeedRange(0.1f, 1)
-					.setFadeOut(200, new AccelerateInterpolator())
-					.oneShot(itemView, 15);
-			new ParticleSystem(act, 10, R.drawable.blurpthree, 5000)
-					.setAcceleration(0.001f, 80)
-					.setSpeedRange(0.1f, 1)
-					.setFadeOut(250, new AccelerateInterpolator())
-					.oneShot(itemView, 10);
-		}
-
-		public void setAnimationBart() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 35, R.drawable.bart, 5000)
-					.setSpeedRange(0.1f, 0.25f)
-					.setFadeOut(500)
-					.oneShot(itemView, 35);
-		}
-
-		public void setAnimationRetard() {
-			Activity act = (Activity) itemView.getContext();
-			new ParticleSystem(act, 35, R.drawable.retard, 5000)
-					.setSpeedRange(0.1f, 0.25f)
-					.setFadeOut(500)
-					.oneShot(itemView, 35);
-		}
 
 		/**
 		 *  Saves sound selected by user in /xSoundBoardHD/Ringtones/, cleans filename and sets it as ringtone
