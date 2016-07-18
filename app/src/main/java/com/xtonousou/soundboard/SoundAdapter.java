@@ -37,7 +37,6 @@ import de.greenrobot.event.EventBusException;
 public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> {
 	private static final String TAG = "SoundAdapter";
 	private static final Integer WRITE_EXST = 0x1;
-
 	private ArrayList<Sound> sounds;
 	private boolean favoritesOnly = false;
 	private boolean showAnimations = true;
@@ -73,7 +72,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 	public boolean isFavoritesOnly() {
 		return favoritesOnly;
 	}
-
 
 	@Override
 	public SoundAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
