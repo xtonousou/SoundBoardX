@@ -3,7 +3,7 @@ The Ultimate Android Soundboard.
 
 ![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/heh.gif)
 
-17 >= api <= 24
+17 >= API <= 24
 
 **Features:**
 * set as Ringtone/Notification/Alarm
