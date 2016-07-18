@@ -18,5 +18,5 @@ The Ultimate Android Soundboard.
 - [ ] Particle support different DPIs
 - [ ] Add more sounds
 - [ ] **Categorize sounds**
-- [ ] Fix Sounds (Enhance, Crop)
+- [ ] Fix Sounds (Enhance, Crop, Rename)
 - [ ] Remove non-English sounds
