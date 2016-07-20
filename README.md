@@ -1,6 +1,7 @@
 #:sound: xSoundBoardHD :sound: --- ԅ(≖‿≖ԅ)
 The Ultimate Android Soundboard.
 
+**OUTDATED PREVIEW**
 ![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview.gif)
 
 17 >= API <= 24
