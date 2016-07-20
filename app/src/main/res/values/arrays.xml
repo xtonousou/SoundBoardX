@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string-array name="labels">
         <item>Nigger\'s satisfaction</item>
         <item>Hitmarker</item>
@@ -40,7 +40,7 @@
         <item>Yiss</item>
         <item>STFU</item>
         <item>Nigga is cumming…</item>
-        <item>Sup nigga, wanna talk some shit?</item>
+        <item tools:ignore="Typos">Sup nigga, wanna talk some shit?</item>
         <item>Surprise motherfucker!</item>
         <item>Shaved pussy…</item>
         <item>Seven vaginias…</item>

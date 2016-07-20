@@ -11,7 +11,7 @@ import android.util.Log;
 import java.io.IOException;
 import de.greenrobot.event.EventBus;
 
-public class SoundPlayer extends Service{
+public class SoundPlayer {
 
     private MediaPlayer mPlayer;
     private Context mContext;
@@ -84,19 +84,4 @@ public class SoundPlayer extends Service{
             mPlayer = null;
         }
     }
-
-    /**
-     *  Automatically releases MediaPlayer if it ends and it is not null.
-     */
-    @Override
-    public void onDestroy() {
-        if (mPlayer != null) mPlayer.release();
-    }
-
-    @Nullable
-    @Override
-    public IBinder onBind(Intent intent) {
-        return null;
-    }
-
 }

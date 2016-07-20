@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">xSoundBoardHD</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
     <string name="fav_desc">Icon with full heart</string>
     <string name="not_fav_desc">Icon with empty heart</string>
+    <string name="fav_button">Button with full heart</string>
+    <string name="not_fav_button">Button with empty heart</string>
+    <string name="mute_button">Button with volume off</string>
+    <string name="drawer_header_pic">Drawer icon/picture</string>
     <string name="search">Search</string>
     <string name="loading">Loading</string>
+    <string name="categories">Categories</string>
 </resources>
