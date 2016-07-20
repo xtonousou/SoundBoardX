@@ -30,35 +30,4 @@ public abstract class  SoundStore {
 
         return sounds;
     }
-
-    /**
-     *  Takes userInput from SearchView and filters results.
-     *  @param context  The Context.
-     *  @param userText User input from SearchView.
-     *  @return         Filtered ArrayList<Sound>
-     */
-    public static ArrayList<Sound> getSearchResults(Context context, String userText) {
-        Resources res = context.getApplicationContext().getResources();
-        TypedArray labels = res.obtainTypedArray(R.array.labels);
-        TypedArray ids = res.obtainTypedArray(R.array.ids);
-
-        final ArrayList<Sound> newSounds = new ArrayList<>();
-        ArrayList<Sound> list = (SoundStore.getAllSounds(context));
-
-        for (int i = 0; i < labels.length(); i++) {
-            String text = list.get(i).getName();
-            text = Normalizer.normalize(text, Normalizer.Form.NFD);
-            text = text.toLowerCase();
-            text = text.replaceAll("\\p{M}", "");
-            Sound sound = new Sound(labels.getString(i), ids.getResourceId(i, -1));
-            if (text.contains(userText)) {
-                newSounds.add(sound);
-            }
-        }
-
-        labels.recycle();
-        ids.recycle();
-
-        return newSounds;
-    }
 }

@@ -7,12 +7,9 @@ The Ultimate Android Soundboard.
 
 **Features:**
 * set as Ringtone/Notification/Alarm
-* show/hide favorites
-* animations on click (you can set them off if you want)
-* floating stop button
+* floating menu button includes stop sound functionality, toggle animations-favorites
+* animations on click (you can set them off if you want via floating button)
 * search functionality
-* donate and subscribe options
-
 
 **TODO:**
 - [ ] Particle support different DPIs

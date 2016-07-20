@@ -22,22 +22,27 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+
 import de.greenrobot.event.EventBus;
 import de.greenrobot.event.EventBusException;
 
-public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> {
+public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> implements Filterable {
 	private static final String TAG = "SoundAdapter";
 	private static final Integer WRITE_EXST = 0x1;
 	private ArrayList<Sound> sounds;
+	private ArrayList<Sound> orig;
 	private boolean favoritesOnly = false;
 	private boolean showAnimations = true;
 
@@ -73,6 +78,10 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 		return favoritesOnly;
 	}
 
+	public ArrayList<Sound> getSounds() {
+		return sounds;
+	}
+
 	@Override
 	public SoundAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 		// Create a new view
@@ -81,7 +90,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 	}
 
 	@Override
-	public void onBindViewHolder(final ViewHolder holder, final int position) {
+	public void onBindViewHolder(final ViewHolder holder, int position) {
 		final Particle particle = new Particle(holder.itemView);
 		holder.title.setText(sounds.get(position).getName());
 		holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -328,7 +337,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
              */
 			public void onEvent(String event) {
 				EventBus.getDefault().unregister(this);
-				notifyItemChanged(position);
+				notifyItemChanged(holder.getAdapterPosition());
 			}
 
 			@Override
@@ -343,7 +352,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 						}
 						EventBus.getDefault().post(sounds.get(holder.getAdapterPosition()));
 						EventBus.getDefault().unregister(this);
-						notifyItemChanged(position);
+						notifyItemChanged(holder.getAdapterPosition());
 					}
 				} catch (EventBusException e) {
 					notifyDataSetChanged();
@@ -383,6 +392,40 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 	@Override
 	public int getItemCount() {
 		return sounds.size();
+	}
+
+	/**
+	 *  Receives a CharSequence as parameter and filters a list. Notifies.
+	 *  @see MainActivity initSearchView()
+	 *  @return filtered list.
+     */
+	@Override
+	public Filter getFilter() {
+		return new Filter() {
+			@Override
+			protected FilterResults performFiltering(CharSequence charSequence) {
+				final FilterResults filtered = new FilterResults();
+				final ArrayList<Sound> results = new ArrayList<Sound>();
+				if (orig == null) {
+					orig = sounds;
+				}
+				if (charSequence != null) {
+					if (orig != null && orig.size() > 0 ) {
+						for (final Sound sound : orig) {
+							if (sound.getName().toLowerCase().contains(charSequence.toString()))results.add(sound);
+						}
+					}
+					filtered.values = results;
+				}
+				return filtered;
+			}
+
+			@Override
+			protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+				sounds = (ArrayList<Sound>) filterResults.values;
+				notifyDataSetChanged();
+			}
+		};
 	}
 
 	public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener,

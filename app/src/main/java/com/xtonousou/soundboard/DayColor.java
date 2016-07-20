@@ -1,6 +1,8 @@
 package com.xtonousou.soundboard;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
+
 import java.util.Calendar;
 
 /**
@@ -23,28 +25,28 @@ public class DayColor {
         Calendar rightNow = Calendar.getInstance();
         switch (rightNow.get(Calendar.DAY_OF_WEEK)) {
             default:
-                accentColor = context.getResources().getColor(R.color.colorWhiteMinimalistic);
+                accentColor = ContextCompat.getColor(context, R.color.colorWhiteMinimalistic);
                 return accentColor;
             case Calendar.MONDAY:
-                accentColor = context.getResources().getColor(R.color.colorMonday);
+                accentColor = ContextCompat.getColor(context, R.color.colorMonday);
                 return accentColor;
             case Calendar.TUESDAY:
-                accentColor = context.getResources().getColor(R.color.colorTuesday);
+                accentColor = ContextCompat.getColor(context, R.color.colorTuesday);
                 return accentColor;
             case Calendar.WEDNESDAY:
-                accentColor = context.getResources().getColor(R.color.colorWednesday);
+                accentColor = ContextCompat.getColor(context, R.color.colorWednesday);
                 return accentColor;
             case Calendar.THURSDAY:
-                accentColor = context.getResources().getColor(R.color.colorThursday);
+                accentColor = ContextCompat.getColor(context, R.color.colorThursday);
                 return accentColor;
             case Calendar.FRIDAY:
-                accentColor = context.getResources().getColor(R.color.colorFriday);
+                accentColor = ContextCompat.getColor(context, R.color.colorFriday);
                 return accentColor;
             case Calendar.SATURDAY:
-                accentColor = context.getResources().getColor(R.color.colorSaturday);
+                accentColor = ContextCompat.getColor(context, R.color.colorSaturday);
                 return accentColor;
             case Calendar.SUNDAY:
-                accentColor = context.getResources().getColor(R.color.colorSunday);
+                accentColor = ContextCompat.getColor(context, R.color.colorSunday);
                 return accentColor;
         }
     }

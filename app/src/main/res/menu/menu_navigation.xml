@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:title="Home"
+            android:icon="@android:drawable/presence_audio_away"/>
+        <item
+            android:id="@+id/settings"
+            android:title="Settings"
+            android:icon="@android:drawable/sym_action_email"/>
+        <item
+            android:id="@+id/trash"
+            android:title="Trash"
+            android:icon="@android:drawable/ic_menu_add"/>
+        <item
+            android:id="@+id/logout"
+            android:title="Logout"
+            android:icon="@android:drawable/dialog_frame"/>
+    </group>
+</menu>

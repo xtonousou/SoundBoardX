@@ -45,6 +45,7 @@ public class SplashScreen extends AppCompatActivity {
         // finish activity
         finish();
         // start transition with fab's animation
-        overridePendingTransition(R.anim.fab_scale_up, R.anim.fab_scale_down);
+        // overridePendingTransition(R.anim., R.anim.);
+        // TODO add transition animation
     }
 }
