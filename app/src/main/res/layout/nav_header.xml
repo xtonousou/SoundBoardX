@@ -2,19 +2,19 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:paddingTop="20dp"
-    android:paddingBottom="20dp"
-    android:background="@color/colorPrimaryDark"
+    android:paddingTop="17dp"
+    android:paddingBottom="17dp"
     android:layout_width="match_parent"
-    android:layout_height="190dp"
-    android:id="@+id/drawer_layout">
+    android:layout_height="150dp"
+    android:id="@+id/nav_layout"
+    android:background="@color/colorPrimaryDark">
 
     <ImageView
-        android:src="@android:drawable/ic_media_play"
+        android:src="@drawable/ic_library_music_white_48dp"
         android:contentDescription="@string/drawer_header_pic"
-        android:layout_width="73dp"
+        android:layout_width="wrap_content"
         android:layout_gravity="center"
-        android:layout_weight="1.74"
+        android:layout_weight="50"
         android:layout_height="0dp" />
     <TextView
         android:id="@+id/drawer_title"

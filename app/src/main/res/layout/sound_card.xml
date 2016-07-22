@@ -20,8 +20,7 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="8dp"
             android:background="@null"
-            android:contentDescription="@string/not_fav_desc"
-            android:src="@drawable/ic_favorite_outline_white_24dp"/>
+            android:contentDescription="@string/not_fav_desc" />
 
         <TextView
             android:id="@+id/title"

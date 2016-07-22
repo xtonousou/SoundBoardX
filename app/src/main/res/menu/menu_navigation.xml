@@ -2,20 +2,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/home"
-            android:title="Home"
-            android:icon="@android:drawable/presence_audio_away"/>
+            android:id="@+id/drawer_animals"
+            android:title="@string/animals"
+            android:icon="@drawable/ic_pets_black_24dp"/>
         <item
-            android:id="@+id/settings"
-            android:title="Settings"
-            android:icon="@android:drawable/sym_action_email"/>
+            android:id="@+id/drawer_movies"
+            android:title="@string/movies"
+            android:icon="@drawable/ic_movie_black_24dp"/>
         <item
-            android:id="@+id/trash"
-            android:title="Trash"
-            android:icon="@android:drawable/ic_menu_add"/>
+            android:id="@+id/drawer_funny"
+            android:title="@string/funny"
+            android:icon="@drawable/ic_sentiment_very_satisfied_black_24dp"/>
         <item
-            android:id="@+id/logout"
-            android:title="Logout"
-            android:icon="@android:drawable/dialog_frame"/>
+            android:id="@+id/drawer_nsfw"
+            android:title="@string/nsfw"
+            android:icon="@drawable/ic_report_black_24dp"/>
+        <item
+            android:id="@+id/drawer_personal"
+            android:title="@string/personal"
+            android:icon="@drawable/ic_security_black_24dp"/>
     </group>
 </menu>
