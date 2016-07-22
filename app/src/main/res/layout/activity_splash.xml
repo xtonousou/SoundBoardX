@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center">
 
-    <com.xtonousou.soundboard.TitanicTextView
-        android:id="@+id/titanic_tv"
-        android:text="@string/loading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#212121"
-        android:textSize="90sp"
+    <com.github.rahatarmanahmed.cpv.CircularProgressView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/splash_progress_view"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        app:cpv_animAutostart="true"
+        app:cpv_indeterminate="true"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
 

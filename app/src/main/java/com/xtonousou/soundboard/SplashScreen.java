@@ -1,11 +1,18 @@
 package com.xtonousou.soundboard;
 
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+
+import com.github.rahatarmanahmed.cpv.CircularProgressView;
 
 public class SplashScreen extends AppCompatActivity {
+
+    public final static String TAG = "SplashActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,10 +22,14 @@ public class SplashScreen extends AppCompatActivity {
         final Thread timerThread = new Thread() {
             public void run() {
                 try {
-                    // give animation some time to finish
-                    sleep(4500);
+                    PowerManager powerManager = (PowerManager) SplashScreen.this.getSystemService(Context.POWER_SERVICE);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && powerManager.isPowerSaveMode()) {
+                        sleep(0);
+                    } else {
+                        sleep(1550);
+                    }
                 } catch(InterruptedException e) {
-                    e.printStackTrace();
+                    Log.e(TAG, e.getMessage());
                 } finally {
                     Intent intent = new Intent(SplashScreen.this, MainActivity.class);
                     startActivity(intent);
@@ -29,14 +40,9 @@ public class SplashScreen extends AppCompatActivity {
         // start thread
         timerThread.start();
 
-        TitanicTextView tv = (TitanicTextView) findViewById(R.id.titanic_tv);
-
-        // satisfied?
-        Typeface font = Typeface.createFromAsset(tv.getContext().getAssets(), "fonts/Satisfy-Regular.ttf");
-        tv.setTypeface(font);
-
-        // start animation
-        new Titanic().start(tv);
+        CircularProgressView progressView = (CircularProgressView) findViewById(R.id.splash_progress_view);
+        progressView.setColor((new DayColor(progressView.getContext())).getDayColor());
+        progressView.startAnimation();
     }
 
     @Override
@@ -44,8 +50,6 @@ public class SplashScreen extends AppCompatActivity {
         super.onPause();
         // finish activity
         finish();
-        // start transition with fab's animation
-        // overridePendingTransition(R.anim., R.anim.);
-        // TODO add transition animation
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 }
