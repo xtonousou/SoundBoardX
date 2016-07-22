@@ -1,9 +1,9 @@
 package com.xtonousou.soundboard;
 
-public class Sound {
+class Sound {
 
     private String name;
-    private int resourceId;
+    private final int resourceId;
     private boolean favorite;
 
     public Sound(String name, int resourceId) {

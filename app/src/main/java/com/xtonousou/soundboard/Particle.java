@@ -7,9 +7,9 @@ import android.view.animation.AnticipateOvershootInterpolator;
 
 import com.plattysoft.leonids.ParticleSystem;
 
-public class Particle {
+class Particle {
 
-    private View view;
+    private final View view;
 
     public Particle(View view) {
         this.view = view;
