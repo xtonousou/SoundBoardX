@@ -13,7 +13,7 @@ import android.view.animation.LinearInterpolator;
  * Date: 14/03/2014
  * Time: 09:34
  */
-public class Titanic {
+class Titanic {
 
     private AnimatorSet animatorSet;
     private Animator.AnimatorListener animatorListener;

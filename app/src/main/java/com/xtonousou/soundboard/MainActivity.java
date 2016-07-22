@@ -1,26 +1,39 @@
 package com.xtonousou.soundboard;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.os.Vibrator;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.ContextThemeWrapper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,26 +45,34 @@ import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.romainpiel.shimmer.Shimmer;
 import com.romainpiel.shimmer.ShimmerTextView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
+
+import pub.devrel.easypermissions.AfterPermissionGranted;
+import pub.devrel.easypermissions.EasyPermissions;
+
+public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
+    public static final String TAG = "MainActivity";
+    private static final int RC_WRITE_SETNGS_PERM_AFTER_M = 0x0;
+    private static final int RC_WRITE_SETNGS_PERM = 0x1;
+    private static final int RC_WRITE_EXST_PERM = 0x2;
 
     private static SoundPlayer soundPlayer;
-    boolean DEVELOPER_MODE = false; // If debug set true
     private DrawerLayout drawerLayout;
     private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        if (DEVELOPER_MODE) {
-            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
-                    .detectAll()
-                    .penaltyLog()
-                    .penaltyDialog()
-                    .build());
-            StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll()
-                    .penaltyLog()
-                    .build());
-        }
+//        boolean DEVELOPER_MODE = false;
+//        if (DEVELOPER_MODE) {
+//            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+//                    .detectAll()
+//                    .penaltyLog()
+//                    .penaltyDialog()
+//                    .build());
+//            StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll()
+//                    .penaltyLog()
+//                    .build());
+//        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -77,6 +98,14 @@ public class MainActivity extends AppCompatActivity {
         beautifyToolbar();
         initNavigationDrawer();
         initFloatingButtons();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            writeSettingsPermissionAfterM();
+            writeExternalStoragePermission();
+        } else {
+            writeSettingsPermission();
+            writeExternalStoragePermission();
+        }
     }
 
     @Override
@@ -92,6 +121,97 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            default:
+                break;
+            case EasyPermissions.SETTINGS_REQ_CODE:
+                Toast.makeText(this, R.string.returned_from_app_settings_to_activity, Toast.LENGTH_SHORT)
+                        .show();
+                break;
+            case RC_WRITE_SETNGS_PERM_AFTER_M:
+                Toast.makeText(this, R.string.returned_from_app_settings_to_activity, Toast.LENGTH_SHORT)
+                        .show();
+                break;
+        }
+    }
+
+    @AfterPermissionGranted (RC_WRITE_EXST_PERM)
+    public void writeExternalStoragePermission() {
+        if (EasyPermissions.hasPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            // Have permission, do the thing!
+            Toast.makeText(this, "Permission granted", Toast.LENGTH_LONG).show();
+        } else {
+            // Ask for one permission
+            EasyPermissions.requestPermissions(this, getString(R.string.rationale_exst),
+                    RC_WRITE_EXST_PERM, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        }
+    }
+
+    @AfterPermissionGranted(RC_WRITE_SETNGS_PERM)
+    public void writeSettingsPermission() {
+        if (EasyPermissions.hasPermissions(this, Manifest.permission.WRITE_SETTINGS)) {
+            // Have permissions, do the thing!
+            Toast.makeText(this, "Permission granted", Toast.LENGTH_LONG).show();
+        } else {
+            // Ask for both permissions
+            EasyPermissions.requestPermissions(this, getString(R.string.rationale_settings),
+            RC_WRITE_SETNGS_PERM, Manifest.permission.WRITE_SETTINGS);
+        }
+    }
+
+    @AfterPermissionGranted(RC_WRITE_SETNGS_PERM_AFTER_M)
+    public void writeSettingsPermissionAfterM() {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            if (!Settings.System.canWrite(getApplicationContext())) {
+                final Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS,
+                        Uri.parse("package:" + getPackageName()));
+                new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.DialogTheme))
+                        .setTitle("Need permission")
+                        .setMessage(R.string.rationale_settings)
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            @SuppressLint ("NewApi")
+                            public void onClick(DialogInterface dialog, int which) {
+                                startActivityForResult(intent, RC_WRITE_SETNGS_PERM_AFTER_M);
+                            }
+                        })
+                        .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        })
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        // EasyPermissions handles the request result.
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> perms) {
+        Log.d(TAG, "onPermissionsGranted:" + requestCode + ":" + perms.size());
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> perms) {
+        Log.d(TAG, "onPermissionsDenied:" + requestCode + ":" + perms.size());
+
+        // (Optional) Check whether the user denied permissions and checked NEVER ASK AGAIN.
+        // This will display a dialog directing them to enable the permission in app settings.
+        EasyPermissions.checkDeniedPermissionsNeverAskAgain(this,
+                getString(R.string.rationale_ask_again),
+                R.string.setting, R.string.cancel, null, perms);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.item, menu);
         initSearchView(menu);
@@ -102,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
      *  If Build Version is equal or greater than LOLLIPOP, it changes status bar's color.
      *  See getAccentColor() method for color details.
      */
-    public void beautifyStatusBar(Context context) {
+    private void beautifyStatusBar(Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor((new DayColor(context)).getDayColor());
         }
@@ -113,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
      *  Fonts are located at assets/fonts.
      *  Shimmering effect depends on "com.romainpiel.shimmer:library:1.4.0@aar"
      */
-    public void beautifyToolbar() {
+    private void beautifyToolbar() {
         ShimmerTextView shimmerTextView = (ShimmerTextView) findViewById(R.id.shimmerTitle);
         Typeface font = Typeface.createFromAsset(shimmerTextView.getContext().getAssets(), "fonts/CaviarDreams.ttf");
         shimmerTextView.setTypeface(font);
@@ -137,7 +257,7 @@ public class MainActivity extends AppCompatActivity {
      *  @see android.widget.Filterable, adapter filters current list using Filterable.
      *  @param menu The menu.
      */
-    public void initSearchView(Menu menu) {
+    private void initSearchView(Menu menu) {
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
         SearchView.SearchAutoComplete searchViewText = (SearchView.SearchAutoComplete) searchView.findViewById(R.id.search_src_text);
@@ -198,7 +318,7 @@ public class MainActivity extends AppCompatActivity {
      *  @see SoundAdapter         adapter         ---> used adapter.
      *  Depends on 'com.getbase:floatingactionbutton:1.10.1'.
      */
-    public void initFloatingButtons() {
+    private void initFloatingButtons() {
         FloatingActionsMenu        fab_menu        = (FloatingActionsMenu ) findViewById(R.id.fab_menu);
         FloatingActionButton       stopButton      = (FloatingActionButton) findViewById(R.id.fab_stop);
         final FloatingActionButton animationToggle = (FloatingActionButton) findViewById(R.id.fab_anim);
@@ -209,7 +329,7 @@ public class MainActivity extends AppCompatActivity {
 
         stopButton     .setIcon(R.drawable.ic_volume_off_white_24dp      );
         animationToggle.setIcon(R.drawable.ic_visibility_white_24dp      );
-        favoritesToggle.setIcon(R.drawable.ic_favorite_outline_white_24dp);
+        favoritesToggle.setIcon(R.drawable.ic_star_border_white_24dp);
 
         favoritesToggle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -218,10 +338,10 @@ public class MainActivity extends AppCompatActivity {
                 vibe.vibrate(40);
                 if (!adapter.isFavoritesOnly()) {
                     adapter.onlyShowFavorites();
-                    favoritesToggle.setIcon(R.drawable.ic_favorite_white_24dp);
+                    favoritesToggle.setIcon(R.drawable.ic_star_white_24dp);
                 } else if (adapter.isFavoritesOnly()) {
                     adapter.showAllSounds(getApplicationContext());
-                    favoritesToggle.setIcon(R.drawable.ic_favorite_outline_white_24dp);
+                    favoritesToggle.setIcon(R.drawable.ic_star_border_white_24dp);
                 }
             }
         });
@@ -246,8 +366,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibe.vibrate(40);
-                onPause();
-                onResume();
+                soundPlayer.release();
+                soundPlayer = new SoundPlayer(getApplicationContext());
             }
         });
     }
@@ -261,7 +381,7 @@ public class MainActivity extends AppCompatActivity {
      *  GOTO res/layout/nav_header.xml to customize header (ImageView, TextView).
      *  GOTO res/menu/menu_navigation.xml to add, delete or change Navigation Drawer's items.
      */
-    public void initNavigationDrawer() {
+    private void initNavigationDrawer() {
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
