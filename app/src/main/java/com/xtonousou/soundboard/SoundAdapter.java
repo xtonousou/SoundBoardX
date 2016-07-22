@@ -1,20 +1,13 @@
 package com.xtonousou.soundboard;
 
-import android.Manifest;
-import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -39,8 +32,7 @@ import de.greenrobot.event.EventBus;
 import de.greenrobot.event.EventBusException;
 
 public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> implements Filterable {
-	private static final String TAG = "SoundAdapter";
-	private static final Integer WRITE_EXST = 0x1;
+	public static final String TAG = "SoundAdapter";
 	private ArrayList<Sound> sounds;
 	private ArrayList<Sound> orig;
 	private boolean favoritesOnly = false;
@@ -363,8 +355,8 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 
 		boolean isFavorite = sounds.get(position).getFavorite();
 		holder.favButton.setImageResource(isFavorite
-				? R.drawable.ic_favorite_white_24dp
-				: R.drawable.ic_favorite_outline_white_24dp);
+				? R.drawable.ic_star_white_24dp
+				: R.drawable.ic_star_border_white_24dp);
 
 		holder.favButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -373,10 +365,10 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 				sounds.get(holder.getAdapterPosition()).setFavorite(newFavStatus);
 
 				if (newFavStatus) {
-					((ImageButton) v).setImageResource(R.drawable.ic_favorite_white_24dp);
+					((ImageButton) v).setImageResource(R.drawable.ic_star_white_24dp);
 					v.setContentDescription(v.getContext().getString(R.string.fav_desc));
 				} else {
-					((ImageButton) v).setImageResource(R.drawable.ic_favorite_outline_white_24dp);
+					((ImageButton) v).setImageResource(R.drawable.ic_star_border_white_24dp);
 					v.setContentDescription(v.getContext().getString(R.string.not_fav_desc));
 				}
 
@@ -405,7 +397,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 			@Override
 			protected FilterResults performFiltering(CharSequence charSequence) {
 				final FilterResults filtered = new FilterResults();
-				final ArrayList<Sound> results = new ArrayList<Sound>();
+				final ArrayList<Sound> results = new ArrayList<>();
 				if (orig == null) {
 					orig = sounds;
 				}
@@ -430,8 +422,8 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 
 	public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener,
 			MenuItem.OnMenuItemClickListener {
-		public TextView title;
-		public ImageButton favButton;
+		public final TextView title;
+		public final ImageButton favButton;
 
 		public ViewHolder(View v) {
 			super(v);
@@ -466,11 +458,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
                 default:
                     Log.e(TAG, "onMenuItemClick: menuItem.getTitle().toString()");
                 case "Set as ringtone":
-
-                    // Ask for permissions gently, senpai ^_^
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        ask(itemView);
-                    }
 
                     createDirIfNotExists("/xSoundBoardHD/Ringtones");
 
@@ -707,11 +694,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
                     break;
                 case "Set as notification":
 
-                    // Ask for permissions gently, senpai ^_^
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        ask(itemView);
-                    }
-
                     createDirIfNotExists("/xSoundBoardHD/Notifications");
 
                     itemName = title.getText().toString();
@@ -946,11 +928,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
                     notificationToast();
                     break;
                 case "Set as alarm":
-
-                    // Ask for permissions gently, senpai ^_^
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        ask(itemView);
-                    }
 
                     createDirIfNotExists("/xSoundBoardHD/Alarms");
 
@@ -1190,51 +1167,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 		}
 
 		/**
-		 * Asks user for permission using the new permission model.
-		 * @param permission	Manifest.permission.SOME_PERMISSION.
-		 * @param requestCode	private static final Integer SOME_PERMISSION = 0xSOME_INTEGER;.
-         * @param context		Context from view.
-         */
-		private void askForPermission(String permission, Integer requestCode, Context context) {
-			if (ContextCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
-				// Should we show an explanation?
-				if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) context, permission)) {
-					/**
-					 *  This is called if user has denied the permission before
-					 *  In this case I am just asking the permission again
- 					 */
-					ActivityCompat.requestPermissions((Activity) context, new String[]{permission}, requestCode);
-				} else {
-					ActivityCompat.requestPermissions((Activity) context, new String[]{permission}, requestCode);
-				}
-			}
-		}
-
-		/**
-		 *  Calls askForPermission(String, Integer, Context) and decides.
-		 *  Calls onRequestPermissionsResult(Context, View, String)
-		 *  @param v	View.
-         */
-		public void ask(View v){
-			askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, WRITE_EXST, v.getContext());
-			onRequestPermissionsResult(v.getContext(), v, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-		}
-
-		/**
-		 *  Checks user permission decision and notifies him with a snackbar.
-		 *  @param context		The Context.
-		 *  @param view			The View.
-         *  @param permission	Manifest.permission.SOME_PERMISSION
-         */
-		public void onRequestPermissionsResult(Context context, View view, String permission) {
-			if (ContextCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_GRANTED) {
-				Snackbar.make(view, "Permission granted", Snackbar.LENGTH_SHORT).show();
-			} else {
-				Snackbar.make(view, "Permission denied", Snackbar.LENGTH_SHORT).show();
-			}
-		}
-
-		/**
 		 *  Makes a toast.
 		 *  Method called if user set a sound as ringtone.
 		 */
@@ -1261,8 +1193,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 		/**
 		 *  Saves sound selected by user in /xSoundBoardHD/Ringtones/, cleans filename and sets it as ringtone
 		 *  @param ressound	R.raw.resourcesound
-         *  @return	true
-         */
+		 */
 		public boolean setAsRingtone(int ressound){
 			byte[] buffer;
 			InputStream fIn = itemView.getContext().getResources().openRawResource(ressound);
@@ -1330,7 +1261,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 		/**
 		 *  Saves sound selected by user in /xSoundBoardHD/Notifications/, cleans filename and sets it as notification
 		 *  @param ressound	R.raw.resourcesound
-		 *  @return	true
 		 */
 		public boolean setAsNotification(int ressound){
 			byte[] buffer;
@@ -1358,8 +1288,8 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 
 			boolean exists = (new File(path)).exists();
 			if (!exists) {
-                new File(path).mkdirs();
-            }
+				new File(path).mkdirs();
+			}
 
 			FileOutputStream save;
 			try {
@@ -1397,82 +1327,81 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 			return true;
 		}
 
-        /**
-         *  Saves sound selected by user in /xSoundBoardHD/Alarms/, cleans filename and sets it as alarm
-         *  @param ressound	R.raw.resourcesound
-         *  @return	true
-         */
-        public boolean setAsAlarm(int ressound){
-            byte[] buffer;
-            InputStream fIn = itemView.getContext().getResources().openRawResource(ressound);
-            int size;
+		/**
+		 *  Saves sound selected by user in /xSoundBoardHD/Alarms/, cleans filename and sets it as alarm
+		 *  @param ressound	R.raw.resourcesound
+		 */
+		public boolean setAsAlarm(int ressound){
+			byte[] buffer;
+			InputStream fIn = itemView.getContext().getResources().openRawResource(ressound);
+			int size;
 
-            try {
-                size = fIn.available();
-                buffer = new byte[size];
-                fIn.read(buffer);
-                fIn.close();
-            } catch (IOException e) {
-                return false;
-            }
+			try {
+				size = fIn.available();
+				buffer = new byte[size];
+				fIn.read(buffer);
+				fIn.close();
+			} catch (IOException e) {
+				return false;
+			}
 
-            String path = Environment.getExternalStorageDirectory().getPath() + "/xSoundBoardHD/Alarms/";
+			String path = Environment.getExternalStorageDirectory().getPath() + "/xSoundBoardHD/Alarms/";
 
-            String string = title.getText().toString();
-            String cleanString = FileNameCleaner.cleanFileName(string);
-            cleanString = cleanString.replaceAll(" ", "_");
+			String string = title.getText().toString();
+			String cleanString = FileNameCleaner.cleanFileName(string);
+			cleanString = cleanString.replaceAll(" ", "_");
 
-            String filename = cleanString.toLowerCase() + ".mp3";
+			String filename = cleanString.toLowerCase() + ".mp3";
 
-            System.out.println(filename);
+			System.out.println(filename);
 
-            boolean exists = (new File(path)).exists();
-            if (!exists) {
-                new File(path).mkdirs();
-            }
+			boolean exists = (new File(path)).exists();
+			if (!exists) {
+				new File(path).mkdirs();
+			}
 
-            FileOutputStream save;
-            try {
-                save = new FileOutputStream(path + filename);
-                save.write(buffer);
-                save.flush();
-                save.close();
-            } catch (FileNotFoundException e) {
-                return false;
-            } catch (IOException e) {
-                return false;
-            }
+			FileOutputStream save;
+			try {
+				save = new FileOutputStream(path + filename);
+				save.write(buffer);
+				save.flush();
+				save.close();
+			} catch (FileNotFoundException e) {
+				return false;
+			} catch (IOException e) {
+				return false;
+			}
 
-            itemView.getContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file:/" + path + filename)));
+			itemView.getContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file:/" + path + filename)));
 
-            File k = new File(path, filename);
-            ContentValues values = new ContentValues();
-            values.put(MediaStore.MediaColumns.DATA, k.getAbsolutePath());
-            values.put(MediaStore.MediaColumns.TITLE, "Alarm");
-            values.put(MediaStore.MediaColumns.MIME_TYPE, "audio/mp3");
-            values.put(MediaStore.Audio.Media.ARTIST, "xToNouSou");
-            values.put(MediaStore.Audio.Media.IS_RINGTONE, true);
-            values.put(MediaStore.Audio.Media.IS_NOTIFICATION, true);
-            values.put(MediaStore.Audio.Media.IS_ALARM, true);
-            values.put(MediaStore.Audio.Media.IS_MUSIC, false);
+			File k = new File(path, filename);
+			ContentValues values = new ContentValues();
+			values.put(MediaStore.MediaColumns.DATA, k.getAbsolutePath());
+			values.put(MediaStore.MediaColumns.TITLE, "Alarm");
+			values.put(MediaStore.MediaColumns.MIME_TYPE, "audio/mp3");
+			values.put(MediaStore.Audio.Media.ARTIST, "xToNouSou");
+			values.put(MediaStore.Audio.Media.IS_RINGTONE, true);
+			values.put(MediaStore.Audio.Media.IS_NOTIFICATION, true);
+			values.put(MediaStore.Audio.Media.IS_ALARM, true);
+			values.put(MediaStore.Audio.Media.IS_MUSIC, false);
 
-            //Insert it into the database
-            Uri newUri = itemView.getContext().getContentResolver().insert(MediaStore.Audio.Media.getContentUriForPath(k.getAbsolutePath()), values);
+			//Insert it into the database
+			Uri newUri = itemView.getContext().getContentResolver().insert(MediaStore.Audio.Media.getContentUriForPath(k.getAbsolutePath()), values);
 
-            try {
-                RingtoneManager.setActualDefaultRingtoneUri(itemView.getContext(), RingtoneManager.TYPE_ALARM, newUri);
-            } catch (Throwable t) {
-                System.err.println(t.getMessage());
-            }
-            return true;
-        }
+			try {
+				RingtoneManager.setActualDefaultRingtoneUri(itemView.getContext(), RingtoneManager.TYPE_ALARM, newUri);
+			} catch (Throwable t) {
+				System.err.println(t.getMessage());
+			}
+			return true;
+		}
 	}
 
 	/**
 	 *  Creates working directory if does not exist.
 	 *  @param path	String.
 	 *  @return	true for successful directory creation or false if there was problem while creating folder
-     */
+	 */
 	public static boolean createDirIfNotExists(String path) {
 		boolean ret = true;
 		File file = new File(Environment.getExternalStorageDirectory() + File.separator + path);

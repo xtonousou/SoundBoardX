@@ -68,6 +68,28 @@ public class TitanicTextView extends TextView {
         this.animationSetupCallback = animationSetupCallback;
     }
 
+    public float getMaskX() {
+        return maskX;
+    }
+
+    public void setMaskX(float maskX) {
+        this.maskX = maskX;
+        invalidate();
+    }
+
+    public float getMaskY() {
+        return maskY;
+    }
+
+    public void setMaskY(float maskY) {
+        this.maskY = maskY;
+        invalidate();
+    }
+
+    public boolean isSinking() {
+        return sinking;
+    }
+
     public void setSinking(boolean sinking) {
         this.sinking = sinking;
     }
@@ -114,11 +136,10 @@ public class TitanicTextView extends TextView {
         }
 
         int waveW = 0;
+        int waveH = 0;
+
         if (wave != null) {
             waveW = wave.getIntrinsicWidth();
-        }
-        int waveH = 0;
-        if (wave != null) {
             waveH = wave.getIntrinsicHeight();
         }
 

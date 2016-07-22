@@ -1,20 +1,16 @@
 package com.xtonousou.soundboard;
 
-import android.app.Service;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
-import android.os.IBinder;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import java.io.IOException;
 import de.greenrobot.event.EventBus;
 
-public class SoundPlayer {
+class SoundPlayer {
 
     private MediaPlayer mPlayer;
-    private Context mContext;
+    private final Context mContext;
     private static final String TAG = "SoundPlayer";
 
     public SoundPlayer(Context context) {

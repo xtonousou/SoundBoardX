@@ -3,10 +3,10 @@ package com.xtonousou.soundboard;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import java.text.Normalizer;
+
 import java.util.ArrayList;
 
-public abstract class  SoundStore {
+abstract class SoundStore {
 
     /**
      *  Gets all sounds.

@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 
 public class FavStore {
     private static FavStore instance;
-    private SharedPreferences prefs;
+    private final SharedPreferences prefs;
 
     public static void init(SharedPreferences prefs) {
         instance = new FavStore(prefs);
