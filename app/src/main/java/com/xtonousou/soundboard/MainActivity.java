@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     private static final int RC_WRITE_EXST_PERM = 0x2;
 
     private static SoundPlayer soundPlayer;
-    private DrawerLayout drawerLayout;
+    private DrawerLayout mDrawerLayout;
     private Toolbar mToolbar;
 
     @Override
@@ -379,6 +379,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
      */
     private void initNavigationDrawer() {
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        navigationView.setBackgroundColor((new DayColor(navigationView.getContext()).getDayColor()));
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
@@ -386,32 +387,36 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 int id = menuItem.getItemId();
 
                 switch (id) {
-                    case R.id.home:
-                        Toast.makeText(getApplicationContext(),"Home", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawers();
-                        break;
-                    case R.id.settings:
-                        Toast.makeText(getApplicationContext(),"Settings", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.trash:
-                        Toast.makeText(getApplicationContext(),"Trash", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawers();
-                        break;
-                    case R.id.logout:
+                    default:
                         finish();
+                        break;
+                    case R.id.drawer_animals:
+                        mDrawerLayout.closeDrawers();
+                        break;
+                    case R.id.drawer_movies:
+                        mDrawerLayout.closeDrawers();
+                        break;
+                    case R.id.drawer_funny:
+                        mDrawerLayout.closeDrawers();
+                        break;
+                    case R.id.drawer_nsfw:
+                        mDrawerLayout.closeDrawers();
+                        break;
+                    case R.id.drawer_personal:
+                        mDrawerLayout.closeDrawers();
+                        break;
                 }
                 return true;
             }
         });
-
         View header = navigationView.getHeaderView(0);
         TextView mDrawerTitle = (TextView) header.findViewById(R.id.drawer_title);
         Typeface font = Typeface.createFromAsset(mDrawerTitle.getContext().getAssets(), "fonts/Roboto-Regular.ttf");
         mDrawerTitle.setTypeface(font);
         mDrawerTitle.setText(R.string.categories);
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
-
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close) {
+//        ListView listView = (ListView) findViewById(R.id.)
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close) {
 
             @Override
             public void onDrawerClosed(View v) {
@@ -423,7 +428,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 super.onDrawerOpened(v);
             }
         };
-        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        mDrawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
     }
 }
