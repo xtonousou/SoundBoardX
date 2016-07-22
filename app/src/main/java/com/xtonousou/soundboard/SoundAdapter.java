@@ -690,7 +690,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 //                        setAsRingtone(R.raw.);
 //                        break;
                     }
-                    ringtoneToast();
                     break;
                 case "Set as notification":
 
@@ -925,7 +924,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 //                        setAsNotification(R.raw.);
 //                        break;
                     }
-                    notificationToast();
                     break;
                 case "Set as alarm":
 
@@ -1160,7 +1158,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 //                        setAsAlarm(R.raw.);
 //                        break;
                     }
-                    alarmToast();
                     break;
             }
 			return true;
@@ -1251,6 +1248,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 
 			try {
 				RingtoneManager.setActualDefaultRingtoneUri(itemView.getContext(), RingtoneManager.TYPE_RINGTONE, newUri);
+                ringtoneToast();
 			} catch (Throwable t) {
 				System.err.println(t.getMessage());
 			}
@@ -1321,6 +1319,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 
 			try {
 				RingtoneManager.setActualDefaultRingtoneUri(itemView.getContext(), RingtoneManager.TYPE_NOTIFICATION, newUri);
+                notificationToast();
 			} catch (Throwable t) {
 				System.err.println(t.getMessage());
 			}
@@ -1390,6 +1389,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 
 			try {
 				RingtoneManager.setActualDefaultRingtoneUri(itemView.getContext(), RingtoneManager.TYPE_ALARM, newUri);
+                alarmToast();
 			} catch (Throwable t) {
 				System.err.println(t.getMessage());
 			}
