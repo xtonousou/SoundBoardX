@@ -19,4 +19,6 @@
     <string name="setting">Settings</string>
     <string name="cancel">Cancel</string>
     <string name="returned_from_app_settings_to_activity">Returned from app settings to MainActivity</string>
+    <string name="splash_mipmap_desc">Mipmap shown in splashscreen</string>
+    <string name="splash_screen_image">Splash screen image.</string>
 </resources>
