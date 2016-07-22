@@ -17,5 +17,5 @@ The Ultimate Android Soundboard.
 - [ ] **Categorize sounds**
 - [ ] Fix Sounds (Enhance, Crop, Rename)
 - [ ] Remove non-English sounds
-- [ ] Fix search logic
+- [ ] **Fix search logic**
 - [X] **Permission requests for >= M**
