@@ -479,9 +479,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
             }
         });
         View header = navigationView.getHeaderView(0);
-        TextView mDrawerTitle = (TextView) header.findViewById(R.id.drawer_title);
-        Typeface font = Typeface.createFromAsset(mDrawerTitle.getContext().getAssets(), "fonts/Roboto-Regular.ttf");
-        mDrawerTitle.setTypeface(font);
+        final TextView mDrawerTitle = (TextView) header.findViewById(R.id.drawer_title);
+        Typeface mFont = Typeface.createFromAsset(mDrawerTitle.getContext().getAssets(), "fonts/Roboto-Regular.ttf");
+        mDrawerTitle.setTypeface(mFont);
         mDrawerTitle.setText(R.string.categories);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close) {
