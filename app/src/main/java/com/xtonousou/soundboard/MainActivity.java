@@ -56,6 +56,14 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     private DrawerLayout mDrawerLayout;
     private Toolbar mToolbar;
 
+    private boolean areAllSoundsOnly = true;
+    private boolean areAnimalsSoundsOnly = false;
+    private boolean areFunnySoundsOnly = false;
+    private boolean areGamesSoundsOnly = false;
+    private boolean areMoviesSoundsOnly = false;
+    private boolean areNSFWSoundsOnly = false;
+    private boolean arePersonalSoundsOnly = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 //        boolean DEVELOPER_MODE = false;
@@ -279,7 +287,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         }
                     });
                 }
-                searchView.clearFocus();
                 return true;
             }
 
@@ -336,8 +343,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                     adapter.onlyShowFavorites();
                     favoritesToggle.setIcon(R.drawable.ic_star_white_24dp);
                 } else if (adapter.isFavoritesOnly()) {
-                    adapter.showAllSounds(getApplicationContext());
                     favoritesToggle.setIcon(R.drawable.ic_star_border_white_24dp);
+                    adapter.showAllSounds(getApplicationContext());
                 }
             }
         });
@@ -378,31 +385,93 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
      *  GOTO res/menu/menu_navigation.xml to add, delete or change Navigation Drawer's items.
      */
     private void initNavigationDrawer() {
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        final SoundAdapter   adapter        = ((SoundAdapter)((RecyclerView) findViewById(R.id.grid_view)).getAdapter());
+              NavigationView navigationView = (NavigationView)               findViewById(R.id.navigation_view);
+
         navigationView.setBackgroundColor((new DayColor(navigationView.getContext()).getDayColor()));
+        navigationView.setCheckedItem(R.id.drawer_all);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-
-                int id = menuItem.getItemId();
-
-                switch (id) {
+                switch (menuItem.getItemId()) {
                     default:
                         finish();
                         break;
-                    case R.id.drawer_animals:
+                    case R.id.drawer_all:
+                        areAllSoundsOnly = true;
+                        areAnimalsSoundsOnly = false;
+                        areFunnySoundsOnly = false;
+                        areGamesSoundsOnly = false;
+                        areMoviesSoundsOnly = false;
+                        areNSFWSoundsOnly = false;
+                        arePersonalSoundsOnly = false;
+                        adapter.showAllSounds(getApplicationContext());
                         mDrawerLayout.closeDrawers();
                         break;
-                    case R.id.drawer_movies:
+                    case R.id.drawer_animals:
+                        areAllSoundsOnly = false;
+                        areAnimalsSoundsOnly = true;
+                        areFunnySoundsOnly = false;
+                        areGamesSoundsOnly = false;
+                        areMoviesSoundsOnly = false;
+                        areNSFWSoundsOnly = false;
+                        arePersonalSoundsOnly = false;
+                        adapter.showAnimalsSounds(getApplicationContext());
                         mDrawerLayout.closeDrawers();
                         break;
                     case R.id.drawer_funny:
+                        areAllSoundsOnly = false;
+                        areAnimalsSoundsOnly = false;
+                        areFunnySoundsOnly = true;
+                        areGamesSoundsOnly = false;
+                        areMoviesSoundsOnly = false;
+                        areNSFWSoundsOnly = false;
+                        arePersonalSoundsOnly = false;
+                        adapter.showFunnySounds(getApplicationContext());
+                        mDrawerLayout.closeDrawers();
+                        break;
+                    case R.id.drawer_games:
+                        areAllSoundsOnly = false;
+                        areAnimalsSoundsOnly = false;
+                        areFunnySoundsOnly = false;
+                        areGamesSoundsOnly = true;
+                        areMoviesSoundsOnly = false;
+                        areNSFWSoundsOnly = false;
+                        arePersonalSoundsOnly = false;
+                        adapter.showGamesSounds(getApplicationContext());
+                        mDrawerLayout.closeDrawers();
+                        break;
+                    case R.id.drawer_movies:
+                        areAllSoundsOnly = false;
+                        areAnimalsSoundsOnly = false;
+                        areFunnySoundsOnly = false;
+                        areGamesSoundsOnly = false;
+                        areMoviesSoundsOnly = true;
+                        areNSFWSoundsOnly = false;
+                        arePersonalSoundsOnly = false;
+                        adapter.showMoviesSounds(getApplicationContext());
                         mDrawerLayout.closeDrawers();
                         break;
                     case R.id.drawer_nsfw:
+                        areAllSoundsOnly = false;
+                        areAnimalsSoundsOnly = false;
+                        areFunnySoundsOnly = false;
+                        areGamesSoundsOnly = false;
+                        areMoviesSoundsOnly = false;
+                        areNSFWSoundsOnly = true;
+                        arePersonalSoundsOnly = false;
+                        adapter.showNSFWSounds(getApplicationContext());
                         mDrawerLayout.closeDrawers();
                         break;
                     case R.id.drawer_personal:
+                        areAllSoundsOnly = false;
+                        areAnimalsSoundsOnly = false;
+                        areFunnySoundsOnly = false;
+                        areGamesSoundsOnly = false;
+                        areMoviesSoundsOnly = false;
+                        areNSFWSoundsOnly = false;
+                        arePersonalSoundsOnly = true;
+                        adapter.showPersonalSounds(getApplicationContext());
                         mDrawerLayout.closeDrawers();
                         break;
                 }
@@ -414,7 +483,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         Typeface font = Typeface.createFromAsset(mDrawerTitle.getContext().getAssets(), "fonts/Roboto-Regular.ttf");
         mDrawerTitle.setTypeface(font);
         mDrawerTitle.setText(R.string.categories);
-//        ListView listView = (ListView) findViewById(R.id.)
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close) {
 

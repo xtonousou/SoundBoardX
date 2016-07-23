@@ -26,4 +26,6 @@
     <string name="funny">Funny</string>
     <string name="nsfw">NSFW</string>
     <string name="personal">Personal</string>
+    <string name="games">Games</string>
+    <string name="all">All</string>
 </resources>

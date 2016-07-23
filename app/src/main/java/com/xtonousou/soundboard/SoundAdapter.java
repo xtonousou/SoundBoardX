@@ -58,6 +58,42 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 		notifyDataSetChanged();
 	}
 
+	public void showAnimalsSounds(Context context) {
+		favoritesOnly = false;
+		sounds = SoundStore.getAnimalsSounds(context);
+		notifyDataSetChanged();
+	}
+
+	public void showFunnySounds(Context context) {
+		favoritesOnly = false;
+		sounds = SoundStore.getFunnySounds(context);
+		notifyDataSetChanged();
+	}
+
+	public void showGamesSounds(Context context) {
+		favoritesOnly = false;
+		sounds = SoundStore.getGamesSounds(context);
+		notifyDataSetChanged();
+	}
+
+	public void showMoviesSounds(Context context) {
+		favoritesOnly = false;
+		sounds = SoundStore.getMoviesSounds(context);
+		notifyDataSetChanged();
+	}
+
+	public void showNSFWSounds(Context context) {
+		favoritesOnly = false;
+		sounds = SoundStore.getNSFWSounds(context);
+		notifyDataSetChanged();
+	}
+
+	public void showPersonalSounds(Context context) {
+		favoritesOnly = false;
+		sounds = SoundStore.getPersonalSounds(context);
+		notifyDataSetChanged();
+	}
+
 	public void setShowAnimations(boolean anim) {
 		showAnimations = anim;
 	}
@@ -329,7 +365,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
              */
 			public void onEvent(String event) {
 				EventBus.getDefault().unregister(this);
-				notifyItemChanged(holder.getAdapterPosition());
+				notifyDataSetChanged();
 			}
 
 			@Override
@@ -467,225 +503,225 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
                         default:
                             Log.e(TAG, "onMenuItemClick: setAsRingtone()");
                             break;
-                        case "Nigga's satisfaction":
-                            setAsRingtone(R.raw.a);
-                            break;
-                        case "Hitmarker":
-                            setAsRingtone(R.raw.hitmarker);
-                            break;
-                        case "It' s 04:20 meng…":
-                            setAsRingtone(R.raw.a420);
-                            break;
-                        case "420 blaze it faggot":
-                            setAsRingtone(R.raw.a420blazeit);
-                            break;
-                        case "Blurp":
-                            setAsRingtone(R.raw.blurp);
-                            break;
-                        case "Adam!?!":
-                            setAsRingtone(R.raw.adam);
-                            break;
-                        case "Allahu Akbar":
-                            setAsRingtone(R.raw.allahuakbar);
-                            break;
-                        case "Damn son!":
-                            setAsRingtone(R.raw.damnson);
-                            break;
-                        case "Bane: Darude Sandstorm":
-                            setAsRingtone(R.raw.banesandstorm);
-                            break;
-                        case "Bearcum!!!":
-                            setAsRingtone(R.raw.bearcum);
-                            break;
-                        case "What is going on here?":
-                            setAsRingtone(R.raw.bekfast);
-                            break;
-                        case "Πετράκης: Fuck her right in the pussy":
-                            setAsRingtone(R.raw.fuckherrightinthepussy);
-                            break;
-                        case "Black kid on fire":
-                            setAsRingtone(R.raw.blackkidonfire);
-                            break;
-                        case "Σα τον Κάτμαν μ' έκανες!":
-                            setAsRingtone(R.raw.catman);
-                            break;
-                        case "Hmm, it's dick o'clock":
-                            setAsRingtone(R.raw.dickoclock);
-                            break;
-                        case "Russian father":
-                            setAsRingtone(R.raw.fathercatishungry);
-                            break;
-                        case "Fichtl's Lied":
-                            setAsRingtone(R.raw.fichtlslied);
-                            break;
-                        case "Buffed Blowjob":
-                            setAsRingtone(R.raw.fuckyeah);
-                            break;
-                        case "Hey that' s pretty good!":
-                            setAsRingtone(R.raw.prettygood);
-                            break;
-                        case "xT: Γαμώ τον Χριστό σου!":
-                            setAsRingtone(R.raw.gamwtoxristosou);
-                            break;
-                        case "I' m your father!":
-                            setAsRingtone(R.raw.imyourfather);
-                            break;
-                        case "Give it to me!":
-                            setAsRingtone(R.raw.giveittome);
-                            break;
-                        case "Κοτσολάρη: Πίπα":
-                            setAsRingtone(R.raw.eleni);
-                            break;
-                        case "Fun":
-                            setAsRingtone(R.raw.fun);
-                            break;
-                        case "Kazoo":
-                            setAsRingtone(R.raw.kazoo);
-                            break;
-                        case "Immigrants cause cancer":
-                            setAsRingtone(R.raw.immigrants);
-                            break;
-                        case "Maybe we could invite some women?":
-                            setAsRingtone(R.raw.invitewomen);
-                            break;
-                        case "Trap Theme":
-                            setAsRingtone(R.raw.itsatrap);
-                            break;
-                        case "Γαμώ τα καντήλια μου όλα!":
-                            setAsRingtone(R.raw.kantilia);
-                            break;
-                        case "Weird laugh":
-                            setAsRingtone(R.raw.laugh);
-                            break;
-                        case "Thank you…":
-                            setAsRingtone(R.raw.thankyou);
-                            break;
-                        case "Make your dreams come true!":
-                            setAsRingtone(R.raw.lol);
-                            break;
-                        case "LOTR MLG":
-                            setAsRingtone(R.raw.lotr);
-                            break;
-                        case "Come here my pet Russian…":
-                            setAsRingtone(R.raw.petrussian);
-                            break;
-                        case "This is my masterpiece!":
-                            setAsRingtone(R.raw.masterpiece);
-                            break;
-                        case "Do you want my milk?":
-                            setAsRingtone(R.raw.milkinyourmot);
-                            break;
-                        case "My mooscles are getting bigger!":
-                            setAsRingtone(R.raw.mooscles);
-                            break;
-                        case "I'm growing stronker!":
-                            setAsRingtone(R.raw.stronker);
-                            break;
-                        case "Yiss":
-                            setAsRingtone(R.raw.yiiisss);
-                            break;
-                        case "STFU":
-                            setAsRingtone(R.raw.stfu);
-                            break;
-                        case "Nigga is cumming…":
-                            setAsRingtone(R.raw.niggacum);
-                            break;
-                        case "Sup nigga, wanna talk some shit?":
-                            setAsRingtone(R.raw.niggers);
-                            break;
-                        case "Surprise motherfucker!":
-                            setAsRingtone(R.raw.surprise);
-                            break;
-                        case "Πετρόπουλος: Action!":
-                            setAsRingtone(R.raw.nikos);
-                            break;
-                        case "Shaved pussy…":
-                            setAsRingtone(R.raw.shaved);
-                            break;
-                        case "Seven vaginias…":
-                            setAsRingtone(R.raw.sevenvaginas);
-                            break;
-                        case "Oh my!":
-                            setAsRingtone(R.raw.ohmy);
-                            break;
-                        case "Oh Yeaaaah!":
-                            setAsRingtone(R.raw.ohyeaah);
-                            break;
-                        case "Penis, penis and penis":
-                            setAsRingtone(R.raw.penis);
-                            break;
-                        case "Our courage will pull us through":
-                            setAsRingtone(R.raw.pokemonaggouri);
-                            break;
-                        case "Excuse me, I have some pussyhair on me!":
-                            setAsRingtone(R.raw.pussyhair);
-                            break;
-                        case "Retardation Theme":
-                            setAsRingtone(R.raw.retardation);
-                            break;
-                        case "Cyka Blyat's Middlefinger":
-                            setAsRingtone(R.raw.russianmiddlefinger);
-                            break;
-                        case "I'm the scatman…":
-                            setAsRingtone(R.raw.scatman);
-                            break;
-                        case "Why don't you show us that fine pussy?":
-                            setAsRingtone(R.raw.showthepussy);
-                            break;
-                        case "Shutdown, glitched…":
-                            setAsRingtone(R.raw.shutdownglitched);
-                            break;
-                        case "What manner of sissyness, is this?":
-                            setAsRingtone(R.raw.sissiness);
-                            break;
-                        case "You spin me round":
-                            setAsRingtone(R.raw.spinme);
-                            break;
-                        case "Squeaker":
-                            setAsRingtone(R.raw.squeeek);
-                            break;
-                        case "That's a 10!":
-                            setAsRingtone(R.raw.thatsa10);
-                            break;
-                        case "Illuminati":
-                            setAsRingtone(R.raw.illuminati);
-                            break;
-                        case "WOW":
-                            setAsRingtone(R.raw.wow);
-                            break;
-                        case "Richard Stallman":
-                            setAsRingtone(R.raw.windows);
-                            break;
-                        case "Τσικλίδης: Λες και είναι τσόντα!":
-                            setAsRingtone(R.raw.tsonta);
-                            break;
-                        case "What else?":
-                            setAsRingtone(R.raw.whatelse);
-                            break;
-                        case "Zodiac":
-                            setAsRingtone(R.raw.zodiac);
-                            break;
-                        case "Shabadaa shabadabadabaa…":
-                            setAsRingtone(R.raw.sabada);
-                            break;
-                        case "xT: Ρε καριόλη;":
-                            setAsRingtone(R.raw.karioli);
-                            break;
-                        case "Κιάμος: Ε!":
-                            setAsRingtone(R.raw.e);
-                            break;
-                        case "Κιάμος: Χατζάρα":
-                            setAsRingtone(R.raw.tigelasre);
-                            break;
-                        case "Κιάμος: Τί κοιτάς ρε μαλάκα":
-                            setAsRingtone(R.raw.tikoitasremlk);
-                            break;
-                        case "U WOT M8":
-                            setAsRingtone(R.raw.uwotmate);
-                            break;
-                        case "Cow":
-                            setAsRingtone(R.raw.cow);
-                            break;
+						case "Nigga's satisfaction":
+							setAsRingtone(R.raw.funny_a);
+							break;
+						case "Hitmarker":
+							setAsRingtone(R.raw.games_hitmarker);
+							break;
+						case "It' s 04:20 meng…":
+							setAsRingtone(R.raw.funny_a420);
+							break;
+						case "420 blaze it faggot":
+							setAsRingtone(R.raw.funny_a420blazeit);
+							break;
+						case "Blurp":
+							setAsRingtone(R.raw.funny_blurp);
+							break;
+						case "Adam!?!":
+							setAsRingtone(R.raw.funny_adam);
+							break;
+						case "Allahu Akbar":
+							setAsRingtone(R.raw.funny_allahuakbar);
+							break;
+						case "Damn son!":
+							setAsRingtone(R.raw.funny_damnson);
+							break;
+						case "Bane: Darude Sandstorm":
+							setAsRingtone(R.raw.funny_banesandstorm);
+							break;
+						case "Bearcum!!!":
+							setAsRingtone(R.raw.funny_bearcum);
+							break;
+						case "What is going on here?":
+							setAsRingtone(R.raw.funny_bekfast);
+							break;
+						case "Πετράκης: Fuck her right in the pussy":
+							setAsRingtone(R.raw.personal_fuckherrightinthepussy);
+							break;
+						case "Black kid on fire":
+							setAsRingtone(R.raw.funny_blackkidonfire);
+							break;
+						case "Σα τον Κάτμαν μ' έκανες!":
+							setAsRingtone(R.raw.personal_catman);
+							break;
+						case "Hmm, it's dick o'clock":
+							setAsRingtone(R.raw.funny_dickoclock);
+							break;
+						case "Russian father":
+							setAsRingtone(R.raw.funny_fathercatishungry);
+							break;
+						case "Fichtl's Lied":
+							setAsRingtone(R.raw.funny_fichtlslied);
+							break;
+						case "Buffed Blowjob":
+							setAsRingtone(R.raw.nsfw_fuckyeah);
+							break;
+						case "Hey that' s pretty good!":
+							setAsRingtone(R.raw.funny_prettygood);
+							break;
+						case "xT: Γαμώ τον Χριστό σου!":
+							setAsRingtone(R.raw.personal_gamwtoxristosou);
+							break;
+						case "I' m your father!":
+							setAsRingtone(R.raw.movies_imyourfather);
+							break;
+						case "Give it to me!":
+							setAsRingtone(R.raw.funny_giveittome);
+							break;
+						case "Κοτσολάρη: Πίπα":
+							setAsRingtone(R.raw.personal_eleni);
+							break;
+						case "Fun":
+							setAsRingtone(R.raw.funny_fun);
+							break;
+						case "Kazoo":
+							setAsRingtone(R.raw.funny_kazoo);
+							break;
+						case "Immigrants cause cancer":
+							setAsRingtone(R.raw.funny_immigrants);
+							break;
+						case "Maybe we could invite some women?":
+							setAsRingtone(R.raw.funny_invitewomen);
+							break;
+						case "Trap Theme":
+							setAsRingtone(R.raw.funny_itsatrap);
+							break;
+						case "Γαμώ τα καντήλια μου όλα!":
+							setAsRingtone(R.raw.personal_kantilia);
+							break;
+						case "Weird laugh":
+							setAsRingtone(R.raw.funny_laugh);
+							break;
+						case "Thank you…":
+							setAsRingtone(R.raw.nsfw_thankyou);
+							break;
+						case "Make your dreams come true!":
+							setAsRingtone(R.raw.funny_lol);
+							break;
+						case "LOTR MLG":
+							setAsRingtone(R.raw.movies_lotr);
+							break;
+						case "Come here my pet Russian…":
+							setAsRingtone(R.raw.funny_petrussian);
+							break;
+						case "This is my masterpiece!":
+							setAsRingtone(R.raw.funny_masterpiece);
+							break;
+						case "Do you want my milk?":
+							setAsRingtone(R.raw.nsfw_milkinyourmot);
+							break;
+						case "My mooscles are getting bigger!":
+							setAsRingtone(R.raw.funny_mooscles);
+							break;
+						case "I'm growing stronker!":
+							setAsRingtone(R.raw.funny_stronker);
+							break;
+						case "Yiss":
+							setAsRingtone(R.raw.funny_yiiisss);
+							break;
+						case "STFU":
+							setAsRingtone(R.raw.funny_stfu);
+							break;
+						case "Nigga is cumming…":
+							setAsRingtone(R.raw.funny_niggacum);
+							break;
+						case "Sup nigga, wanna talk some shit?":
+							setAsRingtone(R.raw.funny_niggers);
+							break;
+						case "Surprise motherfucker!":
+							setAsRingtone(R.raw.funny_surprise);
+							break;
+						case "Πετρόπουλος: Action!":
+							setAsRingtone(R.raw.personal_nikos);
+							break;
+						case "Shaved pussy…":
+							setAsRingtone(R.raw.nsfw_shaved);
+							break;
+						case "Seven vaginias…":
+							setAsRingtone(R.raw.funny_sevenvaginas);
+							break;
+						case "Oh my!":
+							setAsRingtone(R.raw.funny_ohmy);
+							break;
+						case "Oh Yeaaaah!":
+							setAsRingtone(R.raw.funny_ohyeaah);
+							break;
+						case "Penis, penis and penis":
+							setAsRingtone(R.raw.funny_penis);
+							break;
+						case "Our courage will pull us through":
+							setAsRingtone(R.raw.movies_pokemonaggouri);
+							break;
+						case "Excuse me, I have some pussyhair on me!":
+							setAsRingtone(R.raw.funny_pussyhair);
+							break;
+						case "Retardation Theme":
+							setAsRingtone(R.raw.funny_retardation);
+							break;
+						case "Cyka Blyat's Middlefinger":
+							setAsRingtone(R.raw.funny_russianmiddlefinger);
+							break;
+						case "I'm the scatman…":
+							setAsRingtone(R.raw.nsfw_scatman);
+							break;
+						case "Why don't you show us that fine pussy?":
+							setAsRingtone(R.raw.funny_showthepussy);
+							break;
+						case "Shutdown, glitched…":
+							setAsRingtone(R.raw.funny_shutdownglitched);
+							break;
+						case "What manner of sissyness, is this?":
+							setAsRingtone(R.raw.funny_sissiness);
+							break;
+						case "You spin me round":
+							setAsRingtone(R.raw.funny_spinme);
+							break;
+						case "Squeaker":
+							setAsRingtone(R.raw.funny_squeeek);
+							break;
+						case "That's a 10!":
+							setAsRingtone(R.raw.funny_thatsa10);
+							break;
+						case "Illuminati":
+							setAsRingtone(R.raw.funny_illuminati);
+							break;
+						case "WOW":
+							setAsRingtone(R.raw.funny_wow);
+							break;
+						case "Richard Stallman":
+							setAsRingtone(R.raw.funny_windows);
+							break;
+						case "Τσικλίδης: Λες και είναι τσόντα!":
+							setAsRingtone(R.raw.personal_tsonta);
+							break;
+						case "What else?":
+							setAsRingtone(R.raw.funny_whatelse);
+							break;
+						case "Zodiac":
+							setAsRingtone(R.raw.funny_zodiac);
+							break;
+						case "Shabadaa shabadabadabaa…":
+							setAsRingtone(R.raw.funny_sabada);
+							break;
+						case "xT: Ρε καριόλη;":
+							setAsRingtone(R.raw.personal_karioli);
+							break;
+						case "Κιάμος: Ε!":
+							setAsRingtone(R.raw.personal_e);
+							break;
+						case "Κιάμος: Χατζάρα":
+							setAsRingtone(R.raw.personal_tigelasre);
+							break;
+						case "Κιάμος: Τί κοιτάς ρε μαλάκα":
+							setAsRingtone(R.raw.personal_tikoitasremlk);
+							break;
+						case "U WOT M8":
+							setAsRingtone(R.raw.movies_uwotmate);
+							break;
+						case "Cow":
+							setAsRingtone(R.raw.animals_cow);
+							break;
 //                    case "":
 //                        setAsRingtone(R.raw.);
 //                        break;
@@ -701,225 +737,225 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
                         default:
                             Log.e(TAG, "onMenuItemClick: setAsNotification()");
                             break;
-                        case "Nigga's satisfaction":
-                            setAsNotification(R.raw.a);
-                            break;
-                        case "Hitmarker":
-                            setAsNotification(R.raw.hitmarker);
-                            break;
-                        case "It' s 04:20 meng…":
-                            setAsNotification(R.raw.a420);
-                            break;
-                        case "420 blaze it faggot":
-                            setAsNotification(R.raw.a420blazeit);
-                            break;
-                        case "Blurp":
-                            setAsNotification(R.raw.blurp);
-                            break;
-                        case "Adam!?!":
-                            setAsNotification(R.raw.adam);
-                            break;
-                        case "Allahu Akbar":
-                            setAsNotification(R.raw.allahuakbar);
-                            break;
-                        case "Damn son!":
-                            setAsNotification(R.raw.damnson);
-                            break;
-                        case "Bane: Darude Sandstorm":
-                            setAsNotification(R.raw.banesandstorm);
-                            break;
-                        case "Bearcum!!!":
-                            setAsNotification(R.raw.bearcum);
-                            break;
-                        case "What is going on here?":
-                            setAsNotification(R.raw.bekfast);
-                            break;
-                        case "Πετράκης: Fuck her right in the pussy":
-                            setAsNotification(R.raw.fuckherrightinthepussy);
-                            break;
-                        case "Black kid on fire":
-                            setAsNotification(R.raw.blackkidonfire);
-                            break;
-                        case "Σα τον Κάτμαν μ' έκανες!":
-                            setAsNotification(R.raw.catman);
-                            break;
-                        case "Hmm, it's dick o'clock":
-                            setAsNotification(R.raw.dickoclock);
-                            break;
-                        case "Russian father":
-                            setAsNotification(R.raw.fathercatishungry);
-                            break;
-                        case "Fichtl's Lied":
-                            setAsNotification(R.raw.fichtlslied);
-                            break;
-                        case "Buffed Blowjob":
-                            setAsNotification(R.raw.fuckyeah);
-                            break;
-                        case "Hey that' s pretty good!":
-                            setAsNotification(R.raw.prettygood);
-                            break;
-                        case "xT: Γαμώ τον Χριστό σου!":
-                            setAsNotification(R.raw.gamwtoxristosou);
-                            break;
-                        case "I' m your father!":
-                            setAsNotification(R.raw.imyourfather);
-                            break;
-                        case "Give it to me!":
-                            setAsNotification(R.raw.giveittome);
-                            break;
-                        case "Κοτσολάρη: Πίπα":
-                            setAsNotification(R.raw.eleni);
-                            break;
-                        case "Fun":
-                            setAsNotification(R.raw.fun);
-                            break;
-                        case "Kazoo":
-                            setAsNotification(R.raw.kazoo);
-                            break;
-                        case "Immigrants cause cancer":
-                            setAsNotification(R.raw.immigrants);
-                            break;
-                        case "Maybe we could invite some women?":
-                            setAsNotification(R.raw.invitewomen);
-                            break;
-                        case "Trap Theme":
-                            setAsNotification(R.raw.itsatrap);
-                            break;
-                        case "Γαμώ τα καντήλια μου όλα!":
-                            setAsNotification(R.raw.kantilia);
-                            break;
-                        case "Weird laugh":
-                            setAsNotification(R.raw.laugh);
-                            break;
-                        case "Thank you…":
-                            setAsNotification(R.raw.thankyou);
-                            break;
-                        case "Make your dreams come true!":
-                            setAsNotification(R.raw.lol);
-                            break;
-                        case "LOTR MLG":
-                            setAsNotification(R.raw.lotr);
-                            break;
-                        case "Come here my pet Russian…":
-                            setAsNotification(R.raw.petrussian);
-                            break;
-                        case "This is my masterpiece!":
-                            setAsNotification(R.raw.masterpiece);
-                            break;
-                        case "Do you want my milk?":
-                            setAsNotification(R.raw.milkinyourmot);
-                            break;
-                        case "My mooscles are getting bigger!":
-                            setAsNotification(R.raw.mooscles);
-                            break;
-                        case "I'm growing stronker!":
-                            setAsNotification(R.raw.stronker);
-                            break;
-                        case "Yiss":
-                            setAsNotification(R.raw.yiiisss);
-                            break;
-                        case "STFU":
-                            setAsNotification(R.raw.stfu);
-                            break;
-                        case "Nigga is cumming…":
-                            setAsNotification(R.raw.niggacum);
-                            break;
-                        case "Sup nigga, wanna talk some shit?":
-                            setAsNotification(R.raw.niggers);
-                            break;
-                        case "Surprise motherfucker!":
-                            setAsNotification(R.raw.surprise);
-                            break;
-                        case "Πετρόπουλος: Action!":
-                            setAsNotification(R.raw.nikos);
-                            break;
-                        case "Shaved pussy…":
-                            setAsNotification(R.raw.shaved);
-                            break;
-                        case "Seven vaginias…":
-                            setAsNotification(R.raw.sevenvaginas);
-                            break;
-                        case "Oh my!":
-                            setAsNotification(R.raw.ohmy);
-                            break;
-                        case "Oh Yeaaaah!":
-                            setAsNotification(R.raw.ohyeaah);
-                            break;
-                        case "Penis, penis and penis":
-                            setAsNotification(R.raw.penis);
-                            break;
-                        case "Our courage will pull us through":
-                            setAsNotification(R.raw.pokemonaggouri);
-                            break;
-                        case "Excuse me, I have some pussyhair on me!":
-                            setAsNotification(R.raw.pussyhair);
-                            break;
-                        case "Retardation Theme":
-                            setAsNotification(R.raw.retardation);
-                            break;
-                        case "Cyka Blyat's Middlefinger":
-                            setAsNotification(R.raw.russianmiddlefinger);
-                            break;
-                        case "I'm the scatman…":
-                            setAsNotification(R.raw.scatman);
-                            break;
-                        case "Why don't you show us that fine pussy?":
-                            setAsNotification(R.raw.showthepussy);
-                            break;
-                        case "Shutdown, glitched…":
-                            setAsNotification(R.raw.shutdownglitched);
-                            break;
-                        case "What manner of sissyness, is this?":
-                            setAsNotification(R.raw.sissiness);
-                            break;
-                        case "You spin me round":
-                            setAsNotification(R.raw.spinme);
-                            break;
-                        case "Squeaker":
-                            setAsNotification(R.raw.squeeek);
-                            break;
-                        case "That's a 10!":
-                            setAsNotification(R.raw.thatsa10);
-                            break;
-                        case "Illuminati":
-                            setAsNotification(R.raw.illuminati);
-                            break;
-                        case "WOW":
-                            setAsNotification(R.raw.wow);
-                            break;
-                        case "Richard Stallman":
-                            setAsNotification(R.raw.windows);
-                            break;
-                        case "Τσικλίδης: Λες και είναι τσόντα!":
-                            setAsNotification(R.raw.tsonta);
-                            break;
-                        case "What else?":
-                            setAsNotification(R.raw.whatelse);
-                            break;
-                        case "Zodiac":
-                            setAsNotification(R.raw.zodiac);
-                            break;
-                        case "Shabadaa shabadabadabaa…":
-                            setAsNotification(R.raw.sabada);
-                            break;
-                        case "xT: Ρε καριόλη;":
-                            setAsNotification(R.raw.karioli);
-                            break;
-                        case "Κιάμος: Ε!":
-                            setAsNotification(R.raw.e);
-                            break;
-                        case "Κιάμος: Χατζάρα":
-                            setAsNotification(R.raw.tigelasre);
-                            break;
-                        case "Κιάμος: Τί κοιτάς ρε μαλάκα":
-                            setAsNotification(R.raw.tikoitasremlk);
-                            break;
-                        case "U WOT M8":
-                            setAsNotification(R.raw.uwotmate);
-                            break;
-                        case "Cow":
-                            setAsNotification(R.raw.cow);
-                            break;
+						case "Nigga's satisfaction":
+							setAsNotification(R.raw.funny_a);
+							break;
+						case "Hitmarker":
+							setAsNotification(R.raw.games_hitmarker);
+							break;
+						case "It' s 04:20 meng…":
+							setAsNotification(R.raw.funny_a420);
+							break;
+						case "420 blaze it faggot":
+							setAsNotification(R.raw.funny_a420blazeit);
+							break;
+						case "Blurp":
+							setAsNotification(R.raw.funny_blurp);
+							break;
+						case "Adam!?!":
+							setAsNotification(R.raw.funny_adam);
+							break;
+						case "Allahu Akbar":
+							setAsNotification(R.raw.funny_allahuakbar);
+							break;
+						case "Damn son!":
+							setAsNotification(R.raw.funny_damnson);
+							break;
+						case "Bane: Darude Sandstorm":
+							setAsNotification(R.raw.funny_banesandstorm);
+							break;
+						case "Bearcum!!!":
+							setAsNotification(R.raw.funny_bearcum);
+							break;
+						case "What is going on here?":
+							setAsNotification(R.raw.funny_bekfast);
+							break;
+						case "Πετράκης: Fuck her right in the pussy":
+							setAsNotification(R.raw.personal_fuckherrightinthepussy);
+							break;
+						case "Black kid on fire":
+							setAsNotification(R.raw.funny_blackkidonfire);
+							break;
+						case "Σα τον Κάτμαν μ' έκανες!":
+							setAsNotification(R.raw.personal_catman);
+							break;
+						case "Hmm, it's dick o'clock":
+							setAsNotification(R.raw.funny_dickoclock);
+							break;
+						case "Russian father":
+							setAsNotification(R.raw.funny_fathercatishungry);
+							break;
+						case "Fichtl's Lied":
+							setAsNotification(R.raw.funny_fichtlslied);
+							break;
+						case "Buffed Blowjob":
+							setAsNotification(R.raw.nsfw_fuckyeah);
+							break;
+						case "Hey that' s pretty good!":
+							setAsNotification(R.raw.funny_prettygood);
+							break;
+						case "xT: Γαμώ τον Χριστό σου!":
+							setAsNotification(R.raw.personal_gamwtoxristosou);
+							break;
+						case "I' m your father!":
+							setAsNotification(R.raw.movies_imyourfather);
+							break;
+						case "Give it to me!":
+							setAsNotification(R.raw.funny_giveittome);
+							break;
+						case "Κοτσολάρη: Πίπα":
+							setAsNotification(R.raw.personal_eleni);
+							break;
+						case "Fun":
+							setAsNotification(R.raw.funny_fun);
+							break;
+						case "Kazoo":
+							setAsNotification(R.raw.funny_kazoo);
+							break;
+						case "Immigrants cause cancer":
+							setAsNotification(R.raw.funny_immigrants);
+							break;
+						case "Maybe we could invite some women?":
+							setAsNotification(R.raw.funny_invitewomen);
+							break;
+						case "Trap Theme":
+							setAsNotification(R.raw.funny_itsatrap);
+							break;
+						case "Γαμώ τα καντήλια μου όλα!":
+							setAsNotification(R.raw.personal_kantilia);
+							break;
+						case "Weird laugh":
+							setAsNotification(R.raw.funny_laugh);
+							break;
+						case "Thank you…":
+							setAsNotification(R.raw.nsfw_thankyou);
+							break;
+						case "Make your dreams come true!":
+							setAsNotification(R.raw.funny_lol);
+							break;
+						case "LOTR MLG":
+							setAsNotification(R.raw.movies_lotr);
+							break;
+						case "Come here my pet Russian…":
+							setAsNotification(R.raw.funny_petrussian);
+							break;
+						case "This is my masterpiece!":
+							setAsNotification(R.raw.funny_masterpiece);
+							break;
+						case "Do you want my milk?":
+							setAsNotification(R.raw.nsfw_milkinyourmot);
+							break;
+						case "My mooscles are getting bigger!":
+							setAsNotification(R.raw.funny_mooscles);
+							break;
+						case "I'm growing stronker!":
+							setAsNotification(R.raw.funny_stronker);
+							break;
+						case "Yiss":
+							setAsNotification(R.raw.funny_yiiisss);
+							break;
+						case "STFU":
+							setAsNotification(R.raw.funny_stfu);
+							break;
+						case "Nigga is cumming…":
+							setAsNotification(R.raw.funny_niggacum);
+							break;
+						case "Sup nigga, wanna talk some shit?":
+							setAsNotification(R.raw.funny_niggers);
+							break;
+						case "Surprise motherfucker!":
+							setAsNotification(R.raw.funny_surprise);
+							break;
+						case "Πετρόπουλος: Action!":
+							setAsNotification(R.raw.personal_nikos);
+							break;
+						case "Shaved pussy…":
+							setAsNotification(R.raw.nsfw_shaved);
+							break;
+						case "Seven vaginias…":
+							setAsNotification(R.raw.funny_sevenvaginas);
+							break;
+						case "Oh my!":
+							setAsNotification(R.raw.funny_ohmy);
+							break;
+						case "Oh Yeaaaah!":
+							setAsNotification(R.raw.funny_ohyeaah);
+							break;
+						case "Penis, penis and penis":
+							setAsNotification(R.raw.funny_penis);
+							break;
+						case "Our courage will pull us through":
+							setAsNotification(R.raw.movies_pokemonaggouri);
+							break;
+						case "Excuse me, I have some pussyhair on me!":
+							setAsNotification(R.raw.funny_pussyhair);
+							break;
+						case "Retardation Theme":
+							setAsNotification(R.raw.funny_retardation);
+							break;
+						case "Cyka Blyat's Middlefinger":
+							setAsNotification(R.raw.funny_russianmiddlefinger);
+							break;
+						case "I'm the scatman…":
+							setAsNotification(R.raw.nsfw_scatman);
+							break;
+						case "Why don't you show us that fine pussy?":
+							setAsNotification(R.raw.funny_showthepussy);
+							break;
+						case "Shutdown, glitched…":
+							setAsNotification(R.raw.funny_shutdownglitched);
+							break;
+						case "What manner of sissyness, is this?":
+							setAsNotification(R.raw.funny_sissiness);
+							break;
+						case "You spin me round":
+							setAsNotification(R.raw.funny_spinme);
+							break;
+						case "Squeaker":
+							setAsNotification(R.raw.funny_squeeek);
+							break;
+						case "That's a 10!":
+							setAsNotification(R.raw.funny_thatsa10);
+							break;
+						case "Illuminati":
+							setAsNotification(R.raw.funny_illuminati);
+							break;
+						case "WOW":
+							setAsNotification(R.raw.funny_wow);
+							break;
+						case "Richard Stallman":
+							setAsNotification(R.raw.funny_windows);
+							break;
+						case "Τσικλίδης: Λες και είναι τσόντα!":
+							setAsNotification(R.raw.personal_tsonta);
+							break;
+						case "What else?":
+							setAsNotification(R.raw.funny_whatelse);
+							break;
+						case "Zodiac":
+							setAsNotification(R.raw.funny_zodiac);
+							break;
+						case "Shabadaa shabadabadabaa…":
+							setAsNotification(R.raw.funny_sabada);
+							break;
+						case "xT: Ρε καριόλη;":
+							setAsNotification(R.raw.personal_karioli);
+							break;
+						case "Κιάμος: Ε!":
+							setAsNotification(R.raw.personal_e);
+							break;
+						case "Κιάμος: Χατζάρα":
+							setAsNotification(R.raw.personal_tigelasre);
+							break;
+						case "Κιάμος: Τί κοιτάς ρε μαλάκα":
+							setAsNotification(R.raw.personal_tikoitasremlk);
+							break;
+						case "U WOT M8":
+							setAsNotification(R.raw.movies_uwotmate);
+							break;
+						case "Cow":
+							setAsNotification(R.raw.animals_cow);
+							break;
 //                    case "":
 //                        setAsNotification(R.raw.);
 //                        break;
@@ -935,225 +971,225 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
                         default:
                             Log.e(TAG, "onMenuItemClick: setAsAlarm()");
                             break;
-                        case "Nigga's satisfaction":
-                            setAsAlarm(R.raw.a);
-                            break;
-                        case "Hitmarker":
-                            setAsAlarm(R.raw.hitmarker);
-                            break;
-                        case "It' s 04:20 meng…":
-                            setAsAlarm(R.raw.a420);
-                            break;
-                        case "420 blaze it faggot":
-                            setAsAlarm(R.raw.a420blazeit);
-                            break;
-                        case "Blurp":
-                            setAsAlarm(R.raw.blurp);
-                            break;
-                        case "Adam!?!":
-                            setAsAlarm(R.raw.adam);
-                            break;
-                        case "Allahu Akbar":
-                            setAsAlarm(R.raw.allahuakbar);
-                            break;
-                        case "Damn son!":
-                            setAsAlarm(R.raw.damnson);
-                            break;
-                        case "Bane: Darude Sandstorm":
-                            setAsAlarm(R.raw.banesandstorm);
-                            break;
-                        case "Bearcum!!!":
-                            setAsAlarm(R.raw.bearcum);
-                            break;
-                        case "What is going on here?":
-                            setAsAlarm(R.raw.bekfast);
-                            break;
-                        case "Πετράκης: Fuck her right in the pussy":
-                            setAsAlarm(R.raw.fuckherrightinthepussy);
-                            break;
-                        case "Black kid on fire":
-                            setAsAlarm(R.raw.blackkidonfire);
-                            break;
-                        case "Σα τον Κάτμαν μ' έκανες!":
-                            setAsAlarm(R.raw.catman);
-                            break;
-                        case "Hmm, it's dick o'clock":
-                            setAsAlarm(R.raw.dickoclock);
-                            break;
-                        case "Russian father":
-                            setAsAlarm(R.raw.fathercatishungry);
-                            break;
-                        case "Fichtl's Lied":
-                            setAsAlarm(R.raw.fichtlslied);
-                            break;
-                        case "Buffed Blowjob":
-                            setAsAlarm(R.raw.fuckyeah);
-                            break;
-                        case "Hey that' s pretty good!":
-                            setAsAlarm(R.raw.prettygood);
-                            break;
-                        case "xT: Γαμώ τον Χριστό σου!":
-                            setAsAlarm(R.raw.gamwtoxristosou);
-                            break;
-                        case "I' m your father!":
-                            setAsAlarm(R.raw.imyourfather);
-                            break;
-                        case "Give it to me!":
-                            setAsAlarm(R.raw.giveittome);
-                            break;
-                        case "Κοτσολάρη: Πίπα":
-                            setAsAlarm(R.raw.eleni);
-                            break;
-                        case "Fun":
-                            setAsAlarm(R.raw.fun);
-                            break;
-                        case "Kazoo":
-                            setAsAlarm(R.raw.kazoo);
-                            break;
-                        case "Immigrants cause cancer":
-                            setAsAlarm(R.raw.immigrants);
-                            break;
-                        case "Maybe we could invite some women?":
-                            setAsAlarm(R.raw.invitewomen);
-                            break;
-                        case "Trap Theme":
-                            setAsAlarm(R.raw.itsatrap);
-                            break;
-                        case "Γαμώ τα καντήλια μου όλα!":
-                            setAsAlarm(R.raw.kantilia);
-                            break;
-                        case "Weird laugh":
-                            setAsAlarm(R.raw.laugh);
-                            break;
-                        case "Thank you…":
-                            setAsAlarm(R.raw.thankyou);
-                            break;
-                        case "Make your dreams come true!":
-                            setAsAlarm(R.raw.lol);
-                            break;
-                        case "LOTR MLG":
-                            setAsAlarm(R.raw.lotr);
-                            break;
-                        case "Come here my pet Russian…":
-                            setAsAlarm(R.raw.petrussian);
-                            break;
-                        case "This is my masterpiece!":
-                            setAsAlarm(R.raw.masterpiece);
-                            break;
-                        case "Do you want my milk?":
-                            setAsAlarm(R.raw.milkinyourmot);
-                            break;
-                        case "My mooscles are getting bigger!":
-                            setAsAlarm(R.raw.mooscles);
-                            break;
-                        case "I'm growing stronker!":
-                            setAsAlarm(R.raw.stronker);
-                            break;
-                        case "Yiss":
-                            setAsAlarm(R.raw.yiiisss);
-                            break;
-                        case "STFU":
-                            setAsAlarm(R.raw.stfu);
-                            break;
-                        case "Nigga is cumming…":
-                            setAsAlarm(R.raw.niggacum);
-                            break;
-                        case "Sup nigga, wanna talk some shit?":
-                            setAsAlarm(R.raw.niggers);
-                            break;
-                        case "Surprise motherfucker!":
-                            setAsAlarm(R.raw.surprise);
-                            break;
-                        case "Πετρόπουλος: Action!":
-                            setAsAlarm(R.raw.nikos);
-                            break;
-                        case "Shaved pussy…":
-                            setAsAlarm(R.raw.shaved);
-                            break;
-                        case "Seven vaginias…":
-                            setAsAlarm(R.raw.sevenvaginas);
-                            break;
-                        case "Oh my!":
-                            setAsAlarm(R.raw.ohmy);
-                            break;
-                        case "Oh Yeaaaah!":
-                            setAsAlarm(R.raw.ohyeaah);
-                            break;
-                        case "Penis, penis and penis":
-                            setAsAlarm(R.raw.penis);
-                            break;
-                        case "Our courage will pull us through":
-                            setAsAlarm(R.raw.pokemonaggouri);
-                            break;
-                        case "Excuse me, I have some pussyhair on me!":
-                            setAsAlarm(R.raw.pussyhair);
-                            break;
-                        case "Retardation Theme":
-                            setAsAlarm(R.raw.retardation);
-                            break;
-                        case "Cyka Blyat's Middlefinger":
-                            setAsAlarm(R.raw.russianmiddlefinger);
-                            break;
-                        case "I'm the scatman…":
-                            setAsAlarm(R.raw.scatman);
-                            break;
-                        case "Why don't you show us that fine pussy?":
-                            setAsAlarm(R.raw.showthepussy);
-                            break;
-                        case "Shutdown, glitched…":
-                            setAsAlarm(R.raw.shutdownglitched);
-                            break;
-                        case "What manner of sissyness, is this?":
-                            setAsAlarm(R.raw.sissiness);
-                            break;
-                        case "You spin me round":
-                            setAsAlarm(R.raw.spinme);
-                            break;
-                        case "Squeaker":
-                            setAsAlarm(R.raw.squeeek);
-                            break;
-                        case "That's a 10!":
-                            setAsAlarm(R.raw.thatsa10);
-                            break;
-                        case "Illuminati":
-                            setAsAlarm(R.raw.illuminati);
-                            break;
-                        case "WOW":
-                            setAsAlarm(R.raw.wow);
-                            break;
-                        case "Richard Stallman":
-                            setAsAlarm(R.raw.windows);
-                            break;
-                        case "Τσικλίδης: Λες και είναι τσόντα!":
-                            setAsAlarm(R.raw.tsonta);
-                            break;
-                        case "What else?":
-                            setAsAlarm(R.raw.whatelse);
-                            break;
-                        case "Zodiac":
-                            setAsAlarm(R.raw.zodiac);
-                            break;
-                        case "Shabadaa shabadabadabaa…":
-                            setAsAlarm(R.raw.sabada);
-                            break;
-                        case "xT: Ρε καριόλη;":
-                            setAsAlarm(R.raw.karioli);
-                            break;
-                        case "Κιάμος: Ε!":
-                            setAsAlarm(R.raw.e);
-                            break;
-                        case "Κιάμος: Χατζάρα":
-                            setAsAlarm(R.raw.tigelasre);
-                            break;
-                        case "Κιάμος: Τί κοιτάς ρε μαλάκα":
-                            setAsAlarm(R.raw.tikoitasremlk);
-                            break;
-                        case "U WOT M8":
-                            setAsAlarm(R.raw.uwotmate);
-                            break;
-                        case "Cow":
-                            setAsAlarm(R.raw.cow);
-                            break;
+						case "Nigga's satisfaction":
+							setAsAlarm(R.raw.funny_a);
+							break;
+						case "Hitmarker":
+							setAsAlarm(R.raw.games_hitmarker);
+							break;
+						case "It' s 04:20 meng…":
+							setAsAlarm(R.raw.funny_a420);
+							break;
+						case "420 blaze it faggot":
+							setAsAlarm(R.raw.funny_a420blazeit);
+							break;
+						case "Blurp":
+							setAsAlarm(R.raw.funny_blurp);
+							break;
+						case "Adam!?!":
+							setAsAlarm(R.raw.funny_adam);
+							break;
+						case "Allahu Akbar":
+							setAsAlarm(R.raw.funny_allahuakbar);
+							break;
+						case "Damn son!":
+							setAsAlarm(R.raw.funny_damnson);
+							break;
+						case "Bane: Darude Sandstorm":
+							setAsAlarm(R.raw.funny_banesandstorm);
+							break;
+						case "Bearcum!!!":
+							setAsAlarm(R.raw.funny_bearcum);
+							break;
+						case "What is going on here?":
+							setAsAlarm(R.raw.funny_bekfast);
+							break;
+						case "Πετράκης: Fuck her right in the pussy":
+							setAsAlarm(R.raw.personal_fuckherrightinthepussy);
+							break;
+						case "Black kid on fire":
+							setAsAlarm(R.raw.funny_blackkidonfire);
+							break;
+						case "Σα τον Κάτμαν μ' έκανες!":
+							setAsAlarm(R.raw.personal_catman);
+							break;
+						case "Hmm, it's dick o'clock":
+							setAsAlarm(R.raw.funny_dickoclock);
+							break;
+						case "Russian father":
+							setAsAlarm(R.raw.funny_fathercatishungry);
+							break;
+						case "Fichtl's Lied":
+							setAsAlarm(R.raw.funny_fichtlslied);
+							break;
+						case "Buffed Blowjob":
+							setAsAlarm(R.raw.nsfw_fuckyeah);
+							break;
+						case "Hey that' s pretty good!":
+							setAsAlarm(R.raw.funny_prettygood);
+							break;
+						case "xT: Γαμώ τον Χριστό σου!":
+							setAsAlarm(R.raw.personal_gamwtoxristosou);
+							break;
+						case "I' m your father!":
+							setAsAlarm(R.raw.movies_imyourfather);
+							break;
+						case "Give it to me!":
+							setAsAlarm(R.raw.funny_giveittome);
+							break;
+						case "Κοτσολάρη: Πίπα":
+							setAsAlarm(R.raw.personal_eleni);
+							break;
+						case "Fun":
+							setAsAlarm(R.raw.funny_fun);
+							break;
+						case "Kazoo":
+							setAsAlarm(R.raw.funny_kazoo);
+							break;
+						case "Immigrants cause cancer":
+							setAsAlarm(R.raw.funny_immigrants);
+							break;
+						case "Maybe we could invite some women?":
+							setAsAlarm(R.raw.funny_invitewomen);
+							break;
+						case "Trap Theme":
+							setAsAlarm(R.raw.funny_itsatrap);
+							break;
+						case "Γαμώ τα καντήλια μου όλα!":
+							setAsAlarm(R.raw.personal_kantilia);
+							break;
+						case "Weird laugh":
+							setAsAlarm(R.raw.funny_laugh);
+							break;
+						case "Thank you…":
+							setAsAlarm(R.raw.nsfw_thankyou);
+							break;
+						case "Make your dreams come true!":
+							setAsAlarm(R.raw.funny_lol);
+							break;
+						case "LOTR MLG":
+							setAsAlarm(R.raw.movies_lotr);
+							break;
+						case "Come here my pet Russian…":
+							setAsAlarm(R.raw.funny_petrussian);
+							break;
+						case "This is my masterpiece!":
+							setAsAlarm(R.raw.funny_masterpiece);
+							break;
+						case "Do you want my milk?":
+							setAsAlarm(R.raw.nsfw_milkinyourmot);
+							break;
+						case "My mooscles are getting bigger!":
+							setAsAlarm(R.raw.funny_mooscles);
+							break;
+						case "I'm growing stronker!":
+							setAsAlarm(R.raw.funny_stronker);
+							break;
+						case "Yiss":
+							setAsAlarm(R.raw.funny_yiiisss);
+							break;
+						case "STFU":
+							setAsAlarm(R.raw.funny_stfu);
+							break;
+						case "Nigga is cumming…":
+							setAsAlarm(R.raw.funny_niggacum);
+							break;
+						case "Sup nigga, wanna talk some shit?":
+							setAsAlarm(R.raw.funny_niggers);
+							break;
+						case "Surprise motherfucker!":
+							setAsAlarm(R.raw.funny_surprise);
+							break;
+						case "Πετρόπουλος: Action!":
+							setAsAlarm(R.raw.personal_nikos);
+							break;
+						case "Shaved pussy…":
+							setAsAlarm(R.raw.nsfw_shaved);
+							break;
+						case "Seven vaginias…":
+							setAsAlarm(R.raw.funny_sevenvaginas);
+							break;
+						case "Oh my!":
+							setAsAlarm(R.raw.funny_ohmy);
+							break;
+						case "Oh Yeaaaah!":
+							setAsAlarm(R.raw.funny_ohyeaah);
+							break;
+						case "Penis, penis and penis":
+							setAsAlarm(R.raw.funny_penis);
+							break;
+						case "Our courage will pull us through":
+							setAsAlarm(R.raw.movies_pokemonaggouri);
+							break;
+						case "Excuse me, I have some pussyhair on me!":
+							setAsAlarm(R.raw.funny_pussyhair);
+							break;
+						case "Retardation Theme":
+							setAsAlarm(R.raw.funny_retardation);
+							break;
+						case "Cyka Blyat's Middlefinger":
+							setAsAlarm(R.raw.funny_russianmiddlefinger);
+							break;
+						case "I'm the scatman…":
+							setAsAlarm(R.raw.nsfw_scatman);
+							break;
+						case "Why don't you show us that fine pussy?":
+							setAsAlarm(R.raw.funny_showthepussy);
+							break;
+						case "Shutdown, glitched…":
+							setAsAlarm(R.raw.funny_shutdownglitched);
+							break;
+						case "What manner of sissyness, is this?":
+							setAsAlarm(R.raw.funny_sissiness);
+							break;
+						case "You spin me round":
+							setAsAlarm(R.raw.funny_spinme);
+							break;
+						case "Squeaker":
+							setAsAlarm(R.raw.funny_squeeek);
+							break;
+						case "That's a 10!":
+							setAsAlarm(R.raw.funny_thatsa10);
+							break;
+						case "Illuminati":
+							setAsAlarm(R.raw.funny_illuminati);
+							break;
+						case "WOW":
+							setAsAlarm(R.raw.funny_wow);
+							break;
+						case "Richard Stallman":
+							setAsAlarm(R.raw.funny_windows);
+							break;
+						case "Τσικλίδης: Λες και είναι τσόντα!":
+							setAsAlarm(R.raw.personal_tsonta);
+							break;
+						case "What else?":
+							setAsAlarm(R.raw.funny_whatelse);
+							break;
+						case "Zodiac":
+							setAsAlarm(R.raw.funny_zodiac);
+							break;
+						case "Shabadaa shabadabadabaa…":
+							setAsAlarm(R.raw.funny_sabada);
+							break;
+						case "xT: Ρε καριόλη;":
+							setAsAlarm(R.raw.personal_karioli);
+							break;
+						case "Κιάμος: Ε!":
+							setAsAlarm(R.raw.personal_e);
+							break;
+						case "Κιάμος: Χατζάρα":
+							setAsAlarm(R.raw.personal_tigelasre);
+							break;
+						case "Κιάμος: Τί κοιτάς ρε μαλάκα":
+							setAsAlarm(R.raw.personal_tikoitasremlk);
+							break;
+						case "U WOT M8":
+							setAsAlarm(R.raw.movies_uwotmate);
+							break;
+						case "Cow":
+							setAsAlarm(R.raw.animals_cow);
+							break;
 //                    case "":
 //                        setAsAlarm(R.raw.);
 //                        break;
