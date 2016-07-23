@@ -2,6 +2,7 @@
 <resources>
     <color name="colorPrimary">#212121</color>
     <color name="colorPrimaryDark">#212121</color>
+    <color name="colorAccent">#212121</color>
     <color name="colorWhiteMinimalistic">#bdbdbd</color>
     <color name="colorMonday">#847900</color>
     <color name="colorTuesday">#8e24aa</color>
@@ -10,14 +11,4 @@
     <color name="colorFriday">#01579b</color>
     <color name="colorSaturday">#6a1b9a</color>
     <color name="colorSunday">#b71c1c</color>
-
-    <array name="progress_colors">
-        <item>#847900</item>
-        <item>#8e24aa</item>
-        <item>#1b5e20</item>
-        <item>#f57c00</item>
-        <item>#01579b</item>
-        <item>#6a1b9a</item>
-        <item>#b71c1c</item>
-    </array>
 </resources>

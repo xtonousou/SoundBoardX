@@ -50,8 +50,8 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/grid_view"
                 android:layout_alignParentTop="true"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent"
                 android:layout_alignParentEnd="true"/>
 
             <com.getbase.floatingactionbutton.FloatingActionsMenu
