@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#cfd8dc</color>
-    <color name="colorPrimaryDark">#212121</color>
+    <!-- Android -->
+    <color name="colorPrimary">#bdbdbd</color>
+    <color name="colorPrimaryDark">#1a1a1a</color>
+    <color name="colorAccent">#000000</color>
+
+    <!-- DayColor -->
     <color name="colorMonday">#847900</color>
     <color name="colorTuesday">#8e24aa</color>
     <color name="colorWednesday">#1b5e20</color>
@@ -9,4 +13,7 @@
     <color name="colorFriday">#01579b</color>
     <color name="colorSaturday">#6a1b9a</color>
     <color name="colorSunday">#b71c1c</color>
+
+    <!-- test -->
+    <color name="colorTest">#000000</color>
 </resources>

@@ -18,15 +18,18 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        CircularProgressView progressView = (CircularProgressView) findViewById(R.id.splash_progress_view);
+        progressView.setColor((new DayColor(progressView.getContext())).getDayColor());
 
         final Thread timerThread = new Thread() {
             public void run() {
                 try {
-                    PowerManager powerManager = (PowerManager) SplashScreen.this.getSystemService(Context.POWER_SERVICE);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && powerManager.isPowerSaveMode()) {
-                        sleep(0);
+                    if (!(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP &&
+                            ((PowerManager) SplashScreen.this.getSystemService(Context.POWER_SERVICE))
+                                    .isPowerSaveMode())) {
+                        sleep(1600);
                     } else {
-                        sleep(1550);
+                        onPause();
                     }
                 } catch(InterruptedException e) {
                     Log.e(TAG, e.getMessage());
@@ -39,9 +42,7 @@ public class SplashScreen extends AppCompatActivity {
 
         // start thread
         timerThread.start();
-
-        CircularProgressView progressView = (CircularProgressView) findViewById(R.id.splash_progress_view);
-        progressView.setColor((new DayColor(progressView.getContext())).getDayColor());
+        // start animation
         progressView.startAnimation();
     }
 
