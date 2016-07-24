@@ -16,6 +16,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
+import android.os.SystemClock;
 import android.os.Vibrator;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
@@ -46,7 +47,6 @@ import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.romainpiel.shimmer.Shimmer;
 import com.romainpiel.shimmer.ShimmerTextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import pub.devrel.easypermissions.AfterPermissionGranted;
@@ -54,16 +54,15 @@ import pub.devrel.easypermissions.EasyPermissions;
 
 public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
     public static final String TAG = "MainActivity";
+
     private static final int RC_WRITE_SETNGS_PERM_AFTER_M = 0x0;
     private static final int RC_WRITE_SETNGS_PERM = 0x1;
     private static final int RC_WRITE_EXST_PERM = 0x2;
 
     private static SoundPlayer soundPlayer;
+    private RecyclerView mView;
     private DrawerLayout mDrawerLayout;
     private Toolbar mToolbar;
-
-    /** Contains our {@linkplain MenuItem menu items} */
-    private final ArrayList<View> mMenuItems = new ArrayList<>();
 
     private boolean areAllSoundsOnly = true;
     private boolean areAnimalsSoundsOnly = false;
@@ -72,6 +71,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     private boolean areMoviesSoundsOnly = false;
     private boolean areNSFWSoundsOnly = false;
     private boolean arePersonalSoundsOnly = false;
+
+    // variable to track event time
+    private long mLastClickTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,13 +105,13 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
         FavStore.init(getPreferences(Context.MODE_PRIVATE));
 
-        final RecyclerView grid = (RecyclerView) findViewById(R.id.grid_view);
+        mView = (RecyclerView) findViewById(R.id.grid_view);
 
-        grid.setLayoutManager(new StaggeredGridLayoutManager(getResources()
+        mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                 .getInteger(R.integer.num_cols), StaggeredGridLayoutManager.VERTICAL));
-        grid.setAdapter(new SoundAdapter(SoundStore.getAllSounds(this)));
+        mView.setAdapter(new SoundAdapter(SoundStore.getAllSounds(this)));
 
-        beautifyStatusBar(getApplicationContext());
+        beautifyStatusBar(MainActivity.this);
         beautifyToolbar();
         initNavigationDrawer();
         initFloatingButtons();
@@ -180,7 +182,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     @AfterPermissionGranted(RC_WRITE_SETNGS_PERM_AFTER_M)
     public void writeSettingsPermissionAfterM() {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-            if (!Settings.System.canWrite(getApplicationContext())) {
+            if (!Settings.System.canWrite(MainActivity.this)) {
                 final Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS,
                         Uri.parse("package:" + getPackageName()));
                 new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.DialogTheme))
@@ -333,11 +335,10 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
      *  Depends on 'com.getbase:floatingactionbutton:1.10.1'.
      */
     private void initFloatingButtons() {
-        FloatingActionsMenu fab_menu = (FloatingActionsMenu ) findViewById(R.id.fab_menu);
+        final FloatingActionsMenu fab_menu = (FloatingActionsMenu ) findViewById(R.id.fab_menu);
         FloatingActionButton stopButton = (FloatingActionButton) findViewById(R.id.fab_stop);
         final FloatingActionButton animationToggle = (FloatingActionButton) findViewById(R.id.fab_anim);
         final FloatingActionButton favoritesToggle = (FloatingActionButton) findViewById(R.id.fab_favs);
-        final SoundAdapter adapter = ((SoundAdapter)((RecyclerView) findViewById(R.id.grid_view)).getAdapter());
 
         fab_menu.setAlpha(0.75f);
 
@@ -348,27 +349,32 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         favoritesToggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Preventing multiple clicks, using threshold of 1 second
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000) {
+                    return;
+                }
+                mLastClickTime = SystemClock.elapsedRealtime();
                 Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibe.vibrate(40);
-                if (!adapter.isFavoritesOnly()) {
-                    adapter.onlyShowFavorites();
+                if (!((SoundAdapter) mView.getAdapter()).isFavoritesOnly()) {
+                    ((SoundAdapter) mView.getAdapter()).onlyShowFavorites();
                     favoritesToggle.setIcon(R.drawable.ic_star_white_24dp);
                 } else {
                     favoritesToggle.setIcon(R.drawable.ic_star_border_white_24dp);
-                    if (areAnimalsSoundsOnly) {
-                        adapter.showAnimalsSounds(getApplicationContext());
+                    if (areAllSoundsOnly) {
+                        ((SoundAdapter) mView.getAdapter()).showAllSounds(MainActivity.this);
+                    } else if (areAnimalsSoundsOnly) {
+                        ((SoundAdapter) mView.getAdapter()).showAnimalsSounds(MainActivity.this);
                     } else if (areFunnySoundsOnly) {
-                        adapter.showFunnySounds(getApplicationContext());
+                        ((SoundAdapter) mView.getAdapter()).showFunnySounds(MainActivity.this);
                     } else if (areGamesSoundsOnly) {
-                        adapter.showGamesSounds(getApplicationContext());
+                        ((SoundAdapter) mView.getAdapter()).showGamesSounds(MainActivity.this);
                     } else if (areMoviesSoundsOnly) {
-                        adapter.showMoviesSounds(getApplicationContext());
+                        ((SoundAdapter) mView.getAdapter()).showMoviesSounds(MainActivity.this);
                     } else if (areNSFWSoundsOnly) {
-                        adapter.showNSFWSounds(getApplicationContext());
+                        ((SoundAdapter) mView.getAdapter()).showNSFWSounds(MainActivity.this);
                     } else if (arePersonalSoundsOnly) {
-                        adapter.showPersonalSounds(getApplicationContext());
-                    } else {
-                        adapter.showAllSounds(getApplicationContext());
+                        ((SoundAdapter) mView.getAdapter()).showPersonalSounds(MainActivity.this);
                     }
                 }
             }
@@ -388,11 +394,11 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 public void onClick(View view) {
                     Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                     vibe.vibrate(40);
-                    if (adapter.isShowAnimations()) {
-                        adapter.setShowAnimations(false);
+                    if (((SoundAdapter) mView.getAdapter()).isShowAnimations()) {
+                        ((SoundAdapter) mView.getAdapter()).setShowAnimations(false);
                         animationToggle.setIcon(R.drawable.ic_visibility_off_white_24dp);
-                    } else if (!adapter.isShowAnimations()) {
-                        adapter.setShowAnimations(true);
+                    } else if (!((SoundAdapter) mView.getAdapter()).isShowAnimations()) {
+                        ((SoundAdapter) mView.getAdapter()).setShowAnimations(true);
                         animationToggle.setIcon(R.drawable.ic_visibility_white_24dp);
                     }
                 }
@@ -405,7 +411,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibe.vibrate(40);
                 soundPlayer.release();
-                soundPlayer = new SoundPlayer(getApplicationContext());
+                soundPlayer = new SoundPlayer(MainActivity.this);
             }
         });
     }
@@ -452,12 +458,13 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         };
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+        mView = (RecyclerView) findViewById(R.id.grid_view);
+        final FloatingActionButton button = (FloatingActionButton) findViewById(R.id.fab_favs);
         final NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         final View header = navigationView.getHeaderView(0);
         final TextView mDrawerTitle = (TextView) header.findViewById(R.id.drawer_title);
         final TextView mVersion = (TextView) findViewById(R.id.drawer_version);
-        final SoundAdapter mAdapter = ((SoundAdapter)((RecyclerView) findViewById(R.id.grid_view))
-                .getAdapter());
+
         ColorStateList textColorStateList = new ColorStateList(textState, textStateColor);
         ColorStateList iconColorStateList = new ColorStateList(iconState, iconStateColor);
         Typeface fontRobotoRegular = Typeface.createFromAsset(mDrawerTitle.getContext().getAssets(),
@@ -495,7 +502,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         areMoviesSoundsOnly = false;
                         areNSFWSoundsOnly = false;
                         arePersonalSoundsOnly = false;
-                        mAdapter.showAllSounds(getApplicationContext());
+                        button.setIcon(R.drawable.ic_star_border_white_24dp);
+                        mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
+                                .getInteger(R.integer.num_cols), StaggeredGridLayoutManager.VERTICAL));
+                        mView.swapAdapter((new SoundAdapter(SoundStore
+                                .getAllSounds(MainActivity.this))), true);
+                        ((SoundAdapter) mView.getAdapter()).showAllSounds(MainActivity.this);
                         mDrawerLayout.closeDrawers();
                         break;
                     case R.id.drawer_animals:
@@ -506,7 +518,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         areMoviesSoundsOnly = false;
                         areNSFWSoundsOnly = false;
                         arePersonalSoundsOnly = false;
-                        mAdapter.showAnimalsSounds(getApplicationContext());
+                        button.setIcon(R.drawable.ic_star_border_white_24dp);
+                        mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
+                                .getInteger(R.integer.num_cols), StaggeredGridLayoutManager.VERTICAL));
+                        mView.swapAdapter((new SoundAdapter(SoundStore
+                                .getAnimalsSounds(MainActivity.this))), true);
+                        ((SoundAdapter) mView.getAdapter()).showAnimalsSounds(MainActivity.this);
                         mDrawerLayout.closeDrawers();
                         break;
                     case R.id.drawer_funny:
@@ -517,7 +534,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         areMoviesSoundsOnly = false;
                         areNSFWSoundsOnly = false;
                         arePersonalSoundsOnly = false;
-                        mAdapter.showFunnySounds(getApplicationContext());
+                        button.setIcon(R.drawable.ic_star_border_white_24dp);
+                        mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
+                                .getInteger(R.integer.num_cols), StaggeredGridLayoutManager.VERTICAL));
+                        mView.swapAdapter((new SoundAdapter(SoundStore
+                                .getFunnySounds(MainActivity.this))), true);
+                        ((SoundAdapter) mView.getAdapter()).showFunnySounds(MainActivity.this);
                         mDrawerLayout.closeDrawers();
                         break;
                     case R.id.drawer_games:
@@ -528,7 +550,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         areMoviesSoundsOnly = false;
                         areNSFWSoundsOnly = false;
                         arePersonalSoundsOnly = false;
-                        mAdapter.showGamesSounds(getApplicationContext());
+                        button.setIcon(R.drawable.ic_star_border_white_24dp);
+                        mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
+                                .getInteger(R.integer.num_cols), StaggeredGridLayoutManager.VERTICAL));
+                        mView.swapAdapter((new SoundAdapter(SoundStore
+                                .getGamesSounds(MainActivity.this))), true);
+                        ((SoundAdapter) mView.getAdapter()).showGamesSounds(MainActivity.this);
                         mDrawerLayout.closeDrawers();
                         break;
                     case R.id.drawer_movies:
@@ -539,7 +566,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         areMoviesSoundsOnly = true;
                         areNSFWSoundsOnly = false;
                         arePersonalSoundsOnly = false;
-                        mAdapter.showMoviesSounds(getApplicationContext());
+                        button.setIcon(R.drawable.ic_star_border_white_24dp);
+                        mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
+                                .getInteger(R.integer.num_cols), StaggeredGridLayoutManager.VERTICAL));
+                        mView.swapAdapter((new SoundAdapter(SoundStore
+                                .getMoviesSounds(MainActivity.this))), true);
+                        ((SoundAdapter) mView.getAdapter()).showMoviesSounds(MainActivity.this);
                         mDrawerLayout.closeDrawers();
                         break;
                     case R.id.drawer_nsfw:
@@ -550,7 +582,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         areMoviesSoundsOnly = false;
                         areNSFWSoundsOnly = true;
                         arePersonalSoundsOnly = false;
-                        mAdapter.showNSFWSounds(getApplicationContext());
+                        button.setIcon(R.drawable.ic_star_border_white_24dp);
+                        mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
+                                .getInteger(R.integer.num_cols), StaggeredGridLayoutManager.VERTICAL));
+                        mView.swapAdapter((new SoundAdapter(SoundStore
+                                .getNSFWSounds(MainActivity.this))), true);
+                        ((SoundAdapter) mView.getAdapter()).showNSFWSounds(MainActivity.this);
                         mDrawerLayout.closeDrawers();
                         break;
                     case R.id.drawer_personal:
@@ -561,7 +598,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         areMoviesSoundsOnly = false;
                         areNSFWSoundsOnly = false;
                         arePersonalSoundsOnly = true;
-                        mAdapter.showPersonalSounds(getApplicationContext());
+                        button.setIcon(R.drawable.ic_star_border_white_24dp);
+                        mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
+                                .getInteger(R.integer.num_cols), StaggeredGridLayoutManager.VERTICAL));
+                        mView.swapAdapter((new SoundAdapter(SoundStore
+                                .getPersonalSounds(MainActivity.this))), true);
+                        ((SoundAdapter) mView.getAdapter()).showPersonalSounds(MainActivity.this);
                         mDrawerLayout.closeDrawers();
                         break;
                 }
