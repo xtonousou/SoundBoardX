@@ -278,7 +278,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
         SearchView.SearchAutoComplete searchViewText = (SearchView.SearchAutoComplete) searchView.findViewById(R.id.search_src_text);
-        final SoundAdapter soundAdapter = ((SoundAdapter) ((RecyclerView) findViewById(R.id.grid_view)).getAdapter());
+        final SoundAdapter soundAdapter = (SoundAdapter) mView.getAdapter();
 
         searchViewText.setTextColor((new DayColor(searchViewText.getContext())).getDayColor());
 
@@ -458,7 +458,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         };
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
-        mView = (RecyclerView) findViewById(R.id.grid_view);
         final FloatingActionButton button = (FloatingActionButton) findViewById(R.id.fab_favs);
         final NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         final View header = navigationView.getHeaderView(0);
