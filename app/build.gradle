@@ -8,8 +8,7 @@ android {
         applicationId "com.xtonousou.soundboard"
         minSdkVersion 17
         targetSdkVersion 24
-        versionCode 4
-        versionName "Mighty Goat"
+        versionName "Mighty Goat v.0.9.9"
     }
 
     compileOptions {
