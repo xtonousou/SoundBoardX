@@ -104,7 +104,20 @@
             android:layout_width="wrap_content"
             android:layout_gravity="start"
             app:headerLayout="@layout/nav_header"
-            app:menu="@menu/menu_navigation"/>
+            app:menu="@menu/menu_navigation">
+
+            <TextView
+                android:id="@+id/drawer_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="1dp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:typeface="monospace"
+                android:text=""/>
+
+        </android.support.design.widget.NavigationView>
 
     </android.support.v4.widget.DrawerLayout>
 

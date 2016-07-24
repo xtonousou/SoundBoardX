@@ -7,10 +7,15 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.os.Vibrator;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
@@ -41,6 +46,7 @@ import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.romainpiel.shimmer.Shimmer;
 import com.romainpiel.shimmer.ShimmerTextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import pub.devrel.easypermissions.AfterPermissionGranted;
@@ -55,6 +61,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     private static SoundPlayer soundPlayer;
     private DrawerLayout mDrawerLayout;
     private Toolbar mToolbar;
+
+    /** Contains our {@linkplain MenuItem menu items} */
+    private final ArrayList<View> mMenuItems = new ArrayList<>();
 
     private boolean areAllSoundsOnly = true;
     private boolean areAnimalsSoundsOnly = false;
@@ -82,7 +91,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         setContentView(R.layout.activity_main);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(mToolbar);
+        if (mToolbar != null) {
+            setSupportActionBar(mToolbar);
+        }
 
         //noinspection ConstantConditions
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -318,20 +329,20 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
      *  @see FloatingActionButton stopButton      ---> onClick, utilizes onPause() and onResume() to prevent a sound from playing.
      *  @see FloatingActionButton animationToggle ---> onClick, checks if animations are present  , decides, toggles.
      *  @see FloatingActionButton favoritesToggle ---> onClick, checks if favorites are only shown, decides, toggles.
-     *  @see SoundAdapter         adapter         ---> used adapter.
+     *  @see SoundAdapter         adapter         ---> adapter used.
      *  Depends on 'com.getbase:floatingactionbutton:1.10.1'.
      */
     private void initFloatingButtons() {
-        FloatingActionsMenu        fab_menu        = (FloatingActionsMenu ) findViewById(R.id.fab_menu);
-        FloatingActionButton       stopButton      = (FloatingActionButton) findViewById(R.id.fab_stop);
+        FloatingActionsMenu fab_menu = (FloatingActionsMenu ) findViewById(R.id.fab_menu);
+        FloatingActionButton stopButton = (FloatingActionButton) findViewById(R.id.fab_stop);
         final FloatingActionButton animationToggle = (FloatingActionButton) findViewById(R.id.fab_anim);
         final FloatingActionButton favoritesToggle = (FloatingActionButton) findViewById(R.id.fab_favs);
-        final SoundAdapter         adapter         = ((SoundAdapter)((RecyclerView) findViewById(R.id.grid_view)).getAdapter());
+        final SoundAdapter adapter = ((SoundAdapter)((RecyclerView) findViewById(R.id.grid_view)).getAdapter());
 
         fab_menu.setAlpha(0.75f);
 
-        stopButton     .setIcon(R.drawable.ic_volume_off_white_24dp      );
-        animationToggle.setIcon(R.drawable.ic_visibility_white_24dp      );
+        stopButton.setIcon(R.drawable.ic_volume_off_white_24dp);
+        animationToggle.setIcon(R.drawable.ic_visibility_white_24dp);
         favoritesToggle.setIcon(R.drawable.ic_star_border_white_24dp);
 
         favoritesToggle.setOnClickListener(new View.OnClickListener() {
@@ -342,27 +353,51 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 if (!adapter.isFavoritesOnly()) {
                     adapter.onlyShowFavorites();
                     favoritesToggle.setIcon(R.drawable.ic_star_white_24dp);
-                } else if (adapter.isFavoritesOnly()) {
+                } else {
                     favoritesToggle.setIcon(R.drawable.ic_star_border_white_24dp);
-                    adapter.showAllSounds(getApplicationContext());
+                    if (areAnimalsSoundsOnly) {
+                        adapter.showAnimalsSounds(getApplicationContext());
+                    } else if (areFunnySoundsOnly) {
+                        adapter.showFunnySounds(getApplicationContext());
+                    } else if (areGamesSoundsOnly) {
+                        adapter.showGamesSounds(getApplicationContext());
+                    } else if (areMoviesSoundsOnly) {
+                        adapter.showMoviesSounds(getApplicationContext());
+                    } else if (areNSFWSoundsOnly) {
+                        adapter.showNSFWSounds(getApplicationContext());
+                    } else if (arePersonalSoundsOnly) {
+                        adapter.showPersonalSounds(getApplicationContext());
+                    } else {
+                        adapter.showAllSounds(getApplicationContext());
+                    }
                 }
             }
         });
 
-        animationToggle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                vibe.vibrate(40);
-                if (adapter.isShowAnimations()) {
-                    adapter.setShowAnimations(false);
-                    animationToggle.setIcon(R.drawable.ic_visibility_off_white_24dp);
-                } else if (!adapter.isShowAnimations()) {
-                    adapter.setShowAnimations(true);
-                    animationToggle.setIcon(R.drawable.ic_visibility_white_24dp);
+        /**
+         *  If Build.Version equal or greater than Lollipop and isPowerSaveMode returns true,
+         *  removes animationToggle button.
+         */
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP &&
+                ((PowerManager) this.getSystemService(Context.POWER_SERVICE))
+                        .isPowerSaveMode()) {
+            fab_menu.removeButton(animationToggle);
+        } else {
+            animationToggle.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    vibe.vibrate(40);
+                    if (adapter.isShowAnimations()) {
+                        adapter.setShowAnimations(false);
+                        animationToggle.setIcon(R.drawable.ic_visibility_off_white_24dp);
+                    } else if (!adapter.isShowAnimations()) {
+                        adapter.setShowAnimations(true);
+                        animationToggle.setIcon(R.drawable.ic_visibility_white_24dp);
+                    }
                 }
-            }
-        });
+            });
+        }
 
         stopButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -384,12 +419,67 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
      *  GOTO res/layout/nav_header.xml to customize header (ImageView, TextView).
      *  GOTO res/menu/menu_navigation.xml to add, delete or change Navigation Drawer's items.
      */
+    @SuppressLint ("SetTextI18n")
     private void initNavigationDrawer() {
-        final SoundAdapter   adapter        = ((SoundAdapter)((RecyclerView) findViewById(R.id.grid_view)).getAdapter());
-              NavigationView navigationView = (NavigationView)               findViewById(R.id.navigation_view);
+        // for navigation view item text color
+        int[][] textState = new int[][] {
+                new int[] {-android.R.attr.state_enabled}, // disabled
+                new int[] { android.R.attr.state_enabled}, // enabled
+                new int[] {-android.R.attr.state_checked}, // unchecked
+                new int[] { android.R.attr.state_pressed}  // pressed
+        };
+
+        int[] textStateColor = new int[] {
+                Color.argb(75, 0, 0, 0), // disabled
+                Color.BLACK,             // enabled
+                Color.TRANSPARENT,       // unchecked
+                Color.WHITE              // pressed
+        };
+
+        // for navigation view item icon color
+        int[][] iconState = new int[][] {
+                new int[] {-android.R.attr.state_enabled}, // disabled
+                new int[] { android.R.attr.state_enabled}, // enabled
+                new int[] {-android.R.attr.state_checked}, // unchecked
+                new int[] { android.R.attr.state_pressed}  // pressed
+        };
+
+        int[] iconStateColor = new int[] {
+                Color.argb(75, 0, 0, 0), // disabled
+                Color.BLACK,             // enabled
+                Color.TRANSPARENT,       // unchecked
+                Color.WHITE              // pressed
+        };
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+        final NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        final View header = navigationView.getHeaderView(0);
+        final TextView mDrawerTitle = (TextView) header.findViewById(R.id.drawer_title);
+        final TextView mVersion = (TextView) findViewById(R.id.drawer_version);
+        final SoundAdapter mAdapter = ((SoundAdapter)((RecyclerView) findViewById(R.id.grid_view))
+                .getAdapter());
+        ColorStateList textColorStateList = new ColorStateList(textState, textStateColor);
+        ColorStateList iconColorStateList = new ColorStateList(iconState, iconStateColor);
+        Typeface fontRobotoRegular = Typeface.createFromAsset(mDrawerTitle.getContext().getAssets(),
+                "fonts/Roboto-Regular.ttf");
+
+        try {
+            PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+            String vName = pInfo.versionName;
+            mVersion.setText(vName);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
 
         navigationView.setBackgroundColor((new DayColor(navigationView.getContext()).getDayColor()));
         navigationView.setCheckedItem(R.id.drawer_all);
+        navigationView.setItemTextColor(textColorStateList);
+        navigationView.setItemIconTintList(iconColorStateList);
+
+        mDrawerTitle.setTypeface(fontRobotoRegular);
+        mDrawerTitle.setText(R.string.categories);
+        mDrawerTitle.setTextColor((new DayColor(mDrawerTitle.getContext()).getDayColor()));
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
@@ -405,7 +495,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         areMoviesSoundsOnly = false;
                         areNSFWSoundsOnly = false;
                         arePersonalSoundsOnly = false;
-                        adapter.showAllSounds(getApplicationContext());
+                        mAdapter.showAllSounds(getApplicationContext());
                         mDrawerLayout.closeDrawers();
                         break;
                     case R.id.drawer_animals:
@@ -416,7 +506,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         areMoviesSoundsOnly = false;
                         areNSFWSoundsOnly = false;
                         arePersonalSoundsOnly = false;
-                        adapter.showAnimalsSounds(getApplicationContext());
+                        mAdapter.showAnimalsSounds(getApplicationContext());
                         mDrawerLayout.closeDrawers();
                         break;
                     case R.id.drawer_funny:
@@ -427,7 +517,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         areMoviesSoundsOnly = false;
                         areNSFWSoundsOnly = false;
                         arePersonalSoundsOnly = false;
-                        adapter.showFunnySounds(getApplicationContext());
+                        mAdapter.showFunnySounds(getApplicationContext());
                         mDrawerLayout.closeDrawers();
                         break;
                     case R.id.drawer_games:
@@ -438,7 +528,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         areMoviesSoundsOnly = false;
                         areNSFWSoundsOnly = false;
                         arePersonalSoundsOnly = false;
-                        adapter.showGamesSounds(getApplicationContext());
+                        mAdapter.showGamesSounds(getApplicationContext());
                         mDrawerLayout.closeDrawers();
                         break;
                     case R.id.drawer_movies:
@@ -449,7 +539,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         areMoviesSoundsOnly = true;
                         areNSFWSoundsOnly = false;
                         arePersonalSoundsOnly = false;
-                        adapter.showMoviesSounds(getApplicationContext());
+                        mAdapter.showMoviesSounds(getApplicationContext());
                         mDrawerLayout.closeDrawers();
                         break;
                     case R.id.drawer_nsfw:
@@ -460,7 +550,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         areMoviesSoundsOnly = false;
                         areNSFWSoundsOnly = true;
                         arePersonalSoundsOnly = false;
-                        adapter.showNSFWSounds(getApplicationContext());
+                        mAdapter.showNSFWSounds(getApplicationContext());
                         mDrawerLayout.closeDrawers();
                         break;
                     case R.id.drawer_personal:
@@ -471,20 +561,16 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         areMoviesSoundsOnly = false;
                         areNSFWSoundsOnly = false;
                         arePersonalSoundsOnly = true;
-                        adapter.showPersonalSounds(getApplicationContext());
+                        mAdapter.showPersonalSounds(getApplicationContext());
                         mDrawerLayout.closeDrawers();
                         break;
                 }
                 return true;
             }
         });
-        View header = navigationView.getHeaderView(0);
-        final TextView mDrawerTitle = (TextView) header.findViewById(R.id.drawer_title);
-        Typeface mFont = Typeface.createFromAsset(mDrawerTitle.getContext().getAssets(), "fonts/Roboto-Regular.ttf");
-        mDrawerTitle.setTypeface(mFont);
-        mDrawerTitle.setText(R.string.categories);
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close) {
+
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
+                mToolbar, R.string.drawer_open, R.string.drawer_close) {
 
             @Override
             public void onDrawerClosed(View v) {
@@ -496,6 +582,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 super.onDrawerOpened(v);
             }
         };
+
         mDrawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
     }
