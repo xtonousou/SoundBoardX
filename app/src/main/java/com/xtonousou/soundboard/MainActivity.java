@@ -349,8 +349,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         favoritesToggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Preventing multiple clicks, using threshold of 1 second
-                if (SystemClock.elapsedRealtime() - mLastClickTime < 1000) {
+                // Preventing multiple clicks, using threshold of 0.35 second
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 350) {
                     return;
                 }
                 mLastClickTime = SystemClock.elapsedRealtime();
