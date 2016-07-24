@@ -342,7 +342,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 					case "Zodiac":
 						particle.setAnimation4chan();
 						break;
-					case "Shabadaa shabadabadabaa…":
+					case "Yuri Kuma Arashi":
 						particle.setAnimationCats();
 						break;
 					case "xT: Ρε καριόλη;":
@@ -560,7 +560,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 							setAsRingtone(R.raw.personal_catman);
 							break;
 						case "Hmm, it's dick o'clock":
-							setAsRingtone(R.raw.funny_dickoclock);
+							setAsRingtone(R.raw.nsfw_dickoclock);
 							break;
 						case "Russian father":
 							setAsRingtone(R.raw.funny_fathercatishungry);
@@ -581,7 +581,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 							setAsRingtone(R.raw.movies_imyourfather);
 							break;
 						case "Give it to me!":
-							setAsRingtone(R.raw.funny_giveittome);
+							setAsRingtone(R.raw.nsfw_giveittome);
 							break;
 						case "Κοτσολάρη: Πίπα":
 							setAsRingtone(R.raw.personal_eleni);
@@ -662,7 +662,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 							setAsRingtone(R.raw.funny_ohyeaah);
 							break;
 						case "Penis, penis and penis":
-							setAsRingtone(R.raw.funny_penis);
+							setAsRingtone(R.raw.nsfw_penis);
 							break;
 						case "Our courage will pull us through":
 							setAsRingtone(R.raw.movies_pokemonaggouri);
@@ -715,8 +715,8 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 						case "Zodiac":
 							setAsRingtone(R.raw.funny_zodiac);
 							break;
-						case "Shabadaa shabadabadabaa…":
-							setAsRingtone(R.raw.funny_sabada);
+						case "Yuri Kuma Arashi":
+							setAsRingtone(R.raw.movies_sabada);
 							break;
 						case "xT: Ρε καριόλη;":
 							setAsRingtone(R.raw.personal_karioli);
@@ -794,7 +794,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 							setAsNotification(R.raw.personal_catman);
 							break;
 						case "Hmm, it's dick o'clock":
-							setAsNotification(R.raw.funny_dickoclock);
+							setAsNotification(R.raw.nsfw_dickoclock);
 							break;
 						case "Russian father":
 							setAsNotification(R.raw.funny_fathercatishungry);
@@ -815,7 +815,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 							setAsNotification(R.raw.movies_imyourfather);
 							break;
 						case "Give it to me!":
-							setAsNotification(R.raw.funny_giveittome);
+							setAsNotification(R.raw.nsfw_giveittome);
 							break;
 						case "Κοτσολάρη: Πίπα":
 							setAsNotification(R.raw.personal_eleni);
@@ -896,7 +896,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 							setAsNotification(R.raw.funny_ohyeaah);
 							break;
 						case "Penis, penis and penis":
-							setAsNotification(R.raw.funny_penis);
+							setAsNotification(R.raw.nsfw_penis);
 							break;
 						case "Our courage will pull us through":
 							setAsNotification(R.raw.movies_pokemonaggouri);
@@ -949,8 +949,8 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 						case "Zodiac":
 							setAsNotification(R.raw.funny_zodiac);
 							break;
-						case "Shabadaa shabadabadabaa…":
-							setAsNotification(R.raw.funny_sabada);
+						case "Yuri Kuma Arashi":
+							setAsNotification(R.raw.movies_sabada);
 							break;
 						case "xT: Ρε καριόλη;":
 							setAsNotification(R.raw.personal_karioli);
@@ -1028,7 +1028,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 							setAsAlarm(R.raw.personal_catman);
 							break;
 						case "Hmm, it's dick o'clock":
-							setAsAlarm(R.raw.funny_dickoclock);
+							setAsAlarm(R.raw.nsfw_dickoclock);
 							break;
 						case "Russian father":
 							setAsAlarm(R.raw.funny_fathercatishungry);
@@ -1049,7 +1049,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 							setAsAlarm(R.raw.movies_imyourfather);
 							break;
 						case "Give it to me!":
-							setAsAlarm(R.raw.funny_giveittome);
+							setAsAlarm(R.raw.nsfw_giveittome);
 							break;
 						case "Κοτσολάρη: Πίπα":
 							setAsAlarm(R.raw.personal_eleni);
@@ -1130,7 +1130,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 							setAsAlarm(R.raw.funny_ohyeaah);
 							break;
 						case "Penis, penis and penis":
-							setAsAlarm(R.raw.funny_penis);
+							setAsAlarm(R.raw.nsfw_penis);
 							break;
 						case "Our courage will pull us through":
 							setAsAlarm(R.raw.movies_pokemonaggouri);
@@ -1183,8 +1183,8 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 						case "Zodiac":
 							setAsAlarm(R.raw.funny_zodiac);
 							break;
-						case "Shabadaa shabadabadabaa…":
-							setAsAlarm(R.raw.funny_sabada);
+						case "Yuri Kuma Arashi":
+							setAsAlarm(R.raw.movies_sabada);
 							break;
 						case "xT: Ρε καριόλη;":
 							setAsAlarm(R.raw.personal_karioli);
