@@ -67,7 +67,7 @@
         <item>Cow</item>
         <item>What else?</item>
         <item>Zodiac</item>
-        <item>Shabadaa shabadabadabaa…</item>
+        <item>Yuri Kuma Arashi</item>
         <item>U WOT M8</item>
         <item>Τσικλίδης: Λες και είναι τσόντα!</item>
         <item>Πετρόπουλος: Action!</item>
@@ -93,13 +93,13 @@
         <item>@raw/funny_bekfast</item>
         <item>@raw/funny_blackkidonfire</item>
         <item>@raw/personal_catman</item>
-        <item>@raw/funny_dickoclock</item>
+        <item>@raw/nsfw_dickoclock</item>
         <item>@raw/funny_fathercatishungry</item>
         <item>@raw/funny_fichtlslied</item>
         <item>@raw/nsfw_fuckyeah</item>
         <item>@raw/funny_prettygood</item>
         <item>@raw/movies_imyourfather</item>
-        <item>@raw/funny_giveittome</item>
+        <item>@raw/nsfw_giveittome</item>
         <item>@raw/personal_eleni</item>
         <item>@raw/funny_fun</item>
         <item>@raw/funny_kazoo</item>
@@ -125,7 +125,7 @@
         <item>@raw/funny_sevenvaginas</item>
         <item>@raw/funny_ohmy</item>
         <item>@raw/funny_ohyeaah</item>
-        <item>@raw/funny_penis</item>
+        <item>@raw/nsfw_penis</item>
         <item>@raw/movies_pokemonaggouri</item>
         <item>@raw/funny_pussyhair</item>
         <item>@raw/funny_retardation</item>
@@ -143,7 +143,7 @@
         <item>@raw/animals_cow</item>
         <item>@raw/funny_whatelse</item>
         <item>@raw/funny_zodiac</item>
-        <item>@raw/funny_sabada</item>
+        <item>@raw/movies_sabada</item>
         <item>@raw/movies_uwotmate</item>
         <item>@raw/personal_tsonta</item>
         <item>@raw/personal_nikos</item>
@@ -177,11 +177,9 @@
         <item>Bearcum!!!</item>
         <item>What is going on here?</item>
         <item>Black kid on fire</item>
-        <item>Hmm, it\'s dick o\'clock</item>
         <item>Russian father</item>
         <item>Fichtl\'s Lied</item>
         <item>Hey that\' s pretty good!</item>
-        <item>Give it to me!</item>
         <item>Fun</item>
         <item>Kazoo</item>
         <item>Immigrants cause cancer</item>
@@ -201,7 +199,6 @@
         <item>Seven vaginias…</item>
         <item>Oh my!</item>
         <item>Oh Yeaaaah!</item>
-        <item>Penis, penis and penis</item>
         <item>Excuse me, I have some pussyhair on me!</item>
         <item>Retardation Theme</item>
         <item>Cyka Blyat\'s Middlefinger</item>
@@ -216,7 +213,6 @@
         <item>Richard Stallman</item>
         <item>What else?</item>
         <item>Zodiac</item>
-        <item>Shabadaa shabadabadabaa…</item>
     </string-array>
 
     <integer-array name="funnySoundsIDs">
@@ -231,11 +227,9 @@
         <item>@raw/funny_bearcum</item>
         <item>@raw/funny_bekfast</item>
         <item>@raw/funny_blackkidonfire</item>
-        <item>@raw/funny_dickoclock</item>
         <item>@raw/funny_fathercatishungry</item>
         <item>@raw/funny_fichtlslied</item>
         <item>@raw/funny_prettygood</item>
-        <item>@raw/funny_giveittome</item>
         <item>@raw/funny_fun</item>
         <item>@raw/funny_kazoo</item>
         <item>@raw/funny_immigrants</item>
@@ -255,7 +249,6 @@
         <item>@raw/funny_sevenvaginas</item>
         <item>@raw/funny_ohmy</item>
         <item>@raw/funny_ohyeaah</item>
-        <item>@raw/funny_penis</item>
         <item>@raw/funny_pussyhair</item>
         <item>@raw/funny_retardation</item>
         <item>@raw/funny_russianmiddlefinger</item>
@@ -270,7 +263,6 @@
         <item>@raw/funny_windows</item>
         <item>@raw/funny_whatelse</item>
         <item>@raw/funny_zodiac</item>
-        <item>@raw/funny_sabada</item>
     </integer-array>
 
     <!-- Games Sounds -->
@@ -284,32 +276,40 @@
 
     <!-- Movies Sounds -->
     <string-array name="moviesSounds">
+        <item>U WOT M8</item>
         <item>I\' m your father!</item>
         <item>LOTR MLG</item>
+        <item>Yuri Kuma Arashi</item>
         <item>Our courage will pull us through</item>
-        <item>U WOT M8</item>
     </string-array>
 
     <integer-array name="moviesSoundsIDs">
+        <item>@raw/movies_uwotmate</item>
         <item>@raw/movies_imyourfather</item>
         <item>@raw/movies_lotr</item>
+        <item>@raw/movies_sabada</item>
         <item>@raw/movies_pokemonaggouri</item>
-        <item>@raw/movies_uwotmate</item>
     </integer-array>
 
     <!-- NSFW Sounds -->
     <string-array name="nsfwSounds">
+        <item>Hmm, it\'s dick o\'clock</item>
         <item>Buffed Blowjob</item>
         <item>Thank you…</item>
+        <item>Penis, penis and penis</item>
         <item>Do you want my milk?</item>
+        <item>Give it to me!</item>
         <item>Shaved pussy…</item>
         <item>I\'m the scatman…</item>
     </string-array>
 
     <integer-array name="nsfwSoundsIDs">
+        <item>@raw/nsfw_dickoclock</item>
         <item>@raw/nsfw_fuckyeah</item>
         <item>@raw/nsfw_thankyou</item>
+        <item>@raw/nsfw_penis</item>
         <item>@raw/nsfw_milkinyourmot</item>
+        <item>@raw/nsfw_giveittome</item>
         <item>@raw/nsfw_shaved</item>
         <item>@raw/nsfw_scatman</item>
     </integer-array>
