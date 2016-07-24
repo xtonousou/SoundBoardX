@@ -26,6 +26,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.Normalizer;
 import java.util.ArrayList;
 
 import de.greenrobot.event.EventBus;
@@ -33,13 +34,22 @@ import de.greenrobot.event.EventBusException;
 
 public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> implements Filterable {
 	public static final String TAG = "SoundAdapter";
+
 	private ArrayList<Sound> sounds;
 	private ArrayList<Sound> orig;
+	private Context context;
+	private String query;
+	private String nameOf;
 	private boolean favoritesOnly = false;
 	private boolean showAnimations = true;
 
 	public SoundAdapter(ArrayList<Sound> soundArray) {
 		sounds = soundArray;
+	}
+
+	public SoundAdapter(ArrayList<Sound> soundArray, Context context) {
+		sounds = soundArray;
+		this.context = context;
 	}
 
 	public void onlyShowFavorites() {
@@ -440,7 +450,11 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 				if (charSequence != null) {
 					if (orig != null && orig.size() > 0 ) {
 						for (final Sound sound : orig) {
-							if (sound.getName().toLowerCase().contains(charSequence.toString()))results.add(sound);
+							nameOf = sound.getName().toLowerCase();
+							nameOf = Normalizer.normalize(nameOf, Normalizer.Form.NFD);
+							nameOf = nameOf.replaceAll("\\p{M}", "");
+							query = charSequence.toString();
+							if (nameOf.contains(query))results.add(sound);
 						}
 					}
 					filtered.values = results;
