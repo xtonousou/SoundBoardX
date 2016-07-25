@@ -1,10 +1,6 @@
 #:sound: xSoundBoardHD :sound: --- ԅ(≖‿≖ԅ)
 The Ultimate Android Soundboard.
 
-**OUTDATED PREVIEW**
-
-![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview.gif)
-
 17 >= API <= 24
 
 **Features:**
@@ -18,7 +14,5 @@ The Ultimate Android Soundboard.
 - [ ] **Particle support different DPIs**
 - [ ] **Add more sounds**
 - [X] Categorize sounds
-- [ ] **Fix Sounds (Enhance, Crop, Rename)**
-- [ ] **Remove non-English sounds**
 - [ ] **Fix search logic**
 - [X] Permission requests for >= M
