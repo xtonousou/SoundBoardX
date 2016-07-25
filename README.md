@@ -6,7 +6,8 @@ The Ultimate Android Soundboard.
 ![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/scr-c.jpg)
 ![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/scr-d.jpg)
 
-**minSdkVersion 17**    **targetSdkVersion 24**
+**minSdkVersion 17**
+**targetSdkVersion 24**
 
 **Features:**
 * set as Ringtone/Notification/Alarm options
