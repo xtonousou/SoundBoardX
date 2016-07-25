@@ -1,11 +1,6 @@
 #:sound: xSoundBoardHD :sound: --- ԅ(≖‿≖ԅ)
 The Ultimate Android Soundboard.
 
-![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/screen_a.jpg)
-![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/screen_b.jpg)
-![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/screen_c.jpg)
-![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/screen_d.jpg)
-
 **minSdkVersion 17**
 
 **targetSdkVersion 24**
