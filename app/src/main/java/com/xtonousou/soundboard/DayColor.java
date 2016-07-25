@@ -17,10 +17,6 @@ class DayColor {
     }
 
     public int getDayColor() {
-        return getAccentColor();
-    }
-
-    private int getAccentColor() {
         Calendar rightNow = Calendar.getInstance();
         switch (rightNow.get(Calendar.DAY_OF_WEEK)) {
             default:
