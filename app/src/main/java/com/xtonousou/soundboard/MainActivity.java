@@ -339,12 +339,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
      *  Depends on 'com.getbase:floatingactionbutton:1.10.1'.
      */
     private void initFloatingButtons() {
-        final FloatingActionsMenu fab_menu = (FloatingActionsMenu ) findViewById(R.id.fab_menu);
+        final FloatingActionsMenu fabMenu = (FloatingActionsMenu) findViewById(R.id.fab_menu);
         final FloatingActionButton stopButton = (FloatingActionButton) findViewById(R.id.fab_stop);
         final FloatingActionButton animationToggle = (FloatingActionButton) findViewById(R.id.fab_anim);
         final FloatingActionButton favoritesToggle = (FloatingActionButton) findViewById(R.id.fab_favs);
 
-        fab_menu.setAlpha(0.75f);
+        fabMenu.setAlpha(0.75f);
 
         stopButton.setIcon(R.drawable.ic_volume_off_white_24dp);
         animationToggle.setIcon(R.drawable.ic_visibility_white_24dp);
@@ -391,7 +391,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP &&
                 ((PowerManager) this.getSystemService(Context.POWER_SERVICE))
                         .isPowerSaveMode()) {
-            fab_menu.removeButton(animationToggle);
+            fabMenu.removeButton(animationToggle);
         } else {
             animationToggle.setOnClickListener(new View.OnClickListener() {
                 @Override
