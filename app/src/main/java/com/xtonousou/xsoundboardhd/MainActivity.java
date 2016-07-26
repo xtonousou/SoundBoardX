@@ -1,4 +1,4 @@
-package com.xtonousou.soundboard;
+package com.xtonousou.xsoundboardhd;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -36,7 +36,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.OvershootInterpolator;
 import android.widget.Filter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,7 +49,6 @@ import com.romainpiel.shimmer.ShimmerTextView;
 
 import java.util.List;
 
-import jp.wasabeef.recyclerview.animators.LandingAnimator;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -104,7 +102,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
         beautifyStatusBar(MainActivity.this);
         beautifyToolbar();
-        beautifyView();
         initNavigationDrawer();
         initFloatingButtons();
 
@@ -258,17 +255,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                     .setStartDelay(1000)
                     .setDirection(Shimmer.ANIMATION_DIRECTION_LTR);
         }
-    }
-
-    /**
-     *  Depends on 'jp.wasabeef:recyclerview-animators:2.2.3'
-     */
-    private void beautifyView() {
-        mView.setItemAnimator(new LandingAnimator(new OvershootInterpolator(1f)));
-        mView.getItemAnimator().setAddDuration(500);
-        mView.getItemAnimator().setRemoveDuration(500);
-        mView.getItemAnimator().setMoveDuration(500);
-        mView.getItemAnimator().setChangeDuration(500);
     }
 
     /**

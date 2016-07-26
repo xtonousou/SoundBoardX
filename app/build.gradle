@@ -5,7 +5,7 @@ android {
     buildToolsVersion '24'
 
     defaultConfig {
-        applicationId "com.xtonousou.soundboard"
+        applicationId "com.xtonousou.xsoundboardhd"
         minSdkVersion 17
         targetSdkVersion 24
         versionName "Mighty Goat v.0.9.9"
@@ -43,5 +43,4 @@ dependencies {
     compile 'com.getbase:floatingactionbutton:1.10.1'
     compile 'pub.devrel:easypermissions:0.1.9'
     compile 'com.github.jlmd:AnimatedCircleLoadingView:1.1.5@aar'
-    compile 'jp.wasabeef:recyclerview-animators:2.2.3'
 }

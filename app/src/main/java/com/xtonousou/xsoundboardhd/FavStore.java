@@ -1,4 +1,4 @@
-package com.xtonousou.soundboard;
+package com.xtonousou.xsoundboardhd;
 
 import android.content.SharedPreferences;
 
