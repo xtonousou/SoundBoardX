@@ -2,6 +2,8 @@ package com.xtonousou.soundboard;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.support.v4.view.ViewCompat;
+import android.support.v4.view.ViewPropertyAnimatorListener;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -19,6 +21,7 @@ import java.util.ArrayList;
 
 import de.greenrobot.event.EventBus;
 import de.greenrobot.event.EventBusException;
+import jp.wasabeef.recyclerview.animators.holder.AnimateViewHolder;
 
 public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> implements Filterable {
 	public static final String TAG = "SoundAdapter";
@@ -126,6 +129,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 
 			@Override
 			public void onClick(View view) {
+				holder.setIsRecyclable(false);
 				try {
 					if (EventBus.getDefault().isRegistered(this)) {
 						EventBus.getDefault().unregister(this);
@@ -219,7 +223,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 		};
 	}
 
-	public static class ViewHolder extends RecyclerView.ViewHolder implements
+	public static class ViewHolder extends AnimateViewHolder implements
 			View.OnCreateContextMenuListener,
 			MenuItem.OnMenuItemClickListener {
 		public final TextView title;
@@ -238,6 +242,32 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 					"fonts/Roboto-Regular.ttf");
 			title.setTypeface(font);
 		}
+
+        @Override
+        public void animateAddImpl(ViewPropertyAnimatorListener listener) {
+            ViewCompat.animate(itemView)
+                    .translationY(0)
+                    .alpha(1)
+                    .setDuration(300)
+                    .setListener(listener)
+                    .start();
+        }
+
+        @Override
+        public void preAnimateAddImpl() {
+            ViewCompat.setTranslationY(itemView, -itemView.getHeight() * 0.3f);
+            ViewCompat.setAlpha(itemView, 0);
+        }
+
+        @Override
+        public void animateRemoveImpl(ViewPropertyAnimatorListener listener) {
+            ViewCompat.animate(itemView)
+                    .translationY(-itemView.getHeight() * 0.3f)
+                    .alpha(0)
+                    .setDuration(300)
+                    .setListener(listener)
+                    .start();
+        }
 
         @Override
 		public void onCreateContextMenu(final ContextMenu contextMenu, View view,
