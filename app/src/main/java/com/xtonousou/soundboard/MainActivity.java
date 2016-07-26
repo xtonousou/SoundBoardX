@@ -294,10 +294,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
             public boolean onQueryTextSubmit(String query) {
                 if (TextUtils.isEmpty(query)) {
                     soundAdapter.getFilter().filter("");
+                    soundAdapter.notifyDataSetChanged();
                 } else {
                     soundAdapter.getFilter().filter(query, new Filter.FilterListener() {
                         @Override
                         public void onFilterComplete(int i) {
+                            soundAdapter.notifyDataSetChanged();
                             if (soundAdapter.getSounds().isEmpty()) {
                                 YoYo.with(Techniques.Shake)
                                         .duration(200)
@@ -313,10 +315,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
             public boolean onQueryTextChange(String newText) {
                 if (TextUtils.isEmpty(newText)) {
                     soundAdapter.getFilter().filter("");
+                    soundAdapter.notifyDataSetChanged();
                 } else {
                     soundAdapter.getFilter().filter(newText, new Filter.FilterListener() {
                         @Override
                         public void onFilterComplete(int i) {
+                            soundAdapter.notifyDataSetChanged();
                             if (soundAdapter.getSounds().isEmpty()) {
                                 YoYo.with(Techniques.Shake)
                                         .duration(200)
