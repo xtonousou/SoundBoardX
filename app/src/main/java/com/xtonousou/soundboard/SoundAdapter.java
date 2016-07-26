@@ -2,8 +2,6 @@ package com.xtonousou.soundboard;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.view.ViewPropertyAnimatorListener;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -21,17 +19,16 @@ import java.util.ArrayList;
 
 import de.greenrobot.event.EventBus;
 import de.greenrobot.event.EventBusException;
-import jp.wasabeef.recyclerview.animators.holder.AnimateViewHolder;
 
 public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> implements Filterable {
 	public static final String TAG = "SoundAdapter";
 
 	private ArrayList<Sound> sounds;
 	private ArrayList<Sound> orig;
-	private String query;
-	private String nameOf;
 	private boolean favoritesOnly = false;
 	private boolean showAnimations = true;
+    private String query;
+    private String nameOf;
 
 	public SoundAdapter(ArrayList<Sound> soundArray) {
 		sounds = soundArray;
@@ -104,6 +101,48 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 	public ArrayList<Sound> getSounds() {
 		return sounds;
 	}
+
+    public void setSounds(ArrayList<Sound> arrayList) {
+        sounds = arrayList;
+    }
+
+    /**
+     *  Receives a CharSequence as parameter and filters a list. Notifies.
+     *  @see MainActivity initSearchView()
+     *  @return filtered list.
+     */
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                final FilterResults filtered = new FilterResults();
+                final ArrayList<Sound> results = new ArrayList<>();
+                if (orig == null) {
+                    orig = sounds;
+                }
+                if (charSequence != null) {
+                    if (orig != null && orig.size() > 0 ) {
+                        for (final Sound sound : orig) {
+                            nameOf = sound.getName().toLowerCase();
+                            nameOf = Normalizer.normalize(nameOf, Normalizer.Form.NFD);
+                            nameOf = nameOf.replaceAll("\\p{M}", "");
+                            query = charSequence.toString();
+                            if (nameOf.contains(query))results.add(sound);
+                        }
+                    }
+                    filtered.values = results;
+                }
+                return filtered;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                sounds = (ArrayList<Sound>) filterResults.values;
+                notifyDataSetChanged();
+            }
+        };
+    }
 
 	@Override
 	public SoundAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -185,45 +224,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 		return sounds.size();
 	}
 
-	/**
-	 *  Receives a CharSequence as parameter and filters a list. Notifies.
-	 *  @see MainActivity initSearchView()
-	 *  @return filtered list.
-     */
-	@Override
-	public Filter getFilter() {
-		return new Filter() {
-			@Override
-			protected FilterResults performFiltering(CharSequence charSequence) {
-				final FilterResults filtered = new FilterResults();
-				final ArrayList<Sound> results = new ArrayList<>();
-				if (orig == null) {
-					orig = sounds;
-				}
-				if (charSequence != null) {
-					if (orig != null && orig.size() > 0 ) {
-						for (final Sound sound : orig) {
-							nameOf = sound.getName().toLowerCase();
-							nameOf = Normalizer.normalize(nameOf, Normalizer.Form.NFD);
-							nameOf = nameOf.replaceAll("\\p{M}", "");
-							query = charSequence.toString();
-							if (nameOf.contains(query))results.add(sound);
-						}
-					}
-					filtered.values = results;
-				}
-				return filtered;
-			}
-
-			@Override
-			protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-				sounds = (ArrayList<Sound>) filterResults.values;
-				notifyDataSetChanged();
-			}
-		};
-	}
-
-	public static class ViewHolder extends AnimateViewHolder implements
+	public static class ViewHolder extends RecyclerView.ViewHolder implements
 			View.OnCreateContextMenuListener,
 			MenuItem.OnMenuItemClickListener {
 		public final TextView title;
@@ -242,32 +243,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 					"fonts/Roboto-Regular.ttf");
 			title.setTypeface(font);
 		}
-
-        @Override
-        public void animateAddImpl(ViewPropertyAnimatorListener listener) {
-            ViewCompat.animate(itemView)
-                    .translationY(0)
-                    .alpha(1)
-                    .setDuration(300)
-                    .setListener(listener)
-                    .start();
-        }
-
-        @Override
-        public void preAnimateAddImpl() {
-            ViewCompat.setTranslationY(itemView, -itemView.getHeight() * 0.3f);
-            ViewCompat.setAlpha(itemView, 0);
-        }
-
-        @Override
-        public void animateRemoveImpl(ViewPropertyAnimatorListener listener) {
-            ViewCompat.animate(itemView)
-                    .translationY(-itemView.getHeight() * 0.3f)
-                    .alpha(0)
-                    .setDuration(300)
-                    .setListener(listener)
-                    .start();
-        }
 
         @Override
 		public void onCreateContextMenu(final ContextMenu contextMenu, View view,
