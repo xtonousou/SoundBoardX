@@ -1,4 +1,4 @@
-package com.xtonousou.soundboard;
+package com.xtonousou.xsoundboardhd;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -168,7 +168,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 
 			@Override
 			public void onClick(View view) {
-				holder.setIsRecyclable(false);
 				try {
 					if (EventBus.getDefault().isRegistered(this)) {
 						EventBus.getDefault().unregister(this);

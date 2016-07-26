@@ -1,4 +1,4 @@
-package com.xtonousou.soundboard;
+package com.xtonousou.xsoundboardhd;
 
 import android.app.Activity;
 import android.view.View;
