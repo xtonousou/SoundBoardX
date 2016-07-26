@@ -18,7 +18,6 @@ import java.text.Normalizer;
 import java.util.ArrayList;
 
 import de.greenrobot.event.EventBus;
-import de.greenrobot.event.EventBusException;
 
 public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> implements Filterable {
 	public static final String TAG = "SoundAdapter";
@@ -102,11 +101,16 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 		return sounds;
 	}
 
-    public void setSounds(ArrayList<Sound> arrayList) {
-        sounds = arrayList;
-    }
+	@Override
+	public int getItemCount() {
+		return sounds.size();
+	}
 
-    /**
+	public int getFilteredItemsCount() {
+		return orig.size();
+	}
+
+	/**
      *  Receives a CharSequence as parameter and filters a list. Notifies.
      *  @see MainActivity initSearchView()
      *  @return filtered list.
@@ -116,30 +120,36 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
         return new Filter() {
             @Override
             protected FilterResults performFiltering(CharSequence charSequence) {
+				Log.d(TAG, "**** PERFORM FILTERING for: " + charSequence);
                 final FilterResults filtered = new FilterResults();
-                final ArrayList<Sound> results = new ArrayList<>();
-                if (orig == null) {
-                    orig = sounds;
-                }
-                if (charSequence != null) {
-                    if (orig != null && orig.size() > 0 ) {
-                        for (final Sound sound : orig) {
-                            nameOf = sound.getName().toLowerCase();
-                            nameOf = Normalizer.normalize(nameOf, Normalizer.Form.NFD);
-                            nameOf = nameOf.replaceAll("\\p{M}", "");
-                            query = charSequence.toString();
-                            if (nameOf.contains(query))results.add(sound);
-                        }
-                    }
-                    filtered.values = results;
-                }
+                if (charSequence == null || charSequence.length() == 0) {
+                    filtered.values = sounds;
+					filtered.count = sounds.size();
+                } else {
+					ArrayList<Sound> filterResultsData = new ArrayList<Sound>();
+					for (final Sound sound : orig) {
+						nameOf = sound.getName().toLowerCase();
+						nameOf = Normalizer.normalize(nameOf, Normalizer.Form.NFD);
+						nameOf = nameOf.replaceAll("\\p{M}", "");
+						query = charSequence.toString();
+						if (nameOf.contains(query)) {
+							filterResultsData.add(sound);
+						}
+					}
+
+					filtered.values = filterResultsData;
+					filtered.count = filterResultsData.size();
+				}
+
                 return filtered;
             }
 
+			@SuppressWarnings("unchecked")
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+				Log.d(TAG, "**** PUBLISHING RESULTS for: " + charSequence);
                 sounds = (ArrayList<Sound>) filterResults.values;
-                notifyDataSetChanged();
+                SoundAdapter.this.notifyDataSetChanged();
             }
         };
     }
@@ -162,28 +172,20 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 			 *  @param event Whatever event.
              */
 			public void onEvent(String event) {
-				EventBus.getDefault().unregister(this);
-				notifyDataSetChanged();
+				notifyItemChanged(holder.getAdapterPosition());
 			}
 
 			@Override
 			public void onClick(View view) {
-				try {
-					if (EventBus.getDefault().isRegistered(this)) {
-						EventBus.getDefault().unregister(this);
-					} else {
-						EventBus.getDefault().register(this);
-						if (showAnimations) {
-							tone.makeItShine();
-						}
-						EventBus.getDefault().post(sounds.get(holder.getAdapterPosition()));
-						EventBus.getDefault().unregister(this);
-						notifyItemChanged(holder.getAdapterPosition());
-					}
-				} catch (EventBusException e) {
-					notifyDataSetChanged();
-					System.err.println(e.getMessage());
+				if (EventBus.getDefault().isRegistered(this)) {
+					return;
 				}
+				if (showAnimations) {
+					tone.makeItShine();
+				}
+				EventBus.getDefault().register(this);
+				EventBus.getDefault().post(sounds.get(holder.getAdapterPosition()));
+				EventBus.getDefault().unregister(this);
 			}
 		});
 
@@ -216,11 +218,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 				}
 			}
 		});
-	}
-
-	@Override
-	public int getItemCount() {
-		return sounds.size();
 	}
 
 	public static class ViewHolder extends RecyclerView.ViewHolder implements
