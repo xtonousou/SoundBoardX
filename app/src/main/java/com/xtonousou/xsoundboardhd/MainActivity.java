@@ -127,97 +127,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        switch (requestCode) {
-            default:
-                break;
-            case EasyPermissions.SETTINGS_REQ_CODE:
-                Toast.makeText(this, R.string.returned_from_app_settings_to_activity, Toast.LENGTH_SHORT)
-                        .show();
-                break;
-            case RC_WRITE_SETNGS_PERM_AFTER_M:
-                Toast.makeText(this, R.string.returned_from_app_settings_to_activity, Toast.LENGTH_SHORT)
-                        .show();
-                break;
-        }
-    }
-
-    @AfterPermissionGranted (RC_WRITE_EXST_PERM)
-    public void writeExternalStoragePermission() {
-        if (EasyPermissions.hasPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-            // Have permission, do the thing!
-            Toast.makeText(this, "Permission granted", Toast.LENGTH_LONG).show();
-        } else {
-            // Ask for one permission
-            EasyPermissions.requestPermissions(this, getString(R.string.rationale_exst),
-                    RC_WRITE_EXST_PERM, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        }
-    }
-
-    @AfterPermissionGranted(RC_WRITE_SETNGS_PERM)
-    public void writeSettingsPermission() {
-        if (EasyPermissions.hasPermissions(this, Manifest.permission.WRITE_SETTINGS)) {
-            // Have permissions, do the thing!
-            Toast.makeText(this, "Permission granted", Toast.LENGTH_LONG).show();
-        } else {
-            // Ask for both permissions
-            EasyPermissions.requestPermissions(this, getString(R.string.rationale_settings),
-            RC_WRITE_SETNGS_PERM, Manifest.permission.WRITE_SETTINGS);
-        }
-    }
-
-    @AfterPermissionGranted(RC_WRITE_SETNGS_PERM_AFTER_M)
-    public void writeSettingsPermissionAfterM() {
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-            if (!Settings.System.canWrite(MainActivity.this)) {
-                final Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS,
-                        Uri.parse("package:" + getPackageName()));
-                new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.DialogTheme))
-                        .setTitle("Need permission")
-                        .setMessage(R.string.rationale_settings)
-                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                            @SuppressLint ("NewApi")
-                            public void onClick(DialogInterface dialog, int which) {
-                                startActivityForResult(intent, RC_WRITE_SETNGS_PERM_AFTER_M);
-                            }
-                        })
-                        .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
-                        })
-                        .setIcon(android.R.drawable.ic_dialog_alert)
-                        .show();
-            }
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        // EasyPermissions handles the request result.
-        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
-    }
-
-    @Override
-    public void onPermissionsGranted(int requestCode, List<String> perms) {
-        Log.d(TAG, "onPermissionsGranted:" + requestCode + ":" + perms.size());
-    }
-
-    @Override
-    public void onPermissionsDenied(int requestCode, List<String> perms) {
-        Log.d(TAG, "onPermissionsDenied:" + requestCode + ":" + perms.size());
-
-        // (Optional) Check whether the user denied permissions and checked NEVER ASK AGAIN.
-        // This will display a dialog directing them to enable the permission in app settings.
-        EasyPermissions.checkDeniedPermissionsNeverAskAgain(this,
-                getString(R.string.rationale_ask_again),
-                R.string.setting, R.string.cancel, null, perms);
-    }
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.item, menu);
         initSearchView(menu);
@@ -240,6 +149,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
      *  Shimmering effect depends on 'com.romainpiel.shimmer:library:1.4.0@aar'
      */
     private void beautifyToolbar() {
+        /**
+         *  TODO add powersave awareness for shimmertv
+         */
         ShimmerTextView shimmerTextView = (ShimmerTextView) findViewById(R.id.shimmerTitle);
         Typeface font = Typeface.createFromAsset(shimmerTextView.getContext().getAssets(),
                 "fonts/CaviarDreams.ttf");
@@ -629,5 +541,98 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
         mDrawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
+    }
+
+    // PERMISSIONS
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            default:
+                break;
+            case EasyPermissions.SETTINGS_REQ_CODE:
+                Toast.makeText(this, R.string.returned_from_app_settings_to_activity, Toast.LENGTH_SHORT)
+                        .show();
+                break;
+            case RC_WRITE_SETNGS_PERM_AFTER_M:
+                Toast.makeText(this, R.string.returned_from_app_settings_to_activity, Toast.LENGTH_SHORT)
+                        .show();
+                break;
+        }
+    }
+
+    @AfterPermissionGranted (RC_WRITE_EXST_PERM)
+    public void writeExternalStoragePermission() {
+        if (EasyPermissions.hasPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            // Have permission, do the thing!
+            Toast.makeText(this, "Permission granted", Toast.LENGTH_LONG).show();
+        } else {
+            // Ask for one permission
+            EasyPermissions.requestPermissions(this, getString(R.string.rationale_exst),
+                    RC_WRITE_EXST_PERM, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        }
+    }
+
+    @AfterPermissionGranted(RC_WRITE_SETNGS_PERM)
+    public void writeSettingsPermission() {
+        if (EasyPermissions.hasPermissions(this, Manifest.permission.WRITE_SETTINGS)) {
+            // Have permissions, do the thing!
+            Toast.makeText(this, "Permission granted", Toast.LENGTH_LONG).show();
+        } else {
+            // Ask for both permissions
+            EasyPermissions.requestPermissions(this, getString(R.string.rationale_settings),
+                    RC_WRITE_SETNGS_PERM, Manifest.permission.WRITE_SETTINGS);
+        }
+    }
+
+    @AfterPermissionGranted(RC_WRITE_SETNGS_PERM_AFTER_M)
+    public void writeSettingsPermissionAfterM() {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            if (!Settings.System.canWrite(MainActivity.this)) {
+                final Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS,
+                        Uri.parse("package:" + getPackageName()));
+                new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.DialogTheme))
+                        .setTitle("Need permission")
+                        .setMessage(R.string.rationale_settings)
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            @SuppressLint ("NewApi")
+                            public void onClick(DialogInterface dialog, int which) {
+                                startActivityForResult(intent, RC_WRITE_SETNGS_PERM_AFTER_M);
+                            }
+                        })
+                        .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        })
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        // EasyPermissions handles the request result.
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> perms) {
+        Log.d(TAG, "onPermissionsGranted:" + requestCode + ":" + perms.size());
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> perms) {
+        Log.d(TAG, "onPermissionsDenied:" + requestCode + ":" + perms.size());
+
+        // (Optional) Check whether the user denied permissions and checked NEVER ASK AGAIN.
+        // This will display a dialog directing them to enable the permission in app settings.
+        EasyPermissions.checkDeniedPermissionsNeverAskAgain(this,
+                getString(R.string.rationale_ask_again),
+                R.string.setting, R.string.cancel, null, perms);
     }
 }
