@@ -20,6 +20,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 	public static final String TAG = "SoundAdapter";
 
 	private ArrayList<Sound> sounds;
+	private ArrayList<Sound> soundsCopy;
 	private boolean favoritesOnly = false;
 	private boolean animationsShown = true;
 	private boolean allSoundsOnly = true; // default
@@ -32,6 +33,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 
 	public SoundAdapter(ArrayList<Sound> soundArray) {
 		sounds = soundArray;
+		soundsCopy = soundArray;
 	}
 
 	public boolean areAnimationsShown() {
@@ -41,32 +43,28 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 	public boolean isFavoritesOnly() {
 		return favoritesOnly;
 	}
-	public boolean areAllSoundsOnly() {
-		return allSoundsOnly;
-	}
 
-	public boolean areAnimalsSoundsOnly() {
-		return animalsSoundsOnly;
-	}
-
-	public boolean areFunnySoundsOnly() {
-		return funnySoundsOnly;
-	}
-
-	public boolean areGamesSoundsOnly() {
-		return gamesSoundsOnly;
-	}
-
-	public boolean areMoviesSoundsOnly() {
-		return moviesSoundsOnly;
-	}
-
-	public boolean areNSFWSoundsOnly() {
-		return nsfwSoundsOnly;
-	}
-
-	public boolean arePersonalSoundsOnly() {
-		return personalSoundsOnly;
+	/**
+	 *  returns  0 if allSoundsOnly,
+	 *  returns  1 if animalsSoundsOnly,
+	 *  returns  2 if funnySoundsOnly,
+	 *  returns  3 if gamesSoundsOnly,
+	 *  returns  4 if moviesSoundsOnly,
+	 *  returns  5 if nsfwSoundsOnly,
+	 *  returns  6 if personalSoundsOnly,
+	 *  returns -1 if unexpected occurrence.
+     */
+	public int getCategory() {
+		int category;
+		if (allSoundsOnly) category = 0;
+		else if (animalsSoundsOnly) category = 1;
+		else if (funnySoundsOnly) category = 2;
+		else if (gamesSoundsOnly) category = 3;
+		else if (moviesSoundsOnly) category = 4;
+		else if (nsfwSoundsOnly) category = 5;
+		else if (personalSoundsOnly) category = 6;
+		else category = -1;
+		return category;
 	}
 
 	public void setShowAnimations(boolean anim) {
@@ -202,11 +200,12 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 		final ToneManager tone = new ToneManager(new Particle(holder.itemView), holder.title.getText().toString());
 		holder.itemView.setOnClickListener(new View.OnClickListener() {
 
-			/**
-			 *  Another event for EventBus.
-			 *  @param event Whatever event.
-             */
+			// TODO handle exception with care ;)
+
 			public void onEvent(String event) {
+				if (EventBus.getDefault().isRegistered(this)) {
+					EventBus.getDefault().unregister(this);
+				}
 				notifyItemChanged(holder.getAdapterPosition());
 			}
 
@@ -219,14 +218,15 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 					tone.makeItShine();
 				}
 				EventBus.getDefault().register(this);
-				EventBus.getDefault().post(sounds.get(holder.getAdapterPosition()));
-				EventBus.getDefault().unregister(this);
+				try {
+					EventBus.getDefault().post(sounds.get(holder.getAdapterPosition()));
+					EventBus.getDefault().unregister(this);
+				} catch (ArrayIndexOutOfBoundsException e) {
+					Log.e(TAG, e.getMessage());
+				}
 			}
 		});
 
-		/**
-		 *  Listens and sets favorite icon on each item.
-		 */
 		boolean isFavorite = sounds.get(position).getFavorite();
 		holder.favButton.setImageResource(isFavorite
 				? R.drawable.ic_star_white_24dp
@@ -235,21 +235,25 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 		holder.favButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				boolean newFavStatus = !sounds.get(holder.getAdapterPosition()).getFavorite();
-				sounds.get(holder.getAdapterPosition()).setFavorite(newFavStatus);
+				try {
+					boolean newFavStatus = !sounds.get(holder.getAdapterPosition()).getFavorite();
+					sounds.get(holder.getAdapterPosition()).setFavorite(newFavStatus);
 
-				if (newFavStatus) {
-					((ImageButton) v).setImageResource(R.drawable.ic_star_white_24dp);
-					v.setContentDescription(v.getContext().getString(R.string.fav_desc));
-				} else {
-					((ImageButton) v).setImageResource(R.drawable.ic_star_border_white_24dp);
-					v.setContentDescription(v.getContext().getString(R.string.not_fav_desc));
-				}
+					if (newFavStatus) {
+						((ImageButton) v).setImageResource(R.drawable.ic_star_white_24dp);
+						v.setContentDescription(v.getContext().getString(R.string.fav_desc));
+					} else {
+						((ImageButton) v).setImageResource(R.drawable.ic_star_border_white_24dp);
+						v.setContentDescription(v.getContext().getString(R.string.not_fav_desc));
+					}
 
-				if (favoritesOnly) {
-					// Remove from the list.
-					sounds.remove(sounds.get(holder.getAdapterPosition()));
-					notifyItemRemoved(holder.getAdapterPosition());
+					if (favoritesOnly) {
+						// Remove from the list.
+						sounds.remove(sounds.get(holder.getAdapterPosition()));
+						notifyItemRemoved(holder.getAdapterPosition());
+					}
+				} catch (ArrayIndexOutOfBoundsException e) {
+					Log.e(TAG, e.getMessage());
 				}
 			}
 		});
@@ -258,6 +262,51 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 	@Override
 	public int getItemCount() {
 		return sounds.size();
+	}
+
+	public void filter(String userInput, Context context) {
+		if (isFavoritesOnly()) {
+			switch (getCategory()) {
+				default:
+					Log.e(TAG, "Something went completely wrong. Check filter or its calls.");
+				case 0:
+					showAllSounds(context);
+					break;
+				case 1:
+					showAnimalsSounds(context);
+					break;
+				case 2:
+					showFunnySounds(context);
+					break;
+				case 3:
+					showGamesSounds(context);
+					break;
+				case 4:
+					showMoviesSounds(context);
+					break;
+				case 5:
+					showNSFWSounds(context);
+					break;
+				case 6:
+					showPersonalSounds(context);
+					break;
+			}
+		}
+		if (userInput.isEmpty()) {
+			sounds.clear();
+			sounds.addAll(soundsCopy);
+		} else {
+			ArrayList<Sound> result = new ArrayList<>();
+			userInput = userInput.toLowerCase();
+			for (Sound item: soundsCopy) {
+				if (item.getName().toLowerCase().replaceAll("\\p{M}", "").contains(userInput)) {
+					result.add(item);
+				}
+			}
+			sounds.clear();
+			sounds.addAll(result);
+		}
+		notifyDataSetChanged();
 	}
 
 	public static class ViewHolder extends RecyclerView.ViewHolder implements
