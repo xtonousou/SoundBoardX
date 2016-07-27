@@ -9,28 +9,68 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import java.text.Normalizer;
 import java.util.ArrayList;
 
 import de.greenrobot.event.EventBus;
 
-public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> implements Filterable {
+public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> {
 	public static final String TAG = "SoundAdapter";
 
 	private ArrayList<Sound> sounds;
-	private ArrayList<Sound> orig;
 	private boolean favoritesOnly = false;
-	private boolean showAnimations = true;
-    private String query;
-    private String nameOf;
+	private boolean animationsShown = true;
+	private boolean allSoundsOnly = true; // default
+	private boolean animalsSoundsOnly = false;
+	private boolean funnySoundsOnly = false;
+	private boolean gamesSoundsOnly = false;
+	private boolean moviesSoundsOnly = false;
+	private boolean nsfwSoundsOnly = false;
+	private boolean personalSoundsOnly = false;
 
 	public SoundAdapter(ArrayList<Sound> soundArray) {
 		sounds = soundArray;
+	}
+
+	public boolean areAnimationsShown() {
+		return animationsShown;
+	}
+
+	public boolean isFavoritesOnly() {
+		return favoritesOnly;
+	}
+	public boolean areAllSoundsOnly() {
+		return allSoundsOnly;
+	}
+
+	public boolean areAnimalsSoundsOnly() {
+		return animalsSoundsOnly;
+	}
+
+	public boolean areFunnySoundsOnly() {
+		return funnySoundsOnly;
+	}
+
+	public boolean areGamesSoundsOnly() {
+		return gamesSoundsOnly;
+	}
+
+	public boolean areMoviesSoundsOnly() {
+		return moviesSoundsOnly;
+	}
+
+	public boolean areNSFWSoundsOnly() {
+		return nsfwSoundsOnly;
+	}
+
+	public boolean arePersonalSoundsOnly() {
+		return personalSoundsOnly;
+	}
+
+	public void setShowAnimations(boolean anim) {
+		animationsShown = anim;
 	}
 
 	public void onlyShowFavorites() {
@@ -45,114 +85,109 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 
 	public void showAllSounds(Context context) {
 		favoritesOnly = false;
+
+		allSoundsOnly = true;
+		animalsSoundsOnly = false;
+		funnySoundsOnly = false;
+		gamesSoundsOnly = false;
+		moviesSoundsOnly = false;
+		nsfwSoundsOnly = false;
+		personalSoundsOnly = false;
+
 		sounds = SoundStore.getAllSounds(context);
 		notifyDataSetChanged();
 	}
 
 	public void showAnimalsSounds(Context context) {
 		favoritesOnly = false;
+
+		allSoundsOnly = false;
+		animalsSoundsOnly = true;
+		funnySoundsOnly = false;
+		gamesSoundsOnly = false;
+		moviesSoundsOnly = false;
+		nsfwSoundsOnly = false;
+		personalSoundsOnly = false;
+
 		sounds = SoundStore.getAnimalsSounds(context);
 		notifyDataSetChanged();
 	}
 
 	public void showFunnySounds(Context context) {
 		favoritesOnly = false;
+
+		allSoundsOnly = false;
+		animalsSoundsOnly = false;
+		funnySoundsOnly = true;
+		gamesSoundsOnly = false;
+		moviesSoundsOnly = false;
+		nsfwSoundsOnly = false;
+		personalSoundsOnly = false;
+
 		sounds = SoundStore.getFunnySounds(context);
 		notifyDataSetChanged();
 	}
 
 	public void showGamesSounds(Context context) {
 		favoritesOnly = false;
+
+		allSoundsOnly = false;
+		animalsSoundsOnly = false;
+		funnySoundsOnly = false;
+		gamesSoundsOnly = true;
+		moviesSoundsOnly = false;
+		nsfwSoundsOnly = false;
+		personalSoundsOnly = false;
+
 		sounds = SoundStore.getGamesSounds(context);
 		notifyDataSetChanged();
 	}
 
 	public void showMoviesSounds(Context context) {
 		favoritesOnly = false;
+
+		allSoundsOnly = false;
+		animalsSoundsOnly = false;
+		funnySoundsOnly = false;
+		gamesSoundsOnly = false;
+		moviesSoundsOnly = true;
+		nsfwSoundsOnly = false;
+		personalSoundsOnly = false;
+
 		sounds = SoundStore.getMoviesSounds(context);
 		notifyDataSetChanged();
 	}
 
 	public void showNSFWSounds(Context context) {
 		favoritesOnly = false;
+
+
+		allSoundsOnly = false;
+		animalsSoundsOnly = false;
+		funnySoundsOnly = false;
+		gamesSoundsOnly = false;
+		moviesSoundsOnly = false;
+		nsfwSoundsOnly = true;
+		personalSoundsOnly = false;
+
 		sounds = SoundStore.getNSFWSounds(context);
 		notifyDataSetChanged();
 	}
 
 	public void showPersonalSounds(Context context) {
 		favoritesOnly = false;
+
+		allSoundsOnly = false;
+		animalsSoundsOnly = false;
+		funnySoundsOnly = false;
+		gamesSoundsOnly = false;
+		moviesSoundsOnly = false;
+		nsfwSoundsOnly = false;
+		personalSoundsOnly = true;
+
 		sounds = SoundStore.getPersonalSounds(context);
 		notifyDataSetChanged();
 	}
-
-	public void setShowAnimations(boolean anim) {
-		showAnimations = anim;
-	}
-
-	public boolean isShowAnimations() {
-		return showAnimations;
-	}
-
-	public boolean isFavoritesOnly() {
-		return favoritesOnly;
-	}
-
-	public ArrayList<Sound> getSounds() {
-		return sounds;
-	}
-
-	@Override
-	public int getItemCount() {
-		return sounds.size();
-	}
-
-	public int getFilteredItemsCount() {
-		return orig.size();
-	}
-
-	/**
-     *  Receives a CharSequence as parameter and filters a list. Notifies.
-     *  @see MainActivity initSearchView()
-     *  @return filtered list.
-     */
-    @Override
-    public Filter getFilter() {
-        return new Filter() {
-            @Override
-            protected FilterResults performFiltering(CharSequence charSequence) {
-				Log.d(TAG, "**** PERFORM FILTERING for: " + charSequence);
-                final FilterResults filtered = new FilterResults();
-                if (charSequence == null || charSequence.length() == 0) {
-                    filtered.values = sounds;
-					filtered.count = sounds.size();
-                } else {
-					ArrayList<Sound> filterResultsData = new ArrayList<Sound>();
-					for (final Sound sound : orig) {
-						nameOf = sound.getName().toLowerCase();
-						nameOf = Normalizer.normalize(nameOf, Normalizer.Form.NFD);
-						nameOf = nameOf.replaceAll("\\p{M}", "");
-						query = charSequence.toString();
-						if (nameOf.contains(query)) {
-							filterResultsData.add(sound);
-						}
-					}
-
-					filtered.values = filterResultsData;
-					filtered.count = filterResultsData.size();
-				}
-
-                return filtered;
-            }
-
-			@SuppressWarnings("unchecked")
-            @Override
-            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-				Log.d(TAG, "**** PUBLISHING RESULTS for: " + charSequence);
-                sounds = (ArrayList<Sound>) filterResults.values;
-                SoundAdapter.this.notifyDataSetChanged();
-            }
-        };
-    }
 
 	@Override
 	public SoundAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -180,7 +215,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 				if (EventBus.getDefault().isRegistered(this)) {
 					return;
 				}
-				if (showAnimations) {
+				if (animationsShown) {
 					tone.makeItShine();
 				}
 				EventBus.getDefault().register(this);
@@ -218,6 +253,11 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 				}
 			}
 		});
+	}
+
+	@Override
+	public int getItemCount() {
+		return sounds.size();
 	}
 
 	public static class ViewHolder extends RecyclerView.ViewHolder implements
