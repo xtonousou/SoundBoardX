@@ -737,9 +737,9 @@ public class ToneManager {
     /**
      *  Saves sound selected by user in /xSoundBoardHD/Ringtones/,
      *  cleans filename and sets it as ringtone.
-     *  @param ressound	R.raw.resourcesound
+     *  @param resource	R.raw.resourcesound
      */
-    private boolean setAsRingtone(int resource){
+    private boolean setAsRingtone(int resource) {
         byte[] buffer;
         InputStream fIn = itemView.getContext().getResources().openRawResource(resource);
         int size;
@@ -806,7 +806,7 @@ public class ToneManager {
      *  Saves sound selected by user in /xSoundBoardHD/Notifications/, cleans filename and sets it as notification
      *  @param ressound	R.raw.resourcesound
      */
-    private boolean setAsNotification(int resource){
+    private boolean setAsNotification(int resource) {
         byte[] buffer;
         InputStream fIn = itemView.getContext().getResources().openRawResource(resource);
         int size;
@@ -872,9 +872,9 @@ public class ToneManager {
 
     /**
      *  Saves sound selected by user in /xSoundBoardHD/Alarms/, cleans filename and sets it as alarm
-     *  @param ressound	R.raw.resourcesound
+     *  @param resource	R.raw.resourcesound
      */
-    private boolean setAsAlarm(int resource){
+    private boolean setAsAlarm(int resource) {
         byte[] buffer;
         InputStream fIn = itemView.getContext().getResources().openRawResource(resource);
         int size;
