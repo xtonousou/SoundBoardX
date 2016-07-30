@@ -10,7 +10,7 @@ A simple Android Soundboard I made in order to learn, explore and play with.
 **targetSdkVersion 24**
 
 ##TODO prioritized list
-- [ ] **Fix search logic**
+- [X] **Fix search logic**
 - [ ] **Add more sounds**
 - [ ] **Particle support different DPIs**
 

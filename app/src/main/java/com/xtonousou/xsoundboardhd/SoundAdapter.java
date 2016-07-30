@@ -9,14 +9,17 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
 
 import de.greenrobot.event.EventBus;
 
-public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> {
+public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> implements Filterable {
 	public static final String TAG = "SoundAdapter";
 
 	private ArrayList<Sound> sounds;
@@ -32,7 +35,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 	private boolean personalSoundsOnly = false;
 
 	public SoundAdapter(ArrayList<Sound> soundArray) {
-		sounds = soundArray;
+		sounds     = soundArray;
 		soundsCopy = soundArray;
 	}
 
@@ -54,16 +57,16 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 	 *  returns  6 if personalSoundsOnly,
 	 *  returns -1 if unexpected occurrence.
      */
-	public int getCategory() {
-		int category;
-		if (allSoundsOnly) category = 0;
-		else if (animalsSoundsOnly) category = 1;
-		else if (funnySoundsOnly) category = 2;
-		else if (gamesSoundsOnly) category = 3;
-		else if (moviesSoundsOnly) category = 4;
-		else if (nsfwSoundsOnly) category = 5;
-		else if (personalSoundsOnly) category = 6;
-		else category = -1;
+	public byte getCategory() {
+		byte category;
+		if      (allSoundsOnly)      category =  0;
+		else if (animalsSoundsOnly)  category =  1;
+		else if (funnySoundsOnly)    category =  2;
+		else if (gamesSoundsOnly)    category =  3;
+		else if (moviesSoundsOnly)   category =  4;
+		else if (nsfwSoundsOnly)     category =  5;
+		else if (personalSoundsOnly) category =  6;
+		else                         category = -1;
 		return category;
 	}
 
@@ -188,44 +191,94 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 	}
 
 	@Override
-	public SoundAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-		// Create a new view
+	public SoundAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, final int viewType) {
 		View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.sound_card, parent, false);
 		return new ViewHolder(v);
 	}
 
+    public class ViewHolder extends RecyclerView.ViewHolder implements
+            View.OnCreateContextMenuListener,
+            MenuItem.OnMenuItemClickListener {
+        public final TextView title;
+        public final ImageButton favButton;
+
+        public ViewHolder(View v) {
+            super(v);
+            title = (TextView) v.findViewById(R.id.title);
+            favButton = (ImageButton) v.findViewById(R.id.fav_button);
+
+            //final ToneManager tone = new ToneManager(new Particle(itemView), title.getText().toString());
+            itemView.setBackgroundColor((new DayColor(itemView.getContext())).getDayColor());
+            itemView.setOnClickListener(new View.OnClickListener() {
+                public void onEvent(String event) {
+                    if (getAdapterPosition() != RecyclerView.NO_POSITION) {
+                        if (EventBus.getDefault().isRegistered(this)) {
+                            EventBus.getDefault().unregister(this);
+                        }
+                        notifyItemChanged(getAdapterPosition());
+                    }
+                }
+
+                @Override
+                public void onClick(View view) {
+                    if (getAdapterPosition() != RecyclerView.NO_POSITION) {
+                        if (EventBus.getDefault().isRegistered(this)) {
+                            return;
+                        }
+                        if (animationsShown) {
+                            new ToneManager(new Particle(itemView), title.getText().toString()).makeItShine();
+                        }
+                        EventBus.getDefault().register(this);
+                        EventBus.getDefault().post(sounds.get(getAdapterPosition()));
+                        EventBus.getDefault().unregister(this);
+                    }
+                }
+            });
+
+            v.setOnCreateContextMenuListener(this);
+
+            Typeface font = Typeface.createFromAsset(itemView.getContext().getAssets(),
+                    "fonts/Roboto-Regular.ttf");
+            title.setTypeface(font);
+        }
+
+        @Override
+        public void onCreateContextMenu(final ContextMenu contextMenu, View view,
+                                        ContextMenu.ContextMenuInfo contextMenuInfo) {
+            contextMenu.setHeaderTitle("Select action");
+
+            MenuItem setRingtone = contextMenu.add("Set as ringtone");
+            MenuItem setNotification = contextMenu.add("Set as notification");
+            MenuItem setAlarm = contextMenu.add("Set as alarm");
+
+            setRingtone.setOnMenuItemClickListener(this);
+            setNotification.setOnMenuItemClickListener(this);
+            setAlarm.setOnMenuItemClickListener(this);
+        }
+
+        @Override
+        public boolean onMenuItemClick(MenuItem menuItem) {
+            ToneManager toneSetAs = new ToneManager(title.getText().toString(), itemView);
+            switch (menuItem.getTitle().toString()) {
+                default:
+                    Log.e(TAG, "onMenuItemClick: menuItem.getTitle().toString()");
+                case "Set as ringtone":
+                    toneSetAs.ringtone();
+                    break;
+                case "Set as notification":
+                    toneSetAs.notification();
+                    break;
+                case "Set as alarm":
+                    toneSetAs.alarm();
+                    break;
+            }
+            return true;
+        }
+    }
+
 	@Override
 	public void onBindViewHolder(final ViewHolder holder, int position) {
 		holder.title.setText(sounds.get(position).getName());
-		final ToneManager tone = new ToneManager(new Particle(holder.itemView), holder.title.getText().toString());
-		holder.itemView.setOnClickListener(new View.OnClickListener() {
-
-			// TODO handle exception with care ;)
-
-			public void onEvent(String event) {
-				if (EventBus.getDefault().isRegistered(this)) {
-					EventBus.getDefault().unregister(this);
-				}
-				notifyItemChanged(holder.getAdapterPosition());
-			}
-
-			@Override
-			public void onClick(View view) {
-				if (EventBus.getDefault().isRegistered(this)) {
-					return;
-				}
-				if (animationsShown) {
-					tone.makeItShine();
-				}
-				EventBus.getDefault().register(this);
-				try {
-					EventBus.getDefault().post(sounds.get(holder.getAdapterPosition()));
-					EventBus.getDefault().unregister(this);
-				} catch (ArrayIndexOutOfBoundsException e) {
-					Log.e(TAG, e.getMessage());
-				}
-			}
-		});
 
 		boolean isFavorite = sounds.get(position).getFavorite();
 		holder.favButton.setImageResource(isFavorite
@@ -264,102 +317,43 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 		return sounds.size();
 	}
 
-	public void filter(String userInput, Context context) {
-		if (isFavoritesOnly()) {
-			switch (getCategory()) {
-				default:
-					Log.e(TAG, "Something went completely wrong. Check filter or its calls.");
-				case 0:
-					showAllSounds(context);
-					break;
-				case 1:
-					showAnimalsSounds(context);
-					break;
-				case 2:
-					showFunnySounds(context);
-					break;
-				case 3:
-					showGamesSounds(context);
-					break;
-				case 4:
-					showMoviesSounds(context);
-					break;
-				case 5:
-					showNSFWSounds(context);
-					break;
-				case 6:
-					showPersonalSounds(context);
-					break;
-			}
-		}
-		if (userInput.isEmpty()) {
-			sounds.clear();
-			sounds.addAll(soundsCopy);
-		} else {
-			ArrayList<Sound> result = new ArrayList<>();
-			userInput = userInput.toLowerCase();
-			for (Sound item: soundsCopy) {
-				if (item.getName().toLowerCase().replaceAll("\\p{M}", "").contains(userInput)) {
-					result.add(item);
-				}
-			}
-			sounds.clear();
-			sounds.addAll(result);
-		}
-		notifyDataSetChanged();
-	}
+    @Override
+    public Filter getFilter() {
+        return mFilter;
+    }
 
-	public static class ViewHolder extends RecyclerView.ViewHolder implements
-			View.OnCreateContextMenuListener,
-			MenuItem.OnMenuItemClickListener {
-		public final TextView title;
-		public final ImageButton favButton;
-
-		public ViewHolder(View v) {
-			super(v);
-			title = (TextView) v.findViewById(R.id.title);
-			favButton = (ImageButton) v.findViewById(R.id.fav_button);
-
-			itemView.setBackgroundColor((new DayColor(itemView.getContext())).getDayColor());
-
-			v.setOnCreateContextMenuListener(this);
-
-			Typeface font = Typeface.createFromAsset(itemView.getContext().getAssets(),
-					"fonts/Roboto-Regular.ttf");
-			title.setTypeface(font);
-		}
-
+    Filter mFilter = new Filter() {
         @Override
-		public void onCreateContextMenu(final ContextMenu contextMenu, View view,
-										ContextMenu.ContextMenuInfo contextMenuInfo) {
-			contextMenu.setHeaderTitle("Select action");
-
-			MenuItem setRingtone = contextMenu.add("Set as ringtone");
-			MenuItem setNotification = contextMenu.add("Set as notification");
-			MenuItem setAlarm = contextMenu.add("Set as alarm");
-
-			setRingtone.setOnMenuItemClickListener(this);
-			setNotification.setOnMenuItemClickListener(this);
-			setAlarm.setOnMenuItemClickListener(this);
-		}
-
-		@Override
-		public boolean onMenuItemClick(MenuItem menuItem) {
-            ToneManager toneSetAs = new ToneManager(title.getText().toString(), itemView);
-            switch (menuItem.getTitle().toString()) {
-                default:
-                    Log.e(TAG, "onMenuItemClick: menuItem.getTitle().toString()");
-                case "Set as ringtone":
-                    toneSetAs.ringtone();
-					break;
-                case "Set as notification":
-					toneSetAs.notification();
-                    break;
-                case "Set as alarm":
-					toneSetAs.alarm();
-                    break;
+        protected FilterResults performFiltering(CharSequence constraint) {
+            Filter.FilterResults filterResults = new Filter.FilterResults();
+            ArrayList<Sound> tempList = new ArrayList<Sound>();
+            favoritesOnly = false;
+            if (constraint != null && soundsCopy != null) {
+                for (Sound item : new ArrayList<>(soundsCopy)) {
+                    String userInput = striptease(constraint.toString().toLowerCase());
+                    String itemName = striptease(item.getName().toLowerCase());
+                    if (itemName.contains(userInput)) {
+                        tempList.add(item);
+                    }
+                }
+                filterResults.values = tempList;
+                filterResults.count = tempList.size();
             }
-			return true;
-		}
-	}
+            return filterResults;
+        }
+
+        @SuppressWarnings("unchecked")
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            sounds = (ArrayList<Sound>) results.values;
+            notifyDataSetChanged();
+        }
+    };
+
+    private static String striptease(String string) {
+        return Normalizer.normalize(string, Normalizer.Form.NFD)
+                .replaceAll("\\p{M}", "")
+                .replaceAll(" ", "")
+                .replaceAll("\'", "");
+    }
 }
