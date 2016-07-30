@@ -1,4 +1,4 @@
-#:sound: xSoundBoardHD :sound: --- ԅ(≖‿≖ԅ)
+#xSoundBoardHD --- ԅ(≖‿≖ԅ)
 A simple Android Soundboard I made in order to learn, explore and play with.
 
 ![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/scr-a.jpg)
