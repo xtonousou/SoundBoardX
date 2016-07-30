@@ -1,5 +1,5 @@
 #:sound: xSoundBoardHD :sound: --- ԅ(≖‿≖ԅ)
-The Ultimate Android Soundboard.
+A simple Android Soundboard I made in order to learn, explore and play with.
 
 ![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/scr-a.jpg)
 ![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/scr-b.jpg)
