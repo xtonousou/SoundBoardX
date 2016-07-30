@@ -179,11 +179,10 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 return true;
             }
 
-            // TODO onQueryTextChange fix favoritesToggle bug
-
             @Override
             public boolean onQueryTextChange(String newText) {
-                ((SoundAdapter) mView.getAdapter()).filter(newText, getApplicationContext());
+                favoritesToggle.setIcon(R.drawable.ic_star_border_white_24dp);
+                ((SoundAdapter) mView.getAdapter()).getFilter().filter(newText);
                 return true;
             }
         });
