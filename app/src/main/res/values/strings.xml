@@ -3,16 +3,16 @@
     <string name="app_name">xSoundBoardHD</string>
     <string name="setting">Settings</string>
     <string name="cancel">Cancel</string>
-    <string name="drawer_open">Open navigation drawer</string>
-    <string name="drawer_close">Close navigation drawer</string>
     <string name="fav_desc">Icon with full star</string>
     <string name="not_fav_desc">Icon with empty star</string>
     <string name="fav_button">Button with full star</string>
     <string name="not_fav_button">Button with empty star</string>
     <string name="mute_button">Button with volume off</string>
-    <string name="drawer_header_pic">Drawer icon/picture</string>
     <string name="search">Search</string>
     <string name="loading">Loading</string>
+    <!-- Navigation Drawer -->
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
     <string name="categories">Categories</string>
     <string name="animals">Animals</string>
     <string name="movies">Movies</string>
@@ -21,6 +21,11 @@
     <string name="personal">Personal</string>
     <string name="games">Games</string>
     <string name="all">All</string>
+    <!-- Context Menu -->
+    <string name="header">Select action</string>
+    <string name="ringtone">Set as ringtone</string>
+    <string name="notification">Set as notification</string>
+    <string name="alarm">Set as alarm</string>
     <!-- PERMISSIONS -->
     <string name="rationale_exst">This app needs access to your external storage to save a sound.</string>
     <string name="rationale_settings">This app needs access to your settings in order to set a sound as ringtone, notification or alarm.</string>
