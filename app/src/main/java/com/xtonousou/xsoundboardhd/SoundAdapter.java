@@ -1,6 +1,7 @@
 package com.xtonousou.xsoundboardhd;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -14,6 +15,9 @@ import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.mikepenz.fontawesome_typeface_library.FontAwesome;
+import com.mikepenz.iconics.IconicsDrawable;
+
 import java.text.Normalizer;
 import java.util.ArrayList;
 
@@ -24,6 +28,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 
 	private ArrayList<Sound> sounds;
 	private ArrayList<Sound> soundsCopy;
+
 	private boolean favoritesOnly = false;
 	private boolean animationsShown = true;
 	private boolean allSoundsOnly = true; // default
@@ -35,8 +40,8 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 	private boolean personalSoundsOnly = false;
 
 	public SoundAdapter(ArrayList<Sound> soundArray) {
-		sounds     = soundArray;
-		soundsCopy = soundArray;
+		this.sounds      = soundArray;
+		this.soundsCopy  = soundArray;
 	}
 
 	public boolean areAnimationsShown() {
@@ -207,7 +212,10 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
             title = (TextView) v.findViewById(R.id.title);
             favButton = (ImageButton) v.findViewById(R.id.fav_button);
 
-            //final ToneManager tone = new ToneManager(new Particle(itemView), title.getText().toString());
+            Typeface font = Typeface.createFromAsset(itemView.getContext().getAssets(),
+                    "fonts/Roboto-Regular.ttf");
+            title.setTypeface(font);
+
             itemView.setBackgroundColor((new DayColor(itemView.getContext())).getDayColor());
             itemView.setOnClickListener(new View.OnClickListener() {
                 public void onEvent(String event) {
@@ -236,20 +244,23 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
             });
 
             v.setOnCreateContextMenuListener(this);
-
-            Typeface font = Typeface.createFromAsset(itemView.getContext().getAssets(),
-                    "fonts/Roboto-Regular.ttf");
-            title.setTypeface(font);
         }
 
         @Override
         public void onCreateContextMenu(final ContextMenu contextMenu, View view,
                                         ContextMenu.ContextMenuInfo contextMenuInfo) {
-            contextMenu.setHeaderTitle("Select action");
 
-            MenuItem setRingtone = contextMenu.add("Set as ringtone");
-            MenuItem setNotification = contextMenu.add("Set as notification");
-            MenuItem setAlarm = contextMenu.add("Set as alarm");
+            contextMenu.setHeaderTitle(R.string.header);
+            contextMenu.setHeaderIcon(
+                    new IconicsDrawable(view.getContext())
+                            .icon(FontAwesome.Icon.faw_music)
+                            .color(Color.WHITE)
+                            .sizeDp(24)
+            );
+
+            MenuItem setRingtone = contextMenu.add(R.string.ringtone);
+            MenuItem setNotification = contextMenu.add(R.string.notification);
+            MenuItem setAlarm = contextMenu.add(R.string.alarm);
 
             setRingtone.setOnMenuItemClickListener(this);
             setNotification.setOnMenuItemClickListener(this);
@@ -281,28 +292,41 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 		holder.title.setText(sounds.get(position).getName());
 
 		boolean isFavorite = sounds.get(position).getFavorite();
-		holder.favButton.setImageResource(isFavorite
-				? R.drawable.ic_star_white_24dp
-				: R.drawable.ic_star_border_white_24dp);
+		holder.favButton.setImageDrawable(isFavorite
+				?   new IconicsDrawable(holder.favButton.getContext()).icon(FontAwesome.Icon.faw_star)
+                    .color(Color.WHITE)
+                    .sizeDp(24)
+				:   new IconicsDrawable(holder.favButton.getContext())
+                    .icon(FontAwesome.Icon.faw_star_o)
+                    .color(Color.WHITE)
+                    .sizeDp(24));
 
 		holder.favButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				try {
 					boolean newFavStatus = !sounds.get(holder.getAdapterPosition()).getFavorite();
-					sounds.get(holder.getAdapterPosition()).setFavorite(newFavStatus);
+                    sounds.get(holder.getAdapterPosition()).setFavorite(newFavStatus);
 
 					if (newFavStatus) {
-						((ImageButton) v).setImageResource(R.drawable.ic_star_white_24dp);
+						((ImageButton) v).setImageDrawable(
+                                new IconicsDrawable(v.getContext())
+                                .icon(FontAwesome.Icon.faw_star)
+                                .color(Color.WHITE)
+                                .sizeDp(24));
 						v.setContentDescription(v.getContext().getString(R.string.fav_desc));
 					} else {
-						((ImageButton) v).setImageResource(R.drawable.ic_star_border_white_24dp);
+                        ((ImageButton) v).setImageDrawable(
+                                new IconicsDrawable(v.getContext())
+                                        .icon(FontAwesome.Icon.faw_star_o)
+                                        .color(Color.WHITE)
+                                        .sizeDp(24));
 						v.setContentDescription(v.getContext().getString(R.string.not_fav_desc));
 					}
 
 					if (favoritesOnly) {
 						// Remove from the list.
-						sounds.remove(sounds.get(holder.getAdapterPosition()));
+                        sounds.remove(sounds.get(holder.getAdapterPosition()));
 						notifyItemRemoved(holder.getAdapterPosition());
 					}
 				} catch (ArrayIndexOutOfBoundsException e) {
@@ -354,6 +378,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
         return Normalizer.normalize(string, Normalizer.Form.NFD)
                 .replaceAll("\\p{M}", "")
                 .replaceAll(" ", "")
-                .replaceAll("\'", "");
+                .replaceAll("\'", "")
+                .replaceAll("ς", "σ");
     }
 }
