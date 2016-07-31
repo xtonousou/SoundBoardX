@@ -20,7 +20,7 @@ class DayColor {
         Calendar rightNow = Calendar.getInstance();
         switch (rightNow.get(Calendar.DAY_OF_WEEK)) {
             default:
-                return ContextCompat.getColor(context, R.color.colorPrimary);
+                return ContextCompat.getColor(context, R.color.colorAccent);
             case Calendar.MONDAY:
                 return ContextCompat.getColor(context, R.color.colorMonday);
             case Calendar.TUESDAY:
