@@ -26,11 +26,13 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
-import com.github.clans.fab.FloatingActionButton;
-import com.github.clans.fab.FloatingActionMenu;
+import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.Drawer;
@@ -50,17 +52,20 @@ import pub.devrel.easypermissions.EasyPermissions;
 public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
     public static final String TAG = "MainActivity";
 
-    private static final int RC_WRITE_SETNGS_PERM_AFTER_M = 0x0;
-    private static final int RC_WRITE_SETNGS_PERM = 0x1;
-    private static final int RC_WRITE_EXST_PERM = 0x2;
+    static final int RC_WRITE_SETNGS_PERM_AFTER_M = 0x0;
+    static final int RC_WRITE_SETNGS_PERM = 0x1;
+    static final int RC_WRITE_EXST_PERM = 0x2;
 
-    private static SoundPlayer soundPlayer;
-    private RecyclerView mView;
-    private Drawer mDrawer = null;
-    private Toolbar mToolbar;
+    static SoundPlayer soundPlayer;
+    static InputMethodManager mInputManager;
 
-    private FloatingActionButton animationToggle;
-    private FloatingActionButton favoritesToggle;
+    RecyclerView mView;
+    Drawer mDrawer = null;
+    Toolbar mToolbar;
+
+    FloatingActionsMenu  fabMenu;
+    FloatingActionButton animationToggle;
+    FloatingActionButton favoritesToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +84,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         FavStore.init(getPreferences(Context.MODE_PRIVATE));
 
         mView = (RecyclerView) findViewById(R.id.grid_view);
+        mInputManager = (InputMethodManager) getSystemService(Context
+                .INPUT_METHOD_SERVICE);
 
         mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                 .getInteger(R.integer.num_cols),
@@ -116,6 +123,28 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         getMenuInflater().inflate(R.menu.item, menu);
         initSearchView(menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //handle the click on the back arrow click
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                mView.getAdapter().notifyDataSetChanged();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        //handle the back press :D close the drawer first and if the drawer is closed close the activity
+        if (mDrawer != null && mDrawer.isDrawerOpen()) {
+            mDrawer.closeDrawer();
+        } else {
+            super.onBackPressed();
+        }
     }
 
     @Override
@@ -188,7 +217,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         switch (position) {
                             case 1:
-                                favoritesToggle.setImageDrawable(
+                                favoritesToggle.setIconDrawable(
                                         new IconicsDrawable(getApplicationContext())
                                                 .icon(FontAwesome.Icon.faw_star_o)
                                                 .color(Color.WHITE)
@@ -202,7 +231,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 ((SoundAdapter) mView.getAdapter()).showAllSounds(MainActivity.this);
                                 break;
                             case 2:
-                                favoritesToggle.setImageDrawable(
+                                favoritesToggle.setIconDrawable(
                                         new IconicsDrawable(getApplicationContext())
                                                 .icon(FontAwesome.Icon.faw_star_o)
                                                 .color(Color.WHITE)
@@ -216,7 +245,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 ((SoundAdapter) mView.getAdapter()).showAnimalsSounds(MainActivity.this);
                                 break;
                             case 3:
-                                favoritesToggle.setImageDrawable(
+                                favoritesToggle.setIconDrawable(
                                         new IconicsDrawable(getApplicationContext())
                                                 .icon(FontAwesome.Icon.faw_star_o)
                                                 .color(Color.WHITE)
@@ -230,7 +259,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 ((SoundAdapter) mView.getAdapter()).showFunnySounds(MainActivity.this);
                                 break;
                             case 4:
-                                favoritesToggle.setImageDrawable(
+                                favoritesToggle.setIconDrawable(
                                         new IconicsDrawable(getApplicationContext())
                                                 .icon(FontAwesome.Icon.faw_star_o)
                                                 .color(Color.WHITE)
@@ -244,7 +273,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 ((SoundAdapter) mView.getAdapter()).showGamesSounds(MainActivity.this);
                                 break;
                             case 5:
-                                favoritesToggle.setImageDrawable(
+                                favoritesToggle.setIconDrawable(
                                         new IconicsDrawable(getApplicationContext())
                                                 .icon(FontAwesome.Icon.faw_star_o)
                                                 .color(Color.WHITE)
@@ -258,7 +287,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 ((SoundAdapter) mView.getAdapter()).showMoviesSounds(MainActivity.this);
                                 break;
                             case 6:
-                                favoritesToggle.setImageDrawable(
+                                favoritesToggle.setIconDrawable(
                                         new IconicsDrawable(getApplicationContext())
                                                 .icon(FontAwesome.Icon.faw_star_o)
                                                 .color(Color.WHITE)
@@ -272,7 +301,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 ((SoundAdapter) mView.getAdapter()).showNSFWSounds(MainActivity.this);
                                 break;
                             case 7:
-                                favoritesToggle.setImageDrawable(
+                                favoritesToggle.setIconDrawable(
                                         new IconicsDrawable(getApplicationContext())
                                                 .icon(FontAwesome.Icon.faw_star_o)
                                                 .color(Color.WHITE)
@@ -293,7 +322,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                             //            e.printStackTrace();
                             //        }
                             case 9:
-                                favoritesToggle.setImageDrawable(
+                                favoritesToggle.setIconDrawable(
                                         new IconicsDrawable(getApplicationContext())
                                                 .icon(FontAwesome.Icon.faw_star_o)
                                                 .color(Color.WHITE)
@@ -301,7 +330,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 );
                                 break;
                             case 10:
-                                favoritesToggle.setImageDrawable(
+                                favoritesToggle.setIconDrawable(
                                         new IconicsDrawable(getApplicationContext())
                                                 .icon(FontAwesome.Icon.faw_star_o)
                                                 .color(Color.WHITE)
@@ -309,7 +338,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 );
                                 break;
                             case 11:
-                                favoritesToggle.setImageDrawable(
+                                favoritesToggle.setIconDrawable(
                                         new IconicsDrawable(getApplicationContext())
                                                 .icon(FontAwesome.Icon.faw_star_o)
                                                 .color(Color.WHITE)
@@ -324,7 +353,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 .withSavedInstance(instance)
                 .build();
 
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawer.getDrawerLayout(),
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this
+                , mDrawer.getDrawerLayout(),
                 mToolbar, R.string.drawer_open, R.string.drawer_close) {
 
             @Override
@@ -334,6 +364,10 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
             @Override
             public void onDrawerOpened(View v) {
+                if (v != null && mInputManager.isActive()) {
+                    mInputManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                }
+                fabMenu.collapse();
                 super.onDrawerOpened(v);
             }
         };
@@ -367,7 +401,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                favoritesToggle.setImageDrawable(
+                favoritesToggle.setIconDrawable(
                         new IconicsDrawable(getApplicationContext())
                                 .icon(FontAwesome.Icon.faw_star_o)
                                 .color(Color.WHITE)
@@ -382,7 +416,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
     /**
      *  Initializes Floating Action Buttons, and specifically FloatingActionsMenu with three FloatingActionButtons.
-     *  @see FloatingActionMenu   fab_menu        ---> onClick, expands FloatingActionButton/s.
+     *  @see FloatingActionsMenu   fab_menu        ---> onClick, expands FloatingActionButton/s.
      *  @see FloatingActionButton stopButton      ---> onClick, utilizes onPause() and onResume() to prevent a sound from playing.
      *  @see FloatingActionButton animationToggle ---> onClick, checks if animations are present  , decides, toggles.
      *  @see FloatingActionButton favoritesToggle ---> onClick, checks if favorites are only shown, decides, toggles.
@@ -390,21 +424,22 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
      *  Depends on 'com.getbase:floatingactionbutton:1.10.1'.
      */
     private void initFloatingButtons() {
-        final FloatingActionMenu fabMenu = (FloatingActionMenu) findViewById(R.id.fab_menu);
-        final FloatingActionButton stopButton = (FloatingActionButton) findViewById(R.id.fab_mute);
-        animationToggle = (FloatingActionButton) findViewById(R.id.fab_anim);
+        fabMenu = (FloatingActionsMenu) findViewById(R.id.fab_menu);
         favoritesToggle = (FloatingActionButton) findViewById(R.id.fab_fav);
+        animationToggle = (FloatingActionButton) findViewById(R.id.fab_anim);
+        final FloatingActionButton stopButton = (FloatingActionButton) findViewById(R.id.fab_mute);
 
         fabMenu.setAlpha(0.85f);
 
-        stopButton.setImageResource(R.drawable.ic_volume_off_white_24dp);
-        animationToggle.setImageDrawable(
+        stopButton.setIcon(R.drawable.ic_volume_off_white_24dp);
+        animationToggle.setIconDrawable(
                 new IconicsDrawable(getApplicationContext())
                         .icon(FontAwesome.Icon.faw_eye)
                         .color(Color.WHITE)
                         .sizeDp(24)
         );
-        favoritesToggle.setImageDrawable(
+
+        favoritesToggle.setIconDrawable(
                 new IconicsDrawable(getApplicationContext())
                 .icon(FontAwesome.Icon.faw_star_o)
                 .color(Color.WHITE)
@@ -416,7 +451,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
             public void onClick(View view) {
                 if (!((SoundAdapter) mView.getAdapter()).isFavoritesOnly()) {
                     ((SoundAdapter) mView.getAdapter()).onlyShowFavorites();
-                    favoritesToggle.setImageDrawable(
+                    favoritesToggle.setIconDrawable(
                             new IconicsDrawable(getApplicationContext())
                                     .icon(FontAwesome.Icon.faw_star)
                                     .color(Color.WHITE)
@@ -424,7 +459,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                     );
                 } else {
                     normalize(((SoundAdapter) mView.getAdapter()));
-                    favoritesToggle.setImageDrawable(
+                    favoritesToggle.setIconDrawable(
                             new IconicsDrawable(getApplicationContext())
                             .icon(FontAwesome.Icon.faw_star_o)
                             .color(Color.WHITE)
@@ -436,14 +471,14 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
         if (isGreenMode()) {
             ((SoundAdapter) mView.getAdapter()).setShowAnimations(false);
-            fabMenu.removeMenuButton(animationToggle);
+            fabMenu.removeButton(animationToggle);
         } else {
             animationToggle.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (((SoundAdapter) mView.getAdapter()).areAnimationsShown()) {
                         ((SoundAdapter) mView.getAdapter()).setShowAnimations(false);
-                        animationToggle.setImageDrawable(
+                        animationToggle.setIconDrawable(
                                 new IconicsDrawable(animationToggle.getContext())
                                 .icon(FontAwesome.Icon.faw_eye_slash)
                                 .color(Color.WHITE)
@@ -451,7 +486,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         );
                     } else if (!((SoundAdapter) mView.getAdapter()).areAnimationsShown()) {
                         ((SoundAdapter) mView.getAdapter()).setShowAnimations(true);
-                        animationToggle.setImageDrawable(
+                        animationToggle.setIconDrawable(
                                 new IconicsDrawable(animationToggle.getContext())
                                         .icon(FontAwesome.Icon.faw_eye)
                                         .color(Color.WHITE)
