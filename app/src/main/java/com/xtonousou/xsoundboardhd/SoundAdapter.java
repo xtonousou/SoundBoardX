@@ -23,7 +23,8 @@ import java.util.ArrayList;
 
 import de.greenrobot.event.EventBus;
 
-public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> implements Filterable {
+public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
+        implements Filterable {
 	public static final String TAG = "SoundAdapter";
 
 	private ArrayList<Sound> sounds;
@@ -234,7 +235,8 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
                             return;
                         }
                         if (animationsShown) {
-                            new ToneManager(new Particle(itemView), title.getText().toString()).makeItShine();
+                            new ToneManager(new Particle(itemView),
+                                    title.getText().toString()).makeItShine();
                         }
                         EventBus.getDefault().register(this);
                         EventBus.getDefault().post(sounds.get(getAdapterPosition()));
@@ -350,7 +352,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             Filter.FilterResults filterResults = new Filter.FilterResults();
-            ArrayList<Sound> tempList = new ArrayList<Sound>();
+            ArrayList<Sound> tempList = new ArrayList<>();
             favoritesOnly = false;
             if (constraint != null && soundsCopy != null) {
                 for (Sound item : new ArrayList<>(soundsCopy)) {
