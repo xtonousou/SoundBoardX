@@ -26,7 +26,6 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
@@ -53,19 +52,20 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     public static final String TAG = "MainActivity";
 
     static final int RC_WRITE_SETNGS_PERM_AFTER_M = 0x0;
-    static final int RC_WRITE_SETNGS_PERM = 0x1;
-    static final int RC_WRITE_EXST_PERM = 0x2;
+    static final int RC_WRITE_SETNGS_PERM         = 0x1;
+    static final int RC_WRITE_EXST_PERM           = 0x2;
 
-    static SoundPlayer soundPlayer;
+    static SoundPlayer        soundPlayer;
     static InputMethodManager mInputManager;
 
     RecyclerView mView;
-    Drawer mDrawer = null;
-    Toolbar mToolbar;
+    Drawer       mDrawer = null;
+    Toolbar      mToolbar;
 
     FloatingActionsMenu  fabMenu;
     FloatingActionButton animationToggle;
     FloatingActionButton favoritesToggle;
+    FloatingActionButton muteToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,18 +123,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         getMenuInflater().inflate(R.menu.item, menu);
         initSearchView(menu);
         return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        //handle the click on the back arrow click
-        switch (item.getItemId()) {
-            case R.id.action_search:
-                mView.getAdapter().notifyDataSetChanged();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
     @Override
@@ -427,11 +415,15 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         fabMenu = (FloatingActionsMenu) findViewById(R.id.fab_menu);
         favoritesToggle = (FloatingActionButton) findViewById(R.id.fab_fav);
         animationToggle = (FloatingActionButton) findViewById(R.id.fab_anim);
-        final FloatingActionButton stopButton = (FloatingActionButton) findViewById(R.id.fab_mute);
+        muteToggle = (FloatingActionButton) findViewById(R.id.fab_mute);
 
         fabMenu.setAlpha(0.85f);
 
-        stopButton.setIcon(R.drawable.ic_volume_off_white_24dp);
+        animationToggle.setColorPressed((new DayColor(animationToggle.getContext())).getDayColor());
+        favoritesToggle.setColorPressed((new DayColor(favoritesToggle.getContext())).getDayColor());
+        muteToggle.setColorPressed((new DayColor(muteToggle.getContext())).getDayColor());
+
+        muteToggle.setIcon(R.drawable.ic_volume_off_white_24dp);
         animationToggle.setIconDrawable(
                 new IconicsDrawable(getApplicationContext())
                         .icon(FontAwesome.Icon.faw_eye)
@@ -497,7 +489,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
             });
         }
 
-        stopButton.setOnClickListener(new View.OnClickListener() {
+        muteToggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
