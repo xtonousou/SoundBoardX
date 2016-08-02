@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">xSoundBoardHD</string>
+    <string name="app_name">xSoundBoard</string>
     <string name="setting">Settings</string>
     <string name="cancel">Cancel</string>
     <string name="fav_desc">Icon with full star</string>
@@ -21,6 +21,8 @@
     <string name="personal">Personal</string>
     <string name="games">Games</string>
     <string name="all">All</string>
+    <string name="help">Help</string>
+    <string name="support">Support</string>
     <!-- Context Menu -->
     <string name="header">Select action</string>
     <string name="ringtone">Set as ringtone</string>
