@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">xSoundBoard</string>
+    <string name="app_name">xSoundBoardHD</string>
     <string name="setting">Settings</string>
     <string name="cancel">Cancel</string>
     <string name="fav_desc">Icon with full star</string>
