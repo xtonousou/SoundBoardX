@@ -16,7 +16,6 @@ import android.os.PowerManager;
 import android.os.Vibrator;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ContextThemeWrapper;
@@ -85,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 .getInteger(R.integer.num_cols),
                 StaggeredGridLayoutManager.VERTICAL));
         mView.setAdapter(new SoundAdapter(SoundStore.getAllSounds(this)));
+        ((SoundAdapter) mView.getAdapter()).showAllSounds(MainActivity.this);
 
         beautifyToolbar();
         initDrawer(savedInstanceState);
@@ -168,7 +168,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     public void initDrawer(Bundle instance) {
         mDrawer = new DrawerBuilder()
                 .withActivity(this)
-                .withDisplayBelowStatusBar(true)
+                .withToolbar(mToolbar)
+                .withDisplayBelowStatusBar(false)
                 .withTranslucentStatusBar(false)
                 .addDrawerItems(
                         new SectionDrawerItem().withName(R.string.categories).withDivider(false),
@@ -325,22 +326,22 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 .withSavedInstance(instance)
                 .build();
 
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawer.getDrawerLayout(),
-                mToolbar, R.string.drawer_open, R.string.drawer_close) {
-
-            @Override
-            public void onDrawerClosed(View v) {
-                super.onDrawerClosed(v);
-            }
-
-            @Override
-            public void onDrawerOpened(View v) {
-                super.onDrawerOpened(v);
-            }
-        };
-
-        mDrawer.getDrawerLayout().addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
+//        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawer.getDrawerLayout(),
+//                mToolbar, R.string.drawer_open, R.string.drawer_close) {
+//
+//            @Override
+//            public void onDrawerClosed(View v) {
+//                super.onDrawerClosed(v);
+//            }
+//
+//            @Override
+//            public void onDrawerOpened(View v) {
+//                super.onDrawerOpened(v);
+//            }
+//        };
+//
+//        mDrawer.getDrawerLayout().addDrawerListener(actionBarDrawerToggle);
+//        actionBarDrawerToggle.syncState();
     }
 
     /**
