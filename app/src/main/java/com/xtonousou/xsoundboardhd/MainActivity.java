@@ -16,6 +16,7 @@ import android.os.PowerManager;
 import android.os.Vibrator;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ContextThemeWrapper;
@@ -25,7 +26,6 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -119,19 +119,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        //handle the click on the back arrow click
-        switch (item.getItemId()) {
-            case R.id.action_search:
-                normalize(((SoundAdapter) mView.getAdapter()));
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    @Override
     protected void onSaveInstanceState(Bundle outState) {
         //add the values which need to be saved from the drawer to the bundle
         outState = mDrawer.saveInstanceState(outState);
@@ -168,22 +155,33 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     public void initDrawer(Bundle instance) {
         mDrawer = new DrawerBuilder()
                 .withActivity(this)
-                .withToolbar(mToolbar)
-                .withDisplayBelowStatusBar(false)
-                .withTranslucentStatusBar(false)
+                .withDisplayBelowStatusBar(true)
                 .addDrawerItems(
-                        new SectionDrawerItem().withName(R.string.categories).withDivider(false),
-                        new PrimaryDrawerItem().withName(R.string.all).withIcon(FontAwesome.Icon.faw_cog),
-                        new PrimaryDrawerItem().withName(R.string.animals).withIcon(FontAwesome.Icon.faw_question),
-                        new PrimaryDrawerItem().withName(R.string.funny).withIcon(FontAwesome.Icon.faw_github),
-                        new PrimaryDrawerItem().withName(R.string.games).withIcon(FontAwesome.Icon.faw_bullhorn),
-                        new PrimaryDrawerItem().withName(R.string.movies).withIcon(FontAwesome.Icon.faw_bullhorn),
-                        new PrimaryDrawerItem().withName(R.string.nsfw).withIcon(FontAwesome.Icon.faw_bullhorn),
-                        new PrimaryDrawerItem().withName(R.string.personal).withIcon(FontAwesome.Icon.faw_bullhorn),
-                        new SectionDrawerItem().withName(R.string.setting).withDivider(false),
-                        new SecondaryDrawerItem().withName(R.string.all).withIcon(FontAwesome.Icon.faw_music),
-                        new SecondaryDrawerItem().withName(R.string.all).withIcon(FontAwesome.Icon.faw_gamepad),
-                        new SecondaryDrawerItem().withName(R.string.all).withIcon(FontAwesome.Icon.faw_eye)
+                        new SectionDrawerItem().withName(R.string.categories)
+                                .withDivider(false),
+                        new PrimaryDrawerItem().withName(R.string.all)
+                                .withIcon(FontAwesome.Icon.faw_music),
+                        new PrimaryDrawerItem().withName(R.string.animals)
+                                .withIcon(R.drawable.ic_pets_white_24dp)
+                                .withIconTintingEnabled(true),
+                        new PrimaryDrawerItem().withName(R.string.funny)
+                                .withIcon(R.drawable.ic_sentiment_very_satisfied_white_24dp)
+                                .withIconTintingEnabled(true),
+                        new PrimaryDrawerItem().withName(R.string.games)
+                                .withIcon(FontAwesome.Icon.faw_gamepad),
+                        new PrimaryDrawerItem().withName(R.string.movies)
+                                .withIcon(FontAwesome.Icon.faw_video_camera),
+                        new PrimaryDrawerItem().withName(R.string.nsfw)
+                                .withIcon(FontAwesome.Icon.faw_exclamation_circle),
+                        new PrimaryDrawerItem().withName(R.string.personal)
+                                .withIcon(R.drawable.ic_person_white_24dp)
+                                .withIconTintingEnabled(true),
+                        new SectionDrawerItem().withName(R.string.setting)
+                                .withDivider(false),
+                        new SecondaryDrawerItem().withName(R.string.support)
+                                .withIcon(FontAwesome.Icon.faw_android),
+                        new SecondaryDrawerItem().withName(R.string.help)
+                                .withIcon(FontAwesome.Icon.faw_book)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -326,22 +324,22 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 .withSavedInstance(instance)
                 .build();
 
-//        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawer.getDrawerLayout(),
-//                mToolbar, R.string.drawer_open, R.string.drawer_close) {
-//
-//            @Override
-//            public void onDrawerClosed(View v) {
-//                super.onDrawerClosed(v);
-//            }
-//
-//            @Override
-//            public void onDrawerOpened(View v) {
-//                super.onDrawerOpened(v);
-//            }
-//        };
-//
-//        mDrawer.getDrawerLayout().addDrawerListener(actionBarDrawerToggle);
-//        actionBarDrawerToggle.syncState();
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawer.getDrawerLayout(),
+                mToolbar, R.string.drawer_open, R.string.drawer_close) {
+
+            @Override
+            public void onDrawerClosed(View v) {
+                super.onDrawerClosed(v);
+            }
+
+            @Override
+            public void onDrawerOpened(View v) {
+                super.onDrawerOpened(v);
+            }
+        };
+
+        mDrawer.getDrawerLayout().addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
     }
 
     /**
