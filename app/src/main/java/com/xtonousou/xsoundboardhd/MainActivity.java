@@ -37,7 +37,6 @@ import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
-import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.romainpiel.shimmer.Shimmer;
@@ -54,6 +53,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     static final int RC_WRITE_SETNGS_PERM_AFTER_M = 0x0;
     static final int RC_WRITE_SETNGS_PERM         = 0x1;
     static final int RC_WRITE_EXST_PERM           = 0x2;
+    static final int SUPPORT_ACTIVITY             = 0x3;
+
+    int drawerSelectionPosition = 1;
 
     static SoundPlayer        soundPlayer;
     static InputMethodManager mInputManager;
@@ -91,7 +93,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 .getInteger(R.integer.num_cols),
                 StaggeredGridLayoutManager.VERTICAL));
         mView.setAdapter(new SoundAdapter(SoundStore.getAllSounds(this)));
-        ((SoundAdapter) mView.getAdapter()).showAllSounds(MainActivity.this);
 
         beautifyToolbar();
         initDrawer(savedInstanceState);
@@ -177,6 +178,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         new SectionDrawerItem().withName(R.string.categories)
                                 .withDivider(false),
                         new PrimaryDrawerItem().withName(R.string.all)
+                                .withSetSelected(true)
                                 .withIcon(FontAwesome.Icon.faw_music),
                         new PrimaryDrawerItem().withName(R.string.animals)
                                 .withIcon(R.drawable.ic_pets_white_24dp)
@@ -193,11 +195,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         new PrimaryDrawerItem().withName(R.string.personal)
                                 .withIcon(R.drawable.ic_person_white_24dp)
                                 .withIconTintingEnabled(true),
-                        new SectionDrawerItem().withName(R.string.options).withDivider(false),
-                        new SecondaryDrawerItem().withName(R.string.support)
-                                .withIcon(FontAwesome.Icon.faw_android),
-                        new SecondaryDrawerItem().withName(R.string.help)
-                                .withIcon(FontAwesome.Icon.faw_book)
+                        new SectionDrawerItem().withName(R.string.extra).withDivider(false),
+                        new PrimaryDrawerItem().withName(R.string.support)
+                                .withIcon(FontAwesome.Icon.faw_hand_peace_o)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -210,6 +210,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                                 .color(Color.WHITE)
                                                 .sizeDp(24)
                                 );
+                                drawerSelectionPosition = mDrawer.getCurrentSelectedPosition();
                                 mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                         .getInteger(R.integer.num_cols),
                                         StaggeredGridLayoutManager.VERTICAL));
@@ -224,6 +225,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                                 .color(Color.WHITE)
                                                 .sizeDp(24)
                                 );
+                                drawerSelectionPosition = mDrawer.getCurrentSelectedPosition();
                                 mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                         .getInteger(R.integer.num_cols),
                                         StaggeredGridLayoutManager.VERTICAL));
@@ -238,6 +240,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                                 .color(Color.WHITE)
                                                 .sizeDp(24)
                                 );
+                                drawerSelectionPosition = mDrawer.getCurrentSelectedPosition();
                                 mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                         .getInteger(R.integer.num_cols),
                                         StaggeredGridLayoutManager.VERTICAL));
@@ -252,6 +255,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                                 .color(Color.WHITE)
                                                 .sizeDp(24)
                                 );
+                                drawerSelectionPosition = mDrawer.getCurrentSelectedPosition();
                                 mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                         .getInteger(R.integer.num_cols),
                                         StaggeredGridLayoutManager.VERTICAL));
@@ -266,6 +270,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                                 .color(Color.WHITE)
                                                 .sizeDp(24)
                                 );
+                                drawerSelectionPosition = mDrawer.getCurrentSelectedPosition();
                                 mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                         .getInteger(R.integer.num_cols),
                                         StaggeredGridLayoutManager.VERTICAL));
@@ -280,6 +285,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                                 .color(Color.WHITE)
                                                 .sizeDp(24)
                                 );
+                                drawerSelectionPosition = mDrawer.getCurrentSelectedPosition();
                                 mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                         .getInteger(R.integer.num_cols),
                                         StaggeredGridLayoutManager.VERTICAL));
@@ -294,6 +300,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                                 .color(Color.WHITE)
                                                 .sizeDp(24)
                                 );
+                                drawerSelectionPosition = mDrawer.getCurrentSelectedPosition();
                                 mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                         .getInteger(R.integer.num_cols),
                                         StaggeredGridLayoutManager.VERTICAL));
@@ -302,29 +309,16 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 ((SoundAdapter) mView.getAdapter()).showPersonalSounds(MainActivity.this);
                                 break;
                             // skip 8 cause there is no 8 in drawer
-                            // TODO change these settings and add this somewhere here
-                            //        try {
-                            //            mVersion.setText((getPackageManager().getPackageInfo(getPackageName(), 0)).versionName);
-                            //        } catch (PackageManager.NameNotFoundException e) {
-                            //            e.printStackTrace();
-                            //        }
                             case 9:
+                                mDrawer.deselect();
                                 favoritesToggle.setIconDrawable(
                                         new IconicsDrawable(getApplicationContext())
                                                 .icon(FontAwesome.Icon.faw_star_o)
                                                 .color(Color.WHITE)
                                                 .sizeDp(24)
                                 );
-                                Intent i = new Intent(MainActivity.this, SupportActivity.class);
-                                startActivity(i);
-                                break;
-                            case 10:
-                                favoritesToggle.setIconDrawable(
-                                        new IconicsDrawable(getApplicationContext())
-                                                .icon(FontAwesome.Icon.faw_star_o)
-                                                .color(Color.WHITE)
-                                                .sizeDp(24)
-                                );
+                                Intent intent = new Intent(MainActivity.this, SupportActivity.class);
+                                startActivityForResult(intent, SUPPORT_ACTIVITY);
                                 break;
                         }
                         return false;
@@ -530,7 +524,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         return mode;
     }
 
-    // PERMISSIONS
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -546,9 +539,13 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 Toast.makeText(this, R.string.returned_from_app_settings_to_activity, Toast.LENGTH_SHORT)
                         .show();
                 break;
+            case SUPPORT_ACTIVITY:
+                mDrawer.setSelectionAtPosition(drawerSelectionPosition);
+                break;
         }
     }
 
+    // PERMISSIONS
     @AfterPermissionGranted (RC_WRITE_EXST_PERM)
     public void writeExternalStoragePermission() {
         if (EasyPermissions.hasPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
