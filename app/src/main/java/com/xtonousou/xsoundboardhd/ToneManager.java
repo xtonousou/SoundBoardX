@@ -193,7 +193,7 @@ public class ToneManager {
                 setAsRingtone(R.raw.nsfw_penis);
                 break;
             case "Our courage will pull us through":
-                setAsRingtone(R.raw.movies_pokemonaggouri);
+                setAsRingtone(R.raw.games_pokemonaggouri);
                 break;
             case "Excuse me, I have some pussyhair on me!":
                 setAsRingtone(R.raw.funny_pussyhair);
@@ -425,7 +425,7 @@ public class ToneManager {
                 setAsNotification(R.raw.nsfw_penis);
                 break;
             case "Our courage will pull us through":
-                setAsNotification(R.raw.movies_pokemonaggouri);
+                setAsNotification(R.raw.games_pokemonaggouri);
                 break;
             case "Excuse me, I have some pussyhair on me!":
                 setAsNotification(R.raw.funny_pussyhair);
@@ -657,7 +657,7 @@ public class ToneManager {
                 setAsAlarm(R.raw.nsfw_penis);
                 break;
             case "Our courage will pull us through":
-                setAsAlarm(R.raw.movies_pokemonaggouri);
+                setAsAlarm(R.raw.games_pokemonaggouri);
                 break;
             case "Excuse me, I have some pussyhair on me!":
                 setAsAlarm(R.raw.funny_pussyhair);
