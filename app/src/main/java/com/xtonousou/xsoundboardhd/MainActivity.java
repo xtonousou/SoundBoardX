@@ -315,6 +315,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                                 .color(Color.WHITE)
                                                 .sizeDp(24)
                                 );
+                                Intent i = new Intent(MainActivity.this, SupportActivity.class);
+                                startActivity(i);
                                 break;
                             case 10:
                                 favoritesToggle.setIconDrawable(
