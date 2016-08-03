@@ -88,4 +88,18 @@
         android:layout_toStartOf="@+id/sourceTV"
         android:layout_alignTop="@+id/sourceTV"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6sp"
+        android:layout_marginStart="6sp"
+        android:layout_marginBottom="6sp"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        android:id="@+id/version"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"/>
+
 </RelativeLayout>

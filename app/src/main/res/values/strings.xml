@@ -23,8 +23,7 @@
     <string name="personal">Personal</string>
     <string name="games">Games</string>
     <string name="all">All</string>
-    <string name="options">Options</string>
-    <string name="help">Help</string>
+    <string name="extra">Extra</string>
     <string name="support">Support</string>
     <!-- Context Menu -->
     <string name="header">Select action</string>
