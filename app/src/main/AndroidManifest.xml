@@ -32,7 +32,7 @@
         </activity>
         <!-- Color Scheme Activity -->
         <activity
-            android:name=".ChooseColor"
+            android:name=".SupportActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
