@@ -3,6 +3,7 @@ package com.xtonousou.xsoundboardhd;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -23,7 +24,7 @@ import com.romainpiel.shimmer.ShimmerTextView;
 
 public class SupportActivity extends AppCompatActivity {
 
-    TextView  donateTV, subTV, sourceTV;
+    TextView  donateTV, subTV, sourceTV, versionTV;
     ImageView donateIm, subIm, sourceIm;
 
     @Override
@@ -44,11 +45,13 @@ public class SupportActivity extends AppCompatActivity {
         beautifyToolbar();
 
         donateTV = (TextView) findViewById(R.id.donateTV);
-        subTV = (TextView) findViewById(R.id.subscribeTV);
+        subTV    = (TextView) findViewById(R.id.subscribeTV);
         sourceTV = (TextView) findViewById(R.id.sourceTV);
         donateIm = (ImageView) findViewById(R.id.donateIm);
-        subIm = (ImageView) findViewById(R.id.subscribeIm);
+        subIm    = (ImageView) findViewById(R.id.subscribeIm);
         sourceIm = (ImageView) findViewById(R.id.sourceIm);
+
+        versionTV = (TextView) findViewById(R.id.version);
 
         donateIm.setImageDrawable(
                 new IconicsDrawable(getApplicationContext())
@@ -100,6 +103,12 @@ public class SupportActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        try {
+            versionTV.setText((getPackageManager().getPackageInfo(getPackageName(), 0)).versionName);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
