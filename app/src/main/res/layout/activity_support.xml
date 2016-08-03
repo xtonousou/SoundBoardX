@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:fitsSystemWindows="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarSupport"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorPrimaryDark"
+        app:elevation="4dp">
+
+        <com.romainpiel.shimmer.ShimmerTextView
+            android:id="@+id/shimmerTitleSupport"
+            android:text="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            app:reflectionColor="@color/colorAccent">
+
+        </com.romainpiel.shimmer.ShimmerTextView>
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/donate"
+        android:textSize="24sp"
+        android:layout_marginTop="46dp"
+        android:id="@+id/donateTV"
+        android:layout_below="@+id/toolbarSupport"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6sp"
+        android:id="@+id/donateIm"
+        android:src="@android:drawable/ic_secure"
+        android:layout_alignBottom="@+id/donateTV"
+        android:layout_toStartOf="@+id/donateTV"
+        android:layout_alignTop="@+id/donateTV"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subscribe"
+        android:textSize="24sp"
+        android:id="@+id/subscribeTV"
+        android:layout_below="@+id/donateTV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/subscribeIm"
+        android:layout_marginEnd="6sp"
+        android:src="@android:drawable/ic_secure"
+        android:layout_alignBottom="@+id/subscribeTV"
+        android:layout_toStartOf="@+id/subscribeTV"
+        android:layout_alignTop="@+id/subscribeTV"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/source"
+        android:textSize="24sp"
+        android:id="@+id/sourceTV"
+        android:layout_below="@+id/subscribeTV"
+        android:layout_alignEnd="@+id/donateTV"
+        android:layout_marginTop="46dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sourceIm"
+        android:layout_marginEnd="6sp"
+        android:src="@android:drawable/ic_secure"
+        android:layout_alignBottom="@+id/sourceTV"
+        android:layout_toStartOf="@+id/sourceTV"
+        android:layout_alignTop="@+id/sourceTV"/>
+
+</RelativeLayout>

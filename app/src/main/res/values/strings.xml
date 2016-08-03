@@ -8,6 +8,10 @@
     <string name="mute_button">Button with volume off</string>
     <string name="search">Search</string>
     <string name="loading">Loading</string>
+    <!-- Support Activity -->
+    <string name="donate">Donate</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="source">Source</string>
     <!-- Navigation Drawer -->
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
