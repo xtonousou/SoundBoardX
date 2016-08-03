@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">xSoundBoardHD</string>
-    <string name="setting">Settings</string>
-    <string name="cancel">Cancel</string>
     <string name="fav_desc">Icon with full star</string>
     <string name="not_fav_desc">Icon with empty star</string>
     <string name="fav_button">Button with full star</string>
@@ -21,6 +19,7 @@
     <string name="personal">Personal</string>
     <string name="games">Games</string>
     <string name="all">All</string>
+    <string name="options">Options</string>
     <string name="help">Help</string>
     <string name="support">Support</string>
     <!-- Context Menu -->
@@ -33,4 +32,6 @@
     <string name="rationale_settings">This app needs access to your settings in order to set a sound as ringtone, notification or alarm.</string>
     <string name="rationale_ask_again">This app may not work correctly without the requested permissions. Open the app settings screen to modify app permissions.</string>
     <string name="returned_from_app_settings_to_activity">Returned from app settings to MainActivity</string>
+    <string name="setting">Settings</string>
+    <string name="cancel">Cancel</string>
 </resources>
