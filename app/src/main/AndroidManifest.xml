@@ -30,5 +30,13 @@
                 android:resource="@xml/searchable">
             </meta-data>
         </activity>
+        <!-- Color Scheme Activity -->
+        <activity
+            android:name=".ChooseColor"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

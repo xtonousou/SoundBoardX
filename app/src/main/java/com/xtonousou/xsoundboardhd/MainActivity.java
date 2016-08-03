@@ -58,9 +58,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     static SoundPlayer        soundPlayer;
     static InputMethodManager mInputManager;
 
+    Toolbar      mToolbar;
     RecyclerView mView;
     Drawer       mDrawer = null;
-    Toolbar      mToolbar;
 
     FloatingActionsMenu  fabMenu;
     FloatingActionButton animationToggle;
@@ -193,8 +193,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         new PrimaryDrawerItem().withName(R.string.personal)
                                 .withIcon(R.drawable.ic_person_white_24dp)
                                 .withIconTintingEnabled(true),
-                        new SectionDrawerItem().withName(R.string.setting)
-                                .withDivider(false),
+                        new SectionDrawerItem().withName(R.string.options).withDivider(false),
                         new SecondaryDrawerItem().withName(R.string.support)
                                 .withIcon(FontAwesome.Icon.faw_android),
                         new SecondaryDrawerItem().withName(R.string.help)
@@ -325,14 +324,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                                 .sizeDp(24)
                                 );
                                 break;
-                            case 11:
-                                favoritesToggle.setIconDrawable(
-                                        new IconicsDrawable(getApplicationContext())
-                                                .icon(FontAwesome.Icon.faw_star_o)
-                                                .color(Color.WHITE)
-                                                .sizeDp(24)
-                                );
-                                break;
                         }
                         return false;
                     }
@@ -376,7 +367,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-
         SearchView.SearchAutoComplete searchViewText = (SearchView.SearchAutoComplete) searchView
                 .findViewById(R.id.search_src_text);
         searchViewText.setTextColor((new DayColor(searchViewText.getContext())).getDayColor());
@@ -586,7 +576,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
             if (!Settings.System.canWrite(MainActivity.this)) {
                 final Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS,
-                        Uri.parse("package:" + getPackageName()));
+                        Uri.parse("package:" + getPackageName())); //dont change string in uri parse
                 new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.DialogTheme))
                         .setTitle("Need permission")
                         .setMessage(R.string.rationale_settings)
