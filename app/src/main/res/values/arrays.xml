@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources
-    xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <!-- All Sounds -->
     <string-array name="allSounds">
@@ -43,14 +42,13 @@
         <item>Yiss</item>
         <item>STFU</item>
         <item>Nigga is cumming…</item>
-        <item tools:ignore="Typos">Sup nigga, wanna talk some shit?</item>
+        <item>Sup nigga, wanna talk some shit?</item>
         <item>Surprise motherfucker!</item>
         <item>Shaved pussy…</item>
         <item>Seven vaginias…</item>
         <item>Oh my!</item>
         <item>Oh Yeaaaah!</item>
         <item>Penis, penis and penis</item>
-        <item>Our courage will pull us through</item>
         <item>Excuse me, I have some pussyhair on me!</item>
         <item>Retardation Theme</item>
         <item>Cyka Blyat\'s Middlefinger</item>
@@ -69,6 +67,71 @@
         <item>Zodiac</item>
         <item>Yuri Kuma Arashi</item>
         <item>U WOT M8</item>
+        <item>Oh baby a triple</item>
+        <item>Badum Tss</item>
+        <item>Beep</item>
+        <item>Boxeo</item>
+        <item>Chan</item>
+        <item>Chan chan</item>
+        <item>Combo breaker</item>
+        <item>De dotaded wam</item>
+        <item>Duck toy</item>
+        <item>Get noscoped</item>
+        <item>Mom get the camera</item>
+        <item>Headshot</item>
+        <item>Holy Shit</item>
+        <item>Inception</item>
+        <item>John Cena</item>
+        <item>Just Do It</item>
+        <item>Nein Nein</item>
+        <item>Never do that</item>
+        <item>OMG</item>
+        <item>Over 9000</item>
+        <item>Penault Jelly</item>
+        <item>Shots fired</item>
+        <item>Smoke weed everyday</item>
+        <item>Whatcha say</item>
+        <item>Wombo Combo</item>
+        <item>WTF BOOM</item>
+        <item>Aku Aku</item>
+        <item>Balls of steel</item>
+        <item>EA Games</item>
+        <item>EA Sports</item>
+        <item>Excellent</item>
+        <item>Fus Ro Dah</item>
+        <item>Gameboy</item>
+        <item>Hadouken</item>
+        <item>Inspector Gadget</item>
+        <item>Jigglypuff</item>
+        <item>Mario</item>
+        <item>Mario Coin</item>
+        <item>Mario Fanfare</item>
+        <item>Mario Grow</item>
+        <item>Mario Jump</item>
+        <item>Mario Lose</item>
+        <item>Mario Underground</item>
+        <item>Nuke</item>
+        <item>Pacman Death</item>
+        <item>Playstation</item>
+        <item>Pokemon Heal</item>
+        <item>Our courage will pull us through</item>
+        <item>Sniper shot</item>
+        <item>Tetris</item>
+        <item>Back to the future</item>
+        <item>Badadipoopi</item>
+        <item>Bazinga</item>
+        <item>Belair</item>
+        <item>Chewbacca</item>
+        <item>Darth Vader</item>
+        <item>Doh</item>
+        <item>Fast n Furious</item>
+        <item>Godzilla</item>
+        <item>Nazgul</item>
+        <item>Oompaloompa</item>
+        <item>Two and a Half Men</item>
+        <item>Wazzup</item>
+        <item>Dr. Dre The Next Episode</item>
+        <item>GTA</item>
         <item>Τσικλίδης: Λες και είναι τσόντα!</item>
         <item>Πετρόπουλος: Action!</item>
         <item>Πετράκης: Fuck her right in the pussy</item>>
@@ -126,7 +189,6 @@
         <item>@raw/funny_ohmy</item>
         <item>@raw/funny_ohyeaah</item>
         <item>@raw/nsfw_penis</item>
-        <item>@raw/movies_pokemonaggouri</item>
         <item>@raw/funny_pussyhair</item>
         <item>@raw/funny_retardation</item>
         <item>@raw/funny_russianmiddlefinger</item>
@@ -145,6 +207,71 @@
         <item>@raw/funny_zodiac</item>
         <item>@raw/movies_sabada</item>
         <item>@raw/movies_uwotmate</item>
+        <item>@raw/funny_babytriple</item>
+        <item>@raw/funny_badumtss</item>
+        <item>@raw/funny_beep</item>
+        <item>@raw/funny_boxeo</item>
+        <item>@raw/funny_chan</item>
+        <item>@raw/funny_chanchan</item>
+        <item>@raw/funny_combobreaker</item>
+        <item>@raw/funny_dedotadedwam</item>
+        <item>@raw/funny_ducktoy</item>
+        <item>@raw/funny_getnoscoped</item>
+        <item>@raw/funny_getthecamera</item>
+        <item>@raw/funny_headshot</item>
+        <item>@raw/funny_holyshit</item>
+        <item>@raw/funny_inception</item>
+        <item>@raw/funny_johncena</item>
+        <item>@raw/funny_justdoit</item>
+        <item>@raw/funny_nein</item>
+        <item>@raw/funny_neverdonethat</item>
+        <item>@raw/funny_omg</item>
+        <item>@raw/funny_overninek</item>
+        <item>@raw/funny_penaultjelly</item>
+        <item>@raw/funny_shotsfired</item>
+        <item>@raw/funny_smokeweedeveryday</item>
+        <item>@raw/funny_whatcha_say</item>
+        <item>@raw/funny_wombo_combo</item>
+        <item>@raw/funny_wtf_boom</item>
+        <item>@raw/games_akuaku</item>
+        <item>@raw/games_ballsofsteel</item>
+        <item>@raw/games_eagames</item>
+        <item>@raw/games_easports</item>
+        <item>@raw/games_excellent</item>
+        <item>@raw/games_fusrodah</item>
+        <item>@raw/games_gameboy</item>
+        <item>@raw/games_hadouken</item>
+        <item>@raw/games_inspectorgadget</item>
+        <item>@raw/games_jigglypuff</item>
+        <item>@raw/games_mario</item>
+        <item>@raw/games_mariocoin</item>
+        <item>@raw/games_mariofanfare</item>
+        <item>@raw/games_mariogrow</item>
+        <item>@raw/games_mariojump</item>
+        <item>@raw/games_mariolose</item>
+        <item>@raw/games_mariounderground</item>
+        <item>@raw/games_nuke</item>
+        <item>@raw/games_pacmandeath</item>
+        <item>@raw/games_playstation</item>
+        <item>@raw/games_pokemonheal</item>
+        <item>@raw/games_pokemonaggouri</item>
+        <item>@raw/games_snipershot</item>
+        <item>@raw/games_tetris</item>
+        <item>@raw/movies_backtothefuture</item>
+        <item>@raw/movies_badadipoopi</item>
+        <item>@raw/movies_bazinga</item>
+        <item>@raw/movies_belair</item>
+        <item>@raw/movies_chewbacca</item>
+        <item>@raw/movies_darthvader</item>
+        <item>@raw/movies_doh</item>
+        <item>@raw/movies_fastnfurious</item>
+        <item>@raw/movies_godzilla</item>
+        <item>@raw/movies_nazgul</item>
+        <item>@raw/movies_oompaloompa</item>
+        <item>@raw/movies_twohalfmen</item>
+        <item>@raw/movies_wazzup</item>
+        <item>@raw/thug_drdre_snoop</item>
+        <item>@raw/thug_gta</item>
         <item>@raw/personal_tsonta</item>
         <item>@raw/personal_nikos</item>
         <item>@raw/personal_fuckherrightinthepussy</item>
@@ -213,6 +340,32 @@
         <item>Richard Stallman</item>
         <item>What else?</item>
         <item>Zodiac</item>
+        <item>Oh baby a triple</item>
+        <item>Badum Tss</item>
+        <item>Beep</item>
+        <item>Boxeo</item>
+        <item>Chan</item>
+        <item>Chan chan</item>
+        <item>Combo breaker</item>
+        <item>De dotaded wam</item>
+        <item>Duck toy</item>
+        <item>Get noscoped</item>
+        <item>Mom get the camera</item>
+        <item>Headshot</item>
+        <item>Holy Shit</item>
+        <item>Inception</item>
+        <item>John Cena</item>
+        <item>Just Do It</item>
+        <item>Nein Nein</item>
+        <item>Never do that</item>
+        <item>OMG</item>
+        <item>Over 9000</item>
+        <item>Penault Jelly</item>
+        <item>Shots fired</item>
+        <item>Smoke weed everyday</item>
+        <item>Whatcha say</item>
+        <item>Wombo Combo</item>
+        <item>WTF BOOM</item>
     </string-array>
 
     <integer-array name="funnySoundsIDs">
@@ -263,15 +416,89 @@
         <item>@raw/funny_windows</item>
         <item>@raw/funny_whatelse</item>
         <item>@raw/funny_zodiac</item>
+        <item>@raw/funny_babytriple</item>
+        <item>@raw/funny_badumtss</item>
+        <item>@raw/funny_beep</item>
+        <item>@raw/funny_boxeo</item>
+        <item>@raw/funny_chan</item>
+        <item>@raw/funny_chanchan</item>
+        <item>@raw/funny_combobreaker</item>
+        <item>@raw/funny_dedotadedwam</item>
+        <item>@raw/funny_ducktoy</item>
+        <item>@raw/funny_getnoscoped</item>
+        <item>@raw/funny_getthecamera</item>
+        <item>@raw/funny_headshot</item>
+        <item>@raw/funny_holyshit</item>
+        <item>@raw/funny_inception</item>
+        <item>@raw/funny_johncena</item>
+        <item>@raw/funny_justdoit</item>
+        <item>@raw/funny_nein</item>
+        <item>@raw/funny_neverdonethat</item>
+        <item>@raw/funny_omg</item>
+        <item>@raw/funny_overninek</item>
+        <item>@raw/funny_penaultjelly</item>
+        <item>@raw/funny_shotsfired</item>
+        <item>@raw/funny_smokeweedeveryday</item>
+        <item>@raw/funny_whatcha_say</item>
+        <item>@raw/funny_wombo_combo</item>
+        <item>@raw/funny_wtf_boom</item>
     </integer-array>
 
     <!-- Games Sounds -->
     <string-array name="gamesSounds">
         <item>Hitmarker</item>
+        <item>Aku Aku</item>
+        <item>Balls of steel</item>
+        <item>EA Games</item>
+        <item>EA Sports</item>
+        <item>Excellent</item>
+        <item>Fus Ro Dah</item>
+        <item>Gameboy</item>
+        <item>Hadouken</item>
+        <item>Inspector Gadget</item>
+        <item>Jigglypuff</item>
+        <item>Mario</item>
+        <item>Mario Coin</item>
+        <item>Mario Fanfare</item>
+        <item>Mario Grow</item>
+        <item>Mario Jump</item>
+        <item>Mario Lose</item>
+        <item>Mario Underground</item>
+        <item>Nuke</item>
+        <item>Pacman Death</item>
+        <item>Playstation</item>
+        <item>Pokemon Heal</item>
+        <item>Our courage will pull us through</item>
+        <item>Sniper shot</item>
+        <item>Tetris</item>
     </string-array>
 
     <integer-array name="gamesSoundsIDs">
         <item>@raw/games_hitmarker</item>
+        <item>@raw/games_akuaku</item>
+        <item>@raw/games_ballsofsteel</item>
+        <item>@raw/games_eagames</item>
+        <item>@raw/games_easports</item>
+        <item>@raw/games_excellent</item>
+        <item>@raw/games_fusrodah</item>
+        <item>@raw/games_gameboy</item>
+        <item>@raw/games_hadouken</item>
+        <item>@raw/games_inspectorgadget</item>
+        <item>@raw/games_jigglypuff</item>
+        <item>@raw/games_mario</item>
+        <item>@raw/games_mariocoin</item>
+        <item>@raw/games_mariofanfare</item>
+        <item>@raw/games_mariogrow</item>
+        <item>@raw/games_mariojump</item>
+        <item>@raw/games_mariolose</item>
+        <item>@raw/games_mariounderground</item>
+        <item>@raw/games_nuke</item>
+        <item>@raw/games_pacmandeath</item>
+        <item>@raw/games_playstation</item>
+        <item>@raw/games_pokemonheal</item>
+        <item>@raw/games_pokemonaggouri</item>
+        <item>@raw/games_snipershot</item>
+        <item>@raw/games_tetris</item>
     </integer-array>
 
     <!-- Movies Sounds -->
@@ -280,7 +507,19 @@
         <item>I\' m your father!</item>
         <item>LOTR MLG</item>
         <item>Yuri Kuma Arashi</item>
-        <item>Our courage will pull us through</item>
+        <item>Back to the future</item>
+        <item>Badadipoopi</item>
+        <item>Bazinga</item>
+        <item>Belair</item>
+        <item>Chewbacca</item>
+        <item>Darth Vader</item>
+        <item>Doh</item>
+        <item>Fast n Furious</item>
+        <item>Godzilla</item>
+        <item>Nazgul</item>
+        <item>Oompaloompa</item>
+        <item>Two and a Half Men</item>
+        <item>Wazzup</item>
     </string-array>
 
     <integer-array name="moviesSoundsIDs">
@@ -288,7 +527,30 @@
         <item>@raw/movies_imyourfather</item>
         <item>@raw/movies_lotr</item>
         <item>@raw/movies_sabada</item>
-        <item>@raw/movies_pokemonaggouri</item>
+        <item>@raw/movies_backtothefuture</item>
+        <item>@raw/movies_badadipoopi</item>
+        <item>@raw/movies_bazinga</item>
+        <item>@raw/movies_belair</item>
+        <item>@raw/movies_chewbacca</item>
+        <item>@raw/movies_darthvader</item>
+        <item>@raw/movies_doh</item>
+        <item>@raw/movies_fastnfurious</item>
+        <item>@raw/movies_godzilla</item>
+        <item>@raw/movies_nazgul</item>
+        <item>@raw/movies_oompaloompa</item>
+        <item>@raw/movies_twohalfmen</item>
+        <item>@raw/movies_wazzup</item>
+    </integer-array>
+
+    <!-- Thug Life Sounds -->
+    <string-array name="thugSounds">
+        <item>Dr. Dre The Next Episode</item>
+        <item>GTA</item>
+    </string-array>
+
+    <integer-array name="thugSoundsIDs">
+        <item>@raw/thug_drdre_snoop</item>
+        <item>@raw/thug_gta</item>
     </integer-array>
 
     <!-- NSFW Sounds -->
