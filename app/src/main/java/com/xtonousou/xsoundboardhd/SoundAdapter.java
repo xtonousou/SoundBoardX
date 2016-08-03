@@ -30,8 +30,8 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 	private ArrayList<Sound> sounds;
 	private ArrayList<Sound> soundsCopy;
 
-	private boolean favoritesOnly      = false;
-	private boolean animationsShown    = true;
+	private boolean favoritesOnly      = false;// default
+	private boolean animationsShown    = true; // default
 	private boolean allSoundsOnly      = true; // default
 	private boolean animalsSoundsOnly  = false;
 	private boolean funnySoundsOnly    = false;
@@ -39,6 +39,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 	private boolean moviesSoundsOnly   = false;
 	private boolean nsfwSoundsOnly     = false;
 	private boolean personalSoundsOnly = false;
+    private boolean thugSoundsOnly     = false;
 
 	public SoundAdapter(ArrayList<Sound> soundArray) {
 		this.sounds      = soundArray;
@@ -77,6 +78,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		moviesSoundsOnly = false;
 		nsfwSoundsOnly = false;
 		personalSoundsOnly = false;
+        thugSoundsOnly = false;
 
 		sounds = SoundStore.getAllSounds(context);
 		notifyDataSetChanged();
@@ -92,6 +94,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		moviesSoundsOnly = false;
 		nsfwSoundsOnly = false;
 		personalSoundsOnly = false;
+        thugSoundsOnly = false;
 
 		sounds = SoundStore.getAnimalsSounds(context);
 		notifyDataSetChanged();
@@ -107,6 +110,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		moviesSoundsOnly = false;
 		nsfwSoundsOnly = false;
 		personalSoundsOnly = false;
+        thugSoundsOnly = false;
 
 		sounds = SoundStore.getFunnySounds(context);
 		notifyDataSetChanged();
@@ -122,6 +126,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		moviesSoundsOnly = false;
 		nsfwSoundsOnly = false;
 		personalSoundsOnly = false;
+        thugSoundsOnly = false;
 
 		sounds = SoundStore.getGamesSounds(context);
 		notifyDataSetChanged();
@@ -137,6 +142,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		moviesSoundsOnly = true;
 		nsfwSoundsOnly = false;
 		personalSoundsOnly = false;
+        thugSoundsOnly = false;
 
 		sounds = SoundStore.getMoviesSounds(context);
 		notifyDataSetChanged();
@@ -153,6 +159,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		moviesSoundsOnly = false;
 		nsfwSoundsOnly = true;
 		personalSoundsOnly = false;
+        thugSoundsOnly = false;
 
 		sounds = SoundStore.getNSFWSounds(context);
 		notifyDataSetChanged();
@@ -168,10 +175,27 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		moviesSoundsOnly = false;
 		nsfwSoundsOnly = false;
 		personalSoundsOnly = true;
+        thugSoundsOnly = false;
 
 		sounds = SoundStore.getPersonalSounds(context);
 		notifyDataSetChanged();
 	}
+
+    public void showThugSounds(Context context) {
+        favoritesOnly = false;
+
+        allSoundsOnly = false;
+        animalsSoundsOnly = false;
+        funnySoundsOnly = false;
+        gamesSoundsOnly = false;
+        moviesSoundsOnly = false;
+        nsfwSoundsOnly = false;
+        personalSoundsOnly = false;
+        thugSoundsOnly = true;
+
+        sounds = SoundStore.getThugSounds(context);
+        notifyDataSetChanged();
+    }
 
     /**
      *  returns  0 if allSoundsOnly,
@@ -179,8 +203,9 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
      *  returns  2 if funnySoundsOnly,
      *  returns  3 if gamesSoundsOnly,
      *  returns  4 if moviesSoundsOnly,
-     *  returns  5 if nsfwSoundsOnly,
-     *  returns  6 if personalSoundsOnly,
+     *  returns  5 if thugSoundsOnly,
+     *  returns  6 if nsfwSoundsOnly,
+     *  returns  7 if personalSoundsOnly,
      *  returns -1 if unexpected occurrence.
      */
     public byte getCategory() {
@@ -190,8 +215,9 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
         else if (funnySoundsOnly)    category =  2;
         else if (gamesSoundsOnly)    category =  3;
         else if (moviesSoundsOnly)   category =  4;
-        else if (nsfwSoundsOnly)     category =  5;
-        else if (personalSoundsOnly) category =  6;
+        else if (thugSoundsOnly)     category =  5;
+        else if (nsfwSoundsOnly)     category =  6;
+        else if (personalSoundsOnly) category =  7;
         else                         category = -1;
         return category;
     }

@@ -190,8 +190,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 .withIcon(FontAwesome.Icon.faw_gamepad),
                         new PrimaryDrawerItem().withName(R.string.movies)
                                 .withIcon(FontAwesome.Icon.faw_video_camera),
+                        new PrimaryDrawerItem().withName(R.string.thug)
+                                .withIcon(R.drawable.thug)
+                                .withIconTintingEnabled(true),
                         new PrimaryDrawerItem().withName(R.string.nsfw)
-                                .withIcon(FontAwesome.Icon.faw_exclamation_circle),
+                                .withIcon(R.drawable.ic_wc_white_24dp)
+                                .withIconTintingEnabled(true),
                         new PrimaryDrawerItem().withName(R.string.personal)
                                 .withIcon(R.drawable.ic_person_white_24dp)
                                 .withIconTintingEnabled(true),
@@ -290,10 +294,25 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                         .getInteger(R.integer.num_cols),
                                         StaggeredGridLayoutManager.VERTICAL));
                                 mView.swapAdapter((new SoundAdapter(SoundStore
+                                        .getThugSounds(MainActivity.this))), true);
+                                ((SoundAdapter) mView.getAdapter()).showThugSounds(MainActivity.this);
+                                break;
+                            case 7:
+                                favoritesToggle.setIconDrawable(
+                                        new IconicsDrawable(getApplicationContext())
+                                                .icon(FontAwesome.Icon.faw_star_o)
+                                                .color(Color.WHITE)
+                                                .sizeDp(24)
+                                );
+                                drawerSelectionPosition = mDrawer.getCurrentSelectedPosition();
+                                mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
+                                        .getInteger(R.integer.num_cols),
+                                        StaggeredGridLayoutManager.VERTICAL));
+                                mView.swapAdapter((new SoundAdapter(SoundStore
                                         .getNSFWSounds(MainActivity.this))), true);
                                 ((SoundAdapter) mView.getAdapter()).showNSFWSounds(MainActivity.this);
                                 break;
-                            case 7:
+                            case 8:
                                 favoritesToggle.setIconDrawable(
                                         new IconicsDrawable(getApplicationContext())
                                                 .icon(FontAwesome.Icon.faw_star_o)
@@ -308,8 +327,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                         .getPersonalSounds(MainActivity.this))), true);
                                 ((SoundAdapter) mView.getAdapter()).showPersonalSounds(MainActivity.this);
                                 break;
-                            // skip 8 cause there is no 8 in drawer
-                            case 9:
+                            // skip 9 cause there is no 9 in drawer
+                            case 10:
                                 mDrawer.deselect();
                                 favoritesToggle.setIconDrawable(
                                         new IconicsDrawable(getApplicationContext())
@@ -506,9 +525,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 adapter.showMoviesSounds(getApplicationContext());
                 break;
             case 5:
-                adapter.showNSFWSounds(getApplicationContext());
+                adapter.showThugSounds(getApplicationContext());
                 break;
             case 6:
+                adapter.showNSFWSounds(getApplicationContext());
+                break;
+            case 7:
                 adapter.showPersonalSounds(getApplicationContext());
                 break;
         }
