@@ -133,4 +133,22 @@ abstract class SoundStore {
 
         return sounds;
     }
+
+    public static ArrayList<Sound> getThugSounds(Context context) {
+        Resources res = context.getApplicationContext().getResources();
+
+        TypedArray thugSounds = res.obtainTypedArray(R.array.thugSounds);
+        TypedArray thugSoundsIDs = res.obtainTypedArray(R.array.thugSoundsIDs);
+
+        ArrayList<Sound> sounds = new ArrayList<>();
+
+        for (int i = 0; i < thugSounds.length(); i++) {
+            sounds.add(new Sound(thugSounds.getString(i), thugSoundsIDs.getResourceId(i, -1)));
+        }
+
+        thugSounds.recycle();
+        thugSoundsIDs.recycle();
+
+        return sounds;
+    }
 }
