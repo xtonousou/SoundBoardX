@@ -30,14 +30,14 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 	private ArrayList<Sound> sounds;
 	private ArrayList<Sound> soundsCopy;
 
-	private boolean favoritesOnly = false;
-	private boolean animationsShown = true;
-	private boolean allSoundsOnly = true; // default
-	private boolean animalsSoundsOnly = false;
-	private boolean funnySoundsOnly = false;
-	private boolean gamesSoundsOnly = false;
-	private boolean moviesSoundsOnly = false;
-	private boolean nsfwSoundsOnly = false;
+	private boolean favoritesOnly      = false;
+	private boolean animationsShown    = true;
+	private boolean allSoundsOnly      = true; // default
+	private boolean animalsSoundsOnly  = false;
+	private boolean funnySoundsOnly    = false;
+	private boolean gamesSoundsOnly    = false;
+	private boolean moviesSoundsOnly   = false;
+	private boolean nsfwSoundsOnly     = false;
 	private boolean personalSoundsOnly = false;
 
 	public SoundAdapter(ArrayList<Sound> soundArray) {
@@ -51,29 +51,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 
 	public boolean isFavoritesOnly() {
 		return favoritesOnly;
-	}
-
-	/**
-	 *  returns  0 if allSoundsOnly,
-	 *  returns  1 if animalsSoundsOnly,
-	 *  returns  2 if funnySoundsOnly,
-	 *  returns  3 if gamesSoundsOnly,
-	 *  returns  4 if moviesSoundsOnly,
-	 *  returns  5 if nsfwSoundsOnly,
-	 *  returns  6 if personalSoundsOnly,
-	 *  returns -1 if unexpected occurrence.
-     */
-	public byte getCategory() {
-		byte category;
-		if      (allSoundsOnly)      category =  0;
-		else if (animalsSoundsOnly)  category =  1;
-		else if (funnySoundsOnly)    category =  2;
-		else if (gamesSoundsOnly)    category =  3;
-		else if (moviesSoundsOnly)   category =  4;
-		else if (nsfwSoundsOnly)     category =  5;
-		else if (personalSoundsOnly) category =  6;
-		else                         category = -1;
-		return category;
 	}
 
 	public void setShowAnimations(boolean anim) {
@@ -196,11 +173,28 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		notifyDataSetChanged();
 	}
 
-	@Override
-	public SoundAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, final int viewType) {
-		View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.sound_card, parent, false);
-		return new ViewHolder(v);
-	}
+    /**
+     *  returns  0 if allSoundsOnly,
+     *  returns  1 if animalsSoundsOnly,
+     *  returns  2 if funnySoundsOnly,
+     *  returns  3 if gamesSoundsOnly,
+     *  returns  4 if moviesSoundsOnly,
+     *  returns  5 if nsfwSoundsOnly,
+     *  returns  6 if personalSoundsOnly,
+     *  returns -1 if unexpected occurrence.
+     */
+    public byte getCategory() {
+        byte category;
+        if      (allSoundsOnly)      category =  0;
+        else if (animalsSoundsOnly)  category =  1;
+        else if (funnySoundsOnly)    category =  2;
+        else if (gamesSoundsOnly)    category =  3;
+        else if (moviesSoundsOnly)   category =  4;
+        else if (nsfwSoundsOnly)     category =  5;
+        else if (personalSoundsOnly) category =  6;
+        else                         category = -1;
+        return category;
+    }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements
             View.OnCreateContextMenuListener,
@@ -217,7 +211,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
                     "fonts/Roboto-Regular.ttf");
             title.setTypeface(font);
 
-            itemView.setBackgroundColor((new DayColor(itemView.getContext())).getDayColor());
             itemView.setOnClickListener(new View.OnClickListener() {
                 public void onEvent(String event) {
                     if (getAdapterPosition() != RecyclerView.NO_POSITION) {
@@ -289,9 +282,16 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
         }
     }
 
+    @Override
+    public SoundAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, final int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.sound_card, parent, false);
+        return new ViewHolder(v);
+    }
+
 	@Override
 	public void onBindViewHolder(final ViewHolder holder, int position) {
 		holder.title.setText(sounds.get(position).getName());
+        holder.itemView.setBackgroundColor(new DayColor(holder.itemView.getContext()).getDayColor());
 
 		boolean isFavorite = sounds.get(position).getFavorite();
 		holder.favButton.setImageDrawable(isFavorite
