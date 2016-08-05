@@ -804,7 +804,7 @@ public class ToneManager {
 
     /**
      *  Saves sound selected by user in /xSoundBoardHD/Notifications/, cleans filename and sets it as notification
-     *  @param ressound	R.raw.resourcesound
+     *  @param resource	R.raw.resourcesound
      */
     private boolean setAsNotification(int resource) {
         byte[] buffer;
