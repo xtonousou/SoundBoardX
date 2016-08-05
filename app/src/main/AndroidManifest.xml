@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:installLocation="preferExternal"
     package="com.xtonousou.xsoundboardhd">
 
     <uses-permission android:name="android.permission.VIBRATE"/>
@@ -30,12 +31,12 @@
                 android:resource="@xml/searchable">
             </meta-data>
         </activity>
-        <!-- Color Scheme Activity -->
+        <!-- Support Activity -->
         <activity
             android:name=".SupportActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
     </application>
