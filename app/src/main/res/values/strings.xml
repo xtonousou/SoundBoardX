@@ -24,8 +24,11 @@
     <string name="personal">Personal</string>
     <string name="games">Games</string>
     <string name="all">All</string>
-    <string name="extra">Extra</string>
+    <string name="options">Options</string>
     <string name="support">Support</string>
+    <string name="particles">Particles</string>
+    <string name="favorites">Favorites</string>
+    <string name="color">Color Picker</string>
     <!-- Context Menu -->
     <string name="header">Select action</string>
     <string name="ringtone">Set as ringtone</string>
