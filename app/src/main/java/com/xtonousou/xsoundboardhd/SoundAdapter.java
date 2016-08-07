@@ -32,7 +32,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 
 	private boolean favoritesOnly      = false;// default
 	private boolean animationsShown    = true; // default
-	private boolean allSoundsOnly      = true; // default
+	private boolean allSoundsOnly      = false;
 	private boolean animalsSoundsOnly  = false;
 	private boolean funnySoundsOnly    = false;
 	private boolean gamesSoundsOnly    = false;
@@ -60,6 +60,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 
 	public void onlyShowFavorites() {
 		favoritesOnly = true;
+
 		for (Sound sound : new ArrayList<>(sounds)) {
 			if (!sound.getFavorite()) {
 				notifyItemRemoved(sounds.indexOf(sound));
@@ -318,8 +319,8 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 	public void onBindViewHolder(final ViewHolder holder, int position) {
 		holder.title.setText(sounds.get(position).getName());
         holder.itemView.setBackgroundColor(new DayColor(holder.itemView.getContext()).getDayColor());
-
 		boolean isFavorite = sounds.get(position).getFavorite();
+
 		holder.favButton.setImageDrawable(isFavorite
 				?   new IconicsDrawable(holder.favButton.getContext()).icon(FontAwesome.Icon.faw_star)
                     .color(Color.WHITE)
@@ -388,6 +389,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
                         tempList.add(item);
                     }
                 }
+
                 filterResults.values = tempList;
                 filterResults.count = tempList.size();
             }
