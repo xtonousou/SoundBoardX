@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 .getInteger(R.integer.num_cols),
                 StaggeredGridLayoutManager.VERTICAL));
         mView.setAdapter(new SoundAdapter(SoundStore.getAllSounds(this)));
+        ((SoundAdapter) mView.getAdapter()).showAllSounds(getApplicationContext());
 
         beautifyToolbar();
         initDrawer(savedInstanceState);
@@ -509,6 +510,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         switch (adapter.getCategory()) {
             default:
                 Log.e(TAG, "Something went completely wrong. Check normalize() or its calls.");
+                break;
             case 0:
                 adapter.showAllSounds(getApplicationContext());
                 break;

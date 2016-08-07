@@ -22,12 +22,6 @@ android {
     }
 }
 
-repositories {
-    maven {
-        url "http://dl.bintray.com/jlmd/maven"
-    }
-}
-
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'de.greenrobot:eventbus:2.4.0'
