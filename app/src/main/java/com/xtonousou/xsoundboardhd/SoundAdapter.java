@@ -30,8 +30,8 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 	private ArrayList<Sound> sounds;
 	private ArrayList<Sound> soundsCopy;
 
-	private boolean favoritesOnly      = false;// default
-	private boolean animationsShown    = true; // default
+    private boolean animationsShown;
+	private boolean favoritesOnly      = false;
 	private boolean allSoundsOnly      = false;
 	private boolean animalsSoundsOnly  = false;
 	private boolean funnySoundsOnly    = false;
@@ -41,9 +41,10 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 	private boolean personalSoundsOnly = false;
     private boolean thugSoundsOnly     = false;
 
-	public SoundAdapter(ArrayList<Sound> soundArray) {
-		this.sounds      = soundArray;
-		this.soundsCopy  = soundArray;
+	public SoundAdapter(ArrayList<Sound> soundArray, boolean withAnimations) {
+		this.sounds          = soundArray;
+		this.soundsCopy      = soundArray;
+        this.animationsShown = withAnimations;
 	}
 
 	public boolean areAnimationsShown() {
@@ -319,55 +320,55 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 	public void onBindViewHolder(final ViewHolder holder, int position) {
 		holder.title.setText(sounds.get(position).getName());
         holder.itemView.setBackgroundColor(new DayColor(holder.itemView.getContext()).getDayColor());
-		boolean isFavorite = sounds.get(position).getFavorite();
+        boolean isFavorite = sounds.get(holder.getAdapterPosition()).getFavorite();
 
-		holder.favButton.setImageDrawable(isFavorite
-				?   new IconicsDrawable(holder.favButton.getContext()).icon(FontAwesome.Icon.faw_star)
+        holder.favButton.setImageDrawable(isFavorite
+                ?   new IconicsDrawable(holder.favButton.getContext()).icon(FontAwesome.Icon.faw_star)
                     .color(Color.WHITE)
                     .sizeDp(24)
-				:   new IconicsDrawable(holder.favButton.getContext())
+                :   new IconicsDrawable(holder.favButton.getContext())
                     .icon(FontAwesome.Icon.faw_star_o)
                     .color(Color.WHITE)
                     .sizeDp(24));
 
-		holder.favButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				try {
-					boolean newFavStatus = !sounds.get(holder.getAdapterPosition()).getFavorite();
+        holder.favButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    boolean newFavStatus = !sounds.get(holder.getAdapterPosition()).getFavorite();
                     sounds.get(holder.getAdapterPosition()).setFavorite(newFavStatus);
 
-					if (newFavStatus) {
-						((ImageButton) v).setImageDrawable(
+                    if (newFavStatus) {
+                        ((ImageButton) v).setImageDrawable(
                                 new IconicsDrawable(v.getContext())
-                                .icon(FontAwesome.Icon.faw_star)
-                                .color(Color.WHITE)
-                                .sizeDp(24));
-						v.setContentDescription(v.getContext().getString(R.string.fav_desc));
-					} else {
+                                        .icon(FontAwesome.Icon.faw_star)
+                                        .color(Color.WHITE)
+                                        .sizeDp(24));
+                        v.setContentDescription(v.getContext().getString(R.string.fav_desc));
+                    } else {
                         ((ImageButton) v).setImageDrawable(
                                 new IconicsDrawable(v.getContext())
                                         .icon(FontAwesome.Icon.faw_star_o)
                                         .color(Color.WHITE)
                                         .sizeDp(24));
-						v.setContentDescription(v.getContext().getString(R.string.not_fav_desc));
-					}
+                        v.setContentDescription(v.getContext().getString(R.string.not_fav_desc));
+                    }
 
-					if (favoritesOnly) {
-						// Remove from the list.
+                    if (favoritesOnly) {
+                        // Remove from the list.
                         sounds.remove(sounds.get(holder.getAdapterPosition()));
-						notifyItemRemoved(holder.getAdapterPosition());
-					}
-				} catch (ArrayIndexOutOfBoundsException e) {
-					Log.e(TAG, e.getMessage());
-				}
-			}
-		});
+                        notifyItemRemoved(holder.getAdapterPosition());
+                    }
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    Log.e(TAG, e.getMessage());
+                }
+            }
+        });
 	}
 
 	@Override
 	public int getItemCount() {
-		return sounds.size();
+        return sounds != null ? sounds.size() : 0;
 	}
 
     @Override

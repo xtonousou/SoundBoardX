@@ -44,9 +44,9 @@ public class SupportActivity extends AppCompatActivity {
 
         beautifyToolbar();
 
-        donateTV = (TextView) findViewById(R.id.donateTV);
-        subTV    = (TextView) findViewById(R.id.subscribeTV);
-        sourceTV = (TextView) findViewById(R.id.sourceTV);
+        donateTV = (TextView)  findViewById(R.id.donateTV);
+        subTV    = (TextView)  findViewById(R.id.subscribeTV);
+        sourceTV = (TextView)  findViewById(R.id.sourceTV);
         donateIm = (ImageView) findViewById(R.id.donateIm);
         subIm    = (ImageView) findViewById(R.id.subscribeIm);
         sourceIm = (ImageView) findViewById(R.id.sourceIm);
@@ -55,7 +55,7 @@ public class SupportActivity extends AppCompatActivity {
 
         donateIm.setImageDrawable(
                 new IconicsDrawable(getApplicationContext())
-                        .icon(FontAwesome.Icon.faw_money)
+                        .icon(FontAwesome.Icon.faw_paypal)
                         .color(Color.WHITE)
                         .sizeDp(24)
         );
@@ -106,6 +106,7 @@ public class SupportActivity extends AppCompatActivity {
 
         try {
             versionTV.setText((getPackageManager().getPackageInfo(getPackageName(), 0)).versionName);
+            versionTV.setTextColor(new DayColor(getApplicationContext()).getDayColor());
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
