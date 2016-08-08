@@ -46,6 +46,7 @@ import com.romainpiel.shimmer.ShimmerTextView;
 
 import java.util.List;
 
+import petrov.kristiyan.colorpicker.ColorPicker;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -55,17 +56,17 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     static final int RC_WRITE_SETNGS_PERM_AFTER_M = 0x0;
     static final int RC_WRITE_SETNGS_PERM         = 0x1;
     static final int RC_WRITE_EXST_PERM           = 0x2;
-    static final int SUPPORT_ACTIVITY             = 0x3;
 
-    int     drawerSelectionPosition = 1;
-    boolean withAnimations          = true;
+    boolean withAnimations = true;
 
     static SoundPlayer        soundPlayer;
     static InputMethodManager mInputManager;
+    static Toolbar            mToolbar;
+    static byte               selectedColor = 0;
 
-    Toolbar           mToolbar;
-    RecyclerView      mView;
-    Drawer            mDrawer = null;
+    RecyclerView mView;
+    Drawer       mDrawer = null;
+    ColorPicker  colorPicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         //noinspection ConstantConditions
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        FavStore.init(getPreferences(Context.MODE_PRIVATE));
+        SharedPrefs.init(getPreferences(Context.MODE_PRIVATE));
 
         mInputManager     = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         mView             = (RecyclerView) findViewById(R.id.grid_view);
@@ -122,7 +123,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
     @Override
     public void onBackPressed() {
-        //handle the back press :D close the drawer first and if the drawer is closed close the activity
         if (mDrawer != null && mDrawer.isDrawerOpen()) {
             mDrawer.closeDrawer();
         } else {
@@ -132,7 +132,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        //add the values which need to be saved from the drawer to the bundle
         outState = mDrawer.saveInstanceState(outState);
         super.onSaveInstanceState(outState);
     }
@@ -147,7 +146,11 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         Typeface font = Typeface.createFromAsset(shimmerTextView.getContext().getAssets(),
                 "fonts/CaviarDreams.ttf");
         shimmerTextView.setTypeface(font);
-        shimmerTextView.setTextColor((new DayColor(shimmerTextView.getContext())).getDayColor());
+        if (selectedColor == 0)
+            shimmerTextView.setTextColor(SharedPrefs.getInstance().getSelectedColor());
+        else
+            shimmerTextView.setTextColor(ContextCompat.getColor(shimmerTextView.getContext(),
+                    R.color.lavaRed));
         Shimmer shimmer = new Shimmer();
         if (isGreenMode()) {
             shimmer.cancel();
@@ -199,21 +202,21 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 .withSelectable(false),
                         new SecondarySwitchDrawerItem().withName(R.string.particles)
                                 .withIcon(FontAwesome.Icon.faw_eye)
-                                .withIdentifier(666)
                                 .withSelectable(false)
                                 .withChecked(true)
                                 .withOnCheckedChangeListener(onCheckedChangeListener),
                         new SecondaryDrawerItem().withName(R.string.color)
-                                .withIcon(FontAwesome.Icon.faw_paint_brush),
+                                .withIcon(FontAwesome.Icon.faw_paint_brush)
+                                .withSelectable(false),
                         new SecondaryDrawerItem().withName(R.string.support)
                                 .withIcon(FontAwesome.Icon.faw_hand_peace_o)
+                                .withSelectable(false)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
-                    public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+                    public boolean onItemClick(final View view, int position, IDrawerItem drawerItem) {
                         switch (position) {
                             case 1:
-                                drawerSelectionPosition = mDrawer.getCurrentSelectedPosition();
                                 mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                         .getInteger(R.integer.num_cols),
                                         StaggeredGridLayoutManager.VERTICAL));
@@ -222,7 +225,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 ((SoundAdapter) mView.getAdapter()).showAllSounds(MainActivity.this);
                                 break;
                             case 2:
-                                drawerSelectionPosition = mDrawer.getCurrentSelectedPosition();
                                 mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                         .getInteger(R.integer.num_cols),
                                         StaggeredGridLayoutManager.VERTICAL));
@@ -231,7 +233,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 ((SoundAdapter) mView.getAdapter()).showAnimalsSounds(MainActivity.this);
                                 break;
                             case 3:
-                                drawerSelectionPosition = mDrawer.getCurrentSelectedPosition();
                                 mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                         .getInteger(R.integer.num_cols),
                                         StaggeredGridLayoutManager.VERTICAL));
@@ -240,7 +241,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 ((SoundAdapter) mView.getAdapter()).showFunnySounds(MainActivity.this);
                                 break;
                             case 4:
-                                drawerSelectionPosition = mDrawer.getCurrentSelectedPosition();
                                 mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                         .getInteger(R.integer.num_cols),
                                         StaggeredGridLayoutManager.VERTICAL));
@@ -249,7 +249,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 ((SoundAdapter) mView.getAdapter()).showGamesSounds(MainActivity.this);
                                 break;
                             case 5:
-                                drawerSelectionPosition = mDrawer.getCurrentSelectedPosition();
                                 mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                         .getInteger(R.integer.num_cols),
                                         StaggeredGridLayoutManager.VERTICAL));
@@ -258,7 +257,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 ((SoundAdapter) mView.getAdapter()).showMoviesSounds(MainActivity.this);
                                 break;
                             case 6:
-                                drawerSelectionPosition = mDrawer.getCurrentSelectedPosition();
                                 mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                         .getInteger(R.integer.num_cols),
                                         StaggeredGridLayoutManager.VERTICAL));
@@ -267,7 +265,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 ((SoundAdapter) mView.getAdapter()).showThugSounds(MainActivity.this);
                                 break;
                             case 7:
-                                drawerSelectionPosition = mDrawer.getCurrentSelectedPosition();
                                 mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                         .getInteger(R.integer.num_cols),
                                         StaggeredGridLayoutManager.VERTICAL));
@@ -276,7 +273,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 ((SoundAdapter) mView.getAdapter()).showNSFWSounds(MainActivity.this);
                                 break;
                             case 8:
-                                drawerSelectionPosition = mDrawer.getCurrentSelectedPosition();
                                 mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                         .getInteger(R.integer.num_cols),
                                         StaggeredGridLayoutManager.VERTICAL));
@@ -300,17 +296,27 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                     ((SoundAdapter) mView.getAdapter()).setShowAnimations(true);
                                 }
                                 break;
+                            case 12:
+                                colorPicker = new ColorPicker(MainActivity.this);
+                                colorPicker.setColors(R.array.rainbow);
+                                colorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
+                                    @Override
+                                    public void onChooseColor(int position, int color) {
+                                        SharedPrefs.getInstance().setSelectedColor("color", color);
+                                        finish();
+                                        startActivity(getIntent());
+                                    }
+                                }).setRoundColorButton(true).show();
+                                break;
                             case 13:
-                                mDrawer.deselect();
-                                mDrawer.setSelectionAtPosition(drawerSelectionPosition);
                                 Intent intent = new Intent(MainActivity.this, SupportActivity.class);
-                                startActivityForResult(intent, SUPPORT_ACTIVITY);
+                                startActivity(intent);
                                 break;
                         }
                         return false;
                     }
                 })
-                .withSelectedItemByPosition(1) // Default All Sounds
+                .withSelectedItemByPosition(1)
                 .withSavedInstance(instance)
                 .build();
 
@@ -374,7 +380,11 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         SearchView.SearchAutoComplete searchViewText = (SearchView.SearchAutoComplete) searchView
                 .findViewById(R.id.search_src_text);
-        searchViewText.setTextColor((new DayColor(searchViewText.getContext())).getDayColor());
+        if (selectedColor == 0)
+            searchViewText.setTextColor(SharedPrefs.getInstance().getSelectedColor());
+        else
+            searchViewText.setTextColor(ContextCompat.getColor(searchViewText.getContext(),
+                    R.color.lavaRed));
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -384,12 +394,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
             @Override
             public boolean onQueryTextChange(String newText) {
-//                favoritesToggle.setIconDrawable(
-//                        new IconicsDrawable(getApplicationContext())
-//                                .icon(FontAwesome.Icon.faw_star_o)
-//                                .color(Color.WHITE)
-//                                .sizeDp(24)
-//                );
                 ((SoundAdapter) mView.getAdapter()).getFilter().filter(newText);
                 return true;
             }
@@ -400,74 +404,12 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     private void initFAB() {
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
-        fab.setAlpha(0.85f);
-
-        fab.setRippleColor((new DayColor(fab.getContext())).getDayColor());
-
-//        animationToggle.setIconDrawable(
-//                new IconicsDrawable(getApplicationContext())
-//                        .icon(FontAwesome.Icon.faw_eye)
-//                        .color(Color.WHITE)
-//                        .sizeDp(24)
-//        );
-//
-//        favoritesToggle.setIconDrawable(
-//                new IconicsDrawable(getApplicationContext())
-//                .icon(FontAwesome.Icon.faw_star_o)
-//                .color(Color.WHITE)
-//                .sizeDp(24)
-//        );
-//
-//        favoritesToggle.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (!((SoundAdapter) mView.getAdapter()).isFavoritesOnly()) {
-//                    ((SoundAdapter) mView.getAdapter()).onlyShowFavorites();
-//                    favoritesToggle.setIconDrawable(
-//                            new IconicsDrawable(getApplicationContext())
-//                                    .icon(FontAwesome.Icon.faw_star)
-//                                    .color(Color.WHITE)
-//                                    .sizeDp(24)
-//                    );
-//                } else {
-//                    normalize(((SoundAdapter) mView.getAdapter()));
-//                    favoritesToggle.setIconDrawable(
-//                            new IconicsDrawable(getApplicationContext())
-//                            .icon(FontAwesome.Icon.faw_star_o)
-//                            .color(Color.WHITE)
-//                            .sizeDp(24)
-//                    );
-//                }
-//            }
-//        });
-//
-//        if (isGreenMode()) {
-//            ((SoundAdapter) mView.getAdapter()).setShowAnimations(false);
-//            fabMenu.removeButton(animationToggle);
-//        } else {
-//            animationToggle.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    if (((SoundAdapter) mView.getAdapter()).areAnimationsShown()) {
-//                        ((SoundAdapter) mView.getAdapter()).setShowAnimations(false);
-//                        animationToggle.setIconDrawable(
-//                                new IconicsDrawable(animationToggle.getContext())
-//                                .icon(FontAwesome.Icon.faw_eye_slash)
-//                                .color(Color.WHITE)
-//                                .sizeDp(24)
-//                        );
-//                    } else if (!((SoundAdapter) mView.getAdapter()).areAnimationsShown()) {
-//                        ((SoundAdapter) mView.getAdapter()).setShowAnimations(true);
-//                        animationToggle.setIconDrawable(
-//                                new IconicsDrawable(animationToggle.getContext())
-//                                        .icon(FontAwesome.Icon.faw_eye)
-//                                        .color(Color.WHITE)
-//                                        .sizeDp(24)
-//                        );
-//                    }
-//                }
-//            });
-//        }
+        fab.setAlpha(0.8f);
+        if (selectedColor == 0)
+            fab.setRippleColor(SharedPrefs.getInstance().getSelectedColor());
+        else
+            fab.setRippleColor(ContextCompat.getColor(fab.getContext(),
+                    R.color.lavaRed));
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -534,9 +476,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 break;
             case RC_WRITE_SETNGS_PERM_AFTER_M:
                 snackbarReturnedFromActivity();
-                break;
-            case SUPPORT_ACTIVITY:
-                mDrawer.setSelectionAtPosition(drawerSelectionPosition);
                 break;
         }
     }
@@ -623,7 +562,11 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         View sbv = sb.getView();
         sbv.setBackgroundColor(ContextCompat.getColor(sbv.getContext(), R.color.colorPrimaryDark));
         TextView snackTV = (TextView) sbv.findViewById(android.support.design.R.id.snackbar_text);
-        snackTV.setTextColor((new DayColor(getApplicationContext()).getDayColor()));
+        if (selectedColor == 0)
+            snackTV.setTextColor(SharedPrefs.getInstance().getSelectedColor());
+        else
+            snackTV.setTextColor(ContextCompat.getColor(snackTV.getContext(),
+                    R.color.lavaRed));
         sb.show();
     }
 
@@ -633,7 +576,11 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         View sbv = sb.getView();
         sbv.setBackgroundColor(ContextCompat.getColor(sbv.getContext(), R.color.colorPrimaryDark));
         TextView snackTV = (TextView) sbv.findViewById(android.support.design.R.id.snackbar_text);
-        snackTV.setTextColor((new DayColor(getApplicationContext()).getDayColor()));
+        if (selectedColor == 0)
+            snackTV.setTextColor(SharedPrefs.getInstance().getSelectedColor());
+        else
+            snackTV.setTextColor(ContextCompat.getColor(snackTV.getContext(),
+                    R.color.lavaRed));
         sb.show();
     }
 }

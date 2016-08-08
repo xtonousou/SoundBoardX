@@ -3,6 +3,7 @@ package com.xtonousou.xsoundboardhd;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -29,6 +30,8 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 
 	private ArrayList<Sound> sounds;
 	private ArrayList<Sound> soundsCopy;
+
+    private int selectedColor = 0;
 
     private boolean animationsShown;
 	private boolean favoritesOnly      = false;
@@ -256,8 +259,8 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
                             return;
                         }
                         if (animationsShown) {
-                            new ToneManager(new Particle(itemView),
-                                    title.getText().toString()).makeItShine();
+                            new ToneManager(new Particle(itemView), title.getText().toString())
+                                    .makeItShine();
                         }
                         EventBus.getDefault().register(this);
                         EventBus.getDefault().post(sounds.get(getAdapterPosition()));
@@ -319,7 +322,12 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 	@Override
 	public void onBindViewHolder(final ViewHolder holder, int position) {
 		holder.title.setText(sounds.get(position).getName());
-        holder.itemView.setBackgroundColor(new DayColor(holder.itemView.getContext()).getDayColor());
+        if (selectedColor == 0)
+            holder.itemView.setBackgroundColor(SharedPrefs.getInstance().getSelectedColor());
+        else
+            holder.itemView.setBackgroundColor(ContextCompat.getColor(holder.itemView.getContext(),
+                    R.color.lavaRed));
+
         boolean isFavorite = sounds.get(holder.getAdapterPosition()).getFavorite();
 
         holder.favButton.setImageDrawable(isFavorite
@@ -343,7 +351,8 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
                                 new IconicsDrawable(v.getContext())
                                         .icon(FontAwesome.Icon.faw_star)
                                         .color(Color.WHITE)
-                                        .sizeDp(24));
+                                        .sizeDp(24)
+                        );
                         v.setContentDescription(v.getContext().getString(R.string.fav_desc));
                     } else {
                         ((ImageButton) v).setImageDrawable(
