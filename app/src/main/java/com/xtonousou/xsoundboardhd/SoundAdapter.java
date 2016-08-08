@@ -30,8 +30,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 	private ArrayList<Sound> sounds;
 	private ArrayList<Sound> soundsCopy;
 
-    private int selectedColor = 0;
-
     private boolean animationsShown;
 	private boolean favoritesOnly      = false;
 	private boolean allSoundsOnly      = false;
