@@ -27,6 +27,7 @@ public class ToneManager {
     private Particle particle;
     private String itemName;
     private View itemView;
+    private int selectedColor = 0;
 
     public ToneManager(String itemName, View itemView) {
         this.itemName = itemName;
@@ -957,31 +958,43 @@ public class ToneManager {
 
     private void ringtoneSnack() {
         Snackbar snackbar = Snackbar
-                .make(itemView.getRootView(), "Ringtone saved", Snackbar.LENGTH_LONG);
+                .make(itemView.getRootView().findViewById(R.id.coordinator), "Ringtone saved", Snackbar.LENGTH_LONG);
         View sbView = snackbar.getView();
         sbView.setBackgroundColor(ContextCompat.getColor(sbView.getContext(), R.color.colorPrimaryDark));
         TextView snackTV = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
-        snackTV.setTextColor((new DayColor(itemView.getContext()).getDayColor()));
+        if (selectedColor == 0)
+            snackTV.setTextColor(SharedPrefs.getInstance().getSelectedColor());
+        else
+            snackTV.setTextColor(ContextCompat.getColor(snackTV.getContext(),
+                    R.color.lavaRed));
         snackbar.show();
     }
 
     private void notificationSnack() {
         Snackbar snackbar = Snackbar
-                .make(itemView.getRootView(), "Notification saved", Snackbar.LENGTH_LONG);
+                .make(itemView.getRootView().findViewById(R.id.coordinator), "Ringtone saved", Snackbar.LENGTH_LONG);
         View sbView = snackbar.getView();
         sbView.setBackgroundColor(ContextCompat.getColor(sbView.getContext(), R.color.colorPrimaryDark));
         TextView snackTV = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
-        snackTV.setTextColor((new DayColor(itemView.getContext()).getDayColor()));
+        if (selectedColor == 0)
+            snackTV.setTextColor(SharedPrefs.getInstance().getSelectedColor());
+        else
+            snackTV.setTextColor(ContextCompat.getColor(snackTV.getContext(),
+                    R.color.lavaRed));
         snackbar.show();
     }
 
     private void alarmSnack() {
         Snackbar snackbar = Snackbar
-                .make(itemView.getRootView(), "Alarm saved", Snackbar.LENGTH_LONG);
+                .make(itemView.getRootView().findViewById(R.id.coordinator), "Ringtone saved", Snackbar.LENGTH_LONG);
         View sbView = snackbar.getView();
         sbView.setBackgroundColor(ContextCompat.getColor(sbView.getContext(), R.color.colorPrimaryDark));
         TextView snackTV = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
-        snackTV.setTextColor((new DayColor(itemView.getContext()).getDayColor()));
+        if (selectedColor == 0)
+            snackTV.setTextColor(SharedPrefs.getInstance().getSelectedColor());
+        else
+            snackTV.setTextColor(ContextCompat.getColor(snackTV.getContext(),
+                    R.color.lavaRed));
         snackbar.show();
     }
 

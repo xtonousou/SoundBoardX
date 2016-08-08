@@ -2,19 +2,19 @@ package com.xtonousou.xsoundboardhd;
 
 import android.content.SharedPreferences;
 
-public class FavStore {
-    private static FavStore instance;
-    private final SharedPreferences prefs;
+public class SharedPrefs {
+    private static SharedPrefs       instance;
+    private final  SharedPreferences prefs;
 
     public static void init(SharedPreferences prefs) {
-        instance = new FavStore(prefs);
+        instance = new SharedPrefs(prefs);
     }
 
-    private FavStore(SharedPreferences prefs) {
+    private SharedPrefs(SharedPreferences prefs) {
         this.prefs = prefs;
     }
 
-    public static FavStore getInstance() {
+    public static SharedPrefs getInstance() {
         return instance;
     }
 
@@ -24,5 +24,13 @@ public class FavStore {
 
     public boolean isSoundFavorited(String soundName) {
         return prefs.getBoolean(soundName, false);
+    }
+
+    public void setSelectedColor(String colorName, int color) {
+        prefs.edit().putInt(colorName, color).apply();
+    }
+
+    public int getSelectedColor() {
+        return prefs.getInt("color", -1);
     }
 }
