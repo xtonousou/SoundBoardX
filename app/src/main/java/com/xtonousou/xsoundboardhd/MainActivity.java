@@ -91,6 +91,10 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         beautifyToolbar();
         initFAB();
         initDrawer(savedInstanceState);
+        // TODO remove first time methods and logic, clean shared prefs, think more clever way.
+        if (SharedPrefs.getInstance().isFirstTime()) {
+            initFirstTime();
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             writeSettingsPermissionAfterM();
@@ -178,55 +182,71 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 .withIcon(FontAwesome.Icon.faw_music)
                                 .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
                                         R.color.colorPrimaryDark))
-                                .withSelectedTextColor(new Utils().getSelectedColor())
-                                .withSelectedIconColor(new Utils().getSelectedColor()),
+                                .withSelectedTextColor(new Utils()
+                                        .getSelectedColor())
+                                .withSelectedIconColor(new Utils()
+                                        .getSelectedColor()),
                         new PrimaryDrawerItem().withName(R.string.animals)
                                 .withIcon(R.drawable.ic_pets_white_24dp)
                                 .withIconTintingEnabled(true)
                                 .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
                                         R.color.colorPrimaryDark))
-                                .withSelectedTextColor(new Utils().getSelectedColor())
-                                .withSelectedIconColor(new Utils().getSelectedColor()),
+                                .withSelectedTextColor(new Utils()
+                                        .getSelectedColor())
+                                .withSelectedIconColor(new Utils()
+                                        .getSelectedColor()),
                         new PrimaryDrawerItem().withName(R.string.funny)
                                 .withIcon(R.drawable.ic_sentiment_very_satisfied_white_24dp)
                                 .withIconTintingEnabled(true)
                                 .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
                                         R.color.colorPrimaryDark))
-                                .withSelectedTextColor(new Utils().getSelectedColor())
-                                .withSelectedIconColor(new Utils().getSelectedColor()),
+                                .withSelectedTextColor(new Utils()
+                                        .getSelectedColor())
+                                .withSelectedIconColor(new Utils()
+                                        .getSelectedColor()),
                         new PrimaryDrawerItem().withName(R.string.games)
                                 .withIcon(FontAwesome.Icon.faw_gamepad)
                                 .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
                                         R.color.colorPrimaryDark))
-                                .withSelectedTextColor(new Utils().getSelectedColor())
-                                .withSelectedIconColor(new Utils().getSelectedColor()),
+                                .withSelectedTextColor(new Utils()
+                                        .getSelectedColor())
+                                .withSelectedIconColor(new Utils()
+                                        .getSelectedColor()),
                         new PrimaryDrawerItem().withName(R.string.movies)
                                 .withIcon(FontAwesome.Icon.faw_video_camera)
                                 .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
                                         R.color.colorPrimaryDark))
-                                .withSelectedTextColor(new Utils().getSelectedColor())
-                                .withSelectedIconColor(new Utils().getSelectedColor()),
+                                .withSelectedTextColor(new Utils()
+                                        .getSelectedColor())
+                                .withSelectedIconColor(new Utils()
+                                        .getSelectedColor()),
                         new PrimaryDrawerItem().withName(R.string.thug)
                                 .withIcon(R.drawable.thug)
                                 .withIconTintingEnabled(true)
                                 .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
                                         R.color.colorPrimaryDark))
-                                .withSelectedTextColor(new Utils().getSelectedColor())
-                                .withSelectedIconColor(new Utils().getSelectedColor()),
+                                .withSelectedTextColor(new Utils()
+                                        .getSelectedColor())
+                                .withSelectedIconColor(new Utils()
+                                        .getSelectedColor()),
                         new PrimaryDrawerItem().withName(R.string.nsfw)
                                 .withIcon(R.drawable.ic_wc_white_24dp)
                                 .withIconTintingEnabled(true)
                                 .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
                                         R.color.colorPrimaryDark))
-                                .withSelectedTextColor(new Utils().getSelectedColor())
-                                .withSelectedIconColor(new Utils().getSelectedColor()),
+                                .withSelectedTextColor(new Utils()
+                                        .getSelectedColor())
+                                .withSelectedIconColor(new Utils()
+                                        .getSelectedColor()),
                         new PrimaryDrawerItem().withName(R.string.personal)
                                 .withIcon(R.drawable.ic_person_white_24dp)
                                 .withIconTintingEnabled(true)
                                 .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
                                         R.color.colorPrimaryDark))
-                                .withSelectedTextColor(new Utils().getSelectedColor())
-                                .withSelectedIconColor(new Utils().getSelectedColor()),
+                                .withSelectedTextColor(new Utils()
+                                        .getSelectedColor())
+                                .withSelectedIconColor(new Utils()
+                                        .getSelectedColor()),
                         new SectionDrawerItem().withName(R.string.options)
                                 .withDivider(false)
                                 .withTextColor(new Utils().getSelectedColor()),
@@ -443,6 +463,29 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 soundPlayer = new SoundPlayer(MainActivity.this);
             }
         });
+    }
+
+    private void initFirstTime() {
+        colorPicker = new ColorPicker(MainActivity.this);
+        colorPicker.setTitle("Current color code: " + colorTitle);
+        colorPicker.setColors(R.array.rainbow);
+        colorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
+            @Override
+            public void onChooseColor(int position, int color) {
+                if (position == -1)
+                    initFirstTime();
+                colorTitle = String.format("#%06X", 0xFFFFFF & color);
+                SharedPrefs.getInstance().setNotFirstTime("virgin", false);
+                SharedPrefs.getInstance().setSelectedColor("color", color);
+                finish();
+                startActivity(getIntent());
+            }
+        }).addListenerButton("dismiss", new ColorPicker.OnButtonListener() {
+            @Override
+            public void onClick(View v, int position, int color) {
+                initFirstTime();
+            }
+        }).setRoundColorButton(true).show();
     }
 
     /**
