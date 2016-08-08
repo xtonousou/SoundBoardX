@@ -1,10 +1,15 @@
 #xSoundBoardHD --- ԅ(≖‿≖ԅ)
 A simple Android Soundboard I made in order to learn, explore and play with.
 
-![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/scr-a.jpg)
-![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/scr-b.jpg)
-![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/scr-c.jpg)
-![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/scr-d.jpg)
+![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/view_with_favs.jpg)
+![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/only_favs.jpg)
+![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/drawer.jpg)
+![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/color_picker.jpg)
+![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/search.jpg)
+![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/particles.jpg)
+![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/context_menu.jpg)
+![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/preview/support_activity.jpg)
+
 
 **minSdkVersion 17**
 **targetSdkVersion 24**
