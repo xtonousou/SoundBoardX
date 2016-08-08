@@ -25,9 +25,8 @@ public class ToneManager {
     public static final String TAG = "ToneManager";
 
     private Particle particle;
-    private String itemName;
-    private View itemView;
-    private int selectedColor = 0;
+    private String   itemName;
+    private View     itemView;
 
     public ToneManager(String itemName, View itemView) {
         this.itemName = itemName;
@@ -962,11 +961,7 @@ public class ToneManager {
         View sbView = snackbar.getView();
         sbView.setBackgroundColor(ContextCompat.getColor(sbView.getContext(), R.color.colorPrimaryDark));
         TextView snackTV = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
-        if (selectedColor == 0)
-            snackTV.setTextColor(SharedPrefs.getInstance().getSelectedColor());
-        else
-            snackTV.setTextColor(ContextCompat.getColor(snackTV.getContext(),
-                    R.color.lavaRed));
+        new Utils().paintThis(snackTV);
         snackbar.show();
     }
 
@@ -976,11 +971,7 @@ public class ToneManager {
         View sbView = snackbar.getView();
         sbView.setBackgroundColor(ContextCompat.getColor(sbView.getContext(), R.color.colorPrimaryDark));
         TextView snackTV = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
-        if (selectedColor == 0)
-            snackTV.setTextColor(SharedPrefs.getInstance().getSelectedColor());
-        else
-            snackTV.setTextColor(ContextCompat.getColor(snackTV.getContext(),
-                    R.color.lavaRed));
+        new Utils().paintThis(snackTV);
         snackbar.show();
     }
 
@@ -990,11 +981,7 @@ public class ToneManager {
         View sbView = snackbar.getView();
         sbView.setBackgroundColor(ContextCompat.getColor(sbView.getContext(), R.color.colorPrimaryDark));
         TextView snackTV = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
-        if (selectedColor == 0)
-            snackTV.setTextColor(SharedPrefs.getInstance().getSelectedColor());
-        else
-            snackTV.setTextColor(ContextCompat.getColor(snackTV.getContext(),
-                    R.color.lavaRed));
+        new Utils().paintThis(snackTV);
         snackbar.show();
     }
 
