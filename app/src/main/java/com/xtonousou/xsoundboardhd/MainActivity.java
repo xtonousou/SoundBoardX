@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     static InputMethodManager mInputManager;
     static Toolbar            mToolbar;
     static byte               selectedColor = 0;
+    static String             colorTitle = "#b71c1c";
 
     RecyclerView mView;
     Drawer       mDrawer = null;
@@ -298,10 +299,14 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 break;
                             case 12:
                                 colorPicker = new ColorPicker(MainActivity.this);
+                                colorPicker.setTitle("Current color code: " + colorTitle);
                                 colorPicker.setColors(R.array.rainbow);
                                 colorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
                                     @Override
                                     public void onChooseColor(int position, int color) {
+                                        if (position == -1)
+                                            return;
+                                        colorTitle = String.format("#%06X", 0xFFFFFF & color);
                                         SharedPrefs.getInstance().setSelectedColor("color", color);
                                         finish();
                                         startActivity(getIntent());
@@ -401,6 +406,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
     }
 
+    /**
+     *  Initializes a floating action button that is used to mute sound onClick.
+     */
     private void initFAB() {
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
@@ -422,6 +430,11 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         });
     }
 
+    /**
+     *  Calls getCategory() method from SoundAdapter class,
+     *  checks and applies resources to adapted list.
+     *  @param adapter (SoundAdapter) mView.getAdapter()
+     */
     public void normalize(SoundAdapter adapter) {
         switch (adapter.getCategory()) {
             default:
