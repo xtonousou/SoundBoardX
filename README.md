@@ -1,14 +1,14 @@
 #xSoundBoardHD --- ԅ(≖‿≖ԅ)
 A simple Android Soundboard I made in order to learn, explore and play with.
 
-![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screenshots/view_with_favs.jpg)
-![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screenshots/only_favs.jpg)
-![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screenshots/drawer.jpg)
-![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screenshots/color_picker.jpg)
-![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screenshots/search.jpg)
-![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screenshots/particles.jpg)
-![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screenshots/context_menu.jpg)
-![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screenshots/support_activity.jpg)
+![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screens/view_with_favs.jpg)
+![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screens/only_favs.jpg)
+![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screens/drawer.jpg)
+![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screens/color_picker.jpg)
+![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screens/search.jpg)
+![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screens/particles.jpg)
+![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screens/context_menu.jpg)
+![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screens/support_activity.jpg)
 
 
 **minSdkVersion 17**
