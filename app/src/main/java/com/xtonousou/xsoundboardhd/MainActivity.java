@@ -10,7 +10,6 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.PowerManager;
 import android.os.Vibrator;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
@@ -62,12 +61,11 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     static SoundPlayer        soundPlayer;
     static InputMethodManager mInputManager;
     static Toolbar            mToolbar;
-    static byte               selectedColor = 0;
     static String             colorTitle = "#b71c1c";
 
-    RecyclerView mView;
-    Drawer       mDrawer = null;
     ColorPicker  colorPicker;
+    RecyclerView mView;
+    Drawer       mDrawer   = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,13 +145,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         Typeface font = Typeface.createFromAsset(shimmerTextView.getContext().getAssets(),
                 "fonts/CaviarDreams.ttf");
         shimmerTextView.setTypeface(font);
-        if (selectedColor == 0)
-            shimmerTextView.setTextColor(SharedPrefs.getInstance().getSelectedColor());
-        else
-            shimmerTextView.setTextColor(ContextCompat.getColor(shimmerTextView.getContext(),
-                    R.color.lavaRed));
+        new Utils().paintThis(shimmerTextView);
         Shimmer shimmer = new Shimmer();
-        if (isGreenMode()) {
+        if (new Utils().isGreenMode(MainActivity.this)) {
             shimmer.cancel();
         } else {
             if (shimmer.isAnimating()) {
@@ -172,32 +166,70 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         mDrawer = new DrawerBuilder()
                 .withActivity(MainActivity.this)
                 .withDisplayBelowStatusBar(true)
+                .withScrollToTopAfterClick(true)
+                .withDrawerWidthPx((new Utils().getScreenWidth(MainActivity.this)) - 225)
+                .withSliderBackgroundColorRes(R.color.primary_dark)
                 .addDrawerItems(
                         new SectionDrawerItem().withName(R.string.categories)
-                                .withDivider(false),
+                                .withDivider(false)
+                                .withTextColor(new Utils().getSelectedColor()),
                         new PrimaryDrawerItem().withName(R.string.all)
                                 .withSetSelected(true)
-                                .withIcon(FontAwesome.Icon.faw_music),
+                                .withIcon(FontAwesome.Icon.faw_music)
+                                .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
+                                        R.color.colorPrimaryDark))
+                                .withSelectedTextColor(new Utils().getSelectedColor())
+                                .withSelectedIconColor(new Utils().getSelectedColor()),
                         new PrimaryDrawerItem().withName(R.string.animals)
                                 .withIcon(R.drawable.ic_pets_white_24dp)
-                                .withIconTintingEnabled(true),
+                                .withIconTintingEnabled(true)
+                                .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
+                                        R.color.colorPrimaryDark))
+                                .withSelectedTextColor(new Utils().getSelectedColor())
+                                .withSelectedIconColor(new Utils().getSelectedColor()),
                         new PrimaryDrawerItem().withName(R.string.funny)
                                 .withIcon(R.drawable.ic_sentiment_very_satisfied_white_24dp)
-                                .withIconTintingEnabled(true),
+                                .withIconTintingEnabled(true)
+                                .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
+                                        R.color.colorPrimaryDark))
+                                .withSelectedTextColor(new Utils().getSelectedColor())
+                                .withSelectedIconColor(new Utils().getSelectedColor()),
                         new PrimaryDrawerItem().withName(R.string.games)
-                                .withIcon(FontAwesome.Icon.faw_gamepad),
+                                .withIcon(FontAwesome.Icon.faw_gamepad)
+                                .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
+                                        R.color.colorPrimaryDark))
+                                .withSelectedTextColor(new Utils().getSelectedColor())
+                                .withSelectedIconColor(new Utils().getSelectedColor()),
                         new PrimaryDrawerItem().withName(R.string.movies)
-                                .withIcon(FontAwesome.Icon.faw_video_camera),
+                                .withIcon(FontAwesome.Icon.faw_video_camera)
+                                .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
+                                        R.color.colorPrimaryDark))
+                                .withSelectedTextColor(new Utils().getSelectedColor())
+                                .withSelectedIconColor(new Utils().getSelectedColor()),
                         new PrimaryDrawerItem().withName(R.string.thug)
                                 .withIcon(R.drawable.thug)
-                                .withIconTintingEnabled(true),
+                                .withIconTintingEnabled(true)
+                                .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
+                                        R.color.colorPrimaryDark))
+                                .withSelectedTextColor(new Utils().getSelectedColor())
+                                .withSelectedIconColor(new Utils().getSelectedColor()),
                         new PrimaryDrawerItem().withName(R.string.nsfw)
                                 .withIcon(R.drawable.ic_wc_white_24dp)
-                                .withIconTintingEnabled(true),
+                                .withIconTintingEnabled(true)
+                                .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
+                                        R.color.colorPrimaryDark))
+                                .withSelectedTextColor(new Utils().getSelectedColor())
+                                .withSelectedIconColor(new Utils().getSelectedColor()),
                         new PrimaryDrawerItem().withName(R.string.personal)
                                 .withIcon(R.drawable.ic_person_white_24dp)
-                                .withIconTintingEnabled(true),
-                        new SectionDrawerItem().withName(R.string.options).withDivider(false),
+                                .withIconTintingEnabled(true)
+                                .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
+                                        R.color.colorPrimaryDark))
+                                .withSelectedTextColor(new Utils().getSelectedColor())
+                                .withSelectedIconColor(new Utils().getSelectedColor()),
+                        new SectionDrawerItem().withName(R.string.options)
+                                .withDivider(false)
+                                .withTextColor(new Utils().getSelectedColor()),
                         new SecondaryDrawerItem().withName(R.string.favorites)
                                 .withIcon(FontAwesome.Icon.faw_star)
                                 .withSelectable(false),
@@ -287,16 +319,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                 else
                                     normalize((SoundAdapter) mView.getAdapter());
                                 break;
-                            case 11:
-                                if (!((SoundAdapter) mView.getAdapter()).areAnimationsShown()) {
-                                    withAnimations = true;
-                                    ((SoundAdapter) mView.getAdapter()).setShowAnimations(false);
-                                }
-                                else {
-                                    withAnimations = false;
-                                    ((SoundAdapter) mView.getAdapter()).setShowAnimations(true);
-                                }
-                                break;
+                            // case 11 is handled by listener, see builder
                             case 12:
                                 colorPicker = new ColorPicker(MainActivity.this);
                                 colorPicker.setTitle("Current color code: " + colorTitle);
@@ -325,7 +348,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 .withSavedInstance(instance)
                 .build();
 
-        if (isGreenMode()) {
+        if (new Utils().isGreenMode(MainActivity.this)) {
             ((SoundAdapter) mView.getAdapter()).setShowAnimations(false);
             mDrawer.removeItemByPosition(11);
             mDrawer.removeItemByPosition(13);
@@ -385,11 +408,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         SearchView.SearchAutoComplete searchViewText = (SearchView.SearchAutoComplete) searchView
                 .findViewById(R.id.search_src_text);
-        if (selectedColor == 0)
-            searchViewText.setTextColor(SharedPrefs.getInstance().getSelectedColor());
-        else
-            searchViewText.setTextColor(ContextCompat.getColor(searchViewText.getContext(),
-                    R.color.lavaRed));
+        new Utils().paintThis(searchViewText);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -413,11 +432,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
         fab.setAlpha(0.8f);
-        if (selectedColor == 0)
-            fab.setRippleColor(SharedPrefs.getInstance().getSelectedColor());
-        else
-            fab.setRippleColor(ContextCompat.getColor(fab.getContext(),
-                    R.color.lavaRed));
+        new Utils().paintThis(fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -465,16 +480,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 adapter.showPersonalSounds(getApplicationContext());
                 break;
         }
-    }
-
-    public boolean isGreenMode() {
-        boolean mode = false;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP &&
-                ((PowerManager) this.getSystemService(Context.POWER_SERVICE))
-                        .isPowerSaveMode()) {
-            mode = true;
-        }
-        return mode;
     }
 
     @Override
@@ -575,11 +580,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         View sbv = sb.getView();
         sbv.setBackgroundColor(ContextCompat.getColor(sbv.getContext(), R.color.colorPrimaryDark));
         TextView snackTV = (TextView) sbv.findViewById(android.support.design.R.id.snackbar_text);
-        if (selectedColor == 0)
-            snackTV.setTextColor(SharedPrefs.getInstance().getSelectedColor());
-        else
-            snackTV.setTextColor(ContextCompat.getColor(snackTV.getContext(),
-                    R.color.lavaRed));
+        new Utils().paintThis(snackTV);
         sb.show();
     }
 
@@ -589,11 +590,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         View sbv = sb.getView();
         sbv.setBackgroundColor(ContextCompat.getColor(sbv.getContext(), R.color.colorPrimaryDark));
         TextView snackTV = (TextView) sbv.findViewById(android.support.design.R.id.snackbar_text);
-        if (selectedColor == 0)
-            snackTV.setTextColor(SharedPrefs.getInstance().getSelectedColor());
-        else
-            snackTV.setTextColor(ContextCompat.getColor(snackTV.getContext(),
-                    R.color.lavaRed));
+        new Utils().paintThis(snackTV);
         sb.show();
     }
 }
