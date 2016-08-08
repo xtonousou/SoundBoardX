@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         beautifyToolbar();
         initFAB();
         initDrawer(savedInstanceState);
+
         // TODO remove first time methods and logic, clean shared prefs, think more clever way.
         if (SharedPrefs.getInstance().isFirstTime()) {
             initFirstTime();
