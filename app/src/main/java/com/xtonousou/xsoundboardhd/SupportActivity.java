@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -26,6 +27,7 @@ public class SupportActivity extends AppCompatActivity {
 
     TextView  donateTV, subTV, sourceTV, versionTV;
     ImageView donateIm, subIm, sourceIm;
+    int       selectedColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,8 @@ public class SupportActivity extends AppCompatActivity {
 
         // Portrait only
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
+
+        selectedColor = SharedPrefs.getInstance().getSelectedColor();
 
         beautifyToolbar();
 
@@ -106,7 +110,11 @@ public class SupportActivity extends AppCompatActivity {
 
         try {
             versionTV.setText((getPackageManager().getPackageInfo(getPackageName(), 0)).versionName);
-            versionTV.setTextColor(new DayColor(getApplicationContext()).getDayColor());
+            if (selectedColor == 0)
+                versionTV.setTextColor(SharedPrefs.getInstance().getSelectedColor());
+            else
+                versionTV.setTextColor(ContextCompat.getColor(versionTV.getContext(),
+                        R.color.lavaRed));
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -128,7 +136,11 @@ public class SupportActivity extends AppCompatActivity {
         Typeface font = Typeface.createFromAsset(shimmerTextView.getContext().getAssets(),
                 "fonts/CaviarDreams.ttf");
         shimmerTextView.setTypeface(font);
-        shimmerTextView.setTextColor((new DayColor(shimmerTextView.getContext())).getDayColor());
+        if (selectedColor == 0)
+            shimmerTextView.setTextColor(SharedPrefs.getInstance().getSelectedColor());
+        else
+            shimmerTextView.setTextColor(ContextCompat.getColor(shimmerTextView.getContext(),
+                    R.color.lavaRed));
         Shimmer shimmer = new Shimmer();
         if (isGreenMode()) {
             shimmer.cancel();

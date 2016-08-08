@@ -9,7 +9,7 @@ class Sound {
     public Sound(String name, int resourceId) {
         this.name = name;
         this.resourceId = resourceId;
-        favorite = FavStore.getInstance().isSoundFavorited(name);
+        favorite = SharedPrefs.getInstance().isSoundFavorited(name);
     }
 
     public int getResourceId() {
@@ -30,7 +30,7 @@ class Sound {
 
     public void setFavorite(boolean favorite) {
         this.favorite = favorite;
-        FavStore.getInstance().setSoundFavorited(name, favorite);
+        SharedPrefs.getInstance().setSoundFavorited(name, favorite);
     }
 
     @Override
