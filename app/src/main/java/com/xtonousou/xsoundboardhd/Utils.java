@@ -61,6 +61,15 @@ public class Utils {
                     R.color.lavaRed));
     }
 
+    public void paintThis(SoundAdapter.ViewHolder holder) {
+        if (!isPainted) {
+            isPainted = true;
+            holder.itemView.setBackgroundColor(SharedPrefs.getInstance().getSelectedColor());
+        } else
+            holder.itemView.setBackgroundColor(ContextCompat.getColor(holder.itemView.getContext(),
+                    R.color.lavaRed));
+    }
+
     public void paintThis(FloatingActionButton fab) {
         if (!isPainted) {
             isPainted = true;

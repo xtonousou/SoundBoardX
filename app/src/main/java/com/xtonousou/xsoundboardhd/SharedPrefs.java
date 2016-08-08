@@ -33,4 +33,12 @@ public class SharedPrefs {
     public int getSelectedColor() {
         return prefs.getInt("color", -1);
     }
+
+    public boolean isFirstTime() {
+        return prefs.getBoolean("virgin", true);
+    }
+
+    public void setNotFirstTime(String answer, boolean shouldNotFirstTime) {
+        prefs.edit().putBoolean(answer, shouldNotFirstTime).apply();
+    }
 }
