@@ -5,34 +5,41 @@
     <color name="colorPrimaryDark">#1a1a1a</color>
     <color name="colorAccent">#cfd8dc</color>
 
+    <color name="gray">#424242</color>
+    <color name="magenta">#d500f9</color>
+    <color name="bright_pink">#f50057</color>
+    <color name="dark_pink">#880e4f</color>
+    <color name="red">#d50000</color>
     <color name="lavaRed">#b71c1c</color>
-
-    <color name="bright_pink">#FF007F</color>
-    <color name="red">#FF0000</color>
-    <color name="orange">#FF7F00</color>
-    <color name="yellow">#FFFF00</color>
-    <color name="chartreuse">#7FFF00</color>
-    <color name="green">#00FF00</color>
-    <color name="spring_green">#00FF7F</color>
-    <color name="cyan">#00FFFF</color>
-    <color name="azure">#007FFF</color>
+    <color name="orange">#f57c00</color>
+    <color name="yellow">#8d9722</color>
+    <color name="yellow_lime">#827717</color>
+    <color name="chartreuse">#367800</color>
+    <color name="green">#005c00</color>
+    <color name="spring_green">#006c38</color>
+    <color name="cyan">#138c8c</color>
+    <color name="azure">#0091ea</color>
     <color name="blue">#0000FF</color>
-    <color name="violet">#7F00FF</color>
-    <color name="magenta">#FF00FF</color>
+    <color name="indigo">#1a237e</color>
+    <color name="violet">#6200ea</color>
 
     <array name="rainbow">
+        <item>@color/gray</item>
+        <item>@color/magenta</item>
         <item>@color/bright_pink</item>
+        <item>@color/dark_pink</item>
         <item>@color/red</item>
+        <item>@color/lavaRed</item>
         <item>@color/orange</item>
         <item>@color/yellow</item>
+        <item>@color/yellow_lime</item>
         <item>@color/chartreuse</item>
         <item>@color/green</item>
         <item>@color/spring_green</item>
         <item>@color/cyan</item>
         <item>@color/azure</item>
         <item>@color/blue</item>
+        <item>@color/indigo</item>
         <item>@color/violet</item>
-        <item>@color/magenta</item>
     </array>
-
 </resources>
