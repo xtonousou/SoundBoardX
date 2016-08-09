@@ -6,6 +6,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
@@ -92,17 +93,17 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         initFAB();
         initDrawer(savedInstanceState);
 
-        // TODO remove first time methods and logic, clean shared prefs, think more clever way.
-        if (SharedPrefs.getInstance().isFirstTime()) {
-            initFirstTime();
-        }
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             writeSettingsPermissionAfterM();
             writeExternalStoragePermission();
         } else {
             writeSettingsPermission();
             writeExternalStoragePermission();
+        }
+
+        if (SharedPrefs.getInstance().isFirstTime()) {
+            SharedPrefs.getInstance().setNotFirstTime("virgin", false);
+            SharedPrefs.getInstance().setSelectedColor("color", Color.RED);
         }
     }
 
@@ -352,8 +353,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                                             return;
                                         colorTitle = String.format("#%06X", 0xFFFFFF & color);
                                         SharedPrefs.getInstance().setSelectedColor("color", color);
-                                        finish();
-                                        startActivity(getIntent());
+                                        new Utils().restartActivity(MainActivity.this);
                                     }
                                 }).setRoundColorButton(true).show();
                                 break;
@@ -466,29 +466,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         });
     }
 
-    private void initFirstTime() {
-        colorPicker = new ColorPicker(MainActivity.this);
-        colorPicker.setTitle("Current color code: " + colorTitle);
-        colorPicker.setColors(R.array.rainbow);
-        colorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
-            @Override
-            public void onChooseColor(int position, int color) {
-                if (position == -1)
-                    initFirstTime();
-                colorTitle = String.format("#%06X", 0xFFFFFF & color);
-                SharedPrefs.getInstance().setNotFirstTime("virgin", false);
-                SharedPrefs.getInstance().setSelectedColor("color", color);
-                finish();
-                startActivity(getIntent());
-            }
-        }).addListenerButton("dismiss", new ColorPicker.OnButtonListener() {
-            @Override
-            public void onClick(View v, int position, int color) {
-                initFirstTime();
-            }
-        }).setRoundColorButton(true).show();
-    }
-
     /**
      *  Calls getCategory() method from SoundAdapter class,
      *  checks and applies resources to adapted list.
@@ -535,9 +512,21 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 break;
             case EasyPermissions.SETTINGS_REQ_CODE:
                 snackbarReturnedFromActivity();
+                try {
+                    Thread.sleep(1250);
+                    new Utils().restartActivity(MainActivity.this);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 break;
             case RC_WRITE_SETNGS_PERM_AFTER_M:
                 snackbarReturnedFromActivity();
+                try {
+                    Thread.sleep(1250);
+                    new Utils().restartActivity(MainActivity.this);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 break;
         }
     }
