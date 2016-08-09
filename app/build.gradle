@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.xtonousou.xsoundboardhd"
-        minSdkVersion 16
+        minSdkVersion 14
         targetSdkVersion 24
         versionName "Mighty Goat v.0.9.9"
     }

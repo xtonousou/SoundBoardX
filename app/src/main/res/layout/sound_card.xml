@@ -17,8 +17,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:background="@null"
             android:contentDescription="@string/not_fav_desc" />
 
@@ -28,6 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toEndOf="@id/fav_button"
+            android:layout_toRightOf="@id/fav_button"
             android:textColor="@android:color/white" />
 
     </RelativeLayout>
