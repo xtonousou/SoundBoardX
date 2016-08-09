@@ -107,4 +107,9 @@ public class Utils {
         }
         return mode;
     }
+
+    public void restartActivity(Activity activity) {
+        activity.finish();
+        activity.startActivity(activity.getIntent());
+    }
 }
