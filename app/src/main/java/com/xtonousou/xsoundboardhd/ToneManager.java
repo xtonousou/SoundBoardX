@@ -264,9 +264,199 @@ public class ToneManager {
             case "Cow":
                 setAsRingtone(R.raw.animals_cow);
                 break;
-//                    case "":
-//                        setAsRingtone(R.raw.);
-//                        break;
+            // TODO fix particles
+            case "Oh baby a triple":
+                setAsRingtone(R.raw.funny_babytriple);
+                break;
+            case "Badum Tss":
+                setAsRingtone(R.raw.funny_badumtss);
+                break;
+            case "Beep":
+                setAsRingtone(R.raw.funny_beep);
+                break;
+            case "Boxeo":
+                setAsRingtone(R.raw.funny_boxeo);
+                break;
+            case "Chan":
+                setAsRingtone(R.raw.funny_chan);
+                break;
+            case "Chan chan":
+                setAsRingtone(R.raw.funny_chanchan);
+                break;
+            case "Combo breaker":
+                setAsRingtone(R.raw.funny_combobreaker);
+                break;
+            case "De dotaded wam":
+                setAsRingtone(R.raw.funny_dedotadedwam);
+                break;
+            case "Duck toy":
+                setAsRingtone(R.raw.funny_ducktoy);
+                break;
+            case "Get noscoped":
+                setAsRingtone(R.raw.funny_getnoscoped);
+                break;
+            case "Mom get the camera":
+                setAsRingtone(R.raw.funny_getthecamera);
+                break;
+            case "Headshot":
+                setAsRingtone(R.raw.funny_headshot);
+                break;
+            case "Inception":
+                setAsRingtone(R.raw.funny_inception);
+                break;
+            case "Holy Shit":
+                setAsRingtone(R.raw.funny_holyshit);
+                break;
+            case "Just Do It":
+                setAsRingtone(R.raw.funny_justdoit);
+                break;
+            case "John Cena":
+                setAsRingtone(R.raw.funny_johncena);
+                break;
+            case "Never do that":
+                setAsRingtone(R.raw.funny_neverdonethat);
+                break;
+            case "Nein Nein":
+                setAsRingtone(R.raw.funny_nein);
+                break;
+            case "Over 9000":
+                setAsRingtone(R.raw.funny_overninek);
+                break;
+            case "OMG":
+                setAsRingtone(R.raw.funny_omg);
+                break;
+            case "Shots fired":
+                setAsRingtone(R.raw.funny_shotsfired);
+                break;
+            case "Penault Jelly":
+                setAsRingtone(R.raw.funny_penaultjelly);
+                break;
+            case "Whatcha say":
+                setAsRingtone(R.raw.funny_whatcha_say);
+                break;
+            case "Smoke weed everyday":
+                setAsRingtone(R.raw.funny_smokeweedeveryday);
+                break;
+            case "Wombo Combo":
+                setAsRingtone(R.raw.funny_wombo_combo);
+                break;
+            case "WTF BOOM":
+                setAsRingtone(R.raw.funny_wtf_boom);
+                break;
+            case "Aku Aku":
+                setAsRingtone(R.raw.games_akuaku);
+                break;
+            case "Balls of steel":
+                setAsRingtone(R.raw.games_ballsofsteel);
+                break;
+            case "EA Games":
+                setAsRingtone(R.raw.games_eagames);
+                break;
+            case "EA Sports":
+                setAsRingtone(R.raw.games_easports);
+                break;
+            case "Excellent":
+                setAsRingtone(R.raw.games_excellent);
+                break;
+            case "Fus Ro Dah":
+                setAsRingtone(R.raw.games_fusrodah);
+                break;
+            case "Gameboy":
+                setAsRingtone(R.raw.games_gameboy);
+                break;
+            case "Hadouken":
+                setAsRingtone(R.raw.games_hadouken);
+                break;
+            case "Inspector Gadget":
+                setAsRingtone(R.raw.games_inspectorgadget);
+                break;
+            case "Jigglypuff":
+                setAsRingtone(R.raw.games_jigglypuff);
+                break;
+            case "Mario":
+                setAsRingtone(R.raw.games_mario);
+                break;
+            case "Mario Coin":
+                setAsRingtone(R.raw.games_mariocoin);
+                break;
+            case "Mario Fanfare":
+                setAsRingtone(R.raw.games_mariofanfare);
+                break;
+            case "Mario Grow":
+                setAsRingtone(R.raw.games_mariogrow);
+                break;
+            case "Mario Jump":
+                setAsRingtone(R.raw.games_mariojump);
+                break;
+            case "Mario Lose":
+                setAsRingtone(R.raw.games_mariolose);
+                break;
+            case "Mario Underground":
+                setAsRingtone(R.raw.games_mariounderground);
+                break;
+            case "Nuke":
+                setAsRingtone(R.raw.games_nuke);
+                break;
+            case "Playstation":
+                setAsRingtone(R.raw.games_playstation);
+                break;
+            case "Pacman Death":
+                setAsRingtone(R.raw.games_pacmandeath);
+                break;
+            case "Pokemon Heal":
+                setAsRingtone(R.raw.games_pokemonheal);
+                break;
+            case "Tetris":
+                setAsRingtone(R.raw.games_tetris);
+                break;
+            case "Sniper shot":
+                setAsRingtone(R.raw.games_snipershot);
+                break;
+            case "Badadipoopi":
+                setAsRingtone(R.raw.movies_badadipoopi);
+                break;
+            case "Back to the future":
+                setAsRingtone(R.raw.movies_backtothefuture);
+                break;
+            case "Belair":
+                setAsRingtone(R.raw.movies_belair);
+                break;
+            case "Bazinga":
+                setAsRingtone(R.raw.movies_bazinga);
+                break;
+            case "Darth Vader":
+                setAsRingtone(R.raw.movies_darthvader);
+                break;
+            case "Chewbacca":
+                setAsRingtone(R.raw.movies_chewbacca);
+                break;
+            case "Fast n Furious":
+                setAsRingtone(R.raw.movies_fastnfurious);
+                break;
+            case "Doh":
+                setAsRingtone(R.raw.movies_doh);
+                break;
+            case "Nazgul":
+                setAsRingtone(R.raw.movies_nazgul);
+                break;
+            case "Godzilla":
+                setAsRingtone(R.raw.movies_godzilla);
+                break;
+            case "Two and a Half Men":
+                setAsRingtone(R.raw.movies_twohalfmen);
+                break;
+            case "Oompaloompa":
+                setAsRingtone(R.raw.movies_oompaloompa);
+                break;
+            case "Dr. Dre The Next Episode":
+                setAsRingtone(R.raw.thug_drdre_snoop);
+                break;
+            case "Wazzup":
+                setAsRingtone(R.raw.movies_wazzup);
+                break;
+            case "GTA":
+                setAsRingtone(R.raw.thug_gta);
+                break;
         }
     }
 
@@ -496,9 +686,199 @@ public class ToneManager {
             case "Cow":
                 setAsNotification(R.raw.animals_cow);
                 break;
-//                    case "":
-//                        setAsNotification(R.raw.);
-//                        break;
+            // TODO fix particles
+            case "Oh baby a triple":
+                setAsNotification(R.raw.funny_babytriple);
+                break;
+            case "Badum Tss":
+                setAsNotification(R.raw.funny_badumtss);
+                break;
+            case "Beep":
+                setAsNotification(R.raw.funny_beep);
+                break;
+            case "Boxeo":
+                setAsNotification(R.raw.funny_boxeo);
+                break;
+            case "Chan":
+                setAsNotification(R.raw.funny_chan);
+                break;
+            case "Chan chan":
+                setAsNotification(R.raw.funny_chanchan);
+                break;
+            case "Combo breaker":
+                setAsNotification(R.raw.funny_combobreaker);
+                break;
+            case "De dotaded wam":
+                setAsNotification(R.raw.funny_dedotadedwam);
+                break;
+            case "Duck toy":
+                setAsNotification(R.raw.funny_ducktoy);
+                break;
+            case "Get noscoped":
+                setAsNotification(R.raw.funny_getnoscoped);
+                break;
+            case "Mom get the camera":
+                setAsNotification(R.raw.funny_getthecamera);
+                break;
+            case "Headshot":
+                setAsNotification(R.raw.funny_headshot);
+                break;
+            case "Inception":
+                setAsNotification(R.raw.funny_inception);
+                break;
+            case "Holy Shit":
+                setAsNotification(R.raw.funny_holyshit);
+                break;
+            case "Just Do It":
+                setAsNotification(R.raw.funny_justdoit);
+                break;
+            case "John Cena":
+                setAsNotification(R.raw.funny_johncena);
+                break;
+            case "Never do that":
+                setAsNotification(R.raw.funny_neverdonethat);
+                break;
+            case "Nein Nein":
+                setAsNotification(R.raw.funny_nein);
+                break;
+            case "Over 9000":
+                setAsNotification(R.raw.funny_overninek);
+                break;
+            case "OMG":
+                setAsNotification(R.raw.funny_omg);
+                break;
+            case "Shots fired":
+                setAsNotification(R.raw.funny_shotsfired);
+                break;
+            case "Penault Jelly":
+                setAsNotification(R.raw.funny_penaultjelly);
+                break;
+            case "Whatcha say":
+                setAsNotification(R.raw.funny_whatcha_say);
+                break;
+            case "Smoke weed everyday":
+                setAsNotification(R.raw.funny_smokeweedeveryday);
+                break;
+            case "Wombo Combo":
+                setAsNotification(R.raw.funny_wombo_combo);
+                break;
+            case "WTF BOOM":
+                setAsNotification(R.raw.funny_wtf_boom);
+                break;
+            case "Aku Aku":
+                setAsNotification(R.raw.games_akuaku);
+                break;
+            case "Balls of steel":
+                setAsNotification(R.raw.games_ballsofsteel);
+                break;
+            case "EA Games":
+                setAsNotification(R.raw.games_eagames);
+                break;
+            case "EA Sports":
+                setAsNotification(R.raw.games_easports);
+                break;
+            case "Excellent":
+                setAsNotification(R.raw.games_excellent);
+                break;
+            case "Fus Ro Dah":
+                setAsNotification(R.raw.games_fusrodah);
+                break;
+            case "Gameboy":
+                setAsNotification(R.raw.games_gameboy);
+                break;
+            case "Hadouken":
+                setAsNotification(R.raw.games_hadouken);
+                break;
+            case "Inspector Gadget":
+                setAsNotification(R.raw.games_inspectorgadget);
+                break;
+            case "Jigglypuff":
+                setAsNotification(R.raw.games_jigglypuff);
+                break;
+            case "Mario":
+                setAsNotification(R.raw.games_mario);
+                break;
+            case "Mario Coin":
+                setAsNotification(R.raw.games_mariocoin);
+                break;
+            case "Mario Fanfare":
+                setAsNotification(R.raw.games_mariofanfare);
+                break;
+            case "Mario Grow":
+                setAsNotification(R.raw.games_mariogrow);
+                break;
+            case "Mario Jump":
+                setAsNotification(R.raw.games_mariojump);
+                break;
+            case "Mario Lose":
+                setAsNotification(R.raw.games_mariolose);
+                break;
+            case "Mario Underground":
+                setAsNotification(R.raw.games_mariounderground);
+                break;
+            case "Nuke":
+                setAsNotification(R.raw.games_nuke);
+                break;
+            case "Playstation":
+                setAsNotification(R.raw.games_playstation);
+                break;
+            case "Pacman Death":
+                setAsNotification(R.raw.games_pacmandeath);
+                break;
+            case "Pokemon Heal":
+                setAsNotification(R.raw.games_pokemonheal);
+                break;
+            case "Tetris":
+                setAsNotification(R.raw.games_tetris);
+                break;
+            case "Sniper shot":
+                setAsNotification(R.raw.games_snipershot);
+                break;
+            case "Badadipoopi":
+                setAsNotification(R.raw.movies_badadipoopi);
+                break;
+            case "Back to the future":
+                setAsNotification(R.raw.movies_backtothefuture);
+                break;
+            case "Belair":
+                setAsNotification(R.raw.movies_belair);
+                break;
+            case "Bazinga":
+                setAsNotification(R.raw.movies_bazinga);
+                break;
+            case "Darth Vader":
+                setAsNotification(R.raw.movies_darthvader);
+                break;
+            case "Chewbacca":
+                setAsNotification(R.raw.movies_chewbacca);
+                break;
+            case "Fast n Furious":
+                setAsNotification(R.raw.movies_fastnfurious);
+                break;
+            case "Doh":
+                setAsNotification(R.raw.movies_doh);
+                break;
+            case "Nazgul":
+                setAsNotification(R.raw.movies_nazgul);
+                break;
+            case "Godzilla":
+                setAsNotification(R.raw.movies_godzilla);
+                break;
+            case "Two and a Half Men":
+                setAsNotification(R.raw.movies_twohalfmen);
+                break;
+            case "Oompaloompa":
+                setAsNotification(R.raw.movies_oompaloompa);
+                break;
+            case "Dr. Dre The Next Episode":
+                setAsNotification(R.raw.thug_drdre_snoop);
+                break;
+            case "Wazzup":
+                setAsNotification(R.raw.movies_wazzup);
+                break;
+            case "GTA":
+                setAsNotification(R.raw.thug_gta);
+                break;
         }
     }
 
@@ -728,9 +1108,199 @@ public class ToneManager {
             case "Cow":
                 setAsAlarm(R.raw.animals_cow);
                 break;
-//                    case "":
-//                        setAsAlarm(R.raw.);
-//                        break;
+            // TODO fix particles
+            case "Oh baby a triple":
+                setAsAlarm(R.raw.funny_babytriple);
+                break;
+            case "Badum Tss":
+                setAsAlarm(R.raw.funny_badumtss);
+                break;
+            case "Beep":
+                setAsAlarm(R.raw.funny_beep);
+                break;
+            case "Boxeo":
+                setAsAlarm(R.raw.funny_boxeo);
+                break;
+            case "Chan":
+                setAsAlarm(R.raw.funny_chan);
+                break;
+            case "Chan chan":
+                setAsAlarm(R.raw.funny_chanchan);
+                break;
+            case "Combo breaker":
+                setAsAlarm(R.raw.funny_combobreaker);
+                break;
+            case "De dotaded wam":
+                setAsAlarm(R.raw.funny_dedotadedwam);
+                break;
+            case "Duck toy":
+                setAsAlarm(R.raw.funny_ducktoy);
+                break;
+            case "Get noscoped":
+                setAsAlarm(R.raw.funny_getnoscoped);
+                break;
+            case "Mom get the camera":
+                setAsAlarm(R.raw.funny_getthecamera);
+                break;
+            case "Headshot":
+                setAsAlarm(R.raw.funny_headshot);
+                break;
+            case "Inception":
+                setAsAlarm(R.raw.funny_inception);
+                break;
+            case "Holy Shit":
+                setAsAlarm(R.raw.funny_holyshit);
+                break;
+            case "Just Do It":
+                setAsAlarm(R.raw.funny_justdoit);
+                break;
+            case "John Cena":
+                setAsAlarm(R.raw.funny_johncena);
+                break;
+            case "Never do that":
+                setAsAlarm(R.raw.funny_neverdonethat);
+                break;
+            case "Nein Nein":
+                setAsAlarm(R.raw.funny_nein);
+                break;
+            case "Over 9000":
+                setAsAlarm(R.raw.funny_overninek);
+                break;
+            case "OMG":
+                setAsAlarm(R.raw.funny_omg);
+                break;
+            case "Shots fired":
+                setAsAlarm(R.raw.funny_shotsfired);
+                break;
+            case "Penault Jelly":
+                setAsAlarm(R.raw.funny_penaultjelly);
+                break;
+            case "Whatcha say":
+                setAsAlarm(R.raw.funny_whatcha_say);
+                break;
+            case "Smoke weed everyday":
+                setAsAlarm(R.raw.funny_smokeweedeveryday);
+                break;
+            case "Wombo Combo":
+                setAsAlarm(R.raw.funny_wombo_combo);
+                break;
+            case "WTF BOOM":
+                setAsAlarm(R.raw.funny_wtf_boom);
+                break;
+            case "Aku Aku":
+                setAsAlarm(R.raw.games_akuaku);
+                break;
+            case "Balls of steel":
+                setAsAlarm(R.raw.games_ballsofsteel);
+                break;
+            case "EA Games":
+                setAsAlarm(R.raw.games_eagames);
+                break;
+            case "EA Sports":
+                setAsAlarm(R.raw.games_easports);
+                break;
+            case "Excellent":
+                setAsAlarm(R.raw.games_excellent);
+                break;
+            case "Fus Ro Dah":
+                setAsAlarm(R.raw.games_fusrodah);
+                break;
+            case "Gameboy":
+                setAsAlarm(R.raw.games_gameboy);
+                break;
+            case "Hadouken":
+                setAsAlarm(R.raw.games_hadouken);
+                break;
+            case "Inspector Gadget":
+                setAsAlarm(R.raw.games_inspectorgadget);
+                break;
+            case "Jigglypuff":
+                setAsAlarm(R.raw.games_jigglypuff);
+                break;
+            case "Mario":
+                setAsAlarm(R.raw.games_mario);
+                break;
+            case "Mario Coin":
+                setAsAlarm(R.raw.games_mariocoin);
+                break;
+            case "Mario Fanfare":
+                setAsAlarm(R.raw.games_mariofanfare);
+                break;
+            case "Mario Grow":
+                setAsAlarm(R.raw.games_mariogrow);
+                break;
+            case "Mario Jump":
+                setAsAlarm(R.raw.games_mariojump);
+                break;
+            case "Mario Lose":
+                setAsAlarm(R.raw.games_mariolose);
+                break;
+            case "Mario Underground":
+                setAsAlarm(R.raw.games_mariounderground);
+                break;
+            case "Nuke":
+                setAsAlarm(R.raw.games_nuke);
+                break;
+            case "Playstation":
+                setAsAlarm(R.raw.games_playstation);
+                break;
+            case "Pacman Death":
+                setAsAlarm(R.raw.games_pacmandeath);
+                break;
+            case "Pokemon Heal":
+                setAsAlarm(R.raw.games_pokemonheal);
+                break;
+            case "Tetris":
+                setAsAlarm(R.raw.games_tetris);
+                break;
+            case "Sniper shot":
+                setAsAlarm(R.raw.games_snipershot);
+                break;
+            case "Badadipoopi":
+                setAsAlarm(R.raw.movies_badadipoopi);
+                break;
+            case "Back to the future":
+                setAsAlarm(R.raw.movies_backtothefuture);
+                break;
+            case "Belair":
+                setAsAlarm(R.raw.movies_belair);
+                break;
+            case "Bazinga":
+                setAsAlarm(R.raw.movies_bazinga);
+                break;
+            case "Darth Vader":
+                setAsAlarm(R.raw.movies_darthvader);
+                break;
+            case "Chewbacca":
+                setAsAlarm(R.raw.movies_chewbacca);
+                break;
+            case "Fast n Furious":
+                setAsAlarm(R.raw.movies_fastnfurious);
+                break;
+            case "Doh":
+                setAsAlarm(R.raw.movies_doh);
+                break;
+            case "Nazgul":
+                setAsAlarm(R.raw.movies_nazgul);
+                break;
+            case "Godzilla":
+                setAsAlarm(R.raw.movies_godzilla);
+                break;
+            case "Two and a Half Men":
+                setAsAlarm(R.raw.movies_twohalfmen);
+                break;
+            case "Oompaloompa":
+                setAsAlarm(R.raw.movies_oompaloompa);
+                break;
+            case "Dr. Dre The Next Episode":
+                setAsAlarm(R.raw.thug_drdre_snoop);
+                break;
+            case "Wazzup":
+                setAsAlarm(R.raw.movies_wazzup);
+                break;
+            case "GTA":
+                setAsAlarm(R.raw.thug_gta);
+                break;
         }
     }
 
@@ -1213,6 +1783,199 @@ public class ToneManager {
                 particle.setAnimationFluteWithMusicNote();
                 break;
             case "Cow":
+                particle.setAnimationCows();
+                break;
+            // TODO fix particles
+            case "Oh baby a triple":
+                particle.setAnimationCows();
+                break;
+            case "Badum Tss":
+                particle.setAnimationCows();
+                break;
+            case "Beep":
+                particle.setAnimationCows();
+                break;
+            case "Boxeo":
+                particle.setAnimationCows();
+                break;
+            case "Chan":
+                particle.setAnimationCows();
+                break;
+            case "Chan chan":
+                particle.setAnimationCows();
+                break;
+            case "Combo breaker":
+                particle.setAnimationCows();
+                break;
+            case "De dotaded wam":
+                particle.setAnimationCows();
+                break;
+            case "Duck toy":
+                particle.setAnimationCows();
+                break;
+            case "Get noscoped":
+                particle.setAnimationCows();
+                break;
+            case "Mom get the camera":
+                particle.setAnimationCows();
+                break;
+            case "Headshot":
+                particle.setAnimationCows();
+                break;
+            case "Inception":
+                particle.setAnimationCows();
+                break;
+            case "Holy Shit":
+                particle.setAnimationCows();
+                break;
+            case "Just Do It":
+                particle.setAnimationCows();
+                break;
+            case "John Cena":
+                particle.setAnimationCows();
+                break;
+            case "Never do that":
+                particle.setAnimationCows();
+                break;
+            case "Nein Nein":
+                particle.setAnimationCows();
+                break;
+            case "Over 9000":
+                particle.setAnimationCows();
+                break;
+            case "OMG":
+                particle.setAnimationCows();
+                break;
+            case "Shots fired":
+                particle.setAnimationCows();
+                break;
+            case "Penault Jelly":
+                particle.setAnimationCows();
+                break;
+            case "Whatcha say":
+                particle.setAnimationCows();
+                break;
+            case "Smoke weed everyday":
+                particle.setAnimationCows();
+                break;
+            case "Wombo Combo":
+                particle.setAnimationCows();
+                break;
+            case "WTF BOOM":
+                particle.setAnimationCows();
+                break;
+            case "Aku Aku":
+                particle.setAnimationCows();
+                break;
+            case "Balls of steel":
+                particle.setAnimationCows();
+                break;
+            case "EA Games":
+                particle.setAnimationCows();
+                break;
+            case "EA Sports":
+                particle.setAnimationCows();
+                break;
+            case "Excellent":
+                particle.setAnimationCows();
+                break;
+            case "Fus Ro Dah":
+                particle.setAnimationSkyrim();
+                break;
+            case "Gameboy":
+                particle.setAnimationCows();
+                break;
+            case "Hadouken":
+                particle.setAnimationCows();
+                break;
+            case "Inspector Gadget":
+                particle.setAnimationCows();
+                break;
+            case "Jigglypuff":
+                particle.setAnimationCows();
+                break;
+            case "Mario":
+                particle.setAnimationCows();
+                break;
+            case "Mario Coin":
+                particle.setAnimationCows();
+                break;
+            case "Mario Fanfare":
+                particle.setAnimationCows();
+                break;
+            case "Mario Grow":
+                particle.setAnimationCows();
+                break;
+            case "Mario Jump":
+                particle.setAnimationCows();
+                break;
+            case "Mario Lose":
+                particle.setAnimationCows();
+                break;
+            case "Mario Underground":
+                particle.setAnimationCows();
+                break;
+            case "Nuke":
+                particle.setAnimationCows();
+                break;
+            case "Playstation":
+                particle.setAnimationCows();
+                break;
+            case "Pacman Death":
+                particle.setAnimationCows();
+                break;
+            case "Pokemon Heal":
+                particle.setAnimationPokemon();
+                break;
+            case "Tetris":
+                particle.setAnimationCows();
+                break;
+            case "Sniper shot":
+                particle.setAnimationCows();
+                break;
+            case "Badadipoopi":
+                particle.setAnimationCows();
+                break;
+            case "Back to the future":
+                particle.setAnimationCows();
+                break;
+            case "Belair":
+                particle.setAnimationCows();
+                break;
+            case "Bazinga":
+                particle.setAnimationCows();
+                break;
+            case "Darth Vader":
+                particle.setAnimationVader();
+                break;
+            case "Chewbacca":
+                particle.setAnimationCows();
+                break;
+            case "Fast n Furious":
+                particle.setAnimationCows();
+                break;
+            case "Doh":
+                particle.setAnimationCows();
+                break;
+            case "Nazgul":
+                particle.setAnimationCows();
+                break;
+            case "Godzilla":
+                particle.setAnimationCows();
+                break;
+            case "Two and a Half Men":
+                particle.setAnimationCows();
+                break;
+            case "Oompaloompa":
+                particle.setAnimationCows();
+                break;
+            case "Dr. Dre The Next Episode":
+                particle.setAnimationCows();
+                break;
+            case "Wazzup":
+                particle.setAnimationCows();
+                break;
+            case "GTA":
                 particle.setAnimationCows();
                 break;
 //                    case "":

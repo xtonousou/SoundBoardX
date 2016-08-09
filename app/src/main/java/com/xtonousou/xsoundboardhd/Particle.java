@@ -340,6 +340,17 @@ class Particle {
                 .oneShot(view, 10);
     }
 
+    public void setAnimationSkyrim() {
+        Activity act = (Activity) view.getContext();
+        new ParticleSystem(act, 30, R.drawable.skyrim, 5000)
+                .setAcceleration(0.001f, 80)
+                .setSpeedRange(0.1f, 1)
+                .setScaleRange(1, 2)
+                .setRotationSpeed(100)
+                .setFadeOut(250, new AccelerateInterpolator())
+                .oneShot(view, 30);
+    }
+
     public void setAnimationRussian() {
         Activity act = (Activity) view.getContext();
         new ParticleSystem(act, 10, R.drawable.vodka, 5000)
