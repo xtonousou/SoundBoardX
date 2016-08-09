@@ -41,4 +41,6 @@
     <string name="returned_from_app_settings_to_activity">Returned from app settings to MainActivity</string>
     <string name="setting">Settings</string>
     <string name="cancel">Cancel</string>
+    <string name="github_icon">Github icon</string>
+    <string name="youtube_icon">Youtube icon</string>
 </resources>
