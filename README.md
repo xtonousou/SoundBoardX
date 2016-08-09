@@ -1,5 +1,6 @@
 #xSoundBoardHD --- ԅ(≖‿≖ԅ)
 A simple Android Soundboard I made in order to learn, explore and play with.
+**Minimum SDK 14**
 
 ![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screens/view_with_favs.jpg)
 ![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screens/only_favs.jpg)
@@ -10,12 +11,7 @@ A simple Android Soundboard I made in order to learn, explore and play with.
 ![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screens/context_menu.jpg)
 ![alt tag](https://raw.githubusercontent.com/xtonousou/xSoundBoardHD/master/screens/support_activity.jpg)
 
-
-**minSdkVersion 17**
-**targetSdkVersion 24**
-
 ##TODO prioritized list
-- [X] **Fix search logic**
 - [ ] **Add more sounds**
 - [ ] **Particle support different DPIs**
 
