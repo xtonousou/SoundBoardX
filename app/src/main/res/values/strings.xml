@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">xSoundBoardHD</string>
+    <string name="app_name">SoundBoard X</string>
     <string name="fav_desc">Icon with full star</string>
     <string name="not_fav_desc">Icon with empty star</string>
-    <string name="fav_button">Button with full star</string>
-    <string name="not_fav_button">Button with empty star</string>
-    <string name="mute_button">Button with volume off</string>
     <string name="search">Search</string>
-    <string name="loading">Loading</string>
     <!-- Support Activity -->
     <string name="donate">Donate</string>
     <string name="subscribe">Subscribe</string>

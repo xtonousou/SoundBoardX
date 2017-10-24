@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.gradle/caches/modules-2/files-2.1/de.greenrobot/eventbus/2.4.0/ddd166d01b3158d1c00576d29f7ed15c030df719/eventbus-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/eventbus-2.4.0_267b63dc37e00eedace0497bb94587af12e8246c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/ef3d90b736db83f2ae43acacd746f662fddb7346/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="1b7b769c2e819c4e6144da34c9df4ac0f56cf450">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f7723928b340fa7496c446a779a9469afa440547/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/35ac363b88b547a1654c2ae43d0450bf5235fd40/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="44e0cdc36d0f0966af712c1ef598c36d547b47f5">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2e655c3e274c18ec35a1d298ddd5184680328584/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/e4b25586ef8bbf33b1fabe06643506cc54c8be13/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="55e04312f48f9273692d8df8db3a950920935d25">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_26b5aafce300b1275541cbdf1bbaab9ffc1b950a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/9ae7f0a8943c19a6ebbe09843cab28f615a0e2c6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c4f205e360301a6ea150e76d4a6fe75b681277b3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/eefd6b12f4b37b3f127ea67ddfc4997f322476a5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b4d6fbbb48b42dd03fd9c5a09b3b7a53266df6ed">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_896fcd72f7f78df37c2dbcfa51600fe88074973f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/library-2.4.0_e2417aa3d08e436053696d7759086e83792e39b3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/73a2ee9de7dea037823b89fb1030128b94fffa3c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="7efef32744ca4a436492d5cf28c08698cc2af256">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_976bfffa8620b1b66fe503c99b35a3d047593b21/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/7af540043d8afff2840162a27350f168058e3d05/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="508f50705b4fde51a16259f29c854201a3044516">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d008735505e8e0350df5e26fdd247a329bd8f9f8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/d5b823b132b8e9e6e74c3a842158f752b63441cf/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="58b12bdb21a84f22e0dc3b047aeceb0a546b1b44">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0d7bc8fe7d2782910038c2aa93c8945d76f15f85/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_8d4fab2196c357337bb83fa87c14a8839ab882c7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="70c6faa197c5c5623f1423b7863d6727d394ab3c">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_3f7fd524a4a12d63add44d21305d21ea9171b760/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/0f6192c6043e3875aa5ef234343cb832307490e7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b62fdc4cfef174c1e456014195c83fa7de7dc041">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5c2197ccfe3449b230cdbbbab88769ce2ea9e91c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/9d534426e7ed18e0c619a5a2c2e4062b72d09c30/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a73b24a82e860ae409181afee75925a04a03aed3">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_fcf96af05af7462aa8f9a1a00b1c356a0dc8b672/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/opt/android-sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_acc73e4ee5a95a149a64c98ae3a02c1a889b532c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/d33e04568f7b22362f70388160cef36ba49ff0c3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a37fc31c5ceeaa4532a37358add1b189d8db4af1">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_24359dba88d8c4ab6c192ef46e23d37e33e09a16/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/a9d5e52844657b28ef4cbe3ea658cd9901c210cc/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f428e2fbc9ed0b297e3a3f420e51e6982f66822d">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_caba10506be5bb213c0a89282fb3b4cae8a80bbe/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/25543e414301f5d8230076a7e9b975e7a9a2bc11/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="233f60a165ae622c8b36731502ebbda0f65e1930">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_fa79d427b923da3e92b351e775c53e624dde3f76/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/d8f1f4f1a5d55c66ab67cad83a09b4d26a349bf9/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_83e3e2b631a085d95eca36afe0ca799cb488c350/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/4f6dcc9562ef31fc7d8913d25f58318d73b9f9ff/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="605019d3e4be636f5dd74c83d05198994e3a2ce9">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_fe6ac6e2c0e27b95e4f97cd8b6be1e5fd8863ad3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/304bad866c6310fe3d47da21866d94d89ad45b2d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="40392f30a601db5675cdf18192aab013d6fee6ec">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3c9f5d863cc383b70aa1601575ff1822c5c03222/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/0e84838c008149562ce441abd9f9ca6ae9b84537/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f97cf85b0fe70d37a705111dafa6b1b418ea1650">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_49bc1db0e823dfbfa4a0cd1467c34290191a1cb4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/26.1.0/814258103cf26a15fcc26ecce35f5b7d24b73f8/support-annotations-26.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="0814258103cf26a15fcc26ecce35f5b7d24b73f8">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-26.1.0_a92fd54fa59474935653972dc4bde7af8f5b12db/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.0.0/a2d487452376193fc8c103dd2b9bd5f2b1b44563/common-1.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/common-1.0.0_4165d75c6573a2dbca5ca911365f555aa2b1795e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/libs/LeonidsLib-1.3.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="82c667889959f88a143f9f02f409236b5d6d6c1f">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/2/LeonidsLib-1.3.2_d1e3d7114f712b46f2e14c9c1a103a70da919452/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/52c5847b679bc4971ddb12de77f09804af6d3c81/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6f4138a4e065826cb044d49faea4cfd7191773d1">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1a672a74cada09fdbf3315a2c5421a24d499a91d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/af5639c71b39e79fecbbc205d178a4de6cfc3c00/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2019a50eefd9dd0c217157ff4bfc27007e8c057f">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_960cf5ec4a39aefddf70d955dff27d4f41eda12d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/b54767ad02145f154c3d65ef40dc9e31ed3ff5b8/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="1250e88f4b2764043fe4b9c921e83c4d42c5a745">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c05782b85faa820e6416a95f18af2df7aa455363/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/07dc23ff6426ee4602e9ad0e346a64f04726723b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ddf6763cb30af9e449dc8c4baef2940ee05d5686">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ddf1da80d9d507597966de594b5c0e9db127dc93/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/73da20da8c740436638952391bde229185eaaa3b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b12cd9c87c3dfb012a911b6e38d2444ed0a65e1f">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d6747e4d549cac507db13a993684c04589991044/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/cc1bfb119e0478ebaac1f1a59afaa1a9c7324f83/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="08303b8b376b0399b932f863fc616109833f7124">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c20d2e9f14fa58fe13f6d6e7a013050df4442fd7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/8f593c504455ca77ee1458667af3202f35de460f/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="82d4c48dd72c89bef6d199675ac3d1041fdc77da">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_76ec7432414d17a4f677c6a7fb4deceb4936aa93/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.0.0/e414a4cb28434e25c4f6aa71426eb20cf4874ae9/common-1.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e414a4cb28434e25c4f6aa71426eb20cf4874ae9">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/common-1.0.0_ce00b3a3a712fb4a25515f7f38053f8cf982df40/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/47014838b482c817653a690d8a0e181ba01935e5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2442771a5590dd4eb4bce00c2e9dca9e22e4c963">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_26846930838431290dacf9dbdf833f8c6bf2babc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/xtonousou/.android/build-cache/b2e22f19a64db2d44936b84932e8168a8b3b9079/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="1acfba708364fb5bdb0ad5910d1ca8bb1125f645">
+        <dex dex="/home/xtonousou/documents/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6227f4b6ba55e22d1b60503fcbd5e5f40d8d4203/classes.dex" />
+    </item>
+
+</items>

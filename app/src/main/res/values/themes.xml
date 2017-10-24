@@ -2,7 +2,7 @@
 <resources>
 
 <style name="AppTheme" parent="MaterialDrawerTheme.TranslucentStatus">
-    <!-- ...and here we setting appcompat’s color theme attrs -->
+    <!-- ...and here we are setting appcompat’s color theme attrs -->
     <item name="colorPrimary">@color/colorAccent</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
@@ -21,10 +21,6 @@
 
     <!-- CAB :D -->
     <item name="windowActionModeOverlay">true</item>
-</style>
-
-<style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
-    <item name="android:windowBackground">@color/colorPrimaryDark</item>
 </style>
 
 <style name="DialogTheme" parent="Theme.AppCompat.Dialog">
