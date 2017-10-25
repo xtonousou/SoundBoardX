@@ -16,7 +16,8 @@ abstract class SoundStore {
 
         ArrayList<Sound> sounds = new ArrayList<>();
 
-        for (int i = 0; i < allSounds.length(); i++) {
+        final int allSounds_length = allSounds.length();
+        for (int i = 0; i < allSounds_length; i++) {
             sounds.add(new Sound(allSounds.getString(i), allSoundsIDs.getResourceId(i, -1)));
         }
 
@@ -34,7 +35,8 @@ abstract class SoundStore {
 
         ArrayList<Sound> sounds = new ArrayList<>();
 
-        for (int i = 0; i < animalSounds.length(); i++) {
+        final int animalSounds_length = animalSounds.length();
+        for (int i = 0; i < animalSounds_length; i++) {
             sounds.add(new Sound(animalSounds.getString(i), animalSoundsIDs.getResourceId(i, -1)));
         }
 
@@ -52,7 +54,8 @@ abstract class SoundStore {
 
         ArrayList<Sound> sounds = new ArrayList<>();
 
-        for (int i = 0; i < funnySounds.length(); i++) {
+        final int funnySounds_length = funnySounds.length();
+        for (int i = 0; i < funnySounds_length; i++) {
             sounds.add(new Sound(funnySounds.getString(i), funnySoundsIDs.getResourceId(i, -1)));
         }
 
@@ -70,7 +73,8 @@ abstract class SoundStore {
 
         ArrayList<Sound> sounds = new ArrayList<>();
 
-        for (int i = 0; i < gamesSounds.length(); i++) {
+        final int gamesSounds_length = gamesSounds.length();
+        for (int i = 0; i < gamesSounds_length; i++) {
             sounds.add(new Sound(gamesSounds.getString(i), gamesSoundsIDs.getResourceId(i, -1)));
         }
 
@@ -88,7 +92,8 @@ abstract class SoundStore {
 
         ArrayList<Sound> sounds = new ArrayList<>();
 
-        for (int i = 0; i < moviesSounds.length(); i++) {
+        final int moviesSounds_length = moviesSounds.length();
+        for (int i = 0; i < moviesSounds_length; i++) {
             sounds.add(new Sound(moviesSounds.getString(i), moviesSoundsIDs.getResourceId(i, -1)));
         }
 
@@ -106,7 +111,8 @@ abstract class SoundStore {
 
         ArrayList<Sound> sounds = new ArrayList<>();
 
-        for (int i = 0; i < nsfwSounds.length(); i++) {
+        final int nsfwSounds_length = nsfwSounds.length();
+        for (int i = 0; i < nsfwSounds_length; i++) {
             sounds.add(new Sound(nsfwSounds.getString(i), nsfwSoundsIDs.getResourceId(i, -1)));
         }
 
@@ -124,7 +130,8 @@ abstract class SoundStore {
 
         ArrayList<Sound> sounds = new ArrayList<>();
 
-        for (int i = 0; i < personalSounds.length(); i++) {
+        final int personalSounds_length = personalSounds.length();
+        for (int i = 0; i < personalSounds_length; i++) {
             sounds.add(new Sound(personalSounds.getString(i), personalSoundsIDs.getResourceId(i, -1)));
         }
 
@@ -142,7 +149,8 @@ abstract class SoundStore {
 
         ArrayList<Sound> sounds = new ArrayList<>();
 
-        for (int i = 0; i < thugSounds.length(); i++) {
+        final int thugSounds_length = thugSounds.length();
+        for (int i = 0; i < thugSounds_length; i++) {
             sounds.add(new Sound(thugSounds.getString(i), thugSoundsIDs.getResourceId(i, -1)));
         }
 

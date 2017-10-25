@@ -21,7 +21,8 @@ import com.mikepenz.iconics.IconicsDrawable;
 import java.text.Normalizer;
 import java.util.ArrayList;
 
-import de.greenrobot.event.EventBus;
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
         implements Filterable {
@@ -250,6 +251,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
                 }
 
                 @Override
+                @Subscribe
                 public void onClick(View view) {
                     if (getAdapterPosition() != RecyclerView.NO_POSITION) {
                         if (EventBus.getDefault().isRegistered(this)) {

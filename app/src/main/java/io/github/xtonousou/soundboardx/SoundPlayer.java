@@ -7,7 +7,8 @@ import android.util.Log;
 
 import java.io.IOException;
 
-import de.greenrobot.event.EventBus;
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 class SoundPlayer {
 
@@ -20,11 +21,13 @@ class SoundPlayer {
         this.mContext = context.getApplicationContext();
     }
 
+    @Subscribe
     public int onEvent(Sound sound) {
         playSound(sound);
         return getDuration();
     }
 
+    @Subscribe
     public void playSound(Sound sound) {
         int resource = sound.getResourceId();
         if (mPlayer != null) {
@@ -60,10 +63,12 @@ class SoundPlayer {
         });
     }
 
+    @Subscribe
     public int getDuration() {
         return mPlayer.getDuration();
     }
 
+    @Subscribe
     public void release() {
         EventBus.getDefault().unregister(this);
         if (mPlayer != null) {
