@@ -12,7 +12,8 @@ class FileNameCleaner {
 
     static String cleanFileName(String badFileName) {
         StringBuilder cleanName = new StringBuilder();
-        for (int i = 0; i < badFileName.length(); i++) {
+        final int badFileName_length = badFileName.length();
+        for (int i = 0; i < badFileName_length; i++) {
             int c = (int) badFileName.charAt(i);
             if (Arrays.binarySearch(illegalChars, c) < 0) {
                 cleanName.append((char)c);
