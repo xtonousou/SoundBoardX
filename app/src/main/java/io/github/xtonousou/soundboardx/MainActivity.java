@@ -1,23 +1,14 @@
 package io.github.xtonousou.soundboardx;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.SearchManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -28,7 +19,6 @@ import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CompoundButton;
-import android.widget.TextView;
 
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
@@ -42,18 +32,10 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.romainpiel.shimmer.Shimmer;
 import com.romainpiel.shimmer.ShimmerTextView;
 
-import java.util.List;
-
 import petrov.kristiyan.colorpicker.ColorPicker;
-import pub.devrel.easypermissions.AfterPermissionGranted;
-import pub.devrel.easypermissions.EasyPermissions;
 
-public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
+public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
-
-    static final int RC_WRITE_SETNGS_PERM_AFTER_M = 0x0;
-    static final int RC_WRITE_SETNGS_PERM = 0x1;
-    static final int RC_WRITE_EXST_PERM = 0x2;
 
     boolean withAnimations = true;
 
@@ -91,14 +73,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         beautifyToolbar();
         initFAB();
         initDrawer(savedInstanceState);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            writeSettingsPermissionAfterM();
-            writeExternalStoragePermission();
-        } else {
-            writeSettingsPermission();
-            writeExternalStoragePermission();
-        }
 
         if (SharedPrefs.getInstance().isFirstTime()) {
             SharedPrefs.getInstance().setNotFirstTime("virgin", false);
@@ -141,8 +115,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     }
 
     private void beautifyToolbar() {
-        ShimmerTextView shimmerTextView = (ShimmerTextView) findViewById(R.id.shimmerTitle);
-        Typeface font = Typeface.createFromAsset(shimmerTextView.getContext().getAssets(),
+        final ShimmerTextView shimmerTextView = (ShimmerTextView) findViewById(R.id.shimmerTitle);
+        final Typeface font = Typeface.createFromAsset(shimmerTextView.getContext().getAssets(),
                 "fonts/CaviarDreams.ttf");
         shimmerTextView.setTypeface(font);
         new Utils().paintThis(shimmerTextView);
@@ -484,129 +458,5 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 adapter.showPersonalSounds(getApplicationContext());
                 break;
         }
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        switch (requestCode) {
-            default:
-                break;
-            case EasyPermissions.SETTINGS_REQ_CODE:
-                snackbarReturnedFromActivity();
-                try {
-                    Thread.sleep(1250);
-                    new Utils().restartActivity(MainActivity.this);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                break;
-            case RC_WRITE_SETNGS_PERM_AFTER_M:
-                snackbarReturnedFromActivity();
-                try {
-                    Thread.sleep(1250);
-                    new Utils().restartActivity(MainActivity.this);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                break;
-        }
-    }
-
-    // PERMISSIONS
-    @AfterPermissionGranted(RC_WRITE_EXST_PERM)
-    public void writeExternalStoragePermission() {
-        if (EasyPermissions.hasPermissions(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-            // Have permission, do the thing!
-            snackbarPermissionGranted();
-        } else {
-            // Ask for one permission
-            EasyPermissions.requestPermissions(this, getString(R.string.rationale_exst),
-                    RC_WRITE_EXST_PERM, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        }
-    }
-
-    @AfterPermissionGranted(RC_WRITE_SETNGS_PERM)
-    public void writeSettingsPermission() {
-        if (EasyPermissions.hasPermissions(this, Manifest.permission.WRITE_SETTINGS)) {
-            // Have permissions, do the thing!
-            snackbarPermissionGranted();
-        } else {
-            // Ask for both permissions
-            EasyPermissions.requestPermissions(this, getString(R.string.rationale_settings),
-                    RC_WRITE_SETNGS_PERM, Manifest.permission.WRITE_SETTINGS);
-        }
-    }
-
-    @AfterPermissionGranted(RC_WRITE_SETNGS_PERM_AFTER_M)
-    public void writeSettingsPermissionAfterM() {
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-            if (!Settings.System.canWrite(MainActivity.this)) {
-                final Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS,
-                        Uri.parse("package:" + getPackageName())); // don't change string in uri parse
-                new AlertDialog.Builder(this, R.style.DialogTheme)
-                        .setTitle("Need permission")
-                        .setMessage(R.string.rationale_settings)
-                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                            @SuppressLint("NewApi")
-                            public void onClick(DialogInterface dialog, int which) {
-                                startActivityForResult(intent, RC_WRITE_SETNGS_PERM_AFTER_M);
-                            }
-                        })
-                        .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
-                        })
-                        .setIcon(android.R.drawable.ic_dialog_alert)
-                        .show();
-            }
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        // EasyPermissions handles the request result.
-        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
-    }
-
-    @Override
-    public void onPermissionsGranted(int requestCode, List<String> perms) {
-        Log.d(TAG, "onPermissionsGranted:" + requestCode + ":" + perms.size());
-    }
-
-    @Override
-    public void onPermissionsDenied(int requestCode, List<String> perms) {
-        Log.d(TAG, "onPermissionsDenied:" + requestCode + ":" + perms.size());
-
-        // (Optional) Check whether the user denied permissions and checked NEVER ASK AGAIN.
-        // This will display a dialog directing them to enable the permission in app settings.
-        EasyPermissions.checkDeniedPermissionsNeverAskAgain(this,
-                getString(R.string.rationale_ask_again),
-                R.string.setting, R.string.cancel, null, perms);
-    }
-
-    private void snackbarReturnedFromActivity() {
-        Snackbar sb = Snackbar
-                .make(findViewById(R.id.coordinator),
-                        R.string.returned_from_app_settings_to_activity, Snackbar.LENGTH_SHORT);
-        View sbv = sb.getView();
-        sbv.setBackgroundColor(ContextCompat.getColor(sbv.getContext(), R.color.colorPrimaryDark));
-        TextView snackTV = (TextView) sbv.findViewById(android.support.design.R.id.snackbar_text);
-        new Utils().paintThis(snackTV);
-        sb.show();
-    }
-
-    private void snackbarPermissionGranted() {
-        Snackbar sb = Snackbar
-                .make(findViewById(R.id.coordinator), "Permission Granted", Snackbar.LENGTH_SHORT);
-        View sbv = sb.getView();
-        sbv.setBackgroundColor(ContextCompat.getColor(sbv.getContext(), R.color.colorPrimaryDark));
-        TextView snackTV = (TextView) sbv.findViewById(android.support.design.R.id.snackbar_text);
-        new Utils().paintThis(snackTV);
-        sb.show();
     }
 }
