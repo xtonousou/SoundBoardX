@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">SoundBoardX</string>
+    <string name="fav_desc">Icon with full star</string>
+    <string name="not_fav_desc">Icon with empty star</string>
+    <string name="search">Search</string>
+    <!-- Support Activity -->
+    <string name="donate">Donate</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="source">Source</string>
+    <!-- Navigation Drawer -->
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="categories">Categories</string>
+    <string name="animals">Animals</string>
+    <string name="movies">Movies</string>
+    <string name="funny">Funny</string>
+    <string name="thug">Thug Life</string>
+    <string name="nsfw">NSFW</string>
+    <string name="personal">Personal</string>
+    <string name="games">Games</string>
+    <string name="all">All</string>
+    <string name="options">Options</string>
+    <string name="support">Support</string>
+    <string name="particles">Particles</string>
+    <string name="favorites">Favorites</string>
+    <string name="color">Color Picker</string>
+    <!-- Context Menu -->
+    <string name="header">Select action</string>
+    <string name="ringtone">Set as ringtone</string>
+    <string name="notification">Set as notification</string>
+    <string name="alarm">Set as alarm</string>
+    <!-- PERMISSIONS -->
+    <string name="rationale_exst">This app needs access to your external storage to save a sound.</string>
+    <string name="rationale_settings">This app needs access to your settings in order to set a sound as ringtone, notification or alarm.</string>
+    <string name="rationale_ask_again">This app may not work correctly without the requested permissions. Open the app settings screen to modify app permissions.</string>
+    <string name="returned_from_app_settings_to_activity">Returned from app settings to MainActivity</string>
+    <string name="setting">Settings</string>
+    <string name="cancel">Cancel</string>
+    <string name="github_icon">Github icon</string>
+    <string name="youtube_icon">Youtube icon</string>
+    <string name="misc">Misc</string>
+</resources>

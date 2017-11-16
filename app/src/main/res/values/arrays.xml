@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- All Sounds -->
+    <string-array name="allSounds">
+        <item>Nigger\'s satisfaction</item>
+        <item>Hitmarker</item>
+        <item>It\' s 04:20 meng…</item>
+        <item>420 blaze it faggot</item>
+        <item>Blurp</item>
+        <item>Adam!?!</item>
+        <item>Allahu Akbar</item>
+        <item>Damn son!</item>
+        <item>Bane: Darude Sandstorm</item>
+        <item>Bearcum!!!</item>
+        <item>What is going on here?</item>
+        <item>Black kid on fire</item>
+        <item>Σα τον Κάτμαν μ\' έκανες!</item>
+        <item>Hmm, it\'s dick o\'clock</item>
+        <item>Russian father</item>
+        <item>Fichtl\'s Lied</item>
+        <item>Buffed Blowjob</item>
+        <item>Hey that\' s pretty good!</item>
+        <item>I\' m your father!</item>
+        <item>Give it to me!</item>
+        <item>Κοτσολάρη: Πίπα</item>>
+        <item>Fun</item>
+        <item>Kazoo</item>
+        <item>Immigrants cause cancer</item>
+        <item>Maybe we could invite some women?</item>
+        <item>Trap Theme</item>
+        <item>Γαμώ τα καντήλια μου όλα!</item>
+        <item>Weird laugh</item>
+        <item>Thank you…</item>
+        <item>Make your dreams come true!</item>
+        <item>LOTR MLG</item>
+        <item>Come here my pet Russian…</item>
+        <item>This is my masterpiece!</item>
+        <item>Do you want my milk?</item>
+        <item>My mooscles are getting bigger!</item>
+        <item>I\'m growing stronker!</item>
+        <item>Yiss</item>
+        <item>STFU</item>
+        <item>Nigga is cumming…</item>
+        <item>Sup nigga, wanna talk some shit?</item>
+        <item>Surprise motherfucker!</item>
+        <item>Shaved pussy…</item>
+        <item>Seven vaginias…</item>
+        <item>Oh my!</item>
+        <item>Oh Yeaaaah!</item>
+        <item>Penis, penis and penis</item>
+        <item>Excuse me, I have some pussyhair on me!</item>
+        <item>Retardation Theme</item>
+        <item>Cyka Blyat\'s Middlefinger</item>
+        <item>I\'m the scatman…</item>
+        <item>Why don\'t you show us that fine pussy?</item>
+        <item>Shutdown, glitched…</item>
+        <item>What manner of sissyness, is this?</item>
+        <item>You spin me round</item>
+        <item>Squeaker</item>
+        <item>That\'s a 10!</item>
+        <item>Illuminati</item>
+        <item>WOW</item>
+        <item>Richard Stallman</item>
+        <item>Cow</item>
+        <item>What else?</item>
+        <item>Zodiac</item>
+        <item>Yuri Kuma Arashi</item>
+        <item>U WOT M8</item>
+        <item>Oh baby a triple</item>
+        <item>Badum Tss</item>
+        <item>Beep</item>
+        <item>Boxeo</item>
+        <item>Chan</item>
+        <item>Chan chan</item>
+        <item>Combo breaker</item>
+        <item>De dotaded wam</item>
+        <item>Duck toy</item>
+        <item>Get noscoped</item>
+        <item>Mom get the camera</item>
+        <item>Headshot</item>
+        <item>Holy Shit</item>
+        <item>Inception</item>
+        <item>John Cena</item>
+        <item>Just Do It</item>
+        <item>Nein Nein</item>
+        <item>Never do that</item>
+        <item>OMG</item>
+        <item>Over 9000</item>
+        <item>Penault Jelly</item>
+        <item>Shots fired</item>
+        <item>Smoke weed everyday</item>
+        <item>Whatcha say</item>
+        <item>Wombo Combo</item>
+        <item>WTF BOOM</item>
+        <item>Aku Aku</item>
+        <item>Balls of steel</item>
+        <item>EA Games</item>
+        <item>EA Sports</item>
+        <item>Excellent</item>
+        <item>Fus Ro Dah</item>
+        <item>Gameboy</item>
+        <item>Hadouken</item>
+        <item>Inspector Gadget</item>
+        <item>Jigglypuff</item>
+        <item>Mario</item>
+        <item>Mario Coin</item>
+        <item>Mario Fanfare</item>
+        <item>Mario Grow</item>
+        <item>Mario Jump</item>
+        <item>Mario Lose</item>
+        <item>Mario Underground</item>
+        <item>Nuke</item>
+        <item>Pacman Death</item>
+        <item>Playstation</item>
+        <item>Pokemon Heal</item>
+        <item>Our courage will pull us through</item>
+        <item>Sniper shot</item>
+        <item>Tetris</item>
+        <item>Back to the future</item>
+        <item>Badadipoopi</item>
+        <item>Bazinga</item>
+        <item>Belair</item>
+        <item>Chewbacca</item>
+        <item>Darth Vader</item>
+        <item>Doh</item>
+        <item>Fast n Furious</item>
+        <item>Godzilla</item>
+        <item>Nazgul</item>
+        <item>Oompaloompa</item>
+        <item>Two and a Half Men</item>
+        <item>Wazzup</item>
+        <item>Τσικλίδης: Λες και είναι τσόντα!</item>
+        <item>Πετρόπουλος: Action!</item>
+        <item>Πετράκης: Fuck her right in the pussy</item>>
+        <item>xT: Ρε καριόλη;</item>
+        <item>xT: Γαμώ τον Χριστό σου!</item>
+        <item>Κιάμος: Ε!</item>
+        <item>Κιάμος: Χατζάρα</item>
+        <item>Κιάμος: Τί κοιτάς ρε μαλάκα</item>
+    </string-array>
+
+    <integer-array name="allSoundsIDs">
+        <item>@raw/funny_a</item>
+        <item>@raw/games_hitmarker</item>
+        <item>@raw/funny_a420</item>
+        <item>@raw/funny_a420blazeit</item>
+        <item>@raw/funny_blurp</item>
+        <item>@raw/funny_adam</item>
+        <item>@raw/funny_allahuakbar</item>
+        <item>@raw/funny_damnson</item>
+        <item>@raw/funny_banesandstorm</item>
+        <item>@raw/funny_bearcum</item>
+        <item>@raw/funny_bekfast</item>
+        <item>@raw/funny_blackkidonfire</item>
+        <item>@raw/personal_catman</item>
+        <item>@raw/nsfw_dickoclock</item>
+        <item>@raw/funny_fathercatishungry</item>
+        <item>@raw/funny_fichtlslied</item>
+        <item>@raw/nsfw_fuckyeah</item>
+        <item>@raw/funny_prettygood</item>
+        <item>@raw/movies_imyourfather</item>
+        <item>@raw/nsfw_giveittome</item>
+        <item>@raw/personal_eleni</item>
+        <item>@raw/funny_fun</item>
+        <item>@raw/funny_kazoo</item>
+        <item>@raw/funny_immigrants</item>
+        <item>@raw/funny_invitewomen</item>
+        <item>@raw/funny_itsatrap</item>
+        <item>@raw/personal_kantilia</item>
+        <item>@raw/funny_laugh</item>
+        <item>@raw/nsfw_thankyou</item>
+        <item>@raw/funny_lol</item>
+        <item>@raw/movies_lotr</item>
+        <item>@raw/funny_petrussian</item>
+        <item>@raw/funny_masterpiece</item>
+        <item>@raw/nsfw_milkinyourmot</item>
+        <item>@raw/funny_mooscles</item>
+        <item>@raw/funny_stronker</item>
+        <item>@raw/funny_yiiisss</item>
+        <item>@raw/funny_stfu</item>
+        <item>@raw/funny_niggacum</item>
+        <item>@raw/funny_niggers</item>
+        <item>@raw/funny_surprise</item>
+        <item>@raw/nsfw_shaved</item>
+        <item>@raw/funny_sevenvaginas</item>
+        <item>@raw/funny_ohmy</item>
+        <item>@raw/funny_ohyeaah</item>
+        <item>@raw/nsfw_penis</item>
+        <item>@raw/funny_pussyhair</item>
+        <item>@raw/funny_retardation</item>
+        <item>@raw/funny_russianmiddlefinger</item>
+        <item>@raw/nsfw_scatman</item>
+        <item>@raw/funny_showthepussy</item>
+        <item>@raw/funny_shutdownglitched</item>
+        <item>@raw/funny_sissiness</item>
+        <item>@raw/funny_spinme</item>
+        <item>@raw/funny_squeeek</item>
+        <item>@raw/funny_thatsa10</item>
+        <item>@raw/funny_illuminati</item>
+        <item>@raw/funny_wow</item>
+        <item>@raw/funny_windows</item>
+        <item>@raw/animals_cow</item>
+        <item>@raw/funny_whatelse</item>
+        <item>@raw/funny_zodiac</item>
+        <item>@raw/movies_sabada</item>
+        <item>@raw/movies_uwotmate</item>
+        <item>@raw/funny_babytriple</item>
+        <item>@raw/funny_badumtss</item>
+        <item>@raw/funny_beep</item>
+        <item>@raw/funny_boxeo</item>
+        <item>@raw/funny_chan</item>
+        <item>@raw/funny_chanchan</item>
+        <item>@raw/funny_combobreaker</item>
+        <item>@raw/funny_dedotadedwam</item>
+        <item>@raw/funny_ducktoy</item>
+        <item>@raw/funny_getnoscoped</item>
+        <item>@raw/funny_getthecamera</item>
+        <item>@raw/funny_headshot</item>
+        <item>@raw/funny_holyshit</item>
+        <item>@raw/funny_inception</item>
+        <item>@raw/funny_johncena</item>
+        <item>@raw/funny_justdoit</item>
+        <item>@raw/funny_nein</item>
+        <item>@raw/funny_neverdonethat</item>
+        <item>@raw/funny_omg</item>
+        <item>@raw/funny_overninek</item>
+        <item>@raw/funny_penaultjelly</item>
+        <item>@raw/funny_shotsfired</item>
+        <item>@raw/funny_smokeweedeveryday</item>
+        <item>@raw/funny_whatcha_say</item>
+        <item>@raw/funny_wombo_combo</item>
+        <item>@raw/funny_wtf_boom</item>
+        <item>@raw/games_akuaku</item>
+        <item>@raw/games_ballsofsteel</item>
+        <item>@raw/games_eagames</item>
+        <item>@raw/games_easports</item>
+        <item>@raw/games_excellent</item>
+        <item>@raw/games_fusrodah</item>
+        <item>@raw/games_gameboy</item>
+        <item>@raw/games_hadouken</item>
+        <item>@raw/games_inspectorgadget</item>
+        <item>@raw/games_jigglypuff</item>
+        <item>@raw/games_mario</item>
+        <item>@raw/games_mariocoin</item>
+        <item>@raw/games_mariofanfare</item>
+        <item>@raw/games_mariogrow</item>
+        <item>@raw/games_mariojump</item>
+        <item>@raw/games_mariolose</item>
+        <item>@raw/games_mariounderground</item>
+        <item>@raw/games_nuke</item>
+        <item>@raw/games_pacmandeath</item>
+        <item>@raw/games_playstation</item>
+        <item>@raw/games_pokemonheal</item>
+        <item>@raw/games_pokemonaggouri</item>
+        <item>@raw/games_snipershot</item>
+        <item>@raw/games_tetris</item>
+        <item>@raw/movies_backtothefuture</item>
+        <item>@raw/movies_badadipoopi</item>
+        <item>@raw/movies_bazinga</item>
+        <item>@raw/movies_belair</item>
+        <item>@raw/movies_chewbacca</item>
+        <item>@raw/movies_darthvader</item>
+        <item>@raw/movies_doh</item>
+        <item>@raw/movies_fastnfurious</item>
+        <item>@raw/movies_godzilla</item>
+        <item>@raw/movies_nazgul</item>
+        <item>@raw/movies_oompaloompa</item>
+        <item>@raw/movies_twohalfmen</item>
+        <item>@raw/movies_wazzup</item>
+        <item>@raw/personal_tsonta</item>
+        <item>@raw/personal_nikos</item>
+        <item>@raw/personal_fuckherrightinthepussy</item>
+        <item>@raw/personal_karioli</item>
+        <item>@raw/personal_gamwtoxristosou</item>
+        <item>@raw/personal_e</item>
+        <item>@raw/personal_tigelasre</item>
+        <item>@raw/personal_tikoitasremlk</item>
+    </integer-array>
+
+    <!-- Animal Sounds -->
+    <string-array name="animalSounds">
+        <item>Cow</item>
+    </string-array>
+
+    <integer-array name="animalSoundsIDs">
+        <item>@raw/animals_cow</item>
+    </integer-array>
+
+    <!-- Funny Sounds -->
+    <string-array name="funnySounds">
+        <item>Nigger\'s satisfaction</item>
+        <item>It\' s 04:20 meng…</item>
+        <item>420 blaze it faggot</item>
+        <item>Blurp</item>
+        <item>Adam!?!</item>
+        <item>Allahu Akbar</item>
+        <item>Damn son!</item>
+        <item>Bane: Darude Sandstorm</item>
+        <item>Bearcum!!!</item>
+        <item>What is going on here?</item>
+        <item>Black kid on fire</item>
+        <item>Russian father</item>
+        <item>Fichtl\'s Lied</item>
+        <item>Hey that\' s pretty good!</item>
+        <item>Fun</item>
+        <item>Kazoo</item>
+        <item>Immigrants cause cancer</item>
+        <item>Maybe we could invite some women?</item>
+        <item>Trap Theme</item>
+        <item>Weird laugh</item>
+        <item>Make your dreams come true!</item>
+        <item>Come here my pet Russian…</item>
+        <item>This is my masterpiece!</item>
+        <item>My mooscles are getting bigger!</item>
+        <item>I\'m growing stronker!</item>
+        <item>Yiss</item>
+        <item>STFU</item>
+        <item>Nigga is cumming…</item>
+        <item>Sup nigga, wanna talk some shit?</item>
+        <item>Surprise motherfucker!</item>
+        <item>Seven vaginias…</item>
+        <item>Oh my!</item>
+        <item>Oh Yeaaaah!</item>
+        <item>Excuse me, I have some pussyhair on me!</item>
+        <item>Retardation Theme</item>
+        <item>Cyka Blyat\'s Middlefinger</item>
+        <item>Why don\'t you show us that fine pussy?</item>
+        <item>Shutdown, glitched…</item>
+        <item>What manner of sissyness, is this?</item>
+        <item>You spin me round</item>
+        <item>Squeaker</item>
+        <item>That\'s a 10!</item>
+        <item>Illuminati</item>
+        <item>WOW</item>
+        <item>Richard Stallman</item>
+        <item>What else?</item>
+        <item>Zodiac</item>
+        <item>Oh baby a triple</item>
+        <item>Badum Tss</item>
+        <item>Beep</item>
+        <item>Boxeo</item>
+        <item>Chan</item>
+        <item>Chan chan</item>
+        <item>Combo breaker</item>
+        <item>De dotaded wam</item>
+        <item>Duck toy</item>
+        <item>Get noscoped</item>
+        <item>Mom get the camera</item>
+        <item>Headshot</item>
+        <item>Holy Shit</item>
+        <item>Inception</item>
+        <item>John Cena</item>
+        <item>Just Do It</item>
+        <item>Nein Nein</item>
+        <item>Never do that</item>
+        <item>OMG</item>
+        <item>Over 9000</item>
+        <item>Penault Jelly</item>
+        <item>Shots fired</item>
+        <item>Smoke weed everyday</item>
+        <item>Whatcha say</item>
+        <item>Wombo Combo</item>
+        <item>WTF BOOM</item>
+    </string-array>
+
+    <integer-array name="funnySoundsIDs">
+        <item>@raw/funny_a</item>
+        <item>@raw/funny_a420</item>
+        <item>@raw/funny_a420blazeit</item>
+        <item>@raw/funny_blurp</item>
+        <item>@raw/funny_adam</item>
+        <item>@raw/funny_allahuakbar</item>
+        <item>@raw/funny_damnson</item>
+        <item>@raw/funny_banesandstorm</item>
+        <item>@raw/funny_bearcum</item>
+        <item>@raw/funny_bekfast</item>
+        <item>@raw/funny_blackkidonfire</item>
+        <item>@raw/funny_fathercatishungry</item>
+        <item>@raw/funny_fichtlslied</item>
+        <item>@raw/funny_prettygood</item>
+        <item>@raw/funny_fun</item>
+        <item>@raw/funny_kazoo</item>
+        <item>@raw/funny_immigrants</item>
+        <item>@raw/funny_invitewomen</item>
+        <item>@raw/funny_itsatrap</item>
+        <item>@raw/funny_laugh</item>
+        <item>@raw/funny_lol</item>
+        <item>@raw/funny_petrussian</item>
+        <item>@raw/funny_masterpiece</item>
+        <item>@raw/funny_mooscles</item>
+        <item>@raw/funny_stronker</item>
+        <item>@raw/funny_yiiisss</item>
+        <item>@raw/funny_stfu</item>
+        <item>@raw/funny_niggacum</item>
+        <item>@raw/funny_niggers</item>
+        <item>@raw/funny_surprise</item>
+        <item>@raw/funny_sevenvaginas</item>
+        <item>@raw/funny_ohmy</item>
+        <item>@raw/funny_ohyeaah</item>
+        <item>@raw/funny_pussyhair</item>
+        <item>@raw/funny_retardation</item>
+        <item>@raw/funny_russianmiddlefinger</item>
+        <item>@raw/funny_showthepussy</item>
+        <item>@raw/funny_shutdownglitched</item>
+        <item>@raw/funny_sissiness</item>
+        <item>@raw/funny_spinme</item>
+        <item>@raw/funny_squeeek</item>
+        <item>@raw/funny_thatsa10</item>
+        <item>@raw/funny_illuminati</item>
+        <item>@raw/funny_wow</item>
+        <item>@raw/funny_windows</item>
+        <item>@raw/funny_whatelse</item>
+        <item>@raw/funny_zodiac</item>
+        <item>@raw/funny_babytriple</item>
+        <item>@raw/funny_badumtss</item>
+        <item>@raw/funny_beep</item>
+        <item>@raw/funny_boxeo</item>
+        <item>@raw/funny_chan</item>
+        <item>@raw/funny_chanchan</item>
+        <item>@raw/funny_combobreaker</item>
+        <item>@raw/funny_dedotadedwam</item>
+        <item>@raw/funny_ducktoy</item>
+        <item>@raw/funny_getnoscoped</item>
+        <item>@raw/funny_getthecamera</item>
+        <item>@raw/funny_headshot</item>
+        <item>@raw/funny_holyshit</item>
+        <item>@raw/funny_inception</item>
+        <item>@raw/funny_johncena</item>
+        <item>@raw/funny_justdoit</item>
+        <item>@raw/funny_nein</item>
+        <item>@raw/funny_neverdonethat</item>
+        <item>@raw/funny_omg</item>
+        <item>@raw/funny_overninek</item>
+        <item>@raw/funny_penaultjelly</item>
+        <item>@raw/funny_shotsfired</item>
+        <item>@raw/funny_smokeweedeveryday</item>
+        <item>@raw/funny_whatcha_say</item>
+        <item>@raw/funny_wombo_combo</item>
+        <item>@raw/funny_wtf_boom</item>
+    </integer-array>
+
+    <!-- Games Sounds -->
+    <string-array name="gamesSounds">
+        <item>Hitmarker</item>
+        <item>Aku Aku</item>
+        <item>Balls of steel</item>
+        <item>EA Games</item>
+        <item>EA Sports</item>
+        <item>Excellent</item>
+        <item>Fus Ro Dah</item>
+        <item>Gameboy</item>
+        <item>Hadouken</item>
+        <item>Inspector Gadget</item>
+        <item>Jigglypuff</item>
+        <item>Mario</item>
+        <item>Mario Coin</item>
+        <item>Mario Fanfare</item>
+        <item>Mario Grow</item>
+        <item>Mario Jump</item>
+        <item>Mario Lose</item>
+        <item>Mario Underground</item>
+        <item>Nuke</item>
+        <item>Pacman Death</item>
+        <item>Playstation</item>
+        <item>Pokemon Heal</item>
+        <item>Our courage will pull us through</item>
+        <item>Sniper shot</item>
+        <item>Tetris</item>
+    </string-array>
+
+    <integer-array name="gamesSoundsIDs">
+        <item>@raw/games_hitmarker</item>
+        <item>@raw/games_akuaku</item>
+        <item>@raw/games_ballsofsteel</item>
+        <item>@raw/games_eagames</item>
+        <item>@raw/games_easports</item>
+        <item>@raw/games_excellent</item>
+        <item>@raw/games_fusrodah</item>
+        <item>@raw/games_gameboy</item>
+        <item>@raw/games_hadouken</item>
+        <item>@raw/games_inspectorgadget</item>
+        <item>@raw/games_jigglypuff</item>
+        <item>@raw/games_mario</item>
+        <item>@raw/games_mariocoin</item>
+        <item>@raw/games_mariofanfare</item>
+        <item>@raw/games_mariogrow</item>
+        <item>@raw/games_mariojump</item>
+        <item>@raw/games_mariolose</item>
+        <item>@raw/games_mariounderground</item>
+        <item>@raw/games_nuke</item>
+        <item>@raw/games_pacmandeath</item>
+        <item>@raw/games_playstation</item>
+        <item>@raw/games_pokemonheal</item>
+        <item>@raw/games_pokemonaggouri</item>
+        <item>@raw/games_snipershot</item>
+        <item>@raw/games_tetris</item>
+    </integer-array>
+
+    <!-- Movies Sounds -->
+    <string-array name="moviesSounds">
+        <item>U WOT M8</item>
+        <item>I\' m your father!</item>
+        <item>LOTR MLG</item>
+        <item>Yuri Kuma Arashi</item>
+        <item>Back to the future</item>
+        <item>Badadipoopi</item>
+        <item>Bazinga</item>
+        <item>Belair</item>
+        <item>Chewbacca</item>
+        <item>Darth Vader</item>
+        <item>Doh</item>
+        <item>Fast n Furious</item>
+        <item>Godzilla</item>
+        <item>Nazgul</item>
+        <item>Oompaloompa</item>
+        <item>Two and a Half Men</item>
+        <item>Wazzup</item>
+    </string-array>
+
+    <integer-array name="moviesSoundsIDs">
+        <item>@raw/movies_uwotmate</item>
+        <item>@raw/movies_imyourfather</item>
+        <item>@raw/movies_lotr</item>
+        <item>@raw/movies_sabada</item>
+        <item>@raw/movies_backtothefuture</item>
+        <item>@raw/movies_badadipoopi</item>
+        <item>@raw/movies_bazinga</item>
+        <item>@raw/movies_belair</item>
+        <item>@raw/movies_chewbacca</item>
+        <item>@raw/movies_darthvader</item>
+        <item>@raw/movies_doh</item>
+        <item>@raw/movies_fastnfurious</item>
+        <item>@raw/movies_godzilla</item>
+        <item>@raw/movies_nazgul</item>
+        <item>@raw/movies_oompaloompa</item>
+        <item>@raw/movies_twohalfmen</item>
+        <item>@raw/movies_wazzup</item>
+    </integer-array>
+
+    <!-- NSFW Sounds -->
+    <string-array name="nsfwSounds">
+        <item>Hmm, it\'s dick o\'clock</item>
+        <item>Buffed Blowjob</item>
+        <item>Thank you…</item>
+        <item>Penis, penis and penis</item>
+        <item>Do you want my milk?</item>
+        <item>Give it to me!</item>
+        <item>Shaved pussy…</item>
+        <item>I\'m the scatman…</item>
+    </string-array>
+
+    <integer-array name="nsfwSoundsIDs">
+        <item>@raw/nsfw_dickoclock</item>
+        <item>@raw/nsfw_fuckyeah</item>
+        <item>@raw/nsfw_thankyou</item>
+        <item>@raw/nsfw_penis</item>
+        <item>@raw/nsfw_milkinyourmot</item>
+        <item>@raw/nsfw_giveittome</item>
+        <item>@raw/nsfw_shaved</item>
+        <item>@raw/nsfw_scatman</item>
+    </integer-array>
+
+    <!-- Personal Sounds -->
+    <string-array name="personalSounds">
+        <item>Γαμώ τα καντήλια μου όλα!</item>
+        <item>Σα τον Κάτμαν μ\' έκανες!</item>
+        <item>Τσικλίδης: Λες και είναι τσόντα!</item>
+        <item>Πετρόπουλος: Action!</item>
+        <item>Κοτσολάρη: Πίπα</item>>
+        <item>Πετράκης: Fuck her right in the pussy</item>>
+        <item>xT: Ρε καριόλη;</item>
+        <item>xT: Γαμώ τον Χριστό σου!</item>
+        <item>Κιάμος: Ε!</item>
+        <item>Κιάμος: Χατζάρα</item>
+        <item>Κιάμος: Τί κοιτάς ρε μαλάκα</item>
+    </string-array>
+
+    <integer-array name="personalSoundsIDs">
+        <item>@raw/personal_kantilia</item>
+        <item>@raw/personal_catman</item>
+        <item>@raw/personal_tsonta</item>
+        <item>@raw/personal_nikos</item>
+        <item>@raw/personal_eleni</item>
+        <item>@raw/personal_fuckherrightinthepussy</item>
+        <item>@raw/personal_karioli</item>
+        <item>@raw/personal_gamwtoxristosou</item>
+        <item>@raw/personal_e</item>
+        <item>@raw/personal_tigelasre</item>
+        <item>@raw/personal_tikoitasremlk</item>
+    </integer-array>
+</resources>
