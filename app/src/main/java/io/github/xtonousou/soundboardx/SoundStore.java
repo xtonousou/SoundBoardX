@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 abstract class SoundStore {
 
-    public static ArrayList<Sound> getAllSounds(Context context) {
+    static ArrayList<Sound> getAllSounds(Context context) {
         Resources res = context.getApplicationContext().getResources();
 
         TypedArray allSounds = res.obtainTypedArray(R.array.allSounds);
@@ -27,7 +27,7 @@ abstract class SoundStore {
         return sounds;
     }
 
-    public static ArrayList<Sound> getAnimalsSounds(Context context) {
+    static ArrayList<Sound> getAnimalsSounds(Context context) {
         Resources res = context.getApplicationContext().getResources();
 
         TypedArray animalSounds = res.obtainTypedArray(R.array.animalSounds);
@@ -46,7 +46,7 @@ abstract class SoundStore {
         return sounds;
     }
 
-    public static ArrayList<Sound> getFunnySounds(Context context) {
+    static ArrayList<Sound> getFunnySounds(Context context) {
         Resources res = context.getApplicationContext().getResources();
 
         TypedArray funnySounds = res.obtainTypedArray(R.array.funnySounds);
@@ -65,7 +65,7 @@ abstract class SoundStore {
         return sounds;
     }
 
-    public static ArrayList<Sound> getGamesSounds(Context context) {
+    static ArrayList<Sound> getGamesSounds(Context context) {
         Resources res = context.getApplicationContext().getResources();
 
         TypedArray gamesSounds = res.obtainTypedArray(R.array.gamesSounds);
@@ -84,7 +84,7 @@ abstract class SoundStore {
         return sounds;
     }
 
-    public static ArrayList<Sound> getMoviesSounds(Context context) {
+    static ArrayList<Sound> getMoviesSounds(Context context) {
         Resources res = context.getApplicationContext().getResources();
 
         TypedArray moviesSounds = res.obtainTypedArray(R.array.moviesSounds);
@@ -103,7 +103,7 @@ abstract class SoundStore {
         return sounds;
     }
 
-    public static ArrayList<Sound> getNSFWSounds(Context context) {
+    static ArrayList<Sound> getNSFWSounds(Context context) {
         Resources res = context.getApplicationContext().getResources();
 
         TypedArray nsfwSounds = res.obtainTypedArray(R.array.nsfwSounds);
@@ -122,7 +122,7 @@ abstract class SoundStore {
         return sounds;
     }
 
-    public static ArrayList<Sound> getPersonalSounds(Context context) {
+    static ArrayList<Sound> getPersonalSounds(Context context) {
         Resources res = context.getApplicationContext().getResources();
 
         TypedArray personalSounds = res.obtainTypedArray(R.array.personalSounds);
@@ -137,25 +137,6 @@ abstract class SoundStore {
 
         personalSounds.recycle();
         personalSoundsIDs.recycle();
-
-        return sounds;
-    }
-
-    public static ArrayList<Sound> getThugSounds(Context context) {
-        Resources res = context.getApplicationContext().getResources();
-
-        TypedArray thugSounds = res.obtainTypedArray(R.array.thugSounds);
-        TypedArray thugSoundsIDs = res.obtainTypedArray(R.array.thugSoundsIDs);
-
-        ArrayList<Sound> sounds = new ArrayList<>();
-
-        final int thugSounds_length = thugSounds.length();
-        for (int i = 0; i < thugSounds_length; i++) {
-            sounds.add(new Sound(thugSounds.getString(i), thugSoundsIDs.getResourceId(i, -1)));
-        }
-
-        thugSounds.recycle();
-        thugSoundsIDs.recycle();
 
         return sounds;
     }

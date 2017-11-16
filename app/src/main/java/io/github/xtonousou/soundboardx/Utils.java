@@ -14,27 +14,21 @@ import android.widget.TextView;
 
 import com.romainpiel.shimmer.ShimmerTextView;
 
-public class Utils {
+class Utils {
 
     private boolean  isPainted = false;
 
-    public int getScreenHeight(Activity activity) {
-        DisplayMetrics metrics = new DisplayMetrics();
-        activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        return metrics.heightPixels;
-    }
-
-    public int getScreenWidth(Activity activity) {
+    int getScreenWidth(Activity activity) {
         DisplayMetrics metrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
         return metrics.widthPixels;
     }
 
-    public int getSelectedColor() {
+    int getSelectedColor() {
         return SharedPrefs.getInstance().getSelectedColor();
     }
 
-    public void paintThis(TextView textView) {
+    void paintThis(TextView textView) {
         if (!isPainted) {
             isPainted = true;
             textView.setTextColor(SharedPrefs.getInstance().getSelectedColor());
@@ -43,7 +37,7 @@ public class Utils {
                     R.color.lavaRed));
     }
 
-    public void paintThis(ShimmerTextView shimmerTextViewtextView) {
+    void paintThis(ShimmerTextView shimmerTextViewtextView) {
         if (!isPainted) {
             isPainted = true;
             shimmerTextViewtextView.setTextColor(SharedPrefs.getInstance().getSelectedColor());
@@ -52,7 +46,7 @@ public class Utils {
                     R.color.lavaRed));
     }
 
-    public void paintThis(SearchView.SearchAutoComplete searchViewText) {
+    void paintThis(SearchView.SearchAutoComplete searchViewText) {
         if (!isPainted) {
             isPainted = true;
             searchViewText.setTextColor(SharedPrefs.getInstance().getSelectedColor());
@@ -61,7 +55,7 @@ public class Utils {
                     R.color.lavaRed));
     }
 
-    public void paintThis(SoundAdapter.ViewHolder holder) {
+    void paintThis(SoundAdapter.ViewHolder holder) {
         if (!isPainted) {
             isPainted = true;
             holder.itemView.setBackgroundColor(SharedPrefs.getInstance().getSelectedColor());
@@ -70,7 +64,7 @@ public class Utils {
                     R.color.lavaRed));
     }
 
-    public void paintThis(FloatingActionButton fab) {
+    void paintThis(FloatingActionButton fab) {
         if (!isPainted) {
             isPainted = true;
             fab.setRippleColor(SharedPrefs.getInstance().getSelectedColor());
@@ -79,36 +73,35 @@ public class Utils {
                     R.color.lavaRed));
     }
 
-    public void initPaypal(Activity activity) {
+    void initPaypal(Activity activity) {
         String url =
                 "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68KTBN3PE9U46";
         Intent intent = new Intent(Intent.ACTION_VIEW).setData((Uri.parse(url)));
         activity.startActivity(intent);
     }
 
-    public void initYoutube(Activity activity) {
+    void initYoutube(Activity activity) {
         String url = "https://www.youtube.com/subscription_center?add_user=TheToNouSou96";
         Intent intent = new Intent(Intent.ACTION_VIEW).setData((Uri.parse(url)));
         activity.startActivity(intent);
     }
 
-    public void initGithub(Activity activity) {
+    void initGithub(Activity activity) {
         String url = "https://github.com/xtonousou/xSoundBoardHD";
         Intent intent = new Intent(Intent.ACTION_VIEW).setData((Uri.parse(url)));
         activity.startActivity(intent);
     }
 
-    public boolean isGreenMode(Activity activity) {
+    boolean isGreenMode(Activity activity) {
         boolean mode = false;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP &&
-                ((PowerManager) activity.getSystemService(Context.POWER_SERVICE))
-                        .isPowerSaveMode()) {
+        if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) &&
+                ((PowerManager) activity.getSystemService(Context.POWER_SERVICE)).isPowerSaveMode()) {
             mode = true;
         }
         return mode;
     }
 
-    public void restartActivity(Activity activity) {
+    void restartActivity(Activity activity) {
         activity.finish();
         activity.startActivity(activity.getIntent());
     }

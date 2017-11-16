@@ -18,24 +18,24 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class ToneManager {
-    public static final String TAG = "ToneManager";
+class ToneManager {
+    private static final String TAG = "ToneManager";
 
     private Particle particle;
     private String   itemName;
     private View     itemView;
 
-    public ToneManager(String itemName, View itemView) {
+    ToneManager(String itemName, View itemView) {
         this.itemName = itemName;
         this.itemView = itemView;
     }
 
-    public ToneManager(Particle particle, String itemName) {
+    ToneManager(Particle particle, String itemName) {
         this.particle = particle;
         this.itemName = itemName;
     }
 
-    public void ringtone() {
+    void ringtone() {
         createDirIfNotExists("/SoundBoardX/Ringtones");
 
         switch (itemName) {
@@ -444,19 +444,13 @@ public class ToneManager {
             case "Oompaloompa":
                 setAsRingtone(R.raw.movies_oompaloompa);
                 break;
-            case "Dr. Dre The Next Episode":
-                setAsRingtone(R.raw.thug_drdre_snoop);
-                break;
             case "Wazzup":
                 setAsRingtone(R.raw.movies_wazzup);
-                break;
-            case "GTA":
-                setAsRingtone(R.raw.thug_gta);
                 break;
         }
     }
 
-    public void notification() {
+    void notification() {
         createDirIfNotExists("/SoundBoardX/Notifications");
 
         switch (itemName) {
@@ -865,19 +859,13 @@ public class ToneManager {
             case "Oompaloompa":
                 setAsNotification(R.raw.movies_oompaloompa);
                 break;
-            case "Dr. Dre The Next Episode":
-                setAsNotification(R.raw.thug_drdre_snoop);
-                break;
             case "Wazzup":
                 setAsNotification(R.raw.movies_wazzup);
-                break;
-            case "GTA":
-                setAsNotification(R.raw.thug_gta);
                 break;
         }
     }
 
-    public void alarm() {
+    void alarm() {
         createDirIfNotExists("/SoundBoardX/Alarms");
 
         switch (itemName) {
@@ -1286,19 +1274,13 @@ public class ToneManager {
             case "Oompaloompa":
                 setAsAlarm(R.raw.movies_oompaloompa);
                 break;
-            case "Dr. Dre The Next Episode":
-                setAsAlarm(R.raw.thug_drdre_snoop);
-                break;
             case "Wazzup":
                 setAsAlarm(R.raw.movies_wazzup);
-                break;
-            case "GTA":
-                setAsAlarm(R.raw.thug_gta);
                 break;
         }
     }
 
-    private boolean setAsRingtone(int resource) {
+    private void setAsRingtone(int resource) {
         byte[] buffer;
         InputStream fIn = itemView.getContext().getResources().openRawResource(resource);
         int size;
@@ -1309,7 +1291,7 @@ public class ToneManager {
             fIn.read(buffer);
             fIn.close();
         } catch (IOException e) {
-            return false;
+            return;
         }
 
         String path = Environment.getExternalStorageDirectory().getPath() + "/SoundBoardX/Ringtones/";
@@ -1329,10 +1311,8 @@ public class ToneManager {
             save.write(buffer);
             save.flush();
             save.close();
-        } catch (FileNotFoundException e) {
-            return false;
         } catch (IOException e) {
-            return false;
+            return;
         }
 
         itemView.getContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file:/" + path + filename)));
@@ -1358,10 +1338,9 @@ public class ToneManager {
             System.err.println(t.getMessage());
         }
 
-        return true;
     }
 
-    private boolean setAsNotification(int resource) {
+    private void setAsNotification(int resource) {
         byte[] buffer;
         InputStream fIn = itemView.getContext().getResources().openRawResource(resource);
         int size;
@@ -1372,7 +1351,7 @@ public class ToneManager {
             fIn.read(buffer);
             fIn.close();
         } catch (IOException e) {
-            return false;
+            return;
         }
 
         String path = Environment.getExternalStorageDirectory().getPath() + "/SoundBoardX/Notifications/";
@@ -1394,10 +1373,8 @@ public class ToneManager {
             save.write(buffer);
             save.flush();
             save.close();
-        } catch (FileNotFoundException e) {
-            return false;
         } catch (IOException e) {
-            return false;
+            return;
         }
 
         itemView.getContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file:/" + path + filename)));
@@ -1422,10 +1399,9 @@ public class ToneManager {
         } catch (Throwable t) {
             System.err.println(t.getMessage());
         }
-        return true;
     }
 
-    private boolean setAsAlarm(int resource) {
+    private void setAsAlarm(int resource) {
         byte[] buffer;
         InputStream fIn = itemView.getContext().getResources().openRawResource(resource);
         int size;
@@ -1436,7 +1412,7 @@ public class ToneManager {
             fIn.read(buffer);
             fIn.close();
         } catch (IOException e) {
-            return false;
+            return;
         }
 
         String path = Environment.getExternalStorageDirectory().getPath() + "/SoundBoardX/Alarms/";
@@ -1458,10 +1434,8 @@ public class ToneManager {
             save.write(buffer);
             save.flush();
             save.close();
-        } catch (FileNotFoundException e) {
-            return false;
         } catch (IOException e) {
-            return false;
+            return;
         }
 
         itemView.getContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file:/" + path + filename)));
@@ -1486,19 +1460,15 @@ public class ToneManager {
         } catch (Throwable t) {
             System.err.println(t.getMessage());
         }
-        return true;
     }
 
-    private static boolean createDirIfNotExists(String path) {
-        boolean ret = true;
+    private static void createDirIfNotExists(String path) {
         File file = new File(Environment.getExternalStorageDirectory() + File.separator + path);
         if (!file.exists()) {
             if (!file.mkdirs()) {
                 Log.e(TAG, "Method: createDirIfNotExists(String path).");
-                ret = false;
             }
         }
-        return ret;
     }
 
     private void ringtoneSnack() {
@@ -1506,7 +1476,7 @@ public class ToneManager {
                 .make(itemView.getRootView().findViewById(R.id.coordinator), "Ringtone saved", Snackbar.LENGTH_LONG);
         View sbView = snackbar.getView();
         sbView.setBackgroundColor(ContextCompat.getColor(sbView.getContext(), R.color.colorPrimaryDark));
-        TextView snackTV = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+        TextView snackTV = sbView.findViewById(android.support.design.R.id.snackbar_text);
         new Utils().paintThis(snackTV);
         snackbar.show();
     }
@@ -1516,7 +1486,7 @@ public class ToneManager {
                 .make(itemView.getRootView().findViewById(R.id.coordinator), "Ringtone saved", Snackbar.LENGTH_LONG);
         View sbView = snackbar.getView();
         sbView.setBackgroundColor(ContextCompat.getColor(sbView.getContext(), R.color.colorPrimaryDark));
-        TextView snackTV = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+        TextView snackTV = sbView.findViewById(android.support.design.R.id.snackbar_text);
         new Utils().paintThis(snackTV);
         snackbar.show();
     }
@@ -1526,7 +1496,7 @@ public class ToneManager {
                 .make(itemView.getRootView().findViewById(R.id.coordinator), "Ringtone saved", Snackbar.LENGTH_LONG);
         View sbView = snackbar.getView();
         sbView.setBackgroundColor(ContextCompat.getColor(sbView.getContext(), R.color.colorPrimaryDark));
-        TextView snackTV = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+        TextView snackTV = sbView.findViewById(android.support.design.R.id.snackbar_text);
         new Utils().paintThis(snackTV);
         snackbar.show();
     }
@@ -1534,7 +1504,7 @@ public class ToneManager {
     /**
      *  Animation setter.
      */
-    public void makeItShine() {
+    void makeItShine() {
         switch (itemName) {
             default:
                 Log.e(TAG, "No animation is set for " + itemName);
@@ -1945,13 +1915,7 @@ public class ToneManager {
             case "Oompaloompa":
                 particle.setAnimationCows();
                 break;
-            case "Dr. Dre The Next Episode":
-                particle.setAnimationCows();
-                break;
             case "Wazzup":
-                particle.setAnimationCows();
-                break;
-            case "GTA":
                 particle.setAnimationCows();
                 break;
 //                    case "":
