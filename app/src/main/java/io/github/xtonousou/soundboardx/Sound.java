@@ -6,13 +6,13 @@ class Sound {
     private final int resourceId;
     private boolean favorite;
 
-    public Sound(String name, int resourceId) {
+    Sound(String name, int resourceId) {
         this.name = name;
         this.resourceId = resourceId;
         favorite = SharedPrefs.getInstance().isSoundFavorited(name);
     }
 
-    public int getResourceId() {
+    int getResourceId() {
         return resourceId;
     }
 
@@ -24,11 +24,11 @@ class Sound {
         this.name = name;
     }
 
-    public boolean getFavorite() {
+    boolean getFavorite() {
         return favorite;
     }
 
-    public void setFavorite(boolean favorite) {
+    void setFavorite(boolean favorite) {
         this.favorite = favorite;
         SharedPrefs.getInstance().setSoundFavorited(name, favorite);
     }

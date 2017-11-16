@@ -130,8 +130,6 @@
         <item>Oompaloompa</item>
         <item>Two and a Half Men</item>
         <item>Wazzup</item>
-        <item>Dr. Dre The Next Episode</item>
-        <item>GTA</item>
         <item>Τσικλίδης: Λες και είναι τσόντα!</item>
         <item>Πετρόπουλος: Action!</item>
         <item>Πετράκης: Fuck her right in the pussy</item>>
@@ -270,8 +268,6 @@
         <item>@raw/movies_oompaloompa</item>
         <item>@raw/movies_twohalfmen</item>
         <item>@raw/movies_wazzup</item>
-        <item>@raw/thug_drdre_snoop</item>
-        <item>@raw/thug_gta</item>
         <item>@raw/personal_tsonta</item>
         <item>@raw/personal_nikos</item>
         <item>@raw/personal_fuckherrightinthepussy</item>
@@ -540,17 +536,6 @@
         <item>@raw/movies_oompaloompa</item>
         <item>@raw/movies_twohalfmen</item>
         <item>@raw/movies_wazzup</item>
-    </integer-array>
-
-    <!-- Thug Life Sounds -->
-    <string-array name="thugSounds">
-        <item>Dr. Dre The Next Episode</item>
-        <item>GTA</item>
-    </string-array>
-
-    <integer-array name="thugSoundsIDs">
-        <item>@raw/thug_drdre_snoop</item>
-        <item>@raw/thug_gta</item>
     </integer-array>
 
     <!-- NSFW Sounds -->

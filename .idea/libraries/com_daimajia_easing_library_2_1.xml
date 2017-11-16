@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.daimajia.easing:library-2.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-2.1.aar/015ca03c47703e10104c334c86c3e3c2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-2.1.aar/015ca03c47703e10104c334c86c3e3c2/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.daimajia.easing/library/2.1/6eedef5e76f943544cd0ea7341cd5576a7d79127/library-2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

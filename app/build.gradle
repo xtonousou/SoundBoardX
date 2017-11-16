@@ -1,15 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.1"
     defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 2
+        versionName "Andromeda"
         applicationId "io.github.xtonousou.soundboardx"
-        minSdkVersion 14
-        targetSdkVersion 26
-        versionCode 1
-        versionName "True Runner v.1.0.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -17,31 +16,33 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dexOptions {}
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile('com.mikepenz:materialdrawer:5.9.5@aar') {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.scalified:fab:1.1.3'
+    implementation "com.android.support:appcompat-v7:27.0.1"
+    implementation "com.android.support:cardview-v7:27.0.1"
+    implementation "com.android.support:recyclerview-v7:27.0.1"
+    implementation "com.android.support:support-annotations:27.0.1"
+    implementation "com.android.support:design:27.0.1"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'petrov.kristiyan:colorpicker-library:1.1.7'
+    implementation 'com.plattysoft.leonids:LeonidsLib:1.3.2'
+    implementation 'com.romainpiel.shimmer:library:1.4.0@aar'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.daimajia.easing:library:2.1@aar'
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
+    implementation 'com.mikepenz:iconics-core:2.9.5@aar'
+    implementation 'com.mikepenz:google-material-typeface:3.0.1.2.original@aar'
+    implementation 'com.mikepenz:fontawesome-typeface:4.7.0.2@aar'
+    implementation('com.mikepenz:materialdrawer:6.0.1@aar') {
         transitive = true
     }
-    compile 'org.greenrobot:eventbus:3.0.0'
-    compile 'com.android.support:appcompat-v7:26.1.0'
-    compile 'com.android.support:cardview-v7:26.1.0'
-    compile 'com.android.support:recyclerview-v7:26.1.0'
-    compile 'com.android.support:design:26.1.0'
-    compile 'com.plattysoft.leonids:LeonidsLib:1.3.2'
-    compile 'com.romainpiel.shimmer:library:1.4.0@aar'
-    compile 'com.nineoldandroids:library:2.4.0'
-    compile 'com.daimajia.easing:library:2.1@aar'
-    compile 'com.daimajia.androidanimations:library:2.3@aar'
-    compile 'pub.devrel:easypermissions:1.0.1'
-    compile 'petrov.kristiyan:colorpicker-library:1.1.7'
-    compile 'com.mikepenz:iconics-core:2.9.3@aar'
-    compile 'com.mikepenz:google-material-typeface:3.0.1.1.original@aar'
-    compile 'com.mikepenz:fontawesome-typeface:4.7.0.1@aar'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
