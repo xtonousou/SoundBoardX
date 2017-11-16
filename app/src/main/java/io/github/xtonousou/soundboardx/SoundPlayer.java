@@ -16,7 +16,7 @@ class SoundPlayer {
     private final Context mContext;
     private static final String TAG = "SoundPlayer";
 
-    public SoundPlayer(Context context) {
+    SoundPlayer(Context context) {
         EventBus.getDefault().register(this);
         this.mContext = context.getApplicationContext();
     }
@@ -28,7 +28,7 @@ class SoundPlayer {
     }
 
     @Subscribe
-    public void playSound(Sound sound) {
+    private void playSound(Sound sound) {
         int resource = sound.getResourceId();
         if (mPlayer != null) {
             if (mPlayer.isPlaying())
@@ -47,29 +47,21 @@ class SoundPlayer {
         } else {
             mPlayer = MediaPlayer.create(mContext, resource);
         }
-        mPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mp) {
-                if (mp == mPlayer) {
-                    mPlayer.start();
-                }
+        mPlayer.setOnPreparedListener(mp -> {
+            if (mp == mPlayer) {
+                mPlayer.start();
             }
         });
-        mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                EventBus.getDefault().post("Done");
-            }
-        });
+        mPlayer.setOnCompletionListener(mp -> EventBus.getDefault().post("Done"));
     }
 
     @Subscribe
-    public int getDuration() {
+    private int getDuration() {
         return mPlayer.getDuration();
     }
 
     @Subscribe
-    public void release() {
+    void release() {
         EventBus.getDefault().unregister(this);
         if (mPlayer != null) {
             mPlayer.release();
