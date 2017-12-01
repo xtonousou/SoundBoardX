@@ -86,25 +86,16 @@
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/shaders" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/assets" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/blame" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/build-info" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/builds" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/check-manifest" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-classes" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-runtime-classes" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-verifier" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-resources" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-support" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javaPrecompile" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/prebuild" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/reload-dex" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/rs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/shaders" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/split-apk" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/splits-support" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/tmp" />
@@ -114,42 +105,41 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 27 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="com.android.support:animated-vector-drawable-27.0.1" level="project" />
-    <orderEntry type="library" name="com.android.support:appcompat-v7-27.0.1" level="project" />
+    <orderEntry type="library" name="com.android.support:animated-vector-drawable-27.0.2" level="project" />
     <orderEntry type="library" name="com.plattysoft.leonids:LeonidsLib:1.3.2@jar" level="project" />
-    <orderEntry type="library" name="com.scalified:uitools-1.1.2" level="project" />
     <orderEntry type="library" name="com.mikepenz:materialdrawer-6.0.1" level="project" />
-    <orderEntry type="library" name="com.android.support:design-27.0.1" level="project" />
-    <orderEntry type="library" name="org.slf4j:slf4j-api:1.7.9@jar" level="project" />
-    <orderEntry type="library" name="android.arch.lifecycle:common:1.0.0@jar" level="project" />
-    <orderEntry type="library" name="com.android.support:transition-27.0.1" level="project" />
-    <orderEntry type="library" name="com.android.support:support-core-utils-27.0.1" level="project" />
-    <orderEntry type="library" name="android.arch.lifecycle:runtime-1.0.0" level="project" />
-    <orderEntry type="library" name="com.android.support:recyclerview-v7-27.0.1" level="project" />
+    <orderEntry type="library" name="com.android.support:appcompat-v7-27.0.2" level="project" />
+    <orderEntry type="library" name="com.android.support:support-annotations:27.0.2@jar" level="project" />
+    <orderEntry type="library" name="com.android.support:design-27.0.2" level="project" />
+    <orderEntry type="library" name="com.android.support:transition-27.0.2" level="project" />
+    <orderEntry type="library" name="com.github.yalantis:jellytoolbar-v1.0" level="project" />
     <orderEntry type="library" name="com.nineoldandroids:library:2.4.0@jar" level="project" />
-    <orderEntry type="library" name="com.scalified:viewmover-1.1.1" level="project" />
+    <orderEntry type="library" name="com.android.support:recyclerview-v7-27.0.2" level="project" />
     <orderEntry type="library" name="petrov.kristiyan:colorpicker-library-1.1.7" level="project" />
-    <orderEntry type="library" name="com.scalified:fab-1.1.3" level="project" />
     <orderEntry type="library" name="com.mikepenz:materialize-1.1.2" level="project" />
-    <orderEntry type="library" name="com.android.support:support-annotations:27.0.1@jar" level="project" />
     <orderEntry type="library" name="com.mikepenz:google-material-typeface-3.0.1.2.original" level="project" />
-    <orderEntry type="library" name="com.romainpiel.shimmer:library-1.4.0" level="project" />
     <orderEntry type="library" name="com.android.support.constraint:constraint-layout-solver:1.0.2@jar" level="project" />
     <orderEntry type="library" name="com.android.support.constraint:constraint-layout-1.0.2" level="project" />
     <orderEntry type="library" name="com.mikepenz:fastadapter-extensions-expandable-3.0.0" level="project" />
-    <orderEntry type="library" name="com.android.support:support-vector-drawable-27.0.1" level="project" />
-    <orderEntry type="library" name="com.android.support:cardview-v7-27.0.1" level="project" />
+    <orderEntry type="library" name="android.arch.lifecycle:runtime-1.0.3" level="project" />
+    <orderEntry type="library" name="com.android.support:support-vector-drawable-27.0.2" level="project" />
+    <orderEntry type="library" name="com.android.support:cardview-v7-27.0.2" level="project" />
+    <orderEntry type="library" name="android.arch.lifecycle:common:1.0.3@jar" level="project" />
     <orderEntry type="library" name="com.daimajia.easing:library-2.1" level="project" />
     <orderEntry type="library" name="android.arch.core:common:1.0.0@jar" level="project" />
-    <orderEntry type="library" name="com.android.support:support-compat-27.0.1" level="project" />
-    <orderEntry type="library" name="com.android.support:support-core-ui-27.0.1" level="project" />
+    <orderEntry type="library" name="com.android.support:support-core-ui-27.0.2" level="project" />
+    <orderEntry type="library" name="com.android.support:support-compat-27.0.2" level="project" />
     <orderEntry type="library" name="com.mikepenz:iconics-core-2.9.5" level="project" />
+    <orderEntry type="library" name="org.jetbrains.kotlin:kotlin-runtime:1.0.4@jar" level="project" />
     <orderEntry type="library" name="com.mikepenz:fontawesome-typeface-4.7.0.2" level="project" />
-    <orderEntry type="library" name="com.android.support:support-media-compat-27.0.1" level="project" />
+    <orderEntry type="library" name="com.android.support:support-core-utils-27.0.2" level="project" />
     <orderEntry type="library" name="com.daimajia.androidanimations:library-2.3" level="project" />
-    <orderEntry type="library" name="com.android.support:support-fragment-27.0.1" level="project" />
+    <orderEntry type="library" name="com.android.support:support-fragment-27.0.2" level="project" />
+    <orderEntry type="library" name="com.android.support:support-media-compat-27.0.2" level="project" />
     <orderEntry type="library" name="org.greenrobot:eventbus:3.1.1@jar" level="project" />
+    <orderEntry type="library" name="org.jetbrains.kotlin:kotlin-stdlib:1.0.4@jar" level="project" />
     <orderEntry type="library" name="com.mikepenz:fastadapter-3.0.1" level="project" />
-    <orderEntry type="library" name="com.android.support:support-v4-27.0.1" level="project" />
+    <orderEntry type="library" name="com.android.support:support-v4-27.0.2" level="project" />
+    <orderEntry type="library" name="com.github.clans:fab-1.6.4" level="project" />
   </component>
 </module>
