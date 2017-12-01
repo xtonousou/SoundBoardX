@@ -40,7 +40,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
     private boolean moviesSoundsOnly   = false;
     private boolean nsfwSoundsOnly     = false;
     private boolean personalSoundsOnly = false;
-    private boolean thugSoundsOnly     = false;
 
     SoundAdapter(ArrayList<Sound> soundArray, boolean withAnimations) {
         this.sounds          = soundArray;

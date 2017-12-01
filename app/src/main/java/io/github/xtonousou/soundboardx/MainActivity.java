@@ -2,11 +2,8 @@ package io.github.xtonousou.soundboardx;
 
 import android.app.SearchManager;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +17,8 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CompoundButton;
 
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -29,8 +28,6 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondarySwitchDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
-import com.romainpiel.shimmer.Shimmer;
-import com.romainpiel.shimmer.ShimmerTextView;
 
 import petrov.kristiyan.colorpicker.ColorPicker;
 
@@ -57,20 +54,25 @@ public class MainActivity extends AppCompatActivity {
         mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
 
-        //noinspection ConstantConditions
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-
         SharedPrefs.init(getPreferences(Context.MODE_PRIVATE));
 
         mInputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
         mView = findViewById(R.id.grid_view);
         mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                 .getInteger(R.integer.num_cols),
                 StaggeredGridLayoutManager.VERTICAL));
+
         mView.setAdapter(new SoundAdapter(SoundStore.getAllSounds(this), withAnimations));
         ((SoundAdapter) mView.getAdapter()).showAllSounds(getApplicationContext());
 
-        beautifyToolbar();
+        mView.addItemDecoration(new BottomOffsetDecoration(225));
+
+        //noinspection ConstantConditions
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(R.string.app_name);
+
         initFAB();
         initDrawer(savedInstanceState);
 
@@ -114,34 +116,24 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
     }
 
-    private void beautifyToolbar() {
-        final ShimmerTextView shimmerTextView = findViewById(R.id.shimmerTitle);
-        final Typeface font = Typeface.createFromAsset(shimmerTextView.getContext().getAssets(),
-                "fonts/CaviarDreams.ttf");
-        shimmerTextView.setTypeface(font);
-        new Utils().paintThis(shimmerTextView);
-        Shimmer shimmer = new Shimmer();
-        if (new Utils().isGreenMode(MainActivity.this)) {
-            shimmer.cancel();
-        } else {
-            if (shimmer.isAnimating()) {
-                shimmer.cancel();
-            } else {
-                shimmer = new Shimmer();
-                shimmer.start(shimmerTextView);
-                shimmer.setDuration(3500)
-                        .setStartDelay(1000)
-                        .setDirection(Shimmer.ANIMATION_DIRECTION_LTR);
-            }
-        }
-    }
-
     public void initDrawer(Bundle instance) {
+        int drawerSize;
+        if (getApplicationContext().getResources().getConfiguration().orientation != 1) {
+            drawerSize = (new Utils().getScreenWidth(this)) - 850;
+        } else {
+            drawerSize = (new Utils().getScreenWidth(this)) - 250;
+        }
         mDrawer = new DrawerBuilder()
-                .withActivity(MainActivity.this)
+                .withActivity(this)
+                .withRootView(R.id.drawer_layout)
+                .withToolbar(mToolbar)
+                .withTranslucentStatusBar(true)
+                .withTranslucentNavigationBar(true)
                 .withDisplayBelowStatusBar(true)
+                .withActionBarDrawerToggle(true)
+                .withActionBarDrawerToggleAnimated(true)
                 .withScrollToTopAfterClick(true)
-                .withDrawerWidthPx((new Utils().getScreenWidth(MainActivity.this)) - 225)
+                .withDrawerWidthPx(drawerSize)
                 .withSliderBackgroundColorRes(R.color.primary_dark)
                 .addDrawerItems(
                         new SectionDrawerItem().withName(R.string.categories)
@@ -326,7 +318,7 @@ public class MainActivity extends AppCompatActivity {
 
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,
                 mDrawer.getDrawerLayout(),
-                mToolbar, R.string.drawer_open, R.string.drawer_close) {
+                mToolbar, 0, 0) {
 
             @Override
             public void onDrawerClosed(View v) {
@@ -386,13 +378,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void initFAB() {
         FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setColorNormal(R.color.colorPrimaryDark);
+        fab.setColorRipple(SharedPrefs.getInstance().getSelectedColor());
 
-        //fab.setAlpha(0.8f);
         new Utils().paintThis(fab);
 
         fab.setOnClickListener(view -> {
             soundPlayer.release();
-            soundPlayer = new SoundPlayer(MainActivity.this);
+            soundPlayer = new SoundPlayer(this);
         });
     }
 

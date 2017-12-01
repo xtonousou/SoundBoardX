@@ -6,14 +6,13 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.PowerManager;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.SearchView;
 import android.util.DisplayMetrics;
 import android.widget.TextView;
 
-import com.romainpiel.shimmer.ShimmerTextView;
-
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 class Utils {
 
     private boolean  isPainted = false;
@@ -34,16 +33,7 @@ class Utils {
             textView.setTextColor(SharedPrefs.getInstance().getSelectedColor());
         } else
             textView.setTextColor(ContextCompat.getColor(textView.getContext(),
-                    R.color.lavaRed));
-    }
-
-    void paintThis(ShimmerTextView shimmerTextViewtextView) {
-        if (!isPainted) {
-            isPainted = true;
-            shimmerTextViewtextView.setTextColor(SharedPrefs.getInstance().getSelectedColor());
-        } else
-            shimmerTextViewtextView.setTextColor(ContextCompat.getColor(shimmerTextViewtextView.getContext(),
-                    R.color.lavaRed));
+                    R.color.color_b71c1c));
     }
 
     void paintThis(SearchView.SearchAutoComplete searchViewText) {
@@ -52,7 +42,7 @@ class Utils {
             searchViewText.setTextColor(SharedPrefs.getInstance().getSelectedColor());
         } else
             searchViewText.setTextColor(ContextCompat.getColor(searchViewText.getContext(),
-                    R.color.lavaRed));
+                    R.color.color_b71c1c));
     }
 
     void paintThis(SoundAdapter.ViewHolder holder) {
@@ -61,17 +51,25 @@ class Utils {
             holder.itemView.setBackgroundColor(SharedPrefs.getInstance().getSelectedColor());
         } else
             holder.itemView.setBackgroundColor(ContextCompat.getColor(holder.itemView.getContext(),
-                    R.color.lavaRed));
+                    R.color.color_b71c1c));
     }
 
     void paintThis(FloatingActionButton fab) {
         if (!isPainted) {
             isPainted = true;
-            fab.setRippleColor(SharedPrefs.getInstance().getSelectedColor());
+            fab.setColorRipple(SharedPrefs.getInstance().getSelectedColor());
         } else
-            fab.setRippleColor(ContextCompat.getColor(fab.getContext(),
-                    R.color.lavaRed));
+            fab.setColorRipple(R.color.color_b71c1c);
     }
+
+    void paintThis(FloatingActionMenu fab_menu) {
+        if (!isPainted) {
+            isPainted = true;
+            fab_menu.setMenuButtonColorRipple(SharedPrefs.getInstance().getSelectedColor());
+        } else
+            fab_menu.setMenuButtonColorRipple(R.color.color_b71c1c);
+    }
+
 
     void initPaypal(Activity activity) {
         String url =
