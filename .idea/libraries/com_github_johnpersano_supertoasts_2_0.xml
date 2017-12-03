@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.github.johnpersano:supertoasts-2.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/supertoasts-2.0.aar/c7abb47722bf20b5e6cfabb9600b8431/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/supertoasts-2.0.aar/c7abb47722bf20b5e6cfabb9600b8431/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.johnpersano/supertoasts/2.0/eb075df2f4387979ea62cbfe563fa14f6c868f7b/supertoasts-2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
