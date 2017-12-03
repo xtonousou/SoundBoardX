@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">SoundBoardX</string>
+    <string name="package_name" translatable="false">io.github.xtonousou.soundboardx</string>
     <string name="fav_desc">Icon with full star</string>
     <string name="not_fav_desc">Icon with empty star</string>
     <string name="search">Search</string>
-    <!-- Support Activity -->
-    <!-- Navigation Drawer -->
+
     <string name="categories">Categories</string>
     <string name="animals">Animals</string>
     <string name="movies">Movies</string>
     <string name="funny">Funny</string>
-    <string name="nsfw">NSFW</string>
-    <string name="personal">Personal</string>
     <string name="games">Games</string>
     <string name="all">All</string>
     <string name="options">Options</string>
     <string name="particles">Particles</string>
     <string name="favorites">Favorites</string>
+    <string name="misc">Misc</string>
     <string name="color">Color Picker</string>
-    <!-- Context Menu -->
+
     <string name="header">Select action</string>
     <string name="ringtone">Set as ringtone</string>
     <string name="notification">Set as notification</string>
     <string name="alarm">Set as alarm</string>
-    <!-- PERMISSIONS -->
-    <string name="misc">Misc</string>
 </resources>
