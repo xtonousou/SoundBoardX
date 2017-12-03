@@ -5,10 +5,11 @@ import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.util.Log;
 
-import java.io.IOException;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.io.IOException;
 
 class SoundPlayer {
 
@@ -21,13 +22,12 @@ class SoundPlayer {
         this.mContext = context.getApplicationContext();
     }
 
-    @Subscribe
-    public int onEvent(Sound sound) {
+	@Subscribe(threadMode = ThreadMode.POSTING)
+    void onEvent(Sound sound) {
         playSound(sound);
-        return getDuration();
     }
 
-    @Subscribe
+	@Subscribe(threadMode = ThreadMode.BACKGROUND)
     private void playSound(Sound sound) {
         int resource = sound.getResourceId();
         if (mPlayer != null) {
@@ -55,14 +55,9 @@ class SoundPlayer {
         mPlayer.setOnCompletionListener(mp -> EventBus.getDefault().post("Done"));
     }
 
-    @Subscribe
-    private int getDuration() {
-        return mPlayer.getDuration();
-    }
-
-    @Subscribe
+	@Subscribe(threadMode = ThreadMode.POSTING)
     void release() {
-        EventBus.getDefault().unregister(this);
+		EventBus.getDefault().unregister(this);
         if (mPlayer != null) {
             mPlayer.release();
             mPlayer = null;
