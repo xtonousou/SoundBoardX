@@ -26,6 +26,14 @@ class SharedPrefs {
         return prefs.getBoolean(soundName, false);
     }
 
+    void setSelectedList(String soundLIst) {
+        prefs.edit().putString("list", soundLIst).apply();
+    }
+
+    String getSelectedList() {
+        return prefs.getString("list", "allSounds");
+    }
+
     void setSelectedColor(int color) {
         prefs.edit().putInt("color", color).apply();
     }
@@ -35,10 +43,10 @@ class SharedPrefs {
     }
 
     boolean isFirstTime() {
-        return prefs.getBoolean("virgin", true);
+        return prefs.getBoolean("newbie", true);
     }
 
-    void setNotFirstTime(boolean shouldNotFirstTime) {
-        prefs.edit().putBoolean("virgin", shouldNotFirstTime).apply();
+    void setFirstTime(boolean firstTime) {
+        prefs.edit().putBoolean("newbie", firstTime).apply();
     }
 }

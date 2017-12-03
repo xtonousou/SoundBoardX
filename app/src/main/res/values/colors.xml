@@ -2,7 +2,8 @@
 <resources>
     <!-- Android -->
     <color name="colorPrimary">#424242</color>
-    <color name="colorPrimaryDark">#1a1a1a</color>
+    <color name="colorPrimaryDark">#292929</color>
+    <color name="colorPrimaryDarker">#1a1a1a</color>
     <color name="colorAccent">#cfd8dc</color>
 
     <!-- Rainbow -->
