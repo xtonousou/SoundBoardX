@@ -15,28 +15,20 @@
         <item>Bearcum!!!</item>
         <item>What is going on here?</item>
         <item>Black kid on fire</item>
-        <item>Σα τον Κάτμαν μ\' έκανες!</item>
-        <item>Hmm, it\'s dick o\'clock</item>
         <item>Russian father</item>
         <item>Fichtl\'s Lied</item>
-        <item>Buffed Blowjob</item>
         <item>Hey that\' s pretty good!</item>
         <item>I\' m your father!</item>
-        <item>Give it to me!</item>
-        <item>Κοτσολάρη: Πίπα</item>>
         <item>Fun</item>
         <item>Kazoo</item>
         <item>Immigrants cause cancer</item>
         <item>Maybe we could invite some women?</item>
         <item>Trap Theme</item>
-        <item>Γαμώ τα καντήλια μου όλα!</item>
         <item>Weird laugh</item>
-        <item>Thank you…</item>
         <item>Make your dreams come true!</item>
         <item>LOTR MLG</item>
         <item>Come here my pet Russian…</item>
         <item>This is my masterpiece!</item>
-        <item>Do you want my milk?</item>
         <item>My mooscles are getting bigger!</item>
         <item>I\'m growing stronker!</item>
         <item>Yiss</item>
@@ -44,15 +36,12 @@
         <item>Nigga is cumming…</item>
         <item>Sup nigga, wanna talk some shit?</item>
         <item>Surprise motherfucker!</item>
-        <item>Shaved pussy…</item>
         <item>Seven vaginias…</item>
         <item>Oh my!</item>
         <item>Oh Yeaaaah!</item>
-        <item>Penis, penis and penis</item>
         <item>Excuse me, I have some pussyhair on me!</item>
         <item>Retardation Theme</item>
         <item>Cyka Blyat\'s Middlefinger</item>
-        <item>I\'m the scatman…</item>
         <item>Why don\'t you show us that fine pussy?</item>
         <item>Shutdown, glitched…</item>
         <item>What manner of sissyness, is this?</item>
@@ -130,14 +119,6 @@
         <item>Oompaloompa</item>
         <item>Two and a Half Men</item>
         <item>Wazzup</item>
-        <item>Τσικλίδης: Λες και είναι τσόντα!</item>
-        <item>Πετρόπουλος: Action!</item>
-        <item>Πετράκης: Fuck her right in the pussy</item>>
-        <item>xT: Ρε καριόλη;</item>
-        <item>xT: Γαμώ τον Χριστό σου!</item>
-        <item>Κιάμος: Ε!</item>
-        <item>Κιάμος: Χατζάρα</item>
-        <item>Κιάμος: Τί κοιτάς ρε μαλάκα</item>
     </string-array>
 
     <integer-array name="allSoundsIDs">
@@ -153,28 +134,20 @@
         <item>@raw/funny_bearcum</item>
         <item>@raw/funny_bekfast</item>
         <item>@raw/funny_blackkidonfire</item>
-        <item>@raw/personal_catman</item>
-        <item>@raw/nsfw_dickoclock</item>
         <item>@raw/funny_fathercatishungry</item>
         <item>@raw/funny_fichtlslied</item>
-        <item>@raw/nsfw_fuckyeah</item>
         <item>@raw/funny_prettygood</item>
         <item>@raw/movies_imyourfather</item>
-        <item>@raw/nsfw_giveittome</item>
-        <item>@raw/personal_eleni</item>
         <item>@raw/funny_fun</item>
         <item>@raw/funny_kazoo</item>
         <item>@raw/funny_immigrants</item>
         <item>@raw/funny_invitewomen</item>
         <item>@raw/funny_itsatrap</item>
-        <item>@raw/personal_kantilia</item>
         <item>@raw/funny_laugh</item>
-        <item>@raw/nsfw_thankyou</item>
         <item>@raw/funny_lol</item>
         <item>@raw/movies_lotr</item>
         <item>@raw/funny_petrussian</item>
         <item>@raw/funny_masterpiece</item>
-        <item>@raw/nsfw_milkinyourmot</item>
         <item>@raw/funny_mooscles</item>
         <item>@raw/funny_stronker</item>
         <item>@raw/funny_yiiisss</item>
@@ -182,15 +155,12 @@
         <item>@raw/funny_niggacum</item>
         <item>@raw/funny_niggers</item>
         <item>@raw/funny_surprise</item>
-        <item>@raw/nsfw_shaved</item>
         <item>@raw/funny_sevenvaginas</item>
         <item>@raw/funny_ohmy</item>
         <item>@raw/funny_ohyeaah</item>
-        <item>@raw/nsfw_penis</item>
         <item>@raw/funny_pussyhair</item>
         <item>@raw/funny_retardation</item>
         <item>@raw/funny_russianmiddlefinger</item>
-        <item>@raw/nsfw_scatman</item>
         <item>@raw/funny_showthepussy</item>
         <item>@raw/funny_shutdownglitched</item>
         <item>@raw/funny_sissiness</item>
@@ -268,14 +238,6 @@
         <item>@raw/movies_oompaloompa</item>
         <item>@raw/movies_twohalfmen</item>
         <item>@raw/movies_wazzup</item>
-        <item>@raw/personal_tsonta</item>
-        <item>@raw/personal_nikos</item>
-        <item>@raw/personal_fuckherrightinthepussy</item>
-        <item>@raw/personal_karioli</item>
-        <item>@raw/personal_gamwtoxristosou</item>
-        <item>@raw/personal_e</item>
-        <item>@raw/personal_tigelasre</item>
-        <item>@raw/personal_tikoitasremlk</item>
     </integer-array>
 
     <!-- Animal Sounds -->
@@ -536,57 +498,5 @@
         <item>@raw/movies_oompaloompa</item>
         <item>@raw/movies_twohalfmen</item>
         <item>@raw/movies_wazzup</item>
-    </integer-array>
-
-    <!-- NSFW Sounds -->
-    <string-array name="nsfwSounds">
-        <item>Hmm, it\'s dick o\'clock</item>
-        <item>Buffed Blowjob</item>
-        <item>Thank you…</item>
-        <item>Penis, penis and penis</item>
-        <item>Do you want my milk?</item>
-        <item>Give it to me!</item>
-        <item>Shaved pussy…</item>
-        <item>I\'m the scatman…</item>
-    </string-array>
-
-    <integer-array name="nsfwSoundsIDs">
-        <item>@raw/nsfw_dickoclock</item>
-        <item>@raw/nsfw_fuckyeah</item>
-        <item>@raw/nsfw_thankyou</item>
-        <item>@raw/nsfw_penis</item>
-        <item>@raw/nsfw_milkinyourmot</item>
-        <item>@raw/nsfw_giveittome</item>
-        <item>@raw/nsfw_shaved</item>
-        <item>@raw/nsfw_scatman</item>
-    </integer-array>
-
-    <!-- Personal Sounds -->
-    <string-array name="personalSounds">
-        <item>Γαμώ τα καντήλια μου όλα!</item>
-        <item>Σα τον Κάτμαν μ\' έκανες!</item>
-        <item>Τσικλίδης: Λες και είναι τσόντα!</item>
-        <item>Πετρόπουλος: Action!</item>
-        <item>Κοτσολάρη: Πίπα</item>>
-        <item>Πετράκης: Fuck her right in the pussy</item>>
-        <item>xT: Ρε καριόλη;</item>
-        <item>xT: Γαμώ τον Χριστό σου!</item>
-        <item>Κιάμος: Ε!</item>
-        <item>Κιάμος: Χατζάρα</item>
-        <item>Κιάμος: Τί κοιτάς ρε μαλάκα</item>
-    </string-array>
-
-    <integer-array name="personalSoundsIDs">
-        <item>@raw/personal_kantilia</item>
-        <item>@raw/personal_catman</item>
-        <item>@raw/personal_tsonta</item>
-        <item>@raw/personal_nikos</item>
-        <item>@raw/personal_eleni</item>
-        <item>@raw/personal_fuckherrightinthepussy</item>
-        <item>@raw/personal_karioli</item>
-        <item>@raw/personal_gamwtoxristosou</item>
-        <item>@raw/personal_e</item>
-        <item>@raw/personal_tigelasre</item>
-        <item>@raw/personal_tikoitasremlk</item>
     </integer-array>
 </resources>

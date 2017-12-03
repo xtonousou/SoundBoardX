@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-<style name="AppTheme" parent="MaterialDrawerTheme.TranslucentStatus">
+<style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
     <!-- ...and here we are setting appcompat’s color theme attrs -->
     <item name="colorPrimary">@color/colorAccent</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -18,9 +18,6 @@
     <item name="material_drawer_selected">@color/material_drawer_dark_selected</item>
     <item name="material_drawer_selected_text">#F1433C</item>
     <item name="material_drawer_header_selection_text">@color/material_drawer_dark_primary_text</item>
-
-    <!-- CAB :D -->
-    <item name="windowActionModeOverlay">true</item>
 </style>
 
 </resources>
