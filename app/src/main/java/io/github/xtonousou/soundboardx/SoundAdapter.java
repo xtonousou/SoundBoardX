@@ -18,11 +18,11 @@ import android.widget.TextView;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.iconics.IconicsDrawable;
 
-import java.text.Normalizer;
-import java.util.ArrayList;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+
+import java.text.Normalizer;
+import java.util.ArrayList;
 
 public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
         implements Filterable {
@@ -34,7 +34,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
     private boolean animationsShown;
     private boolean favoritesOnly      = false;
     private boolean allSoundsOnly      = false;
-    private boolean animalsSoundsOnly  = false;
     private boolean funnySoundsOnly    = false;
     private boolean gamesSoundsOnly    = false;
     private boolean moviesSoundsOnly   = false;
@@ -70,7 +69,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
     void showAllSounds(Context context) {
         favoritesOnly = false;
         allSoundsOnly = true;
-        animalsSoundsOnly = false;
         funnySoundsOnly = false;
         gamesSoundsOnly = false;
         moviesSoundsOnly = false;
@@ -79,22 +77,9 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
         notifyDataSetChanged();
     }
 
-    void showAnimalsSounds(Context context) {
-        favoritesOnly = false;
-        allSoundsOnly = false;
-        animalsSoundsOnly = true;
-        funnySoundsOnly = false;
-        gamesSoundsOnly = false;
-        moviesSoundsOnly = false;
-
-        sounds = SoundStore.getAnimalsSounds(context);
-        notifyDataSetChanged();
-    }
-
     void showFunnySounds(Context context) {
         favoritesOnly = false;
         allSoundsOnly = false;
-        animalsSoundsOnly = false;
         funnySoundsOnly = true;
         gamesSoundsOnly = false;
         moviesSoundsOnly = false;
@@ -106,7 +91,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
     void showGamesSounds(Context context) {
         favoritesOnly = false;
         allSoundsOnly = false;
-        animalsSoundsOnly = false;
         funnySoundsOnly = false;
         gamesSoundsOnly = true;
         moviesSoundsOnly = false;
@@ -118,7 +102,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
     void showMoviesSounds(Context context) {
         favoritesOnly = false;
         allSoundsOnly = false;
-        animalsSoundsOnly = false;
         funnySoundsOnly = false;
         gamesSoundsOnly = false;
         moviesSoundsOnly = true;
@@ -129,24 +112,21 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 
     /**
      *  returns  0 if allSoundsOnly,
-     *  returns  1 if animalsSoundsOnly,
-     *  returns  2 if funnySoundsOnly,
-     *  returns  3 if gamesSoundsOnly,
-     *  returns  4 if moviesSoundsOnly,
+     *  returns  1 if funnySoundsOnly,
+     *  returns  2 if gamesSoundsOnly,
+     *  returns  3 if moviesSoundsOnly,
      *  returns -1 if unexpected occurrence.
      */
     byte getCategory() {
         byte category;
         if (allSoundsOnly) {
             category = 0;
-        } else if (animalsSoundsOnly) {
-            category =  1;
         } else if (funnySoundsOnly) {
-            category =  2;
+            category =  1;
         } else if (gamesSoundsOnly) {
-            category =  3;
+            category =  2;
         } else if (moviesSoundsOnly) {
-            category =  4;
+            category =  3;
         } else {
             category = -1;
         }
@@ -165,7 +145,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
             favButton = v.findViewById(R.id.fav_button);
 
             Typeface font = Typeface.createFromAsset(itemView.getContext().getAssets(),
-                    "fonts/Roboto-Regular.ttf");
+                    "fonts/roboto.ttf");
             title.setTypeface(font);
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -327,7 +307,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
         return Normalizer.normalize(string, Normalizer.Form.NFD)
                 .replaceAll("\\p{M}", "")
                 .replaceAll(" ", "")
-                .replaceAll("\'", "")
-                .replaceAll("ς", "σ");
+                .replaceAll("\'", "");
     }
 }

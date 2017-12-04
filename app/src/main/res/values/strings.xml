@@ -22,4 +22,9 @@
     <string name="ringtone">Set as ringtone</string>
     <string name="notification">Set as notification</string>
     <string name="alarm">Set as alarm</string>
+	<string name="lenny_face">( ͡ʘ╭͜ʖ╮͡ʘ)</string>
+	<string name="hex_code">Current HEX code:</string>
+    <string name="question_mark">\?</string>
+    <string name="can_you_stop">Can you stop doing that\?</string>
+    <string name="are_you_sure">Are you sure about that\?</string>
 </resources>

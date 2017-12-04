@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 abstract class SoundStore {
@@ -26,27 +25,6 @@ abstract class SoundStore {
         allSoundsIDs.recycle();
 
         SharedPrefs.getInstance().setSelectedList("allSounds");
-
-        return sounds;
-    }
-
-    static ArrayList<Sound> getAnimalsSounds(Context context) {
-        Resources res = context.getApplicationContext().getResources();
-
-        TypedArray animalSounds = res.obtainTypedArray(R.array.animalSounds);
-        TypedArray animalSoundsIDs = res.obtainTypedArray(R.array.animalSoundsIDs);
-
-        ArrayList<Sound> sounds = new ArrayList<>();
-
-        final int animalSounds_length = animalSounds.length();
-        for (int i = 0; i < animalSounds_length; i++) {
-            sounds.add(new Sound(animalSounds.getString(i), animalSoundsIDs.getResourceId(i, -1)));
-        }
-
-        animalSounds.recycle();
-        animalSoundsIDs.recycle();
-
-        SharedPrefs.getInstance().setSelectedList("animalSounds");
 
         return sounds;
     }
