@@ -1,0 +1,27 @@
+#Internal package file, do not edit.
+#Tue Dec 05 01:39:49 EET 2017
+2.base=/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dexMerger/debug/0
+5.set=ASSET
+0.path=fonts/fontawesome-font-v4.7.ttf
+2.baseType=DIRECTORY
+3.base=/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/assets/debug
+2.set=DEX
+1.path=fonts/google-material-font-v3.0.1.0.original.ttf
+4.base=/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/assets/debug
+count=6
+5.baseType=DIRECTORY
+2.path=classes.dex
+5.base=/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/assets/debug
+4.set=ASSET
+3.path=fonts/hacked.ttf
+3.baseType=DIRECTORY
+1.set=ASSET
+4.path=fonts/roboto.ttf
+1.baseType=DIRECTORY
+5.path=fonts/materialdrawerfont-font-v5.0.0.ttf
+0.base=/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/assets/debug
+0.baseType=DIRECTORY
+3.set=ASSET
+1.base=/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/assets/debug
+4.baseType=DIRECTORY
+0.set=ASSET

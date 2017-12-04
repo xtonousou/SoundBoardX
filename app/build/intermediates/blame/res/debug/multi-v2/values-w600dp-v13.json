@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w600dp-v13/values-w600dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/values-w600dp/ints.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "14",
+                        "endOffsets": "104"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "3",
+                        "endColumns": "14",
+                        "endOffsets": "96"
+                    }
+                }
+            ]
+        }
+    ]
+}

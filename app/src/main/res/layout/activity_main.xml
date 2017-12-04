@@ -44,7 +44,7 @@
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fab"
-			android:src="@drawable/ic_volumeoff_white_48dp"
+			android:src="@drawable/ic_volume_off_white_48dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"

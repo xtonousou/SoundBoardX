@@ -170,15 +170,6 @@ class Particle {
                 .oneShot(view, 35);
     }
 
-    void setAnimationMilk() {
-        Activity act = (Activity) view.getContext();
-        new ParticleSystem(act, 35, R.drawable.milk, 5000)
-                .setSpeedRange(0.1f, 0.3f)
-                .setRotationSpeed(125)
-                .setFadeOut(500)
-                .oneShot(view, 35);
-    }
-
     void setAnimationCaptcha() {
         Activity act = (Activity) view.getContext();
         new ParticleSystem(act, 35, R.drawable.captcha, 5000)
