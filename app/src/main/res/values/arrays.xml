@@ -51,7 +51,6 @@
         <item>Illuminati</item>
         <item>WOW</item>
         <item>Richard Stallman</item>
-        <item>Cow</item>
         <item>What else?</item>
         <item>Zodiac</item>
         <item>Yuri Kuma Arashi</item>
@@ -74,9 +73,7 @@
         <item>Just Do It</item>
         <item>Nein Nein</item>
         <item>Never do that</item>
-        <item>OMG</item>
         <item>Over 9000</item>
-        <item>Penault Jelly</item>
         <item>Shots fired</item>
         <item>Smoke weed everyday</item>
         <item>Whatcha say</item>
@@ -170,7 +167,6 @@
         <item>@raw/funny_illuminati</item>
         <item>@raw/funny_wow</item>
         <item>@raw/funny_windows</item>
-        <item>@raw/animals_cow</item>
         <item>@raw/funny_whatelse</item>
         <item>@raw/funny_zodiac</item>
         <item>@raw/movies_sabada</item>
@@ -193,9 +189,7 @@
         <item>@raw/funny_justdoit</item>
         <item>@raw/funny_nein</item>
         <item>@raw/funny_neverdonethat</item>
-        <item>@raw/funny_omg</item>
         <item>@raw/funny_overninek</item>
-        <item>@raw/funny_penaultjelly</item>
         <item>@raw/funny_shotsfired</item>
         <item>@raw/funny_smokeweedeveryday</item>
         <item>@raw/funny_whatcha_say</item>
@@ -238,15 +232,6 @@
         <item>@raw/movies_oompaloompa</item>
         <item>@raw/movies_twohalfmen</item>
         <item>@raw/movies_wazzup</item>
-    </integer-array>
-
-    <!-- Animal Sounds -->
-    <string-array name="animalSounds">
-        <item>Cow</item>
-    </string-array>
-
-    <integer-array name="animalSoundsIDs">
-        <item>@raw/animals_cow</item>
     </integer-array>
 
     <!-- Funny Sounds -->
@@ -316,9 +301,7 @@
         <item>Just Do It</item>
         <item>Nein Nein</item>
         <item>Never do that</item>
-        <item>OMG</item>
         <item>Over 9000</item>
-        <item>Penault Jelly</item>
         <item>Shots fired</item>
         <item>Smoke weed everyday</item>
         <item>Whatcha say</item>
@@ -392,9 +375,7 @@
         <item>@raw/funny_justdoit</item>
         <item>@raw/funny_nein</item>
         <item>@raw/funny_neverdonethat</item>
-        <item>@raw/funny_omg</item>
         <item>@raw/funny_overninek</item>
-        <item>@raw/funny_penaultjelly</item>
         <item>@raw/funny_shotsfired</item>
         <item>@raw/funny_smokeweedeveryday</item>
         <item>@raw/funny_whatcha_say</item>

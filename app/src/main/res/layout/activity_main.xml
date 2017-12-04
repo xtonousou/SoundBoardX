@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/main_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	tools:context="io.github.xtonousou.soundboardx.MainActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:backgroundTint="@color/colorPrimaryDark"/>
+        android:layout_height="?attr/actionBarSize">
+
+		<com.hanks.htextview.scale.ScaleTextView
+			android:id="@+id/title_view"
+			android:textSize="24sp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"/>
+
+    </android.support.v7.widget.Toolbar>
 
     <FrameLayout
         android:id="@+id/drawer_layout"
@@ -35,13 +44,16 @@
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fab"
+			android:src="@drawable/ic_volumeoff_white_48dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_marginBottom="5dp"
             android:layout_marginEnd="5dp"
-            android:src="@drawable/ic_volume_off_white_24dp"
             android:visibility="visible"
-            app:fab_size="normal" />
+			app:fab_colorNormal="@color/colorPrimaryDark"
+			app:fab_colorPressed="@color/colorPrimary"
+            app:fab_size="normal"/>
+
     </android.support.design.widget.CoordinatorLayout>
 </RelativeLayout>

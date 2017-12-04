@@ -152,20 +152,6 @@ class Particle {
                 .oneShot(view, 10);
     }
 
-    void setAnimationDickClock() {
-        Activity act = (Activity) view.getContext();
-        new ParticleSystem(act, 5, R.drawable.banana, 5000)
-                .setAcceleration(0.001f, 80)
-                .setSpeedRange(0.1f, 1)
-                .setFadeOut(250, new AccelerateInterpolator())
-                .oneShot(view, 5);
-        new ParticleSystem(act, 10, R.drawable.clock, 5000)
-                .setAcceleration(0.001f, 80)
-                .setSpeedRange(0.1f, 1)
-                .setFadeOut(250, new AccelerateInterpolator())
-                .oneShot(view, 10);
-    }
-
     void setAnimationVader() {
         Activity act = (Activity) view.getContext();
         new ParticleSystem(act, 35, R.drawable.vader, 5000)
@@ -189,15 +175,6 @@ class Particle {
         new ParticleSystem(act, 35, R.drawable.milk, 5000)
                 .setSpeedRange(0.1f, 0.3f)
                 .setRotationSpeed(125)
-                .setFadeOut(500)
-                .oneShot(view, 35);
-    }
-
-    void setAnimationScat() {
-        Activity act = (Activity) view.getContext();
-        new ParticleSystem(act, 35, R.drawable.poop, 5000)
-                .setSpeedRange(0.1f, 0.3f)
-                .setRotationSpeed(150)
                 .setFadeOut(500)
                 .oneShot(view, 35);
     }

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.hanks:htextview-typer-0.1.2">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/htextview-typer-0.1.2.aar/59c9fce6f9c2a2119086d9d94b2e9841/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/htextview-typer-0.1.2.aar/59c9fce6f9c2a2119086d9d94b2e9841/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hanks/htextview-typer/0.1.2/1a8c1a839468156f76974307ea2456e17cd6a7fa/htextview-typer-0.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

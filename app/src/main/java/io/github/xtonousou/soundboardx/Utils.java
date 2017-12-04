@@ -11,6 +11,7 @@ import android.util.DisplayMetrics;
 import android.widget.TextView;
 
 import com.github.clans.fab.FloatingActionButton;
+import com.hanks.htextview.base.HTextView;
 
 import java.util.ArrayList;
 
@@ -32,8 +33,6 @@ abstract class Utils {
 				break;
             case "allSounds":
 				return SoundStore.getAllSounds(context);
-            case "animalSounds":
-				return SoundStore.getAnimalsSounds(context);
             case "funnySounds":
 				return SoundStore.getFunnySounds(context);
             case "gamesSounds":
@@ -45,8 +44,12 @@ abstract class Utils {
     }
 
 	static void paintThis(TextView textView) {
-        textView.setTextColor(SharedPrefs.getInstance().getSelectedColor());
-    }
+		textView.setTextColor(SharedPrefs.getInstance().getSelectedColor());
+	}
+
+	static void paintThis(HTextView hTextView) {
+		hTextView.setTextColor(SharedPrefs.getInstance().getSelectedColor());
+	}
 
 	static void paintThis(SearchView.SearchAutoComplete searchViewText) {
         searchViewText.setTextColor(SharedPrefs.getInstance().getSelectedColor());
@@ -57,19 +60,13 @@ abstract class Utils {
     }
 
 	static void paintThis(FloatingActionButton fab) {
-		fab.setColorNormal(R.color.colorPrimary);
-		fab.setColorRipple(R.color.colorPrimaryDark);
-		fab.setColorPressed(SharedPrefs.getInstance().getSelectedColor());
-		fab.setShadowColor(R.color.accent);
-
-        fab.setShowShadow(true);
-		fab.setShadowColor(R.color.colorPrimaryDark);
+		fab.setColorRipple(SharedPrefs.getInstance().getSelectedColor());
 	}
 
 	static void paintThis(android.support.v7.widget.Toolbar toolbar) {
-        toolbar.setBackgroundColor(SharedPrefs.getInstance().getSelectedColor());
+        //toolbar.setBackgroundColor(SharedPrefs.getInstance().getSelectedColor());
+		toolbar.setBackgroundColor(toolbar.getResources().getColor(R.color.colorPrimaryDarker));
     }
-
 
 	static void initPaypal(Activity activity) {
         String url =

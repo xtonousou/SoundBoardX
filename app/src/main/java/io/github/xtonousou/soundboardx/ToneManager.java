@@ -1,7 +1,6 @@
 package io.github.xtonousou.soundboardx;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.media.RingtoneManager;
@@ -109,7 +108,8 @@ class ToneManager {
 
         try {
             RingtoneManager.setActualDefaultRingtoneUri(itemView.getContext(), RingtoneManager.TYPE_RINGTONE, newUri);
-            showToast("'" + itemName + "' has been set as ringtone!", R.drawable.ic_ringtone_white_24dp);
+            //showToast("'" + itemName + "' has been set as ringtone!", R.drawable
+            //        .ic_ringtone_white_24dp);
         } catch (Throwable t) {
             System.err.println(t.getMessage());
         }
@@ -167,7 +167,8 @@ class ToneManager {
 
         try {
             RingtoneManager.setActualDefaultRingtoneUri(itemView.getContext(), RingtoneManager.TYPE_NOTIFICATION, newUri);
-            showToast("'" + itemName + "' has been set as notification sound!", R.drawable.ic_notification_white_24dp);
+            //showToast("'" + itemName + "' has been set as notification sound!", R.drawable
+			//		.ic_notification_white_24dp);
         } catch (Throwable t) {
             System.err.println(t.getMessage());
         }
@@ -224,7 +225,8 @@ class ToneManager {
 
         try {
             RingtoneManager.setActualDefaultRingtoneUri(itemView.getContext(), RingtoneManager.TYPE_ALARM, newUri);
-            showToast("'" + itemName + "' has been set as alarm tone!", R.drawable.ic_alarm_white_24dp);
+            //showToast("'" + itemName + "' has been set as alarm tone!", R.drawable
+			//		.ic_alarm_white_24dp);
         } catch (Throwable t) {
             System.err.println(t.getMessage());
         }
@@ -281,17 +283,8 @@ class ToneManager {
             case "What is going on here?":
                 particle.setAnimationRetard();
                 break;
-            case "Πετράκης: Fuck her right in the pussy":
-                particle.setAnimationBalls();
-                break;
             case "Black kid on fire":
                 particle.setAnimationNigga();
-                break;
-            case "Σα τον Κάτμαν μ' έκανες!":
-                particle.setAnimationBart();
-                break;
-            case "Hmm, it's dick o'clock":
-                particle.setAnimationDickClock();
                 break;
             case "Russian father":
                 particle.setAnimationRussian();
@@ -299,23 +292,11 @@ class ToneManager {
             case "Fichtl's Lied":
                 particle.setAnimationFluteWithMusicNote();
                 break;
-            case "Buffed Blowjob":
-                particle.setAnimationBananas();
-                break;
             case "Hey that' s pretty good!":
                 particle.setAnimationDubz();
                 break;
-            case "xT: Γαμώ τον Χριστό σου!":
-                particle.setAnimationWeed();
-                break;
             case "I' m your father!":
                 particle.setAnimationVader();
-                break;
-            case "Give it to me!":
-                particle.setAnimationBananas();
-                break;
-            case "Κοτσολάρη: Πίπα":
-                particle.setAnimationGollum();
                 break;
             case "Fun":
                 particle.setAnimationKazoo();
@@ -332,14 +313,8 @@ class ToneManager {
             case "Trap Theme":
                 particle.setAnimationTrap();
                 break;
-            case "Γαμώ τα καντήλια μου όλα!":
-                particle.setAnimationBart();
-                break;
             case "Weird laugh":
                 particle.setAnimation4chan();
-                break;
-            case "Thank you…":
-                particle.setAnimationTrap();
                 break;
             case "Make your dreams come true!":
                 particle.setAnimationMan();
@@ -352,9 +327,6 @@ class ToneManager {
                 break;
             case "This is my masterpiece!":
                 particle.setAnimationCaptcha();
-                break;
-            case "Do you want my milk?":
-                particle.setAnimationMilk();
                 break;
             case "My mooscles are getting bigger!":
                 particle.setAnimationMan();
@@ -377,12 +349,6 @@ class ToneManager {
             case "Surprise motherfucker!":
                 particle.setAnimationNigga();
                 break;
-            case "Πετρόπουλος: Action!":
-                particle.setAnimationGabe();
-                break;
-            case "Shaved pussy…":
-                particle.setAnimationCats();
-                break;
             case "Seven vaginias…":
                 particle.setAnimationCats();
                 break;
@@ -391,9 +357,6 @@ class ToneManager {
                 break;
             case "Oh Yeaaaah!":
                 particle.setAnimationParticles();
-                break;
-            case "Penis, penis and penis":
-                particle.setAnimationTrap();
                 break;
             case "Αγγούρι στον κώλο σου…":
                 particle.setAnimationPokemon();
@@ -406,9 +369,6 @@ class ToneManager {
                 break;
             case "Cyka Blyat's Middlefinger":
                 particle.setAnimationRussian();
-                break;
-            case "I'm the scatman…":
-                particle.setAnimationScat();
                 break;
             case "Why don't you show us that fine pussy?":
                 particle.setAnimationSkyrimPoop();
@@ -440,9 +400,6 @@ class ToneManager {
             case "Richard Stallman":
                 particle.setAnimationGNU();
                 break;
-            case "Τσικλίδης: Λες και είναι τσόντα!":
-                particle.setAnimationCows();
-                break;
             case "What else?":
                 particle.setAnimationRetard();
                 break;
@@ -451,18 +408,6 @@ class ToneManager {
                 break;
             case "Yuri Kuma Arashi":
                 particle.setAnimationCats();
-                break;
-            case "xT: Ρε καριόλη;":
-                particle.setAnimationWeed();
-                break;
-            case "Κιάμος: Ε!":
-                particle.setAnimationSeagulls();
-                break;
-            case "Κιάμος: Χατζάρα":
-                particle.setAnimationSeagulls();
-                break;
-            case "Κιάμος: Τί κοιτάς ρε μαλάκα":
-                particle.setAnimationSeagulls();
                 break;
             case "U WOT M8":
                 particle.setAnimationFluteWithMusicNote();
