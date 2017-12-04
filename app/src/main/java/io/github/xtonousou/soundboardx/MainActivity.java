@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView mView;
     Drawer mDrawer = null;
 
-    @SuppressWarnings("ConstantConditions")
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
