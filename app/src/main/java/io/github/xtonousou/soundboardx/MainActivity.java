@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -23,7 +22,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.CompoundButton;
 
 import com.github.clans.fab.FloatingActionButton;
+import petrov.kristiyan.colorpicker.ColorPicker;
 import com.hanks.htextview.base.HTextView;
+import com.hanks.htextview.line.LineTextView;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -40,18 +41,15 @@ import permissions.dispatcher.OnPermissionDenied;
 import permissions.dispatcher.OnShowRationale;
 import permissions.dispatcher.PermissionRequest;
 import permissions.dispatcher.RuntimePermissions;
-import petrov.kristiyan.colorpicker.ColorPicker;
 
 @RuntimePermissions
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
 
     int savedColor;
-    byte easterEggCounter = 0;
     boolean withAnimations = true;
 
     Typeface fancyFont;
-	MediaPlayer easterEggPlayer = null;
 	SoundPlayer soundPlayer;
     Toolbar mToolbar;
 
@@ -80,44 +78,10 @@ public class MainActivity extends AppCompatActivity {
         mToolbar = findViewById(R.id.toolbar);
 		Utils.paintThis(mToolbar);
 
-		HTextView txt = findViewById(R.id.title_view);
+		LineTextView txt = findViewById(R.id.title_view);
 		Utils.paintThis(txt);
-		txt.setOnClickListener((View view) -> {
-			switch (easterEggCounter) {
-				default:
-					if (easterEggPlayer == null) {
-						txt.animateText(getString(R.string.question_mark));
-						easterEggCounter++;
-					}
-					break;
-				case 4:
-					if (easterEggPlayer == null) {
-						txt.animateText(getString(R.string.can_you_stop));
-						easterEggCounter++;
-					}
-					break;
-				case 8:
-					if (easterEggPlayer == null) {
-						txt.animateText(getString(R.string.are_you_sure));
-						easterEggCounter++;
-					}
-					break;
-				case 9:
-					if (easterEggPlayer == null) {
-						txt.animateText(getString(R.string.lenny_face));
-						easterEggPlayer = MediaPlayer.create(getApplicationContext(), R.raw.easteregg);
-						easterEggPlayer.start();
-						easterEggPlayer.setOnCompletionListener(mediaPlayer -> {
-							txt.animateText(getString(R.string.app_name));
-							easterEggPlayer = null;
-						});
-						easterEggCounter = 0;
-					}
-					break;
-			}
-		});
 		txt.animateText(getString(R.string.app_name));
-		fancyFont = Typeface.createFromAsset(getAssets(), "fonts/hacked.ttf");
+		fancyFont = Typeface.createFromAsset(getAssets(), "fonts/Roboto-BoldCondensed.ttf");
 		txt.setTypeface(fancyFont);
 
         setSupportActionBar(mToolbar);
@@ -134,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
         ((SoundAdapter) mView.getAdapter()).showAllSounds(getApplicationContext());
 
         mView.addItemDecoration(new BottomOffsetDecoration(225));
+
+		txt.setOnClickListener((View view) -> mView.scrollToPosition(0));
 
         initFAB();
         initDrawer(savedInstanceState);
@@ -224,12 +190,6 @@ public class MainActivity extends AppCompatActivity {
 		Utils.paintThis(fab);
 
 		fab.setOnClickListener(view -> {
-        	if (easterEggPlayer != null) {
-				easterEggPlayer.release();
-				easterEggPlayer = null;
-				((HTextView) findViewById(R.id.title_view)).animateText(getString(R.string
-						.app_name));
-			}
 			soundPlayer.release();
 			soundPlayer = new SoundPlayer(this);
 		});

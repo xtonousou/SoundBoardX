@@ -6,7 +6,6 @@
     <item name="colorPrimary">@color/colorAccent</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
-    <item name="android:textColorSecondary">@color/colorAccent</item>
 
     <!-- MaterialDrawer specific values -->
     <item name="material_drawer_background">@color/material_drawer_dark_background</item>

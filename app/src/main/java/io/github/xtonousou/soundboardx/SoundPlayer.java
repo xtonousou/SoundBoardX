@@ -11,56 +11,54 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.IOException;
 
-class SoundPlayer {
+public class SoundPlayer {
 
-    private MediaPlayer mPlayer;
-    private final Context mContext;
-    private static final String TAG = "SoundPlayer";
+	private MediaPlayer mPlayer;
+	private Context mContext;
 
-    SoundPlayer(Context context) {
-        EventBus.getDefault().register(this);
-        this.mContext = context.getApplicationContext();
-    }
+	private static final String TAG = "SoundPlayer";
+
+	public SoundPlayer(Context context) {
+		EventBus.getDefault().register(this);
+		this.mContext = context.getApplicationContext();
+	}
 
 	@Subscribe(threadMode = ThreadMode.POSTING)
-    void onEvent(Sound sound) {
-        playSound(sound);
-    }
+	public void onEvent(Sound sound) {
+		playSound(sound);
+	}
 
 	@Subscribe(threadMode = ThreadMode.BACKGROUND)
-    private void playSound(Sound sound) {
-        int resource = sound.getResourceId();
-        if (mPlayer != null) {
-            if (mPlayer.isPlaying())
-                mPlayer.stop();
-            mPlayer.reset();
-            try {
-                AssetFileDescriptor afd = mContext.getResources().openRawResourceFd(resource);
-                if (afd == null)
-                    return;
-                mPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
-                afd.close();
-                mPlayer.prepare();
-            } catch (IOException | IllegalArgumentException | SecurityException e) {
-                Log.e(TAG, e.getMessage());
-            }
-        } else {
-            mPlayer = MediaPlayer.create(mContext, resource);
-        }
-        mPlayer.setOnPreparedListener(mp -> {
-            if (mp == mPlayer) {
-                mPlayer.start();
-            }
-        });
-        mPlayer.setOnCompletionListener(mp -> EventBus.getDefault().post("Done"));
-    }
+	void playSound(Sound sound) {
+		int resource = sound.getResourceId();
+		if (mPlayer != null) {
+			if (mPlayer.isPlaying())
+				mPlayer.stop();
+			mPlayer.reset();
+
+			try {
+				AssetFileDescriptor afd = mContext.getResources().openRawResourceFd(resource);
+				if (afd == null)
+					return;
+				mPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+				afd.close();
+				mPlayer.prepare();
+			} catch (IOException | IllegalArgumentException | SecurityException e) {
+				Log.e(TAG, e.getMessage());
+			}
+		} else {
+			mPlayer = MediaPlayer.create(mContext, resource);
+		}
+		mPlayer.start();
+		mPlayer.setOnCompletionListener(mp -> EventBus.getDefault().post("Done"));
+	}
 
 	@Subscribe(threadMode = ThreadMode.POSTING)
-    void release() {
+	void release() {
 		EventBus.getDefault().unregister(this);
-        if (mPlayer != null) {
-            mPlayer.release();
-            mPlayer = null;
-        }
-    }
+		if (mPlayer != null) {
+			mPlayer.release();
+			mPlayer = null;
+		}
+	}
 }

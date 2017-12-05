@@ -20,6 +20,7 @@ import com.mikepenz.iconics.IconicsDrawable;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.text.Normalizer;
 import java.util.ArrayList;
@@ -145,17 +146,29 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
             favButton = v.findViewById(R.id.fav_button);
 
             Typeface font = Typeface.createFromAsset(itemView.getContext().getAssets(),
-                    "fonts/roboto.ttf");
+                    "fonts/Roboto-Regular.ttf");
             title.setTypeface(font);
 
             itemView.setOnClickListener(new View.OnClickListener() {
+                public void onEvent(String event) {
+                    if (getAdapterPosition() != RecyclerView.NO_POSITION) {
+                        if (EventBus.getDefault().isRegistered(this)) {
+                            EventBus.getDefault().unregister(this);
+                        }
+                        notifyItemChanged(getAdapterPosition());
+                    }
+                }
+
                 @Override
-                @Subscribe
+				@Subscribe(threadMode = ThreadMode.POSTING)
                 public void onClick(View view) {
                     if (getAdapterPosition() != RecyclerView.NO_POSITION) {
+                        if (EventBus.getDefault().isRegistered(this)) {
+                            return;
+                        }
                         if (animationsShown) {
                             new ToneManager(new Particle(itemView), title.getText().toString())
-                                .makeItShine();
+                                    .makeItShine();
                         }
                         EventBus.getDefault().register(this);
                         EventBus.getDefault().post(sounds.get(getAdapterPosition()));
@@ -295,7 +308,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
             return filterResults;
         }
 
-        @SuppressWarnings("unchecked")
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
             sounds = (ArrayList<Sound>) results.values;

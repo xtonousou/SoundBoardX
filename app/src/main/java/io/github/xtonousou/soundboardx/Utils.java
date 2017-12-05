@@ -88,12 +88,13 @@ abstract class Utils {
     }
 
 	static boolean isGreenMode(Activity activity) {
-        boolean mode = false;
-        if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) &&
-                ((PowerManager) activity.getSystemService(Context.POWER_SERVICE)).isPowerSaveMode()) {
-            mode = true;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+			if (((PowerManager) activity.getSystemService(Context.POWER_SERVICE)).isPowerSaveMode
+					()) {
+				return true;
+			}
         }
-        return mode;
+        return false;
     }
 
 	static void restartActivity(Activity activity) {

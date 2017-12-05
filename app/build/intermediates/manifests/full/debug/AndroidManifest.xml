@@ -19,7 +19,8 @@
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true" >
+        android:supportsRtl="true"
+        android:testOnly="true" >
         <activity
             android:name="io.github.xtonousou.soundboardx.MainActivity"
             android:label="@string/app_name"
