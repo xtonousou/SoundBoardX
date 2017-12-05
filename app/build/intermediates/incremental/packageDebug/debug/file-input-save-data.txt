@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Dec 05 19:00:11 EET 2017
+#Wed Dec 06 01:05:42 EET 2017
 2.base=/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/assets/debug
 5.set=ASSET
 0.path=fonts/Roboto-BoldCondensed.ttf

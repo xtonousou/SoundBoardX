@@ -14,7 +14,7 @@
 -keep class android.support.design.widget.CheckableImageButton { <init>(...); }
 
 # Referenced at /home/xtonousou/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/9c3fb5b1fb70902be5aaba06fea342cb/res/layout/design_bottom_sheet_dialog.xml:26
-# Referenced at /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/layout/activity_main.xml:41
+# Referenced at /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/layout/activity_main.xml:42
 -keep class android.support.design.widget.CoordinatorLayout { <init>(...); }
 
 # Referenced at /home/xtonousou/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/9c3fb5b1fb70902be5aaba06fea342cb/res/layout-sw600dp-v13/design_layout_snackbar.xml:18
@@ -90,7 +90,7 @@
 
 # Referenced at /home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.7.aar/f81d0f2fcaee5cc9110a7767d5d54239/res/layout/color_palette_layout.xml:19
 # Referenced at /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.1.aar/3b3c0e63e5d0b9870f1dcc200788e802/res/layout/material_drawer_recycler_view.xml:2
-# Referenced at /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/layout/activity_main.xml:31
+# Referenced at /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/layout/activity_main.xml:32
 -keep class android.support.v7.widget.RecyclerView { <init>(...); }
 
 # Referenced at /home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/layout/abc_search_view.xml:75
@@ -109,11 +109,8 @@
 # Referenced at /home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/layout/abc_screen_simple_overlay_action_mode.xml:32
 -keep class android.support.v7.widget.ViewStubCompat { <init>(...); }
 
-# Referenced at /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/layout/activity_main.xml:45
+# Referenced at /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/layout/activity_main.xml:46
 -keep class com.github.clans.fab.FloatingActionButton { <init>(...); }
-
-# Referenced at /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/layout/activity_main.xml:17
--keep class com.hanks.htextview.scale.ScaleTextView { <init>(...); }
 
 # Referenced at /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.1.aar/3b3c0e63e5d0b9870f1dcc200788e802/res/layout/material_drawer_compact_header.xml:18
 # Referenced at /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.1.aar/3b3c0e63e5d0b9870f1dcc200788e802/res/layout/material_drawer_compact_header.xml:24

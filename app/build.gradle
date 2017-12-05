@@ -14,16 +14,15 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled true
-            shrinkResources true
+            shrinkResources false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-<<<<<<< HEAD
-=======
         debug {
+            shrinkResources false
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
->>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
     }
     dexOptions {}
     compileOptions {
@@ -38,10 +37,6 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-<<<<<<< HEAD
-
-=======
->>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
     // Official Android libraries
     implementation 'com.android.support:appcompat-v7:27.0.2'
     implementation 'com.android.support:cardview-v7:27.0.2'
@@ -49,21 +44,8 @@ dependencies {
     implementation 'com.android.support:support-annotations:27.0.2'
     implementation 'com.android.support:design:27.0.2'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-<<<<<<< HEAD
-
-=======
->>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
     // Bus events
     implementation 'org.greenrobot:eventbus:3.1.1'
-    // Animated TextViews
-    implementation 'com.hanks:htextview-base:0.1.2'
-    implementation 'com.hanks:htextview-fade:0.1.2'
-    implementation 'com.hanks:htextview-line:0.1.2'
-    implementation 'com.hanks:htextview-rainbow:0.1.2'
-    implementation 'com.hanks:htextview-scale:0.1.2'
-    implementation 'com.hanks:htextview-evaporate:0.1.2'
-    implementation 'com.hanks:htextview-fall:0.1.2'
-    implementation 'com.hanks:htextview-typer:0.1.2'
     // Floating Action Button
     implementation 'com.github.clans:fab:1.6.4'
     // Toasts
@@ -75,11 +57,7 @@ dependencies {
     implementation 'com.nineoldandroids:library:2.4.0'
     implementation 'com.daimajia.easing:library:2.1@aar'
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
-<<<<<<< HEAD
-    // Iconics
-=======
     // Icons
->>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
     implementation 'com.mikepenz:iconics-core:2.9.5@aar'
     implementation 'com.mikepenz:google-material-typeface:3.0.1.2.original@aar'
     implementation 'com.mikepenz:fontawesome-typeface:4.7.0.2@aar'
@@ -87,10 +65,4 @@ dependencies {
     implementation('com.mikepenz:materialdrawer:6.0.1@aar') {
         transitive = true
     }
-    // Permission Management
-    implementation('com.github.hotchemi:permissionsdispatcher:3.0.1') {
-        // if you don't use android.app.Fragment you can exclude support for them
-        exclude module: "support-v13"
-    }
-    annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:3.0.1"
 }

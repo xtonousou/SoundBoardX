@@ -22,11 +22,9 @@
         <item>Fun</item>
         <item>Kazoo</item>
         <item>Immigrants cause cancer</item>
-        <item>Maybe we could invite some women?</item>
         <item>Trap Theme</item>
         <item>Weird laugh</item>
         <item>Make your dreams come true!</item>
-        <item>LOTR MLG</item>
         <item>Come here my pet Russian…</item>
         <item>This is my masterpiece!</item>
         <item>My mooscles are getting bigger!</item>
@@ -85,11 +83,8 @@
         <item>EA Sports</item>
         <item>Excellent</item>
         <item>Fus Ro Dah</item>
-<<<<<<< HEAD
-        <item>Gameboy</item>
-=======
+        <item>Maybe we could invite some women?</item>
         <item>Game Boy</item>
->>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
         <item>Hadouken</item>
         <item>Inspector Gadget</item>
         <item>Jigglypuff</item>
@@ -120,6 +115,7 @@
         <item>Oompaloompa</item>
         <item>Two and a Half Men</item>
         <item>Wazzup</item>
+        <item>LOTR MLG</item>
     </string-array>
 
     <integer-array name="allSoundsIDs">
@@ -142,11 +138,9 @@
         <item>@raw/funny_fun</item>
         <item>@raw/funny_kazoo</item>
         <item>@raw/funny_immigrants</item>
-        <item>@raw/funny_invitewomen</item>
         <item>@raw/funny_itsatrap</item>
         <item>@raw/funny_laugh</item>
         <item>@raw/funny_lol</item>
-        <item>@raw/movies_lotr</item>
         <item>@raw/funny_petrussian</item>
         <item>@raw/funny_masterpiece</item>
         <item>@raw/funny_mooscles</item>
@@ -204,7 +198,8 @@
         <item>@raw/games_eagames</item>
         <item>@raw/games_easports</item>
         <item>@raw/games_excellent</item>
-        <item>@raw/games_fusrodah</item>
+        <item>@raw/games_fusrohdah</item>
+        <item>@raw/games_invitewomen</item>
         <item>@raw/games_gameboy</item>
         <item>@raw/games_hadouken</item>
         <item>@raw/games_inspectorgadget</item>
@@ -236,6 +231,7 @@
         <item>@raw/movies_oompaloompa</item>
         <item>@raw/movies_twohalfmen</item>
         <item>@raw/movies_wazzup</item>
+        <item>@raw/movies_lotr</item>
     </integer-array>
 
     <!-- Funny Sounds -->
@@ -257,7 +253,6 @@
         <item>Fun</item>
         <item>Kazoo</item>
         <item>Immigrants cause cancer</item>
-        <item>Maybe we could invite some women?</item>
         <item>Trap Theme</item>
         <item>Weird laugh</item>
         <item>Make your dreams come true!</item>
@@ -331,7 +326,6 @@
         <item>@raw/funny_fun</item>
         <item>@raw/funny_kazoo</item>
         <item>@raw/funny_immigrants</item>
-        <item>@raw/funny_invitewomen</item>
         <item>@raw/funny_itsatrap</item>
         <item>@raw/funny_laugh</item>
         <item>@raw/funny_lol</item>
@@ -396,11 +390,8 @@
         <item>EA Sports</item>
         <item>Excellent</item>
         <item>Fus Ro Dah</item>
-<<<<<<< HEAD
-        <item>Gameboy</item>
-=======
+        <item>Maybe we could invite some women?</item>
         <item>Game Boy</item>
->>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
         <item>Hadouken</item>
         <item>Inspector Gadget</item>
         <item>Jigglypuff</item>
@@ -427,7 +418,8 @@
         <item>@raw/games_eagames</item>
         <item>@raw/games_easports</item>
         <item>@raw/games_excellent</item>
-        <item>@raw/games_fusrodah</item>
+        <item>@raw/games_fusrohdah</item>
+        <item>@raw/games_invitewomen</item>
         <item>@raw/games_gameboy</item>
         <item>@raw/games_hadouken</item>
         <item>@raw/games_inspectorgadget</item>

@@ -28,24 +28,24 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/pikachu.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-mdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_half_black_16dp.png.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-mdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_half_black_16dp.png.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_fab_add.png.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/0f27498557af1b5dbd26d66dc87b8916/res/drawable-hdpi-v4/fab_add.png"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-mdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_fab_add.png.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/0f27498557af1b5dbd26d66dc87b8916/res/drawable-hdpi-v4/fab_add.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_design_bottom_navigation_item.xml.flat",
@@ -84,16 +84,20 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/music_guccigang.mp3"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/color_abc_primary_text_disable_only_material_light.xml.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/color/abc_primary_text_disable_only_material_light.xml"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
     {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/color_abc_primary_text_disable_only_material_light.xml.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/color/abc_primary_text_disable_only_material_light.xml"
+    },
+    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_whatcha_say.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/funny_whatcha_say.mp3"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_easteregg2.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/easteregg2.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -212,20 +216,16 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/morty.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-mdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_abc_text_cursor_material.xml.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/abc_text_cursor_material.xml"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_twoplustwo.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/twoplustwo.png"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_abc_text_cursor_material.xml.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/abc_text_cursor_material.xml"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_material_drawer_item_section.xml.flat",
@@ -246,10 +246,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-mdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_smoketrees.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/smoketrees.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_search_white_36dp.png.flat",
@@ -368,10 +364,6 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-mdpi-v4/abc_list_focused_holo.9.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_a420.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/a420.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_notification_action_tombstone.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/281447ffbdd184ce47f009969fd16fa2/res/layout/notification_action_tombstone.xml"
     },
@@ -396,12 +388,12 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-xhdpi/ic_volume_off_white_24dp.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_round_button.xml.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.7.aar/f81d0f2fcaee5cc9110a7767d5d54239/res/drawable/round_button.xml"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_icon.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/layout/abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_round_button.xml.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.7.aar/f81d0f2fcaee5cc9110a7767d5d54239/res/drawable/round_button.xml"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_abc_screen_toolbar.xml.flat",
@@ -414,6 +406,10 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-mdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_ic_volumeoff_white_48dp.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/ic_volumeoff_white_48dp.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
@@ -456,24 +452,24 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-v21/abc_btn_colored_material.xml"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_darthvader.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/darthvader.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_abc_cab_background_top_material.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_darthvader.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/darthvader.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_getthecamera.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/funny_getthecamera.mp3"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_abc_edit_text_material.xml.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/abc_edit_text_material.xml"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_stronker.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/funny_stronker.mp3"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_abc_edit_text_material.xml.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/abc_edit_text_material.xml"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_movies_ohwhee.mp3.flat",
@@ -490,10 +486,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_music_1234.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/music_1234.mp3"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_lookatyournose.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/lookatyournose.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_babytriple.png.flat",
@@ -548,10 +540,6 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/0f27498557af1b5dbd26d66dc87b8916/res/drawable-xxhdpi-v4/fab_add.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_holyshit.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/holyshit.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_movies_inuyashikibam.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/movies_inuyashikibam.mp3"
     },
@@ -562,6 +550,10 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_games_hadouken.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/games_hadouken.mp3"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_ic_search_white_48dp.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/ic_search_white_48dp.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_games_akuaku.mp3.flat",
@@ -588,10 +580,6 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/layout/abc_screen_simple.xml"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_getthecamera.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/getthecamera.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-mdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
     },
@@ -600,12 +588,12 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xxhdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_pokeflute.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/pokeflute.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout-v21_notification_action.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/281447ffbdd184ce47f009969fd16fa2/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_pokeflute.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/pokeflute.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_notification_template_icon_group.xml.flat",
@@ -748,10 +736,6 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.1.aar/3b3c0e63e5d0b9870f1dcc200788e802/res/layout/material_drawer_item_expandable_badge.xml"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_blackkidonfire.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/blackkidonfire.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_games_mariogrow.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/games_mariogrow.mp3"
     },
@@ -770,10 +754,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_thatsa10.png.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/thatsa10.png"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_itsatrap.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/itsatrap.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
@@ -796,12 +776,12 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/funny_beep.mp3"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_movies_twohalfmen.mp3.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/movies_twohalfmen.mp3"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_easteregg.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/easteregg.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_getschwifty.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/getschwifty.png"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_movies_twohalfmen.mp3.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/movies_twohalfmen.mp3"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_games_jigglypuff.mp3.flat",
@@ -820,16 +800,16 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/nazgul.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_music_2plus2.mp3.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/music_2plus2.mp3"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xhdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xhdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_music_2plus2.mp3.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/music_2plus2.mp3"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_music_offset.mp3.flat",
@@ -932,10 +912,6 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/blurpthree.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_noketchup.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/noketchup.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/layout/activity_main.xml"
     },
@@ -948,28 +924,24 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xxhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_quickmafs.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/quickmafs.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_movies_sabada.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/movies_sabada.mp3"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_abc_ic_voice_search_api_material.xml.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/abc_ic_voice_search_api_material.xml"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_headshot.mp3.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/funny_headshot.mp3"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_watermelon.png.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/watermelon.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_headshot.mp3.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/funny_headshot.mp3"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_abc_ic_voice_search_api_material.xml.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/abc_ic_voice_search_api_material.xml"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_johncena.mp3.flat",
@@ -984,12 +956,12 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/games_mariounderground.mp3"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_notification_template_big_media_narrow_custom.xml.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/65581c52043f2d03e04c92d486df9cf1/res/layout/notification_template_big_media_narrow_custom.xml"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_material_drawer_fits_not.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.1.aar/3b3c0e63e5d0b9870f1dcc200788e802/res/layout/material_drawer_fits_not.xml"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_notification_template_big_media_narrow_custom.xml.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/65581c52043f2d03e04c92d486df9cf1/res/layout/notification_template_big_media_narrow_custom.xml"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_abc_activity_chooser_view.xml.flat",
@@ -1048,12 +1020,12 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/movies_konodioda.mp3"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_mtdew.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/mtdew.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_kfc.png.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/kfc.png"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_mtdew.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/mtdew.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_sadviolin.png.flat",
@@ -1100,16 +1072,16 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/281447ffbdd184ce47f009969fd16fa2/res/drawable/notification_bg_low.xml"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_iamyourfather.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/iamyourfather.png"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_damnson.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/damnson.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_abc_switch_thumb_material.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/abc_switch_thumb_material.xml"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_damnson.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/damnson.png"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_iamyourfather.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/iamyourfather.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_focused_holo.9.png.flat",
@@ -1136,6 +1108,10 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/music_skrrrrrra.mp3"
     },
     {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_cum.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/cum.png"
+    },
+    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_filthyfrank.png.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/filthyfrank.png"
     },
@@ -1144,12 +1120,12 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.1.aar/3b3c0e63e5d0b9870f1dcc200788e802/res/layout/material_drawer_item_profile_setting.xml"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_abc_btn_default_mtrl_shape.xml.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/abc_btn_default_mtrl_shape.xml"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_thankyou.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/thankyou.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_a420blazeit.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/a420blazeit.png"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_abc_btn_default_mtrl_shape.xml.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/abc_btn_default_mtrl_shape.xml"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_nobodygivesashit.mp3.flat",
@@ -1172,12 +1148,12 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/abc_btn_borderless_material.xml"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_design_ic_visibility.png.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/9c3fb5b1fb70902be5aaba06fea342cb/res/drawable-xxxhdpi-v4/design_ic_visibility.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_design_ic_visibility.png.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/9c3fb5b1fb70902be5aaba06fea342cb/res/drawable-xxxhdpi-v4/design_ic_visibility.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_a420.mp3.flat",
@@ -1188,12 +1164,12 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/laugh.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/anim_tooltip_enter.xml.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/anim/tooltip_enter.xml"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/anim_tooltip_enter.xml.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/anim/tooltip_enter.xml"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal.9.png.flat",
@@ -1212,24 +1188,16 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xhdpi-v4/abc_list_longpressed_holo.9.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_onetofour.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/onetofour.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_music_andanotherone.mp3.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/music_andanotherone.mp3"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_tooltip_frame_light.xml.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/tooltip_frame_light.xml"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_ohmy.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/funny_ohmy.mp3"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_tooltip_frame_light.xml.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/tooltip_frame_light.xml"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
@@ -1312,10 +1280,6 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/color/switch_thumb_material_dark.xml"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_easteregg.mp3.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/easteregg.mp3"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xxhdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
     },
@@ -1330,6 +1294,10 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_movies_lotr.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/movies_lotr.mp3"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_easteregg1.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/easteregg1.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/anim_abc_slide_in_top.xml.flat",
@@ -1356,8 +1324,8 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/music_skrskr.mp3"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_neverdonethat.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/neverdonethat.png"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_games_invitewomen.mp3.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/games_invitewomen.mp3"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
@@ -1372,16 +1340,16 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/9c3fb5b1fb70902be5aaba06fea342cb/res/layout-sw600dp-v13/design_layout_snackbar.xml"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_dwi.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/dwi.png"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_black_48dp.png.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-hdpi-v4/abc_ic_star_black_48dp.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_a420blazeit.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/funny_a420blazeit.mp3"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_black_48dp.png.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-hdpi-v4/abc_ic_star_black_48dp.png"
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_dwi.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/dwi.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_wazzup.png.flat",
@@ -1436,14 +1404,6 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/music_quickmafs.mp3"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_mansnothot.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/mansnothot.png"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_hitmarker2.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/hitmarker2.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_movies_badadipoopi.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/movies_badadipoopi.mp3"
     },
@@ -1476,12 +1436,12 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/supertoasts-2.0.aar/c7abb47722bf20b5e6cfabb9600b8431/res/drawable-v21/selector_button_kitkat.xml"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_games_ballsofsteel.mp3.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/games_ballsofsteel.mp3"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xxxhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_games_ballsofsteel.mp3.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/games_ballsofsteel.mp3"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/anim_fab_scale_down.xml.flat",
@@ -1676,10 +1636,6 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/smokeone.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_mariocoin.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/mariocoin.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_notification_media_action.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/65581c52043f2d03e04c92d486df9cf1/res/layout/notification_media_action.xml"
     },
@@ -1722,10 +1678,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_ohmy.png.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/ohmy.png"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_chanchan.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/chanchan.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_rasengan.png.flat",
@@ -1796,10 +1748,6 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-mdpi-v4/abc_popup_background_mtrl_mult.9.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_whatelse.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/whatelse.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/color-v23_abc_tint_spinner.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/color-v23/abc_tint_spinner.xml"
     },
@@ -1812,10 +1760,6 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_marioundeground.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/marioundeground.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_supertoast_progress_bar.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/supertoasts-2.0.aar/c7abb47722bf20b5e6cfabb9600b8431/res/layout/supertoast_progress_bar.xml"
     },
@@ -1826,14 +1770,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_notification_icon_background.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/281447ffbdd184ce47f009969fd16fa2/res/drawable/notification_icon_background.xml"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_mariogrow.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/mariogrow.png"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_invitewomen.mp3.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/funny_invitewomen.mp3"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_music_kieee.mp3.flat",
@@ -1924,10 +1860,6 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_headshot.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/headshot.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
     },
@@ -1966,10 +1898,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/color_design_error.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/9c3fb5b1fb70902be5aaba06fea342cb/res/color/design_error.xml"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_disqualified.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/disqualified.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_banesandstorm.mp3.flat",
@@ -2022,10 +1950,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_rick.png.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/rick.png"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_youdickhead.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/youdickhead.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_music_yeahoe.mp3.flat",
@@ -2092,10 +2016,6 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/funny_wow.mp3"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_mooscles.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/mooscles.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_supertoast.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/supertoasts-2.0.aar/c7abb47722bf20b5e6cfabb9600b8431/res/layout/supertoast.xml"
     },
@@ -2104,12 +2024,12 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/movies_doh.mp3"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_abc_textfield_search_material.xml.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/abc_textfield_search_material.xml"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_illuminati.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/funny_illuminati.mp3"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_abc_textfield_search_material.xml.flat",
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/abc_textfield_search_material.xml"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
@@ -2128,16 +2048,16 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.1.aar/3b3c0e63e5d0b9870f1dcc200788e802/res/layout/material_drawer_item_mini_profile.xml"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_bekfast2.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/bekfast2.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_notification_template_part_chronometer.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/281447ffbdd184ce47f009969fd16fa2/res/layout/notification_template_part_chronometer.xml"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xxhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_fusrodah.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/fusrodah.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_retardation.mp3.flat",
@@ -2158,6 +2078,10 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_supertoast_button.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/supertoasts-2.0.aar/c7abb47722bf20b5e6cfabb9600b8431/res/layout/supertoast_button.xml"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_shutdown.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/shutdown.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_mudamudamuda.png.flat",
@@ -2226,10 +2150,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_light.png"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_mariolose.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/mariolose.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_abc_search_dropdown_item_icons_2line.xml.flat",
@@ -2332,10 +2252,6 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-xhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_bigshaq1.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/bigshaq1.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_ohmahgahpewdiepie.png.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/ohmahgahpewdiepie.png"
     },
@@ -2370,10 +2286,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_notification_media_cancel_action.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/65581c52043f2d03e04c92d486df9cf1/res/layout/notification_media_cancel_action.xml"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_rawsauce.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/rawsauce.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_games_easports.mp3.flat",
@@ -2452,10 +2364,6 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/funny_windows.mp3"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_shutdownglitched.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/shutdownglitched.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_badumtss.png.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/badumtss.png"
     },
@@ -2516,12 +2424,12 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-mdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_a.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/a.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_abc_action_mode_close_item_material.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/layout/abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_a.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/a.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_movies_fastnfurious.mp3.flat",
@@ -2568,12 +2476,12 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/anim/abc_popup_exit.xml"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_fichtlslied2.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/fichtlslied2.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_tetris.png.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/tetris.png"
+    },
+    {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_trap.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/trap.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_prettygood.mp3.flat",
@@ -2588,20 +2496,12 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.1.aar/3b3c0e63e5d0b9870f1dcc200788e802/res/layout/material_drawer_item_divider.xml"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_scatman.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/scatman.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_music_panda.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/music_panda.mp3"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-v21_design_password_eye.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/9c3fb5b1fb70902be5aaba06fea342cb/res/drawable-v21/design_password_eye.xml"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_stronker.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/stronker.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_blurptwo.png.flat",
@@ -2622,10 +2522,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_zawarudo.png.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/zawarudo.png"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_mariojump.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/mariojump.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_vodka.png.flat",
@@ -2678,10 +2574,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_material_drawer_circle_mask.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.1.aar/3b3c0e63e5d0b9870f1dcc200788e802/res/drawable/material_drawer_circle_mask.xml"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_niggacum.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/niggacum.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_music_ossnaa.mp3.flat",
@@ -2744,10 +2636,6 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/abc_ic_clear_material.xml"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_chan.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/chan.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_bart.png.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/bart.png"
     },
@@ -2766,10 +2654,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_poop.png.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/poop.png"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_games_fusrodah.mp3.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/games_fusrodah.mp3"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_man.png.flat",
@@ -2890,10 +2774,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_notification_action.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/281447ffbdd184ce47f009969fd16fa2/res/layout/notification_action.xml"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_mariofanfare.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/mariofanfare.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
@@ -3212,6 +3092,10 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
     {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_music_bangbang.mp3.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/music_bangbang.mp3"
+    },
+    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/menu_item.xml.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/menu/item.xml"
     },
@@ -3226,10 +3110,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_music_youuuu.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/music_youuuu.mp3"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_checkthestatistics.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/checkthestatistics.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_gnu.png.flat",
@@ -3252,10 +3132,6 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/9c3fb5b1fb70902be5aaba06fea342cb/res/drawable-mdpi-v4/design_ic_visibility.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_stfu2.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/stfu2.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     },
@@ -3266,14 +3142,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout-v21_notification_template_custom_big.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/281447ffbdd184ce47f009969fd16fa2/res/layout-v21/notification_template_custom_big.xml"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_prettygood.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/prettygood.png"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_fotnsomaewamoushindeiru.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/fotnsomaewamoushindeiru.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
@@ -3290,10 +3158,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_design_password_eye.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/9c3fb5b1fb70902be5aaba06fea342cb/res/drawable/design_password_eye.xml"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_bane.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/bane.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_black_36dp.png.flat",
@@ -3506,10 +3370,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_games_gameboy.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/games_gameboy.mp3"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_bearcum.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/bearcum.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_games_mariojump.mp3.flat",

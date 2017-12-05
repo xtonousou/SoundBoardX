@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  
     <string name="app_name" translatable="false">SoundBoardX</string>
     <string name="package_name" translatable="false">io.github.xtonousou.soundboardx</string>
     <string name="fav_desc">Icon with full star</string>
@@ -22,13 +23,7 @@
     <string name="ringtone">Set as ringtone</string>
     <string name="notification">Set as notification</string>
     <string name="alarm">Set as alarm</string>
-	<string name="lenny_face">( ͡ʘ╭͜ʖ╮͡ʘ)</string>
-	<string name="hex_code">Current HEX code:</string>
-    <string name="question_mark">\?</string>
-    <string name="can_you_stop">Can you stop doing that\?</string>
-    <string name="are_you_sure">Are you sure about that\?</string>
-<<<<<<< HEAD
-=======
-    <string name="back_to_top">Click me to go back to top</string>
->>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
+    <string name="lenny_face">( ͡ʘ╭͜ʖ╮͡ʘ)</string>
+    <string name="hex_code">Current HEX code:</string>
+  
 </resources>

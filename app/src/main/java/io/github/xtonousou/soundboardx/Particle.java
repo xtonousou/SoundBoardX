@@ -118,7 +118,7 @@ class Particle {
 
     void setAnimationBane() {
         Activity act = (Activity) view.getContext();
-        new ParticleSystem(act, 35, R.drawable.bane, 5000)
+        new ParticleSystem(act, 35, R.drawable.banesandstorm, 5000)
                 .setSpeedRange(0.2f, 0.4f)
                 .setFadeOut(500)
                 .oneShot(view, 35);
@@ -170,18 +170,6 @@ class Particle {
                 .oneShot(view, 35);
     }
 
-<<<<<<< HEAD
-    void setAnimationMilk() {
-        Activity act = (Activity) view.getContext();
-        new ParticleSystem(act, 35, R.drawable.milk, 5000)
-                .setSpeedRange(0.1f, 0.3f)
-                .setRotationSpeed(125)
-                .setFadeOut(500)
-                .oneShot(view, 35);
-    }
-
-=======
->>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
     void setAnimationCaptcha() {
         Activity act = (Activity) view.getContext();
         new ParticleSystem(act, 35, R.drawable.captcha, 5000)

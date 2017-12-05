@@ -11,7 +11,6 @@ import android.util.DisplayMetrics;
 import android.widget.TextView;
 
 import com.github.clans.fab.FloatingActionButton;
-import com.hanks.htextview.base.HTextView;
 
 import java.util.ArrayList;
 
@@ -45,10 +44,6 @@ abstract class Utils {
 
 	static void paintThis(TextView textView) {
 		textView.setTextColor(SharedPrefs.getInstance().getSelectedColor());
-	}
-
-	static void paintThis(HTextView hTextView) {
-		hTextView.setTextColor(SharedPrefs.getInstance().getSelectedColor());
 	}
 
 	static void paintThis(SearchView.SearchAutoComplete searchViewText) {
@@ -88,14 +83,6 @@ abstract class Utils {
     }
 
 	static boolean isGreenMode(Activity activity) {
-<<<<<<< HEAD
-        boolean mode = false;
-        if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) &&
-                ((PowerManager) activity.getSystemService(Context.POWER_SERVICE)).isPowerSaveMode()) {
-            mode = true;
-        }
-        return mode;
-=======
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 			if (((PowerManager) activity.getSystemService(Context.POWER_SERVICE)).isPowerSaveMode
 					()) {
@@ -103,7 +90,6 @@ abstract class Utils {
 			}
         }
         return false;
->>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
     }
 
 	static void restartActivity(Activity activity) {

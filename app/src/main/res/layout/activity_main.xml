@@ -14,20 +14,12 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
 
-<<<<<<< HEAD
-		<com.hanks.htextview.scale.ScaleTextView
-			android:id="@+id/title_view"
-			android:textSize="24sp"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"/>
-=======
-		<com.hanks.htextview.line.LineTextView
-			android:id="@+id/title_view"
-			android:textSize="26sp"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:gravity="start"/>
->>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
+	<TextView
+	    android:id="@+id/title_view"
+	    android:text="@string/app_name"
+	    android:textSize="24sp"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"/>
 
     </android.support.v7.widget.Toolbar>
 
@@ -39,12 +31,12 @@
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/grid_view"
-            android:layout_marginTop="200dp"
             android:layout_height="match_parent"
             android:layout_width="fill_parent"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:background="@color/colorPrimaryDark"/>
+	    
     </FrameLayout>
 
     <android.support.design.widget.CoordinatorLayout
@@ -53,20 +45,17 @@
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fab"
-<<<<<<< HEAD
-			android:src="@drawable/ic_volumeoff_white_48dp"
-=======
-			android:src="@drawable/ic_volume_off_white_24dp"
->>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
+	    android:src="@drawable/ic_volume_off_white_24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_marginBottom="5dp"
             android:layout_marginEnd="5dp"
             android:visibility="visible"
-			app:fab_colorNormal="@color/colorPrimaryDark"
-			app:fab_colorPressed="@color/colorPrimary"
+	    app:fab_colorNormal="@color/colorPrimaryDark"
+	    app:fab_colorPressed="@color/colorPrimary"
             app:fab_size="normal"/>
 
     </android.support.design.widget.CoordinatorLayout>
+    
 </RelativeLayout>
