@@ -7,7 +7,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+<<<<<<< HEAD
 import android.media.MediaPlayer;
+=======
+>>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -23,7 +26,13 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.CompoundButton;
 
 import com.github.clans.fab.FloatingActionButton;
+<<<<<<< HEAD
 import com.hanks.htextview.base.HTextView;
+=======
+import petrov.kristiyan.colorpicker.ColorPicker;
+import com.hanks.htextview.base.HTextView;
+import com.hanks.htextview.line.LineTextView;
+>>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -40,18 +49,27 @@ import permissions.dispatcher.OnPermissionDenied;
 import permissions.dispatcher.OnShowRationale;
 import permissions.dispatcher.PermissionRequest;
 import permissions.dispatcher.RuntimePermissions;
+<<<<<<< HEAD
 import petrov.kristiyan.colorpicker.ColorPicker;
+=======
+>>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
 
 @RuntimePermissions
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
 
     int savedColor;
+<<<<<<< HEAD
     byte easterEggCounter = 0;
     boolean withAnimations = true;
 
     Typeface fancyFont;
 	MediaPlayer easterEggPlayer = null;
+=======
+    boolean withAnimations = true;
+
+    Typeface fancyFont;
+>>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
 	SoundPlayer soundPlayer;
     Toolbar mToolbar;
 
@@ -62,7 +80,10 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView mView;
     Drawer mDrawer = null;
 
+<<<<<<< HEAD
     @SuppressWarnings("ConstantConditions")
+=======
+>>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         mToolbar = findViewById(R.id.toolbar);
 		Utils.paintThis(mToolbar);
 
+<<<<<<< HEAD
 		HTextView txt = findViewById(R.id.title_view);
 		Utils.paintThis(txt);
 		txt.setOnClickListener((View view) -> {
@@ -119,6 +141,12 @@ public class MainActivity extends AppCompatActivity {
 		});
 		txt.animateText(getString(R.string.app_name));
 		fancyFont = Typeface.createFromAsset(getAssets(), "fonts/hacked.ttf");
+=======
+		LineTextView txt = findViewById(R.id.title_view);
+		Utils.paintThis(txt);
+		txt.animateText(getString(R.string.app_name));
+		fancyFont = Typeface.createFromAsset(getAssets(), "fonts/Roboto-BoldCondensed.ttf");
+>>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
 		txt.setTypeface(fancyFont);
 
         setSupportActionBar(mToolbar);
@@ -136,6 +164,11 @@ public class MainActivity extends AppCompatActivity {
 
         mView.addItemDecoration(new BottomOffsetDecoration(225));
 
+<<<<<<< HEAD
+=======
+		txt.setOnClickListener((View view) -> mView.scrollToPosition(0));
+
+>>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
         initFAB();
         initDrawer(savedInstanceState);
     }
@@ -225,12 +258,15 @@ public class MainActivity extends AppCompatActivity {
 		Utils.paintThis(fab);
 
 		fab.setOnClickListener(view -> {
+<<<<<<< HEAD
         	if (easterEggPlayer != null) {
 				easterEggPlayer.release();
 				easterEggPlayer = null;
 				((HTextView) findViewById(R.id.title_view)).animateText(getString(R.string
 						.app_name));
 			}
+=======
+>>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
 			soundPlayer.release();
 			soundPlayer = new SoundPlayer(this);
 		});

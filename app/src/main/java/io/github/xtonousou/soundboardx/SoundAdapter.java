@@ -20,6 +20,10 @@ import com.mikepenz.iconics.IconicsDrawable;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+<<<<<<< HEAD
+=======
+import org.greenrobot.eventbus.ThreadMode;
+>>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
 
 import java.text.Normalizer;
 import java.util.ArrayList;
@@ -145,6 +149,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
             favButton = v.findViewById(R.id.fav_button);
 
             Typeface font = Typeface.createFromAsset(itemView.getContext().getAssets(),
+<<<<<<< HEAD
                     "fonts/roboto.ttf");
             title.setTypeface(font);
 
@@ -156,6 +161,31 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
                         if (animationsShown) {
                             new ToneManager(new Particle(itemView), title.getText().toString())
                                 .makeItShine();
+=======
+                    "fonts/Roboto-Regular.ttf");
+            title.setTypeface(font);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                public void onEvent(String event) {
+                    if (getAdapterPosition() != RecyclerView.NO_POSITION) {
+                        if (EventBus.getDefault().isRegistered(this)) {
+                            EventBus.getDefault().unregister(this);
+                        }
+                        notifyItemChanged(getAdapterPosition());
+                    }
+                }
+
+                @Override
+				@Subscribe(threadMode = ThreadMode.POSTING)
+                public void onClick(View view) {
+                    if (getAdapterPosition() != RecyclerView.NO_POSITION) {
+                        if (EventBus.getDefault().isRegistered(this)) {
+                            return;
+                        }
+                        if (animationsShown) {
+                            new ToneManager(new Particle(itemView), title.getText().toString())
+                                    .makeItShine();
+>>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
                         }
                         EventBus.getDefault().register(this);
                         EventBus.getDefault().post(sounds.get(getAdapterPosition()));
@@ -295,7 +325,10 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
             return filterResults;
         }
 
+<<<<<<< HEAD
         @SuppressWarnings("unchecked")
+=======
+>>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
             sounds = (ArrayList<Sound>) results.values;

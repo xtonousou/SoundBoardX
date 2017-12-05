@@ -170,6 +170,7 @@ class Particle {
                 .oneShot(view, 35);
     }
 
+<<<<<<< HEAD
     void setAnimationMilk() {
         Activity act = (Activity) view.getContext();
         new ParticleSystem(act, 35, R.drawable.milk, 5000)
@@ -179,6 +180,8 @@ class Particle {
                 .oneShot(view, 35);
     }
 
+=======
+>>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
     void setAnimationCaptcha() {
         Activity act = (Activity) view.getContext();
         new ParticleSystem(act, 35, R.drawable.captcha, 5000)

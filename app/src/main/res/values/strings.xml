@@ -27,4 +27,8 @@
     <string name="question_mark">\?</string>
     <string name="can_you_stop">Can you stop doing that\?</string>
     <string name="are_you_sure">Are you sure about that\?</string>
+<<<<<<< HEAD
+=======
+    <string name="back_to_top">Click me to go back to top</string>
+>>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
 </resources>

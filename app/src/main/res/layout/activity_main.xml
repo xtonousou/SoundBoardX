@@ -14,11 +14,20 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
 
+<<<<<<< HEAD
 		<com.hanks.htextview.scale.ScaleTextView
 			android:id="@+id/title_view"
 			android:textSize="24sp"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"/>
+=======
+		<com.hanks.htextview.line.LineTextView
+			android:id="@+id/title_view"
+			android:textSize="26sp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="start"/>
+>>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
 
     </android.support.v7.widget.Toolbar>
 
@@ -44,7 +53,11 @@
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fab"
+<<<<<<< HEAD
 			android:src="@drawable/ic_volumeoff_white_48dp"
+=======
+			android:src="@drawable/ic_volume_off_white_24dp"
+>>>>>>> 992a5e6990f270c8082d761c2c11c8825a5df8ec
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
