@@ -20,8 +20,6 @@ MERGED from [com.android.support:support-core-ui:27.0.2] /home/xtonousou/.gradle
 MERGED from [com.android.support:support-vector-drawable:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/1857fc85b0a0672e52dc2dc2a58c3837/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/281447ffbdd184ce47f009969fd16fa2/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/e71a5f865554a178f3ab0d5ac04b3fd0/AndroidManifest.xml:2:1-11:12
-MERGED from [com.github.ajalt.reprint:core:3.2.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/core-3.2.0.aar/081cf52af1da70b026b529795395642f/AndroidManifest.xml:2:1-11:12
-MERGED from [com.github.ajalt.reprint:reprint_spass:3.2.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/reprint_spass-3.2.0.aar/54db307809f5dc786eafef51662d8abc/AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.clans:fab:1.6.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/0f27498557af1b5dbd26d66dc87b8916/AndroidManifest.xml:2:1-14:12
 MERGED from [com.daimajia.easing:library:2.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/library-2.1.aar/3ad59537ae323c3a36ca9fc4826f4c4a/AndroidManifest.xml:2:1-12:12
 MERGED from [com.daimajia.androidanimations:library:2.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/library-2.3.aar/bc1cb863da094c37558c1682dc037bd1/AndroidManifest.xml:2:1-12:12
@@ -72,14 +70,10 @@ ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/s
 		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:11:22-77
 uses-permission#android.permission.USE_FINGERPRINT
 ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:13:2-70
-MERGED from [com.github.ajalt.reprint:core:3.2.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/core-3.2.0.aar/081cf52af1da70b026b529795395642f/AndroidManifest.xml:9:5-74
-MERGED from [com.github.ajalt.reprint:core:3.2.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/core-3.2.0.aar/081cf52af1da70b026b529795395642f/AndroidManifest.xml:9:5-74
 	android:name
 		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:13:19-68
 uses-permission#com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY
 ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:14:2-113
-MERGED from [com.github.ajalt.reprint:reprint_spass:3.2.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/reprint_spass-3.2.0.aar/54db307809f5dc786eafef51662d8abc/AndroidManifest.xml:9:5-117
-MERGED from [com.github.ajalt.reprint:reprint_spass:3.2.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/reprint_spass-3.2.0.aar/54db307809f5dc786eafef51662d8abc/AndroidManifest.xml:9:5-117
 	android:name
 		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:14:19-111
 application
@@ -160,10 +154,6 @@ MERGED from [com.android.support:support-compat:27.0.2] /home/xtonousou/.gradle/
 MERGED from [com.android.support:support-compat:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/281447ffbdd184ce47f009969fd16fa2/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/e71a5f865554a178f3ab0d5ac04b3fd0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/e71a5f865554a178f3ab0d5ac04b3fd0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.ajalt.reprint:core:3.2.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/core-3.2.0.aar/081cf52af1da70b026b529795395642f/AndroidManifest.xml:7:5-44
-MERGED from [com.github.ajalt.reprint:core:3.2.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/core-3.2.0.aar/081cf52af1da70b026b529795395642f/AndroidManifest.xml:7:5-44
-MERGED from [com.github.ajalt.reprint:reprint_spass:3.2.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/reprint_spass-3.2.0.aar/54db307809f5dc786eafef51662d8abc/AndroidManifest.xml:7:5-44
-MERGED from [com.github.ajalt.reprint:reprint_spass:3.2.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/reprint_spass-3.2.0.aar/54db307809f5dc786eafef51662d8abc/AndroidManifest.xml:7:5-44
 MERGED from [com.github.clans:fab:1.6.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/0f27498557af1b5dbd26d66dc87b8916/AndroidManifest.xml:8:5-10:41
 MERGED from [com.github.clans:fab:1.6.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/0f27498557af1b5dbd26d66dc87b8916/AndroidManifest.xml:8:5-10:41
 MERGED from [com.daimajia.easing:library:2.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/library-2.1.aar/3ad59537ae323c3a36ca9fc4826f4c4a/AndroidManifest.xml:8:5-10:41

@@ -4,23 +4,6 @@
             "outputFile": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-th/values-th.xml",
             "map": [
                 {
-                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/core-3.2.0.aar/081cf52af1da70b026b529795395642f/res/values-th/values-th.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,205,344,475,601,727,840,967,1097,1238,1363,1469,1564",
-                        "endColumns": "149,138,130,125,125,112,126,129,140,124,105,94,81",
-                        "endOffsets": "200,339,470,596,722,835,962,1092,1233,1358,1464,1559,1641"
-                    },
-                    "to": {
-                        "startLines": "19,20,21,22,23,24,25,26,27,28,29,30,31",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1825,1975,2114,2245,2371,2497,2610,2737,2867,3008,3133,3239,3334",
-                        "endColumns": "149,138,130,125,125,112,126,129,140,124,105,94,81",
-                        "endOffsets": "1970,2109,2240,2366,2492,2605,2732,2862,3003,3128,3234,3329,3411"
-                    }
-                },
-                {
                     "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/values-th/values-th.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
@@ -28,13 +11,6 @@
                         "startOffsets": "105,210,308,416,505,607,717,794,872,953,1061,1165,1263,1371,1476,1577,1730,1825",
                         "endColumns": "104,97,107,88,101,109,76,77,80,107,103,97,107,104,100,152,94,80",
                         "endOffsets": "205,303,411,500,602,712,789,867,948,1056,1160,1258,1366,1471,1572,1725,1820,1901"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,32",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,210,308,416,505,607,717,794,872,953,1061,1165,1263,1371,1476,1577,1730,3416",
-                        "endColumns": "104,97,107,88,101,109,76,77,80,107,103,97,107,104,100,152,94,80",
-                        "endOffsets": "205,303,411,500,602,712,789,867,948,1056,1160,1258,1366,1471,1572,1725,1820,3492"
                     }
                 },
                 {
@@ -47,11 +23,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "33",
+                        "startLines": "20",
                         "startColumns": "4",
-                        "startOffsets": "3497",
+                        "startOffsets": "1906",
                         "endColumns": "100",
-                        "endOffsets": "3593"
+                        "endOffsets": "2002"
                     }
                 }
             ]

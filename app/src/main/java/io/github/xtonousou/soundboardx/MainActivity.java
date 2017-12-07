@@ -18,11 +18,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CompoundButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.github.ajalt.reprint.core.AuthenticationFailureReason;
-import com.github.ajalt.reprint.core.AuthenticationListener;
-import com.github.ajalt.reprint.core.Reprint;
 import com.github.clans.fab.FloatingActionButton;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
@@ -52,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 	TextView mTitleText;
 	SoundPlayer mSoundPlayer;
 	ColorPicker mColorPicker;
+	FloatingActionButton mFab;
 
 	/*
 	 * Do not change the order of the code.
@@ -66,11 +63,12 @@ public class MainActivity extends AppCompatActivity {
 		mToolbar = findViewById(R.id.toolbar);
 		mTitleText = findViewById(R.id.title_view);
 		mView = findViewById(R.id.grid_view);
+		mFab = findViewById(R.id.fab);
 
+		handleFAB();
 		handleView();
 		handleTitle();
 		handleToolbar();
-		handleMuteFunctionality();
 		handleDrawer(savedInstanceState);
 	}
 
@@ -162,40 +160,9 @@ public class MainActivity extends AppCompatActivity {
 		mTitleText.setOnClickListener((View view) -> mView.scrollToPosition(0));
 	}
 
-	private void handleMuteFunctionality() {
-		FloatingActionButton fab = findViewById(R.id.fab);
-		handleFAB(fab);
-
-		if (Reprint.isHardwarePresent()) {
-			if (SharedPrefs.getInstance().isFirstTime()) {
-				Toast.makeText(this, R.string.fingerprint,
-						Toast.LENGTH_SHORT).show();
-			}
-			Reprint.authenticate(new AuthenticationListener() {
-				@Override
-				public void onSuccess(int moduleTag) {
-					mute();
-					new Reprint.RestartPredicate() {
-						@Override
-						public boolean invoke(AuthenticationFailureReason reason, int restartCount) {
-							mute();
-							return false;
-						}
-					};
-				}
-
-				@Override
-				public void onFailure(AuthenticationFailureReason failureReason, boolean fatal,
-									  CharSequence errorMessage, int moduleTag, int errorCode) {
-					mute();
-				}
-			});
-		}
-    }
-
-    private void handleFAB(FloatingActionButton fab) {
-		Utils.paintThis(fab);
-		fab.setOnClickListener(view -> mute());
+    private void handleFAB() {
+		Utils.paintThis(mFab);
+		mFab.setOnClickListener(view -> mute());
 	}
 
     private void handleSearchView(Menu menu) {
@@ -220,7 +187,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
     }
 
     private void handleDrawer(Bundle instance) {
