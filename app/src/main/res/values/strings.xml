@@ -25,5 +25,6 @@
     <string name="alarm">Set as alarm</string>
     <string name="lenny_face">( ͡ʘ╭͜ʖ╮͡ʘ)</string>
     <string name="hex_code">Current HEX code:</string>
-  
+	<string name="fingerprint">Mute sound with the fingerprint sensor.</string>
+
 </resources>

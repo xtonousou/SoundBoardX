@@ -18,7 +18,11 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.github.ajalt.reprint.core.AuthenticationFailureReason;
+import com.github.ajalt.reprint.core.AuthenticationListener;
+import com.github.ajalt.reprint.core.Reprint;
 import com.github.clans.fab.FloatingActionButton;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
@@ -35,23 +39,23 @@ import petrov.kristiyan.colorpicker.ColorPicker;
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
 
-    int mColor;
-    boolean mAnimations = true;
-	static InputMethodManager sInputManager;
+	int mColor;
+	boolean mAnimations = true;
 	static String sDefaultColor = "#b71c1c";
 
-	Toolbar mToolbar;
-	TextView mTitleText;
+	static InputMethodManager sInputManager;
+
 	Typeface mFont;
-	SoundPlayer mSoundPlayer;
-	RecyclerView mView;
 	Drawer mDrawer;
+	Toolbar mToolbar;
+	RecyclerView mView;
+	TextView mTitleText;
+	SoundPlayer mSoundPlayer;
 	ColorPicker mColorPicker;
 
 	/*
 	 * Do not change the order of the code.
 	 */
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -64,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
 		mView = findViewById(R.id.grid_view);
 
 		handleView();
-		handleFAB();
 		handleTitle();
 		handleToolbar();
+		handleMuteFunctionality();
 		handleDrawer(savedInstanceState);
 	}
 
@@ -79,13 +83,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onPause() {
         super.onPause();
-	mSoundPlayer.release();
+		mSoundPlayer.release();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.item, menu);
-		handlSearchView(menu);
+		handleSearchView(menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -158,20 +162,43 @@ public class MainActivity extends AppCompatActivity {
 		mTitleText.setOnClickListener((View view) -> mView.scrollToPosition(0));
 	}
 
-	/*
-	 * Add fingerprint support, fingerprint as mute button.
-	 */
-    private void handleFAB() {
+	private void handleMuteFunctionality() {
 		FloatingActionButton fab = findViewById(R.id.fab);
-		Utils.paintThis(fab);
+		handleFAB(fab);
 
-		fab.setOnClickListener(view -> {
-			mSoundPlayer.release();
-			mSoundPlayer = new SoundPlayer(this);
-		});
+		if (Reprint.isHardwarePresent()) {
+			if (SharedPrefs.getInstance().isFirstTime()) {
+				Toast.makeText(this, R.string.fingerprint,
+						Toast.LENGTH_SHORT).show();
+			}
+			Reprint.authenticate(new AuthenticationListener() {
+				@Override
+				public void onSuccess(int moduleTag) {
+					mute();
+					new Reprint.RestartPredicate() {
+						@Override
+						public boolean invoke(AuthenticationFailureReason reason, int restartCount) {
+							mute();
+							return false;
+						}
+					};
+				}
+
+				@Override
+				public void onFailure(AuthenticationFailureReason failureReason, boolean fatal,
+									  CharSequence errorMessage, int moduleTag, int errorCode) {
+					mute();
+				}
+			});
+		}
     }
 
-    private void handlSearchView(Menu menu) {
+    private void handleFAB(FloatingActionButton fab) {
+		Utils.paintThis(fab);
+		fab.setOnClickListener(view -> mute());
+	}
+
+    private void handleSearchView(Menu menu) {
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
         if (searchManager != null) {
@@ -196,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void handleDrawer(Bundle instance) {
+    private void handleDrawer(Bundle instance) {
         int drawerSize;
         if (getApplicationContext().getResources().getConfiguration().orientation != 1) {
             drawerSize = (Utils.getScreenWidth(this)) - 850;
@@ -381,4 +408,9 @@ public class MainActivity extends AppCompatActivity {
 			}
 		}
     };
+
+	void mute() {
+		mSoundPlayer.release();
+		mSoundPlayer = new SoundPlayer(this);
+	}
 }
