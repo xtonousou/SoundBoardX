@@ -1,10 +1,13 @@
 package io.github.xtonousou.soundboardx;
 
+import android.Manifest;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -106,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
     }
 
-    public void normalize(SoundAdapter adapter) {
+    private void normalize(SoundAdapter adapter) {
         switch (adapter.getCategory()) {
             default:
                 Log.e(TAG, "Something went completely wrong. Check normalize() or its calls.");
@@ -125,6 +128,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+
+    private void showFavs() {
+		if (!((SoundAdapter) mView.getAdapter()).isFavoritesOnly())
+			((SoundAdapter) mView.getAdapter()).onlyShowFavorites();
+		else
+			normalize((SoundAdapter) mView.getAdapter());
+	}
 
     private void handlePreferences() {
 		SharedPrefs.init(getPreferences(Context.MODE_PRIVATE));
@@ -148,7 +158,8 @@ public class MainActivity extends AppCompatActivity {
 		mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
 				.getInteger(R.integer.num_cols),
 				StaggeredGridLayoutManager.VERTICAL));
-		mView.setAdapter(new SoundAdapter(SoundStore.getAllSounds(this), mAnimations));
+		mView.setAdapter(new SoundAdapter(MainActivity.this,
+				SoundStore.getAllSounds(this), mAnimations));
 		((SoundAdapter) mView.getAdapter()).showAllSounds(getApplicationContext());
 		mView.addItemDecoration(new BottomOffsetDecoration(225));
 	}
@@ -157,7 +168,11 @@ public class MainActivity extends AppCompatActivity {
 		Utils.paintThis(mTitleText);
 		mFont = Typeface.createFromAsset(getAssets(), "fonts/Roboto-BoldCondensed.ttf");
 		mTitleText.setTypeface(mFont);
-		mTitleText.setOnClickListener((View view) -> mView.scrollToPosition(0));
+		mTitleText.setOnClickListener((View view) -> mView.smoothScrollToPosition(0));
+		mTitleText.setOnLongClickListener(view -> {
+			showFavs();
+			return true;
+		});
 	}
 
     private void handleFAB() {
@@ -266,7 +281,7 @@ public class MainActivity extends AppCompatActivity {
                             mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                     .getInteger(R.integer.num_cols),
                                     StaggeredGridLayoutManager.VERTICAL));
-                            mView.setAdapter(new SoundAdapter(SoundStore
+                            mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
                                     .getAllSounds(MainActivity.this), mAnimations));
                             ((SoundAdapter) mView.getAdapter()).showAllSounds(MainActivity.this);
                             break;
@@ -274,7 +289,7 @@ public class MainActivity extends AppCompatActivity {
                             mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                     .getInteger(R.integer.num_cols),
                                     StaggeredGridLayoutManager.VERTICAL));
-                            mView.setAdapter(new SoundAdapter(SoundStore
+                            mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
                                     .getFunnySounds(MainActivity.this), mAnimations));
                             ((SoundAdapter) mView.getAdapter()).showFunnySounds(MainActivity.this);
                             break;
@@ -282,7 +297,7 @@ public class MainActivity extends AppCompatActivity {
                             mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                     .getInteger(R.integer.num_cols),
                                     StaggeredGridLayoutManager.VERTICAL));
-                            mView.setAdapter(new SoundAdapter(SoundStore
+                            mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
                                     .getGamesSounds(MainActivity.this), mAnimations));
                             ((SoundAdapter) mView.getAdapter()).showGamesSounds(MainActivity.this);
                             break;
@@ -290,15 +305,12 @@ public class MainActivity extends AppCompatActivity {
                             mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
                                     .getInteger(R.integer.num_cols),
                                     StaggeredGridLayoutManager.VERTICAL));
-                            mView.setAdapter(new SoundAdapter(SoundStore
+                            mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
                                     .getMoviesSounds(MainActivity.this), mAnimations));
                             ((SoundAdapter) mView.getAdapter()).showMoviesSounds(MainActivity.this);
                             break;
                         case 6:
-                            if (!((SoundAdapter) mView.getAdapter()).isFavoritesOnly())
-                                ((SoundAdapter) mView.getAdapter()).onlyShowFavorites();
-                            else
-                                normalize((SoundAdapter) mView.getAdapter());
+							showFavs();
                             break;
                         case 9:
                             mColorPicker = new ColorPicker(MainActivity.this);

@@ -1,13 +1,18 @@
 package io.github.xtonousou.soundboardx;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Log;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 
 import com.github.johnpersano.supertoasts.library.Style;
@@ -21,27 +26,70 @@ import java.util.ArrayList;
 
 class ToneManager {
     private static final String TAG = "ToneManager";
+    private static final int PERMISSION_REQUEST_WRITE_SETTINGS = 0;
+    private static final int PERMISSION_REQUEST_MODIFY_AUDIO_SETTINGS = 1;
 
 	private ArrayList<Sound> sounds;
-	private Particle    	 particle;
-	private String       	 itemName;
-	private View     		 itemView;
-	private int      		 position;
+    private Activity         activity;
+    private Context          context;
+    private String       	 itemName;
+    private View     		 itemView;
+    private int      		 position;
 
-    ToneManager(View itemView, String itemName, int position) {
+    ToneManager(Activity activity, View itemView, String itemName, int position) {
+        this.activity = activity;
 		this.itemView = itemView;
 		this.itemName = itemName;
 		this.position = position;
-		this.sounds = Utils.getSelectedList(itemView.getContext(), SharedPrefs
-				.getInstance().getSelectedList());
+		this.context  = itemView.getContext();
+		this.sounds   = Utils.getSelectedList(itemView.getContext(),
+                SharedPrefs.getInstance().getSelectedList());
     }
 
-	ToneManager(Particle particle, String itemName) {
-		this.particle = particle;
-		this.itemName = itemName;
-	}
+    private void handlePermissions() {
+        Context context = itemView.getContext();
+        if (ContextCompat.checkSelfPermission(context,
+                Manifest.permission.WRITE_SETTINGS)
+                != PackageManager.PERMISSION_GRANTED) {
 
-    void ringtone() {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(activity,
+                    Manifest.permission.WRITE_SETTINGS)) {
+
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+
+            } else {
+
+                // No explanation needed, we can request the permission.
+
+                ActivityCompat.requestPermissions(activity,
+                        new String[]{Manifest.permission.WRITE_SETTINGS},
+                        PERMISSION_REQUEST_WRITE_SETTINGS);
+
+                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                // app-defined int constant. The callback method gets the
+                // result of the request.
+            }
+        }
+    }
+
+	void setToneAs(byte id) {
+        handlePermissions();
+        switch (id) {
+            case 0:
+                ringtone();
+                break;
+            case 1:
+                notification();
+                break;
+            case 2:
+                alarm();
+                break;
+        }
+    }
+
+    private void ringtone() {
     	Resources res = itemView.getResources();
     	String fileName = res.getResourceEntryName(sounds.get(position).getResourceId());
 		int soundId = res.getIdentifier(fileName, "raw",
@@ -49,11 +97,11 @@ class ToneManager {
 		setAsRingtone(fileName, soundId);
     }
 
-    void notification() {
+    private void notification() {
 		setAsNotification(sounds.get(position).getResourceId());
     }
 
-    void alarm() {
+    private void alarm() {
 		setAsAlarm(sounds.get(position).getResourceId());
     }
 
@@ -240,371 +288,5 @@ class ToneManager {
                 .setFrame(Style.FRAME_STANDARD)
                 .setColor(SharedPrefs.getInstance().getSelectedColor())
                 .setAnimations(Style.ANIMATIONS_POP).show();
-    }
-
-    /**
-     *  Animation setter.
-     */
-    void makeItShine() {
-        switch (itemName) {
-            default:
-                Log.e(TAG, "No animation is set for " + itemName);
-                break;
-            case "Nigger's satisfaction":
-                particle.setAnimationNigga();
-                break;
-            case "Hitmarker":
-                particle.setAnimationHitmarkers();
-                break;
-            case "It' s 04:20 meng…":
-                particle.setAnimationWeed();
-                break;
-            case "420 blaze it faggot":
-                particle.setAnimationWeed();
-                break;
-            case "Blurp":
-                particle.setAnimationWaterDrops();
-                break;
-            case "Adam!?!":
-                particle.setAnimationSmoke();
-                break;
-            case "Allahu Akbar":
-                particle.setAnimationISIS();
-                break;
-            case "Damn son!":
-                particle.setAnimationMLG();
-                break;
-            case "Bane: Darude Sandstorm":
-                particle.setAnimationBane();
-                break;
-            case "Bearcum!!!":
-                particle.setAnimationMLG();
-                break;
-            case "What is going on here?":
-                particle.setAnimationRetard();
-                break;
-            case "Black kid on fire":
-                particle.setAnimationNigga();
-                break;
-            case "Russian father":
-                particle.setAnimationRussian();
-                break;
-            case "Fichtl's Lied":
-                particle.setAnimationFluteWithMusicNote();
-                break;
-            case "Hey that' s pretty good!":
-                particle.setAnimationDubz();
-                break;
-            case "I' m your father!":
-                particle.setAnimationVader();
-                break;
-            case "Fun":
-                particle.setAnimationKazoo();
-                break;
-            case "Kazoo":
-                particle.setAnimationKazoo();
-                break;
-            case "Immigrants cause cancer":
-                particle.setAnimationTrump();
-                break;
-            case "Maybe we could invite some women?":
-                particle.setAnimationSkyrimPoop();
-                break;
-            case "Trap Theme":
-                particle.setAnimationTrap();
-                break;
-            case "Weird laugh":
-                particle.setAnimation4chan();
-                break;
-            case "Make your dreams come true!":
-                particle.setAnimationMan();
-                break;
-            case "LOTR MLG":
-                particle.setAnimationMLG();
-                break;
-            case "Come here my pet Russian…":
-                particle.setAnimationRussian();
-                break;
-            case "This is my masterpiece!":
-                particle.setAnimationCaptcha();
-                break;
-            case "My mooscles are getting bigger!":
-                particle.setAnimationMan();
-                break;
-            case "I'm growing stronker!":
-                particle.setAnimationMan();
-                break;
-            case "Yiss":
-                particle.setAnimationMan();
-                break;
-            case "STFU":
-                particle.setAnimationSTFU();
-                break;
-            case "Nigga is cumming…":
-                particle.setAnimationNigga();
-                break;
-            case "Sup nigga, wanna talk some shit?":
-                particle.setAnimationNigga();
-                break;
-            case "Surprise motherfucker!":
-                particle.setAnimationNigga();
-                break;
-            case "Seven vaginias…":
-                particle.setAnimationCats();
-                break;
-            case "Oh my!":
-                particle.setAnimationTrap();
-                break;
-            case "Oh Yeaaaah!":
-                particle.setAnimationParticles();
-                break;
-            case "Αγγούρι στον κώλο σου…":
-                particle.setAnimationPokemon();
-                break;
-            case "Excuse me, I have some pussyhair on me!":
-                particle.setAnimationCats();
-                break;
-            case "Retardation Theme":
-                particle.setAnimationRetard();
-                break;
-            case "Cyka Blyat's Middlefinger":
-                particle.setAnimationRussian();
-                break;
-            case "Why don't you show us that fine pussy?":
-                particle.setAnimationSkyrimPoop();
-                break;
-            case "Shutdown, glitched…":
-                particle.setAnimationRetard();
-                break;
-            case "What manner of sissyness, is this?":
-                particle.setAnimationSkyrimPoop();
-                break;
-            case "You spin me round":
-                particle.setAnimationTrap();
-                break;
-            case "Squeaker":
-                particle.setAnimationRetard();
-                break;
-            case "Our courage will pull us through":
-                particle.setAnimationPokemon();
-                break;
-            case "That's a 10!":
-                particle.setAnimationSpoon();
-                break;
-            case "Illuminati":
-                particle.setAnimationIlluminati();
-                break;
-            case "WOW":
-                particle.setAnimationMLG();
-                break;
-            case "Richard Stallman":
-                particle.setAnimationGNU();
-                break;
-            case "What else?":
-                particle.setAnimationRetard();
-                break;
-            case "Zodiac":
-                particle.setAnimation4chan();
-                break;
-            case "Yuri Kuma Arashi":
-                particle.setAnimationCats();
-                break;
-            case "U WOT M8":
-                particle.setAnimationFluteWithMusicNote();
-                break;
-            case "Cow":
-                particle.setAnimationCows();
-                break;
-            // TODO fix particles
-            case "Oh baby a triple":
-                particle.setAnimationCows();
-                break;
-            case "Badum Tss":
-                particle.setAnimationCows();
-                break;
-            case "Beep":
-                particle.setAnimationCows();
-                break;
-            case "Boxeo":
-                particle.setAnimationCows();
-                break;
-            case "Chan":
-                particle.setAnimationCows();
-                break;
-            case "Chan chan":
-                particle.setAnimationCows();
-                break;
-            case "Combo breaker":
-                particle.setAnimationCows();
-                break;
-            case "De dotaded wam":
-                particle.setAnimationCows();
-                break;
-            case "Duck toy":
-                particle.setAnimationCows();
-                break;
-            case "Get noscoped":
-                particle.setAnimationCows();
-                break;
-            case "Mom get the camera":
-                particle.setAnimationCows();
-                break;
-            case "Headshot":
-                particle.setAnimationCows();
-                break;
-            case "Inception":
-                particle.setAnimationCows();
-                break;
-            case "Holy Shit":
-                particle.setAnimationCows();
-                break;
-            case "Just Do It":
-                particle.setAnimationCows();
-                break;
-            case "John Cena":
-                particle.setAnimationCows();
-                break;
-            case "Never do that":
-                particle.setAnimationCows();
-                break;
-            case "Nein Nein":
-                particle.setAnimationCows();
-                break;
-            case "Over 9000":
-                particle.setAnimationCows();
-                break;
-            case "OMG":
-                particle.setAnimationCows();
-                break;
-            case "Shots fired":
-                particle.setAnimationCows();
-                break;
-            case "Penault Jelly":
-                particle.setAnimationCows();
-                break;
-            case "Whatcha say":
-                particle.setAnimationCows();
-                break;
-            case "Smoke weed everyday":
-                particle.setAnimationCows();
-                break;
-            case "Wombo Combo":
-                particle.setAnimationCows();
-                break;
-            case "WTF BOOM":
-                particle.setAnimationCows();
-                break;
-            case "Aku Aku":
-                particle.setAnimationCows();
-                break;
-            case "Balls of steel":
-                particle.setAnimationCows();
-                break;
-            case "EA Games":
-                particle.setAnimationCows();
-                break;
-            case "EA Sports":
-                particle.setAnimationCows();
-                break;
-            case "Excellent":
-                particle.setAnimationCows();
-                break;
-            case "Fus Ro Dah":
-                particle.setAnimationSkyrim();
-                break;
-            case "Gameboy":
-                particle.setAnimationCows();
-                break;
-            case "Hadouken":
-                particle.setAnimationCows();
-                break;
-            case "Inspector Gadget":
-                particle.setAnimationCows();
-                break;
-            case "Jigglypuff":
-                particle.setAnimationCows();
-                break;
-            case "Mario":
-                particle.setAnimationCows();
-                break;
-            case "Mario Coin":
-                particle.setAnimationCows();
-                break;
-            case "Mario Fanfare":
-                particle.setAnimationCows();
-                break;
-            case "Mario Grow":
-                particle.setAnimationCows();
-                break;
-            case "Mario Jump":
-                particle.setAnimationCows();
-                break;
-            case "Mario Lose":
-                particle.setAnimationCows();
-                break;
-            case "Mario Underground":
-                particle.setAnimationCows();
-                break;
-            case "Nuke":
-                particle.setAnimationCows();
-                break;
-            case "Playstation":
-                particle.setAnimationCows();
-                break;
-            case "Pacman Death":
-                particle.setAnimationCows();
-                break;
-            case "Pokemon Heal":
-                particle.setAnimationPokemon();
-                break;
-            case "Tetris":
-                particle.setAnimationCows();
-                break;
-            case "Sniper shot":
-                particle.setAnimationCows();
-                break;
-            case "Badadipoopi":
-                particle.setAnimationCows();
-                break;
-            case "Back to the future":
-                particle.setAnimationCows();
-                break;
-            case "Belair":
-                particle.setAnimationCows();
-                break;
-            case "Bazinga":
-                particle.setAnimationCows();
-                break;
-            case "Darth Vader":
-                particle.setAnimationVader();
-                break;
-            case "Chewbacca":
-                particle.setAnimationCows();
-                break;
-            case "Fast n Furious":
-                particle.setAnimationCows();
-                break;
-            case "Doh":
-                particle.setAnimationCows();
-                break;
-            case "Nazgul":
-                particle.setAnimationCows();
-                break;
-            case "Godzilla":
-                particle.setAnimationCows();
-                break;
-            case "Two and a Half Men":
-                particle.setAnimationCows();
-                break;
-            case "Oompaloompa":
-                particle.setAnimationCows();
-                break;
-            case "Wazzup":
-                particle.setAnimationCows();
-                break;
-//                    case "":
-//                        particle.setAnimation();
-//                        break;
-        }
     }
 }

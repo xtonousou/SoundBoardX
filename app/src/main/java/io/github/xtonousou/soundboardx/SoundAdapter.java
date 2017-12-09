@@ -1,5 +1,6 @@
 package io.github.xtonousou.soundboardx;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -29,6 +30,8 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
         implements Filterable {
     private static final String TAG = "SoundAdapter";
 
+    private Activity activity;
+    private Typeface font;
     private ArrayList<Sound> sounds;
     private ArrayList<Sound> soundsCopy;
 
@@ -39,7 +42,10 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
     private boolean gamesSoundsOnly    = false;
     private boolean moviesSoundsOnly   = false;
 
-    SoundAdapter(ArrayList<Sound> soundArray, boolean withAnimations) {
+    SoundAdapter(Activity activity, ArrayList<Sound> soundArray, boolean withAnimations) {
+        this.activity        = activity;
+        this.font            = Typeface.createFromAsset(activity.getAssets(),
+				"fonts/Roboto-Regular.ttf");
         this.sounds          = soundArray;
         this.soundsCopy      = soundArray;
         this.animationsShown = withAnimations;
@@ -145,8 +151,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
             title = v.findViewById(R.id.title);
             favButton = v.findViewById(R.id.fav_button);
 
-            Typeface font = Typeface.createFromAsset(itemView.getContext().getAssets(),
-                    "fonts/Roboto-Regular.ttf");
             title.setTypeface(font);
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -163,13 +167,10 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 				@Subscribe(threadMode = ThreadMode.POSTING)
                 public void onClick(View view) {
                     if (getAdapterPosition() != RecyclerView.NO_POSITION) {
-                        if (EventBus.getDefault().isRegistered(this)) {
-                            return;
-                        }
-                        if (animationsShown) {
-                            new ToneManager(new Particle(itemView), title.getText().toString())
-                                    .makeItShine();
-                        }
+                        if (EventBus.getDefault().isRegistered(this)) return;
+                        if (animationsShown)
+							new ParticleManager(new Particle(itemView), title.getText().toString())
+									.makeItShine();
                         EventBus.getDefault().register(this);
                         EventBus.getDefault().post(sounds.get(getAdapterPosition()));
                         EventBus.getDefault().unregister(this);
@@ -203,19 +204,19 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 
         @Override
         public boolean onMenuItemClick(MenuItem menuItem) {
-            ToneManager toneSetAs = new ToneManager(itemView, title.getText().toString(),
-                    getAdapterPosition());
+            ToneManager tone = new ToneManager(activity, itemView, title.getText().toString(),
+					getAdapterPosition());
             switch (menuItem.getTitle().toString()) {
                 default:
                     Log.e(TAG, "onMenuItemClick: menuItem.getTitle().toString()");
                 case "Set as ringtone":
-                    toneSetAs.ringtone();
+					tone.setToneAs((byte) 0);
                     break;
                 case "Set as notification":
-                    toneSetAs.notification();
+					tone.setToneAs((byte) 1);
                     break;
                 case "Set as alarm":
-                    toneSetAs.alarm();
+					tone.setToneAs((byte) 2);
                     break;
             }
             return true;

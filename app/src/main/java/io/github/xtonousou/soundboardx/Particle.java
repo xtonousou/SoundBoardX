@@ -126,6 +126,11 @@ class Particle {
 
     void setAnimationWeed() {
         Activity act = (Activity) view.getContext();
+		new ParticleSystem(act, 5, R.drawable.joint, 5000)
+				.setAcceleration(0.001f, 120 )
+				.setSpeedRange(0.1f, 2)
+				.setFadeOut(250, new AccelerateInterpolator())
+				.oneShot(view, 5);
         new ParticleSystem(act, 5, R.drawable.smokeone, 5000)
                 .setAcceleration(0.001f, 80)
                 .setSpeedRange(0.1f, 1)
@@ -172,7 +177,7 @@ class Particle {
 
     void setAnimationCaptcha() {
         Activity act = (Activity) view.getContext();
-        new ParticleSystem(act, 35, R.drawable.captcha, 5000)
+        new ParticleSystem(act, 35, R.drawable.masterpiece, 5000)
                 .setSpeedRange(0.1f, 0.3f)
                 .setRotationSpeed(150)
                 .setFadeOut(500)
@@ -195,7 +200,7 @@ class Particle {
 
     void setAnimationMLG() {
         Activity act = (Activity) view.getContext();
-        new ParticleSystem(act, 10, R.drawable.dwi, 5000)
+        new ParticleSystem(act, 10, R.drawable.hitmarker, 5000)
                 .setAcceleration(0.001f, 80)
                 .setSpeedRange(0.1f, 1)
                 .setFadeOut(250, new AccelerateInterpolator())
@@ -268,12 +273,6 @@ class Particle {
         new ParticleSystem(act, 10, R.drawable.isis, 5000)
                 .setAcceleration(0.001f, 80)
                 .setSpeedRange(0.1f, 1)
-                .setRotationSpeed(100)
-                .setFadeOut(250, new AccelerateInterpolator())
-                .oneShot(view, 10);
-        new ParticleSystem(act, 10, R.drawable.knife, 5000)
-                .setAcceleration(0.001f, 45)
-                .setSpeedRange(0.1f, 2)
                 .setRotationSpeed(100)
                 .setFadeOut(250, new AccelerateInterpolator())
                 .oneShot(view, 10);

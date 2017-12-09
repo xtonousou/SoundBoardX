@@ -140,6 +140,10 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/music_skyaaa.mp3"
     },
     {
+        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_homer.png.flat",
+        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/homer.png"
+    },
+    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_design_bottom_navigation_item_background.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/9c3fb5b1fb70902be5aaba06fea342cb/res/drawable/design_bottom_navigation_item_background.xml"
     },
@@ -1236,10 +1240,6 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-hdpi-v4/abc_list_longpressed_holo.9.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_doh.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/doh.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_material_drawer_shadow_left.9.png.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.1.aar/3b3c0e63e5d0b9870f1dcc200788e802/res/drawable/material_drawer_shadow_left.9.png"
     },
@@ -1342,10 +1342,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout-sw600dp-v13_design_layout_snackbar.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/9c3fb5b1fb70902be5aaba06fea342cb/res/layout-sw600dp-v13/design_layout_snackbar.xml"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_dwi.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/dwi.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_a420blazeit.mp3.flat",
@@ -1506,10 +1502,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_music_smoketrees.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/music_smoketrees.mp3"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_knife.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/knife.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_uwotmate.png.flat",
@@ -3282,10 +3274,6 @@
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_abc_btn_radio_material.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/abc_btn_radio_material.xml"
-    },
-    {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_captcha.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/captcha.png"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_a.mp3.flat",

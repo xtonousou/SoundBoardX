@@ -4,20 +4,13 @@
     package="io.github.xtonousou.soundboardx">
 
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-
-    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
-
-	<uses-permission android:name="android.permission.USE_FINGERPRINT"/>
-	<uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"/>
-
 
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true">
+        android:supportsRtl="true"
+		android:hardwareAccelerated="true">
 
         <activity
             android:name=".MainActivity"
@@ -33,7 +26,9 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable">
             </meta-data>
+
         </activity>
 
     </application>
+
 </manifest>
