@@ -4,50 +4,43 @@
     <color name="colorPrimary">#424242</color>
     <color name="colorPrimaryDark">#292929</color>
     <color name="colorPrimaryDarker">#1a1a1a</color>
-    <color name="colorAccent">#cfd8dc</color>
+    <color name="colorAccent">#fafafa</color>
 
     <!-- Rainbow -->
-    <color name="color_d500f9">#d500f9</color>
-    <color name="color_880e4f">#880e4f</color>
-    <color name="color_f50057">#f50057</color>
-    <color name="color_f44336">#f44336</color>
-    <color name="color_f57c00">#f57c00</color>
-    <color name="color_d50000">#d50000</color>
-    <color name="color_b71c1c">#b71c1c</color>
-    <color name="color_c0ca33">#c0ca33</color>
-    <color name="color_8d9722">#8d9722</color>
-    <color name="color_827717">#827717</color>
-    <color name="color_367800">#367800</color>
-    <color name="color_005c00">#005c00</color>
-    <color name="color_006c38">#006c38</color>
-    <color name="color_26a69a">#26a69a</color>
-    <color name="color_138c8c">#138c8c</color>
-    <color name="color_0091ea">#0091ea</color>
-    <color name="color_0000FF">#0000FF</color>
-    <color name="color_6200ea">#6200ea</color>
-    <color name="color_311b92">#311b92</color>
-    <color name="color_1a237e">#1a237e</color>
+    <color name="red">#f44336</color>
+    <color name="pink">#E91E63</color>
+    <color name="purple">#9C27B0</color>
+    <color name="deep_purple">#673AB7</color>
+    <color name="indigo">#3F51B5</color>
+    <color name="blue">#2196F3</color>
+    <color name="light_blue">#03A9F4</color>
+    <color name="teal">#009688</color>
+    <color name="blue_grey">#607D8B</color>
+    <color name="green">#4CAF50</color>
+    <color name="light_green">#8BC34A</color>
+    <color name="lime">#CDDC39</color>
+    <color name="amber">#FFC107</color>
+    <color name="orange">#FF9800</color>
+    <color name="deep_orange">#FF5722</color>
+    <color name="brown">#795548</color>
 
     <array name="rainbow">
-        <item>@color/color_d500f9</item>
-        <item>@color/color_880e4f</item>
-        <item>@color/color_f50057</item>
-        <item>@color/color_f44336</item>
-        <item>@color/color_f57c00</item>
-        <item>@color/color_d50000</item>
-        <item>@color/color_b71c1c</item>
-        <item>@color/color_c0ca33</item>
-        <item>@color/color_8d9722</item>
-        <item>@color/color_827717</item>
-        <item>@color/color_367800</item>
-        <item>@color/color_005c00</item>
-        <item>@color/color_006c38</item>
-        <item>@color/color_26a69a</item>
-        <item>@color/color_138c8c</item>
-        <item>@color/color_0091ea</item>
-        <item>@color/color_0000FF</item>
-        <item>@color/color_6200ea</item>
-        <item>@color/color_311b92</item>
-        <item>@color/color_1a237e</item>
+        <item>@color/red</item>
+        <item>@color/pink</item>
+        <item>@color/purple</item>
+        <item>@color/deep_purple</item>
+        <item>@color/indigo</item>
+        <item>@color/blue</item>
+        <item>@color/light_blue</item>
+        <item>@color/teal</item>
+        <item>@color/blue_grey</item>
+        <item>@color/green</item>
+        <item>@color/light_green</item>
+        <item>@color/lime</item>
+        <item>@color/amber</item>
+        <item>@color/orange</item>
+        <item>@color/deep_orange</item>
+        <item>@color/brown</item>
     </array>
+
 </resources>

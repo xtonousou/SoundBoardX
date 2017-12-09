@@ -26,13 +26,21 @@ class SharedPrefs {
         return prefs.getBoolean(soundName, false);
     }
 
-    void setSelectedList(String soundLIst) {
-        prefs.edit().putString("list", soundLIst).apply();
+	void setSelectedList(String soundList) {
+        prefs.edit().putString("list", soundList).apply();
     }
 
     String getSelectedList() {
         return prefs.getString("list", "allSounds");
     }
+
+	void setSelectedCategory(int category) {
+		prefs.edit().putInt("category", category).apply();
+	}
+
+	int getSelectedCategory() {
+		return prefs.getInt("category", 1);
+	}
 
     void setSelectedColor(int color) {
         prefs.edit().putInt("color", color).apply();
@@ -41,6 +49,22 @@ class SharedPrefs {
     int getSelectedColor() {
         return prefs.getInt("color", -1);
     }
+
+    boolean areAnimationsShown() {
+        return prefs.getBoolean("animations", true);
+    }
+
+    void setAnimationsShown(boolean animationsShown) {
+        prefs.edit().putBoolean("animations", animationsShown).apply();
+    }
+
+	boolean areFavoritesShown() {
+		return prefs.getBoolean("favorites", true);
+	}
+
+	void setFavoritesShown(boolean favoritesShown) {
+		prefs.edit().putBoolean("favorites", favoritesShown).apply();
+	}
 
     boolean isFirstTime() {
         return prefs.getBoolean("newbie", true);

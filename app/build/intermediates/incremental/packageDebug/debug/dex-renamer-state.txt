@@ -1,4 +1,4 @@
-#Sat Dec 09 03:39:56 EET 2017
-base.0=/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dexMerger/debug/19
+#Sat Dec 09 07:00:12 EET 2017
+base.0=/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

@@ -1,10 +1,10 @@
 #Internal package file, do not edit.
-#Thu Dec 07 23:36:29 EET 2017
+#Sat Dec 09 07:00:12 EET 2017
 2.base=/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/assets/debug
 5.set=ASSET
 0.path=fonts/Roboto-BoldCondensed.ttf
 2.baseType=DIRECTORY
-3.base=/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dexMerger/debug/19
+3.base=/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/transforms/dexMerger/debug/0
 2.set=ASSET
 1.path=fonts/fontawesome-font-v4.7.ttf
 4.base=/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/assets/debug

@@ -1,13 +1,9 @@
 package io.github.xtonousou.soundboardx;
 
-import android.Manifest;
 import android.app.SearchManager;
 import android.content.Context;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -38,11 +34,10 @@ import petrov.kristiyan.colorpicker.ColorPicker;
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
 
-	int mColor;
-	boolean mAnimations = true;
-	static String sDefaultColor = "#b71c1c";
-
 	static InputMethodManager sInputManager;
+
+	int mColor;
+	int mDefaultColor;
 
 	Typeface mFont;
 	Drawer mDrawer;
@@ -60,14 +55,10 @@ public class MainActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		mDefaultColor = getResources().getColor(R.color.red);
 
 		handlePreferences();
-
-		mToolbar = findViewById(R.id.toolbar);
-		mTitleText = findViewById(R.id.title_view);
-		mView = findViewById(R.id.grid_view);
-		mFab = findViewById(R.id.fab);
-
+		handleReflections();
 		handleFAB();
 		handleView();
 		handleTitle();
@@ -75,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 		handleDrawer(savedInstanceState);
 	}
 
-    @Override
+	@Override
     public void onResume() {
         super.onResume();
         mSoundPlayer = new SoundPlayer(this);
@@ -109,42 +100,49 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
     }
 
+    private void showFavorites() {
+		((SoundAdapter) mView.getAdapter()).showFavorites();
+	}
+
     private void normalize(SoundAdapter adapter) {
-        switch (adapter.getCategory()) {
-            default:
-                Log.e(TAG, "Something went completely wrong. Check normalize() or its calls.");
-                break;
-            case 0:
+        switch (SharedPrefs.getInstance().getSelectedCategory()) {
+            case 1:
                 adapter.showAllSounds(getApplicationContext());
                 break;
-            case 1:
+            case 2:
                 adapter.showFunnySounds(getApplicationContext());
                 break;
-            case 2:
+            case 3:
                 adapter.showGamesSounds(getApplicationContext());
                 break;
-            case 3:
+            case 4:
                 adapter.showMoviesSounds(getApplicationContext());
                 break;
+			case 5:
+				adapter.showMoviesSounds(getApplicationContext());
+				break;
         }
     }
 
-    private void showFavs() {
-		if (!((SoundAdapter) mView.getAdapter()).isFavoritesOnly())
-			((SoundAdapter) mView.getAdapter()).onlyShowFavorites();
-		else
-			normalize((SoundAdapter) mView.getAdapter());
-	}
-
     private void handlePreferences() {
 		SharedPrefs.init(getPreferences(Context.MODE_PRIVATE));
+		SharedPrefs.getInstance().setFavoritesShown(false);
 
 		if (SharedPrefs.getInstance().isFirstTime()) {
 			SharedPrefs.getInstance().setFirstTime(false);
-			SharedPrefs.getInstance().setSelectedColor(Color.parseColor(sDefaultColor));
+			SharedPrefs.getInstance().setAnimationsShown(true);
+			SharedPrefs.getInstance().setSelectedCategory(1); // all sounds
+			SharedPrefs.getInstance().setSelectedColor(mDefaultColor);
 		}
 
 		mColor = Utils.getSelectedColor();
+	}
+
+	private void handleReflections() {
+		mToolbar = findViewById(R.id.toolbar);
+		mTitleText = findViewById(R.id.title_view);
+		mView = findViewById(R.id.grid_view);
+		mFab = findViewById(R.id.fab);
 	}
 
     private void handleToolbar() {
@@ -159,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
 				.getInteger(R.integer.num_cols),
 				StaggeredGridLayoutManager.VERTICAL));
 		mView.setAdapter(new SoundAdapter(MainActivity.this,
-				SoundStore.getAllSounds(this), mAnimations));
+				SoundStore.getAllSounds(this)));
 		((SoundAdapter) mView.getAdapter()).showAllSounds(getApplicationContext());
 		mView.addItemDecoration(new BottomOffsetDecoration(225));
 	}
@@ -170,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
 		mTitleText.setTypeface(mFont);
 		mTitleText.setOnClickListener((View view) -> mView.smoothScrollToPosition(0));
 		mTitleText.setOnLongClickListener(view -> {
-			showFavs();
+			showFavorites();
 			return true;
 		});
 	}
@@ -206,6 +204,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void handleDrawer(Bundle instance) {
         int drawerSize;
+        //TODO handle properly different screen resolutions
         if (getApplicationContext().getResources().getConfiguration().orientation != 1) {
             drawerSize = (Utils.getScreenWidth(this)) - 850;
         } else {
@@ -225,16 +224,19 @@ public class MainActivity extends AppCompatActivity {
                 .withSliderBackgroundColorRes(R.color.colorPrimaryDark)
                 .addDrawerItems(
                         new SectionDrawerItem().withName(R.string.categories)
+								.withIdentifier(0)
 								.withDivider(false)
                                 .withTextColor(mColor),
                         new PrimaryDrawerItem().withName(R.string.all)
-                                .withSetSelected(false)
-                                .withIcon(FontAwesome.Icon.faw_music)
+								.withIdentifier(1)
+                                .withSetSelected(false) //TODO hmmm rethinkkkk
+                                .withIcon(FontAwesome.Icon.faw_asterisk)
                                 .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
                                         R.color.colorPrimaryDarker))
                                 .withSelectedTextColor(mColor)
                                 .withSelectedIconColor(mColor),
                         new PrimaryDrawerItem().withName(R.string.funny)
+								.withIdentifier(2)
                                 .withIcon(FontAwesome.Icon.faw_smile_o)
                                 .withIconTintingEnabled(false)
                                 .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
@@ -242,6 +244,7 @@ public class MainActivity extends AppCompatActivity {
                                 .withSelectedTextColor(mColor)
                                 .withSelectedIconColor(mColor),
                         new PrimaryDrawerItem().withName(R.string.games)
+								.withIdentifier(3)
                                 .withIcon(FontAwesome.Icon.faw_gamepad)
 								.withIconTintingEnabled(false)
                                 .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
@@ -249,90 +252,95 @@ public class MainActivity extends AppCompatActivity {
                                 .withSelectedTextColor(mColor)
                                 .withSelectedIconColor(mColor),
                         new PrimaryDrawerItem().withName(R.string.movies)
+								.withIdentifier(4)
                                 .withIcon(FontAwesome.Icon.faw_video_camera)
 								.withIconTintingEnabled(false)
                                 .withSelectedColor(ContextCompat.getColor(getApplicationContext(),
                                         R.color.colorPrimaryDarker))
                                 .withSelectedTextColor(mColor)
                                 .withSelectedIconColor(mColor),
+						new PrimaryDrawerItem().withName(R.string.music)
+								.withIdentifier(5)
+								.withIcon(FontAwesome.Icon.faw_music)
+								.withIconTintingEnabled(false)
+								.withSelectedColor(ContextCompat.getColor(getApplicationContext(),
+										R.color.colorPrimaryDarker))
+								.withSelectedTextColor(mColor)
+								.withSelectedIconColor(mColor),
                         new SectionDrawerItem().withName(R.string.options)
+								.withIdentifier(6)
                                 .withDivider(false)
                                 .withTextColor(mColor),
-                        new SecondaryDrawerItem().withName(R.string.favorites)
+                        new SecondarySwitchDrawerItem().withName(R.string.favorites)
+								.withIdentifier(7)
                                 .withIcon(FontAwesome.Icon.faw_heart)
-                                .withSelectable(false),
+								.withIconTintingEnabled(false)
+								.withSelectable(false)
+								.withChecked(SharedPrefs.getInstance().areFavoritesShown())
+								.withOnCheckedChangeListener(onToggleFavoritesListener),
                         new SecondarySwitchDrawerItem().withName(R.string.particles)
+								.withIdentifier(8)
                                 .withIcon(FontAwesome.Icon.faw_eye)
 								.withIconTintingEnabled(false)
                                 .withSelectable(false)
                                 .withChecked(true)
-                                .withOnCheckedChangeListener(onCheckedChangeListener),
+                                .withOnCheckedChangeListener(onToggleParticleListener),
                         new SectionDrawerItem().withName(R.string.misc)
+								.withIdentifier(9)
                                 .withDivider(false)
                                 .withTextColor(mColor),
                         new SecondaryDrawerItem().withName(R.string.color)
+								.withIdentifier(10)
                                 .withIcon(FontAwesome.Icon.faw_paint_brush)
 								.withIconTintingEnabled(false)
                                 .withSelectable(false)
                 )
                 .withOnDrawerItemClickListener((view, position, drawerItem) -> {
+					mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
+							.getInteger(R.integer.num_cols),
+							StaggeredGridLayoutManager.VERTICAL));
                     switch (position) {
                         case 1:
-                            mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
-                                    .getInteger(R.integer.num_cols),
-                                    StaggeredGridLayoutManager.VERTICAL));
                             mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
-                                    .getAllSounds(MainActivity.this), mAnimations));
+                                    .getAllSounds(MainActivity.this)));
                             ((SoundAdapter) mView.getAdapter()).showAllSounds(MainActivity.this);
                             break;
                         case 2:
-                            mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
-                                    .getInteger(R.integer.num_cols),
-                                    StaggeredGridLayoutManager.VERTICAL));
                             mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
-                                    .getFunnySounds(MainActivity.this), mAnimations));
+                                    .getFunnySounds(MainActivity.this)));
                             ((SoundAdapter) mView.getAdapter()).showFunnySounds(MainActivity.this);
                             break;
                         case 3:
-                            mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
-                                    .getInteger(R.integer.num_cols),
-                                    StaggeredGridLayoutManager.VERTICAL));
                             mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
-                                    .getGamesSounds(MainActivity.this), mAnimations));
+                                    .getGamesSounds(MainActivity.this)));
                             ((SoundAdapter) mView.getAdapter()).showGamesSounds(MainActivity.this);
                             break;
                         case 4:
-                            mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
-                                    .getInteger(R.integer.num_cols),
-                                    StaggeredGridLayoutManager.VERTICAL));
                             mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
-                                    .getMoviesSounds(MainActivity.this), mAnimations));
+                                    .getMoviesSounds(MainActivity.this)));
                             ((SoundAdapter) mView.getAdapter()).showMoviesSounds(MainActivity.this);
                             break;
-                        case 6:
-							showFavs();
-                            break;
-                        case 9:
-                            mColorPicker = new ColorPicker(MainActivity.this);
-							mColorPicker.setTitle(getString(R.string.hex_code) + sDefaultColor);
-							mColorPicker.setColors(R.array.rainbow);
-							mColorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
-                                @Override
-                                public void onChooseColor(int position, int color) {
-                                    if (position == -1)
-                                        return;
-                                    sDefaultColor = String.format("#%06X", 0xFFFFFF & color);
-                                    SharedPrefs.getInstance().setSelectedColor(color);
-                                    Utils.restartActivity(MainActivity.this);
-                                }
-
-                                @Override
-                                public void onCancel() {
-                                    SharedPrefs.getInstance().setSelectedColor(SharedPrefs.getInstance().getSelectedColor());
-                                    Utils.restartActivity(MainActivity.this);
-                                }
-
-                            }).setRoundColorButton(true).show();
+						//TODO
+						/*case 5:
+							mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
+									.getMusicSounds(MainActivity.this)));
+							((SoundAdapter) mView.getAdapter()).showMusicSounds(MainActivity.this);
+							break;*/
+						/* Options title
+						case 6:
+							break;*/
+						/* Favorites switch, handled further with listener
+                        case 7:
+							showFavorites();
+                            break;*/
+						/* Particle switch, handled further with listener
+						case 8:
+							break;*/
+						/* Misc title
+						case 9:
+							break;*/
+                        case 10:
+                            handleColorPicker();
                             break;
                     }
                     return false;
@@ -365,27 +373,43 @@ public class MainActivity extends AppCompatActivity {
 		mDrawer.getDrawerLayout().addDrawerListener(actionBarDrawerToggle);
 		actionBarDrawerToggle.syncState();
 
-		/*
-		 * Tweak it.....
-		 */
         if (Utils.isGreenMode(MainActivity.this)) {
-            ((SoundAdapter) mView.getAdapter()).setShowAnimations(false);
-            mDrawer.removeItemByPosition(8);
-        }
+			SharedPrefs.getInstance().setAnimationsShown(false);
+			mDrawer.removeItemByPosition(8);
+			mDrawer.setItemAtPosition(mDrawer.getDrawerItem(10), 8);
+		}
     }
 
-    private OnCheckedChangeListener onCheckedChangeListener = new OnCheckedChangeListener() {
-		@Override
-		public void onCheckedChanged(IDrawerItem drawerItem, CompoundButton buttonView, boolean isChecked) {
-			if (((SoundAdapter) mView.getAdapter()).areAnimationsShown()) {
-				mAnimations = false;
-				((SoundAdapter) mView.getAdapter()).setShowAnimations(false);
-			} else {
-				mAnimations = true;
-				((SoundAdapter) mView.getAdapter()).setShowAnimations(true);
+    private void handleColorPicker() {
+		mColorPicker = new ColorPicker(MainActivity.this);
+		mColorPicker.setTitle(getString(R.string.palette));
+		mColorPicker.setColors(R.array.rainbow);
+		mColorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
+			@Override
+			public void onChooseColor(int position, int color) {
+				if (position == -1)
+					return;
+				SharedPrefs.getInstance().setSelectedColor(color);
+				Utils.restartActivity(MainActivity.this);
 			}
+
+			@Override
+			public void onCancel() {}
+
+		}).setColumns(4).setRoundColorButton(true).show();
+	}
+
+    private OnCheckedChangeListener onToggleFavoritesListener = (drawerItem, buttonView, isChecked)
+			-> {
+		if (isChecked) {
+			showFavorites();
+		} else {
+			normalize((SoundAdapter) mView.getAdapter());
 		}
-    };
+	};
+
+	private OnCheckedChangeListener onToggleParticleListener = (drawerItem, buttonView, isChecked)
+			-> SharedPrefs.getInstance().setAnimationsShown(isChecked);
 
 	void mute() {
 		mSoundPlayer.release();
