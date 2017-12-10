@@ -434,6 +434,7 @@
         <item>Badum Tss</item>
         <item>Bane mask</item>
         <item>Bane: Darude Sandstorm</item>
+        <item>Bang Bang</item>
         <item>Bearcum!!!</item>
         <item>Beep</item>
         <item>BEGONE THOT!</item>
@@ -499,6 +500,7 @@
         <item>What manner of sissyness, is this?</item>
         <item>Smoke weed everyday</item>
         <item>You spin me round</item>
+        <item>Spooky scary skeletons</item>
         <item>Squeaker</item>
         <item>STFU</item>
         <item>I\'m growing stronker!</item>
@@ -527,6 +529,7 @@
         <item>@raw/funny_badumtss</item>
         <item>@raw/funny_bane_mask</item>
         <item>@raw/funny_banesandstorm</item>
+        <item>@raw/funny_bangbang</item>
         <item>@raw/funny_bearcum</item>
         <item>@raw/funny_beep</item>
         <item>@raw/funny_begonethot</item>
@@ -593,6 +596,7 @@
         <item>@raw/funny_sissiness</item>
         <item>@raw/funny_smokeweedeveryday</item>
         <item>@raw/funny_spinme</item>
+        <item>@raw/funny_spookyscaryskeletons</item>
         <item>@raw/funny_squeeek</item>
         <item>@raw/funny_stronker</item>
         <item>@raw/funny_stfu</item>
@@ -774,7 +778,6 @@
         <item>21</item>
         <item>1234</item>
         <item>All my friends are dead</item>
-        <item>Bang Bang</item>
         <item>Biaaatch</item>
         <item>Big Shaq</item>
         <item>Boom</item>
@@ -809,7 +812,6 @@
         <item>Skr skr</item>
         <item>Skyaaa</item>
         <item>Smoke trees</item>
-        <item>Spooky scary skeletons</item>
         <item>Squaw</item>
         <item>Yah yah yah</item>
         <item>Yea hoe</item>
@@ -822,7 +824,6 @@
         <item>@raw/music_21</item>
         <item>@raw/music_1234</item>
         <item>@raw/music_allmyfriendsaredead</item>
-        <item>@raw/music_bangbang</item>
         <item>@raw/music_biaaatch</item>
         <item>@raw/music_bigshaq</item>
         <item>@raw/music_boom</item>
@@ -857,7 +858,6 @@
         <item>@raw/music_skrskr</item>
         <item>@raw/music_skyaaa</item>
         <item>@raw/music_smoketrees</item>
-        <item>@raw/music_spookyscaryskeletons</item>
         <item>@raw/music_squaw</item>
         <item>@raw/music_yahyahyah</item>
         <item>@raw/music_yeahoe</item>
