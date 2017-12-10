@@ -122,7 +122,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
         @Override
         public void onCreateContextMenu(final ContextMenu contextMenu, View view,
                                         ContextMenu.ContextMenuInfo contextMenuInfo) {
-
             contextMenu.setHeaderTitle(R.string.header);
             contextMenu.setHeaderIcon(
                     new IconicsDrawable(view.getContext())
@@ -208,7 +207,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 					);
                 }
 
-                if (!SharedPrefs.getInstance().areFavoritesShown()) {
+                if (SharedPrefs.getInstance().areFavoritesShown()) {
                     // Remove from the list.
                     sounds.remove(holder.getAdapterPosition());
                     notifyItemRemoved(holder.getAdapterPosition());

@@ -16,6 +16,10 @@ import java.util.ArrayList;
 
 abstract class Utils {
 
+	static boolean toggleBoolean(boolean variable) {
+		return !variable;
+	}
+
 	static int getScreenWidth(Activity activity) {
         DisplayMetrics metrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);

@@ -11,11 +11,9 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.github.clans.fab.FloatingActionButton;
@@ -27,13 +25,10 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondarySwitchDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
-import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 import petrov.kristiyan.colorpicker.ColorPicker;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String TAG = "MainActivity";
-
 	static InputMethodManager sInputManager;
 
 	int mColor;
@@ -100,10 +95,6 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
     }
 
-    private void showFavorites() {
-		((SoundAdapter) mView.getAdapter()).showFavorites();
-	}
-
     private void normalize(SoundAdapter adapter) {
         switch (SharedPrefs.getInstance().getSelectedCategory()) {
             case 1:
@@ -167,10 +158,6 @@ public class MainActivity extends AppCompatActivity {
 		mFont = Typeface.createFromAsset(getAssets(), "fonts/Roboto-BoldCondensed.ttf");
 		mTitleText.setTypeface(mFont);
 		mTitleText.setOnClickListener((View view) -> mView.smoothScrollToPosition(0));
-		mTitleText.setOnLongClickListener(view -> {
-			showFavorites();
-			return true;
-		});
 	}
 
     private void handleFAB() {
@@ -402,8 +389,9 @@ public class MainActivity extends AppCompatActivity {
     private OnCheckedChangeListener onToggleFavoritesListener = (drawerItem, buttonView, isChecked)
 			-> {
 		if (isChecked) {
-			showFavorites();
+			((SoundAdapter) mView.getAdapter()).showFavorites();
 		} else {
+			buttonView.setChecked(false);
 			normalize((SoundAdapter) mView.getAdapter());
 		}
 	};
