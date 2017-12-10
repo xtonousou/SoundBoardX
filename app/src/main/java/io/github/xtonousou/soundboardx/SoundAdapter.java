@@ -2,7 +2,6 @@ package io.github.xtonousou.soundboardx;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -104,28 +103,16 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
             title.setTextColor(activity.getResources().getColor(R.color.colorAccent));
 
             itemView.setOnClickListener(new View.OnClickListener() {
-                public void onEvent(String event) {
-                    if (getAdapterPosition() != RecyclerView.NO_POSITION) {
-                        if (EventBus.getDefault().isRegistered(this)) {
-                            EventBus.getDefault().unregister(this);
-                        }
-                        notifyItemChanged(getAdapterPosition());
-                    }
-                }
-
                 @Override
-				@Subscribe(threadMode = ThreadMode.POSTING)
+				@Subscribe(threadMode = ThreadMode.ASYNC)
                 public void onClick(View view) {
-                	itemView.animate();
-                    if (getAdapterPosition() != RecyclerView.NO_POSITION) {
-                        if (EventBus.getDefault().isRegistered(this)) return;
-                        if (SharedPrefs.getInstance().areAnimationsShown())
-							new ParticleManager(new Particle(itemView), title.getText().toString())
-									.makeItShine();
-                        EventBus.getDefault().register(this);
-                        EventBus.getDefault().post(sounds.get(getAdapterPosition()));
-                        EventBus.getDefault().unregister(this);
-                    }
+					if (EventBus.getDefault().isRegistered(this)) return;
+					if (SharedPrefs.getInstance().areAnimationsShown())
+						new ParticleManager(new Particle(itemView), title.getText().toString())
+								.makeItShine();
+					EventBus.getDefault().register(this);
+					EventBus.getDefault().post(sounds.get(getAdapterPosition()));
+					EventBus.getDefault().unregister(this);
                 }
             });
 

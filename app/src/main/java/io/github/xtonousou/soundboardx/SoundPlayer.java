@@ -19,23 +19,27 @@ public class SoundPlayer {
 	private static final String TAG = "SoundPlayer";
 
 	public SoundPlayer(Context context) {
-		EventBus.getDefault().register(this);
+		subscribeSound(this);
 		this.mContext = context.getApplicationContext();
 	}
 
-	@Subscribe(threadMode = ThreadMode.POSTING)
+	@Subscribe(threadMode = ThreadMode.ASYNC)
 	public void onEvent(Sound sound) {
 		playSound(sound);
 	}
 
-	@Subscribe(threadMode = ThreadMode.BACKGROUND)
+	@Subscribe(threadMode = ThreadMode.ASYNC)
+	void subscribeSound(SoundPlayer soundPlayer) {
+		EventBus.getDefault().register(soundPlayer);
+	}
+
+	@Subscribe(threadMode = ThreadMode.ASYNC)
 	void playSound(Sound sound) {
 		int resource = sound.getResourceId();
 		if (mPlayer != null) {
 			if (mPlayer.isPlaying())
 				mPlayer.stop();
 			mPlayer.reset();
-
 			try {
 				AssetFileDescriptor afd = mContext.getResources().openRawResourceFd(resource);
 				if (afd == null)
@@ -53,7 +57,7 @@ public class SoundPlayer {
 		mPlayer.setOnCompletionListener(mp -> EventBus.getDefault().post("Done"));
 	}
 
-	@Subscribe(threadMode = ThreadMode.POSTING)
+	@Subscribe(threadMode = ThreadMode.ASYNC)
 	void release() {
 		EventBus.getDefault().unregister(this);
 		if (mPlayer != null) {
