@@ -85,14 +85,13 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		notifyDataSetChanged();
 	}
 
-	//TODO
-	/*void showMusicSounds(Context context) {
+	void showMusicSounds(Context context) {
 		SharedPrefs.getInstance().setFavoritesShown(false);
 		SharedPrefs.getInstance().setSelectedCategory(5);
 		sounds = SoundStore.getMusicSounds(context);
 		soundsCopy = sounds;
 		notifyDataSetChanged();
-	}*/
+	}
 
 	public class ViewHolder extends RecyclerView.ViewHolder implements
 			View.OnCreateContextMenuListener,

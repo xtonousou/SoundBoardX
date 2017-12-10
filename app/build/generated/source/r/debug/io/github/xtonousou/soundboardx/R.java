@@ -45,7 +45,9 @@ public final class R {
     public static final int gamesSoundsIDs=0x7f030006;
     public static final int moviesSounds=0x7f030007;
     public static final int moviesSoundsIDs=0x7f030008;
-    public static final int rainbow=0x7f030009;
+    public static final int musicSounds=0x7f030009;
+    public static final int musicSoundsIDs=0x7f03000a;
+    public static final int rainbow=0x7f03000b;
   }
   public static final class attr {
     /**
@@ -5389,7 +5391,7 @@ public final class R {
     public static final int funny_pgstfu=0x7f0e003a;
     public static final int funny_pgstopfokincunt=0x7f0e003b;
     public static final int funny_pgsuckmadick=0x7f0e003c;
-    public static final int funny_pgwelcomerecifields=0x7f0e003d;
+    public static final int funny_pgwelcomericefields=0x7f0e003d;
     public static final int funny_prettygood=0x7f0e003e;
     public static final int funny_pussyhair=0x7f0e003f;
     public static final int funny_retardation=0x7f0e0040;
@@ -5516,20 +5518,20 @@ public final class R {
     public static final int music_pierrecomeouthere=0x7f0e00b9;
     public static final int music_quickmafs=0x7f0e00ba;
     public static final int music_quickmathsfull=0x7f0e00bb;
-    public static final int music_raindropdropotp=0x7f0e00bc;
+    public static final int music_raindropdroptop=0x7f0e00bc;
     public static final int music_ratnum=0x7f0e00bd;
     public static final int music_rawsauce=0x7f0e00be;
     public static final int music_rrraa=0x7f0e00bf;
     public static final int music_satafaka=0x7f0e00c0;
     public static final int music_scootnum=0x7f0e00c1;
     public static final int music_shmurda=0x7f0e00c2;
-    public static final int music_skidipipapa=0x7f0e00c3;
+    public static final int music_skidikipapa=0x7f0e00c3;
     public static final int music_skrrrrrra=0x7f0e00c4;
     public static final int music_skrrtskrrt=0x7f0e00c5;
     public static final int music_skrskr=0x7f0e00c6;
     public static final int music_skyaaa=0x7f0e00c7;
     public static final int music_smoketrees=0x7f0e00c8;
-    public static final int music_spookyscarysekletons=0x7f0e00c9;
+    public static final int music_spookyscaryskeletons=0x7f0e00c9;
     public static final int music_squaw=0x7f0e00ca;
     public static final int music_yahyahyah=0x7f0e00cb;
     public static final int music_yeahoe=0x7f0e00cc;

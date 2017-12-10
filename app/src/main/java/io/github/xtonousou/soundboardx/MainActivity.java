@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
                                 .withTextColor(mColor),
                         new PrimaryDrawerItem().withName(R.string.all)
 								.withIdentifier(1)
-                                .withSetSelected(false) //TODO hmmm rethinkkkk
+                                .withSetSelected(false)
                                 .withIcon(FontAwesome.Icon.faw_asterisk)
                                 .withSelectedColor(selectedColor)
                                 .withSelectedTextColor(mColor)
@@ -288,11 +288,9 @@ public class MainActivity extends AppCompatActivity {
                             break;
 						//TODO
 						case 5:
-							/*
 							mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
 									.getMusicSounds(MainActivity.this)));
 							((SoundAdapter) mView.getAdapter()).showMusicSounds(MainActivity.this);
-							*/
 							break;
 						/* Options title
 						case 6:

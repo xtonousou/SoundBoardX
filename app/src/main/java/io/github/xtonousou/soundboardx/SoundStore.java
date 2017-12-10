@@ -91,5 +91,26 @@ abstract class SoundStore {
 
         return sounds;
     }
+
+    static ArrayList<Sound> getMusicSounds(Context context) {
+        Resources res = context.getApplicationContext().getResources();
+
+        TypedArray musicSounds = res.obtainTypedArray(R.array.musicSounds);
+        TypedArray musicSoundsIDs = res.obtainTypedArray(R.array.musicSoundsIDs);
+
+        ArrayList<Sound> sounds = new ArrayList<>();
+
+        final int musicSounds_length = musicSounds.length();
+        for (int i = 0; i < musicSounds_length; i++) {
+            sounds.add(new Sound(musicSounds.getString(i), musicSoundsIDs.getResourceId(i, -1)));
+        }
+
+		musicSounds.recycle();
+		musicSoundsIDs.recycle();
+
+        SharedPrefs.getInstance().setSelectedList("musicSounds");
+
+        return sounds;
+    }
 }
 
