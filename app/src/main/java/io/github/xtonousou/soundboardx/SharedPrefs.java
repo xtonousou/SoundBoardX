@@ -34,13 +34,13 @@ class SharedPrefs {
         return prefs.getString("list", "allSounds");
     }
 
-	void setSelectedCategory(int category) {
-		prefs.edit().putInt("category", category).apply();
-	}
+    void setSelectedCategory(int category) {
+        prefs.edit().putInt("category", category).apply();
+    }
 
-	int getSelectedCategory() {
-		return prefs.getInt("category", 1);
-	}
+    int getSelectedCategory() {
+        return prefs.getInt("category", 1);
+    }
 
     void setSelectedColor(int color) {
         prefs.edit().putInt("color", color).apply();

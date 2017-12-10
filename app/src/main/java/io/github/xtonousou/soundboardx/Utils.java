@@ -12,12 +12,34 @@ import android.widget.TextView;
 
 import com.github.clans.fab.FloatingActionButton;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
 
 abstract class Utils {
 
-	static boolean toggleBoolean(boolean variable) {
-		return !variable;
+	static String striptease(String string) {
+		return Normalizer.normalize(string, Normalizer.Form.NFD)
+				.replaceAll("[\'| |\\p{M}]?", "");
+	}
+
+	static void normalize(SoundAdapter adapter, Context context) {
+		switch (SharedPrefs.getInstance().getSelectedCategory()) {
+			case 1:
+				adapter.showAllSounds(context);
+				break;
+			case 2:
+				adapter.showFunnySounds(context);
+				break;
+			case 3:
+				adapter.showGamesSounds(context);
+				break;
+			case 4:
+				adapter.showMoviesSounds(context);
+				break;
+			case 5:
+				adapter.showMoviesSounds(context);
+				break;
+		}
 	}
 
 	static int getScreenWidth(Activity activity) {
@@ -81,7 +103,7 @@ abstract class Utils {
     }
 
 	static void initGithub(Activity activity) {
-        String url = "https://github.com/xtonousou/xSoundBoardHD";
+        String url = "https://github.com/xtonousou/soundboardx";
         Intent intent = new Intent(Intent.ACTION_VIEW).setData((Uri.parse(url)));
         activity.startActivity(intent);
     }
