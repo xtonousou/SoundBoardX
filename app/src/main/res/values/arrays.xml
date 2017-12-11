@@ -94,30 +94,30 @@
         <item>WTF BOOM</item>
         <item>Yiss</item>
         <item>Zodiac</item>
-        <item>Aku Aku</item>
+        <item>Crash Bandicoot: Aku Aku</item>
         <item>Balls Of Steel</item>
         <item>EA Games</item>
         <item>EA Sports</item>
         <item>Excellent</item>
         <item>Fus Ro Dah</item>
         <item>Game Boy</item>
-        <item>Hadouken</item>
+        <item>Street Fighter: Hadouken</item>
         <item>Hitmarker</item>
         <item>Inspector Gadget</item>
         <item>Maybe We Could Invite Some Women?</item>
-        <item>Jigglypuff</item>
+        <item>Pokemon: Jigglypuff</item>
         <item>Mario</item>
-        <item>Mario Coin</item>
-        <item>Mario Fanfare</item>
-        <item>Mario Grow</item>
-        <item>Mario Jump</item>
-        <item>Mario Lose</item>
-        <item>Mario Underground</item>
+        <item>Mario: Coin</item>
+        <item>Mario: Fanfare</item>
+        <item>Mario: Grow</item>
+        <item>Mario: Jump</item>
+        <item>Mario: Lose</item>
+        <item>Mario: Underground</item>
         <item>Nuke</item>
         <item>Pacman Death</item>
         <item>Playstation</item>
-        <item>Our Courage Will Pull Us Through</item>
-        <item>Pokemon Heal</item>
+        <item>Pokemon: Our Courage Will Pull Us Through</item>
+        <item>Pokemon: Heal</item>
         <item>Sniper Shot</item>
         <item>Tetris</item>
         <item>Back To The Future</item>
@@ -610,30 +610,30 @@
 
     <!-- Games Sounds -->
     <string-array name="gamesSounds">
-        <item>Aku Aku</item>
+        <item>Crash Bandicoot: Aku Aku</item>
         <item>Balls Of Steel</item>
         <item>EA Games</item>
         <item>EA Sports</item>
         <item>Excellent</item>
         <item>Fus Ro Dah</item>
         <item>Game Boy</item>
-        <item>Hadouken</item>
+        <item>Street Fighter: Hadouken</item>
         <item>Hitmarker</item>
         <item>Inspector Gadget</item>
         <item>Maybe We Could Invite Some Women?</item>
-        <item>Jigglypuff</item>
+        <item>Pokemon: Jigglypuff</item>
         <item>Mario</item>
-        <item>Mario Coin</item>
-        <item>Mario Fanfare</item>
-        <item>Mario Grow</item>
-        <item>Mario Jump</item>
-        <item>Mario Lose</item>
-        <item>Mario Underground</item>
+        <item>Mario: Coin</item>
+        <item>Mario: Fanfare</item>
+        <item>Mario: Grow</item>
+        <item>Mario: Jump</item>
+        <item>Mario: Lose</item>
+        <item>Mario: Underground</item>
         <item>Nuke</item>
         <item>Pacman Death</item>
         <item>Playstation</item>
-        <item>Our Courage Will Pull Us Through</item>
-        <item>Pokemon Heal</item>
+        <item>Pokemon: Our Courage Will Pull Us Through</item>
+        <item>Pokemon: Heal</item>
         <item>Sniper Shot</item>
         <item>Tetris</item>
     </string-array>
