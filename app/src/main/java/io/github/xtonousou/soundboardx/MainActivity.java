@@ -286,7 +286,6 @@ public class MainActivity extends AppCompatActivity {
                                     .getMoviesSounds(MainActivity.this)));
                             ((SoundAdapter) mView.getAdapter()).showMoviesSounds(MainActivity.this);
                             break;
-						//TODO
 						case 5:
 							mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
 									.getMusicSounds(MainActivity.this)));

@@ -29,6 +29,7 @@
 * [Iconincs](https://github.com/mikepenz/Android-Iconics)
 * [Floating Action Button](https://github.com/Clans/FloatingActionButton)
 * [Color Picker](https://github.com/kristiyanP/colorpicker)
+* [Animated Favorite Button](https://github.com/IvBaranov/MaterialFavoriteButton)
 
 ### License
 
