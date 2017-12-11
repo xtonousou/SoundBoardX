@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 27
-        versionCode 4
-        versionName "Andromeda"
+        versionCode 5
+        versionName "Black Eye Galaxy"
         applicationId "io.github.xtonousou.soundboardx"
     }
     buildTypes {

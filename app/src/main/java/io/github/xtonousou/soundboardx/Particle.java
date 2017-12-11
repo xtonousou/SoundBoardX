@@ -16,6 +16,17 @@ class Particle {
         this.view = view;
     }
 
+    void emitCircular() {
+
+    }
+
+    void emitRandomly() {
+
+    }
+
+    void emitSlowly() {
+    }
+
     /**
      *  All methods below use Leonids library and make particles with drawables (R.drawable.something)
      *  Methods used in animate() method located at SoundAdapter.java. See onClick.
