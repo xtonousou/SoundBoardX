@@ -65,10 +65,11 @@
         <item>Pink Guy: Stop Being A F*ckin C*unt</item>
         <item>Pink Guy: Suck My D*ck</item>
         <item>Filthy Frank: Welcome To The Rice Fields</item>
+        <item>Pierre Come Out Here</item>
         <item>iDubbbz: Hey That\' s Pretty Good!</item>
         <item>Excuse Me, I Have Some P*ssyhair On Me!</item>
         <item>Retardation Theme</item>
-        <item>Cyka Blyat\'s Middlefinger</item>
+        <item>Russian\'s Middlefinger</item>
         <item>Sad Violin</item>
         <item>Seven Vaginias…</item>
         <item>Shots Fired</item>
@@ -99,12 +100,12 @@
         <item>EA Games</item>
         <item>EA Sports</item>
         <item>Excellent</item>
-        <item>Fus Ro Dah</item>
+        <item>Skyrim: Fus Ro Dah</item>
         <item>Game Boy</item>
         <item>Street Fighter: Hadouken</item>
         <item>Hitmarker</item>
         <item>Inspector Gadget</item>
-        <item>Maybe We Could Invite Some Women?</item>
+        <item>Skyrim: Maybe We Could Invite Some Women?</item>
         <item>Pokemon: Jigglypuff</item>
         <item>Mario</item>
         <item>Mario: Coin</item>
@@ -116,7 +117,6 @@
         <item>Nuke</item>
         <item>Pacman Death</item>
         <item>Playstation</item>
-        <item>Pokemon: Our Courage Will Pull Us Through</item>
         <item>Pokemon: Heal</item>
         <item>Sniper Shot</item>
         <item>Tetris</item>
@@ -139,7 +139,7 @@
         <item>Godgilla</item>
         <item>Rick And Morty: Look At Meee</item>
         <item>Darth Vader: I\'m Your Father</item>
-        <item>InuyashikiBam</item>
+        <item>Inuyashiki: Bam</item>
         <item>Inuyashiki: Da-Da-Da</item>
         <item>Dragon Ball: Kamehameha</item>
         <item>Naruto: Katon: Goukakyou No Jutsu</item>
@@ -153,6 +153,7 @@
         <item>Naruto: Oodama Rasengan</item>
         <item>Rick And Morty: Oompaloompa</item>
         <item>JoJo: Ora Ora Ora</item>
+        <item>Pokemon: Our Courage Will Pull Us Through</item>
         <item>Pornhub</item>
         <item>Naruto: Rasengan</item>
         <item>Sabada</item>
@@ -169,13 +170,13 @@
         <item>Big Shaq: 2 + 2 = 4</item>
         <item>21</item>
         <item>Big Shaq: 1234</item>
-        <item>All My Friends Are Dead</item>
+        <item>Lil Uzi Vert: All My Friends Are Dead</item>
         <item>Biaaatch</item>
         <item>Big Shaq</item>
         <item>Big Shaq: Boom</item>
         <item>Big Shaq: Check The Statistics</item>
-        <item>Eskitit</item>
-        <item>Gucci Gang</item>
+        <item>Lil Pump: Esketit</item>
+        <item>Lil Pump: Gucci Gang</item>
         <item>Big Shaq: Hold Tight Asznee</item>
         <item>I Am The One</item>
         <item>Kieee</item>
@@ -188,7 +189,6 @@
         <item>Big Shaq: Ossnaa</item>
         <item>Panda</item>
         <item>Big Shaq: Pa-Pa-Ka-Ka-Ka</item>
-        <item>Pierre Come Out Here</item>
         <item>Big Shaq: Quick Mafs</item>
         <item>Big Shaq: Quick Mafs Full</item>
         <item>Rain Drop Drop Top</item>
@@ -274,6 +274,7 @@
         <item>@raw/funny_pgstopfokincunt</item>
         <item>@raw/funny_pgsuckmadick</item>
         <item>@raw/funny_pgwelcomericefields</item>
+        <item>@raw/funny_pierrecomeouthere</item>
         <item>@raw/funny_prettygood</item>
         <item>@raw/funny_pussyhair</item>
         <item>@raw/funny_retardation</item>
@@ -324,7 +325,6 @@
         <item>@raw/games_nuke</item>
         <item>@raw/games_pacmandeath</item>
         <item>@raw/games_playstation</item>
-        <item>@raw/games_pokemonaggouri</item>
         <item>@raw/games_pokemonheal</item>
         <item>@raw/games_snipershot</item>
         <item>@raw/games_tetris</item>
@@ -361,6 +361,7 @@
         <item>@raw/movies_oodamarasengan</item>
         <item>@raw/movies_oompaloompa</item>
         <item>@raw/movies_oraoraora</item>
+        <item>@raw/movies_pokemonaggouri</item>
         <item>@raw/movies_pornhub</item>
         <item>@raw/movies_rasengan</item>
         <item>@raw/movies_sabada</item>
@@ -382,7 +383,7 @@
         <item>@raw/music_bigshaq</item>
         <item>@raw/music_boom</item>
         <item>@raw/music_checkthestatistics</item>
-        <item>@raw/music_eskitit</item>
+        <item>@raw/music_esketit</item>
         <item>@raw/music_guccigang</item>
         <item>@raw/music_holdtightasznee</item>
         <item>@raw/music_iamtheone</item>
@@ -396,7 +397,6 @@
         <item>@raw/music_ossnaa</item>
         <item>@raw/music_panda</item>
         <item>@raw/music_papakakaka</item>
-        <item>@raw/music_pierrecomeouthere</item>
         <item>@raw/music_quickmafs</item>
         <item>@raw/music_quickmathsfull</item>
         <item>@raw/music_raindropdroptop</item>
@@ -483,10 +483,11 @@
         <item>Pink Guy: Stop Being A F*ckin C*unt</item>
         <item>Pink Guy: Suck My D*ck</item>
         <item>Filthy Frank: Welcome To The Rice Fields</item>
+        <item>Pierre Come Out Here</item>
         <item>iDubbbz: Hey That\' s Pretty Good!</item>
         <item>Excuse Me, I Have Some P*ssyhair On Me!</item>
         <item>Retardation Theme</item>
-        <item>Cyka Blyat\'s Middlefinger</item>
+        <item>Russian\'s Middlefinger</item>
         <item>Sad Violin</item>
         <item>Seven Vaginias…</item>
         <item>Shots Fired</item>
@@ -577,6 +578,7 @@
         <item>@raw/funny_pgstopfokincunt</item>
         <item>@raw/funny_pgsuckmadick</item>
         <item>@raw/funny_pgwelcomericefields</item>
+        <item>@raw/funny_pierrecomeouthere</item>
         <item>@raw/funny_prettygood</item>
         <item>@raw/funny_pussyhair</item>
         <item>@raw/funny_retardation</item>
@@ -615,12 +617,12 @@
         <item>EA Games</item>
         <item>EA Sports</item>
         <item>Excellent</item>
-        <item>Fus Ro Dah</item>
+        <item>Skyrim: Fus Ro Dah</item>
         <item>Game Boy</item>
         <item>Street Fighter: Hadouken</item>
         <item>Hitmarker</item>
         <item>Inspector Gadget</item>
-        <item>Maybe We Could Invite Some Women?</item>
+        <item>Skyrim: Maybe We Could Invite Some Women?</item>
         <item>Pokemon: Jigglypuff</item>
         <item>Mario</item>
         <item>Mario: Coin</item>
@@ -632,7 +634,6 @@
         <item>Nuke</item>
         <item>Pacman Death</item>
         <item>Playstation</item>
-        <item>Pokemon: Our Courage Will Pull Us Through</item>
         <item>Pokemon: Heal</item>
         <item>Sniper Shot</item>
         <item>Tetris</item>
@@ -661,7 +662,6 @@
         <item>@raw/games_nuke</item>
         <item>@raw/games_pacmandeath</item>
         <item>@raw/games_playstation</item>
-        <item>@raw/games_pokemonaggouri</item>
         <item>@raw/games_pokemonheal</item>
         <item>@raw/games_snipershot</item>
         <item>@raw/games_tetris</item>
@@ -688,7 +688,7 @@
         <item>Godgilla</item>
         <item>Rick And Morty: Look At Meee</item>
         <item>Darth Vader: I\'m Your Father</item>
-        <item>InuyashikiBam</item>
+        <item>Inuyashiki: Bam</item>
         <item>Inuyashiki: Da-Da-Da</item>
         <item>Dragon Ball: Kamehameha</item>
         <item>Naruto: Katon: Goukakyou No Jutsu</item>
@@ -702,6 +702,7 @@
         <item>Naruto: Oodama Rasengan</item>
         <item>Rick And Morty: Oompaloompa</item>
         <item>JoJo: Ora Ora Ora</item>
+        <item>Pokemon: Our Courage Will Pull Us Through</item>
         <item>Pornhub</item>
         <item>Naruto: Rasengan</item>
         <item>Sabada</item>
@@ -751,6 +752,7 @@
         <item>@raw/movies_oodamarasengan</item>
         <item>@raw/movies_oompaloompa</item>
         <item>@raw/movies_oraoraora</item>
+        <item>@raw/movies_pokemonaggouri</item>
         <item>@raw/movies_pornhub</item>
         <item>@raw/movies_rasengan</item>
         <item>@raw/movies_sabada</item>
@@ -772,13 +774,13 @@
         <item>Big Shaq: 2 + 2 = 4</item>
         <item>21</item>
         <item>Big Shaq: 1234</item>
-        <item>All My Friends Are Dead</item>
+        <item>Lil Uzi Vert: All My Friends Are Dead</item>
         <item>Biaaatch</item>
         <item>Big Shaq</item>
         <item>Big Shaq: Boom</item>
         <item>Big Shaq: Check The Statistics</item>
-        <item>Eskitit</item>
-        <item>Gucci Gang</item>
+        <item>Lil Pump: Esketit</item>
+        <item>Lil Pump: Gucci Gang</item>
         <item>Big Shaq: Hold Tight Asznee</item>
         <item>I Am The One</item>
         <item>Kieee</item>
@@ -791,7 +793,6 @@
         <item>Big Shaq: Ossnaa</item>
         <item>Panda</item>
         <item>Big Shaq: Pa-Pa-Ka-Ka-Ka</item>
-        <item>Pierre Come Out Here</item>
         <item>Big Shaq: Quick Mafs</item>
         <item>Big Shaq: Quick Mafs Full</item>
         <item>Rain Drop Drop Top</item>
@@ -823,7 +824,7 @@
         <item>@raw/music_bigshaq</item>
         <item>@raw/music_boom</item>
         <item>@raw/music_checkthestatistics</item>
-        <item>@raw/music_eskitit</item>
+        <item>@raw/music_esketit</item>
         <item>@raw/music_guccigang</item>
         <item>@raw/music_holdtightasznee</item>
         <item>@raw/music_iamtheone</item>
@@ -837,7 +838,6 @@
         <item>@raw/music_ossnaa</item>
         <item>@raw/music_panda</item>
         <item>@raw/music_papakakaka</item>
-        <item>@raw/music_pierrecomeouthere</item>
         <item>@raw/music_quickmafs</item>
         <item>@raw/music_quickmathsfull</item>
         <item>@raw/music_raindropdroptop</item>
