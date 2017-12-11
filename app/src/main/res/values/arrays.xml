@@ -65,7 +65,6 @@
         <item>Pink Guy: Stop Being A F*ckin C*unt</item>
         <item>Pink Guy: Suck My D*ck</item>
         <item>Filthy Frank: Welcome To The Rice Fields</item>
-        <item>Pierre Come Out Here</item>
         <item>iDubbbz: Hey That\' s Pretty Good!</item>
         <item>Excuse Me, I Have Some P*ssyhair On Me!</item>
         <item>Retardation Theme</item>
@@ -117,6 +116,7 @@
         <item>Nuke</item>
         <item>Pacman Death</item>
         <item>Playstation</item>
+        <item>Pokemon: Our Courage Will Pull Us Through</item>
         <item>Pokemon: Heal</item>
         <item>Sniper Shot</item>
         <item>Tetris</item>
@@ -153,7 +153,6 @@
         <item>Naruto: Oodama Rasengan</item>
         <item>Rick And Morty: Oompaloompa</item>
         <item>JoJo: Ora Ora Ora</item>
-        <item>Pokemon: Our Courage Will Pull Us Through</item>
         <item>Pornhub</item>
         <item>Naruto: Rasengan</item>
         <item>Sabada</item>
@@ -189,6 +188,7 @@
         <item>Big Shaq: Ossnaa</item>
         <item>Panda</item>
         <item>Big Shaq: Pa-Pa-Ka-Ka-Ka</item>
+        <item>Pierre Come Out Here</item>
         <item>Big Shaq: Quick Mafs</item>
         <item>Big Shaq: Quick Mafs Full</item>
         <item>Rain Drop Drop Top</item>
@@ -274,7 +274,6 @@
         <item>@raw/funny_pgstopfokincunt</item>
         <item>@raw/funny_pgsuckmadick</item>
         <item>@raw/funny_pgwelcomericefields</item>
-        <item>@raw/funny_pierrecomeouthere</item>
         <item>@raw/funny_prettygood</item>
         <item>@raw/funny_pussyhair</item>
         <item>@raw/funny_retardation</item>
@@ -325,6 +324,7 @@
         <item>@raw/games_nuke</item>
         <item>@raw/games_pacmandeath</item>
         <item>@raw/games_playstation</item>
+        <item>@raw/games_pokemonaggouri</item>
         <item>@raw/games_pokemonheal</item>
         <item>@raw/games_snipershot</item>
         <item>@raw/games_tetris</item>
@@ -361,7 +361,6 @@
         <item>@raw/movies_oodamarasengan</item>
         <item>@raw/movies_oompaloompa</item>
         <item>@raw/movies_oraoraora</item>
-        <item>@raw/movies_pokemonaggouri</item>
         <item>@raw/movies_pornhub</item>
         <item>@raw/movies_rasengan</item>
         <item>@raw/movies_sabada</item>
@@ -397,6 +396,7 @@
         <item>@raw/music_ossnaa</item>
         <item>@raw/music_panda</item>
         <item>@raw/music_papakakaka</item>
+        <item>@raw/music_pierrecomeouthere</item>
         <item>@raw/music_quickmafs</item>
         <item>@raw/music_quickmathsfull</item>
         <item>@raw/music_raindropdroptop</item>
@@ -483,7 +483,6 @@
         <item>Pink Guy: Stop Being A F*ckin C*unt</item>
         <item>Pink Guy: Suck My D*ck</item>
         <item>Filthy Frank: Welcome To The Rice Fields</item>
-        <item>Pierre Come Out Here</item>
         <item>iDubbbz: Hey That\' s Pretty Good!</item>
         <item>Excuse Me, I Have Some P*ssyhair On Me!</item>
         <item>Retardation Theme</item>
@@ -578,7 +577,6 @@
         <item>@raw/funny_pgstopfokincunt</item>
         <item>@raw/funny_pgsuckmadick</item>
         <item>@raw/funny_pgwelcomericefields</item>
-        <item>@raw/funny_pierrecomeouthere</item>
         <item>@raw/funny_prettygood</item>
         <item>@raw/funny_pussyhair</item>
         <item>@raw/funny_retardation</item>
@@ -634,6 +632,7 @@
         <item>Nuke</item>
         <item>Pacman Death</item>
         <item>Playstation</item>
+        <item>Pokemon: Our Courage Will Pull Us Through</item>
         <item>Pokemon: Heal</item>
         <item>Sniper Shot</item>
         <item>Tetris</item>
@@ -662,6 +661,7 @@
         <item>@raw/games_nuke</item>
         <item>@raw/games_pacmandeath</item>
         <item>@raw/games_playstation</item>
+        <item>@raw/games_pokemonaggouri</item>
         <item>@raw/games_pokemonheal</item>
         <item>@raw/games_snipershot</item>
         <item>@raw/games_tetris</item>
@@ -702,7 +702,6 @@
         <item>Naruto: Oodama Rasengan</item>
         <item>Rick And Morty: Oompaloompa</item>
         <item>JoJo: Ora Ora Ora</item>
-        <item>Pokemon: Our Courage Will Pull Us Through</item>
         <item>Pornhub</item>
         <item>Naruto: Rasengan</item>
         <item>Sabada</item>
@@ -752,7 +751,6 @@
         <item>@raw/movies_oodamarasengan</item>
         <item>@raw/movies_oompaloompa</item>
         <item>@raw/movies_oraoraora</item>
-        <item>@raw/movies_pokemonaggouri</item>
         <item>@raw/movies_pornhub</item>
         <item>@raw/movies_rasengan</item>
         <item>@raw/movies_sabada</item>
@@ -793,6 +791,7 @@
         <item>Big Shaq: Ossnaa</item>
         <item>Panda</item>
         <item>Big Shaq: Pa-Pa-Ka-Ka-Ka</item>
+        <item>Pierre Come Out Here</item>
         <item>Big Shaq: Quick Mafs</item>
         <item>Big Shaq: Quick Mafs Full</item>
         <item>Rain Drop Drop Top</item>
@@ -838,6 +837,7 @@
         <item>@raw/music_ossnaa</item>
         <item>@raw/music_panda</item>
         <item>@raw/music_papakakaka</item>
+        <item>@raw/music_pierrecomeouthere</item>
         <item>@raw/music_quickmafs</item>
         <item>@raw/music_quickmathsfull</item>
         <item>@raw/music_raindropdroptop</item>
