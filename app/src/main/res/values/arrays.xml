@@ -3,7 +3,7 @@
 
     <!-- All Sounds -->
     <string-array name="allSounds">
-        <item>Ni#&er\'s Satisfaction</item>
+        <item>Ni**er\'s Satisfaction</item>
         <item>It\' s 04:20 Meng…</item>
         <item>420 Blaze It Fa#&ot</item>
         <item>Adam!?!</item>
@@ -46,12 +46,12 @@
         <item>My Mooscles Are Getting Bigger!</item>
         <item>Hitler: Nein Nein</item>
         <item>Never Done That</item>
-        <item>Ni#%a Is C*mming…</item>
-        <item>Sup Ni#&a, Wanna Talk Some Sh*t?</item>
+        <item>Ni**a Is C*mming…</item>
+        <item>Sup Ni**a, Wanna Talk Some Sh*t?</item>
         <item>Pewdiepie: Oh Mah GAH!</item>
         <item>Oh My!</item>
         <item>Oh Yeaaaah!</item>
-        <item>Vegeta: Over 9000</item>
+        <item>Dragon Ball: Over 9000</item>
         <item>Come Here My Pet Russian…</item>
         <item>Pewdiepie: Intro</item>
         <item>Filthy Frank: Bing Bing Walla Walla</item>
@@ -122,50 +122,50 @@
         <item>Tetris</item>
         <item>Back To The Future</item>
         <item>Badadipoopi</item>
-        <item>Ichigo: BANKAI</item>
+        <item>Bleach: BANKAI</item>
         <item>Bazinga</item>
         <item>Belair</item>
-        <item>Blend S</item>
+        <item>Blend S: Intro</item>
         <item>Chewbacca</item>
         <item>Darth Vader</item>
-        <item>Disqualified</item>
-        <item>Homer: Doh</item>
-        <item>Josuke: Dorarara</item>
+        <item>Rick & Morty: Disqualified</item>
+        <item>The Simpsons: Doh</item>
+        <item>JoJo: Dorarara</item>
         <item>Fast n\' Furious</item>
-        <item>NANI?</item>
-        <item>OWMS Noise</item>
-        <item>Kenshiro: Omae Wa Mou Shindeiru</item>
-        <item>Rick: Get Schwifty</item>
+        <item>FOTNS: NANI?</item>
+        <item>FOTNS: OWMS Noise</item>
+        <item>FOTNS: Omae Wa Mou Shindeiru</item>
+        <item>Rick & Morty: Get Schwifty</item>
         <item>Godgilla</item>
-        <item>Look At Meee</item>
+        <item>Rick & Morty: Look At Meee</item>
         <item>Darth Vader: I\'m Your Father</item>
-        <item>Bam</item>
-        <item>Da-Da-Da</item>
-        <item>Goku: Kamehameha</item>
-        <item>Sasuke: Katon: Goukakyou No Jutsu</item>
-        <item>Dio: Kono Dio Da!</item>
+        <item>InuyashikiBam</item>
+        <item>Inuyashiki: Da-Da-Da</item>
+        <item>Dragon Ball: Kamehameha</item>
+        <item>Naruto: Katon: Goukakyou No Jutsu</item>
+        <item>JoJo: Kono Dio Da!</item>
         <item>Law And Order</item>
-        <item>LOTR MLG</item>
-        <item>Dio: Muda Muda Muda</item>
-        <item>Nazgul</item>
-        <item>Oh Whee</item>
-        <item>Okay</item>
+        <item>LOTR: MLG</item>
+        <item>JoJo: Muda Muda Muda</item>
+        <item>LOTR: Nazgul</item>
+        <item>Rick & Morty: Oh Whee</item>
+        <item>Rick & Morty: Okay</item>
         <item>Naruto: Oodama Rasengan</item>
-        <item>Oompaloompa</item>
-        <item>Jotaro: Ora Ora Ora</item>
+        <item>Rick & Morty: Oompaloompa</item>
+        <item>JoJo: Ora Ora Ora</item>
         <item>Pornhub</item>
         <item>Naruto: Rasengan</item>
         <item>Sabada</item>
-        <item>Byakuya: Senbonzakura Kageyoshi</item>
-        <item>Sasuke: Sharingan</item>
-        <item>SHOW ME WHAT YOU GOT</item>
+        <item>Bleach: Senbonzakura Kageyoshi</item>
+        <item>Naruto: Sharingan</item>
+        <item>Rick & Morty: SHOW ME WHAT YOU GOT</item>
         <item>This Is My Pawn Shop</item>
-        <item>Tuturu</item>
+        <item>Steins Gate: Tuturu</item>
         <item>Two And A Half Men</item>
         <item>U WOT M8</item>
         <item>Wazzup</item>
-        <item>Rick: WLDD</item>
-        <item>DIO: ZA WARUDO!</item>
+        <item>Rick & Morty: WLDD</item>
+        <item>JoJo: ZA WARUDO!</item>
         <item>Big Shaq: 2 + 2 = 4</item>
         <item>21</item>
         <item>Big Shaq: 1234</item>
@@ -207,7 +207,7 @@
         <item>Squaw</item>
         <item>Yah-Yah-Yah</item>
         <item>Yea Hoe</item>
-        <item>You D*ckhead</item>
+        <item>Big Shaq: You D*ckhead</item>
         <item>Youuuu</item>
     </string-array>
 
@@ -421,7 +421,7 @@
 
     <!-- Funny Sounds -->
     <string-array name="funnySounds">
-        <item>Ni#&er\'s Satisfaction</item>
+        <item>Ni**er\'s Satisfaction</item>
         <item>It\' s 04:20 Meng…</item>
         <item>420 Blaze It Fa#&ot</item>
         <item>Adam!?!</item>
@@ -464,12 +464,12 @@
         <item>My Mooscles Are Getting Bigger!</item>
         <item>Hitler: Nein Nein</item>
         <item>Never Done That</item>
-        <item>Ni#%a Is C*mming…</item>
-        <item>Sup Ni#&a, Wanna Talk Some Sh*t?</item>
+        <item>Ni**a Is C*mming…</item>
+        <item>Sup Ni**a, Wanna Talk Some Sh*t?</item>
         <item>Pewdiepie: Oh Mah GAH!</item>
         <item>Oh My!</item>
         <item>Oh Yeaaaah!</item>
-        <item>Vegeta: Over 9000</item>
+        <item>Dragon Ball: Over 9000</item>
         <item>Come Here My Pet Russian…</item>
         <item>Pewdiepie: Intro</item>
         <item>Filthy Frank: Bing Bing Walla Walla</item>
@@ -671,50 +671,50 @@
     <string-array name="moviesSounds">
         <item>Back To The Future</item>
         <item>Badadipoopi</item>
-        <item>Ichigo: BANKAI</item>
+        <item>Bleach: BANKAI</item>
         <item>Bazinga</item>
         <item>Belair</item>
-        <item>Blend S</item>
+        <item>Blend S: Intro</item>
         <item>Chewbacca</item>
         <item>Darth Vader</item>
-        <item>Disqualified</item>
-        <item>Homer: Doh</item>
-        <item>Josuke: Dorarara</item>
+        <item>Rick & Morty: Disqualified</item>
+        <item>The Simpsons: Doh</item>
+        <item>JoJo: Dorarara</item>
         <item>Fast n\' Furious</item>
-        <item>NANI?</item>
-        <item>OWMS Noise</item>
-        <item>Kenshiro: Omae Wa Mou Shindeiru</item>
-        <item>Rick: Get Schwifty</item>
+        <item>FOTNS: NANI?</item>
+        <item>FOTNS: OWMS Noise</item>
+        <item>FOTNS: Omae Wa Mou Shindeiru</item>
+        <item>Rick & Morty: Get Schwifty</item>
         <item>Godgilla</item>
-        <item>Look At Meee</item>
+        <item>Rick & Morty: Look At Meee</item>
         <item>Darth Vader: I\'m Your Father</item>
-        <item>Bam</item>
-        <item>Da-Da-Da</item>
-        <item>Goku: Kamehameha</item>
-        <item>Sasuke: Katon: Goukakyou No Jutsu</item>
-        <item>Dio: Kono Dio Da!</item>
+        <item>InuyashikiBam</item>
+        <item>Inuyashiki: Da-Da-Da</item>
+        <item>Dragon Ball: Kamehameha</item>
+        <item>Naruto: Katon: Goukakyou No Jutsu</item>
+        <item>JoJo: Kono Dio Da!</item>
         <item>Law And Order</item>
-        <item>LOTR MLG</item>
-        <item>Dio: Muda Muda Muda</item>
-        <item>Nazgul</item>
-        <item>Oh Whee</item>
-        <item>Okay</item>
+        <item>LOTR: MLG</item>
+        <item>JoJo: Muda Muda Muda</item>
+        <item>LOTR: Nazgul</item>
+        <item>Rick & Morty: Oh Whee</item>
+        <item>Rick & Morty: Okay</item>
         <item>Naruto: Oodama Rasengan</item>
-        <item>Oompaloompa</item>
-        <item>Jotaro: Ora Ora Ora</item>
+        <item>Rick & Morty: Oompaloompa</item>
+        <item>JoJo: Ora Ora Ora</item>
         <item>Pornhub</item>
         <item>Naruto: Rasengan</item>
         <item>Sabada</item>
-        <item>Byakuya: Senbonzakura Kageyoshi</item>
-        <item>Sasuke: Sharingan</item>
-        <item>SHOW ME WHAT YOU GOT</item>
+        <item>Bleach: Senbonzakura Kageyoshi</item>
+        <item>Naruto: Sharingan</item>
+        <item>Rick & Morty: SHOW ME WHAT YOU GOT</item>
         <item>This Is My Pawn Shop</item>
-        <item>Tuturu</item>
+        <item>Steins Gate: Tuturu</item>
         <item>Two And A Half Men</item>
         <item>U WOT M8</item>
         <item>Wazzup</item>
-        <item>Rick: WLDD</item>
-        <item>DIO: ZA WARUDO!</item>
+        <item>Rick & Morty: WLDD</item>
+        <item>JoJo: ZA WARUDO!</item>
     </string-array>
 
     <integer-array name="moviesSoundsIDs">
@@ -810,7 +810,7 @@
         <item>Squaw</item>
         <item>Yah-Yah-Yah</item>
         <item>Yea Hoe</item>
-        <item>You D*ckhead</item>
+        <item>Big Shaq: You D*ckhead</item>
         <item>Youuuu</item>
     </string-array>
 
