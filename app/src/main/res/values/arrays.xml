@@ -210,7 +210,7 @@
         <item>Big Shaq: You D*ckhead</item>
         <item>Youuuu</item>
     </string-array>
-
+    
     <integer-array name="allSoundsIDs">
         <item>@raw/funny_a</item>
         <item>@raw/funny_a420</item>
@@ -286,6 +286,7 @@
         <item>@raw/funny_sissiness</item>
         <item>@raw/funny_smokeweedeveryday</item>
         <item>@raw/funny_spinme</item>
+        <item>@raw/funny_spookyscaryskeletons</item>
         <item>@raw/funny_squeeek</item>
         <item>@raw/funny_stfu</item>
         <item>@raw/funny_stronker</item>
@@ -513,7 +514,7 @@
         <item>Yiss</item>
         <item>Zodiac</item>
     </string-array>
-
+        
     <integer-array name="funnySoundsIDs">
         <item>@raw/funny_a</item>
         <item>@raw/funny_a420</item>
