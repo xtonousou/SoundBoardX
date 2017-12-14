@@ -153,6 +153,7 @@
         <item>Naruto: Oodama Rasengan</item>
         <item>Rick And Morty: Oompaloompa</item>
         <item>JoJo: Ora Ora Ora</item>
+        <item>Jammie Foxx: Pierre Come Out Here</item>
         <item>Pornhub</item>
         <item>Naruto: Rasengan</item>
         <item>Sabada</item>
@@ -167,48 +168,47 @@
         <item>Rick And Morty: WLDD</item>
         <item>JoJo: ZA WARUDO!</item>
         <item>Big Shaq: 2 + 2 = 4</item>
-        <item>21</item>
+        <item>21 Savage: </item>
         <item>Big Shaq: 1234</item>
         <item>Lil Uzi Vert: All My Friends Are Dead</item>
-        <item>Biaaatch</item>
+        <item>Kendrick Lamar: Biaaatch</item>
         <item>Big Shaq</item>
         <item>Big Shaq: Boom</item>
         <item>Big Shaq: Check The Statistics</item>
         <item>Lil Pump: Esketit</item>
         <item>Lil Pump: Gucci Gang</item>
         <item>Big Shaq: Hold Tight Asznee</item>
-        <item>I Am The One</item>
-        <item>Kieee</item>
+        <item>Denzel Curry: I Am The One</item>
+        <item>Desiigner: Kieee</item>
         <item>Lil Pump: Laugh</item>
-        <item>Lil Pump: Seventy nigga"</item>
+        <item>Lil Pump: Seventy Ni**a"</item>
         <item>Big Shaq: Look At Your Nose</item>
         <item>Big Shaq: Mans Not Hot</item>
         <item>Big Shaq: No Ketchup</item>
-        <item>Offset</item>
+        <item>Offset: Offset</item>
         <item>Big Shaq: Ossnaa</item>
-        <item>Panda</item>
+        <item>Desiigner: Panda</item>
         <item>Big Shaq: Pa-Pa-Ka-Ka-Ka</item>
-        <item>Pierre Come Out Here</item>
         <item>Big Shaq: Quick Mafs</item>
         <item>Big Shaq: Quick Mafs Full</item>
         <item>Rain Drop Drop Top</item>
         <item>Big Shaq: Ratnum</item>
         <item>Big Shaq: Raw Sauce</item>
-        <item>Rrraa</item>
-        <item>Satafaka</item>
+        <item>Desiigner: Rrraa</item>
+        <item>Juicy J: Satafaka</item>
         <item>Big Shaq: Scootnum</item>
-        <item>Shmurda</item>
+        <item>Bobby Shmurda: Ah-Ah-Ahhh</item>
         <item>Big Shaq: Skidiki-Pa-Pa</item>
         <item>Big Shaq: Skrrrrrra</item>
-        <item>Skrrt Skrrt</item>
-        <item>Skr Skr</item>
+        <item>Madeintyo: Skrrt Skrrt</item>
+        <item>Madeintyo: Skr Skr</item>
         <item>Big Shaq: Skyaaa</item>
         <item>Big Shaq: Smoke Trees</item>
-        <item>Squaw</item>
-        <item>Yah-Yah-Yah</item>
-        <item>Yea Hoe</item>
+        <item>Fetty Wap: Squaw</item>
+        <item>Lil Uzi Vert: Yah-Yah-Yah</item>
+        <item>Juicy J: Yea Hoe</item>
         <item>Big Shaq: You D*ckhead</item>
-        <item>Youuuu</item>
+        <item>Soulja Boy: Youuuu</item>
     </string-array>
     
     <integer-array name="allSoundsIDs">
@@ -362,6 +362,7 @@
         <item>@raw/movies_oodamarasengan</item>
         <item>@raw/movies_oompaloompa</item>
         <item>@raw/movies_oraoraora</item>
+        <item>@raw/movies_pierrecomeouthere</item>
         <item>@raw/movies_pornhub</item>
         <item>@raw/movies_rasengan</item>
         <item>@raw/movies_sabada</item>
@@ -397,7 +398,6 @@
         <item>@raw/music_ossnaa</item>
         <item>@raw/music_panda</item>
         <item>@raw/music_papakakaka</item>
-        <item>@raw/music_pierrecomeouthere</item>
         <item>@raw/music_quickmafs</item>
         <item>@raw/music_quickmathsfull</item>
         <item>@raw/music_raindropdroptop</item>
@@ -703,6 +703,7 @@
         <item>Naruto: Oodama Rasengan</item>
         <item>Rick And Morty: Oompaloompa</item>
         <item>JoJo: Ora Ora Ora</item>
+        <item>Jammie Foxx: Pierre Come Out Here</item>
         <item>Pornhub</item>
         <item>Naruto: Rasengan</item>
         <item>Sabada</item>
@@ -752,6 +753,7 @@
         <item>@raw/movies_oodamarasengan</item>
         <item>@raw/movies_oompaloompa</item>
         <item>@raw/movies_oraoraora</item>
+        <item>@raw/movies_pierrecomeouthere</item>
         <item>@raw/movies_pornhub</item>
         <item>@raw/movies_rasengan</item>
         <item>@raw/movies_sabada</item>
@@ -771,48 +773,47 @@
     <!-- Music Sounds -->
     <string-array name="musicSounds">
         <item>Big Shaq: 2 + 2 = 4</item>
-        <item>21</item>
+        <item>21 Savage: </item>
         <item>Big Shaq: 1234</item>
         <item>Lil Uzi Vert: All My Friends Are Dead</item>
-        <item>Biaaatch</item>
+        <item>Kendrick Lamar: Biaaatch</item>
         <item>Big Shaq</item>
         <item>Big Shaq: Boom</item>
         <item>Big Shaq: Check The Statistics</item>
         <item>Lil Pump: Esketit</item>
         <item>Lil Pump: Gucci Gang</item>
         <item>Big Shaq: Hold Tight Asznee</item>
-        <item>I Am The One</item>
-        <item>Kieee</item>
+        <item>Denzel Curry: I Am The One</item>
+        <item>Desiigner: Kieee</item>
         <item>Lil Pump: Laugh</item>
-        <item>Lil Pump: Seventy nigga"</item>
+        <item>Lil Pump: Seventy Ni**a"</item>
         <item>Big Shaq: Look At Your Nose</item>
         <item>Big Shaq: Mans Not Hot</item>
         <item>Big Shaq: No Ketchup</item>
-        <item>Offset</item>
+        <item>Offset: Offset</item>
         <item>Big Shaq: Ossnaa</item>
-        <item>Panda</item>
+        <item>Desiigner: Panda</item>
         <item>Big Shaq: Pa-Pa-Ka-Ka-Ka</item>
-        <item>Pierre Come Out Here</item>
         <item>Big Shaq: Quick Mafs</item>
         <item>Big Shaq: Quick Mafs Full</item>
         <item>Rain Drop Drop Top</item>
         <item>Big Shaq: Ratnum</item>
         <item>Big Shaq: Raw Sauce</item>
-        <item>Rrraa</item>
-        <item>Satafaka</item>
+        <item>Desiigner: Rrraa</item>
+        <item>Juicy J: Satafaka</item>
         <item>Big Shaq: Scootnum</item>
-        <item>Shmurda</item>
+        <item>Bobby Shmurda: Ah-Ah-Ahhh</item>
         <item>Big Shaq: Skidiki-Pa-Pa</item>
         <item>Big Shaq: Skrrrrrra</item>
-        <item>Skrrt Skrrt</item>
-        <item>Skr Skr</item>
+        <item>Madeintyo: Skrrt Skrrt</item>
+        <item>Madeintyo: Skr Skr</item>
         <item>Big Shaq: Skyaaa</item>
         <item>Big Shaq: Smoke Trees</item>
-        <item>Squaw</item>
-        <item>Yah-Yah-Yah</item>
-        <item>Yea Hoe</item>
+        <item>Fetty Wap: Squaw</item>
+        <item>Lil Uzi Vert: Yah-Yah-Yah</item>
+        <item>Juicy J: Yea Hoe</item>
         <item>Big Shaq: You D*ckhead</item>
-        <item>Youuuu</item>
+        <item>Soulja Boy: Youuuu</item>
     </string-array>
 
     <integer-array name="musicSoundsIDs">
@@ -838,7 +839,6 @@
         <item>@raw/music_ossnaa</item>
         <item>@raw/music_panda</item>
         <item>@raw/music_papakakaka</item>
-        <item>@raw/music_pierrecomeouthere</item>
         <item>@raw/music_quickmafs</item>
         <item>@raw/music_quickmathsfull</item>
         <item>@raw/music_raindropdroptop</item>
