@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-34:12
-INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-34:12
-INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-34:12
-INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-34:12
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-35:12
 MERGED from [com.android.support:design:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/9c3fb5b1fb70902be5aaba06fea342cb/AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.johnpersano:supertoasts:2.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/supertoasts-2.0.aar/c7abb47722bf20b5e6cfabb9600b8431/AndroidManifest.xml:17:1-30:12
 MERGED from [petrov.kristiyan:colorpicker-library:1.1.7] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.7.aar/f81d0f2fcaee5cc9110a7767d5d54239/AndroidManifest.xml:2:1-12:12
@@ -28,24 +28,25 @@ MERGED from [com.mikepenz:materialdrawer:6.0.1] /home/xtonousou/.gradle/caches/t
 MERGED from [com.mikepenz:iconics-core:2.9.5] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/iconics-core-2.9.5.aar/ac050567c03e3ce895892f38c182e7b8/AndroidManifest.xml:2:1-12:12
 MERGED from [com.mikepenz:google-material-typeface:3.0.1.2.original] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/google-material-typeface-3.0.1.2.original.aar/ca0e5f2c3dc92a0843a2228a43522d21/AndroidManifest.xml:17:1-29:12
 MERGED from [com.mikepenz:fontawesome-typeface:4.7.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.7.0.2.aar/ca18026094c8749623984deef36a8893/AndroidManifest.xml:2:1-12:12
+MERGED from [com.github.hotchemi:permissionsdispatcher:3.0.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/permissionsdispatcher-3.0.1.aar/5a15ae533df915c3ad08e050e7f8b079/AndroidManifest.xml:2:1-10:12
 MERGED from [com.mikepenz:materialize:1.1.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialize-1.1.2.aar/3ec266a0d68f16d99c793688350bcdc4/AndroidManifest.xml:2:1-12:12
 MERGED from [com.mikepenz:fastadapter:3.0.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-3.0.1.aar/2b5bc74c811c98c84b5ff7c56d595ff5/AndroidManifest.xml:2:1-12:12
 MERGED from [com.mikepenz:fastadapter-extensions-expandable:3.0.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-extensions-expandable-3.0.0.aar/68bcb8328de3a9aee76d97b32d3f0a11/AndroidManifest.xml:2:1-12:12
 MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/134ab52392974c3ec5794b6e9b9207d4/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-34:12
-INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-34:12
-INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-34:12
+INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-35:12
 	package
 		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:4:5-46
 		INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
 		INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
-		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-34:12
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-35:12
 		INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
-		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-34:12
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-35:12
 		INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:3:5-63
@@ -58,7 +59,7 @@ ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/s
 	android:name
 		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:7:22-77
 application
-ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:9:5-32:19
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:9:5-33:19
 MERGED from [com.github.johnpersano:supertoasts:2.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/supertoasts-2.0.aar/c7abb47722bf20b5e6cfabb9600b8431/AndroidManifest.xml:26:5-28:38
 MERGED from [com.github.johnpersano:supertoasts:2.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/supertoasts-2.0.aar/c7abb47722bf20b5e6cfabb9600b8431/AndroidManifest.xml:26:5-28:38
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/e71a5f865554a178f3ab0d5ac04b3fd0/AndroidManifest.xml:9:5-20
@@ -78,7 +79,9 @@ MERGED from [com.mikepenz:google-material-typeface:3.0.1.2.original] /home/xtono
 	android:icon
 		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:10:9-43
 activity#io.github.xtonousou.soundboardx.MainActivity
-ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:15:9-30:20
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:15:9-31:20
+	android:screenOrientation
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:19:4-40
 	android:label
 		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:17:13-45
 	android:theme
@@ -86,21 +89,21 @@ ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/s
 	android:name
 		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:16:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:20:13-23:29
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:21:13-24:29
 action#android.intent.action.MAIN
-ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:21:17-68
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:22:17-68
 	android:name
-		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:21:25-66
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:22:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:22:17-76
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:23:17-76
 	android:name
-		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:22:27-74
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:23:27-74
 meta-data#android.app.searchable
-ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:25:13-28:25
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:26:13-29:25
 	android:resource
-		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:27:17-51
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:28:17-51
 	android:name
-		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:26:17-54
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:27:17-54
 uses-sdk
 INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
@@ -153,6 +156,8 @@ MERGED from [com.mikepenz:google-material-typeface:3.0.1.2.original] /home/xtono
 MERGED from [com.mikepenz:google-material-typeface:3.0.1.2.original] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/google-material-typeface-3.0.1.2.original.aar/ca0e5f2c3dc92a0843a2228a43522d21/AndroidManifest.xml:23:5-25:41
 MERGED from [com.mikepenz:fontawesome-typeface:4.7.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.7.0.2.aar/ca18026094c8749623984deef36a8893/AndroidManifest.xml:8:5-10:41
 MERGED from [com.mikepenz:fontawesome-typeface:4.7.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.7.0.2.aar/ca18026094c8749623984deef36a8893/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.hotchemi:permissionsdispatcher:3.0.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/permissionsdispatcher-3.0.1.aar/5a15ae533df915c3ad08e050e7f8b079/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.hotchemi:permissionsdispatcher:3.0.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/permissionsdispatcher-3.0.1.aar/5a15ae533df915c3ad08e050e7f8b079/AndroidManifest.xml:6:5-8:41
 MERGED from [com.mikepenz:materialize:1.1.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialize-1.1.2.aar/3ec266a0d68f16d99c793688350bcdc4/AndroidManifest.xml:8:5-10:41
 MERGED from [com.mikepenz:materialize:1.1.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialize-1.1.2.aar/3ec266a0d68f16d99c793688350bcdc4/AndroidManifest.xml:8:5-10:41
 MERGED from [com.mikepenz:fastadapter:3.0.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-3.0.1.aar/2b5bc74c811c98c84b5ff7c56d595ff5/AndroidManifest.xml:8:5-10:41

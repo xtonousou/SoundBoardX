@@ -110,8 +110,7 @@ abstract class Utils {
 
 	static boolean isGreenMode(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-			if (((PowerManager) activity.getSystemService(Context.POWER_SERVICE)).isPowerSaveMode
-					()) {
+			if (((PowerManager) activity.getSystemService(Context.POWER_SERVICE)).isPowerSaveMode()) {
 				return true;
 			}
         }

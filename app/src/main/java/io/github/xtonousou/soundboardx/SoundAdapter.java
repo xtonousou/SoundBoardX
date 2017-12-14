@@ -1,7 +1,9 @@
 package io.github.xtonousou.soundboardx;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -24,6 +26,13 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.text.Normalizer;
 import java.util.ArrayList;
+
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.OnNeverAskAgain;
+import permissions.dispatcher.OnPermissionDenied;
+import permissions.dispatcher.OnShowRationale;
+import permissions.dispatcher.PermissionRequest;
+import permissions.dispatcher.RuntimePermissions;
 
 public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
         implements Filterable {
@@ -106,20 +115,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 
 			title.setTypeface(font);
 			title.setTextColor(activity.getResources().getColor(R.color.colorAccent));
-
-			itemView.setOnClickListener(new View.OnClickListener() {
-				@Override
-				@Subscribe(threadMode = ThreadMode.ASYNC)
-				public void onClick(View view) {
-					if (EventBus.getDefault().isRegistered(this)) return;
-					if (SharedPrefs.getInstance().areAnimationsShown())
-						new ParticleManager(new Particle(itemView), title.getText().toString())
-								.makeItShine();
-					EventBus.getDefault().register(this);
-					EventBus.getDefault().post(sounds.get(getAdapterPosition()));
-					EventBus.getDefault().unregister(this);
-				}
-			});
 
 			v.setOnCreateContextMenuListener(this);
 		}
@@ -219,6 +214,24 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 				}
 			} catch (ArrayIndexOutOfBoundsException e) {
 				Log.e(TAG, e.getMessage());
+			}
+		});
+
+		holder.itemView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			@Subscribe(threadMode = ThreadMode.ASYNC)
+			public void onClick(View view) {
+				if (EventBus.getDefault().isRegistered(this)) {
+					EventBus.getDefault().unregister(this);
+					return;
+				}
+				if (SharedPrefs.getInstance().areAnimationsShown())
+					new ParticleManager(new Particle(holder.itemView),
+							holder.title.getText().toString()).makeItShine();
+				EventBus.getDefault().register(this);
+				EventBus.getDefault().post(sounds.get(holder.getAdapterPosition()));
+				if (EventBus.getDefault().isRegistered(this))
+					EventBus.getDefault().unregister(this);
 			}
 		});
 	}

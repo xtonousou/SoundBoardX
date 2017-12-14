@@ -16,8 +16,7 @@ abstract class SoundStore {
 
         ArrayList<Sound> sounds = new ArrayList<>();
 
-        final int allSounds_length = allSounds.length();
-        for (int i = 0; i < allSounds_length; i++) {
+        for (int i = 0; i < allSounds.length(); i++) {
             sounds.add(new Sound(allSounds.getString(i), allSoundsIDs.getResourceId(i, -1)));
         }
 

@@ -1,7 +1,9 @@
 package io.github.xtonousou.soundboardx;
 
+import android.Manifest;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -27,23 +29,30 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondarySwitchDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.OnNeverAskAgain;
+import permissions.dispatcher.OnPermissionDenied;
+import permissions.dispatcher.OnShowRationale;
+import permissions.dispatcher.PermissionRequest;
+import permissions.dispatcher.RuntimePermissions;
 import petrov.kristiyan.colorpicker.ColorPicker;
 
+@RuntimePermissions
 public class MainActivity extends AppCompatActivity {
-	static InputMethodManager sInputManager;
+	private static InputMethodManager sInputManager;
 
-	int mColor;
-	int mDefaultColor;
+	private int mColor;
+	private int mDefaultColor;
 
-	Typeface mFont;
-	Drawer mDrawer;
-	Toolbar mToolbar;
-	RecyclerView mView;
-	TextView mTitleText;
-	SoundPlayer mSoundPlayer;
-	ColorPicker mColorPicker;
-	FloatingActionButton mFabMute;
-	MaterialFavoriteButton mFavButton;
+	private Typeface mFont;
+	private Drawer mDrawer;
+	private Toolbar mToolbar;
+	private RecyclerView mView;
+	private TextView mTitleText;
+	private SoundPlayer mSoundPlayer;
+	private ColorPicker mColorPicker;
+	private FloatingActionButton mFabMute;
+	private MaterialFavoriteButton mFavButton;
 
 	/*
 	 * Do not change the order of the code.
@@ -62,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
 		handleTitle();
 		handleToolbar();
 		handleDrawer(savedInstanceState);
+
+		MainActivityPermissionsDispatcher.writeSystemSettingsWithPermissionCheck(this);
 	}
 
 	@Override
@@ -97,6 +108,27 @@ public class MainActivity extends AppCompatActivity {
         outState = mDrawer.saveInstanceState(outState);
         super.onSaveInstanceState(outState);
     }
+
+	@NeedsPermission(Manifest.permission.WRITE_SETTINGS)
+	void writeSystemSettings() {
+	}
+
+	@OnShowRationale(Manifest.permission.WRITE_SETTINGS)
+	void writeSystemSettingsOnShowRationale(final PermissionRequest request) {
+	}
+
+	@OnPermissionDenied(Manifest.permission.WRITE_SETTINGS)
+	void writeSystemSettingsOnPermissionDenied() {
+	}
+
+	@OnNeverAskAgain(Manifest.permission.WRITE_SETTINGS)
+	void writeSystemSettingsOnNeverAskAgain() {
+	}
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		MainActivityPermissionsDispatcher.onActivityResult(this, requestCode);
+	}
 
     private void handlePreferences() {
 		SharedPrefs.init(getPreferences(Context.MODE_PRIVATE));
@@ -149,12 +181,22 @@ public class MainActivity extends AppCompatActivity {
 		Utils.paintThis(mTitleText);
 		mFont = Typeface.createFromAsset(getAssets(), "fonts/Roboto-BoldCondensed.ttf");
 		mTitleText.setTypeface(mFont);
-		mTitleText.setOnClickListener((View view) -> mView.smoothScrollToPosition(0));
+		mTitleText.setOnClickListener(new DebouncedOnClickListener(500) {
+			@Override
+			public void onDebouncedClick(View v) {
+				mView.smoothScrollToPosition(0);
+			}
+		});
 	}
 
     private void handleFABs() {
 		Utils.paintThis(mFabMute);
-		mFabMute.setOnClickListener(view -> mute());
+		mFabMute.setOnClickListener(new DebouncedOnClickListener(250) {
+			@Override
+			public void onDebouncedClick(View v) {
+				mute();
+			}
+		});
 	}
 
     private void handleSearchView(Menu menu) {
@@ -183,14 +225,19 @@ public class MainActivity extends AppCompatActivity {
 
     private void handleDrawer(Bundle instance) {
         int drawerSize;
-		int selectedColor = ContextCompat.getColor(getApplicationContext(), R.color.colorPrimaryDarker);
+		int selectedColor = ContextCompat.getColor(getApplicationContext(),
+				R.color.colorPrimaryDarker);
 
+		/* HORIZONTAL ORIENTATION
 		//TODO handle properly different screen resolutions
         if (getApplicationContext().getResources().getConfiguration().orientation != 1) {
             drawerSize = (Utils.getScreenWidth(MainActivity.this)) - 850;
         } else {
             drawerSize = (Utils.getScreenWidth(MainActivity.this)) - 250;
         }
+        */
+
+		drawerSize = (Utils.getScreenWidth(MainActivity.this)) - 250;
 
         mDrawer = new DrawerBuilder()
                 .withActivity(MainActivity.this)
@@ -269,26 +316,36 @@ public class MainActivity extends AppCompatActivity {
                         case 1:
                             mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
                                     .getAllSounds(MainActivity.this)));
+							if (SharedPrefs.getInstance().areFavoritesShown())
+								mFavButton.toggleFavorite();
                             ((SoundAdapter) mView.getAdapter()).showAllSounds(MainActivity.this);
                             break;
                         case 2:
                             mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
                                     .getFunnySounds(MainActivity.this)));
+							if (SharedPrefs.getInstance().areFavoritesShown())
+								mFavButton.toggleFavorite();
                             ((SoundAdapter) mView.getAdapter()).showFunnySounds(MainActivity.this);
                             break;
                         case 3:
                             mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
                                     .getGamesSounds(MainActivity.this)));
+							if (SharedPrefs.getInstance().areFavoritesShown())
+								mFavButton.toggleFavorite();
                             ((SoundAdapter) mView.getAdapter()).showGamesSounds(MainActivity.this);
                             break;
                         case 4:
                             mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
                                     .getMoviesSounds(MainActivity.this)));
+							if (SharedPrefs.getInstance().areFavoritesShown())
+								mFavButton.toggleFavorite();
                             ((SoundAdapter) mView.getAdapter()).showMoviesSounds(MainActivity.this);
                             break;
 						case 5:
 							mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
 									.getMusicSounds(MainActivity.this)));
+							if (SharedPrefs.getInstance().areFavoritesShown())
+								mFavButton.toggleFavorite();
 							((SoundAdapter) mView.getAdapter()).showMusicSounds(MainActivity.this);
 							break;
 						/* Options title

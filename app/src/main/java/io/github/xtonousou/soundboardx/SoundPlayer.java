@@ -19,18 +19,13 @@ public class SoundPlayer {
 	private static final String TAG = "SoundPlayer";
 
 	public SoundPlayer(Context context) {
-		subscribeSound(this);
+		EventBus.getDefault().register(this);
 		this.mContext = context.getApplicationContext();
 	}
 
 	@Subscribe(threadMode = ThreadMode.ASYNC)
 	public void onEvent(Sound sound) {
 		playSound(sound);
-	}
-
-	@Subscribe(threadMode = ThreadMode.ASYNC)
-	void subscribeSound(SoundPlayer soundPlayer) {
-		EventBus.getDefault().register(soundPlayer);
 	}
 
 	@Subscribe(threadMode = ThreadMode.ASYNC)

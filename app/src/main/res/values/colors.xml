@@ -4,7 +4,7 @@
     <color name="colorPrimary">#424242</color>
     <color name="colorPrimaryDark">#292929</color>
     <color name="colorPrimaryDarker">#1a1a1a</color>
-    <color name="colorAccent">#fafafa</color>
+    <color name="colorAccent">#ffffff</color>
 
     <!-- Rainbow -->
     <color name="red">#f44336</color>

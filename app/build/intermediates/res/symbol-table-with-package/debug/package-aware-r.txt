@@ -2067,7 +2067,7 @@ int raw music_biaaatch 0x7f0e00a7
 int raw music_bigshaq 0x7f0e00a8
 int raw music_boom 0x7f0e00a9
 int raw music_checkthestatistics 0x7f0e00aa
-int raw music_eskitit 0x7f0e00ab
+int raw music_esketit 0x7f0e00ab
 int raw music_guccigang 0x7f0e00ac
 int raw music_holdtightasznee 0x7f0e00ad
 int raw music_iamtheone 0x7f0e00ae

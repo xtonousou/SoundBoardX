@@ -1,18 +1,14 @@
 package io.github.xtonousou.soundboardx;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.view.View;
 
 import com.github.johnpersano.supertoasts.library.Style;
@@ -26,8 +22,6 @@ import java.util.ArrayList;
 
 class ToneManager {
     private static final String TAG = "ToneManager";
-    private static final int PERMISSION_REQUEST_WRITE_SETTINGS = 0;
-    private static final int PERMISSION_REQUEST_MODIFY_AUDIO_SETTINGS = 1;
 
 	private ArrayList<Sound> sounds;
     private Activity         activity;
@@ -46,36 +40,7 @@ class ToneManager {
                 SharedPrefs.getInstance().getSelectedList());
     }
 
-    private void handlePermissions() {
-        Context context = itemView.getContext();
-        if (ContextCompat.checkSelfPermission(context,
-                Manifest.permission.WRITE_SETTINGS)
-                != PackageManager.PERMISSION_GRANTED) {
-
-            if (ActivityCompat.shouldShowRequestPermissionRationale(activity,
-                    Manifest.permission.WRITE_SETTINGS)) {
-
-                // Show an explanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
-
-            } else {
-
-                // No explanation needed, we can request the permission.
-
-                ActivityCompat.requestPermissions(activity,
-                        new String[]{Manifest.permission.WRITE_SETTINGS},
-                        PERMISSION_REQUEST_WRITE_SETTINGS);
-
-                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
-                // app-defined int constant. The callback method gets the
-                // result of the request.
-            }
-        }
-    }
-
 	void setToneAs(byte id) {
-        handlePermissions();
         switch (id) {
             case 0:
                 ringtone();
