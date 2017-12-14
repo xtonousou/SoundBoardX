@@ -112,8 +112,8 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 				public void onClick(View view) {
 					if (EventBus.getDefault().isRegistered(this)) return;
 					if (SharedPrefs.getInstance().areAnimationsShown())
-						new ParticleManager(new Particle(itemView), title.getText().toString())
-								.makeItShine();
+						new ParticleManager(new Particle(itemView),
+								title.getText().toString()).emit();
 					EventBus.getDefault().register(this);
 					EventBus.getDefault().post(sounds.get(getAdapterPosition()));
 					EventBus.getDefault().unregister(this);

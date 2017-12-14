@@ -3,6 +3,7 @@ package io.github.xtonousou.soundboardx;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Interpolator;
 import android.net.Uri;
 import android.os.Build;
 import android.os.PowerManager;
