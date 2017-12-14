@@ -1,9 +1,7 @@
 package io.github.xtonousou.soundboardx;
 
-import android.Manifest;
 import android.app.SearchManager;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -29,15 +27,8 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondarySwitchDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 
-import permissions.dispatcher.NeedsPermission;
-import permissions.dispatcher.OnNeverAskAgain;
-import permissions.dispatcher.OnPermissionDenied;
-import permissions.dispatcher.OnShowRationale;
-import permissions.dispatcher.PermissionRequest;
-import permissions.dispatcher.RuntimePermissions;
 import petrov.kristiyan.colorpicker.ColorPicker;
 
-@RuntimePermissions
 public class MainActivity extends AppCompatActivity {
 	private static InputMethodManager sInputManager;
 
@@ -71,8 +62,6 @@ public class MainActivity extends AppCompatActivity {
 		handleTitle();
 		handleToolbar();
 		handleDrawer(savedInstanceState);
-
-		MainActivityPermissionsDispatcher.writeSystemSettingsWithPermissionCheck(this);
 	}
 
 	@Override
@@ -108,27 +97,6 @@ public class MainActivity extends AppCompatActivity {
         outState = mDrawer.saveInstanceState(outState);
         super.onSaveInstanceState(outState);
     }
-
-	@NeedsPermission(Manifest.permission.WRITE_SETTINGS)
-	void writeSystemSettings() {
-	}
-
-	@OnShowRationale(Manifest.permission.WRITE_SETTINGS)
-	void writeSystemSettingsOnShowRationale(final PermissionRequest request) {
-	}
-
-	@OnPermissionDenied(Manifest.permission.WRITE_SETTINGS)
-	void writeSystemSettingsOnPermissionDenied() {
-	}
-
-	@OnNeverAskAgain(Manifest.permission.WRITE_SETTINGS)
-	void writeSystemSettingsOnNeverAskAgain() {
-	}
-
-	@Override
-	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		MainActivityPermissionsDispatcher.onActivityResult(this, requestCode);
-	}
 
     private void handlePreferences() {
 		SharedPrefs.init(getPreferences(Context.MODE_PRIVATE));
@@ -181,22 +149,12 @@ public class MainActivity extends AppCompatActivity {
 		Utils.paintThis(mTitleText);
 		mFont = Typeface.createFromAsset(getAssets(), "fonts/Roboto-BoldCondensed.ttf");
 		mTitleText.setTypeface(mFont);
-		mTitleText.setOnClickListener(new DebouncedOnClickListener(500) {
-			@Override
-			public void onDebouncedClick(View v) {
-				mView.smoothScrollToPosition(0);
-			}
-		});
+		mTitleText.setOnClickListener(view -> mView.smoothScrollToPosition(0));
 	}
 
     private void handleFABs() {
 		Utils.paintThis(mFabMute);
-		mFabMute.setOnClickListener(new DebouncedOnClickListener(250) {
-			@Override
-			public void onDebouncedClick(View v) {
-				mute();
-			}
-		});
+		mFabMute.setOnClickListener(view -> mute());
 	}
 
     private void handleSearchView(Menu menu) {
@@ -422,6 +380,6 @@ public class MainActivity extends AppCompatActivity {
 
 	void mute() {
 		mSoundPlayer.release();
-		mSoundPlayer = new SoundPlayer(this);
+		mSoundPlayer = new SoundPlayer(MainActivity.this);
 	}
 }

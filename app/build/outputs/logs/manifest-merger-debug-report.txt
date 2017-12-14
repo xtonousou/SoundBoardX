@@ -28,7 +28,6 @@ MERGED from [com.mikepenz:materialdrawer:6.0.1] /home/xtonousou/.gradle/caches/t
 MERGED from [com.mikepenz:iconics-core:2.9.5] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/iconics-core-2.9.5.aar/ac050567c03e3ce895892f38c182e7b8/AndroidManifest.xml:2:1-12:12
 MERGED from [com.mikepenz:google-material-typeface:3.0.1.2.original] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/google-material-typeface-3.0.1.2.original.aar/ca0e5f2c3dc92a0843a2228a43522d21/AndroidManifest.xml:17:1-29:12
 MERGED from [com.mikepenz:fontawesome-typeface:4.7.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.7.0.2.aar/ca18026094c8749623984deef36a8893/AndroidManifest.xml:2:1-12:12
-MERGED from [com.github.hotchemi:permissionsdispatcher:3.0.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/permissionsdispatcher-3.0.1.aar/5a15ae533df915c3ad08e050e7f8b079/AndroidManifest.xml:2:1-10:12
 MERGED from [com.mikepenz:materialize:1.1.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialize-1.1.2.aar/3ec266a0d68f16d99c793688350bcdc4/AndroidManifest.xml:2:1-12:12
 MERGED from [com.mikepenz:fastadapter:3.0.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-3.0.1.aar/2b5bc74c811c98c84b5ff7c56d595ff5/AndroidManifest.xml:2:1-12:12
 MERGED from [com.mikepenz:fastadapter-extensions-expandable:3.0.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-extensions-expandable-3.0.0.aar/68bcb8328de3a9aee76d97b32d3f0a11/AndroidManifest.xml:2:1-12:12
@@ -156,8 +155,6 @@ MERGED from [com.mikepenz:google-material-typeface:3.0.1.2.original] /home/xtono
 MERGED from [com.mikepenz:google-material-typeface:3.0.1.2.original] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/google-material-typeface-3.0.1.2.original.aar/ca0e5f2c3dc92a0843a2228a43522d21/AndroidManifest.xml:23:5-25:41
 MERGED from [com.mikepenz:fontawesome-typeface:4.7.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.7.0.2.aar/ca18026094c8749623984deef36a8893/AndroidManifest.xml:8:5-10:41
 MERGED from [com.mikepenz:fontawesome-typeface:4.7.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.7.0.2.aar/ca18026094c8749623984deef36a8893/AndroidManifest.xml:8:5-10:41
-MERGED from [com.github.hotchemi:permissionsdispatcher:3.0.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/permissionsdispatcher-3.0.1.aar/5a15ae533df915c3ad08e050e7f8b079/AndroidManifest.xml:6:5-8:41
-MERGED from [com.github.hotchemi:permissionsdispatcher:3.0.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/permissionsdispatcher-3.0.1.aar/5a15ae533df915c3ad08e050e7f8b079/AndroidManifest.xml:6:5-8:41
 MERGED from [com.mikepenz:materialize:1.1.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialize-1.1.2.aar/3ec266a0d68f16d99c793688350bcdc4/AndroidManifest.xml:8:5-10:41
 MERGED from [com.mikepenz:materialize:1.1.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialize-1.1.2.aar/3ec266a0d68f16d99c793688350bcdc4/AndroidManifest.xml:8:5-10:41
 MERGED from [com.mikepenz:fastadapter:3.0.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-3.0.1.aar/2b5bc74c811c98c84b5ff7c56d595ff5/AndroidManifest.xml:8:5-10:41
