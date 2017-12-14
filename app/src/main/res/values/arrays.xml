@@ -168,7 +168,7 @@
         <item>Rick And Morty: WLDD</item>
         <item>JoJo: ZA WARUDO!</item>
         <item>Big Shaq: 2 + 2 = 4</item>
-        <item>21 Savage: </item>
+        <item>21 Savage: 21</item>
         <item>Big Shaq: 1234</item>
         <item>Lil Uzi Vert: All My Friends Are Dead</item>
         <item>Kendrick Lamar: Biaaatch</item>
@@ -191,7 +191,7 @@
         <item>Big Shaq: Pa-Pa-Ka-Ka-Ka</item>
         <item>Big Shaq: Quick Mafs</item>
         <item>Big Shaq: Quick Mafs Full</item>
-        <item>Rain Drop Drop Top</item>
+        <item>Migos: Rain Drop Drop Top</item>
         <item>Big Shaq: Ratnum</item>
         <item>Big Shaq: Raw Sauce</item>
         <item>Desiigner: Rrraa</item>
@@ -773,7 +773,7 @@
     <!-- Music Sounds -->
     <string-array name="musicSounds">
         <item>Big Shaq: 2 + 2 = 4</item>
-        <item>21 Savage: </item>
+        <item>21 Savage: 21</item>
         <item>Big Shaq: 1234</item>
         <item>Lil Uzi Vert: All My Friends Are Dead</item>
         <item>Kendrick Lamar: Biaaatch</item>
@@ -796,7 +796,7 @@
         <item>Big Shaq: Pa-Pa-Ka-Ka-Ka</item>
         <item>Big Shaq: Quick Mafs</item>
         <item>Big Shaq: Quick Mafs Full</item>
-        <item>Rain Drop Drop Top</item>
+        <item>Migos: Rain Drop Drop Top</item>
         <item>Big Shaq: Ratnum</item>
         <item>Big Shaq: Raw Sauce</item>
         <item>Desiigner: Rrraa</item>
