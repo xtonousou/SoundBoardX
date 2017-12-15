@@ -641,7 +641,9 @@ class ParticleManager {
 				break;
 				
 			case "Migos: Rain Drop Drop Top":
-				drawableList.add(R.drawable.migos);
+				drawableList.add(R.drawable.offset);
+				drawableList.add(R.drawable.takeoff);
+				drawableList.add(R.drawable.quavo);
 				particle.animateLinearCircular(drawableList, 10);
 				break;
 				
