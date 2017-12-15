@@ -563,7 +563,7 @@ class ParticleManager {
 				particle.animateAccelerateRandomly(drawableList, 20);
 				break;
 				
-			case "Lil Pump: Seventy Ni**a"":
+			case "Lil Pump: Seventy Ni**a":
 				drawableList.add(R.drawable.lilpump);
 				particle.animateAccelerateRandomly(drawableList, 20);
 				break;
@@ -765,7 +765,7 @@ class ParticleManager {
 				break;
 				
 			case "Pink Guy: Shut The F*ck Up":
-				drawableList.add(R.drawable.filthyfrank;
+				drawableList.add(R.drawable.filthyfrank);
 				particle.animateAccelerateRandomly(drawableList, 20);
 				break;
 				
