@@ -138,6 +138,7 @@
         <item>Oh Baby A Triple</item>
         <item>Oh My!</item>
         <item>Oh Yeaaaah!</item>
+		<item>Oompaloompa</item>
         <item>Pacman Death</item>
         <item>Pewdiepie: Intro</item>
         <item>Pewdiepie: Oh Mah GAH!</item>
@@ -162,7 +163,6 @@
         <item>Rick And Morty: Look At Meee</item>
         <item>Rick And Morty: Oh Whee</item>
         <item>Rick And Morty: Okay</item>
-        <item>Rick And Morty: Oompaloompa</item>
         <item>Rick And Morty: SHOW ME WHAT YOU GOT</item>
         <item>Rick And Morty: WLDD</item>
         <item>Russian Father</item>
@@ -347,6 +347,7 @@
 		<item>@raw/funny_babytriple</item>
 		<item>@raw/funny_ohmy</item>
         <item>@raw/funny_ohyeaah</item>
+		<item>@raw/movies_oompaloompa</item>
 		<item>@raw/games_pacmandeath</item>
 		<item>@raw/funny_pewdiepieintro</item>
 		<item>@raw/funny_ohmahgahpewdiepie</item>
@@ -371,7 +372,6 @@
 		<item>@raw/movies_immlam</item>
 		<item>@raw/movies_ohwhee</item>
         <item>@raw/movies_okay</item>
-        <item>@raw/movies_oompaloompa</item>
 		<item>@raw/movies_smwyg</item>
 		<item>@raw/movies_wldd</item>
 		<item>@raw/funny_fathercatishungry</item>
@@ -701,7 +701,7 @@
         <item>Rick And Morty: Oh Whee</item>
         <item>Rick And Morty: Okay</item>
         <item>Naruto: Oodama Rasengan</item>
-        <item>Rick And Morty: Oompaloompa</item>
+		<item>Oompaloompa</item>
         <item>JoJo: Ora Ora Ora</item>
         <item>Jamie Foxx: Pierre Come Out Here</item>
         <item>Pornhub</item>

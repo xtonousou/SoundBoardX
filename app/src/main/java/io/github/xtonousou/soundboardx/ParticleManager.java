@@ -728,6 +728,11 @@ class ParticleManager {
 				particle.animateLinearRandomly(drawableList, 25);
 				break;
 				
+			case "Oompaloompa":
+				drawableList.add(R.drawable.oompaloompa);
+				particle.animateAccelerateCircular(drawableList, 15);
+				break;
+				
 			case "Pewdiepie: Intro":
 				drawableList.add(R.drawable.ohmahgahpewdiepie);
 				particle.animateAccelerateRandomly(drawableList, 15);
@@ -856,12 +861,6 @@ class ParticleManager {
 				particle.animateAccelerateRandomly(drawableList, 15);
 				break;
 				
-			case "Rick And Morty: Oompaloompa":
-				drawableList.add(R.drawable.rick);
-				drawableList.add(R.drawable.morty);
-				drawableList.add(R.drawable.oompallompa);
-				particle.animateAccelerateCircular(drawableList, 15);
-				break;
 				
 			case "Rick And Morty: SHOW ME WHAT YOU GOT":
 				drawableList.add(R.drawable.rick);
