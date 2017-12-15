@@ -17,7 +17,7 @@ class ParticleManager {
 		switch (itemName) {
 			case "21 Savage: 21":
 				drawableList.add(R.drawable.twentyonesavage);
-				particle.animateAccelerateRandomly(drawableList, 10);
+				particle.animateAccelerateCircular(drawableList, 10);
 				break;
 			
 			case "420 Blaze It Fa**ot":
@@ -98,7 +98,7 @@ class ParticleManager {
 				
 			case "Big Shaq: 1234":
 				drawableList.add(R.drawable.bigshaq);
-				particle.animateLinearRandomly(drawableList, 10);
+				particle.animateLinearCircular(drawableList, 10);
 				break;
 				
 			case "Big Shaq: 2 + 2 = 4":
@@ -128,27 +128,27 @@ class ParticleManager {
 				
 			case "Big Shaq: Mans Not Hot":
 				drawableList.add(R.drawable.bigshaq);
-				particle.animateLinearRandomly(drawableList, 10);
+				particle.animateLinearCircular(drawableList, 10);
 				break;
 				
 			case "Big Shaq: No Ketchup":
 				drawableList.add(R.drawable.bigshaq);
-				particle.animateLinearRandomly(drawableList, 10);
+				particle.animateLinearCircular(drawableList, 10);
 				break;
 				
 			case "Big Shaq: Ossnaa":
 				drawableList.add(R.drawable.bigshaq);
-				particle.animateLinearRandomly(drawableList, 10);
+				particle.animateLinearCircular(drawableList, 10);
 				break;
 				
 			case "Big Shaq: Pa-Pa-Ka-Ka-Ka":
 				drawableList.add(R.drawable.bigshaq);
-				particle.animateAccelerateRandomly(drawableList, 10);
+				particle.animateAccelerateCircular(drawableList, 10);
 				break;
 				
 			case "Big Shaq: Quick Mafs Full":
 				drawableList.add(R.drawable.bigshaq);
-				particle.animateAccelerateRandomly(drawableList, 10);
+				particle.animateAccelerateCircular(drawableList, 10);
 				break;
 				
 			case "Big Shaq: Quick Mafs":
@@ -178,27 +178,27 @@ class ParticleManager {
 				
 			case "Big Shaq: Skrrrrrra":
 				drawableList.add(R.drawable.bigshaq);
-				particle.animateLinearRandomly(drawableList, 10);
+				particle.animateLinearCircular(drawableList, 10);
 				break;
 				
 			case "Big Shaq: Skyaaa":
 				drawableList.add(R.drawable.bigshaq);
-				particle.animateAccelerateRandomly(drawableList, 10);
+				particle.animateAccelerateCircular(drawableList, 10);
 				break;
 				
 			case "Big Shaq: Smoke Trees":
 				drawableList.add(R.drawable.bigshaq);
-				particle.animateAccelerateRandomly(drawableList, 10);
+				particle.animateAccelerateCircular(drawableList, 10);
 				break;
 				
 			case "Big Shaq: You D*ckhead":
 				drawableList.add(R.drawable.bigshaq);
-				particle.animateAccelerateRandomly(drawableList, 10);
+				particle.animateAccelerateCircular(drawableList, 10);
 				break;
 				
 			case "Big Shaq":
 				drawableList.add(R.drawable.bigshaq);
-				particle.animateAccelerateRandomly(drawableList, 10);
+				particle.animateAccelerateCircular(drawableList, 10);
 				break;
 				
 			case "Black Kid On Fire":
@@ -231,7 +231,7 @@ class ParticleManager {
 				
 			case "Bobby Shmurda: Ah-Ah-Ahhh":
 				drawableList.add(R.drawable.shmurda);
-				particle.animateAccelerateRandomly(drawableList, 10);
+				particle.animateAccelerateCircular(drawableList, 10);
 				break;
 				
 			case "Boxeo":
@@ -251,7 +251,7 @@ class ParticleManager {
 				
 			case "Chewbacca":
 				drawableList.add(R.drawable.chewbacca);
-				particle.animateLinearRandomly(drawableList, 10);
+				particle.animateLinearCircular(drawableList, 10);
 				break;
 				
 			case "Combo Breaker":
@@ -291,22 +291,22 @@ class ParticleManager {
 				
 			case "Denzel Curry: I Am The One":
 				drawableList.add(R.drawable.denzelcurry);
-				particle.animateLinearRandomly(drawableList, 10);
+				particle.animateLinearCircular(drawableList, 10);
 				break;
 				
 			case "Desiigner: Kieee":
 				drawableList.add(R.drawable.desiigner);
-				particle.animateLinearRandomly(drawableList, 10);
+				particle.animateLinearCircular(drawableList, 10);
 				break;
 				
 			case "Desiigner: Panda":
 				drawableList.add(R.drawable.desiigner);
-				particle.animateLinearRandomly(drawableList, 10);
+				particle.animateLinearCircular(drawableList, 10);
 				break;
 				
 			case "Desiigner: Rrraa":
 				drawableList.add(R.drawable.desiigner);
-				particle.animateLinearRandomly(drawableList, 10);
+				particle.animateLinearCircular(drawableList, 10);
 				break;
 				
 			case "Dragon Ball: Kamehameha":
@@ -336,7 +336,7 @@ class ParticleManager {
 				
 			case "Excellent":
 				drawableList.add(R.drawable.excellent);
-				particle.animateLinearRandomly(drawableList, 10);
+				particle.animateLinearCircular(drawableList, 10);
 				break;
 				
 			case "Excuse Me, I Have Some P*ssyhair On Me!":
@@ -351,7 +351,7 @@ class ParticleManager {
 				
 			case "Fetty Wap: Squaw":
 				drawableList.add(R.drawable.fetty);
-				particle.animateAccelerateRandomly(drawableList, 10);
+				particle.animateAccelerateCircular(drawableList, 10);
 				break;
 				
 			case "Fichtl\'s Lied":
@@ -388,7 +388,7 @@ class ParticleManager {
 				
 			case "Fun":
 				drawableList.add(R.drawable.kazoo);
-				particle.animateAccelerateRandomly(drawableList, 15);
+				particle.animateAccelerateCircular(drawableList, 15);
 				break;
 				
 			case "Game Boy":
@@ -409,8 +409,8 @@ class ParticleManager {
 				break;
 				
 			case "He Knew He F*cked Up":
-				drawableList.add(R.drawable.pepe);
-				particle.animateLinearRandomly(drawableList, 15);
+				drawableList.add(R.drawable.heknewhefuckedup);
+				particle.animateLinearCircular(drawableList, 15);
 				break;
 				
 			case "Headshot":
@@ -442,7 +442,7 @@ class ParticleManager {
 				
 			case "iDubbbz: Hey That\' s Pretty Good!":
 				drawableList.add(R.drawable.dubz);
-				particle.animateAccelerateRandomly(drawableList, 15);
+				particle.animateAccelerateCircular(drawableList, 15);
 				break;
 				
 			case "Illuminati":
@@ -458,7 +458,7 @@ class ParticleManager {
 			case "Inception":
 				drawableList.add(R.drawable.inception);
 				drawableList.add(R.drawable.illuminati);
-				particle.animateLinearRandomly(drawableList, 10);
+				particle.animateLinearCircular(drawableList, 10);
 				break;
 				
 			case "Inspector Gadget":
@@ -515,7 +515,7 @@ class ParticleManager {
 				
 			case "JoJo: ZA WARUDO!":
 				drawableList.add(R.drawable.zawarudo);
-				particle.animateLinearRandomly(drawableList, 25);
+				particle.animateLinearCircular(drawableList, 25);
 				break;
 				
 			case "Juicy J: Satafaka":
@@ -550,22 +550,22 @@ class ParticleManager {
 				
 			case "Lil Pump: Esketit":
 				drawableList.add(R.drawable.lilpump);
-				particle.animateAnticipateRandomly(drawableList, 20);
+				particle.animateAnticipateCircular(drawableList, 20);
 				break;
 				
 			case "Lil Pump: Gucci Gang":
 				drawableList.add(R.drawable.lilpump);
-				particle.animateAccelerateRandomly(drawableList, 20);
+				particle.animateAccelerateCircular(drawableList, 20);
 				break;
 				
 			case "Lil Pump: Laugh":
 				drawableList.add(R.drawable.lilpump);
-				particle.animateAccelerateRandomly(drawableList, 20);
+				particle.animateAccelerateCircular(drawableList, 20);
 				break;
 				
 			case "Lil Pump: Seventy Ni**a":
 				drawableList.add(R.drawable.lilpump);
-				particle.animateAccelerateRandomly(drawableList, 20);
+				particle.animateAccelerateCircular(drawableList, 20);
 				break;
 				
 			case "Lil Uzi Vert: All My Friends Are Dead":
@@ -597,12 +597,12 @@ class ParticleManager {
 				
 			case "Madeintyo: Skr Skr":
 				drawableList.add(R.drawable.madeintyo);
-				particle.animateAccelerateRandomly(drawableList, 10);
+				particle.animateAccelerateCircular(drawableList, 10);
 				break;
 				
 			case "Madeintyo: Skrrt Skrrt":
 				drawableList.add(R.drawable.madeintyo);
-				particle.animateAccelerateRandomly(drawableList, 10);
+				particle.animateAccelerateCircular(drawableList, 10);
 				break;
 				
 			case "Mario: Coin":
@@ -704,7 +704,7 @@ class ParticleManager {
 				
 			case "Offset: Offset":
 				drawableList.add(R.drawable.offset);
-				particle.animateLinearRandomly(drawableList, 10);
+				particle.animateLinearCircular(drawableList, 10);
 				break;
 				
 			case "Oh Baby A Triple":
@@ -715,12 +715,12 @@ class ParticleManager {
 				
 			case "Oh My!":
 				drawableList.add(R.drawable.ohmy);
-				particle.animateLinearRandomly(drawableList, 10);
+				particle.animateLinearCircular(drawableList, 10);
 				break;
 				
 			case "Oh Yeaaaah!":
 				drawableList.add(R.drawable.ohyeaah);
-				particle.animateLinearRandomly(drawableList, 15);
+				particle.animateLinearCircular(drawableList, 15);
 				break;
 				
 			case "Pacman Death":
@@ -735,7 +735,7 @@ class ParticleManager {
 				
 			case "Pewdiepie: Intro":
 				drawableList.add(R.drawable.ohmahgahpewdiepie);
-				particle.animateAccelerateRandomly(drawableList, 15);
+				particle.animateAccelerateCircular(drawableList, 15);
 				break;
 				
 			case "Pewdiepie: Oh Mah GAH!":
@@ -771,22 +771,22 @@ class ParticleManager {
 				
 			case "Pink Guy: Shut The F*ck Up":
 				drawableList.add(R.drawable.filthyfrank);
-				particle.animateAccelerateRandomly(drawableList, 20);
+				particle.animateAccelerateCircular(drawableList, 20);
 				break;
 				
 			case "Pink Guy: Stop Being A F*ckin C*unt":
 				drawableList.add(R.drawable.filthyfrank);
-				particle.animateAccelerateRandomly(drawableList, 20);
+				particle.animateAccelerateCircular(drawableList, 20);
 				break;
 				
 			case "Pink Guy: Suck My D*ck":
 				drawableList.add(R.drawable.filthyfrank);
-				particle.animateAccelerateRandomly(drawableList, 20);
+				particle.animateAccelerateCircular(drawableList, 20);
 				break;
 				
 			case "Pink Guy: You\'re A F*ckin C*nt":
 				drawableList.add(R.drawable.filthyfrank);
-				particle.animateAccelerateRandomly(drawableList, 20);
+				particle.animateAccelerateCircular(drawableList, 20);
 				break;
 				
 			case "Playstation":
@@ -897,7 +897,7 @@ class ParticleManager {
 			case "Sad Violin":
 				drawableList.add(R.drawable.pepe);
 				drawableList.add(R.drawable.whatcha_say);
-				particle.animateLinearRandomly(drawableList, 25);
+				particle.animateLinearCircular(drawableList, 25);
 				break;
 				
 			case "Seven Vaginias…":
@@ -959,7 +959,7 @@ class ParticleManager {
 				
 			case "Steins Gate: Tuturu":
 				drawableList.add(R.drawable.tuturu);
-				particle.animateLinearRandomly(drawableList, 20);
+				particle.animateLinearCircular(drawableList, 20);
 				break;
 				
 			case "STFU":
@@ -1009,7 +1009,7 @@ class ParticleManager {
 				
 			case "The Simpsons: Doh":
 				drawableList.add(R.drawable.homer);
-				particle.animateAccelerateRandomly(drawableList, 25);
+				particle.animateAccelerateCircular(drawableList, 25);
 				break;
 				
 			case "This Is My Masterpiece!":
@@ -1025,13 +1025,13 @@ class ParticleManager {
 			case "Trap Theme":
 				drawableList.add(R.drawable.trap);
 				drawableList.add(R.drawable.spinme);
-				particle.animateAccelerateRandomly(drawableList, 25);
+				particle.animateAccelerateCircular(drawableList, 25);
 				break;
 				
 			case "Trapaholics: Damn Son!":
 				drawableList.add(R.drawable.trapaholics);
 				drawableList.add(R.drawable.damnson);
-				particle.animateAccelerateRandomly(drawableList, 15);
+				particle.animateAccelerateCircular(drawableList, 15);
 				break;
 				
 			case "Two And A Half Men":
@@ -1080,7 +1080,7 @@ class ParticleManager {
 				
 			case "Whatcha Say":
 				drawableList.add(R.drawable.whatcha_say);
-				particle.animateLinearRandomly(drawableList, 25);
+				particle.animateLinearCircular(drawableList, 25);
 				break;
 				
 			case "Why Don\'t You Show Us That Fine P*ssy?":
