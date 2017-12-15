@@ -170,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+            	if (mDrawer.isDrawerOpen()) mDrawer.closeDrawer();
 				return true;
         	}
 
