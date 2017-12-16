@@ -154,8 +154,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 			ToneManager tone = new ToneManager(activity, itemView, title.getText().toString(),
 					getAdapterPosition());
 			switch (menuItem.getTitle().toString()) {
-				default:
-					Log.e(TAG, "onMenuItemClick: menuItem.getTitle().toString()");
 				case "Set as ringtone":
 					tone.setToneAs((byte) 0);
 					break;

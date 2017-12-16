@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 		handlePreferences();
 		handleReflections();
 
-		handleFABs();
+		handleFAB();
 		handleView();
 		handleTitle();
 		handleToolbar();
@@ -67,26 +67,26 @@ public class MainActivity extends AppCompatActivity {
 	public void onDestroy() {
 		super.onDestroy();
 		unregisterReceiver(mPowerSaverChangeReceiver);
-		mSoundPlayer.release();
+		if (mSoundPlayer != null) {
+			mSoundPlayer.release();
+			mSoundPlayer = null;
+		}
 	}
 
 	@Override
     public void onResume() {
         super.onResume();
-		mSoundPlayer = new SoundPlayer(MainActivity.this);
+		if (mSoundPlayer == null) mSoundPlayer = new SoundPlayer(MainActivity.this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-		mute();
+		if (mSoundPlayer != null) {
+			mSoundPlayer.release();
+			mSoundPlayer = null;
+		}
     }
-
-	@Override
-	protected void onRestart() {
-		super.onRestart();
-		mute();
-	}
 
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -204,9 +204,12 @@ public class MainActivity extends AppCompatActivity {
 		mTitleText.setOnClickListener(view -> mView.smoothScrollToPosition(0));
 	}
 
-    private void handleFABs() {
+    private void handleFAB() {
 		Utils.paintThis(mFabMute);
-		mFabMute.setOnClickListener(view -> mute());
+		mFabMute.setOnClickListener(view -> {
+			mSoundPlayer.release();
+			mSoundPlayer = new SoundPlayer(MainActivity.this);
+		});
 	}
 
     private void handleSearchView(Menu menu) {
@@ -399,9 +402,4 @@ public class MainActivity extends AppCompatActivity {
 
 	private OnCheckedChangeListener onToggleParticleListener = (drawerItem, buttonView, isChecked)
 			-> SharedPrefs.getInstance().setAnimationsShown(isChecked);
-
-	void mute() {
-		mSoundPlayer.release();
-		mSoundPlayer = new SoundPlayer(MainActivity.this);
-	}
 }

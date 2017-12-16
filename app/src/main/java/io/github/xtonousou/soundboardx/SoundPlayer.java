@@ -38,9 +38,6 @@ public class SoundPlayer {
 				AssetFileDescriptor afd = mContext.getResources().openRawResourceFd(resource);
 				if (afd == null)
 					return;
-				System.out.println(afd.getFileDescriptor());
-				System.out.println(afd.getStartOffset());
-				System.out.println(afd.getLength());
 				mPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
 				afd.close();
 				mPlayer.prepare();
@@ -55,12 +52,9 @@ public class SoundPlayer {
 	}
 
 	void release() {
-		if (EventBus.getDefault().isRegistered(this)) {
+		if (EventBus.getDefault().isRegistered(this))
 			EventBus.getDefault().unregister(this);
-		}
-		if (mPlayer != null) {
-			mPlayer.release();
-			mPlayer = null;
-		}
+		mPlayer.release();
+		mPlayer = null;
 	}
 }
