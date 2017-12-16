@@ -427,7 +427,7 @@ class ParticleManager {
 				
 			case "Hitmarker":
 				drawableList.add(R.drawable.hitmarker);
-				particle.animateAnticipateCircular(drawableList, 25);
+				particle.animateAnticipateCircular(drawableList, 35);
 				break;
 				
 			case "Holy Sh*t":
@@ -763,12 +763,12 @@ class ParticleManager {
 				break;
 				
 			case "Pink Guy: Nobody Wants You..":
-				drawableList.add(R.drawable.fichtlslied);
+				drawableList.add(R.drawable.filthyfrank);
 				particle.animateAccelerateCircular(drawableList, 20);
 				break;
 				
 			case "Pink Guy: NYES":
-				drawableList.add(R.drawable.fichtlslied);
+				drawableList.add(R.drawable.filthyfrank);
 				particle.animateAccelerateRandomly(drawableList, 20);
 				break;
 				
