@@ -227,7 +227,7 @@ class ParticleManager {
 				drawableList.add(R.drawable.blurp);
 				drawableList.add(R.drawable.blurptwo);
 				drawableList.add(R.drawable.blurpthree);
-				particle.animateAnticipateCircular(drawableList, 25);
+				particle.burstRandomly(drawableList, 25);
 				break;
 				
 			case "Bobby Shmurda: Ah-Ah-Ahhh":
@@ -427,7 +427,7 @@ class ParticleManager {
 				
 			case "Hitmarker":
 				drawableList.add(R.drawable.hitmarker);
-				particle.animateAnticipateCircular(drawableList, 25);
+				particle.burstScaleRandomly(drawableList, 25);
 				break;
 				
 			case "Holy Sh*t":
@@ -443,7 +443,7 @@ class ParticleManager {
 				
 			case "iDubbbz: Hey That\' s Pretty Good!":
 				drawableList.add(R.drawable.dubz);
-				particle.animateAccelerateCircular(drawableList, 15);
+				particle.burstScaleRandomly(drawableList, 15);
 				break;
 				
 			case "Illuminati":
@@ -474,7 +474,7 @@ class ParticleManager {
 				
 			case "Inuyashiki: Da-Da-Da":
 				drawableList.add(R.drawable.inuyashiki);
-				particle.animateLinearCircular(drawableList, 10);
+				particle.burstScaleRandomly(drawableList, 10);
 				break;
 				
 			case "It\' s 04:20 Meng…":

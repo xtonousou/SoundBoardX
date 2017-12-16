@@ -31,6 +31,8 @@ import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import petrov.kristiyan.colorpicker.ColorPicker;
 
 public class MainActivity extends AppCompatActivity {
+	private static final int WRITE_SETTINGS_PERMISSION = 1;
+
 	private int mColor;
 
 	private Drawer mDrawer;
@@ -104,7 +106,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void handlePowerSaverMode() {
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		System.out.println("request code: " + requestCode + ", result code:  " + resultCode);
+	}
+
+	private void handlePowerSaverMode() {
 		if (Utils.isGreenMode(MainActivity.this)) {
 			if (SharedPrefs.getInstance().areAnimationsShown())
 				SharedPrefs.getInstance().setAnimationsShown(false);

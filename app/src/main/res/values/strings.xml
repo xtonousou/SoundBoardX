@@ -30,5 +30,10 @@
 	<string name="music">Music</string>
 	<string name="battery_saver_on">Particles are currently disabled due to Battery Saver</string>
     <string name="particles_disabled">Particles Disabled</string>
+	<string name="allow_access">Allow access</string>
+    <string name="modify_settings">To set sounds SoundBoardX needs permission to modify system settings.</string>
+    <string name="settings">SETTINGS</string>
+    <string name="not_now">NOT NOW</string>
+    <string name="permission_needed">Permission needed</string>
 
 </resources>

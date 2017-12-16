@@ -1,8 +1,14 @@
 package io.github.xtonousou.soundboardx;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
+import android.os.Build;
+import android.provider.Settings;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -14,6 +20,7 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.iconics.IconicsDrawable;
@@ -22,6 +29,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
@@ -97,6 +105,38 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		notifyDataSetChanged();
 	}
 
+	private boolean handleWriteSettingsPermission() {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+			if (Settings.System.canWrite(activity.getApplicationContext())) {
+				return true;
+			} else {
+				AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+
+				builder.setMessage(R.string.modify_settings)
+						.setTitle(R.string.allow_access);
+
+				builder.setPositiveButton(R.string.settings, (dialog, id) -> {
+					Intent intent = new Intent(android.provider.Settings.ACTION_MANAGE_WRITE_SETTINGS);
+					intent.setData(Uri.parse("package" + activity.getPackageName()));
+					intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+					activity.startActivity(intent);
+				});
+
+				builder.setNegativeButton(R.string.not_now, (dialog, id) -> Toast.makeText
+						(activity.getApplicationContext(), R.string.permission_needed, Toast
+						.LENGTH_LONG).show());
+
+				AlertDialog dialog = builder.create();
+				dialog.show();
+
+				if (Settings.System.canWrite(activity.getApplicationContext())) {
+					return true;
+				}
+			}
+		}
+		return true;
+	}
+
 	public class ViewHolder extends RecyclerView.ViewHolder implements
 			View.OnCreateContextMenuListener,
 			MenuItem.OnMenuItemClickListener {
@@ -151,6 +191,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 
 		@Override
 		public boolean onMenuItemClick(MenuItem menuItem) {
+			handleWriteSettingsPermission();
 			ToneManager tone = new ToneManager(activity, itemView, title.getText().toString(),
 					getAdapterPosition());
 			switch (menuItem.getTitle().toString()) {

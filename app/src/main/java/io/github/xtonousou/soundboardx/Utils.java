@@ -9,9 +9,11 @@ import android.graphics.Interpolator;
 import android.net.Uri;
 import android.os.Build;
 import android.os.PowerManager;
+import android.provider.Settings;
 import android.support.v7.widget.SearchView;
 import android.util.DisplayMetrics;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionButton;
 

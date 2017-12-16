@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnticipateInterpolator;
+import android.view.animation.BounceInterpolator;
+import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 
 import com.plattysoft.leonids.ParticleSystem;
@@ -18,66 +20,26 @@ class Particle {
         this.view = view;
     }
 
-    void animateAccelerateRandomly(ArrayList<Integer> drawables, int particles) {
+    void burstRandomly(ArrayList<Integer> drawables, int particles) {
         Activity act = (Activity) view.getContext();
         for (byte i = 0; i < drawables.size(); i++) {
-            new ParticleSystem(act, particles, drawables.get(i), 3750)
-                    .setAcceleration(0.0025f, 90)
-                    .setSpeedRange(0.1f, 0.25f)
-                    .oneShot(view, particles, new AccelerateInterpolator());
+            new ParticleSystem(act, particles, drawables.get(i), 2500)
+                    .setSpeedRange(0.1f, 0.35f)
+                    .setFadeOut(750)
+                    .setScaleRange(0.9f, 1.3f)
+                    .setRotationSpeedRange(0, 200)
+                    .oneShot(view, particles, new DecelerateInterpolator());
         }
     }
 
-    void animateAnticipateRandomly(ArrayList<Integer> drawables, int particles) {
+    void burstScaleRandomly(ArrayList<Integer> drawables, int particles) {
         Activity act = (Activity) view.getContext();
         for (byte i = 0; i < drawables.size(); i++) {
-            new ParticleSystem(act, particles, drawables.get(i), 3750)
-                    .setAcceleration(0.0025f, 90)
-                    .setSpeedRange(0.1f, 0.25f)
-                    .oneShot(view, particles, new AnticipateInterpolator());
-        }
-    }
-
-    void animateLinearRandomly(ArrayList<Integer> drawables, int particles) {
-        Activity act = (Activity) view.getContext();
-        for (byte i = 0; i < drawables.size(); i++) {
-            new ParticleSystem(act, particles, drawables.get(i), 3750)
-                    .setAcceleration(0.0025f, 90)
-                    .setSpeedRange(0.1f, 0.25f)
-                    .oneShot(view, particles, new LinearInterpolator());
-        }
-    }
-
-    void animateAccelerateCircular(ArrayList<Integer> drawables, int particles) {
-        Activity act = (Activity) view.getContext();
-        for (byte i = 0; i < drawables.size(); i++) {
-            new ParticleSystem(act, particles, drawables.get(i), 5000)
-                    .setSpeedRange(0.1f, 0.25f)
-                    .setRotationSpeedRange(0, 360)
-                    .setInitialRotationRange(0, 360)
-                    .oneShot(view, particles, new AccelerateInterpolator());
-        }
-    }
-
-    void animateAnticipateCircular(ArrayList<Integer> drawables, int particles) {
-        Activity act = (Activity) view.getContext();
-        for (byte i = 0; i < drawables.size(); i++) {
-            new ParticleSystem(act, particles, drawables.get(i), 5000)
-                    .setSpeedRange(0.1f, 0.25f)
-                    .setRotationSpeedRange(0, 360)
-                    .setInitialRotationRange(0, 360)
-                    .oneShot(view, particles, new AnticipateInterpolator());
-        }
-    }
-
-    void animateLinearCircular(ArrayList<Integer> drawables, int particles) {
-        Activity act = (Activity) view.getContext();
-        for (byte i = 0; i < drawables.size(); i++) {
-            new ParticleSystem(act, particles, drawables.get(i), 5000)
-                    .setSpeedRange(0.1f, 0.25f)
-                    .setRotationSpeedRange(0, 360)
-                    .setInitialRotationRange(0, 360)
-                    .oneShot(view, particles, new LinearInterpolator());
+            new ParticleSystem(act, particles, drawables.get(i), 2500)
+                    .setSpeedRange(0.1f, 0.3f)
+                    .setFadeOut(750)
+                    .setScaleRange(1, 2.25f)
+                    .oneShot(view, particles, new DecelerateInterpolator());
         }
     }
 }
