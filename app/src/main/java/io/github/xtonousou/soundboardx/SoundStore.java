@@ -8,6 +8,22 @@ import java.util.ArrayList;
 
 abstract class SoundStore {
 
+    static ArrayList<Sound> getSelectedSounds(Context context) {
+        switch (SharedPrefs.getInstance().getSelectedCategory()) {
+            case 1:
+                return getAllSounds(context);
+            case 2:
+                return getFunnySounds(context);
+            case 3:
+                return getGamesSounds(context);
+            case 4:
+                return getMoviesSounds(context);
+            case 5:
+                return getMusicSounds(context);
+        }
+        return null;
+    }
+
     static ArrayList<Sound> getAllSounds(Context context) {
         Resources res = context.getApplicationContext().getResources();
 
@@ -22,8 +38,6 @@ abstract class SoundStore {
 
         allSounds.recycle();
         allSoundsIDs.recycle();
-
-        SharedPrefs.getInstance().setSelectedList("allSounds");
 
         return sounds;
     }
@@ -44,8 +58,6 @@ abstract class SoundStore {
         funnySounds.recycle();
         funnySoundsIDs.recycle();
 
-        SharedPrefs.getInstance().setSelectedList("funnySounds");
-
         return sounds;
     }
 
@@ -64,8 +76,6 @@ abstract class SoundStore {
 
         gamesSounds.recycle();
         gamesSoundsIDs.recycle();
-
-        SharedPrefs.getInstance().setSelectedList("gamesSounds");
 
         return sounds;
     }
@@ -86,8 +96,6 @@ abstract class SoundStore {
         moviesSounds.recycle();
         moviesSoundsIDs.recycle();
 
-        SharedPrefs.getInstance().setSelectedList("moviesSounds");
-
         return sounds;
     }
 
@@ -106,8 +114,6 @@ abstract class SoundStore {
 
 		musicSounds.recycle();
 		musicSoundsIDs.recycle();
-
-        SharedPrefs.getInstance().setSelectedList("musicSounds");
 
         return sounds;
     }

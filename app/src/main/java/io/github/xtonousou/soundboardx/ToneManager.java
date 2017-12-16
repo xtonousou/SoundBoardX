@@ -11,9 +11,6 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 
-import com.github.johnpersano.supertoasts.library.Style;
-import com.github.johnpersano.supertoasts.library.SuperActivityToast;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -36,8 +33,7 @@ class ToneManager {
 		this.itemName = itemName;
 		this.position = position;
 		this.context  = itemView.getContext();
-		this.sounds   = Utils.getSelectedList(itemView.getContext(),
-                SharedPrefs.getInstance().getSelectedList());
+		this.sounds   = SoundStore.getSelectedSounds(context);
     }
 
 	void setToneAs(byte id) {
@@ -243,15 +239,5 @@ class ToneManager {
         } catch (Throwable t) {
             System.err.println(t.getMessage());
         }
-    }
-
-    private void showToast(String message, Integer resourceId) {
-        SuperActivityToast.create(itemView.getContext(), new Style(), Style.TYPE_BUTTON)
-                .setButtonIconResource(resourceId)
-                .setText(message)
-                .setDuration(Style.DURATION_MEDIUM)
-                .setFrame(Style.FRAME_STANDARD)
-                .setColor(SharedPrefs.getInstance().getSelectedColor())
-                .setAnimations(Style.ANIMATIONS_POP).show();
     }
 }

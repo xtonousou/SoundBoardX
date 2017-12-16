@@ -1,8 +1,10 @@
 package io.github.xtonousou.soundboardx;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Interpolator;
 import android.net.Uri;
 import android.os.Build;
@@ -23,26 +25,6 @@ abstract class Utils {
 				.replaceAll("[\'| |\\p{M}]?", "");
 	}
 
-	static void normalize(SoundAdapter adapter, Context context) {
-		switch (SharedPrefs.getInstance().getSelectedCategory()) {
-			case 1:
-				adapter.showAllSounds(context);
-				break;
-			case 2:
-				adapter.showFunnySounds(context);
-				break;
-			case 3:
-				adapter.showGamesSounds(context);
-				break;
-			case 4:
-				adapter.showMoviesSounds(context);
-				break;
-			case 5:
-				adapter.showMoviesSounds(context);
-				break;
-		}
-	}
-
 	static int getScreenWidth(Activity activity) {
         DisplayMetrics metrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
@@ -51,22 +33,6 @@ abstract class Utils {
 
     static int getSelectedColor() {
         return SharedPrefs.getInstance().getSelectedColor();
-    }
-
-	static ArrayList<Sound> getSelectedList(Context context, String name) {
-        switch (name) {
-			default:
-				break;
-            case "allSounds":
-				return SoundStore.getAllSounds(context);
-            case "funnySounds":
-				return SoundStore.getFunnySounds(context);
-            case "gamesSounds":
-				return SoundStore.getGamesSounds(context);
-            case "moviesSounds":
-				return SoundStore.getMoviesSounds(context);
-        }
-        return null;
     }
 
 	static void paintThis(TextView textView) {
@@ -110,11 +76,9 @@ abstract class Utils {
     }
 
 	static boolean isGreenMode(Activity activity) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-			if (((PowerManager) activity.getSystemService(Context.POWER_SERVICE)).isPowerSaveMode()) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+			if (((PowerManager) activity.getSystemService(Context.POWER_SERVICE)).isPowerSaveMode())
 				return true;
-			}
-        }
         return false;
     }
 

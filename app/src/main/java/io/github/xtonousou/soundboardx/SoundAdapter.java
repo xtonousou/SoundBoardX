@@ -33,12 +33,17 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 	private ArrayList<Sound> sounds;
 	private ArrayList<Sound> soundsCopy;
 
-	SoundAdapter(Activity activity, ArrayList<Sound> soundArray) {
-		this.soundsCopy = soundArray;
+	SoundAdapter(Activity activity) {
 		this.activity = activity;
-		this.sounds = soundArray;
 		this.font = Typeface.createFromAsset(activity.getAssets(),
 				"fonts/Roboto-Regular.ttf");
+	}
+
+	void showPrevious() {
+		SharedPrefs.getInstance().setFavoritesShown(false);
+		sounds = SoundStore.getSelectedSounds(activity.getApplicationContext());
+		soundsCopy = sounds;
+		notifyDataSetChanged();
 	}
 
 	void showFavorites() {

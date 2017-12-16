@@ -26,14 +26,6 @@ class SharedPrefs {
         return prefs.getBoolean(soundName, false);
     }
 
-	void setSelectedList(String soundList) {
-        prefs.edit().putString("list", soundList).apply();
-    }
-
-    String getSelectedList() {
-        return prefs.getString("list", "allSounds");
-    }
-
     void setSelectedCategory(int category) {
         prefs.edit().putInt("category", category).apply();
     }

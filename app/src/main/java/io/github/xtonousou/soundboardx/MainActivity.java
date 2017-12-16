@@ -1,20 +1,21 @@
 package io.github.xtonousou.soundboardx;
 
 import android.app.SearchManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionButton;
 import com.github.ivbaranov.mfb.MaterialFavoriteButton;
@@ -30,12 +31,8 @@ import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import petrov.kristiyan.colorpicker.ColorPicker;
 
 public class MainActivity extends AppCompatActivity {
-	private static InputMethodManager sInputManager;
-
 	private int mColor;
-	private int mDefaultColor;
 
-	private Typeface mFont;
 	private Drawer mDrawer;
 	private Toolbar mToolbar;
 	private RecyclerView mView;
@@ -44,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 	private ColorPicker mColorPicker;
 	private FloatingActionButton mFabMute;
 	private MaterialFavoriteButton mFavButton;
+	private BroadcastReceiver mPowerSaverChangeReceiver;
 
 	/*
 	 * Do not change the order of the code.
@@ -52,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		mDefaultColor = getResources().getColor(R.color.red);
 
 		handlePreferences();
 		handleReflections();
@@ -61,22 +58,37 @@ public class MainActivity extends AppCompatActivity {
 		handleView();
 		handleTitle();
 		handleToolbar();
-		handleDrawer(savedInstanceState);
+		handleDrawer();
+
+		handlePowerSaverMode();
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		unregisterReceiver(mPowerSaverChangeReceiver);
+		mSoundPlayer.release();
 	}
 
 	@Override
     public void onResume() {
         super.onResume();
-        mSoundPlayer = new SoundPlayer(this);
+		mSoundPlayer = new SoundPlayer(MainActivity.this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-		mSoundPlayer.release();
+		mute();
     }
 
-    @Override
+	@Override
+	protected void onRestart() {
+		super.onRestart();
+		mute();
+	}
+
+	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.item, menu);
 		handleSearchView(menu);
@@ -92,21 +104,61 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        outState = mDrawer.saveInstanceState(outState);
-        super.onSaveInstanceState(outState);
-    }
+    private void handlePowerSaverMode() {
+		if (Utils.isGreenMode(MainActivity.this)) {
+			if (SharedPrefs.getInstance().areAnimationsShown())
+				SharedPrefs.getInstance().setAnimationsShown(false);
+
+			mDrawer.removeItem(7);
+			mDrawer.setItemAtPosition(
+					new SecondaryDrawerItem().withName("Particles Disabled")
+							.withIdentifier(7)
+							.withIcon(FontAwesome.Icon.faw_exclamation_circle)
+							.withIconTintingEnabled(false)
+							.withSelectable(false),
+					7);
+
+			Toast.makeText(getApplicationContext(), R.string.battery_saver_on, Toast
+					.LENGTH_LONG).show();
+		}
+
+		mPowerSaverChangeReceiver = new BroadcastReceiver() {
+			@Override
+			public void onReceive(Context context, Intent intent) {
+				if (SharedPrefs.getInstance().areAnimationsShown()) {
+					SharedPrefs.getInstance().setAnimationsShown(false);
+
+					mDrawer.removeItem(7);
+					mDrawer.setItemAtPosition(
+							new SecondaryDrawerItem().withName(R.string.particles_disabled)
+									.withIdentifier(7)
+									.withIcon(FontAwesome.Icon.faw_exclamation_circle)
+									.withIconTintingEnabled(false)
+									.withSelectable(false),
+							7);
+
+					Toast.makeText(getApplicationContext(), R.string.battery_saver_on, Toast
+							.LENGTH_LONG).show();
+				} else {
+					Utils.restartActivity(MainActivity.this);
+				}
+			}
+		};
+
+		IntentFilter intentFilterilter = new IntentFilter();
+		intentFilterilter.addAction("android.os.action.POWER_SAVE_MODE_CHANGED");
+		registerReceiver(mPowerSaverChangeReceiver, intentFilterilter);
+	}
 
     private void handlePreferences() {
 		SharedPrefs.init(getPreferences(Context.MODE_PRIVATE));
 		SharedPrefs.getInstance().setFavoritesShown(false);
+		SharedPrefs.getInstance().setAnimationsShown(true);
 
 		if (SharedPrefs.getInstance().isFirstTime()) {
 			SharedPrefs.getInstance().setFirstTime(false);
-			SharedPrefs.getInstance().setAnimationsShown(true);
-			SharedPrefs.getInstance().setSelectedCategory(1); // all sounds
-			SharedPrefs.getInstance().setSelectedColor(mDefaultColor);
+			SharedPrefs.getInstance().setSelectedCategory(1);
+			SharedPrefs.getInstance().setSelectedColor(R.color.red);
 		}
 
 		mColor = Utils.getSelectedColor();
@@ -122,15 +174,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void handleToolbar() {
 		Utils.paintThis(mToolbar);
-		sInputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
 		setSupportActionBar(mToolbar);
 		getSupportActionBar().setDisplayShowTitleEnabled(false);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
 		mFavButton.setOnFavoriteChangeListener((buttonView, favorite) -> {
 			if (!SharedPrefs.getInstance().areFavoritesShown()) {
 				((SoundAdapter) mView.getAdapter()).showFavorites();
 			} else {
-				Utils.normalize((SoundAdapter) mView.getAdapter(), getApplicationContext());
+				((SoundAdapter) mView.getAdapter()).showPrevious();
 			}
 		});
 	}
@@ -139,15 +192,14 @@ public class MainActivity extends AppCompatActivity {
 		mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
 				.getInteger(R.integer.num_cols),
 				StaggeredGridLayoutManager.VERTICAL));
-		mView.setAdapter(new SoundAdapter(MainActivity.this,
-				SoundStore.getAllSounds(this)));
-		((SoundAdapter) mView.getAdapter()).showAllSounds(getApplicationContext());
+		mView.setAdapter(new SoundAdapter(MainActivity.this));
+		((SoundAdapter) mView.getAdapter()).showPrevious();
 		mView.addItemDecoration(new BottomOffsetDecoration(225));
 	}
 
     private void handleTitle() {
 		Utils.paintThis(mTitleText);
-		mFont = Typeface.createFromAsset(getAssets(), "fonts/Roboto-BoldCondensed.ttf");
+		Typeface mFont = Typeface.createFromAsset(getAssets(), "fonts/Roboto-BoldCondensed.ttf");
 		mTitleText.setTypeface(mFont);
 		mTitleText.setOnClickListener(view -> mView.smoothScrollToPosition(0));
 	}
@@ -182,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void handleDrawer(Bundle instance) {
+    private void handleDrawer() {
         int drawerSize;
 		int selectedColor = ContextCompat.getColor(getApplicationContext(),
 				R.color.colorPrimaryDarker);
@@ -202,10 +254,9 @@ public class MainActivity extends AppCompatActivity {
                 .withActivity(MainActivity.this)
                 .withRootView(R.id.drawer_layout)
                 .withToolbar(mToolbar)
-                .withTranslucentStatusBar(false)
+                .withTranslucentStatusBar(false) // keyboard fix
                 .withTranslucentNavigationBar(true)
                 .withDisplayBelowStatusBar(true)
-                .withActionBarDrawerToggle(true)
                 .withActionBarDrawerToggleAnimated(true)
                 .withScrollToTopAfterClick(true)
                 .withDrawerWidthPx(drawerSize)
@@ -273,45 +324,44 @@ public class MainActivity extends AppCompatActivity {
 							StaggeredGridLayoutManager.VERTICAL));
                     switch (position) {
                         case 1:
-                            mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
-                                    .getAllSounds(MainActivity.this)));
+                            mView.setAdapter(new SoundAdapter(MainActivity.this));
 							if (SharedPrefs.getInstance().areFavoritesShown())
 								mFavButton.toggleFavorite();
-                            ((SoundAdapter) mView.getAdapter()).showAllSounds(MainActivity.this);
+                            ((SoundAdapter) mView.getAdapter())
+									.showAllSounds(MainActivity.this);
                             break;
                         case 2:
-                            mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
-                                    .getFunnySounds(MainActivity.this)));
+                            mView.setAdapter(new SoundAdapter(MainActivity.this));
 							if (SharedPrefs.getInstance().areFavoritesShown())
 								mFavButton.toggleFavorite();
-                            ((SoundAdapter) mView.getAdapter()).showFunnySounds(MainActivity.this);
+                            ((SoundAdapter) mView.getAdapter())
+									.showFunnySounds(MainActivity.this);
                             break;
                         case 3:
-                            mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
-                                    .getGamesSounds(MainActivity.this)));
+                            mView.setAdapter(new SoundAdapter(MainActivity.this));
 							if (SharedPrefs.getInstance().areFavoritesShown())
 								mFavButton.toggleFavorite();
-                            ((SoundAdapter) mView.getAdapter()).showGamesSounds(MainActivity.this);
+                            ((SoundAdapter) mView.getAdapter())
+									.showGamesSounds(MainActivity.this);
                             break;
                         case 4:
-                            mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
-                                    .getMoviesSounds(MainActivity.this)));
+                            mView.setAdapter(new SoundAdapter(MainActivity.this));
 							if (SharedPrefs.getInstance().areFavoritesShown())
 								mFavButton.toggleFavorite();
-                            ((SoundAdapter) mView.getAdapter()).showMoviesSounds(MainActivity.this);
+                            ((SoundAdapter) mView.getAdapter())
+									.showMoviesSounds(MainActivity.this);
                             break;
 						case 5:
-							mView.setAdapter(new SoundAdapter(MainActivity.this, SoundStore
-									.getMusicSounds(MainActivity.this)));
+							mView.setAdapter(new SoundAdapter(MainActivity.this));
 							if (SharedPrefs.getInstance().areFavoritesShown())
 								mFavButton.toggleFavorite();
-							((SoundAdapter) mView.getAdapter()).showMusicSounds(MainActivity.this);
+							((SoundAdapter) mView.getAdapter())
+									.showMusicSounds(MainActivity.this);
 							break;
 						/* Options title
-						case 6:
-							((SoundAdapter) mView.getAdapter()).showFavorites(MainActivity.this);
+						case 7:
 							break;*/
-						/* Particle switch, handled further with listener
+						/* Particle switch, handled by listener
 						case 7:
 							break;*/
 						case 8:
@@ -320,39 +370,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                     return false;
                 })
-                .withSelectedItemByPosition(1)
-                .withSavedInstance(instance)
+                .withSelectedItemByPosition(SharedPrefs.getInstance().getSelectedCategory())
                 .build();
 
-		ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,
-				mDrawer.getDrawerLayout(),
-				mToolbar, 0, 0) {
-
-			@Override
-			public void onDrawerClosed(View v) {
-				super.onDrawerClosed(v);
-				if ((v != null) && sInputManager.isActive()) {
-					sInputManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
-				}
-			}
-
-			@Override
-			public void onDrawerOpened(View v) {
-				super.onDrawerOpened(v);
-				if ((v != null) && sInputManager.isActive()) {
-					sInputManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
-				}
-			}
-		};
-
-		mDrawer.getDrawerLayout().addDrawerListener(actionBarDrawerToggle);
-		actionBarDrawerToggle.syncState();
-
-        if (Utils.isGreenMode(MainActivity.this)) {
-			SharedPrefs.getInstance().setAnimationsShown(false);
-			mDrawer.removeItemByPosition(7);
-			mDrawer.setItemAtPosition(mDrawer.getDrawerItem(8), 7);
-		}
+		mDrawer.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
     }
 
     private void handleColorPicker() {

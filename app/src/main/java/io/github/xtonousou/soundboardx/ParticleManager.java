@@ -6,14 +6,15 @@ class ParticleManager {
 
 	private Particle particle;
 	private String itemName;
+	private ArrayList<Integer> drawableList;
 
 	ParticleManager(Particle particle, String itemName) {
 		this.particle = particle;
 		this.itemName = itemName;
+		this.drawableList = new ArrayList<>();
 	}
 
 	void emit() {
-		ArrayList<Integer> drawableList = new ArrayList<>();
 		switch (itemName) {
 			case "21 Savage: 21":
 				drawableList.add(R.drawable.twentyonesavage);

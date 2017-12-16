@@ -48,8 +48,6 @@ dependencies {
     implementation 'com.github.ivbaranov:materialfavoritebutton:0.1.4'
     // Floating Action Button
     implementation 'com.github.clans:fab:1.6.4'
-    // Toasts
-    implementation 'com.github.johnpersano:supertoasts:2.0'
     // Color Picker
     implementation 'petrov.kristiyan:colorpicker-library:1.1.7'
     // Particle system

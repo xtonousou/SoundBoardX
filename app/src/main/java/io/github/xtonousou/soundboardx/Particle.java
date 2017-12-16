@@ -23,7 +23,7 @@ class Particle {
         for (byte i = 0; i < drawables.size(); i++) {
             new ParticleSystem(act, particles, drawables.get(i), 3750)
                     .setAcceleration(0.0025f, 90)
-                    .setSpeedRange(0.01f, 1)
+                    .setSpeedRange(0.1f, 0.25f)
                     .oneShot(view, particles, new AccelerateInterpolator());
         }
     }
@@ -33,7 +33,7 @@ class Particle {
         for (byte i = 0; i < drawables.size(); i++) {
             new ParticleSystem(act, particles, drawables.get(i), 3750)
                     .setAcceleration(0.0025f, 90)
-                    .setSpeedRange(0.01f, 1)
+                    .setSpeedRange(0.1f, 0.25f)
                     .oneShot(view, particles, new AnticipateInterpolator());
         }
     }
@@ -43,7 +43,7 @@ class Particle {
         for (byte i = 0; i < drawables.size(); i++) {
             new ParticleSystem(act, particles, drawables.get(i), 3750)
                     .setAcceleration(0.0025f, 90)
-                    .setSpeedRange(0.01f, 1)
+                    .setSpeedRange(0.1f, 0.25f)
                     .oneShot(view, particles, new LinearInterpolator());
         }
     }
@@ -51,10 +51,10 @@ class Particle {
     void animateAccelerateCircular(ArrayList<Integer> drawables, int particles) {
         Activity act = (Activity) view.getContext();
         for (byte i = 0; i < drawables.size(); i++) {
-            new ParticleSystem(act, particles, drawables.get(i), 3750)
-                    .setAcceleration(0.0025f, 90)
-                    .setSpeedRange(0.01f, 0.5f)
-                    .setRotationSpeed(150)
+            new ParticleSystem(act, particles, drawables.get(i), 5000)
+                    .setSpeedRange(0.1f, 0.25f)
+                    .setRotationSpeedRange(0, 360)
+                    .setInitialRotationRange(0, 360)
                     .oneShot(view, particles, new AccelerateInterpolator());
         }
     }
@@ -62,10 +62,10 @@ class Particle {
     void animateAnticipateCircular(ArrayList<Integer> drawables, int particles) {
         Activity act = (Activity) view.getContext();
         for (byte i = 0; i < drawables.size(); i++) {
-            new ParticleSystem(act, particles, drawables.get(i), 3750)
-                    .setAcceleration(0.0025f, 90)
-                    .setSpeedRange(0.01f, 0.5f)
-                    .setRotationSpeed(150)
+            new ParticleSystem(act, particles, drawables.get(i), 5000)
+                    .setSpeedRange(0.1f, 0.25f)
+                    .setRotationSpeedRange(0, 360)
+                    .setInitialRotationRange(0, 360)
                     .oneShot(view, particles, new AnticipateInterpolator());
         }
     }
@@ -73,10 +73,10 @@ class Particle {
     void animateLinearCircular(ArrayList<Integer> drawables, int particles) {
         Activity act = (Activity) view.getContext();
         for (byte i = 0; i < drawables.size(); i++) {
-            new ParticleSystem(act, particles, drawables.get(i), 3750)
-                    .setAcceleration(0.0025f, 90)
-                    .setSpeedRange(0.01f, 0.5f)
-                    .setRotationSpeed(150)
+            new ParticleSystem(act, particles, drawables.get(i), 5000)
+                    .setSpeedRange(0.1f, 0.25f)
+                    .setRotationSpeedRange(0, 360)
+                    .setInitialRotationRange(0, 360)
                     .oneShot(view, particles, new LinearInterpolator());
         }
     }

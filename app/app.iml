@@ -141,7 +141,6 @@
     <orderEntry type="library" name="com.mikepenz:iconics-core-2.9.5" level="project" />
     <orderEntry type="library" name="com.mikepenz:fontawesome-typeface-4.7.0.2" level="project" />
     <orderEntry type="library" name="com.android.support:support-core-utils-27.0.2" level="project" />
-    <orderEntry type="library" name="com.github.johnpersano:supertoasts-2.0" level="project" />
     <orderEntry type="library" name="com.daimajia.androidanimations:library-2.3" level="project" />
     <orderEntry type="library" name="com.android.support:support-fragment-27.0.2" level="project" />
     <orderEntry type="library" name="com.android.support:support-media-compat-27.0.2" level="project" />
