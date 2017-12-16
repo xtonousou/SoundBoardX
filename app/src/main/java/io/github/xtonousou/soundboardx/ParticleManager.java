@@ -842,12 +842,14 @@ class ParticleManager {
 			case "Rick And Morty: Get Schwifty":
 				drawableList.add(R.drawable.rick);
 				drawableList.add(R.drawable.morty);
+				drawableList.add(R.drawable.meeseeks);
 				particle.animateAccelerateRandomly(drawableList, 15);
 				break;
 				
 			case "Rick And Morty: Look At Meee":
 				drawableList.add(R.drawable.rick);
 				drawableList.add(R.drawable.morty);
+				drawableList.add(R.drawable.meeseeks);
 				particle.animateAccelerateRandomly(drawableList, 15);
 				break;
 				
@@ -861,6 +863,7 @@ class ParticleManager {
 			case "Rick And Morty: Okay":
 				drawableList.add(R.drawable.rick);
 				drawableList.add(R.drawable.morty);
+				drawableList.add(R.drawable.meeseeks);
 				particle.animateAccelerateRandomly(drawableList, 15);
 				break;
 				
@@ -875,6 +878,7 @@ class ParticleManager {
 			case "Rick And Morty: WLDD":
 				drawableList.add(R.drawable.rick);
 				drawableList.add(R.drawable.morty);
+				drawableList.add(R.drawable.meeseeks);
 				particle.animateAccelerateCircular(drawableList, 15);
 				break;
 				
@@ -893,7 +897,7 @@ class ParticleManager {
 				break;
 				
 			case "Sabada":
-				drawableList.add(R.drawable.sabada);
+				drawableList.add(R.drawable.cat);
 				particle.animateLinearRandomly(drawableList, 15);
 				break;
 				
