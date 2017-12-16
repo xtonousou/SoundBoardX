@@ -505,7 +505,7 @@ class ParticleManager {
 				break;
 				
 			case "JoJo: Muda Muda Muda":
-				drawableList.add(R.drawable.mudamudamuda);
+				drawableList.add(R.drawable.zawarudo);
 				particle.animateLinearRandomly(drawableList, 25);
 				break;
 				
