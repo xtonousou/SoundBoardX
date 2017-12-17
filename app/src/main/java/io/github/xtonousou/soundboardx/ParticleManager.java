@@ -287,7 +287,7 @@ class ParticleManager {
 				break;
 				
 			case "De Dotaded Wam":
-				drawableList.add(R.drawable.dedotadedwam);
+				drawableList.add(R.drawable.questionmark);
 				particle.burstRandomly(drawableList, 15);
 				break;
 				
@@ -828,7 +828,7 @@ class ParticleManager {
 				break;
 				
 			case "Richard Stallman: Windows":
-				drawableList.add(R.drawable.windows);
+				drawableList.add(R.drawable.stallman);
 				drawableList.add(R.drawable.gnu);
 				particle.burstRandomly(drawableList, 15);
 				break;
@@ -1055,7 +1055,7 @@ class ParticleManager {
 				particle.burstRandomly(drawableList, 25);
 				break;
 				
-			case "Wazzup":
+			case "Scary Movie: Wazzup":
 				drawableList.add(R.drawable.wazzup);
 				drawableList.add(R.drawable.weed);
 				drawableList.add(R.drawable.smokeone);

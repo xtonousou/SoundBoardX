@@ -85,6 +85,7 @@
         <item>Get Noscoped</item>
         <item>Godzilla</item>
         <item>Headshot</item>
+		<item>He Knew He F*cked Up</item>
         <item>Hitler: Nein Nein</item>
         <item>Hitmarker</item>
         <item>Holy Sh*t</item>
@@ -132,7 +133,6 @@
         <item>Merlin: Excellent</item>
         <item>Migos: Rain Drop Drop Top</item>
         <item>Mom Get The Camera</item>
-        <item>Morgan Freeman: He Knew He F*cked Up</item>
         <item>My Mooscles Are Getting Bigger!</item>
         <item>Naruto: Katon: Goukakyou No Jutsu</item>
         <item>Naruto: Oodama Rasengan</item>
@@ -294,6 +294,7 @@
 		<item>@raw/funny_getnoscoped</item>
 		<item>@raw/movies_godzilla</item>
 		<item>@raw/funny_headshot</item>
+		<item>@raw/funny_heknewhefuckedup</item>
 		<item>@raw/funny_nein</item>
 		<item>@raw/games_hitmarker</item>
 		<item>@raw/funny_holyshit</item>
@@ -341,7 +342,6 @@
 		<item>@raw/games_excellent</item>
 		<item>@raw/music_raindropdroptop</item>
 		<item>@raw/funny_getthecamera</item>
-		<item>@raw/funny_heknewhefuckedup</item>
 		<item>@raw/funny_mooscles</item>
 		<item>@raw/movies_katon</item>
 		<item>@raw/movies_oodamarasengan</item>
@@ -456,6 +456,7 @@
         <item>Filthy Frank: You\'re A F*ckin C*nt</item>
         <item>Get Noscoped</item>
         <item>Headshot</item>
+		<item>He Knew He F*cked Up</item>
         <item>Hitler: Nein Nein</item>
         <item>Holy Sh*t</item>
         <item>I\'m Growing Stronker!</item>
@@ -470,7 +471,6 @@
         <item>Kazoo Kid: Kazoo</item>
         <item>LOL</item>
         <item>Mom Get The Camera</item>
-        <item>Morgan Freeman: He Knew He F*cked Up</item>
         <item>My Mooscles Are Getting Bigger!</item>
         <item>Never Done That</item>
         <item>Ni**a Is C*mming…</item>
@@ -481,7 +481,7 @@
         <item>Pewdiepie: Intro</item>
         <item>Pewdiepie: Oh Mah GAH!</item>
         <item>Retardation Theme</item>
-        <item>Richard Stallman</item>
+        <item>Richard Stallman: Windows</item>
         <item>Russian\'s Middlefinger</item>
         <item>Russian Father</item>
         <item>Sad Violin</item>
@@ -548,6 +548,7 @@
 		<item>@raw/funny_pgfokincunt</item>
 		<item>@raw/funny_getnoscoped</item>
 		<item>@raw/funny_headshot</item>
+		<item>@raw/funny_heknewhefuckedup</item>
 		<item>@raw/funny_nein</item>
 		<item>@raw/funny_holyshit</item>
 		<item>@raw/funny_stronker</item>
@@ -562,7 +563,6 @@
 		<item>@raw/funny_kazoo</item>
 		<item>@raw/funny_lol</item>
 		<item>@raw/funny_getthecamera</item>
-		<item>@raw/funny_heknewhefuckedup</item>
 		<item>@raw/funny_mooscles</item>
 		<item>@raw/funny_neverdonethat</item>
 		<item>@raw/funny_niggacum</item>
@@ -716,7 +716,7 @@
         <item>The Simpsons: Doh</item>
         <item>Two And A Half Men: Intro</item>
         <item>U WOT M8</item>
-        <item>Yurikuma Arashi: Sabada</item>
+        <item>Yurikuma Arashi: Shabada</item>
     </string-array>
 
     <integer-array name="moviesSoundsIDs">
