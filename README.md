@@ -16,7 +16,7 @@
 
 * **Powerful** yet **lightweight**.
 * **Rapid consecutive sound clicks**. Spam with no fear. The application uses **async** event bus to trigger sounds.
-* **Particles on click**. `SoundBoardX` is powered with a particle system that gives your clicks some swag. Three different particle behaviors.
+* **Particles on click**. `SoundBoardX` is powered with a particle system that gives your clicks some swag.
 * **Set** sounds as **ringtone**, **notification** or **alarm** tone.
 * Indexable. **Search** the sound you are looking for, without scrolling over all those sounds.
 * **Categorized**. Sounds are grouped into categories for easier and quicker experience. Just click the drawer icon or just swipe to see the categories. Supports RTL.
