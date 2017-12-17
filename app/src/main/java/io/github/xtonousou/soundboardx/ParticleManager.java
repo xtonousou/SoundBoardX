@@ -56,7 +56,7 @@ class ParticleManager {
 				particle.burstRandomly(drawableList, 10);
 				break;
 			
-			case "Balls Of Steel":
+			case "Duke Nukem: Balls Of Steel":
 				drawableList.add(R.drawable.ballsofsteel);
 				particle.burstRandomly(drawableList, 15);
 				break;

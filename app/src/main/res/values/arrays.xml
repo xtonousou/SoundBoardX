@@ -9,7 +9,6 @@
         <item>Allahu Akbar</item>
         <item>Back To The Future: Theme</item>
         <item>Badum Tss</item>
-        <item>Balls Of Steel</item>
         <item>Bane: Darude Sandstorm</item>
         <item>Bane: Mask</item>
         <item>Bearc*m!!!</item>
@@ -60,6 +59,7 @@
         <item>Dragon Ball: Kamehameha</item>
         <item>Dragon Ball: Over 9000</item>
         <item>Duck Toy</item>
+		<item>Duke Nukem: Balls Of Steel</item>
         <item>EA Games</item>
         <item>EA Sports</item>
         <item>Excuse Me, I Have Some P*ssyhair On Me!</item>
@@ -218,7 +218,6 @@
 		<item>@raw/funny_allahuakbar</item>
 		<item>@raw/movies_backtothefuture</item>
 		<item>@raw/funny_badumtss</item>
-		<item>@raw/games_ballsofsteel</item>
 		<item>@raw/funny_banesandstorm</item>
 		<item>@raw/funny_bane_mask</item>
 		<item>@raw/funny_bearcum</item>
@@ -269,6 +268,7 @@
 		<item>@raw/movies_kamehameha</item>
 		<item>@raw/funny_overninek</item>
 		<item>@raw/funny_ducktoy</item>
+		<item>@raw/games_ballsofsteel</item>
 		<item>@raw/games_eagames</item>
         <item>@raw/games_easports</item>
 		<item>@raw/funny_pussyhair</item>
@@ -607,8 +607,8 @@
 
     <!-- Games Sounds -->
     <string-array name="gamesSounds">
-        <item>Balls Of Steel</item>
 		<item>Crash Bandicoot: Aku Aku</item>
+		<item>Duke Nukem: Balls Of Steel</item>
         <item>EA Games</item>
         <item>EA Sports</item>
         <item>Game Boy</item>
@@ -638,8 +638,8 @@
     </string-array>
 
     <integer-array name="gamesSoundsIDs">
-        <item>@raw/games_ballsofsteel</item>
 		<item>@raw/games_akuaku</item>
+		<item>@raw/games_ballsofsteel</item>
         <item>@raw/games_eagames</item>
         <item>@raw/games_easports</item>
 		<item>@raw/games_gameboy</item>
