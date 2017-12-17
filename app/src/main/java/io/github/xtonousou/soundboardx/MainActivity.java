@@ -7,7 +7,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -23,7 +22,6 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,8 +35,6 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondarySwitchDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
-
-import java.util.Arrays;
 
 import petrov.kristiyan.colorpicker.ColorPicker;
 
@@ -276,8 +272,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void handleTitle() {
 		Utils.paintThis(mTitleText);
+
 		Typeface mFont = Typeface.createFromAsset(getAssets(), "fonts/Roboto-BoldCondensed.ttf");
 		mTitleText.setTypeface(mFont);
+
 		mTitleText.setOnClickListener(view -> {
 			if (mDrawer.isDrawerOpen() && mDrawer != null) mDrawer.closeDrawer();
 			mView.smoothScrollToPosition(0);

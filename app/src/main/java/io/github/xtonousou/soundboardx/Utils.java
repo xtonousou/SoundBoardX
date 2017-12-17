@@ -3,7 +3,6 @@ package io.github.xtonousou.soundboardx;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
@@ -50,8 +49,7 @@ abstract class Utils {
 		InputStream inputStream;
 		FileOutputStream outputStream;
 
-		String pathName = Environment.getExternalStorageDirectory() + File.separator +
-				getApplicationName(mContext);
+		String pathName = Environment.getExternalStorageDirectory() + File.separator + R.string.app_name;
 
 		switch (mType) {
 			case "ringtone":
@@ -106,12 +104,6 @@ abstract class Utils {
 		return true;
 	}
 
-	static String getApplicationName(Context context) {
-		ApplicationInfo applicationInfo = context.getApplicationInfo();
-		int stringId = applicationInfo.labelRes;
-		return stringId == 0 ? applicationInfo.nonLocalizedLabel.toString() : context.getString(stringId);
-	}
-
 	static int getScreenWidth(Activity activity) {
         DisplayMetrics metrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
@@ -120,7 +112,7 @@ abstract class Utils {
 
 	static String striptease(String string) {
 		return Normalizer.normalize(string, Normalizer.Form.NFD)
-				.replaceAll("[\'| |\\p{M}]?", "");
+				.replaceAll("[\' \\p{M}]?", "");
 	}
 
 	static void paintThis(TextView textView) {

@@ -1,20 +1,8 @@
 package io.github.xtonousou.soundboardx;
 
-import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
-import android.content.res.Resources;
-import android.media.RingtoneManager;
-import android.net.Uri;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.view.View;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 class ToneManager {
@@ -40,6 +28,7 @@ class ToneManager {
 
     void setAsRingtone() {
         String pathName = Utils.writeSoundOnInternalStorage(context, "ringtone", filename, id);
+        System.out.println(pathName);
     }
 
     void setAsNotification() {

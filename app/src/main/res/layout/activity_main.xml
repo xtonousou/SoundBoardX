@@ -16,11 +16,11 @@
 
 		<TextView
 			android:id="@+id/title_view"
+			android:text="@string/app_name"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_alignParentEnd="true"
 			android:layout_above="@id/drawer_layout"
-			android:text="@string/app_name"
 			android:textSize="24sp"/>
 
 		<com.github.ivbaranov.mfb.MaterialFavoriteButton
