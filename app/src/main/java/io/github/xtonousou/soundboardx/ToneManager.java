@@ -67,62 +67,9 @@ class ToneManager {
     }
 
     private void setAsRingtone(String filename, int resource) {
-        byte[] buffer;
-        InputStream fIn = itemView.getContext().getResources().openRawResource(resource);
-        int size;
-
-        try {
-            size = fIn.available();
-            buffer = new byte[size];
-            fIn.read(buffer);
-            fIn.close();
-        } catch (IOException e) {
-            return;
-        }
-
-        String path = Environment.DIRECTORY_RINGTONES;
-
-		filename += ".mp3";
-
-        boolean exists = (new File(path)).exists();
-        if (!exists) {
-            new File(path).mkdirs();
-        }
-
-        FileOutputStream save;
-        try {
-            save = new FileOutputStream(path + filename);
-            save.write(buffer);
-            save.flush();
-            save.close();
-        } catch (IOException e) {
-            return;
-        }
-
-        itemView.getContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file:/" + path + filename)));
-
-        File k = new File(path, filename);
-        ContentValues values = new ContentValues();
-        values.put(MediaStore.MediaColumns.DATA, k.getAbsolutePath());
-        values.put(MediaStore.MediaColumns.TITLE, "Ringtone");
-        values.put(MediaStore.MediaColumns.MIME_TYPE, "audio/mp3");
-        values.put(MediaStore.Audio.Media.ARTIST, "xToNouSou");
-        values.put(MediaStore.Audio.Media.IS_RINGTONE, true);
-        values.put(MediaStore.Audio.Media.IS_NOTIFICATION, true);
-        values.put(MediaStore.Audio.Media.IS_ALARM, true);
-        values.put(MediaStore.Audio.Media.IS_MUSIC, false);
-
-        //Insert it into the database
-        Uri newUri = itemView.getContext().getContentResolver().insert(MediaStore.Audio.Media.getContentUriForPath(k.getAbsolutePath()), values);
-
-        try {
-            RingtoneManager.setActualDefaultRingtoneUri(itemView.getContext(), RingtoneManager.TYPE_RINGTONE, newUri);
-            //showToast("'" + itemName + "' has been set as ringtone!", R.drawable
-            //        .ic_ringtone_white_24dp);
-        } catch (Throwable t) {
-            System.err.println(t.getMessage());
-        }
-
+        String pathName = Utils.writeFileOnInternalStorage(itemView.getContext(), "ringtone",
+                filename, resource);
+        System.out.println(pathName);
     }
 
     private void setAsNotification(int resource) {

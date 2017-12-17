@@ -62,7 +62,7 @@ class SharedPrefs {
 		prefs.edit().putBoolean("favorites", favoritesShown).apply();
 	}
 
-    void setMenuItemClick(boolean click) {
-        prefs.edit().putBoolean("set_as", click).apply();
+    void triggerSpecialPermission(boolean trigger) {
+        prefs.edit().putBoolean("write_settings", trigger).apply();
     }
 }

@@ -1,5 +1,6 @@
 package io.github.xtonousou.soundboardx;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.SearchManager;
 import android.content.BroadcastReceiver;
@@ -7,11 +8,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -34,10 +38,19 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondarySwitchDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 
+import java.util.Arrays;
+
 import petrov.kristiyan.colorpicker.ColorPicker;
 
 public class MainActivity extends AppCompatActivity {
-	private static final int WRITE_SETTINGS_PERMISSION = 1337;
+	private static final int WRITE_SETTINGS_PERMISSION = 666;
+	private static final int READ_WRITE_EXTERNAL_STORAGE_PERMISSIONS = 1337;
+
+	private String[] PERMISSIONS = {
+			Manifest.permission.READ_EXTERNAL_STORAGE,
+			Manifest.permission.WRITE_EXTERNAL_STORAGE
+	};
+
 	private int mColor;
 
 	private Drawer mDrawer;
@@ -62,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 		handlePreferences();
 		handleReflections();
 
-		handleWriteSettingsPermission();
+		handlePermissions();
 
 		handleFAB();
 		handleView();
@@ -117,6 +130,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
 	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+										   @NonNull int[] grantResults) {
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+		switch (requestCode) {
+			case READ_WRITE_EXTERNAL_STORAGE_PERMISSIONS:
+				if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+					Toast.makeText(MainActivity.this, R.string.permission_granted,
+							Toast.LENGTH_SHORT).show();
+				else Toast.makeText(MainActivity.this, R.string.permission_needed,
+						Toast.LENGTH_SHORT).show();
+				break;
+		}
+	}
+
+	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
@@ -125,37 +154,40 @@ public class MainActivity extends AppCompatActivity {
 				Toast.makeText(MainActivity.this, R.string.permission_granted,
 						Toast.LENGTH_SHORT).show();
 			else Toast.makeText(MainActivity.this, R.string.permission_needed,
-					Toast.LENGTH_LONG).show();
+					Toast.LENGTH_SHORT).show();
 		}
 	}
 
-	private void handleWriteSettingsPermission() {
-		prefListener = (prefs, key) -> {
-			if (key.equalsIgnoreCase("set_as")
-					&& Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
-					&& !Settings.System.canWrite(MainActivity.this)) {
-				AlertDialog.Builder builder = new AlertDialog.Builder
-						(MainActivity.this);
+	private void handlePermissions() {
+		if (!Utils.hasPermissions(MainActivity.this, PERMISSIONS)) {
+			ActivityCompat.requestPermissions(MainActivity.this, PERMISSIONS,
+					READ_WRITE_EXTERNAL_STORAGE_PERMISSIONS);
+		}
+		handleSpecialPermissions();
+	}
 
-				builder.setMessage(R.string.modify_settings)
-						.setTitle(R.string.allow_access);
+	private void handleSpecialPermissions() {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
+				!Settings.System.canWrite(MainActivity.this)) {
+			AlertDialog.Builder builder = new AlertDialog.Builder
+					(MainActivity.this);
 
-				builder.setPositiveButton(R.string.settings, (dialog, id) -> {
-					Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS, Uri
-							.parse("package:" + getPackageName()));
-					startActivityForResult(intent, WRITE_SETTINGS_PERMISSION);
-				});
+			builder.setMessage(R.string.modify_settings)
+					.setTitle(R.string.allow_access);
 
-				builder.setNegativeButton(R.string.not_now, (dialog, id) -> Toast.makeText
-						(MainActivity.this, R.string.permission_needed,
-								Toast.LENGTH_LONG).show());
+			builder.setPositiveButton(R.string.settings, (dialog, id) -> {
+				Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS, Uri
+						.parse("package:" + getPackageName()));
+				startActivityForResult(intent, WRITE_SETTINGS_PERMISSION);
+			});
 
-				AlertDialog dialog = builder.create();
-				dialog.show();
-			}
-		};
+			builder.setNegativeButton(R.string.not_now, (dialog, id) -> Toast.makeText
+					(MainActivity.this, R.string.permission_needed,
+							Toast.LENGTH_SHORT).show());
 
-		SharedPrefs.getInstance().getPrefs().registerOnSharedPreferenceChangeListener(prefListener);
+			AlertDialog dialog = builder.create();
+			dialog.show();
+		}
 	}
 
 	private void handlePowerSaverMode() {

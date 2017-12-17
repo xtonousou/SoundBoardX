@@ -36,5 +36,10 @@
     <string name="not_now">NOT NOW</string>
     <string name="permission_needed">Permission needed</string>
     <string name="permission_granted">Permission granted</string>
+    <string name="storage_unavailable">Error: Storage is not available right now!</string>
+    <string name="storage_ro">Error: Storage is read-only!</string>
+    <string name="notifications">Notifications</string>
+    <string name="alarms">Alarms</string>
+    <string name="ringtones">Ringtones</string>
 
 </resources>
