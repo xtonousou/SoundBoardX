@@ -61,8 +61,4 @@ class SharedPrefs {
 	void setFavoritesShown(boolean favoritesShown) {
 		prefs.edit().putBoolean("favorites", favoritesShown).apply();
 	}
-
-    void triggerSpecialPermission(boolean trigger) {
-        prefs.edit().putBoolean("write_settings", trigger).apply();
-    }
 }

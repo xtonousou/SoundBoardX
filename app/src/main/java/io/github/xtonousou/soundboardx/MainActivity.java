@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
 	private FloatingActionButton mFabMute;
 	private MaterialFavoriteButton mFavButton;
 	private BroadcastReceiver mPowerSaverChangeReceiver;
-	private SharedPreferences.OnSharedPreferenceChangeListener prefListener;
 
 	/*
 	 * Do not change the order of the code.
@@ -90,8 +89,6 @@ public class MainActivity extends AppCompatActivity {
 	public void onDestroy() {
 		super.onDestroy();
 		unregisterReceiver(mPowerSaverChangeReceiver);
-		SharedPrefs.getInstance().getPrefs().unregisterOnSharedPreferenceChangeListener
-				(prefListener);
 		if (mSoundPlayer != null) {
 			mSoundPlayer.release();
 			mSoundPlayer = null;
