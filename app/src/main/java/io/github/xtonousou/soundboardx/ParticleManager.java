@@ -40,13 +40,14 @@ class ParticleManager {
 				particle.burstRandomly(drawableList, 15);
 				break;
 			
-			case "Back To The Future":
+			case "Back To The Future: Theme":
 				drawableList.add(R.drawable.backtothefuture);
 				particle.burstRandomly(drawableList, 10);
 				break;
 			
-			case "Badadipoopi":
-				drawableList.add(R.drawable.badadipoopi);
+			case "Family Guy: Badadipoopi":
+				drawableList.add(R.drawable.familyguy);
+				drawableList.add(R.drawable.familyguy1);
 				particle.burstRandomly(drawableList, 10);
 				break;
 			
@@ -76,7 +77,7 @@ class ParticleManager {
 				break;
 				
 			case "Bearc*m!!!":
-				drawableList.add(R.drawable.illuminati);
+				drawableList.add(R.drawable.ball);
 				drawableList.add(R.drawable.joint);
 				drawableList.add(R.drawable.mtdew);
 				particle.burstRandomly(drawableList, 10);
@@ -88,11 +89,11 @@ class ParticleManager {
 				break;
 				
 			case "BEGONE THOT!":
-				drawableList.add(R.drawable.girl);
+				drawableList.add(R.drawable.begonethot);
 				particle.burstRandomly(drawableList, 10);
 				break;
 				
-			case "Belair":
+			case "Belair: Intro":
 				drawableList.add(R.drawable.belair);
 				particle.burstRandomly(drawableList, 10);
 				break;
@@ -215,7 +216,7 @@ class ParticleManager {
 				
 			case "Bleach: Senbonzakura Kageyoshi":
 				drawableList.add(R.drawable.senbonkageyoshi);
-				particle.burstRandomly(drawableList, 10);
+				particle.burstScaleRandomly(drawableList, 10);
 				break;
 				
 			case "Blend S: Intro":
@@ -250,7 +251,7 @@ class ParticleManager {
 				particle.burstRandomly(drawableList, 25);
 				break;
 				
-			case "Chewbacca":
+			case "Star Wars: Chewbacca":
 				drawableList.add(R.drawable.chewbacca);
 				particle.burstScaleRandomly(drawableList, 10);
 				break;
@@ -335,7 +336,7 @@ class ParticleManager {
 				particle.burstRandomly(drawableList, 15);
 				break;
 				
-			case "Excellent":
+			case "Merlin: Excellent":
 				drawableList.add(R.drawable.excellent);
 				particle.burstScaleRandomly(drawableList, 10);
 				break;
@@ -345,7 +346,7 @@ class ParticleManager {
 				particle.burstRandomly(drawableList, 10);
 				break;
 				
-			case "Fast n\' Furious":
+			case "Fast n\' Furious: Theme":
 				drawableList.add(R.drawable.fastnfurious);
 				particle.burstRandomly(drawableList, 10);
 				break;
@@ -387,7 +388,7 @@ class ParticleManager {
 				particle.burstRandomly(drawableList, 20);
 				break;
 				
-			case "Fun":
+			case "Kazoo Kid: Fun":
 				drawableList.add(R.drawable.kazoo);
 				particle.burstScaleRandomly(drawableList, 15);
 				break;
@@ -409,7 +410,7 @@ class ParticleManager {
 				particle.burstRandomly(drawableList, 10);
 				break;
 				
-			case "He Knew He F*cked Up":
+			case "Morgan Freeman: He Knew He F*cked Up":
 				drawableList.add(R.drawable.heknewhefuckedup);
 				particle.burstScaleRandomly(drawableList, 15);
 				break;
@@ -462,7 +463,7 @@ class ParticleManager {
 				particle.burstScaleRandomly(drawableList, 10);
 				break;
 				
-			case "Inspector Gadget":
+			case "Inspector Gadget: Theme":
 				drawableList.add(R.drawable.inspectorgadget);
 				particle.burstRandomly(drawableList, 10);
 				break;
@@ -529,12 +530,12 @@ class ParticleManager {
 				particle.burstScaleRandomly(drawableList, 10);
 				break;
 				
-			case "JUST DO IT!":
+			case "Shia LaBeouf: JUST DO IT!":
 				drawableList.add(R.drawable.justdoit);
 				particle.burstScaleRandomly(drawableList, 10);
 				break;
 				
-			case "Kazoo":
+			case "Kazoo Kid: Kazoo":
 				drawableList.add(R.drawable.kazoo);
 				particle.burstScaleRandomly(drawableList, 20);
 				break;
@@ -544,7 +545,7 @@ class ParticleManager {
 				particle.burstScaleRandomly(drawableList, 10);
 				break;
 				
-			case "Law And Order":
+			case "Law And Order: Theme":
 				drawableList.add(R.drawable.lawandorder);
 				particle.burstRandomly(drawableList, 10);
 				break;
@@ -746,48 +747,49 @@ class ParticleManager {
 				particle.burstScaleRandomly(drawableList, 15);
 				break;
 				
-			case "Pink Guy: Edgy As F*ck":
+			case "Filthy Frank: Edgy As F*ck":
 				drawableList.add(R.drawable.filthyfrank);
 				drawableList.add(R.drawable.edgyasfuck);
 				particle.burstScaleRandomly(drawableList, 20);
 				break;
 				
-			case "Pink Guy: Gimme Dat P*ssy":
+			case "Filthy Frank: Gimme Dat P*ssy":
 				drawableList.add(R.drawable.filthyfrank);
 				particle.burstScaleRandomly(drawableList, 20);
 				break;
 				
-			case "Pink Guy: Nobody Gives A Sh*t":
+			case "Filthy Frank: Nobody Gives A Sh*t":
 				drawableList.add(R.drawable.filthyfrank);
 				particle.burstScaleRandomly(drawableList, 20);
 				break;
 				
-			case "Pink Guy: Nobody Wants You..":
+			case "Filthy Frank: Nobody Wants You..":
 				drawableList.add(R.drawable.filthyfrank);
 				particle.burstScaleRandomly(drawableList, 20);
 				break;
 				
-			case "Pink Guy: NYES":
+			case "Filthy Frank: NYES":
+				drawableList.add(R.drawable.filthyfrank);
+				drawableList.add(R.drawable.nyes);
+				particle.burstScaleRandomly(drawableList, 20);
+				break;
+				
+			case "Filthy Frank: Shut The F*ck Up":
 				drawableList.add(R.drawable.filthyfrank);
 				particle.burstScaleRandomly(drawableList, 20);
 				break;
 				
-			case "Pink Guy: Shut The F*ck Up":
+			case "Filthy Frank: Stop Being A F*ckin C*unt":
 				drawableList.add(R.drawable.filthyfrank);
 				particle.burstScaleRandomly(drawableList, 20);
 				break;
 				
-			case "Pink Guy: Stop Being A F*ckin C*unt":
+			case "Filthy Frank: Suck My D*ck":
 				drawableList.add(R.drawable.filthyfrank);
 				particle.burstScaleRandomly(drawableList, 20);
 				break;
 				
-			case "Pink Guy: Suck My D*ck":
-				drawableList.add(R.drawable.filthyfrank);
-				particle.burstScaleRandomly(drawableList, 20);
-				break;
-				
-			case "Pink Guy: You\'re A F*ckin C*nt":
+			case "Filthy Frank: You\'re A F*ckin C*nt":
 				drawableList.add(R.drawable.filthyfrank);
 				particle.burstScaleRandomly(drawableList, 20);
 				break;
@@ -826,7 +828,7 @@ class ParticleManager {
 				particle.burstScaleRandomly(drawableList, 15);
 				break;
 				
-			case "Richard Stallman":
+			case "Richard Stallman: Windows":
 				drawableList.add(R.drawable.windows);
 				drawableList.add(R.drawable.gnu);
 				particle.burstRandomly(drawableList, 15);
@@ -896,9 +898,9 @@ class ParticleManager {
 				particle.burstRandomly(drawableList, 15);
 				break;
 				
-			case "Sabada":
+			case "Yurikuma Arashi: Shabada":
 				drawableList.add(R.drawable.cat);
-				particle.burstRandomly(drawableList, 15);
+				particle.animateLinearRandomly(drawableList, 15);
 				break;
 				
 			case "Sad Violin":
@@ -926,7 +928,6 @@ class ParticleManager {
 				
 			case "Skyrim: Fus Ro Dah":
 				drawableList.add(R.drawable.skyrim);
-				drawableList.add(R.drawable.fusrodah);
 				particle.burstRandomly(drawableList, 20);
 				break;
 				
@@ -935,7 +936,7 @@ class ParticleManager {
 				particle.burstRandomly(drawableList, 20);
 				break;
 				
-			case "Smoke Weed Everyday":
+			case "Snoop Dog: Smoke Weed Everyday":
 				drawableList.add(R.drawable.weed);
 				drawableList.add(R.drawable.joint);
 				drawableList.add(R.drawable.smokeone);
@@ -1024,7 +1025,7 @@ class ParticleManager {
 				particle.burstScaleRandomly(drawableList, 15);
 				break;
 				
-			case "This Is My Pawn Shop":
+			case "Rick Harrison: This Is My Pawn Shop":
 				drawableList.add(R.drawable.pawnshop);
 				particle.burstRandomly(drawableList, 15);
 				break;
@@ -1041,9 +1042,10 @@ class ParticleManager {
 				particle.burstScaleRandomly(drawableList, 15);
 				break;
 				
-			case "Two And A Half Men":
+			case "Two And A Half Men: Intro":
 				drawableList.add(R.drawable.twohalfmen);
-				drawableList.add(R.drawable.musicnote);
+				drawableList.add(R.drawable.twohalfmen1);
+				drawableList.add(R.drawable.twohalfmen2);
 				particle.burstRandomly(drawableList, 15);
 				break;
 				
@@ -1079,9 +1081,8 @@ class ParticleManager {
 				particle.burstRandomly(drawableList, 25);
 				break;
 				
-			case "What Manner Of Sissyness, Is This?":
+			case "Skyrim: What Manner Of Sissyness, Is This?":
 				drawableList.add(R.drawable.skyrim);
-				drawableList.add(R.drawable.poop);
 				particle.burstRandomly(drawableList, 25);
 				break;
 				
@@ -1090,7 +1091,7 @@ class ParticleManager {
 				particle.burstScaleRandomly(drawableList, 25);
 				break;
 				
-			case "Why Don\'t You Show Us That Fine P*ssy?":
+			case "Skyrim: Why Don\'t You Show Us That Fine P*ssy?":
 				drawableList.add(R.drawable.cat);
 				drawableList.add(R.drawable.skyrim);
 				particle.burstRandomly(drawableList, 25);
@@ -1120,7 +1121,7 @@ class ParticleManager {
 				break;
 				
 			case "Yiss":
-				drawableList.add(R.drawable.yiiisss);
+				drawableList.add(R.drawable.man);
 				particle.burstRandomly(drawableList, 25);
 				break;
 				
