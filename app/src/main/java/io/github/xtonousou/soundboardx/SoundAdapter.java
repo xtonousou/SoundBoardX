@@ -1,15 +1,8 @@
 package io.github.xtonousou.soundboardx;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Application;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Typeface;
-import android.net.Uri;
-import android.os.Build;
-import android.provider.Settings;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -21,7 +14,6 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.iconics.IconicsDrawable;
@@ -30,7 +22,6 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import java.io.File;
 import java.util.ArrayList;
 
 public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
