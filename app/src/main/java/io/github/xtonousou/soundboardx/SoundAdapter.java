@@ -106,10 +106,10 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		notifyDataSetChanged();
 	}
 
-	public class ViewHolder extends RecyclerView.ViewHolder implements
+	class ViewHolder extends RecyclerView.ViewHolder implements
 			View.OnCreateContextMenuListener,
 			MenuItem.OnMenuItemClickListener {
-		public final TextView title;
+		final TextView title;
 		final ImageButton favButton;
 
 		ViewHolder(View v) {
@@ -162,17 +162,16 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 
 		@Override
 		public boolean onMenuItemClick(MenuItem menuItem) {
-			ToneManager tone = new ToneManager(activity, itemView, title.getText().toString(),
-					getAdapterPosition());
+			ToneManager tone = new ToneManager(itemView, getAdapterPosition());
 			switch (menuItem.getTitle().toString()) {
 				case "Set as ringtone":
-					tone.setToneAs((byte) 0);
+					tone.setAsRingtone();
 					break;
 				case "Set as notification":
-					tone.setToneAs((byte) 1);
+					tone.setAsNotification();
 					break;
 				case "Set as alarm":
-					tone.setToneAs((byte) 2);
+					tone.setAsAlarm();
 					break;
 			}
 			return true;

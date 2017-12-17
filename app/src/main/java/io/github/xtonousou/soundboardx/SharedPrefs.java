@@ -18,10 +18,6 @@ class SharedPrefs {
         return instance;
     }
 
-    SharedPreferences getPrefs() {
-        return prefs;
-    }
-
     void setSoundFavorited(String soundName, boolean shouldFavorite) {
         prefs.edit().putBoolean(soundName, shouldFavorite).apply();
     }

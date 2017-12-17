@@ -33,7 +33,7 @@ abstract class Utils {
 		return Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState());
 	}
 
-	static String writeFileOnInternalStorage(Context mContext, String mType, String mFilename, int
+	static String writeSoundOnInternalStorage(Context mContext, String mType, String mFilename, int
 			mResourceId) {
 		if (isExternalStorageReadOnly()) {
 			Toast.makeText(mContext, R.string.storage_ro,

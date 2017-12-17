@@ -20,171 +20,33 @@ import java.util.ArrayList;
 class ToneManager {
     private static final String TAG = "ToneManager";
 
-	private ArrayList<Sound> sounds;
-    private Activity         activity;
-    private Context          context;
-    private String       	 itemName;
-    private View     		 itemView;
-    private int      		 position;
+    private View itemView;
+    private Context context;
+    private ArrayList<Sound> sounds;
+    private int position;
+    private Sound sound;
+    private String filename;
+    private int id;
 
-    ToneManager(Activity activity, View itemView, String itemName, int position) {
-        this.activity = activity;
-		this.itemView = itemView;
-		this.itemName = itemName;
-		this.position = position;
-		this.context  = itemView.getContext();
-		this.sounds   = SoundStore.getSelectedSounds(context);
+    ToneManager(View itemView, int position) {
+        this.itemView = itemView;
+        this.position = position;
+        this.context = itemView.getContext();
+        this.sounds = SoundStore.getSelectedSounds(context);
+        this.sound = sounds != null ? sounds.get(position) : null;
+		this.filename = itemView.getResources().getResourceEntryName(sound.getResourceId());
+		this.id = sound != null ? sound.getResourceId() : 0;
     }
 
-	void setToneAs(byte id) {
-        switch (id) {
-            case 0:
-                ringtone();
-                break;
-            case 1:
-                notification();
-                break;
-            case 2:
-                alarm();
-                break;
-        }
+    void setAsRingtone() {
+        String pathName = Utils.writeSoundOnInternalStorage(context, "ringtone", filename, id);
     }
 
-    private void ringtone() {
-    	Resources res = itemView.getResources();
-    	String fileName = res.getResourceEntryName(sounds.get(position).getResourceId());
-		int soundId = res.getIdentifier(fileName, "raw",
-				itemView.getContext().getPackageName());
-		setAsRingtone(fileName, soundId);
+    void setAsNotification() {
+        String pathName = Utils.writeSoundOnInternalStorage(context, "notification", filename, id);
     }
 
-    private void notification() {
-		setAsNotification(sounds.get(position).getResourceId());
-    }
-
-    private void alarm() {
-		setAsAlarm(sounds.get(position).getResourceId());
-    }
-
-    private void setAsRingtone(String filename, int resource) {
-        String pathName = Utils.writeFileOnInternalStorage(itemView.getContext(), "ringtone",
-                filename, resource);
-        System.out.println(pathName);
-    }
-
-    private void setAsNotification(int resource) {
-        byte[] buffer;
-        InputStream fIn = itemView.getContext().getResources().openRawResource(resource);
-        int size;
-
-        try {
-            size = fIn.available();
-            buffer = new byte[size];
-            fIn.read(buffer);
-            fIn.close();
-        } catch (IOException e) {
-            return;
-        }
-
-			String path = Environment.DIRECTORY_NOTIFICATIONS;
-
-			String filename = Resources.getSystem().getResourceName(resource);
-
-			boolean exists = (new File(path)).exists();
-        if (!exists) {
-            new File(path).mkdirs();
-        }
-
-        FileOutputStream save;
-        try {
-            save = new FileOutputStream(path + filename);
-            save.write(buffer);
-            save.flush();
-            save.close();
-        } catch (IOException e) {
-            return;
-        }
-
-        itemView.getContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file:/" + path + filename)));
-
-        File k = new File(path, filename);
-        ContentValues values = new ContentValues();
-        values.put(MediaStore.MediaColumns.DATA, k.getAbsolutePath());
-        values.put(MediaStore.MediaColumns.TITLE, "Notification");
-        values.put(MediaStore.MediaColumns.MIME_TYPE, "audio/mp3");
-        values.put(MediaStore.Audio.Media.ARTIST, "xToNouSou");
-        values.put(MediaStore.Audio.Media.IS_RINGTONE, true);
-        values.put(MediaStore.Audio.Media.IS_NOTIFICATION, true);
-        values.put(MediaStore.Audio.Media.IS_ALARM, true);
-        values.put(MediaStore.Audio.Media.IS_MUSIC, false);
-
-        //Insert it into the database
-        Uri newUri = itemView.getContext().getContentResolver().insert(MediaStore.Audio.Media.getContentUriForPath(k.getAbsolutePath()), values);
-
-        try {
-            RingtoneManager.setActualDefaultRingtoneUri(itemView.getContext(), RingtoneManager.TYPE_NOTIFICATION, newUri);
-            //showToast("'" + itemName + "' has been set as notification sound!", R.drawable
-			//		.ic_notification_white_24dp);
-        } catch (Throwable t) {
-            System.err.println(t.getMessage());
-        }
-    }
-
-    private void setAsAlarm(int resource) {
-        byte[] buffer;
-        InputStream fIn = itemView.getContext().getResources().openRawResource(resource);
-        int size;
-
-        try {
-            size = fIn.available();
-            buffer = new byte[size];
-            fIn.read(buffer);
-            fIn.close();
-        } catch (IOException e) {
-            return;
-        }
-
-			String path = Environment.DIRECTORY_ALARMS;
-
-			String filename = Resources.getSystem().getResourceName(resource);
-
-			boolean exists = (new File(path)).exists();
-        if (!exists) {
-            new File(path).mkdirs();
-        }
-
-        FileOutputStream save;
-        try {
-            save = new FileOutputStream(path + filename);
-            save.write(buffer);
-            save.flush();
-            save.close();
-        } catch (IOException e) {
-            return;
-        }
-
-        itemView.getContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file:/" + path + filename)));
-
-        File k = new File(path, filename);
-        ContentValues values = new ContentValues();
-        values.put(MediaStore.MediaColumns.DATA, k.getAbsolutePath());
-        values.put(MediaStore.MediaColumns.TITLE, "Alarm");
-        values.put(MediaStore.MediaColumns.MIME_TYPE, "audio/mp3");
-        values.put(MediaStore.Audio.Media.ARTIST, "xToNouSou");
-        values.put(MediaStore.Audio.Media.IS_RINGTONE, true);
-        values.put(MediaStore.Audio.Media.IS_NOTIFICATION, true);
-        values.put(MediaStore.Audio.Media.IS_ALARM, true);
-        values.put(MediaStore.Audio.Media.IS_MUSIC, false);
-
-        //Insert it into the database
-        Uri newUri = itemView.getContext().getContentResolver().insert(MediaStore.Audio.Media.getContentUriForPath(k.getAbsolutePath()), values);
-
-        try {
-            RingtoneManager.setActualDefaultRingtoneUri(itemView.getContext(), RingtoneManager.TYPE_ALARM, newUri);
-            //showToast("'" + itemName + "' has been set as alarm tone!", R.drawable
-			//		.ic_alarm_white_24dp);
-        } catch (Throwable t) {
-            System.err.println(t.getMessage());
-        }
+    void setAsAlarm() {
+        String pathName = Utils.writeSoundOnInternalStorage(context, "alarm", filename, id);
     }
 }
