@@ -1,12 +1,15 @@
 package io.github.xtonousou.soundboardx;
 
+import android.app.AlertDialog;
 import android.app.SearchManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -14,6 +17,7 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,8 +35,7 @@ import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import petrov.kristiyan.colorpicker.ColorPicker;
 
 public class MainActivity extends AppCompatActivity {
-	private static final int WRITE_SETTINGS_PERMISSION = 1;
-
+	private static final int WRITE_SETTINGS_PERMISSION = 1337;
 	private int mColor;
 
 	private Drawer mDrawer;
@@ -88,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 			mSoundPlayer.release();
 			mSoundPlayer = null;
 		}
-    }
+	}
 
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -160,12 +163,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void handlePreferences() {
 		SharedPrefs.init(getPreferences(Context.MODE_PRIVATE));
-		SharedPrefs.getInstance().setFavoritesShown(false);
 		SharedPrefs.getInstance().setAnimationsShown(true);
+		SharedPrefs.getInstance().setFavoritesShown(false);
 
 		if (SharedPrefs.getInstance().isFirstTime()) {
 			SharedPrefs.getInstance().setFirstTime(false);
-			SharedPrefs.getInstance().setSelectedCategory(1);
 			SharedPrefs.getInstance().setSelectedColor(R.color.red);
 		}
 
@@ -188,6 +190,8 @@ public class MainActivity extends AppCompatActivity {
 		getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
 		mFavButton.setOnFavoriteChangeListener((buttonView, favorite) -> {
+			if (mDrawer.isDrawerOpen() && mDrawer != null) mDrawer.closeDrawer();
+
 			if (!SharedPrefs.getInstance().areFavoritesShown()) {
 				((SoundAdapter) mView.getAdapter()).showFavorites();
 			} else {
@@ -209,7 +213,10 @@ public class MainActivity extends AppCompatActivity {
 		Utils.paintThis(mTitleText);
 		Typeface mFont = Typeface.createFromAsset(getAssets(), "fonts/Roboto-BoldCondensed.ttf");
 		mTitleText.setTypeface(mFont);
-		mTitleText.setOnClickListener(view -> mView.smoothScrollToPosition(0));
+		mTitleText.setOnClickListener(view -> {
+			if (mDrawer.isDrawerOpen() && mDrawer != null) mDrawer.closeDrawer();
+			mView.smoothScrollToPosition(0);
+		});
 	}
 
     private void handleFAB() {
@@ -230,10 +237,13 @@ public class MainActivity extends AppCompatActivity {
 
         Utils.paintThis(searchViewText);
 
+        searchView.setOnSearchClickListener(view -> {
+			if (mDrawer.isDrawerOpen() && mDrawer != null) mDrawer.closeDrawer();
+		});
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-            	if (mDrawer.isDrawerOpen()) mDrawer.closeDrawer();
 				return true;
         	}
 

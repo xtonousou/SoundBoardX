@@ -898,7 +898,7 @@ class ParticleManager {
 				
 			case "Sabada":
 				drawableList.add(R.drawable.cat);
-				particle.animateLinearRandomly(drawableList, 15);
+				particle.burstRandomly(drawableList, 15);
 				break;
 				
 			case "Sad Violin":

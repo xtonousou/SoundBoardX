@@ -2,11 +2,7 @@ package io.github.xtonousou.soundboardx;
 
 import android.app.Activity;
 import android.view.View;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.AnticipateInterpolator;
-import android.view.animation.BounceInterpolator;
 import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
 
 import com.plattysoft.leonids.ParticleSystem;
 
@@ -22,12 +18,14 @@ class Particle {
         this.mActivity = (Activity) view.getContext();
     }
 
+    //TODO add seekbar to change scaling (in drawer)
+    //TODO add seekbar to change speed (in drawer)
     void burstRandomly(ArrayList<Integer> drawables, int particles) {
         for (byte i = 0; i < drawables.size(); i++) {
             new ParticleSystem(mActivity, particles, drawables.get(i), 2500)
-                    .setSpeedRange(0.1f, 0.35f)
+                    .setSpeedRange(0.125f, 0.325f)
                     .setFadeOut(750)
-                    .setScaleRange(0.9f, 1.3f)
+                    .setScaleRange(1, 1.65f)
                     .setRotationSpeedRange(0, 200)
                     .oneShot(mView, particles, new DecelerateInterpolator());
         }
@@ -36,7 +34,7 @@ class Particle {
     void burstScaleRandomly(ArrayList<Integer> drawables, int particles) {
         for (byte i = 0; i < drawables.size(); i++) {
             new ParticleSystem(mActivity, particles, drawables.get(i), 2500)
-                    .setSpeedRange(0.1f, 0.3f)
+                    .setSpeedRange(0.125f, 0.325f)
                     .setFadeOut(750)
                     .setScaleRange(1, 2.25f)
                     .oneShot(mView, particles, new DecelerateInterpolator());

@@ -2,6 +2,7 @@ package io.github.xtonousou.soundboardx;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Application;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -35,6 +36,7 @@ import java.util.ArrayList;
 public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		implements Filterable {
 	private static final String TAG = "SoundAdapter";
+	private static final int WRITE_SETTINGS_PERMISSION = 1337;
 
 	private Activity activity;
 	private Typeface font;
@@ -105,26 +107,27 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		notifyDataSetChanged();
 	}
 
-	private boolean handleWriteSettingsPermission() {
+	boolean handleWriteSettingsPermission() {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 			if (Settings.System.canWrite(activity.getApplicationContext())) {
 				return true;
 			} else {
-				AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+				AlertDialog.Builder builder = new AlertDialog.Builder(activity.getApplicationContext());
 
 				builder.setMessage(R.string.modify_settings)
 						.setTitle(R.string.allow_access);
 
 				builder.setPositiveButton(R.string.settings, (dialog, id) -> {
 					Intent intent = new Intent(android.provider.Settings.ACTION_MANAGE_WRITE_SETTINGS);
-					intent.setData(Uri.parse("package" + activity.getPackageName()));
 					intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+					Uri uri = Uri.fromParts("package", activity.getPackageName(), null);
+					intent.setData(uri);
 					activity.startActivity(intent);
 				});
 
 				builder.setNegativeButton(R.string.not_now, (dialog, id) -> Toast.makeText
 						(activity.getApplicationContext(), R.string.permission_needed, Toast
-						.LENGTH_LONG).show());
+								.LENGTH_LONG).show());
 
 				AlertDialog dialog = builder.create();
 				dialog.show();
@@ -156,9 +159,11 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 				@Subscribe(threadMode = ThreadMode.ASYNC)
 				public void onClick(View view) {
 					if (EventBus.getDefault().isRegistered(this)) return;
+
 					if (SharedPrefs.getInstance().areAnimationsShown())
 						new ParticleManager(new Particle(itemView),
 								title.getText().toString()).emit();
+
 					EventBus.getDefault().register(this);
 					EventBus.getDefault().post(sounds.get(getAdapterPosition()));
 					EventBus.getDefault().unregister(this);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  
+
     <string name="app_name" translatable="false">SoundBoardX</string>
     <string name="package_name" translatable="false">io.github.xtonousou.soundboardx</string>
     <string name="fav_desc">Icon with full star</string>
