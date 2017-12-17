@@ -33,10 +33,6 @@ abstract class Utils {
         return metrics.widthPixels;
     }
 
-    static int getSelectedColor() {
-        return SharedPrefs.getInstance().getSelectedColor();
-    }
-
 	static void paintThis(TextView textView) {
 		textView.setTextColor(SharedPrefs.getInstance().getSelectedColor());
 	}
@@ -54,7 +50,6 @@ abstract class Utils {
 	}
 
 	static void paintThis(android.support.v7.widget.Toolbar toolbar) {
-        //toolbar.setBackgroundColor(SharedPrefs.getInstance().getSelectedColor());
 		toolbar.setBackgroundColor(toolbar.getResources().getColor(R.color.colorPrimaryDarker));
     }
 

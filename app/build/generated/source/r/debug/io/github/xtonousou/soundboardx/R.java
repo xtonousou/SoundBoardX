@@ -5691,12 +5691,13 @@ public final class R {
     public static final int path_password_eye_mask_strike_through=0x7f0f008b;
     public static final int path_password_eye_mask_visible=0x7f0f008c;
     public static final int path_password_strike_through=0x7f0f008d;
-    public static final int permission_needed=0x7f0f008e;
-    public static final int ringtone=0x7f0f008f;
-    public static final int search=0x7f0f0090;
-    public static final int search_menu_title=0x7f0f0091;
-    public static final int settings=0x7f0f0092;
-    public static final int status_bar_notification_info_overflow=0x7f0f0093;
+    public static final int permission_granted=0x7f0f008e;
+    public static final int permission_needed=0x7f0f008f;
+    public static final int ringtone=0x7f0f0090;
+    public static final int search=0x7f0f0091;
+    public static final int search_menu_title=0x7f0f0092;
+    public static final int settings=0x7f0f0093;
+    public static final int status_bar_notification_info_overflow=0x7f0f0094;
   }
   public static final class style {
     public static final int ActionButton=0x7f100000;

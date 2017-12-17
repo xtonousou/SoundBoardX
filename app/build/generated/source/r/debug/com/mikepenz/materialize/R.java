@@ -1091,8 +1091,8 @@ public final class R {
         public static final int library_materialize_owner = 0x7f0f0078;
         public static final int library_materialize_repositoryLink = 0x7f0f0079;
         public static final int library_materialize_year = 0x7f0f007a;
-        public static final int search_menu_title = 0x7f0f0091;
-        public static final int status_bar_notification_info_overflow = 0x7f0f0093;
+        public static final int search_menu_title = 0x7f0f0092;
+        public static final int status_bar_notification_info_overflow = 0x7f0f0094;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f100001;

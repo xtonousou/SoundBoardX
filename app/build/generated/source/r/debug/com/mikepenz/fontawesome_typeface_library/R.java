@@ -792,8 +792,8 @@ public final class R {
         public static final int library_FontAwesome_licenseId = 0x7f0f004e;
         public static final int library_FontAwesome_repositoryLink = 0x7f0f004f;
         public static final int library_FontAwesome_year = 0x7f0f0050;
-        public static final int search_menu_title = 0x7f0f0091;
-        public static final int status_bar_notification_info_overflow = 0x7f0f0093;
+        public static final int search_menu_title = 0x7f0f0092;
+        public static final int status_bar_notification_info_overflow = 0x7f0f0094;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f100001;

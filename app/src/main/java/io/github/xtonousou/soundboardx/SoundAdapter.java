@@ -36,12 +36,12 @@ import java.util.ArrayList;
 public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		implements Filterable {
 	private static final String TAG = "SoundAdapter";
-	private static final int WRITE_SETTINGS_PERMISSION = 1337;
 
 	private Activity activity;
 	private Typeface font;
 	private ArrayList<Sound> sounds;
 	private ArrayList<Sound> soundsCopy;
+	private boolean menuItemFlag = true;
 
 	SoundAdapter(Activity activity) {
 		this.activity = activity;
@@ -163,6 +163,8 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 
 		@Override
 		public boolean onMenuItemClick(MenuItem menuItem) {
+			menuItemFlag = !menuItemFlag;
+			SharedPrefs.getInstance().setMenuItemClick(menuItemFlag);
 			ToneManager tone = new ToneManager(activity, itemView, title.getText().toString(),
 					getAdapterPosition());
 			switch (menuItem.getTitle().toString()) {

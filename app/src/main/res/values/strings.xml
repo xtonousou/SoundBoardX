@@ -35,5 +35,6 @@
     <string name="settings">SETTINGS</string>
     <string name="not_now">NOT NOW</string>
     <string name="permission_needed">Permission needed</string>
+    <string name="permission_granted">Permission granted</string>
 
 </resources>

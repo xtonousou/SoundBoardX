@@ -851,8 +851,8 @@ public final class R {
         public static final int colorpicker_dialog_cancel = 0x7f0f0029;
         public static final int colorpicker_dialog_ok = 0x7f0f002a;
         public static final int colorpicker_dialog_title = 0x7f0f002b;
-        public static final int search_menu_title = 0x7f0f0091;
-        public static final int status_bar_notification_info_overflow = 0x7f0f0093;
+        public static final int search_menu_title = 0x7f0f0092;
+        public static final int status_bar_notification_info_overflow = 0x7f0f0094;
     }
     public static final class style {
         public static final int ActionButton = 0x7f100000;

@@ -43,7 +43,7 @@ class SharedPrefs {
     }
 
     int getSelectedColor() {
-        return prefs.getInt("color", -1);
+        return prefs.getInt("color", -769226);
     }
 
     boolean areAnimationsShown() {
@@ -62,11 +62,7 @@ class SharedPrefs {
 		prefs.edit().putBoolean("favorites", favoritesShown).apply();
 	}
 
-    boolean isFirstTime() {
-        return prefs.getBoolean("newbie", true);
-    }
-
-    void setFirstTime(boolean firstTime) {
-        prefs.edit().putBoolean("newbie", firstTime).apply();
+    void setMenuItemClick(boolean click) {
+        prefs.edit().putBoolean("set_as", click).apply();
     }
 }

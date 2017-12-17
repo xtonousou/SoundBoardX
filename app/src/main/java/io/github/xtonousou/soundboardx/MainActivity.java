@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
 		handlePreferences();
 		handleReflections();
 
+		handleWriteSettingsPermission();
+
 		handleFAB();
 		handleView();
 		handleTitle();
@@ -69,13 +71,14 @@ public class MainActivity extends AppCompatActivity {
 		handleDrawer();
 
 		handlePowerSaverMode();
-		handleWriteSettingsPermission();
 	}
 
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
 		unregisterReceiver(mPowerSaverChangeReceiver);
+		SharedPrefs.getInstance().getPrefs().unregisterOnSharedPreferenceChangeListener
+				(prefListener);
 		if (mSoundPlayer != null) {
 			mSoundPlayer.release();
 			mSoundPlayer = null;
@@ -116,13 +119,42 @@ public class MainActivity extends AppCompatActivity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		System.out.println(requestCode + "\n" + resultCode + "\n" + data);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+				&& requestCode == WRITE_SETTINGS_PERMISSION) {
+			if (Settings.System.canWrite(this))
+				Toast.makeText(MainActivity.this, R.string.permission_granted,
+						Toast.LENGTH_SHORT).show();
+			else Toast.makeText(MainActivity.this, R.string.permission_needed,
+					Toast.LENGTH_LONG).show();
+		}
 	}
 
-	public void handleWriteSettingsPermission() {
+	private void handleWriteSettingsPermission() {
 		prefListener = (prefs, key) -> {
-			System.out.println(prefs + "\n" + key);
+			if (key.equalsIgnoreCase("set_as")
+					&& Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+					&& !Settings.System.canWrite(MainActivity.this)) {
+				AlertDialog.Builder builder = new AlertDialog.Builder
+						(MainActivity.this);
+
+				builder.setMessage(R.string.modify_settings)
+						.setTitle(R.string.allow_access);
+
+				builder.setPositiveButton(R.string.settings, (dialog, id) -> {
+					Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS, Uri
+							.parse("package:" + getPackageName()));
+					startActivityForResult(intent, WRITE_SETTINGS_PERMISSION);
+				});
+
+				builder.setNegativeButton(R.string.not_now, (dialog, id) -> Toast.makeText
+						(MainActivity.this, R.string.permission_needed,
+								Toast.LENGTH_LONG).show());
+
+				AlertDialog dialog = builder.create();
+				dialog.show();
+			}
 		};
+
 		SharedPrefs.getInstance().getPrefs().registerOnSharedPreferenceChangeListener(prefListener);
 	}
 
@@ -176,13 +208,7 @@ public class MainActivity extends AppCompatActivity {
 		SharedPrefs.init(getPreferences(Context.MODE_PRIVATE));
 		SharedPrefs.getInstance().setAnimationsShown(true);
 		SharedPrefs.getInstance().setFavoritesShown(false);
-
-		if (SharedPrefs.getInstance().isFirstTime()) {
-			SharedPrefs.getInstance().setFirstTime(false);
-			SharedPrefs.getInstance().setSelectedColor(R.color.red);
-		}
-
-		mColor = Utils.getSelectedColor();
+		mColor = SharedPrefs.getInstance().getSelectedColor();
 	}
 
 	private void handleReflections() {
@@ -213,8 +239,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void handleView() {
 		mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
-				.getInteger(R.integer.num_cols),
-				StaggeredGridLayoutManager.VERTICAL));
+				.getInteger(R.integer.num_cols), StaggeredGridLayoutManager.VERTICAL));
 		mView.setAdapter(new SoundAdapter(MainActivity.this));
 		((SoundAdapter) mView.getAdapter()).showPrevious();
 		mView.addItemDecoration(new BottomOffsetDecoration(225));
