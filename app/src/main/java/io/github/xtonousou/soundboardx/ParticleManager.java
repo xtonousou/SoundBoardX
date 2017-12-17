@@ -410,7 +410,7 @@ class ParticleManager {
 				particle.burstRandomly(drawableList, 10);
 				break;
 				
-			case "Morgan Freeman: He Knew He F*cked Up":
+			case "He Knew He F*cked Up":
 				drawableList.add(R.drawable.heknewhefuckedup);
 				particle.burstScaleRandomly(drawableList, 15);
 				break;
