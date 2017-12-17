@@ -33,7 +33,7 @@ Compiled with SDK version `27` and built with SDK version `27.0.2`
 * Consecutive clicking on sounds and on mute button at the same time, crashes the `SoundPlayer`
   * What does it affect?
     * Mute button: Does not work
-    * Sounds: Are being played at the background (more than one at the same time)
+    * Sounds: Are being played at the background (more than once at the same time)
   * How to bypass the issue?
     * **Fully** restart the application
 * Drawer's entries are partially hidden on:
