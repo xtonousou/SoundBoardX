@@ -107,39 +107,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		notifyDataSetChanged();
 	}
 
-	boolean handleWriteSettingsPermission() {
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-			if (Settings.System.canWrite(activity.getApplicationContext())) {
-				return true;
-			} else {
-				AlertDialog.Builder builder = new AlertDialog.Builder(activity.getApplicationContext());
-
-				builder.setMessage(R.string.modify_settings)
-						.setTitle(R.string.allow_access);
-
-				builder.setPositiveButton(R.string.settings, (dialog, id) -> {
-					Intent intent = new Intent(android.provider.Settings.ACTION_MANAGE_WRITE_SETTINGS);
-					intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-					Uri uri = Uri.fromParts("package", activity.getPackageName(), null);
-					intent.setData(uri);
-					activity.startActivity(intent);
-				});
-
-				builder.setNegativeButton(R.string.not_now, (dialog, id) -> Toast.makeText
-						(activity.getApplicationContext(), R.string.permission_needed, Toast
-								.LENGTH_LONG).show());
-
-				AlertDialog dialog = builder.create();
-				dialog.show();
-
-				if (Settings.System.canWrite(activity.getApplicationContext())) {
-					return true;
-				}
-			}
-		}
-		return true;
-	}
-
 	public class ViewHolder extends RecyclerView.ViewHolder implements
 			View.OnCreateContextMenuListener,
 			MenuItem.OnMenuItemClickListener {
@@ -196,7 +163,6 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 
 		@Override
 		public boolean onMenuItemClick(MenuItem menuItem) {
-			handleWriteSettingsPermission();
 			ToneManager tone = new ToneManager(activity, itemView, title.getText().toString(),
 					getAdapterPosition());
 			switch (menuItem.getTitle().toString()) {

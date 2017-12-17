@@ -6,7 +6,9 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 	private FloatingActionButton mFabMute;
 	private MaterialFavoriteButton mFavButton;
 	private BroadcastReceiver mPowerSaverChangeReceiver;
+	private SharedPreferences.OnSharedPreferenceChangeListener prefListener;
 
 	/*
 	 * Do not change the order of the code.
@@ -66,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 		handleDrawer();
 
 		handlePowerSaverMode();
+		handleWriteSettingsPermission();
 	}
 
 	@Override
@@ -112,7 +116,14 @@ public class MainActivity extends AppCompatActivity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		System.out.println("request code: " + requestCode + ", result code:  " + resultCode);
+		System.out.println(requestCode + "\n" + resultCode + "\n" + data);
+	}
+
+	public void handleWriteSettingsPermission() {
+		prefListener = (prefs, key) -> {
+			System.out.println(prefs + "\n" + key);
+		};
+		SharedPrefs.getInstance().getPrefs().registerOnSharedPreferenceChangeListener(prefListener);
 	}
 
 	private void handlePowerSaverMode() {
@@ -175,9 +186,9 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	private void handleReflections() {
-		mView      = findViewById(R.id.grid_view);
-		mToolbar   = findViewById(R.id.toolbar);
-		mFabMute   = findViewById(R.id.fab);
+		mView = findViewById(R.id.grid_view);
+		mToolbar = findViewById(R.id.toolbar);
+		mFabMute = findViewById(R.id.fab);
 		mFavButton = findViewById(R.id.fav_button);
 		mTitleText = findViewById(R.id.title_view);
 	}
@@ -230,9 +241,10 @@ public class MainActivity extends AppCompatActivity {
     private void handleSearchView(Menu menu) {
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
-        if (searchManager != null) {
+
+        if (searchManager != null)
             searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        }
+
         SearchView.SearchAutoComplete searchViewText = searchView.findViewById(R.id.search_src_text);
 
         Utils.paintThis(searchViewText);
@@ -414,7 +426,6 @@ public class MainActivity extends AppCompatActivity {
 			public void onCancel() {
 				mColorPicker.dismissDialog();
 			}
-
 		}).setColumns(4).setRoundColorButton(true).show();
 	}
 

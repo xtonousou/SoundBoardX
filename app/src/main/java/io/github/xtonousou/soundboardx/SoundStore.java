@@ -105,6 +105,8 @@ abstract class SoundStore {
         TypedArray musicSounds = res.obtainTypedArray(R.array.musicSounds);
         TypedArray musicSoundsIDs = res.obtainTypedArray(R.array.musicSoundsIDs);
 
+        System.out.println(musicSounds.length() + "\n" + musicSoundsIDs.length());
+
         ArrayList<Sound> sounds = new ArrayList<>();
 
         final int musicSounds_length = musicSounds.length();
