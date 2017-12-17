@@ -98,6 +98,7 @@
         <item>Inuyashiki: Da-Da-Da</item>
         <item>It\' s 04:20 Meng…</item>
         <item>Jamie Foxx: Pierre Come Out Here</item>
+		<item>Jason Derulo: Whatcha Say</item>
         <item>John Cena</item>
         <item>JoJo: Dorarara</item>
         <item>JoJo: Kono Dio Da!</item>
@@ -198,7 +199,6 @@
         <item>Two And A Half Men: Intro</item>
         <item>U WOT M8</item>
         <item>Weird Laugh</item>
-        <item>Whatcha Say</item>
         <item>What Else?</item>
         <item>What Is Going On Here?</item>
         <item>Windows XP</item>
@@ -307,6 +307,7 @@
         <item>@raw/movies_inuyashikidadada</item>
 		<item>@raw/funny_a420</item>
 		<item>@raw/movies_pierrecomeouthere</item>
+		<item>@raw/funny_whatcha_say</item>
 		<item>@raw/funny_johncena</item>
 		<item>@raw/movies_dorarara</item>
 		<item>@raw/movies_konodioda</item>
@@ -407,7 +408,6 @@
 		<item>@raw/movies_twohalfmen</item>
 		<item>@raw/movies_uwotmate</item>
 		<item>@raw/funny_laugh</item>
-		<item>@raw/funny_whatcha_say</item>
 		<item>@raw/funny_whatelse</item>
         <item>@raw/funny_bekfast</item>
 		<item>@raw/funny_windowsxp</item>
@@ -464,6 +464,7 @@
         <item>Immigrants Cause Cancer</item>
         <item>Inception</item>
         <item>It\' s 04:20 Meng…</item>
+		<item>Jason Derulo: Whatcha Say</item>
         <item>John Cena</item>
         <item>Kazoo Kid: Fun</item>
         <item>Kazoo Kid: Kazoo</item>
@@ -501,7 +502,6 @@
         <item>Trapaholics: Damn Son!</item>
         <item>Trap Theme</item>
         <item>Weird Laugh</item>
-        <item>Whatcha Say</item>
         <item>What Else?</item>
         <item>What Is Going On Here?</item>
         <item>Windows XP</item>
@@ -556,6 +556,7 @@
         <item>@raw/funny_immigrants</item>
         <item>@raw/funny_inception</item>
 		<item>@raw/funny_a420</item>
+		<item>@raw/funny_whatcha_say</item>
 		<item>@raw/funny_johncena</item>
 		<item>@raw/funny_fun</item>
 		<item>@raw/funny_kazoo</item>
@@ -581,7 +582,9 @@
 		<item>@raw/funny_shotsfired</item>
         <item>@raw/funny_shutdownglitched</item>
         <item>@raw/funny_smokeweedeveryday</item>
-		<item>@raw/funny_spookyscaryskeletons</item> <item>@raw/funny_squeeek</item><item>@raw/funny_stfu</item>
+		<item>@raw/funny_spookyscaryskeletons</item>
+		<item>@raw/funny_squeeek</item>
+		<item>@raw/funny_stfu</item>
         <item>@raw/funny_suicide1</item>
         <item>@raw/funny_suicide2</item>
 		<item>@raw/funny_niggers</item>
@@ -591,7 +594,6 @@
 		<item>@raw/funny_damnson</item>
         <item>@raw/funny_itsatrap</item>
         <item>@raw/funny_laugh</item>
-		<item>@raw/funny_whatcha_say</item>
         <item>@raw/funny_whatelse</item>
         <item>@raw/funny_bekfast</item>
 		<item>@raw/funny_windowsxp</item>
@@ -668,194 +670,192 @@
 
     <!-- Movies Sounds -->
     <string-array name="moviesSounds">
-        <item>Back To The Future: Theme</item>
-        <item>Badadipoopi</item>
-        <item>Bleach: BANKAI</item>
-        <item>Bazinga</item>
+		<item>Back To The Future: Theme</item>
         <item>Belair: Intro</item>
+        <item>Big Bang Theory: Bazinga</item>
+        <item>Bleach: BANKAI</item>
+        <item>Bleach: Senbonzakura Kageyoshi</item>
         <item>Blend S: Intro</item>
-        <item>Star Wars: Chewbacca</item>
+        <item>Darth Vader: I\'m Your Father</item>
         <item>Darth Vader</item>
-        <item>Rick And Morty: Disqualified</item>
-        <item>The Simpsons: Doh</item>
-        <item>JoJo: Dorarara</item>
+        <item>Dragon Ball: Kamehameha</item>
+        <item>Family Guy: Badadipoopi</item>
         <item>Fast n\' Furious: Theme</item>
         <item>FOTNS: NANI?</item>
-        <item>FOTNS: OWMS Noise</item>
         <item>FOTNS: Omae Wa Mou Shindeiru</item>
-        <item>Rick And Morty: Get Schwifty</item>
+        <item>FOTNS: OWMS Noise</item>
         <item>Godzilla</item>
-        <item>Rick And Morty: Look At Meee</item>
-        <item>Darth Vader: I\'m Your Father</item>
         <item>Inuyashiki: Bam</item>
         <item>Inuyashiki: Da-Da-Da</item>
-        <item>Dragon Ball: Kamehameha</item>
-        <item>Naruto: Katon: Goukakyou No Jutsu</item>
+        <item>Jamie Foxx: Pierre Come Out Here</item>
+        <item>JoJo: Dorarara</item>
         <item>JoJo: Kono Dio Da!</item>
+        <item>JoJo: Muda Muda Muda</item>
+        <item>JoJo: Ora Ora Ora</item>
+        <item>JoJo: ZA WARUDO!</item>
         <item>Law And Order: Theme</item>
         <item>LOTR: MLG</item>
-        <item>JoJo: Muda Muda Muda</item>
         <item>LOTR: Nazgul</item>
+        <item>Naruto: Katon: Goukakyou No Jutsu</item>
+        <item>Naruto: Oodama Rasengan</item>
+        <item>Naruto: Rasengan</item>
+        <item>Naruto: Sharingan</item>
+		<item>Oompaloompa</item>
+        <item>Pornhub</item>
+        <item>Rick And Morty: Disqualified</item>
+        <item>Rick And Morty: Get Schwifty</item>
+        <item>Rick And Morty: Look At Meee</item>
         <item>Rick And Morty: Oh Whee</item>
         <item>Rick And Morty: Okay</item>
-        <item>Naruto: Oodama Rasengan</item>
-		<item>Oompaloompa</item>
-        <item>JoJo: Ora Ora Ora</item>
-        <item>Jamie Foxx: Pierre Come Out Here</item>
-        <item>Pornhub</item>
-        <item>Naruto: Rasengan</item>
-        <item>Yurikuma Arashi: Sabada</item>
-        <item>Bleach: Senbonzakura Kageyoshi</item>
-        <item>Naruto: Sharingan</item>
         <item>Rick And Morty: SHOW ME WHAT YOU GOT</item>
+        <item>Rick And Morty: WLDD</item>
         <item>Rick Harrison: This Is My Pawn Shop</item>
+        <item>Scary Movie: Wazzup</item>
+        <item>Star Wars: Chewbacca</item>
         <item>Steins Gate: Tuturu</item>
+        <item>The Simpsons: Doh</item>
         <item>Two And A Half Men: Intro</item>
         <item>U WOT M8</item>
-        <item>Scary Movie: Wazzup</item>
-        <item>Rick And Morty: WLDD</item>
-        <item>JoJo: ZA WARUDO!</item>
+        <item>Yurikuma Arashi: Sabada</item>
     </string-array>
 
     <integer-array name="moviesSoundsIDs">
         <item>@raw/movies_backtothefuture</item>
-        <item>@raw/movies_badadipoopi</item>
-        <item>@raw/movies_bankai</item>
-        <item>@raw/movies_bazinga</item>
-        <item>@raw/movies_belair</item>
-        <item>@raw/movies_blends</item>
-        <item>@raw/movies_chewbacca</item>
-        <item>@raw/movies_darthvader</item>
-        <item>@raw/movies_disqualified</item>
-        <item>@raw/movies_doh</item>
-        <item>@raw/movies_dorarara</item>
-        <item>@raw/movies_fastnfurious</item>
-        <item>@raw/movies_fotnsnani</item>
+		<item>@raw/movies_belair</item>
+		<item>@raw/movies_bazinga</item>
+		<item>@raw/movies_bankai</item>
+		<item>@raw/movies_senbonkageyoshi</item>
+		<item>@raw/movies_blends</item>
+		<item>@raw/movies_imyourfather</item>
+		<item>@raw/movies_darthvader</item>
+		<item>@raw/movies_kamehameha</item>
+		<item>@raw/movies_badadipoopi</item>
+		<item>@raw/movies_fastnfurious</item>
+		<item>@raw/movies_fotnsnani</item>
+		<item>@raw/movies_fotnsomaewamoushindeiru</item>
         <item>@raw/movies_fotnsnoise</item>
-        <item>@raw/movies_fotnsomaewamoushindeiru</item>
-        <item>@raw/movies_getschwifty</item>
-        <item>@raw/movies_godzilla</item>
-        <item>@raw/movies_immlam</item>
-        <item>@raw/movies_imyourfather</item>
-        <item>@raw/movies_inuyashikibam</item>
+		<item>@raw/movies_godzilla</item>
+		<item>@raw/movies_inuyashikibam</item>
         <item>@raw/movies_inuyashikidadada</item>
-        <item>@raw/movies_kamehameha</item>
-        <item>@raw/movies_katon</item>
-        <item>@raw/movies_konodioda</item>
-        <item>@raw/movies_lawandorder</item>
-        <item>@raw/movies_lotr</item>
-        <item>@raw/movies_mudamudamuda</item>
-        <item>@raw/movies_nazgul</item>
-        <item>@raw/movies_ohwhee</item>
+		<item>@raw/movies_pierrecomeouthere</item>
+		<item>@raw/movies_dorarara</item>
+		<item>@raw/movies_konodioda</item>
+		<item>@raw/movies_mudamudamuda</item>
+		<item>@raw/movies_oraoraora</item>
+		<item>@raw/movies_zawarudo</item>
+		<item>@raw/movies_lawandorder</item>
+		<item>@raw/movies_lotr</item>
+		<item>@raw/movies_nazgul</item>
+		<item>@raw/movies_katon</item>
+		<item>@raw/movies_oodamarasengan</item>
+		<item>@raw/movies_rasengan</item>
+		<item>@raw/movies_sharingan</item>
+		<item>@raw/movies_oompaloompa</item>
+		<item>@raw/movies_pornhub</item>
+		<item>@raw/movies_disqualified</item>
+		<item>@raw/movies_getschwifty</item>
+		<item>@raw/movies_immlam</item>
+		<item>@raw/movies_ohwhee</item>
         <item>@raw/movies_okay</item>
-        <item>@raw/movies_oodamarasengan</item>
-        <item>@raw/movies_oompaloompa</item>
-        <item>@raw/movies_oraoraora</item>
-        <item>@raw/movies_pierrecomeouthere</item>
-        <item>@raw/movies_pornhub</item>
-        <item>@raw/movies_rasengan</item>
-        <item>@raw/movies_sabada</item>
-        <item>@raw/movies_senbonkageyoshi</item>
-        <item>@raw/movies_sharingan</item>
-        <item>@raw/movies_smwyg</item>
-        <item>@raw/movies_thisismypawnshop</item>
-        <item>@raw/movies_tuturu</item>
-        <item>@raw/movies_twohalfmen</item>
-        <item>@raw/movies_uwotmate</item>
-        <item>@raw/movies_wazzup</item>
-        <item>@raw/movies_wldd</item>
-        <item>@raw/movies_zawarudo</item>
+		<item>@raw/movies_smwyg</item>
+		<item>@raw/movies_wldd</item>
+		<item>@raw/movies_thisismypawnshop</item>
+		<item>@raw/movies_wazzup</item>
+		<item>@raw/movies_chewbacca</item>
+		<item>@raw/movies_tuturu</item>
+		<item>@raw/movies_doh</item>
+		<item>@raw/movies_twohalfmen</item>
+		<item>@raw/movies_uwotmate</item>
+		<item>@raw/movies_sabada</item>
     </integer-array>
 
 
     <!-- Music Sounds -->
     <string-array name="musicSounds">
-        <item>Big Shaq: 2 + 2 = 4</item>
         <item>21 Savage: 21</item>
+		<item>Big Shaq: 2 + 2 = 4</item>
         <item>Big Shaq: 1234</item>
-        <item>Lil Uzi Vert: All My Friends Are Dead</item>
-        <item>Kendrick Lamar: Biaaatch</item>
-        <item>Big Shaq</item>
         <item>Big Shaq: Boom</item>
         <item>Big Shaq: Check The Statistics</item>
-        <item>Lil Pump: Esketit</item>
-        <item>Lil Pump: Gucci Gang</item>
         <item>Big Shaq: Hold Tight Asznee</item>
-        <item>Denzel Curry: I Am The One</item>
-        <item>Desiigner: Kieee</item>
-        <item>Lil Pump: Laugh</item>
-        <item>Lil Pump: Seventy Ni**a</item>
         <item>Big Shaq: Look At Your Nose</item>
         <item>Big Shaq: Mans Not Hot</item>
         <item>Big Shaq: No Ketchup</item>
-        <item>Offset: Offset</item>
         <item>Big Shaq: Ossnaa</item>
-        <item>Desiigner: Panda</item>
         <item>Big Shaq: Pa-Pa-Ka-Ka-Ka</item>
         <item>Big Shaq: Quick Mafs</item>
         <item>Big Shaq: Quick Mafs Full</item>
-        <item>Migos: Rain Drop Drop Top</item>
         <item>Big Shaq: Ratnum</item>
         <item>Big Shaq: Raw Sauce</item>
-        <item>Desiigner: Rrraa</item>
-        <item>Juicy J: Satafaka</item>
         <item>Big Shaq: Scootnum</item>
-        <item>Bobby Shmurda: Ah-Ah-Ahhh</item>
         <item>Big Shaq: Skidiki-Pa-Pa</item>
         <item>Big Shaq: Skrrrrrra</item>
-        <item>Madeintyo: Skrrt Skrrt</item>
-        <item>Madeintyo: Skr Skr</item>
         <item>Big Shaq: Skyaaa</item>
         <item>Big Shaq: Smoke Trees</item>
-        <item>Fetty Wap: Squaw</item>
-        <item>Lil Uzi Vert: Yah-Yah-Yah</item>
-        <item>Juicy J: Yea Hoe</item>
         <item>Big Shaq: You D*ckhead</item>
+        <item>Big Shaq</item>
+        <item>Bobby Shmurda: Ah-Ah-Ahhh</item>
+        <item>Denzel Curry: I Am The One</item>
+        <item>Desiigner: Kieee</item>
+        <item>Desiigner: Panda</item>
+        <item>Desiigner: Rrraa</item>
+        <item>Fetty Wap: Squaw</item>
+        <item>Juicy J: Satafaka</item>
+        <item>Juicy J: Yea Hoe</item>
+        <item>Kendrick Lamar: Biaaatch</item>
+        <item>Lil Pump: Esketit</item>
+        <item>Lil Pump: Gucci Gang</item>
+        <item>Lil Pump: Laugh</item>
+        <item>Lil Pump: Seventy Ni**a</item>
+        <item>Lil Uzi Vert: All My Friends Are Dead</item>
+        <item>Lil Uzi Vert: Yah-Yah-Yah</item>
+        <item>Madeintyo: Skrrt Skrrt</item>
+        <item>Madeintyo: Skr Skr</item>
+        <item>Migos: Rain Drop Drop Top</item>
+        <item>Offset: Offset</item>
         <item>Soulja Boy: Youuuu</item>
     </string-array>
 
     <integer-array name="musicSoundsIDs">
-        <item>@raw/music_2plus2</item>
         <item>@raw/music_21</item>
-        <item>@raw/music_1234</item>
-        <item>@raw/music_allmyfriendsaredead</item>
-        <item>@raw/music_biaaatch</item>
-        <item>@raw/music_bigshaq</item>
-        <item>@raw/music_boom</item>
+		<item>@raw/music_2plus2</item>
+		<item>@raw/music_1234</item>
+		<item>@raw/music_boom</item>
         <item>@raw/music_checkthestatistics</item>
-        <item>@raw/music_esketit</item>
+		<item>@raw/music_holdtightasznee</item>
+		<item>@raw/music_lookatyournose</item>
+		<item>@raw/music_mansnothot</item>
+        <item>@raw/music_noketchup</item>
+		<item>@raw/music_ossnaa</item>
+		<item>@raw/music_papakakaka</item>
+		<item>@raw/music_quickmathsfull</item>
+		<item>@raw/music_quickmafs</item>
+		<item>@raw/music_ratnum</item>
+        <item>@raw/music_rawsauce</item>
+		<item>@raw/music_scootnum</item>
+		<item>@raw/music_skidikipapa</item>
+        <item>@raw/music_skrrrrrra</item>
+		<item>@raw/music_skyaaa</item>
+        <item>@raw/music_smoketrees</item>
+		<item>@raw/music_youdickhead</item>
+		<item>@raw/music_bigshaq</item>
+		<item>@raw/music_shmurda</item>
+		<item>@raw/music_iamtheone</item>
+		<item>@raw/music_kieee</item>
+		<item>@raw/music_panda</item>
+		<item>@raw/music_rrraa</item>
+		<item>@raw/music_squaw</item>
+		<item>@raw/music_biaaatch</item>
+		<item>@raw/music_esketit</item>
         <item>@raw/music_guccigang</item>
-        <item>@raw/music_holdtightasznee</item>
-        <item>@raw/music_iamtheone</item>
-        <item>@raw/music_kieee</item>
         <item>@raw/music_lilplaugh</item>
         <item>@raw/music_lilpseventynigga</item>
-        <item>@raw/music_lookatyournose</item>
-        <item>@raw/music_mansnothot</item>
-        <item>@raw/music_noketchup</item>
-        <item>@raw/music_offset</item>
-        <item>@raw/music_ossnaa</item>
-        <item>@raw/music_panda</item>
-        <item>@raw/music_papakakaka</item>
-        <item>@raw/music_quickmafs</item>
-        <item>@raw/music_quickmathsfull</item>
-        <item>@raw/music_raindropdroptop</item>
-        <item>@raw/music_ratnum</item>
-        <item>@raw/music_rawsauce</item>
-        <item>@raw/music_rrraa</item>
-        <item>@raw/music_satafaka</item>
-        <item>@raw/music_scootnum</item>
-        <item>@raw/music_shmurda</item>
-        <item>@raw/music_skidikipapa</item>
-        <item>@raw/music_skrrrrrra</item>
-        <item>@raw/music_skrrtskrrt</item>
-        <item>@raw/music_skrskr</item>
-        <item>@raw/music_skyaaa</item>
-        <item>@raw/music_smoketrees</item>
-        <item>@raw/music_squaw</item>
-        <item>@raw/music_yahyahyah</item>
-        <item>@raw/music_yeahoe</item>
-        <item>@raw/music_youdickhead</item>
-        <item>@raw/music_youuuu</item>
+		<item>@raw/music_allmyfriendsaredead</item>
+		<item>@raw/music_yahyahyah</item>
+		<item>@raw/music_skrrtskrrt</item>
+		<item>@raw/music_skrskr</item>
+		<item>@raw/music_raindropdroptop</item>
+		<item>@raw/music_offset</item>
+		<item>@raw/music_youuuu</item>
     </integer-array>
 </resources>

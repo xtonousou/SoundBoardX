@@ -71,7 +71,7 @@ class ParticleManager {
 				particle.burstScaleRandomly(drawableList, 10);
 				break;
 				
-			case "Bazinga":
+			case "Big Bang Theory: Bazinga":
 				drawableList.add(R.drawable.bazinga);
 				particle.burstRandomly(drawableList, 10);
 				break;
@@ -373,7 +373,7 @@ class ParticleManager {
 				break;
 				
 			case "FOTNS: NANI?":
-				drawableList.add(R.drawable.fotnsnani);
+				drawableList.add(R.drawable.questionmark);
 				particle.burstRandomly(drawableList, 20);
 				break;
 				
@@ -416,7 +416,7 @@ class ParticleManager {
 				break;
 				
 			case "Headshot":
-				drawableList.add(R.drawable.omg);
+				drawableList.add(R.drawable.headshot);
 				drawableList.add(R.drawable.snipershot);
 				particle.burstRandomly(drawableList, 10);
 				break;
@@ -695,7 +695,6 @@ class ParticleManager {
 				
 			case "Ni**er\'s Satisfaction":
 				drawableList.add(R.drawable.a);
-				drawableList.add(R.drawable.a2);
 				drawableList.add(R.drawable.watermelon);
 				particle.burstRandomly(drawableList, 25);
 				break;
@@ -1064,7 +1063,7 @@ class ParticleManager {
 				break;
 				
 			case "Weird Laugh":
-				drawableList.add(R.drawable.dedotadedwam);
+				drawableList.add(R.drawable.questionmark);
 				drawableList.add(R.drawable.laugh);
 				particle.burstRandomly(drawableList, 25);
 				break;
@@ -1086,7 +1085,7 @@ class ParticleManager {
 				particle.burstRandomly(drawableList, 25);
 				break;
 				
-			case "Whatcha Say":
+			case "Jason Derulo: Whatcha Say":
 				drawableList.add(R.drawable.whatcha_say);
 				particle.burstScaleRandomly(drawableList, 25);
 				break;
