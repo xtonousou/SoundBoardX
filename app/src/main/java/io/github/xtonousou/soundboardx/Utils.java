@@ -36,20 +36,21 @@ abstract class Utils {
 			mResourceId) {
 		if (isExternalStorageReadOnly()) {
 			Toast.makeText(mContext, R.string.storage_ro,
-					Toast.LENGTH_LONG).show();
+					Toast.LENGTH_SHORT).show();
 			return "";
 		}
 
 		if (!isExternalStorageAvailable()) {
 			Toast.makeText(mContext, R.string.storage_unavailable,
-					Toast.LENGTH_LONG).show();
+					Toast.LENGTH_SHORT).show();
 			return "";
 		}
 
 		InputStream inputStream;
 		FileOutputStream outputStream;
 
-		String pathName = Environment.getExternalStorageDirectory() + File.separator + R.string.app_name;
+		String pathName = Environment.getExternalStorageDirectory() + File.separator +
+				mContext.getString(R.string.app_name);
 
 		switch (mType) {
 			case "ringtone":

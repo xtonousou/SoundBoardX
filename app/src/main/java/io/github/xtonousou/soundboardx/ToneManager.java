@@ -6,8 +6,6 @@ import android.view.View;
 import java.util.ArrayList;
 
 class ToneManager {
-    private static final String TAG = "ToneManager";
-
     private View itemView;
     private Context context;
     private ArrayList<Sound> sounds;
@@ -28,7 +26,6 @@ class ToneManager {
 
     void setAsRingtone() {
         String pathName = Utils.writeSoundOnInternalStorage(context, "ringtone", filename, id);
-        System.out.println(pathName);
     }
 
     void setAsNotification() {

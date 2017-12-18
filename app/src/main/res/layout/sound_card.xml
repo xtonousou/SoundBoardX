@@ -22,8 +22,7 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:background="@null"
-            android:contentDescription="@string/not_fav_desc" />
+            android:background="@null"/>
 
         <TextView
             android:id="@+id/title"

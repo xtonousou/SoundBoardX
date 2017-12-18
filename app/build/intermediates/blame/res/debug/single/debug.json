@@ -372,10 +372,6 @@
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/oraoraora.png"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/xml_searchable.xml.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/xml/searchable.xml"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/raw_funny_badumtss.mp3.flat",
         "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/raw/funny_badumtss.mp3"
     },

@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-public class BottomOffsetDecoration  extends RecyclerView.ItemDecoration {
+class BottomOffsetDecoration  extends RecyclerView.ItemDecoration {
     private int mBottomOffset;
 
     BottomOffsetDecoration(int bottomOffset) {

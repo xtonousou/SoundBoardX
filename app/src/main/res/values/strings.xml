@@ -3,8 +3,6 @@
 
     <string name="app_name">SoundBoardX</string>
 
-    <string name="fav_desc">icon with heart</string>
-    <string name="not_fav_desc">Icon with empty heart</string>
     <string name="search">Search</string>
 
     <string name="categories">Categories</string>

@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 	private static final int WRITE_SETTINGS_PERMISSION = 666;
 	private static final int READ_WRITE_EXTERNAL_STORAGE_PERMISSIONS = 1337;
 
-	private String[] PERMISSIONS = {
+	private final String[] PERMISSIONS = {
 			Manifest.permission.READ_EXTERNAL_STORAGE,
 			Manifest.permission.WRITE_EXTERNAL_STORAGE
 	};
@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
 
 		handlePreferences();
 		handleReflections();
-
 		handlePermissions();
 
 		handleFAB();
@@ -481,6 +480,6 @@ public class MainActivity extends AppCompatActivity {
 		}).setColumns(4).setRoundColorButton(true).show();
 	}
 
-	private OnCheckedChangeListener onToggleParticleListener = (drawerItem, buttonView, isChecked)
+	private final OnCheckedChangeListener onToggleParticleListener = (drawerItem, buttonView, isChecked)
 			-> SharedPrefs.getInstance().setAnimationsShown(isChecked);
 }

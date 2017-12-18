@@ -11,7 +11,7 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.IOException;
 
-public class SoundPlayer {
+class SoundPlayer {
 
 	private MediaPlayer mPlayer;
 	private Context mContext;
@@ -28,7 +28,7 @@ public class SoundPlayer {
 		playSound(sound);
 	}
 
-	void playSound(Sound sound) {
+	private void playSound(Sound sound) {
 		int resource = sound.getResourceId();
 		if (mPlayer != null) {
 			if (mPlayer.isPlaying())

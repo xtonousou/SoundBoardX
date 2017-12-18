@@ -22,10 +22,10 @@ class Particle {
     //TODO add seekbar to change speed (in drawer)
     void burstRandomly(ArrayList<Integer> drawables, int particles) {
         for (byte i = 0; i < drawables.size(); i++) {
-            new ParticleSystem(mActivity, particles, drawables.get(i), 2500)
+            new ParticleSystem(mActivity, particles, drawables.get(i), 3250)
                     .setSpeedRange(0.125f, 0.325f)
-                    .setFadeOut(750)
-                    .setScaleRange(1, 1.65f)
+                    .setFadeOut(500)
+                    .setScaleRange(1, 1.625f)
                     .setRotationSpeedRange(0, 200)
                     .oneShot(mView, particles, new DecelerateInterpolator());
         }
@@ -33,10 +33,10 @@ class Particle {
 
     void burstScaleRandomly(ArrayList<Integer> drawables, int particles) {
         for (byte i = 0; i < drawables.size(); i++) {
-            new ParticleSystem(mActivity, particles, drawables.get(i), 2500)
+            new ParticleSystem(mActivity, particles, drawables.get(i), 3250)
                     .setSpeedRange(0.125f, 0.325f)
-                    .setFadeOut(750)
-                    .setScaleRange(1, 2.25f)
+                    .setFadeOut(500)
+                    .setScaleRange(1, 2.215f)
                     .oneShot(mView, particles, new DecelerateInterpolator());
         }
     }
