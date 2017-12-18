@@ -482,6 +482,7 @@ class ParticleManager {
 				drawableList.add(R.drawable.weed);
 				drawableList.add(R.drawable.joint);
 				drawableList.add(R.drawable.smokeone);
+				drawableList.add(R.drawable.clock);
 				particle.burstRandomly(drawableList, 25);
 				break;
 				
@@ -1050,7 +1051,7 @@ class ParticleManager {
 				
 			case "U WOT M8":
 				drawableList.add(R.drawable.flute);
-				drawableList.add(R.drawable.wombo_combo);
+				drawableList.add(R.drawable.uwotmate);
 				drawableList.add(R.drawable.joint);
 				particle.burstRandomly(drawableList, 25);
 				break;
