@@ -39,5 +39,7 @@
     <string name="notifications">Notifications</string>
     <string name="alarms">Alarms</string>
     <string name="ringtones">Ringtones</string>
+    <string name="author">xtonousou</string>
+    <string name="audio">audio/*</string>
 
 </resources>

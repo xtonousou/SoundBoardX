@@ -143,6 +143,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 			);
 
 			MenuItem setRingtone = contextMenu.add(R.string.ringtone);
+
 			MenuItem setNotification = contextMenu.add(R.string.notification);
 			MenuItem setAlarm = contextMenu.add(R.string.alarm);
 

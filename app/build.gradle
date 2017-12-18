@@ -1,27 +1,21 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {}
     compileSdkVersion 27
     buildToolsVersion "27.0.2"
     defaultConfig {
-        minSdkVersion 17
+        minSdkVersion 21
         targetSdkVersion 27
-        versionCode 6
-        versionName "Black Eye Galaxy"
+        versionCode 7
+        versionName "Cartwheel Galaxy"
         applicationId "io.github.xtonousou.soundboardx"
     }
     buildTypes {
         release {
-            shrinkResources false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-        debug {
-            shrinkResources false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    dexOptions {}
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -29,12 +23,10 @@ android {
     aaptOptions {
         cruncherEnabled = true
     }
-    productFlavors {}
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-
     // Official Android libraries
     implementation 'com.android.support:appcompat-v7:27.0.2'
     implementation 'com.android.support:cardview-v7:27.0.2'
@@ -60,7 +52,7 @@ dependencies {
     implementation 'com.mikepenz:google-material-typeface:3.0.1.2.original@aar'
     implementation 'com.mikepenz:fontawesome-typeface:4.7.0.2@aar'
     // Material Drawer
-    implementation('com.mikepenz:materialdrawer:6.0.1@aar') {
+    implementation('com.mikepenz:materialdrawer:6.0.2@aar') {
         transitive = true
     }
 }

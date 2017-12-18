@@ -632,7 +632,6 @@ public final class R {
         public static final int edit_query = 0x7f090046;
         public static final int expand_activities_button = 0x7f09004c;
         public static final int expanded_menu = 0x7f09004d;
-        public static final int fastadapter_item = 0x7f090050;
         public static final int fastadapter_item_adapter = 0x7f090051;
         public static final int forever = 0x7f090057;
         public static final int home = 0x7f09005b;
@@ -773,20 +772,20 @@ public final class R {
         public static final int abc_shareactionprovider_share_with = 0x7f0f001a;
         public static final int abc_shareactionprovider_share_with_application = 0x7f0f001b;
         public static final int abc_toolbar_collapse_description = 0x7f0f001c;
-        public static final int define_fastadapter = 0x7f0f002f;
-        public static final int library_fastadapter_author = 0x7f0f0055;
-        public static final int library_fastadapter_authorWebsite = 0x7f0f0056;
-        public static final int library_fastadapter_isOpenSource = 0x7f0f0057;
-        public static final int library_fastadapter_libraryDescription = 0x7f0f0058;
-        public static final int library_fastadapter_libraryName = 0x7f0f0059;
-        public static final int library_fastadapter_libraryVersion = 0x7f0f005a;
-        public static final int library_fastadapter_libraryWebsite = 0x7f0f005b;
-        public static final int library_fastadapter_licenseId = 0x7f0f005c;
-        public static final int library_fastadapter_owner = 0x7f0f005d;
-        public static final int library_fastadapter_repositoryLink = 0x7f0f005e;
-        public static final int library_fastadapter_year = 0x7f0f005f;
-        public static final int search_menu_title = 0x7f0f008c;
-        public static final int status_bar_notification_info_overflow = 0x7f0f008e;
+        public static final int define_fastadapter = 0x7f0f0031;
+        public static final int library_fastadapter_author = 0x7f0f0057;
+        public static final int library_fastadapter_authorWebsite = 0x7f0f0058;
+        public static final int library_fastadapter_isOpenSource = 0x7f0f0059;
+        public static final int library_fastadapter_libraryDescription = 0x7f0f005a;
+        public static final int library_fastadapter_libraryName = 0x7f0f005b;
+        public static final int library_fastadapter_libraryVersion = 0x7f0f005c;
+        public static final int library_fastadapter_libraryWebsite = 0x7f0f005d;
+        public static final int library_fastadapter_licenseId = 0x7f0f005e;
+        public static final int library_fastadapter_owner = 0x7f0f005f;
+        public static final int library_fastadapter_repositoryLink = 0x7f0f0060;
+        public static final int library_fastadapter_year = 0x7f0f0061;
+        public static final int search_menu_title = 0x7f0f008e;
+        public static final int status_bar_notification_info_overflow = 0x7f0f0090;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f100001;

@@ -4,7 +4,7 @@
             "outputFile": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fr/values-fr.xml",
             "map": [
                 {
-                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.1.aar/3b3c0e63e5d0b9870f1dcc200788e802/res/values-fr/values-fr.xml",
+                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.2.aar/1ec8385e2c105a0611fc0b667d9c533f/res/values-fr/values-fr.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

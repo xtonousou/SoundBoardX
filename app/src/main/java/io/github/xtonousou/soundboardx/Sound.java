@@ -9,7 +9,7 @@ class Sound {
     Sound(String name, int resourceId) {
         this.name = name;
         this.resourceId = resourceId;
-        favorite = SharedPrefs.getInstance().isSoundFavorited(name);
+        this.favorite = SharedPrefs.getInstance().isSoundFavorited(name);
     }
 
     int getResourceId() {

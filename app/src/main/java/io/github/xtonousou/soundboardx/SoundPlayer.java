@@ -18,7 +18,7 @@ class SoundPlayer {
 
 	private static final String TAG = "SoundPlayer";
 
-	public SoundPlayer(Context context) {
+	SoundPlayer(Context context) {
 		EventBus.getDefault().register(this);
 		this.mContext = context.getApplicationContext();
 	}

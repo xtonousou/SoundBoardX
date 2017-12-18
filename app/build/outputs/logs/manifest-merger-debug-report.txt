@@ -23,13 +23,13 @@ MERGED from [com.github.ivbaranov:materialfavoritebutton:0.1.4] /home/xtonousou/
 MERGED from [com.github.clans:fab:1.6.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/0f27498557af1b5dbd26d66dc87b8916/AndroidManifest.xml:2:1-14:12
 MERGED from [com.daimajia.easing:library:2.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/library-2.1.aar/3ad59537ae323c3a36ca9fc4826f4c4a/AndroidManifest.xml:2:1-12:12
 MERGED from [com.daimajia.androidanimations:library:2.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/library-2.3.aar/bc1cb863da094c37558c1682dc037bd1/AndroidManifest.xml:2:1-12:12
-MERGED from [com.mikepenz:materialdrawer:6.0.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.1.aar/3b3c0e63e5d0b9870f1dcc200788e802/AndroidManifest.xml:2:1-12:12
-MERGED from [com.mikepenz:iconics-core:2.9.5] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/iconics-core-2.9.5.aar/ac050567c03e3ce895892f38c182e7b8/AndroidManifest.xml:2:1-12:12
+MERGED from [com.mikepenz:materialdrawer:6.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.2.aar/1ec8385e2c105a0611fc0b667d9c533f/AndroidManifest.xml:2:1-12:12
+MERGED from [com.mikepenz:iconics-core:3.0.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/iconics-core-3.0.0.aar/d1c18d643e141d77a8d9e2ff88104304/AndroidManifest.xml:2:1-12:12
 MERGED from [com.mikepenz:google-material-typeface:3.0.1.2.original] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/google-material-typeface-3.0.1.2.original.aar/ca0e5f2c3dc92a0843a2228a43522d21/AndroidManifest.xml:17:1-29:12
 MERGED from [com.mikepenz:fontawesome-typeface:4.7.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.7.0.2.aar/ca18026094c8749623984deef36a8893/AndroidManifest.xml:2:1-12:12
 MERGED from [com.mikepenz:materialize:1.1.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialize-1.1.2.aar/3ec266a0d68f16d99c793688350bcdc4/AndroidManifest.xml:2:1-12:12
-MERGED from [com.mikepenz:fastadapter:3.0.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-3.0.1.aar/2b5bc74c811c98c84b5ff7c56d595ff5/AndroidManifest.xml:2:1-12:12
-MERGED from [com.mikepenz:fastadapter-extensions-expandable:3.0.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-extensions-expandable-3.0.0.aar/68bcb8328de3a9aee76d97b32d3f0a11/AndroidManifest.xml:2:1-12:12
+MERGED from [com.mikepenz:fastadapter:3.0.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-3.0.4.aar/5a4f52bf33ce33c117f038ce7d86a819/AndroidManifest.xml:2:1-12:12
+MERGED from [com.mikepenz:fastadapter-extensions-expandable:3.0.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-extensions-expandable-3.0.3.aar/ddcf754a5a2b020755db9f4b1e8f0e9c/AndroidManifest.xml:2:1-12:12
 MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/134ab52392974c3ec5794b6e9b9207d4/AndroidManifest.xml:17:1-24:12
 INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-30:12
 INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-30:12
@@ -142,20 +142,20 @@ MERGED from [com.daimajia.easing:library:2.1] /home/xtonousou/.gradle/caches/tra
 MERGED from [com.daimajia.easing:library:2.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/library-2.1.aar/3ad59537ae323c3a36ca9fc4826f4c4a/AndroidManifest.xml:8:5-10:41
 MERGED from [com.daimajia.androidanimations:library:2.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/library-2.3.aar/bc1cb863da094c37558c1682dc037bd1/AndroidManifest.xml:8:5-10:41
 MERGED from [com.daimajia.androidanimations:library:2.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/library-2.3.aar/bc1cb863da094c37558c1682dc037bd1/AndroidManifest.xml:8:5-10:41
-MERGED from [com.mikepenz:materialdrawer:6.0.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.1.aar/3b3c0e63e5d0b9870f1dcc200788e802/AndroidManifest.xml:8:5-10:41
-MERGED from [com.mikepenz:materialdrawer:6.0.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.1.aar/3b3c0e63e5d0b9870f1dcc200788e802/AndroidManifest.xml:8:5-10:41
-MERGED from [com.mikepenz:iconics-core:2.9.5] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/iconics-core-2.9.5.aar/ac050567c03e3ce895892f38c182e7b8/AndroidManifest.xml:8:5-10:41
-MERGED from [com.mikepenz:iconics-core:2.9.5] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/iconics-core-2.9.5.aar/ac050567c03e3ce895892f38c182e7b8/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:materialdrawer:6.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.2.aar/1ec8385e2c105a0611fc0b667d9c533f/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:materialdrawer:6.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.2.aar/1ec8385e2c105a0611fc0b667d9c533f/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:iconics-core:3.0.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/iconics-core-3.0.0.aar/d1c18d643e141d77a8d9e2ff88104304/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:iconics-core:3.0.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/iconics-core-3.0.0.aar/d1c18d643e141d77a8d9e2ff88104304/AndroidManifest.xml:8:5-10:41
 MERGED from [com.mikepenz:google-material-typeface:3.0.1.2.original] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/google-material-typeface-3.0.1.2.original.aar/ca0e5f2c3dc92a0843a2228a43522d21/AndroidManifest.xml:23:5-25:41
 MERGED from [com.mikepenz:google-material-typeface:3.0.1.2.original] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/google-material-typeface-3.0.1.2.original.aar/ca0e5f2c3dc92a0843a2228a43522d21/AndroidManifest.xml:23:5-25:41
 MERGED from [com.mikepenz:fontawesome-typeface:4.7.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.7.0.2.aar/ca18026094c8749623984deef36a8893/AndroidManifest.xml:8:5-10:41
 MERGED from [com.mikepenz:fontawesome-typeface:4.7.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.7.0.2.aar/ca18026094c8749623984deef36a8893/AndroidManifest.xml:8:5-10:41
 MERGED from [com.mikepenz:materialize:1.1.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialize-1.1.2.aar/3ec266a0d68f16d99c793688350bcdc4/AndroidManifest.xml:8:5-10:41
 MERGED from [com.mikepenz:materialize:1.1.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialize-1.1.2.aar/3ec266a0d68f16d99c793688350bcdc4/AndroidManifest.xml:8:5-10:41
-MERGED from [com.mikepenz:fastadapter:3.0.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-3.0.1.aar/2b5bc74c811c98c84b5ff7c56d595ff5/AndroidManifest.xml:8:5-10:41
-MERGED from [com.mikepenz:fastadapter:3.0.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-3.0.1.aar/2b5bc74c811c98c84b5ff7c56d595ff5/AndroidManifest.xml:8:5-10:41
-MERGED from [com.mikepenz:fastadapter-extensions-expandable:3.0.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-extensions-expandable-3.0.0.aar/68bcb8328de3a9aee76d97b32d3f0a11/AndroidManifest.xml:8:5-10:41
-MERGED from [com.mikepenz:fastadapter-extensions-expandable:3.0.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-extensions-expandable-3.0.0.aar/68bcb8328de3a9aee76d97b32d3f0a11/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:fastadapter:3.0.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-3.0.4.aar/5a4f52bf33ce33c117f038ce7d86a819/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:fastadapter:3.0.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-3.0.4.aar/5a4f52bf33ce33c117f038ce7d86a819/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:fastadapter-extensions-expandable:3.0.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-extensions-expandable-3.0.3.aar/ddcf754a5a2b020755db9f4b1e8f0e9c/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:fastadapter-extensions-expandable:3.0.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-extensions-expandable-3.0.3.aar/ddcf754a5a2b020755db9f4b1e8f0e9c/AndroidManifest.xml:8:5-10:41
 MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/134ab52392974c3ec5794b6e9b9207d4/AndroidManifest.xml:20:5-22:41
 MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/134ab52392974c3ec5794b6e9b9207d4/AndroidManifest.xml:20:5-22:41
 INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
