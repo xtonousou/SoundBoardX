@@ -276,13 +276,11 @@ class ParticleManager {
 				
 			case "Darth Vader: I\'m Your Father":
 				drawableList.add(R.drawable.vader);
-				drawableList.add(R.drawable.darthvader);
 				particle.burstScaleRandomly(drawableList, 15);
 				break;
 				
 			case "Darth Vader":
 				drawableList.add(R.drawable.vader);
-				drawableList.add(R.drawable.darthvader);
 				particle.burstScaleRandomly(drawableList, 15);
 				break;
 				
@@ -318,7 +316,7 @@ class ParticleManager {
 				
 			case "Dragon Ball: Over 9000":
 				drawableList.add(R.drawable.overninek);
-				particle.burstRandomly(drawableList, 10);
+				particle.burstScaleRandomly(drawableList, 10);
 				break;
 				
 			case "Duck Toy":
