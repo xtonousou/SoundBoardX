@@ -274,7 +274,7 @@ class ParticleManager {
 				particle.burstRandomly(drawableList, 15);
 				break;
 				
-			case "Darth Vader: I\'m Your Father":
+			case "Darth Vader: I Am Your Father":
 				drawableList.add(R.drawable.vader);
 				particle.burstScaleRandomly(drawableList, 15);
 				break;
