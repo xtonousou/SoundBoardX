@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="roboto_cb">fonts/Roboto-BoldCondensed.ttf</string>
+    <string name="roboto_r">fonts/Roboto-Regular.ttf</string>
 
     <string name="app_name">SoundBoardX</string>
+    <string name="app_description">Powerful yet lightweight material designed soundboard. Powered
+        with a tiny particle system that gives your taps some swag.</string>
+    <string name="copy_right">Copyrights © %1$d</string>
+
+    <string name="author">xtonousou</string>
+    <string name="mail">xtonousou@gmail.com</string>
+    <string name="website">http://xtonousou.github.io/</string>
 
     <string name="search">Search</string>
 
@@ -15,6 +24,7 @@
     <string name="options">Options</string>
     <string name="particles">Particles</string>
     <string name="color">Color Picker</string>
+    <string name="about">About</string>
 
     <string name="header">Select action</string>
     <string name="ringtone">Set as ringtone</string>
@@ -39,7 +49,7 @@
     <string name="notifications">Notifications</string>
     <string name="alarms">Alarms</string>
     <string name="ringtones">Ringtones</string>
-    <string name="author">xtonousou</string>
     <string name="audio">audio/*</string>
 
+    <string name="connect">Connect with us</string>
 </resources>

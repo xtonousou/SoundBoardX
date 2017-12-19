@@ -136,24 +136,13 @@ abstract class Utils {
 		toolbar.setBackgroundColor(toolbar.getResources().getColor(R.color.colorPrimaryDarker));
     }
 
-	static void initPaypal(Activity activity) {
-        String url =
-                "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68KTBN3PE9U46";
-        Intent intent = new Intent(Intent.ACTION_VIEW).setData((Uri.parse(url)));
-        activity.startActivity(intent);
-    }
+	int getIntFromColor(int Red, int Green, int Blue){
+		Red = (Red << 16) & 0x00FF0000; //Shift red 16-bits and mask out other stuff
+		Green = (Green << 8) & 0x0000FF00; //Shift Green 8-bits and mask out other stuff
+		Blue = Blue & 0x000000FF; //Mask out anything not blue.
 
-	static void initYoutube(Activity activity) {
-        String url = "https://www.youtube.com/subscription_center?add_user=TheToNouSou96";
-        Intent intent = new Intent(Intent.ACTION_VIEW).setData((Uri.parse(url)));
-        activity.startActivity(intent);
-    }
-
-	static void initGithub(Activity activity) {
-        String url = "https://github.com/xtonousou/soundboardx";
-        Intent intent = new Intent(Intent.ACTION_VIEW).setData((Uri.parse(url)));
-        activity.startActivity(intent);
-    }
+		return 0xFF000000 | Red | Green | Blue; //0xFF000000 for 100% Alpha. Bitwise OR everything together.
+	}
 
 	static boolean isGreenMode(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)

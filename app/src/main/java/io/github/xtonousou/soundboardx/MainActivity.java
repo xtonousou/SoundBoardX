@@ -17,11 +17,13 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +38,7 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondarySwitchDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 
+import mehdi.sakout.aboutpage.AboutPage;
 import petrov.kristiyan.colorpicker.ColorPicker;
 
 public class MainActivity extends AppCompatActivity {
@@ -223,9 +226,9 @@ public class MainActivity extends AppCompatActivity {
 			}
 		};
 
-		IntentFilter intentFilterilter = new IntentFilter();
-		intentFilterilter.addAction("android.os.action.POWER_SAVE_MODE_CHANGED");
-		registerReceiver(mPowerSaverChangeReceiver, intentFilterilter);
+		IntentFilter intentFilter= new IntentFilter();
+		intentFilter.addAction("android.os.action.POWER_SAVE_MODE_CHANGED");
+		registerReceiver(mPowerSaverChangeReceiver, intentFilter);
 	}
 
     private void handlePreferences() {
@@ -233,6 +236,7 @@ public class MainActivity extends AppCompatActivity {
 		SharedPrefs.getInstance().setAnimationsShown(true);
 		SharedPrefs.getInstance().setFavoritesShown(false);
 		mColor = SharedPrefs.getInstance().getSelectedColor();
+		AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 	}
 
 	private void handleReflections() {
@@ -272,7 +276,7 @@ public class MainActivity extends AppCompatActivity {
     private void handleTitle() {
 		Utils.paintThis(mTitleText);
 
-		Typeface mFont = Typeface.createFromAsset(getAssets(), "fonts/Roboto-BoldCondensed.ttf");
+		Typeface mFont = Typeface.createFromAsset(getAssets(), getString(R.string.roboto_cb));
 		mTitleText.setTypeface(mFont);
 
 		mTitleText.setOnClickListener(view -> {
@@ -396,11 +400,16 @@ public class MainActivity extends AppCompatActivity {
                                 .withSelectable(false)
                                 .withChecked(true)
                                 .withOnCheckedChangeListener(onToggleParticleListener),
-                        new SecondaryDrawerItem().withName(R.string.color)
+						new SecondaryDrawerItem().withName(R.string.color)
 								.withIdentifier(8)
-                                .withIcon(FontAwesome.Icon.faw_paint_brush)
+								.withIcon(FontAwesome.Icon.faw_paint_brush)
 								.withIconTintingEnabled(false)
-                                .withSelectable(false)
+								.withSelectable(false),
+						new SecondaryDrawerItem().withName(R.string.about)
+								.withIdentifier(9)
+								.withIcon(FontAwesome.Icon.faw_book)
+								.withIconTintingEnabled(false)
+								.withSelectable(false)
                 )
                 .withOnDrawerItemClickListener((view, position, drawerItem) -> {
 					mView.setLayoutManager(new StaggeredGridLayoutManager(getResources()
@@ -443,13 +452,17 @@ public class MainActivity extends AppCompatActivity {
 									.showMusicSounds(MainActivity.this);
 							break;
 						/* Options title
-						case 7:
+						case 6:
 							break;*/
 						/* Particle switch, handled by listener
 						case 7:
 							break;*/
 						case 8:
 							handleColorPicker();
+							break;
+						case 9:
+							startActivity(new Intent(MainActivity.this,
+									AboutActivity.class));
 							break;
                     }
                     return false;

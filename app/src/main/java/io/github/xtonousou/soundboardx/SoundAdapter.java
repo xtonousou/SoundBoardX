@@ -36,7 +36,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 	SoundAdapter(Activity activity) {
 		this.activity = activity;
 		this.font = Typeface.createFromAsset(activity.getAssets(),
-				"fonts/Roboto-Regular.ttf");
+				activity.getString(R.string.roboto_r));
 	}
 
 	void showPrevious() {

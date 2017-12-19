@@ -36,6 +36,8 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     // Bus events
     implementation 'org.greenrobot:eventbus:3.1.1'
+    // About
+    implementation 'com.github.medyo:android-about-page:1.2.2'
     // Animated Favorite Button
     implementation 'com.github.ivbaranov:materialfavoritebutton:0.1.4'
     // Floating Action Button
