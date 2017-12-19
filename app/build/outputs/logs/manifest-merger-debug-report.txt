@@ -1,0 +1,181 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-33:12
+MERGED from [com.android.support:design:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/9c3fb5b1fb70902be5aaba06fea342cb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.medyo:android-about-page:1.2.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/android-about-page-1.2.2.aar/686f2288a838260ebefa8393ff0d6c4f/AndroidManifest.xml:2:1-12:12
+MERGED from [petrov.kristiyan:colorpicker-library:1.1.7] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.7.aar/f81d0f2fcaee5cc9110a7767d5d54239/AndroidManifest.xml:2:1-12:12
+MERGED from [com.android.support:appcompat-v7:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/33b9fcfe2fdc5b3aceda524ee301c076/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.2.aar/fade7b0a003cbacf3311f52d09130b47/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/transition-27.0.2.aar/5541b420f146edb8e8f199fd4fea84d6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/bc0f5ccf5b00d453c46263957344823c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/65581c52043f2d03e04c92d486df9cf1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/c1b443b6d46d3fd7379304dc25c89d46/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/f4288059e75fd3809a2f5b418b347759/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/b404dcf3ba1f41b712b90673966f3b81/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/c9aefd72811fc73788e13f59e02936d0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/1857fc85b0a0672e52dc2dc2a58c3837/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/281447ffbdd184ce47f009969fd16fa2/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/e71a5f865554a178f3ab0d5ac04b3fd0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.ivbaranov:materialfavoritebutton:0.1.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialfavoritebutton-0.1.4.aar/a950d9a482e4ddd94bf9ae7631364205/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.clans:fab:1.6.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/0f27498557af1b5dbd26d66dc87b8916/AndroidManifest.xml:2:1-14:12
+MERGED from [com.daimajia.easing:library:2.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/library-2.1.aar/3ad59537ae323c3a36ca9fc4826f4c4a/AndroidManifest.xml:2:1-12:12
+MERGED from [com.daimajia.androidanimations:library:2.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/library-2.3.aar/bc1cb863da094c37558c1682dc037bd1/AndroidManifest.xml:2:1-12:12
+MERGED from [com.mikepenz:materialdrawer:6.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.2.aar/1ec8385e2c105a0611fc0b667d9c533f/AndroidManifest.xml:2:1-12:12
+MERGED from [com.mikepenz:iconics-core:3.0.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/iconics-core-3.0.0.aar/d1c18d643e141d77a8d9e2ff88104304/AndroidManifest.xml:2:1-12:12
+MERGED from [com.mikepenz:google-material-typeface:3.0.1.2.original] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/google-material-typeface-3.0.1.2.original.aar/ca0e5f2c3dc92a0843a2228a43522d21/AndroidManifest.xml:17:1-29:12
+MERGED from [com.mikepenz:fontawesome-typeface:4.7.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.7.0.2.aar/ca18026094c8749623984deef36a8893/AndroidManifest.xml:2:1-12:12
+MERGED from [com.mikepenz:materialize:1.1.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialize-1.1.2.aar/3ec266a0d68f16d99c793688350bcdc4/AndroidManifest.xml:2:1-12:12
+MERGED from [com.mikepenz:fastadapter:3.0.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-3.0.4.aar/5a4f52bf33ce33c117f038ce7d86a819/AndroidManifest.xml:2:1-12:12
+MERGED from [com.mikepenz:fastadapter-extensions-expandable:3.0.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-extensions-expandable-3.0.3.aar/ddcf754a5a2b020755db9f4b1e8f0e9c/AndroidManifest.xml:2:1-12:12
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/134ab52392974c3ec5794b6e9b9207d4/AndroidManifest.xml:17:1-24:12
+INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-33:12
+	package
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:3:5-46
+		INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
+		INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-33:12
+		INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:1-33:12
+		INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:5:5-73
+	android:name
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:5:22-70
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:6:5-80
+	android:name
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:6:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:7:22-78
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:8:5-80
+	android:name
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:8:22-77
+application
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:10:5-31:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/e71a5f865554a178f3ab0d5ac04b3fd0/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/e71a5f865554a178f3ab0d5ac04b3fd0/AndroidManifest.xml:9:5-20
+MERGED from [com.github.clans:fab:1.6.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/0f27498557af1b5dbd26d66dc87b8916/AndroidManifest.xml:12:5-20
+MERGED from [com.github.clans:fab:1.6.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/0f27498557af1b5dbd26d66dc87b8916/AndroidManifest.xml:12:5-20
+MERGED from [com.mikepenz:google-material-typeface:3.0.1.2.original] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/google-material-typeface-3.0.1.2.original.aar/ca0e5f2c3dc92a0843a2228a43522d21/AndroidManifest.xml:27:5-20
+MERGED from [com.mikepenz:google-material-typeface:3.0.1.2.original] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/google-material-typeface-3.0.1.2.original.aar/ca0e5f2c3dc92a0843a2228a43522d21/AndroidManifest.xml:27:5-20
+	android:supportsRtl
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:13:9-35
+	android:hardwareAccelerated
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:11:9-43
+	android:icon
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:12:9-43
+	android:theme
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:14:9-40
+activity#io.github.xtonousou.soundboardx.MainActivity
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:15:9-24:20
+	android:screenOrientation
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:17:13-49
+	android:label
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:16:13-45
+	android:name
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:18:13-41
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:19:13-23:29
+action#android.intent.action.MAIN
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:20:17-69
+	android:name
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:20:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:22:27-74
+activity#io.github.xtonousou.soundboardx.AboutActivity
+ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:25:9-30:20
+	android:screenOrientation
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:27:13-49
+	android:parentActivityName
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:29:13-55
+	android:label
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:26:13-45
+	android:name
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml:28:13-42
+uses-sdk
+INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
+INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:design:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/9c3fb5b1fb70902be5aaba06fea342cb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/9c3fb5b1fb70902be5aaba06fea342cb/AndroidManifest.xml:20:5-44
+MERGED from [com.github.medyo:android-about-page:1.2.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/android-about-page-1.2.2.aar/686f2288a838260ebefa8393ff0d6c4f/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.medyo:android-about-page:1.2.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/android-about-page-1.2.2.aar/686f2288a838260ebefa8393ff0d6c4f/AndroidManifest.xml:8:5-10:41
+MERGED from [petrov.kristiyan:colorpicker-library:1.1.7] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.7.aar/f81d0f2fcaee5cc9110a7767d5d54239/AndroidManifest.xml:8:5-10:41
+MERGED from [petrov.kristiyan:colorpicker-library:1.1.7] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.7.aar/f81d0f2fcaee5cc9110a7767d5d54239/AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:appcompat-v7:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/33b9fcfe2fdc5b3aceda524ee301c076/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/33b9fcfe2fdc5b3aceda524ee301c076/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.2.aar/fade7b0a003cbacf3311f52d09130b47/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.2.aar/fade7b0a003cbacf3311f52d09130b47/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/transition-27.0.2.aar/5541b420f146edb8e8f199fd4fea84d6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/transition-27.0.2.aar/5541b420f146edb8e8f199fd4fea84d6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/bc0f5ccf5b00d453c46263957344823c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/bc0f5ccf5b00d453c46263957344823c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/65581c52043f2d03e04c92d486df9cf1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/65581c52043f2d03e04c92d486df9cf1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/c1b443b6d46d3fd7379304dc25c89d46/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/c1b443b6d46d3fd7379304dc25c89d46/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/f4288059e75fd3809a2f5b418b347759/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/f4288059e75fd3809a2f5b418b347759/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/b404dcf3ba1f41b712b90673966f3b81/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/b404dcf3ba1f41b712b90673966f3b81/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/c9aefd72811fc73788e13f59e02936d0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/c9aefd72811fc73788e13f59e02936d0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/1857fc85b0a0672e52dc2dc2a58c3837/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/1857fc85b0a0672e52dc2dc2a58c3837/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/281447ffbdd184ce47f009969fd16fa2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/281447ffbdd184ce47f009969fd16fa2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/e71a5f865554a178f3ab0d5ac04b3fd0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/e71a5f865554a178f3ab0d5ac04b3fd0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.ivbaranov:materialfavoritebutton:0.1.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialfavoritebutton-0.1.4.aar/a950d9a482e4ddd94bf9ae7631364205/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.ivbaranov:materialfavoritebutton:0.1.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialfavoritebutton-0.1.4.aar/a950d9a482e4ddd94bf9ae7631364205/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.clans:fab:1.6.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/0f27498557af1b5dbd26d66dc87b8916/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.clans:fab:1.6.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/0f27498557af1b5dbd26d66dc87b8916/AndroidManifest.xml:8:5-10:41
+MERGED from [com.daimajia.easing:library:2.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/library-2.1.aar/3ad59537ae323c3a36ca9fc4826f4c4a/AndroidManifest.xml:8:5-10:41
+MERGED from [com.daimajia.easing:library:2.1] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/library-2.1.aar/3ad59537ae323c3a36ca9fc4826f4c4a/AndroidManifest.xml:8:5-10:41
+MERGED from [com.daimajia.androidanimations:library:2.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/library-2.3.aar/bc1cb863da094c37558c1682dc037bd1/AndroidManifest.xml:8:5-10:41
+MERGED from [com.daimajia.androidanimations:library:2.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/library-2.3.aar/bc1cb863da094c37558c1682dc037bd1/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:materialdrawer:6.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.2.aar/1ec8385e2c105a0611fc0b667d9c533f/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:materialdrawer:6.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.2.aar/1ec8385e2c105a0611fc0b667d9c533f/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:iconics-core:3.0.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/iconics-core-3.0.0.aar/d1c18d643e141d77a8d9e2ff88104304/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:iconics-core:3.0.0] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/iconics-core-3.0.0.aar/d1c18d643e141d77a8d9e2ff88104304/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:google-material-typeface:3.0.1.2.original] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/google-material-typeface-3.0.1.2.original.aar/ca0e5f2c3dc92a0843a2228a43522d21/AndroidManifest.xml:23:5-25:41
+MERGED from [com.mikepenz:google-material-typeface:3.0.1.2.original] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/google-material-typeface-3.0.1.2.original.aar/ca0e5f2c3dc92a0843a2228a43522d21/AndroidManifest.xml:23:5-25:41
+MERGED from [com.mikepenz:fontawesome-typeface:4.7.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.7.0.2.aar/ca18026094c8749623984deef36a8893/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:fontawesome-typeface:4.7.0.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fontawesome-typeface-4.7.0.2.aar/ca18026094c8749623984deef36a8893/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:materialize:1.1.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialize-1.1.2.aar/3ec266a0d68f16d99c793688350bcdc4/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:materialize:1.1.2] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialize-1.1.2.aar/3ec266a0d68f16d99c793688350bcdc4/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:fastadapter:3.0.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-3.0.4.aar/5a4f52bf33ce33c117f038ce7d86a819/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:fastadapter:3.0.4] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-3.0.4.aar/5a4f52bf33ce33c117f038ce7d86a819/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:fastadapter-extensions-expandable:3.0.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-extensions-expandable-3.0.3.aar/ddcf754a5a2b020755db9f4b1e8f0e9c/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:fastadapter-extensions-expandable:3.0.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/fastadapter-extensions-expandable-3.0.3.aar/ddcf754a5a2b020755db9f4b1e8f0e9c/AndroidManifest.xml:8:5-10:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/134ab52392974c3ec5794b6e9b9207d4/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/xtonousou/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/134ab52392974c3ec5794b6e9b9207d4/AndroidManifest.xml:20:5-22:41
+INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
+INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
+		INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
+		ADDED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml
+		INJECTED from /home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/AndroidManifest.xml

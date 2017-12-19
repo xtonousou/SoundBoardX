@@ -26,19 +26,35 @@ class SharedPrefs {
         return prefs.getBoolean(soundName, false);
     }
 
+    void setSelectedCategory(int category) {
+        prefs.edit().putInt("category", category).apply();
+    }
+
+    int getSelectedCategory() {
+        return prefs.getInt("category", 1);
+    }
+
     void setSelectedColor(int color) {
         prefs.edit().putInt("color", color).apply();
     }
 
     int getSelectedColor() {
-        return prefs.getInt("color", -1);
+        return prefs.getInt("color", -769226);
     }
 
-    boolean isFirstTime() {
-        return prefs.getBoolean("virgin", true);
+    boolean areAnimationsShown() {
+        return prefs.getBoolean("animations", true);
     }
 
-    void setNotFirstTime(boolean shouldNotFirstTime) {
-        prefs.edit().putBoolean("virgin", shouldNotFirstTime).apply();
+    void setAnimationsShown(boolean animationsShown) {
+        prefs.edit().putBoolean("animations", animationsShown).apply();
     }
+
+	boolean areFavoritesShown() {
+		return prefs.getBoolean("favorites", true);
+	}
+
+	void setFavoritesShown(boolean favoritesShown) {
+		prefs.edit().putBoolean("favorites", favoritesShown).apply();
+	}
 }
