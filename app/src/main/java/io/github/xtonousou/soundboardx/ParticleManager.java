@@ -777,7 +777,7 @@ class ParticleManager {
 				particle.burstScaleRandomly(drawableList, 20);
 				break;
 				
-			case "Filthy Frank: Stop Being A F*ckin C*unt":
+			case "Filthy Frank: Stop Being A F*ckin C*nt":
 				drawableList.add(R.drawable.filthyfrank);
 				particle.burstScaleRandomly(drawableList, 20);
 				break;
