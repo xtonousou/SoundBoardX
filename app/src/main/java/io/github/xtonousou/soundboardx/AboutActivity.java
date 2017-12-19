@@ -1,14 +1,10 @@
 package io.github.xtonousou.soundboardx;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.res.ResourcesCompat;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Toast;
 
 import java.io.File;
 import java.util.Calendar;
@@ -52,6 +48,9 @@ public class AboutActivity extends Activity {
 		copyRightsElement.setIconDrawable(R.drawable.about_icon_copy_right);
 		copyRightsElement.setIconNightTint(R.color.colorAccent);
 		copyRightsElement.setGravity(Gravity.CENTER);
+		copyRightsElement.setOnClickListener(view ->
+				Toast.makeText(AboutActivity.this, R.string.license, Toast.LENGTH_SHORT)
+						.show());
 		return copyRightsElement;
 	}
 }

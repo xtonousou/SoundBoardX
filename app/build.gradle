@@ -43,15 +43,11 @@ dependencies {
     // Floating Action Button
     implementation 'com.github.clans:fab:1.6.4'
     // Color Picker
-    implementation 'petrov.kristiyan:colorpicker-library:1.1.7'
+    implementation 'petrov.kristiyan:colorpicker-library:1.1.8'
     // Particle system
     implementation 'com.plattysoft.leonids:LeonidsLib:1.3.2'
-    // Various Animations
-    implementation 'com.daimajia.easing:library:2.1@aar'
-    implementation 'com.daimajia.androidanimations:library:2.3@aar'
     // Icons
     implementation 'com.mikepenz:iconics-core:3.0.0@aar'
-    implementation 'com.mikepenz:google-material-typeface:3.0.1.2.original@aar'
     implementation 'com.mikepenz:fontawesome-typeface:4.7.0.2@aar'
     // Material Drawer
     implementation('com.mikepenz:materialdrawer:6.0.2@aar') {

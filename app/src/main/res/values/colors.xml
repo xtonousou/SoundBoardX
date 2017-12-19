@@ -6,7 +6,7 @@
     <color name="colorPrimaryDarker">#1a1a1a</color>
     <color name="colorAccent">#ffffff</color>
 
-    <!-- Rainbow -->
+    <!-- Color Picker -->
     <color name="red">#f44336</color>
     <color name="pink">#E91E63</color>
     <color name="purple">#9C27B0</color>
@@ -24,6 +24,7 @@
     <color name="deep_orange">#FF5722</color>
     <color name="brown">#795548</color>
 
+    <!-- Color Picker -->
     <array name="rainbow">
         <item>@color/red</item>
         <item>@color/pink</item>

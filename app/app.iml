@@ -121,11 +121,10 @@
     <orderEntry type="library" name="com.android.support:design-27.0.2" level="project" />
     <orderEntry type="library" name="com.android.support:transition-27.0.2" level="project" />
     <orderEntry type="library" name="com.mikepenz:iconics-core-3.0.0" level="project" />
+    <orderEntry type="library" name="petrov.kristiyan:colorpicker-library-1.1.8" level="project" />
     <orderEntry type="library" name="com.android.support:recyclerview-v7-27.0.2" level="project" />
     <orderEntry type="library" name="com.mikepenz:fastadapter-extensions-expandable-3.0.3" level="project" />
-    <orderEntry type="library" name="petrov.kristiyan:colorpicker-library-1.1.7" level="project" />
     <orderEntry type="library" name="com.mikepenz:materialize-1.1.2" level="project" />
-    <orderEntry type="library" name="com.mikepenz:google-material-typeface-3.0.1.2.original" level="project" />
     <orderEntry type="library" name="com.android.support.constraint:constraint-layout-solver:1.0.2@jar" level="project" />
     <orderEntry type="library" name="com.android.support.constraint:constraint-layout-1.0.2" level="project" />
     <orderEntry type="library" name="android.arch.lifecycle:runtime-1.0.3" level="project" />
@@ -133,14 +132,12 @@
     <orderEntry type="library" name="com.github.medyo:android-about-page-1.2.2" level="project" />
     <orderEntry type="library" name="com.android.support:cardview-v7-27.0.2" level="project" />
     <orderEntry type="library" name="android.arch.lifecycle:common:1.0.3@jar" level="project" />
-    <orderEntry type="library" name="com.daimajia.easing:library-2.1" level="project" />
     <orderEntry type="library" name="android.arch.core:common:1.0.0@jar" level="project" />
     <orderEntry type="library" name="com.github.ivbaranov:materialfavoritebutton-0.1.4" level="project" />
     <orderEntry type="library" name="com.android.support:support-core-ui-27.0.2" level="project" />
     <orderEntry type="library" name="com.android.support:support-compat-27.0.2" level="project" />
     <orderEntry type="library" name="com.mikepenz:fontawesome-typeface-4.7.0.2" level="project" />
     <orderEntry type="library" name="com.android.support:support-core-utils-27.0.2" level="project" />
-    <orderEntry type="library" name="com.daimajia.androidanimations:library-2.3" level="project" />
     <orderEntry type="library" name="com.android.support:support-fragment-27.0.2" level="project" />
     <orderEntry type="library" name="com.android.support:support-media-compat-27.0.2" level="project" />
     <orderEntry type="library" name="org.greenrobot:eventbus:3.1.1@jar" level="project" />

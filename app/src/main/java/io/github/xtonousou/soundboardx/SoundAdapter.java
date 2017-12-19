@@ -15,7 +15,6 @@ import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.daimajia.androidanimations.library.Techniques;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.iconics.IconicsDrawable;
 
@@ -23,17 +22,14 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import java.text.Normalizer;
 import java.util.ArrayList;
 
 public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		implements Filterable {
 	private static final String TAG = "SoundAdapter";
 
-	private ArrayList<Sound> filterList;
 	private ArrayList<Sound> soundsCopy;
 	private ArrayList<Sound> sounds;
-	private String saneConstraint;
 	private Activity activity;
 	private Typeface font;
 
@@ -246,9 +242,9 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		@Override
 		protected FilterResults performFiltering(CharSequence constraint) {
 			Filter.FilterResults filterResults = new Filter.FilterResults();
-			filterList = new ArrayList<>();
+			ArrayList<Sound> filterList = new ArrayList<>();
 			if (constraint != null) {
-				saneConstraint = constraint.toString().toLowerCase();
+				String saneConstraint = constraint.toString().toLowerCase();
 				for (Sound item : soundsCopy) {
 					if (item.getName().toLowerCase().contains(saneConstraint)) {
 						filterList.add(item);

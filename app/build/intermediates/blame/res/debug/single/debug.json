@@ -117,7 +117,7 @@
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_color_palette_layout.xml.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.7.aar/f81d0f2fcaee5cc9110a7767d5d54239/res/layout/color_palette_layout.xml"
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.8.aar/4022d6e1c14118df8521ee5f74402faa/res/layout/color_palette_layout.xml"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
@@ -413,7 +413,7 @@
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_round_button.xml.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.7.aar/f81d0f2fcaee5cc9110a7767d5d54239/res/drawable/round_button.xml"
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.8.aar/4022d6e1c14118df8521ee5f74402faa/res/drawable/round_button.xml"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_icon.xml.flat",
@@ -765,7 +765,7 @@
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_bg_button_normal.xml.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.7.aar/f81d0f2fcaee5cc9110a7767d5d54239/res/drawable/bg_button_normal.xml"
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.8.aar/4022d6e1c14118df8521ee5f74402faa/res/drawable/bg_button_normal.xml"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_material_drawer_item_expandable_badge.xml.flat",
@@ -1605,7 +1605,7 @@
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_palette_item.xml.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.7.aar/f81d0f2fcaee5cc9110a7767d5d54239/res/layout/palette_item.xml"
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.8.aar/4022d6e1c14118df8521ee5f74402faa/res/layout/palette_item.xml"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/layout_notification_template_big_media_custom.xml.flat",
@@ -2593,7 +2593,7 @@
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_button.xml.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.7.aar/f81d0f2fcaee5cc9110a7767d5d54239/res/drawable/button.xml"
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.8.aar/4022d6e1c14118df8521ee5f74402faa/res/drawable/button.xml"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_edgyasfuck.png.flat",
@@ -3553,7 +3553,7 @@
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_bg_button_pressed.xml.flat",
-        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.7.aar/f81d0f2fcaee5cc9110a7767d5d54239/res/drawable/bg_button_pressed.xml"
+        "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.8.aar/4022d6e1c14118df8521ee5f74402faa/res/drawable/bg_button_pressed.xml"
     },
     {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_black_48dp.png.flat",
