@@ -24,7 +24,7 @@
 
 ### Compatibility
 
-Android **4.2** *(JELLY_BEAN_MR1)* or later.
+Android **5.0** *(LOLLIPOP)* or later.
 
 Compiled with SDK version `27` and built with SDK version `27.0.2`
 
@@ -36,10 +36,6 @@ Compiled with SDK version `27` and built with SDK version `27.0.2`
     * Sounds: Are being played at the background (more than once at the same time)
   * How to bypass the issue?
     * **Fully** restart the application
-* Drawer's entries are partially hidden on:
-  * Android **4.2** *(JELLY_BEAN_MR1)*
-  * Android **4.3** *(JELLY_BEAN_MR2)*
-  * Android **4.4** *(KITKAT)*
 
 ### Libraries Used
 
@@ -50,7 +46,10 @@ Compiled with SDK version `27` and built with SDK version `27.0.2`
 * [Floating Action Button](https://github.com/Clans/FloatingActionButton)
 * [Color Picker](https://github.com/kristiyanP/colorpicker)
 * [Animated Favorite Button](https://github.com/IvBaranov/MaterialFavoriteButton)
+* [About](https://github.com/medyo/android-about-page)
 
 ### License
 
-This application is licensed under GPLv3+
+Copyleft (ↄ) 2017 by Sotirios M. Roussis. Some rights reserved
+
+ship is under the terms of the GPLv3+ License, following all clarifications stated in the [license](LICENSE.md) file
