@@ -121,7 +121,6 @@
     <orderEntry type="library" name="com.android.support:design-27.0.2" level="project" />
     <orderEntry type="library" name="com.android.support:transition-27.0.2" level="project" />
     <orderEntry type="library" name="com.mikepenz:iconics-core-3.0.0" level="project" />
-    <orderEntry type="library" name="com.nineoldandroids:library:2.4.0@jar" level="project" />
     <orderEntry type="library" name="com.android.support:recyclerview-v7-27.0.2" level="project" />
     <orderEntry type="library" name="com.mikepenz:fastadapter-extensions-expandable-3.0.3" level="project" />
     <orderEntry type="library" name="petrov.kristiyan:colorpicker-library-1.1.7" level="project" />

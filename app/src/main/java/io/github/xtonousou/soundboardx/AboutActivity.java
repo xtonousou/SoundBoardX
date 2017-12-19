@@ -33,14 +33,16 @@ public class AboutActivity extends Activity {
 				.addEmail(getString(R.string.mail))
 				.addWebsite(getString(R.string.website))
 				.addGitHub(author + File.separator + getString(R.string.app_name))
-				.addFacebook(author)
+				//.addFacebook(author)
 				.addTwitter(author)
 				.addInstagram(author)
 				.addItem(getCopyRightsElement())
 				.create();
 
 		setContentView(aboutPage);
-		//getActionBar().setDisplayHomeAsUpEnabled(true); //TODO NullPointerException
+
+		//TODO Add toolbar with back button and remove NullPointerException
+		//getActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 
 	Element getCopyRightsElement() {

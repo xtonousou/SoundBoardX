@@ -480,10 +480,6 @@
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable-v21/abc_btn_colored_material.xml"
     },
     {
-        "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable-nodpi_darthvader.png.flat",
-        "source": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/src/main/res/drawable-nodpi/darthvader.png"
-    },
-    {
         "merged": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/res/merged/debug/drawable_abc_cab_background_top_material.xml.flat",
         "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/drawable/abc_cab_background_top_material.xml"
     },

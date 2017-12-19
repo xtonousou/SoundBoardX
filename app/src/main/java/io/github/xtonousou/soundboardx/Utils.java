@@ -11,9 +11,12 @@ import android.os.PowerManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.SearchView;
 import android.util.DisplayMetrics;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.github.clans.fab.FloatingActionButton;
 
 import java.io.File;
@@ -135,6 +138,13 @@ abstract class Utils {
 	static void paintThis(android.support.v7.widget.Toolbar toolbar) {
 		toolbar.setBackgroundColor(toolbar.getResources().getColor(R.color.colorPrimaryDarker));
     }
+
+    static void animate(View view, Techniques technique, int duration, int repeat) {
+		YoYo.with(technique)
+				.duration(duration)
+				.repeat(repeat)
+				.playOn(view);
+	}
 
 	static boolean isGreenMode(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)

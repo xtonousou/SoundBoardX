@@ -27,6 +27,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.ivbaranov.mfb.MaterialFavoriteButton;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
@@ -295,7 +297,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void handleSearchView(Menu menu) {
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+		SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
 
         if (searchManager != null)
             searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
