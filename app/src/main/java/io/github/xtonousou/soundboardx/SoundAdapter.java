@@ -1,7 +1,7 @@
 package io.github.xtonousou.soundboardx;
 
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -18,374 +18,247 @@ import android.widget.TextView;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.iconics.IconicsDrawable;
 
-import java.text.Normalizer;
-import java.util.ArrayList;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.util.ArrayList;
 
 public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
-        implements Filterable {
-    private static final String TAG = "SoundAdapter";
+		implements Filterable {
+	private static final String TAG = "SoundAdapter";
 
-    private ArrayList<Sound> sounds;
-    private ArrayList<Sound> soundsCopy;
+	private ArrayList<Sound> soundsCopy;
+	private ArrayList<Sound> sounds;
+	private Activity activity;
+	private Typeface font;
 
-    private boolean animationsShown;
-    private boolean favoritesOnly      = false;
-    private boolean allSoundsOnly      = false;
-    private boolean animalsSoundsOnly  = false;
-    private boolean funnySoundsOnly    = false;
-    private boolean gamesSoundsOnly    = false;
-    private boolean moviesSoundsOnly   = false;
-    private boolean nsfwSoundsOnly     = false;
-    private boolean personalSoundsOnly = false;
-    private boolean thugSoundsOnly     = false;
+	SoundAdapter(Activity activity) {
+		this.activity = activity;
+		this.font = Typeface.createFromAsset(activity.getAssets(),
+				activity.getString(R.string.roboto_r));
+	}
 
-    SoundAdapter(ArrayList<Sound> soundArray, boolean withAnimations) {
-        this.sounds          = soundArray;
-        this.soundsCopy      = soundArray;
-        this.animationsShown = withAnimations;
-    }
+	void showPrevious() {
+		SharedPrefs.getInstance().setFavoritesShown(false);
+		sounds = SoundStore.getSelectedSounds(activity.getApplicationContext());
+		soundsCopy = sounds;
+		notifyDataSetChanged();
+	}
 
-    boolean areAnimationsShown() {
-        return animationsShown;
-    }
+	void showFavorites() {
+		SharedPrefs.getInstance().setFavoritesShown(true);
+		for (Sound sound : new ArrayList<>(sounds)) {
+			if (!sound.getFavorite()) {
+				notifyItemRemoved(sounds.indexOf(sound));
+				sounds.remove(sound);
+			}
+		}
+		soundsCopy = sounds;
+	}
 
-    boolean isFavoritesOnly() {
-        return favoritesOnly;
-    }
+	void showAllSounds(Context context) {
+		SharedPrefs.getInstance().setFavoritesShown(false);
+		SharedPrefs.getInstance().setSelectedCategory(1);
+		sounds = SoundStore.getAllSounds(context);
+		soundsCopy = sounds;
+		notifyDataSetChanged();
+	}
 
-    void setShowAnimations(boolean anim) {
-        animationsShown = anim;
-    }
+	void showFunnySounds(Context context) {
+		SharedPrefs.getInstance().setFavoritesShown(false);
+		SharedPrefs.getInstance().setSelectedCategory(2);
+		sounds = SoundStore.getFunnySounds(context);
+		soundsCopy = sounds;
+		notifyDataSetChanged();
+	}
 
-    void onlyShowFavorites() {
-        favoritesOnly = true;
-        for (Sound sound : new ArrayList<>(sounds)) {
-            if (!sound.getFavorite()) {
-                notifyItemRemoved(sounds.indexOf(sound));
-                sounds.remove(sound);
-            }
-        }
-    }
+	void showGamesSounds(Context context) {
+		SharedPrefs.getInstance().setFavoritesShown(false);
+		SharedPrefs.getInstance().setSelectedCategory(3);
+		sounds = SoundStore.getGamesSounds(context);
+		soundsCopy = sounds;
+		notifyDataSetChanged();
+	}
 
-    void showAllSounds(Context context) {
-        favoritesOnly = false;
-        allSoundsOnly = true;
-        animalsSoundsOnly = false;
-        funnySoundsOnly = false;
-        gamesSoundsOnly = false;
-        moviesSoundsOnly = false;
-        nsfwSoundsOnly = false;
-        personalSoundsOnly = false;
+	void showMoviesSounds(Context context) {
+		SharedPrefs.getInstance().setFavoritesShown(false);
+		SharedPrefs.getInstance().setSelectedCategory(4);
+		sounds = SoundStore.getMoviesSounds(context);
+		soundsCopy = sounds;
+		notifyDataSetChanged();
+	}
 
-        sounds = SoundStore.getAllSounds(context);
-        notifyDataSetChanged();
-    }
+	void showMusicSounds(Context context) {
+		SharedPrefs.getInstance().setFavoritesShown(false);
+		SharedPrefs.getInstance().setSelectedCategory(5);
+		sounds = SoundStore.getMusicSounds(context);
+		soundsCopy = sounds;
+		notifyDataSetChanged();
+	}
 
-    void showAnimalsSounds(Context context) {
-        favoritesOnly = false;
-        allSoundsOnly = false;
-        animalsSoundsOnly = true;
-        funnySoundsOnly = false;
-        gamesSoundsOnly = false;
-        moviesSoundsOnly = false;
-        nsfwSoundsOnly = false;
-        personalSoundsOnly = false;
+	class ViewHolder extends RecyclerView.ViewHolder implements
+			View.OnCreateContextMenuListener,
+			MenuItem.OnMenuItemClickListener {
+		final TextView title;
+		final ImageButton favButton;
 
-        sounds = SoundStore.getAnimalsSounds(context);
-        notifyDataSetChanged();
-    }
+		ViewHolder(View v) {
+			super(v);
+			title = v.findViewById(R.id.title);
+			favButton = v.findViewById(R.id.fav_button);
 
-    void showFunnySounds(Context context) {
-        favoritesOnly = false;
-        allSoundsOnly = false;
-        animalsSoundsOnly = false;
-        funnySoundsOnly = true;
-        gamesSoundsOnly = false;
-        moviesSoundsOnly = false;
-        nsfwSoundsOnly = false;
-        personalSoundsOnly = false;
+			title.setTypeface(font);
+			title.setTextColor(activity.getResources().getColor(R.color.colorAccent));
 
-        sounds = SoundStore.getFunnySounds(context);
-        notifyDataSetChanged();
-    }
+			itemView.setOnClickListener(new View.OnClickListener() {
+				@Override
+				@Subscribe(threadMode = ThreadMode.ASYNC)
+				public void onClick(View view) {
+					if (EventBus.getDefault().isRegistered(this)) return;
 
-    void showGamesSounds(Context context) {
-        favoritesOnly = false;
-        allSoundsOnly = false;
-        animalsSoundsOnly = false;
-        funnySoundsOnly = false;
-        gamesSoundsOnly = true;
-        moviesSoundsOnly = false;
-        nsfwSoundsOnly = false;
-        personalSoundsOnly = false;
+					if (SharedPrefs.getInstance().areAnimationsShown())
+						new ParticleManager(new Particle(itemView),
+								title.getText().toString()).emit();
 
-        sounds = SoundStore.getGamesSounds(context);
-        notifyDataSetChanged();
-    }
+					EventBus.getDefault().register(this);
+					EventBus.getDefault().post(sounds.get(getAdapterPosition()));
+					EventBus.getDefault().unregister(this);
+				}
+			});
 
-    void showMoviesSounds(Context context) {
-        favoritesOnly = false;
-        allSoundsOnly = false;
-        animalsSoundsOnly = false;
-        funnySoundsOnly = false;
-        gamesSoundsOnly = false;
-        moviesSoundsOnly = true;
-        nsfwSoundsOnly = false;
-        personalSoundsOnly = false;
+			v.setOnCreateContextMenuListener(this);
+		}
 
-        sounds = SoundStore.getMoviesSounds(context);
-        notifyDataSetChanged();
-    }
 
-     void showNSFWSounds(Context context) {
-        favoritesOnly = false;
-        allSoundsOnly = false;
-        animalsSoundsOnly = false;
-        funnySoundsOnly = false;
-        gamesSoundsOnly = false;
-        moviesSoundsOnly = false;
-        nsfwSoundsOnly = true;
-        personalSoundsOnly = false;
+		@Override
+		public void onCreateContextMenu(final ContextMenu contextMenu, View view,
+										ContextMenu.ContextMenuInfo contextMenuInfo) {
+			contextMenu.setHeaderTitle(R.string.header);
+			contextMenu.setHeaderIcon(
+					new IconicsDrawable(view.getContext())
+							.icon(FontAwesome.Icon.faw_music)
+							.color(activity.getResources().getColor(R.color.colorAccent))
+							.sizeDp(24)
+			);
 
-        sounds = SoundStore.getNSFWSounds(context);
-        notifyDataSetChanged();
-    }
+			MenuItem setRingtone = contextMenu.add(R.string.ringtone);
 
-    void showPersonalSounds(Context context) {
-        favoritesOnly = false;
-        allSoundsOnly = false;
-        animalsSoundsOnly = false;
-        funnySoundsOnly = false;
-        gamesSoundsOnly = false;
-        moviesSoundsOnly = false;
-        nsfwSoundsOnly = false;
-        personalSoundsOnly = true;
+			MenuItem setNotification = contextMenu.add(R.string.notification);
+			MenuItem setAlarm = contextMenu.add(R.string.alarm);
 
-        sounds = SoundStore.getPersonalSounds(context);
-        notifyDataSetChanged();
-    }
+			setRingtone.setOnMenuItemClickListener(this);
+			setNotification.setOnMenuItemClickListener(this);
+			setAlarm.setOnMenuItemClickListener(this);
+		}
 
-    /**
-     *  returns  0 if allSoundsOnly,
-     *  returns  1 if animalsSoundsOnly,
-     *  returns  2 if funnySoundsOnly,
-     *  returns  3 if gamesSoundsOnly,
-     *  returns  4 if moviesSoundsOnly,
-     *  returns  5 if nsfwSoundsOnly,
-     *  returns  6 if personalSoundsOnly,
-     *  returns -1 if unexpected occurrence.
-     */
-    byte getCategory() {
-        byte category;
-        if (allSoundsOnly) {
-            category = 0;
-        } else if (animalsSoundsOnly) {
-            category =  1;
-        } else if (funnySoundsOnly) {
-            category =  2;
-        } else if (gamesSoundsOnly) {
-            category =  3;
-        } else if (moviesSoundsOnly) {
-            category =  4;
-        } else if (nsfwSoundsOnly) {
-            category =  5;
-        } else if (personalSoundsOnly) {
-            category =  6;
-        } else {
-            category = -1;
-        }
-        return category;
-    }
+		@Override
+		public boolean onMenuItemClick(MenuItem menuItem) {
+			ToneManager tone = new ToneManager(itemView, getAdapterPosition());
+			switch (menuItem.getTitle().toString()) {
+				case "Set as ringtone":
+					tone.setAsRingtone();
+					break;
+				case "Set as notification":
+					tone.setAsNotification();
+					break;
+				case "Set as alarm":
+					tone.setAsAlarm();
+					break;
+			}
+			return true;
+		}
+	}
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements
-            View.OnCreateContextMenuListener,
-            MenuItem.OnMenuItemClickListener {
-        public final TextView title;
-        final ImageButton favButton;
+	@Override
+	public SoundAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, final int viewType) {
+		View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.sound_card, parent, false);
+		return new ViewHolder(v);
+	}
 
-        ViewHolder(View v) {
-            super(v);
-            title = v.findViewById(R.id.title);
-            favButton = v.findViewById(R.id.fav_button);
+	@Override
+	public void onBindViewHolder(final ViewHolder holder, int position) {
+		Context favContext = holder.favButton.getContext();
+		int color = activity.getResources().getColor(R.color.colorAccent);
 
-            Typeface font = Typeface.createFromAsset(itemView.getContext().getAssets(),
-                    "fonts/Roboto-Regular.ttf");
-            title.setTypeface(font);
+		Utils.paintThis(holder);
+		holder.title.setText(sounds.get(position).getName());
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                public void onEvent(String event) {
-                    if (getAdapterPosition() != RecyclerView.NO_POSITION) {
-                        if (EventBus.getDefault().isRegistered(this)) {
-                            EventBus.getDefault().unregister(this);
-                        }
-                        notifyItemChanged(getAdapterPosition());
-                    }
-                }
+		boolean isFavorite = sounds.get(position).getFavorite();
 
-                @Override
-                @Subscribe
-                public void onClick(View view) {
-                    if (getAdapterPosition() != RecyclerView.NO_POSITION) {
-                        if (EventBus.getDefault().isRegistered(this)) {
-                            return;
-                        }
-                        if (animationsShown) {
-                            new ToneManager(new Particle(itemView), title.getText().toString())
-                                    .makeItShine();
-                        }
-                        EventBus.getDefault().register(this);
-                        EventBus.getDefault().post(sounds.get(getAdapterPosition()));
-                        EventBus.getDefault().unregister(this);
-                    }
-                }
-            });
+		holder.favButton.setImageDrawable(isFavorite
+				? new IconicsDrawable(favContext).icon(FontAwesome.Icon.faw_heart)
+				.color(color)
+				.sizeDp(24)
+				: new IconicsDrawable(favContext)
+				.icon(FontAwesome.Icon.faw_heart_o)
+				.color(color)
+				.sizeDp(24));
 
-            v.setOnCreateContextMenuListener(this);
-        }
+		holder.favButton.setOnClickListener(v -> {
+			Context vContext = v.getContext();
+			try {
+				boolean newFavStatus = !sounds.get(holder.getAdapterPosition()).getFavorite();
+				sounds.get(holder.getAdapterPosition()).setFavorite(newFavStatus);
 
-        @Override
-        public void onCreateContextMenu(final ContextMenu contextMenu, View view,
-                                        ContextMenu.ContextMenuInfo contextMenuInfo) {
+				if (newFavStatus) {
+					((ImageButton) v).setImageDrawable(
+							new IconicsDrawable(vContext)
+									.icon(FontAwesome.Icon.faw_heart)
+									.color(color)
+									.sizeDp(24)
+					);
+				} else {
+					((ImageButton) v).setImageDrawable(
+							new IconicsDrawable(vContext)
+									.icon(FontAwesome.Icon.faw_heart_o)
+									.color(color)
+									.sizeDp(24)
+					);
+				}
 
-            contextMenu.setHeaderTitle(R.string.header);
-            contextMenu.setHeaderIcon(
-                    new IconicsDrawable(view.getContext())
-                            .icon(FontAwesome.Icon.faw_music)
-                            .color(Color.WHITE)
-                            .sizeDp(24)
-            );
+				if (SharedPrefs.getInstance().areFavoritesShown()) {
+					// Remove from the list.
+					sounds.remove(holder.getAdapterPosition());
+					notifyItemRemoved(holder.getAdapterPosition());
+				}
+			} catch (ArrayIndexOutOfBoundsException e) {
+				Log.e(TAG, e.getMessage());
+			}
+		});
+	}
 
-            MenuItem setRingtone = contextMenu.add(R.string.ringtone);
-            MenuItem setNotification = contextMenu.add(R.string.notification);
-            MenuItem setAlarm = contextMenu.add(R.string.alarm);
+	@Override
+	public int getItemCount() {
+		return sounds != null ? sounds.size() : 0;
+	}
 
-            setRingtone.setOnMenuItemClickListener(this);
-            setNotification.setOnMenuItemClickListener(this);
-            setAlarm.setOnMenuItemClickListener(this);
-        }
+	@Override
+	public Filter getFilter() {
+		return mFilter;
+	}
 
-        @Override
-        public boolean onMenuItemClick(MenuItem menuItem) {
-            ToneManager toneSetAs = new ToneManager(title.getText().toString(), itemView);
-            switch (menuItem.getTitle().toString()) {
-                default:
-                    Log.e(TAG, "onMenuItemClick: menuItem.getTitle().toString()");
-                case "Set as ringtone":
-                    toneSetAs.ringtone();
-                    break;
-                case "Set as notification":
-                    toneSetAs.notification();
-                    break;
-                case "Set as alarm":
-                    toneSetAs.alarm();
-                    break;
-            }
-            return true;
-        }
-    }
+	private Filter mFilter = new Filter() {
+		@Override
+		protected FilterResults performFiltering(CharSequence constraint) {
+			Filter.FilterResults filterResults = new Filter.FilterResults();
+			ArrayList<Sound> filterList = new ArrayList<>();
+			if (constraint != null) {
+				String saneConstraint = constraint.toString().toLowerCase();
+				for (Sound item : soundsCopy) {
+					if (item.getName().toLowerCase().contains(saneConstraint)) {
+						filterList.add(item);
+					}
+				}
+				filterResults.values = filterList;
+			}
+			return filterResults;
+		}
 
-    @Override
-    public SoundAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, final int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.sound_card, parent, false);
-        return new ViewHolder(v);
-    }
-
-    @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.title.setText(sounds.get(position).getName());
-        new Utils().paintThis(holder);
-
-        boolean isFavorite = sounds.get(holder.getAdapterPosition()).getFavorite();
-
-        holder.favButton.setImageDrawable(isFavorite
-                ?   new IconicsDrawable(holder.favButton.getContext()).icon(FontAwesome.Icon.faw_star)
-                .color(Color.WHITE)
-                .sizeDp(24)
-                :   new IconicsDrawable(holder.favButton.getContext())
-                .icon(FontAwesome.Icon.faw_star_o)
-                .color(Color.WHITE)
-                .sizeDp(24));
-
-        holder.favButton.setOnClickListener(v -> {
-            try {
-                boolean newFavStatus = !sounds.get(holder.getAdapterPosition()).getFavorite();
-                sounds.get(holder.getAdapterPosition()).setFavorite(newFavStatus);
-
-                if (newFavStatus) {
-                    ((ImageButton) v).setImageDrawable(
-                            new IconicsDrawable(v.getContext())
-                                    .icon(FontAwesome.Icon.faw_star)
-                                    .color(Color.WHITE)
-                                    .sizeDp(24)
-                    );
-                    v.setContentDescription(v.getContext().getString(R.string.fav_desc));
-                } else {
-                    ((ImageButton) v).setImageDrawable(
-                            new IconicsDrawable(v.getContext())
-                                    .icon(FontAwesome.Icon.faw_star_o)
-                                    .color(Color.WHITE)
-                                    .sizeDp(24));
-                    v.setContentDescription(v.getContext().getString(R.string.not_fav_desc));
-                }
-
-                if (favoritesOnly) {
-                    // Remove from the list.
-                    sounds.remove(sounds.get(holder.getAdapterPosition()));
-                    notifyItemRemoved(holder.getAdapterPosition());
-                }
-            } catch (ArrayIndexOutOfBoundsException e) {
-                Log.e(TAG, e.getMessage());
-            }
-        });
-    }
-
-    @Override
-    public int getItemCount() {
-        return sounds != null ? sounds.size() : 0;
-    }
-
-    @Override
-    public Filter getFilter() {
-        return mFilter;
-    }
-
-    private Filter mFilter = new Filter() {
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-            Filter.FilterResults filterResults = new Filter.FilterResults();
-            ArrayList<Sound> tempList = new ArrayList<>();
-            favoritesOnly = false;
-            if ((constraint != null) && (soundsCopy != null)) {
-                for (Sound item : new ArrayList<>(soundsCopy)) {
-                    String userInput = striptease(constraint.toString().toLowerCase());
-                    String itemName = striptease(item.getName().toLowerCase());
-                    if (itemName.contains(userInput)) {
-                        tempList.add(item);
-                    }
-                }
-
-                filterResults.values = tempList;
-                filterResults.count = tempList.size();
-            }
-            return filterResults;
-        }
-
-        @SuppressWarnings("unchecked")
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            sounds = (ArrayList<Sound>) results.values;
-            notifyDataSetChanged();
-        }
-    };
-
-    private static String striptease(String string) {
-        return Normalizer.normalize(string, Normalizer.Form.NFD)
-                .replaceAll("\\p{M}", "")
-                .replaceAll(" ", "")
-                .replaceAll("\'", "")
-                .replaceAll("ς", "σ");
-    }
+		@Override
+		protected void publishResults(CharSequence constraint, FilterResults results) {
+			sounds = (ArrayList<Sound>) results.values;
+			notifyDataSetChanged();
+		}
+	};
 }

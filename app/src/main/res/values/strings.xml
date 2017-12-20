@@ -1,43 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">SoundBoardX</string>
-    <string name="fav_desc">Icon with full star</string>
-    <string name="not_fav_desc">Icon with empty star</string>
+    <string name="roboto_cb">fonts/Roboto-BoldCondensed.ttf</string>
+    <string name="roboto_r">fonts/Roboto-Regular.ttf</string>
+
+    <string name="app_name">SoundBoardX</string>
+    <string name="app_description">Powerful yet lightweight material designed soundboard. Powered
+        with a tiny particle system that gives your taps some swag.</string>
+    <string name="copy_right">Copyrights © %1$d</string>
+
+    <string name="author">xtonousou</string>
+    <string name="mail">xtonousou@gmail.com</string>
+    <string name="website">http://xtonousou.github.io/</string>
+
     <string name="search">Search</string>
-    <!-- Support Activity -->
-    <string name="donate">Donate</string>
-    <string name="subscribe">Subscribe</string>
-    <string name="source">Source</string>
-    <!-- Navigation Drawer -->
-    <string name="drawer_open">Open navigation drawer</string>
-    <string name="drawer_close">Close navigation drawer</string>
+
     <string name="categories">Categories</string>
-    <string name="animals">Animals</string>
-    <string name="movies">Movies</string>
-    <string name="funny">Funny</string>
-    <string name="thug">Thug Life</string>
-    <string name="nsfw">NSFW</string>
-    <string name="personal">Personal</string>
-    <string name="games">Games</string>
     <string name="all">All</string>
+    <string name="funny">Funny</string>
+    <string name="games">Games</string>
+    <string name="movies">Movies</string>
+    <string name="music">Music</string>
+
     <string name="options">Options</string>
-    <string name="support">Support</string>
     <string name="particles">Particles</string>
-    <string name="favorites">Favorites</string>
     <string name="color">Color Picker</string>
-    <!-- Context Menu -->
+    <string name="about">About</string>
+
     <string name="header">Select action</string>
     <string name="ringtone">Set as ringtone</string>
     <string name="notification">Set as notification</string>
     <string name="alarm">Set as alarm</string>
-    <!-- PERMISSIONS -->
-    <string name="rationale_exst">This app needs access to your external storage to save a sound.</string>
-    <string name="rationale_settings">This app needs access to your settings in order to set a sound as ringtone, notification or alarm.</string>
-    <string name="rationale_ask_again">This app may not work correctly without the requested permissions. Open the app settings screen to modify app permissions.</string>
-    <string name="returned_from_app_settings_to_activity">Returned from app settings to MainActivity</string>
-    <string name="setting">Settings</string>
-    <string name="cancel">Cancel</string>
-    <string name="github_icon">Github icon</string>
-    <string name="youtube_icon">Youtube icon</string>
-    <string name="misc">Misc</string>
+
+    <string name="palette">Material Palette</string>
+
+	<string name="battery_saver_on">Particles are currently disabled due to Battery Saver</string>
+    <string name="particles_disabled">Particles Disabled</string>
+
+	<string name="allow_access">Allow access</string>
+    <string name="modify_settings">To set sounds SoundBoardX needs permission to modify system settings.</string>
+    <string name="settings">SETTINGS</string>
+    <string name="not_now">NOT NOW</string>
+    <string name="permission_needed">Permission needed</string>
+    <string name="permission_granted">Permission granted</string>
+
+    <string name="storage_unavailable">Error: Storage is not available right now!</string>
+    <string name="storage_ro">Error: Storage is read-only!</string>
+
+    <string name="notifications">Notifications</string>
+    <string name="alarms">Alarms</string>
+    <string name="ringtones">Ringtones</string>
+    <string name="audio">audio/*</string>
+
+    <string name="connect">Connect with us</string>
+    <string name="license">GPLv3+</string>
 </resources>

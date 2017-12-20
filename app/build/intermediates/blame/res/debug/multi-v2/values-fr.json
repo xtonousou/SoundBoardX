@@ -1,0 +1,77 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fr/values-fr.xml",
+            "map": [
+                {
+                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.2.aar/1ec8385e2c105a0611fc0b667d9c533f/res/values-fr/values-fr.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,112",
+                        "endColumns": "56,55",
+                        "endOffsets": "107,163"
+                    },
+                    "to": {
+                        "startLines": "27,28",
+                        "startColumns": "4,4",
+                        "startOffsets": "2466,2523",
+                        "endColumns": "56,55",
+                        "endOffsets": "2518,2574"
+                    }
+                },
+                {
+                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/android-about-page-1.2.2.aar/686f2288a838260ebefa8393ff0d6c4f/res/values-fr/values-fr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,115,188,260,330,403,469,530",
+                        "endColumns": "59,72,71,69,72,65,60,73",
+                        "endOffsets": "110,183,255,325,398,464,525,599"
+                    },
+                    "to": {
+                        "startLines": "19,20,21,22,23,24,25,26",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "1917,1977,2050,2122,2192,2265,2331,2392",
+                        "endColumns": "59,72,71,69,72,65,60,73",
+                        "endOffsets": "1972,2045,2117,2187,2260,2326,2387,2461"
+                    }
+                },
+                {
+                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/281447ffbdd184ce47f009969fd16fa2/res/values-fr/values-fr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "30",
+                        "startColumns": "4",
+                        "startOffsets": "2665",
+                        "endColumns": "100",
+                        "endOffsets": "2761"
+                    }
+                },
+                {
+                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/values-fr/values-fr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,216,331,442,524,630,760,843,923,1009,1119,1231,1334,1445,1552,1659,1818,1917",
+                        "endColumns": "110,114,110,81,105,129,82,79,85,109,111,102,110,106,106,158,98,85",
+                        "endOffsets": "211,326,437,519,625,755,838,918,1004,1114,1226,1329,1440,1547,1654,1813,1912,1998"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,216,331,442,524,630,760,843,923,1009,1119,1231,1334,1445,1552,1659,1818,2579",
+                        "endColumns": "110,114,110,81,105,129,82,79,85,109,111,102,110,106,106,158,98,85",
+                        "endOffsets": "211,326,437,519,625,755,838,918,1004,1114,1226,1329,1440,1547,1654,1813,1912,2660"
+                    }
+                }
+            ]
+        }
+    ]
+}
