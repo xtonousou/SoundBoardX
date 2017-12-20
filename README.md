@@ -28,7 +28,7 @@ Compiled with SDK version `27` and built with SDK version `27.0.2`
 ### Preview
 
 |                 Preview                   |  Description                            |
-|:------------------------------------------|:----------------------------------------|
+|:-----------------------------------------:|:----------------------------------------|
 | ![](/extras/imgs/particles.gif)           | Rapid consecutive taps with particles   |
 | ![](/extras/imgs/categories.gif)          | Categorized sounds into drawer          |
 | ![](/extras/imgs/favoritescategories.gif) | Favorites                               |
