@@ -1,9 +1,11 @@
-<p align="center"><img width=50% src="/extras/imgs/logo.png"></img></p>
+<p align="center"><img width=25% src="/extras/imgs/logo.png"></img></p>
 <p align="center">SoundBoardX</p>
 
 ---
 
 > Material designed android soundboard with particles on tap; developed with ❤️ by **Sotirios M. Roussis**.
+
+---
 
 ### Compatibility
 
