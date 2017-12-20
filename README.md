@@ -84,4 +84,4 @@ Pull requests, issues, suggestions, testing and feedback are all welcome
 
 Copyleft (ↄ) 2017 by **Sotirios M. Roussis**. Some rights reserved
 
-`SoundBoardX` is under the terms of the GPLv3+ License, following all clarifications stated in the [license](LICENSE.md) file
+`SoundBoardX` is under the terms of the GPLv3+ License, following all clarifications stated in the [license](LICENCE.md) file
