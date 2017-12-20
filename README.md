@@ -3,7 +3,7 @@
 
 ---
 
-> Material designed android soundboard with particles on tap; developed with ❤️ by **Sotirios M. Roussis**.
+> Material designed android soundboard with particles on tap; developed with ❤️ by **Sotirios M. Roussis**
 
 ---
 
@@ -19,6 +19,7 @@ Compiled with SDK version `27` and built with SDK version `27.0.2`
 * **Rapid consecutive taps**. Spam 💨 with no fear. The application uses **async** callbacks to trigger sounds
 * **Mute button** 🔇 to stop the `SoundPlayer`
 * **Particles on tap** 👇. `SoundBoardX` is powered with a particle system that gives your taps ✨ swag. Can be disabled.
+* Mark sounds as **favorites** ❤️
 * **Set** sounds as **ringtone**, **notification** or **alarm** tone 🔔
 * Indexable. **Search** the sound you are looking for, without scrolling lists 🔍
 * **Categorized**. Sounds are grouped into categories 📜 for easier and quicker experience. Just click the drawer icon or just swipe to see the categories. Supports RTL
@@ -51,7 +52,7 @@ Compiled with SDK version `27` and built with SDK version `27.0.2`
 
 ##### People
 
-* [Panagiotis Keranoudis](https://github.com/notiskeranoudis) helped improving the application's content by adding, removing and modifying particles, sounds and titles. Also helped mapping sounds with particles programmatically.
+* [Panagiotis Keranoudis](https://github.com/notiskeranoudis) helped improving the application's content by adding, removing and modifying particles, sounds and titles. Also helped mapping sounds with particles programmatically
 
 ##### Libraries
 
@@ -66,7 +67,7 @@ Compiled with SDK version `27` and built with SDK version `27.0.2`
 
 ### Contribution
 
-Pull requests, issues, suggestions, testing and feedback are all welcome 
+Pull requests, issues, suggestions, testing and feedback are all welcome
 
 * Fork the repo
 * Create a new branch
