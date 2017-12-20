@@ -29,14 +29,14 @@ Compiled with SDK version `27` and built with SDK version `27.0.2`
 
 |                 Preview                   |  Description                            |
 |:------------------------------------------|:----------------------------------------|
-| ![/extras/imgs/particles.gif]()           | Rapid consecutive taps with particles   |
-| ![/extras/imgs/categories.gif]()          | Categorized sounds into drawer          |
-| ![/extras/imgs/favoritescategories.gif]() | Favorites                               |
-| ![/extras/imgs/search.gif]()              | Filtering user input                    |
-| ![/extras/imgs/searchfavorites.gif]()     | Filtering user input on favorites       |
-| ![/extras/imgs/setas.gif]()               | Set as ringtone, notification and alarm |
-| ![/extras/imgs/colors.gif]()              | Material color palette                  |
-| ![/extras/imgs/powersaving.gif]()         | Power saving mode aware                 |
+| ![](/extras/imgs/particles.gif)           | Rapid consecutive taps with particles   |
+| ![](/extras/imgs/categories.gif)          | Categorized sounds into drawer          |
+| ![](/extras/imgs/favoritescategories.gif) | Favorites                               |
+| ![](/extras/imgs/search.gif)              | Filtering user input                    |
+| ![](/extras/imgs/searchfavorites.gif)     | Filtering user input on favorites       |
+| ![](/extras/imgs/setas.gif)               | Set as ringtone, notification and alarm |
+| ![](/extras/imgs/colors.gif)              | Material color palette                  |
+| ![](/extras/imgs/powersaving.gif)         | Power saving mode aware                 |
 
 
 ### Known Bugs
