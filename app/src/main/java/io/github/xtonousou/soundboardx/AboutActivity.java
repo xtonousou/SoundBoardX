@@ -1,6 +1,9 @@
 package io.github.xtonousou.soundboardx;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -32,13 +35,28 @@ public class AboutActivity extends Activity {
 				//.addFacebook(author)
 				.addTwitter(author)
 				.addInstagram(author)
+				.addItem(getVersionElement())
 				.addItem(getCopyRightsElement())
 				.create();
 
 		setContentView(aboutPage);
+	}
 
-		//TODO Add toolbar with back button and remove NullPointerException
-		//getActionBar().setDisplayHomeAsUpEnabled(true);
+	Element getVersionElement() {
+		String versionName = "";
+		String version = getString(R.string.version);
+		try {
+			PackageInfo pInfo = getApplicationContext().getPackageManager().getPackageInfo(getPackageName(), 0);
+			versionName = pInfo.versionName;
+		} catch (PackageManager.NameNotFoundException ignore) {}
+		Element versionElement = new Element();
+		versionElement.setGravity(Gravity.CENTER);
+		versionElement.setTitle(String.format(getString(R.string.about_version),
+				getString(R.string.app_name), versionName, version));
+		versionElement.setOnClickListener(view ->
+				Toast.makeText(AboutActivity.this, R.string.about_version_alt, Toast.LENGTH_LONG)
+						.show());
+		return versionElement;
 	}
 
 	Element getCopyRightsElement() {
