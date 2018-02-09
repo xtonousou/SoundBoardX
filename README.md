@@ -1,3 +1,5 @@
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fxtonousou%2FSoundBoardX.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fxtonousou%2FSoundBoardX?ref=badge_shield)
+
 <p align="center"><img width=25% src="/extras/imgs/logo.png"></img></p>
 <p align="center">SoundBoardX</p>
 
@@ -85,3 +87,6 @@ Pull requests, issues, suggestions, testing and feedback are all welcome
 Copyleft (ↄ) 2017 by **Sotirios M. Roussis**. Some rights reserved
 
 `SoundBoardX` is under the terms of the GPLv3+ License, following all clarifications stated in the [license](LICENCE.md) file
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fxtonousou%2FSoundBoardX.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fxtonousou%2FSoundBoardX?ref=badge_large)
